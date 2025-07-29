@@ -1,0 +1,147 @@
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="iotBgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#065f46;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="iotCardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1f2937;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#374151;stop-opacity:0.9" />
+    </linearGradient>
+    <radialGradient id="cloudGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#e5e7eb;stop-opacity:0.8" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#iotBgGradient)"/>
+  
+  <!-- Circuit pattern -->
+  <defs>
+    <pattern id="circuit" width="50" height="50" patternUnits="userSpaceOnUse">
+      <circle cx="25" cy="25" r="2" fill="#10b981" opacity="0.3"/>
+      <path d="M 0 25 L 50 25 M 25 0 L 25 50" stroke="#10b981" stroke-width="1" opacity="0.2"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#circuit)"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">IoT DEVELOPMENT ECOSYSTEM</text>
+  
+  <!-- Device Layer -->
+  <rect x="50" y="80" width="180" height="140" rx="12" fill="url(#iotCardGradient)" stroke="#10b981" stroke-width="2"/>
+  <text x="140" y="105" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">DEVICES</text>
+  
+  <!-- Device icons -->
+  <circle cx="90" cy="130" r="15" fill="#3b82f6" stroke="white" stroke-width="2"/>
+  <text x="90" y="135" font-family="Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">MCU</text>
+  
+  <rect x="125" y="115" width="30" height="30" rx="5" fill="#f59e0b" stroke="white" stroke-width="2"/>
+  <text x="140" y="135" font-family="Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">SENSOR</text>
+  
+  <circle cx="190" cy="130" r="15" fill="#ef4444" stroke="white" stroke-width="2"/>
+  <text x="190" y="135" font-family="Arial, sans-serif" font-size="8" fill="white" text-anchor="middle">ACTUATOR</text>
+  
+  <text x="140" y="165" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">• Temperature Sensors</text>
+  <text x="140" y="180" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">• Motion Detectors</text>
+  <text x="140" y="195" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">• Smart Controllers</text>
+  <text x="140" y="210" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">• Edge Gateways</text>
+  
+  <!-- Connectivity Layer -->
+  <rect x="280" y="80" width="180" height="140" rx="12" fill="url(#iotCardGradient)" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="370" y="105" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">CONNECTIVITY</text>
+  
+  <!-- WiFi icon -->
+  <path d="M 320 130 Q 330 120 340 130 Q 350 115 360 130 Q 370 120 380 130" stroke="#10b981" stroke-width="3" fill="none"/>
+  <circle cx="350" cy="140" r="3" fill="#10b981"/>
+  
+  <text x="370" y="165" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">• WiFi 6 / 802.11ax</text>
+  <text x="370" y="180" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">• Bluetooth 5.0 LE</text>
+  <text x="370" y="195" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">• LoRaWAN</text>
+  <text x="370" y="210" font-family="Arial, sans-serif" font-size="11" fill="#cbd5e1" text-anchor="middle">• 5G / LTE-M</text>
+  
+  <!-- Cloud Layer -->
+  <ellipse cx="600" cy="150" rx="90" ry="70" fill="url(#cloudGradient)" stroke="#06b6d4" stroke-width="2"/>
+  <text x="600" y="135" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1f2937" text-anchor="middle">CLOUD</text>
+  <text x="600" y="155" font-family="Arial, sans-serif" font-size="12" fill="#374151" text-anchor="middle">SERVICES</text>
+  
+  <text x="600" y="175" font-family="Arial, sans-serif" font-size="10" fill="#4b5563" text-anchor="middle">• Data Analytics</text>
+  <text x="600" y="190" font-family="Arial, sans-serif" font-size="10" fill="#4b5563" text-anchor="middle">• ML/AI Processing</text>
+  <text x="600" y="205" font-family="Arial, sans-serif" font-size="10" fill="#4b5563" text-anchor="middle">• Remote Management</text>
+  
+  <!-- Data Flow -->
+  <rect x="100" y="280" width="600" height="100" rx="15" fill="rgba(0,0,0,0.3)" stroke="#ffffff" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="400" y="305" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">DATA FLOW PIPELINE</text>
+  
+  <!-- Data flow steps -->
+  <rect x="130" y="320" width="80" height="40" rx="8" fill="#3b82f6" stroke="white" stroke-width="1"/>
+  <text x="170" y="335" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">COLLECT</text>
+  <text x="170" y="350" font-family="Arial, sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">Sensors</text>
+  
+  <path d="M 210 340 L 240 340" stroke="#10b981" stroke-width="3" marker-end="url(#iotArrow)"/>
+  
+  <rect x="250" y="320" width="80" height="40" rx="8" fill="#059669" stroke="white" stroke-width="1"/>
+  <text x="290" y="335" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">TRANSMIT</text>
+  <text x="290" y="350" font-family="Arial, sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">Protocols</text>
+  
+  <path d="M 330 340 L 360 340" stroke="#10b981" stroke-width="3" marker-end="url(#iotArrow)"/>
+  
+  <rect x="370" y="320" width="80" height="40" rx="8" fill="#0891b2" stroke="white" stroke-width="1"/>
+  <text x="410" y="335" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">PROCESS</text>
+  <text x="410" y="350" font-family="Arial, sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">Analytics</text>
+  
+  <path d="M 450 340 L 480 340" stroke="#10b981" stroke-width="3" marker-end="url(#iotArrow)"/>
+  
+  <rect x="490" y="320" width="80" height="40" rx="8" fill="#7c3aed" stroke="white" stroke-width="1"/>
+  <text x="530" y="335" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" text-anchor="middle">RESPOND</text>
+  <text x="530" y="350" font-family="Arial, sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">Actions</text>
+  
+  <!-- Development Stack -->
+  <rect x="50" y="420" width="700" height="120" rx="15" fill="rgba(255,255,255,0.1)" stroke="#10b981" stroke-width="2"/>
+  <text x="400" y="445" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">DEVELOPMENT STACK</text>
+  
+  <!-- Frontend -->
+  <rect x="80" y="460" width="120" height="60" rx="8" fill="#f59e0b" stroke="white" stroke-width="1"/>
+  <text x="140" y="480" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">FRONTEND</text>
+  <text x="140" y="495" font-family="Arial, sans-serif" font-size="10" fill="#fef3c7" text-anchor="middle">React/Vue</text>
+  <text x="140" y="510" font-family="Arial, sans-serif" font-size="10" fill="#fef3c7" text-anchor="middle">Dashboard</text>
+  
+  <!-- Backend -->
+  <rect x="220" y="460" width="120" height="60" rx="8" fill="#10b981" stroke="white" stroke-width="1"/>
+  <text x="280" y="480" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">BACKEND</text>
+  <text x="280" y="495" font-family="Arial, sans-serif" font-size="10" fill="#d1fae5" text-anchor="middle">Node.js/Python</text>
+  <text x="280" y="510" font-family="Arial, sans-serif" font-size="10" fill="#d1fae5" text-anchor="middle">APIs</text>
+  
+  <!-- Database -->
+  <rect x="360" y="460" width="120" height="60" rx="8" fill="#3b82f6" stroke="white" stroke-width="1"/>
+  <text x="420" y="480" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">DATABASE</text>
+  <text x="420" y="495" font-family="Arial, sans-serif" font-size="10" fill="#dbeafe" text-anchor="middle">MongoDB</text>
+  <text x="420" y="510" font-family="Arial, sans-serif" font-size="10" fill="#dbeafe" text-anchor="middle">InfluxDB</text>
+  
+  <!-- ML/AI -->
+  <rect x="500" y="460" width="120" height="60" rx="8" fill="#8b5cf6" stroke="white" stroke-width="1"/>
+  <text x="560" y="480" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">ML/AI</text>
+  <text x="560" y="495" font-family="Arial, sans-serif" font-size="10" fill="#ede9fe" text-anchor="middle">TensorFlow</text>
+  <text x="560" y="510" font-family="Arial, sans-serif" font-size="10" fill="#ede9fe" text-anchor="middle">Edge AI</text>
+  
+  <!-- Security -->
+  <rect x="640" y="460" width="120" height="60" rx="8" fill="#ef4444" stroke="white" stroke-width="1"/>
+  <text x="700" y="480" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">SECURITY</text>
+  <text x="700" y="495" font-family="Arial, sans-serif" font-size="10" fill="#fee2e2" text-anchor="middle">TLS/SSL</text>
+  <text x="700" y="510" font-family="Arial, sans-serif" font-size="10" fill="#fee2e2" text-anchor="middle">OAuth 2.0</text>
+  
+  <!-- Connection lines -->
+  <path d="M 230 150 L 280 150" stroke="#10b981" stroke-width="3" marker-end="url(#iotArrow)" opacity="0.8"/>
+  <path d="M 460 150 L 510 150" stroke="#06b6d4" stroke-width="3" marker-end="url(#iotArrow)" opacity="0.8"/>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="iotArrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+    </marker>
+  </defs>
+  
+  <!-- Performance metrics -->
+  <text x="50" y="580" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1">Latency: &lt;1ms | Throughput: 1M+ msg/sec | Scalability: 10K+ devices</text>
+</svg>

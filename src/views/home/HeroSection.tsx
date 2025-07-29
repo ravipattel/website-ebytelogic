@@ -6,6 +6,7 @@ import React, { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
 
 import Button from "@/src/components/Button";
+import WorkflowSlider from "@/src/components/WorkflowSlider";
 
 const HeroSection = () => {
   const router = useRouter();
@@ -57,26 +58,9 @@ const HeroSection = () => {
           </div>
         </div>
         
-        {/* Right side multimedia workflow image with transparent left half */}
+        {/* Right side workflow slider */}
         <div className="hidden lg:flex lg:w-2/5 items-center justify-center relative">
-          <div className="relative w-full max-w-[600px] h-auto">
-            {/* Base image */}
-            <img 
-              src="/images/multimedia-workflow-transparent.png"
-              alt="Multimedia Workflow - Acquisition, Processing, and Delivery"
-              className="w-full h-auto object-contain"
-              style={{ width: 'auto', height: 'auto' }}
-            />
-            {/* Left half transparent overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/20 pointer-events-none"></div>
-            {/* Left half fade effect */}
-            <div 
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background: 'linear-gradient(to right, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.3) 25%, rgba(255,255,255,0.1) 40%, transparent 50%)'
-              }}
-            ></div>
-          </div>
+          <WorkflowSlider />
         </div>
       </div>
     </div>
