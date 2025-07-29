@@ -26,7 +26,7 @@ const HeroSection = () => {
   }, []);
   
   return (
-    <div className='bg-[url("/images/hero.jpg")] bg-cover bg-center py-28 md:h-screen lg:-mt-20'>
+    <div className='bg-gradient-to-r from-gray-50 to-blue-50 py-28 md:h-screen lg:-mt-20'>
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 h-full flex items-center">
         <div className="w-full lg:w-3/5 space-y-6">
           <p className="text-base md:text-lg text-primary font-medium">
