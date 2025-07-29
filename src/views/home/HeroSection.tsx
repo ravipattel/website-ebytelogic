@@ -28,7 +28,7 @@ const HeroSection = () => {
   return (
     <div className='bg-[url("/images/hero.jpg")] bg-cover bg-center py-28 md:h-screen lg:-mt-20'>
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 h-full flex items-center">
-        <div className="w-full lg:w-3/4 space-y-6">
+        <div className="w-full lg:w-3/5 space-y-6">
           <p className="text-base md:text-lg text-primary font-medium">
             Embedded Software. Multimedia Frameworks. IoT & Mobile Integration.
           </p>
@@ -47,6 +47,18 @@ const HeroSection = () => {
             >
               Contact Us
             </Button>
+          </div>
+        </div>
+        
+        {/* Right side multimedia workflow image */}
+        <div className="hidden lg:flex lg:w-2/5 items-center justify-center">
+          <div className="relative w-full max-w-[600px] h-auto">
+            <img 
+              src="/images/multimedia-workflow.png"
+              alt="Multimedia Workflow - Acquisition, Processing, and Delivery"
+              className="w-full h-auto object-contain rounded-lg shadow-lg"
+              style={{ width: 'auto', height: 'auto' }}
+            />
           </div>
         </div>
       </div>
