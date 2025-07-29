@@ -16,6 +16,10 @@ Preferred communication style: Simple, everyday language.
 - Added right-side image section (2/5 width) showing multimedia workflow diagram
 - Copied user-provided workflow image to public/images/multimedia-workflow.png
 - Enhanced visual appeal with professional multimedia acquisition/processing/delivery diagram
+- Removed background image with people from hero section, replaced with gradient
+- Created new `/preview` route with full-background multimedia workflow design
+- Implemented immersive preview page with floating elements and modern UI/UX
+- Added "Preview" navigation item to main header menu
 
 ## System Architecture
 
