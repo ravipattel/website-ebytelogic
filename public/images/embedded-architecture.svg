@@ -1,120 +1,144 @@
 <svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1e3a8a;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
     </linearGradient>
     <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#334155;stop-opacity:0.8" />
-      <stop offset="100%" style="stop-color:#475569;stop-opacity:0.9" />
+      <stop offset="0%" style="stop-color:#1f2937;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#374151;stop-opacity:0.95" />
+    </linearGradient>
+    <linearGradient id="linuxGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:1" />
     </linearGradient>
   </defs>
   
   <!-- Background -->
   <rect width="800" height="600" fill="url(#bgGradient)"/>
   
-  <!-- Grid pattern -->
+  <!-- Circuit pattern -->
   <defs>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.1"/>
+    <pattern id="circuit" width="60" height="60" patternUnits="userSpaceOnUse">
+      <circle cx="30" cy="30" r="2" fill="#3b82f6" opacity="0.2"/>
+      <path d="M 0 30 L 60 30 M 30 0 L 30 60" stroke="#3b82f6" stroke-width="1" opacity="0.15"/>
+      <circle cx="15" cy="15" r="1" fill="#10b981" opacity="0.3"/>
+      <circle cx="45" cy="45" r="1" fill="#f59e0b" opacity="0.3"/>
     </pattern>
   </defs>
-  <rect width="800" height="600" fill="url(#grid)"/>
+  <rect width="800" height="600" fill="url(#circuit)"/>
   
   <!-- Title -->
-  <text x="400" y="50" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">EMBEDDED SYSTEMS ARCHITECTURE</text>
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="white" text-anchor="middle">LINUX BSP & BOARD BRING-UP</text>
+  <text x="400" y="65" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">Production-Grade Hardware Enablement</text>
   
   <!-- Hardware Layer -->
-  <rect x="50" y="100" width="200" height="120" rx="10" fill="url(#cardGradient)" stroke="#60a5fa" stroke-width="2"/>
-  <text x="150" y="130" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">HARDWARE</text>
-  <text x="150" y="150" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• MCU/MPU</text>
-  <text x="150" y="170" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Memory</text>
-  <text x="150" y="190" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Sensors</text>
-  <text x="150" y="210" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• I/O Interfaces</text>
+  <rect x="50" y="90" width="180" height="130" rx="12" fill="url(#cardGradient)" stroke="#3b82f6" stroke-width="2"/>
+  <text x="140" y="115" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">HARDWARE</text>
+  <text x="140" y="135" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• ARM/x86/RISC-V SoCs</text>
+  <text x="140" y="150" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• DDR4/5 Memory</text>
+  <text x="140" y="165" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• PCIe/USB/Ethernet</text>
+  <text x="140" y="180" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• GPU/DSP Accelerators</text>
+  <text x="140" y="195" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Power Management</text>
+  <text x="140" y="210" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Board Interfaces</text>
   
-  <!-- Firmware Layer -->
-  <rect x="300" y="100" width="200" height="120" rx="10" fill="url(#cardGradient)" stroke="#34d399" stroke-width="2"/>
-  <text x="400" y="130" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">FIRMWARE</text>
-  <text x="400" y="150" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• RTOS</text>
-  <text x="400" y="170" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Device Drivers</text>
-  <text x="400" y="190" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• BSP</text>
-  <text x="400" y="210" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• HAL</text>
+  <!-- Linux BSP Layer -->
+  <rect x="250" y="90" width="180" height="130" rx="12" fill="url(#cardGradient)" stroke="#fbbf24" stroke-width="2"/>
+  <text x="340" y="115" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">LINUX BSP</text>
+  <text x="340" y="135" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Kernel 6.x LTS</text>
+  <text x="340" y="150" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Device Tree</text>
+  <text x="340" y="165" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Driver Framework</text>
+  <text x="340" y="180" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• U-Boot Bootloader</text>
+  <text x="340" y="195" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Yocto/Buildroot</text>
+  <text x="340" y="210" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Board Bring-up</text>
   
-  <!-- Application Layer -->
-  <rect x="550" y="100" width="200" height="120" rx="10" fill="url(#cardGradient)" stroke="#f59e0b" stroke-width="2"/>
-  <text x="650" y="130" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">APPLICATION</text>
-  <text x="650" y="150" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• User Interface</text>
-  <text x="650" y="170" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Business Logic</text>
-  <text x="650" y="190" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Protocols</text>
-  <text x="650" y="210" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Data Processing</text>
+  <!-- Protocol Stack -->
+  <rect x="450" y="90" width="180" height="130" rx="12" fill="url(#cardGradient)" stroke="#10b981" stroke-width="2"/>
+  <text x="540" y="115" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">PROTOCOL STACK</text>
+  <text x="540" y="135" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• TCP/IP Stack</text>
+  <text x="540" y="150" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• RTP/RTSP/WebRTC</text>
+  <text x="540" y="165" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• MQTT/CoAP/HTTP/2</text>
+  <text x="540" y="180" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Industrial Protocols</text>
+  <text x="540" y="195" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Security (TLS/IPSec)</text>
+  <text x="540" y="210" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Custom Protocols</text>
   
-  <!-- Communication -->
-  <rect x="150" y="280" width="150" height="80" rx="10" fill="url(#cardGradient)" stroke="#8b5cf6" stroke-width="2"/>
-  <text x="225" y="310" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">COMMUNICATION</text>
-  <text x="225" y="330" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• WiFi/Bluetooth</text>
-  <text x="225" y="350" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Cellular/LoRa</text>
-  
-  <!-- Power Management -->
-  <rect x="350" y="280" width="150" height="80" rx="10" fill="url(#cardGradient)" stroke="#ef4444" stroke-width="2"/>
-  <text x="425" y="310" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">POWER MGMT</text>
-  <text x="425" y="330" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Sleep Modes</text>
-  <text x="425" y="350" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Battery</text>
-  
-  <!-- Security -->
-  <rect x="550" y="280" width="150" height="80" rx="10" fill="url(#cardGradient)" stroke="#06b6d4" stroke-width="2"/>
-  <text x="625" y="310" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="middle">SECURITY</text>
-  <text x="625" y="330" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Encryption</text>
-  <text x="625" y="350" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">• Authentication</text>
-  
-  <!-- Development Flow -->
-  <rect x="100" y="420" width="600" height="120" rx="15" fill="rgba(0,0,0,0.3)" stroke="#ffffff" stroke-width="1" stroke-dasharray="5,5"/>
-  <text x="400" y="450" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">DEVELOPMENT WORKFLOW</text>
+  <!-- Board Bring-up Process -->
+  <rect x="80" y="250" width="560" height="100" rx="12" fill="rgba(0,0,0,0.3)" stroke="#fbbf24" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="360" y="275" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">BOARD BRING-UP PROCESS</text>
   
   <!-- Flow steps -->
-  <circle cx="150" cy="490" r="25" fill="#3b82f6" stroke="white" stroke-width="2"/>
-  <text x="150" y="495" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">REQ</text>
+  <circle cx="130" cy="310" r="20" fill="#3b82f6" stroke="white" stroke-width="2"/>
+  <text x="130" y="315" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">HW</text>
+  <text x="130" y="340" font-family="Arial, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Hardware</text>
   
-  <path d="M 175 490 L 205 490" stroke="white" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 150 310 L 180 310" stroke="#fbbf24" stroke-width="3" marker-end="url(#arrowhead)"/>
   
-  <circle cx="230" cy="490" r="25" fill="#34d399" stroke="white" stroke-width="2"/>
-  <text x="230" y="495" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">DES</text>
+  <circle cx="200" cy="310" r="20" fill="#fbbf24" stroke="white" stroke-width="2"/>
+  <text x="200" y="315" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">BSP</text>
+  <text x="200" y="340" font-family="Arial, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">BSP Dev</text>
   
-  <path d="M 255 490 L 285 490" stroke="white" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 220 310 L 250 310" stroke="#fbbf24" stroke-width="3" marker-end="url(#arrowhead)"/>
   
-  <circle cx="310" cy="490" r="25" fill="#f59e0b" stroke="white" stroke-width="2"/>
-  <text x="310" y="495" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">DEV</text>
+  <circle cx="270" cy="310" r="20" fill="#10b981" stroke="white" stroke-width="2"/>
+  <text x="270" y="315" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">DRV</text>
+  <text x="270" y="340" font-family="Arial, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Drivers</text>
   
-  <path d="M 335 490 L 365 490" stroke="white" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 290 310 L 320 310" stroke="#fbbf24" stroke-width="3" marker-end="url(#arrowhead)"/>
   
-  <circle cx="390" cy="490" r="25" fill="#8b5cf6" stroke="white" stroke-width="2"/>
-  <text x="390" y="495" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">TEST</text>
+  <circle cx="340" cy="310" r="20" fill="#8b5cf6" stroke="white" stroke-width="2"/>
+  <text x="340" y="315" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">INT</text>
+  <text x="340" y="340" font-family="Arial, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Integration</text>
   
-  <path d="M 415 490 L 445 490" stroke="white" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 360 310 L 390 310" stroke="#fbbf24" stroke-width="3" marker-end="url(#arrowhead)"/>
   
-  <circle cx="470" cy="490" r="25" fill="#ef4444" stroke="white" stroke-width="2"/>
-  <text x="470" y="495" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">VAL</text>
+  <circle cx="410" cy="310" r="20" fill="#ef4444" stroke="white" stroke-width="2"/>
+  <text x="410" y="315" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">VAL</text>
+  <text x="410" y="340" font-family="Arial, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Validation</text>
   
-  <path d="M 495 490 L 525 490" stroke="white" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 430 310 L 460 310" stroke="#fbbf24" stroke-width="3" marker-end="url(#arrowhead)"/>
   
-  <circle cx="550" cy="490" r="25" fill="#06b6d4" stroke="white" stroke-width="2"/>
-  <text x="550" y="495" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">PROD</text>
+  <circle cx="480" cy="310" r="20" fill="#06b6d4" stroke="white" stroke-width="2"/>
+  <text x="480" y="315" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">OPT</text>
+  <text x="480" y="340" font-family="Arial, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Optimize</text>
+  
+  <path d="M 500 310 L 530 310" stroke="#fbbf24" stroke-width="3" marker-end="url(#arrowhead)"/>
+  
+  <circle cx="550" cy="310" r="20" fill="#22c55e" stroke="white" stroke-width="2"/>
+  <text x="550" y="315" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle">PROD</text>
+  <text x="550" y="340" font-family="Arial, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Production</text>
+  
+  <!-- Key Benefits -->
+  <rect x="100" y="380" width="600" height="120" rx="15" fill="rgba(255,255,255,0.05)" stroke="#3b82f6" stroke-width="1"/>
+  <text x="400" y="405" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">PRODUCTION-GRADE BENEFITS</text>
+  
+  <!-- Benefits grid -->
+  <rect x="130" y="420" width="160" height="60" rx="8" fill="#3b82f6" stroke="white" stroke-width="1"/>
+  <text x="210" y="440" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">SCALABLE</text>
+  <text x="210" y="455" font-family="Arial, sans-serif" font-size="10" fill="#dbeafe" text-anchor="middle">Multi-core optimization</text>
+  <text x="210" y="470" font-family="Arial, sans-serif" font-size="10" fill="#dbeafe" text-anchor="middle">Modular architecture</text>
+  
+  <rect x="310" y="420" width="160" height="60" rx="8" fill="#10b981" stroke="white" stroke-width="1"/>
+  <text x="390" y="440" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">RELIABLE</text>
+  <text x="390" y="455" font-family="Arial, sans-serif" font-size="10" fill="#d1fae5" text-anchor="middle">Enterprise stability</text>
+  <text x="390" y="470" font-family="Arial, sans-serif" font-size="10" fill="#d1fae5" text-anchor="middle">Long-term support</text>
+  
+  <rect x="490" y="420" width="160" height="60" rx="8" fill="#f59e0b" stroke="white" stroke-width="1"/>
+  <text x="570" y="440" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">OPTIMIZED</text>
+  <text x="570" y="455" font-family="Arial, sans-serif" font-size="10" fill="#fef3c7" text-anchor="middle">Performance tuned</text>
+  <text x="570" y="470" font-family="Arial, sans-serif" font-size="10" fill="#fef3c7" text-anchor="middle">Memory efficient</text>
   
   <!-- Arrows -->
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="white"/>
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fbbf24"/>
     </marker>
   </defs>
   
   <!-- Data flow arrows -->
-  <path d="M 250 160 L 300 160" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.7"/>
-  <path d="M 500 160 L 550 160" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.7"/>
+  <path d="M 230 160 L 250 160" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.7"/>
+  <path d="M 430 160 L 450 160" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)" opacity="0.7"/>
   
-  <!-- Bottom labels -->
-  <text x="150" y="525" font-family="Arial, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Requirements</text>
-  <text x="230" y="525" font-family="Arial, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Design</text>
-  <text x="310" y="525" font-family="Arial, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Development</text>
-  <text x="390" y="525" font-family="Arial, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Testing</text>
-  <text x="470" y="525" font-family="Arial, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Validation</text>
-  <text x="550" y="525" font-family="Arial, sans-serif" font-size="10" fill="#cbd5e1" text-anchor="middle">Production</text>
+  <!-- Performance metrics -->
+  <text x="50" y="540" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Boot Time: &lt;5s | Memory: &lt;512MB | Real-time: μs precision | Uptime: 99.9%+</text>
+  <text x="50" y="560" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8">Supported: ARM, x86, RISC-V | Linux 6.x LTS | Yocto/Buildroot | Industrial Grade</text>
 </svg>

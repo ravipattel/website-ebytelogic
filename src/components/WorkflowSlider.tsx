@@ -1,5 +1,5 @@
 "use client"
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 
@@ -26,18 +26,36 @@ const slides: SlideData[] = [
   {
     id: 2,
     image: "/images/embedded-architecture.svg",
-    title: "Embedded Architecture",
-    description: "Comprehensive embedded systems architecture and development workflow"
+    title: "Linux BSP & Board Bring-up",
+    description: "Production-grade hardware enablement with scalable embedded systems"
   },
   {
     id: 3,
     image: "/images/iot-development.svg", 
-    title: "IoT Development",
-    description: "Complete IoT ecosystem from devices to cloud services"
+    title: "Low-Latency Streaming",
+    description: "Real-time video streaming systems with sub-32ms end-to-end latency"
   }
 ];
 
 const WorkflowSlider: React.FC = () => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return (
+      <div className="relative w-full max-w-[600px] h-auto">
+        <img 
+          src="/images/multimedia-workflow-transparent.png"
+          alt="Multimedia Workflow"
+          className="w-full h-auto object-contain"
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="relative w-full max-w-[600px] h-auto">
       <Swiper
@@ -61,7 +79,7 @@ const WorkflowSlider: React.FC = () => {
         fadeEffect={{
           crossFade: true
         }}
-        loop={true}
+        loop={false}
         className="workflow-slider"
       >
         {slides.map((slide) => (

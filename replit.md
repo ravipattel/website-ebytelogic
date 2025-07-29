@@ -20,6 +20,12 @@ Preferred communication style: Simple, everyday language.
 - Created new `/preview` route with full-background multimedia workflow design
 - Implemented immersive preview page with floating elements and modern UI/UX
 - Added "Preview" navigation item to main header menu
+- Created interactive WorkflowSlider component using Swiper.js with three professional diagrams
+- Generated custom SVG diagrams for Linux BSP & Board Bring-up and Low-Latency Streaming
+- Updated slider content to align with hero section focus: Linux BSPs, low-latency streaming, protocol-driven innovation
+- Implemented fade transitions, auto-play, navigation arrows, and pagination dots
+- Fixed hydration issues with client-side rendering strategy
+- Added hover effects with slide information overlays
 
 ## System Architecture
 
