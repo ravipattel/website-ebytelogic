@@ -1,0 +1,64 @@
+  @theme {
+      --color-primary: #3078fb;
+      --color-secondary: #062241;
+      --color-primaryText: #151b2c;
+  }
+
+  html {
+      scroll-behavior: smooth;
+  }
+
+  body {
+      font-family: "Poppins", sans-serif !important;
+  }
+
+  .react-photo-view-arrow {
+      z-index: 99999 !important;
+      opacity: 1 !important;
+      display: flex !important;
+  }
+
+  .custom-swiper-pagination .swiper-pagination-bullet {
+      width: 8px;
+      height: 8px;
+      background-color: #7e8ca0;
+      border-radius: 9999px;
+      opacity: 1;
+      transition: all 0.3s ease;
+  }
+
+  .custom-swiper-pagination .swiper-pagination-bullet-active {
+      width: 30px;
+      height: 8px;
+      background-color: #3078fb;
+  }
+
+  .spin-slow {
+      animation: spin 20s linear infinite;
+  }
+
+  @keyframes spin {
+      from {
+          transform: rotate(0deg);
+      }
+
+      to {
+          transform: rotate(360deg);
+      }
+  }
+
+  @keyframes marquee {
+      0% {
+          transform: translateX(40%);
+      }
+
+      100% {
+          transform: translateX(-100%);
+      }
+  }
+  
+  .marquee {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 20s linear infinite;
+  }
