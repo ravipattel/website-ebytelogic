@@ -8,30 +8,39 @@ const Preview = () => {
   const router = useRouter();
   const typedEl = useRef(null);
   const [showNavbar, setShowNavbar] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    const typed = new Typed(typedEl.current, {
-      strings: ["Software", "Media Systems", "IoT Platforms", "Smart Apps"],
-      typeSpeed: 70,
-      backSpeed: 40,
-      backDelay: 1500,
-      loop: true,
-      showCursor: true,
-      cursorChar: "|",
-    });
-
-    return () => typed.destroy();
+    setIsClient(true);
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setShowNavbar(scrollY > 100);
-    };
+    if (isClient && typedEl.current) {
+      const typed = new Typed(typedEl.current, {
+        strings: ["Software", "Media Systems", "IoT Platforms", "Smart Apps"],
+        typeSpeed: 70,
+        backSpeed: 40,
+        backDelay: 1500,
+        loop: true,
+        showCursor: true,
+        cursorChar: "|",
+      });
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+      return () => typed.destroy();
+    }
+  }, [isClient]);
+
+  useEffect(() => {
+    if (isClient) {
+      const handleScroll = () => {
+        const scrollY = window.scrollY;
+        setShowNavbar(scrollY > 100);
+      };
+
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
+  }, [isClient]);
   
   return (
     <div className="relative min-h-screen overflow-hidden">
