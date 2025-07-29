@@ -1,13 +1,5 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
 
 interface SlideData {
   id: number;
@@ -38,11 +30,34 @@ const slides: SlideData[] = [
 ];
 
 const WorkflowSlider: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+    
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isClient]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
 
   if (!isClient) {
     return (
@@ -57,33 +72,15 @@ const WorkflowSlider: React.FC = () => {
   }
 
   return (
-    <div className="relative w-full max-w-[600px] h-auto">
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay, EffectFade]}
-        spaceBetween={0}
-        slidesPerView={1}
-        navigation={{
-          nextEl: '.swiper-button-next-custom',
-          prevEl: '.swiper-button-prev-custom',
-        }}
-        pagination={{
-          clickable: true,
-          bulletClass: 'swiper-pagination-bullet-custom',
-          bulletActiveClass: 'swiper-pagination-bullet-active-custom',
-        }}
-        autoplay={{
-          delay: 5000,
-          disableOnInteraction: false,
-        }}
-        effect="fade"
-        fadeEffect={{
-          crossFade: true
-        }}
-        loop={false}
-        className="workflow-slider"
-      >
-        {slides.map((slide) => (
-          <SwiperSlide key={slide.id}>
+    <div className="relative w-full max-w-[600px] h-auto overflow-hidden rounded-lg">
+      <div className="relative">
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={`transition-opacity duration-500 ${
+              index === currentSlide ? 'opacity-100' : 'opacity-0 absolute inset-0'
+            }`}
+          >
             <div className="relative group">
               <img 
                 src={slide.image}
@@ -111,39 +108,43 @@ const WorkflowSlider: React.FC = () => {
                 <p className="text-gray-200 text-sm">{slide.description}</p>
               </div>
             </div>
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
+      </div>
       
-      {/* Custom navigation buttons */}
-      <button className="swiper-button-prev-custom absolute top-1/2 left-4 -translate-y-1/2 z-10 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300">
+      {/* Navigation buttons */}
+      <button 
+        onClick={prevSlide}
+        className="absolute top-1/2 left-4 -translate-y-1/2 z-10 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
+      >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
       </button>
       
-      <button className="swiper-button-next-custom absolute top-1/2 right-4 -translate-y-1/2 z-10 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300">
+      <button 
+        onClick={nextSlide}
+        className="absolute top-1/2 right-4 -translate-y-1/2 z-10 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
+      >
         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>
       
-      {/* Custom pagination dots */}
+      {/* Pagination dots */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
         {slides.map((_, index) => (
-          <div 
+          <button
             key={index}
-            className="swiper-pagination-bullet-custom w-3 h-3 bg-white/40 rounded-full cursor-pointer transition-all duration-300 hover:bg-white/60"
-          ></div>
+            onClick={() => goToSlide(index)}
+            className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${
+              index === currentSlide 
+                ? 'bg-white/90 scale-125' 
+                : 'bg-white/40 hover:bg-white/60'
+            }`}
+          />
         ))}
       </div>
-      
-      <style jsx>{`
-        .workflow-slider .swiper-pagination-bullet-active-custom {
-          background-color: rgba(255, 255, 255, 0.9) !important;
-          transform: scale(1.2);
-        }
-      `}</style>
     </div>
   );
 };
