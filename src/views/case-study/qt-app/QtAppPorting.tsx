@@ -2,8 +2,8 @@ import React from 'react';
 
 const QtAppPorting = () => {
   return (
-    <section id="porting" className="py-16 px-6">
-      <div className="px-6 py-8">
+    <section id="porting" className="px-4 md:px-6 py-16">
+      <div className="md:px-6 py-8">
         <h2 className="font-serif text-3xl font-bold mb-8">
           Porting Considerations for Multiple Operating Systems
         </h2>

@@ -3,8 +3,8 @@ import { FaTrophy } from "react-icons/fa";
 
 const YoctoResult = () => {
   return (
-    <section id="the-result" className="py-16 px-6">
-      <div className="px-6 py-8 ">
+    <section id="the-result" className="px-4 md:px-6 py-16">
+      <div className="px-4 md:px-6 py-8 ">
         <h2 className="serif text-3xl font-semibold mb-8">
           The Result: Successful On-Time Demonstration at EW24
         </h2>

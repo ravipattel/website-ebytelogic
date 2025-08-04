@@ -3,8 +3,8 @@ import { FaChartLine, FaLayerGroup, FaMicrochip, FaWeightHanging } from 'react-i
 
 const QtAppConclusion = () => {
   return (
-    <section id="conclusion" className="py-16 px-6 bg-slate-100">
-      <div className="px-6 py-8">
+    <section id="conclusion" className="px-4 md:px-6 py-16 bg-slate-100">
+      <div className="md:px-6 py-8">
         <h2 className="font-serif text-3xl font-bold mb-8">
           Conclusion and Key Takeaways
         </h2>

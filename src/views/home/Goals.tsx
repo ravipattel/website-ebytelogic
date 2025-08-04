@@ -15,61 +15,61 @@ import 'swiper/css/navigation';
 
 import Button from '@/src/components/Button';
 
-import IndustryJpg from '@/src/assets/images/home/industry.jpg';
-import TechnicalJpg from '@/src/assets/images/home/technical.jpg';
-import SolarJpg from '@/src/assets/images/home/solar.jpg';
+import EbyteLogicPng from '@/src/assets/images/home/goals/ebytelogic.png';
+import TechnicalPng from '@/src/assets/images/home/goals/technical.png';
+import EcosystemPng from '@/src/assets/images/home/goals/ecosystem.png';
 
 const CardData = [
     {
-        preview: IndustryJpg,
+        preview: TechnicalPng,
         title: 'Domain-Aligned Engineering',
         description:
             'We understand your industry – from low-latency streaming and signal processing to BSP development for custom hardware. Every project starts with aligned context and ends in optimized delivery.',
     },
     {
-        preview: TechnicalJpg,
+        preview: EbyteLogicPng,
         title: 'Real-Time, Reliable, Ready',
         description:
             'From GStreamer pipelines to embedded Linux tuning, we deliver systems with measurabl performance: low jitter, accurate AV sync, and stable long-hour operations – productiongrade from day one.',
     },
     {
-        preview: SolarJpg,
+        preview: EcosystemPng,
         title: 'Transparent & Agile Collaboration',
         description:
             'We ramp up fast, adapt to your tools, and stay transparent through every sprint. With proactive updates and detailed handovers, we’re your extended engineering arm, not just a vendor.',
     },
     {
-        preview: IndustryJpg,
+        preview: TechnicalPng,
         title: 'Industry support',
         description:
             'Our development opt in to the projects they genuinely want to work on, committing wholeheartedly to delivering.',
     },
     {
-        preview: TechnicalJpg,
+        preview: EbyteLogicPng,
         title: 'Technical energy',
         description:
             'Our developers strive for excellent delivery by being actively engaged in what they do.',
     },
     {
-        preview: SolarJpg,
+        preview: EcosystemPng,
         title: 'Solar innovation',
         description:
             'Empowering future with clean energy and technical expertise.',
     },
     {
-        preview: IndustryJpg,
+        preview: TechnicalPng,
         title: 'Industry support',
         description:
             'Our development opt in to the projects they genuinely want to work on, committing wholeheartedly to delivering.',
     },
     {
-        preview: TechnicalJpg,
+        preview: EbyteLogicPng,
         title: 'Technical energy',
         description:
             'Our developers strive for excellent delivery by being actively engaged in what they do.',
     },
     {
-        preview: SolarJpg,
+        preview: EcosystemPng,
         title: 'Solar innovation',
         description:
             'Empowering future with clean energy and technical expertise.',

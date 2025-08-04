@@ -39,7 +39,7 @@ const NextologiesDecoder = () => {
               <Image
                 src={Remote}
                 alt="Broadcast decoder equipment"
-                className="w-full h-80 object-cover rounded-lg shadow-lg"
+                className="w-full object-cover rounded-lg shadow-lg"
               />
             </div>
           </div>

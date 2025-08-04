@@ -2,8 +2,8 @@ import React from 'react';
 
 const QtAppCase = () => {
   return (
-    <section id="case-studies" className="py-16 px-6 bg-slate-100">
-      <div className="px-6 py-8">
+    <section id="case-studies" className="px-4 md:px-6 py-16 bg-slate-100">
+      <div className="md:px-6 py-8">
         <h2 className="font-serif text-3xl font-bold mb-8">
           Case Studies and Real-World Examples
         </h2>

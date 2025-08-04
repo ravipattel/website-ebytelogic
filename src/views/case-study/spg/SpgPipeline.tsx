@@ -4,7 +4,7 @@ import { FaBug, FaPlay, FaSearch, FaTerminal } from 'react-icons/fa';
 const SpgPipeline = () => {
   return (
     <section id="pipeline-considerations" className="bg-gray-50 py-16 px-6">
-      <div className="px-6 py-8">
+      <div className="md:px-6 py-8">
         {/* Section Heading */}
         <h2 className="font-serif text-4xl font-bold mb-8">
           4. Broader GStreamer Pipeline Considerations

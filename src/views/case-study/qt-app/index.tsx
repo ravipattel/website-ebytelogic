@@ -1,5 +1,5 @@
 import React from 'react'
-import CaseStudySidebar from '../../../components/CaseStudySidebar'
+import Sidebar from '../../../components/Sidebar'
 import QtAppHero from './QtAppHero'
 import QtAppIntro from './QtAppIntro'
 import QtAppBoot from './QtAppBoot'
@@ -14,9 +14,9 @@ import QtAppConclusion from './QtAppConclusion'
 
 const QtApp = () => {
     return (
-        <div className="flex">
+           <div className="lg:flex">
             <div className="w-72 h-fit lg:sticky lg:top-[98px]">
-                <CaseStudySidebar />
+                <Sidebar />
             </div>
             <div className="overflow-y-auto">
                 <QtAppHero />

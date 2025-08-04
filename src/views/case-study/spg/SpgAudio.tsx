@@ -4,8 +4,8 @@ import { FaVolumeHigh } from 'react-icons/fa6';
 
 const SpgAudio = () => {
   return (
-    <section id="audio-enhancements" className="py-16 px-6">
-      <div className="px-6 py-8">
+    <section id="audio-enhancements" className="px-4 md:px-6 py-16">
+      <div className="md:px-6 py-8">
         {/* Section Heading */}
         <h2 className="font-serif text-4xl font-bold mb-8">5. Audio Processing Enhancements</h2>
 

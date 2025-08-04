@@ -3,8 +3,8 @@ import { FaCogs, FaTools } from "react-icons/fa";
 
 const QtAppUser = () => {
   return (
-    <section id="user-space" className="py-16 px-6">
-      <div className="px-6 py-8">
+    <section id="user-space" className="px-4 md:px-6 py-16">
+      <div className="md:px-6 py-8">
         <h2 className="font-serif text-3xl font-bold mb-8">
           User Space and Init System Optimization
         </h2>

@@ -4,7 +4,7 @@ import { FaCheckCircle, FaQuoteLeft } from "react-icons/fa";
 const EsightTestimonial = () => {
   return (
     <section id="testimonial" className="py-16 bg-gradient-to-r from-slate-50 to-blue-50 px-6">
-      <div className="px-6 py-8">
+      <div className="md:px-6 py-8">
         <div className="mb-12">
           <h2 className="font-serif text-4xl font-bold text-slate-900 mb-6">
             Client Testimonial: Validation of Expertise and Results

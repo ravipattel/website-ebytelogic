@@ -6,7 +6,7 @@ import Yocto from '@/src/assets/images/caseStudy/yocto.jpg'
 const YoctoHero = () => {
   return (
     <section className="px-6 py-12 bg-gradient-to-br from-slate-50 to-blue-50">
-      <div className="px-6 py-8">
+      <div className="md:px-6 py-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Text Block */}
           <div>

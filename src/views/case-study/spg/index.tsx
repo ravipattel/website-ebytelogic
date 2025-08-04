@@ -1,5 +1,5 @@
 import React from "react";
-import CaseStudySidebar from "../../../components/CaseStudySidebar";
+import Sidebar from "../../../components/Sidebar";
 import SpgHero from "./SpgHero";
 import SpgExecutive from "./SpgExecutive";
 import SpgCoreTask from "./SpgCoreTask";
@@ -11,9 +11,9 @@ import SpgDeployment from "./SpgDeployment";
 
 const SpgStudio = () => {
   return (
-    <div className="flex">
+   <div className="lg:flex">
       <div className="w-72 h-fit lg:sticky lg:top-[98px]">
-        <CaseStudySidebar />
+        <Sidebar />
       </div>
       <div className="overflow-y-auto">
         <SpgHero />

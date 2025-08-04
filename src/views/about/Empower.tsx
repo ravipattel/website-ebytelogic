@@ -8,7 +8,8 @@ import { FaArrowRight } from 'react-icons/fa'
 
 import Button from '@/src/components/Button'
 
-import AboutGielPng from '@/src/assets/images/about/aboutGirl.png'
+import AboutUsPng from '@/src/assets/images/about/aboutUs.png'
+import AboutLeftPng from '@/src/assets/images/about/aboutLeft.png'
 import CrossPlatform from '@/src/assets/images/about/crossPlatform.png'
 
 const aboutData = [
@@ -66,8 +67,9 @@ const Empower = () => {
                         </div>
                         <Button onClick={() => router.push('/case-study')} className='flex items-center gap-2 mt-8'>Read More<FaArrowRight /></Button>
                     </div>
-                    <div className='xl:col-span-2'>
-                        <Image src={AboutGielPng} alt='AboutGielPng' width={500} height={590} className='mx-auto' />
+                    <div className='xl:col-span-2 flex flex-col gap-3'>
+                        <Image src={AboutUsPng} alt='AboutUsPng' width={500} height={590} className='mx-auto' />
+                        <Image src={AboutLeftPng} alt='AboutLeftPng' width={500} height={590} className='mx-auto' />
                     </div>
                 </div>
             </div>

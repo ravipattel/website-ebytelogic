@@ -4,8 +4,8 @@ import { FaMicrochip } from 'react-icons/fa6';
 
 const ArmPerformance = () => {
   return (
-    <section id="performance-analysis" className="py-16 px-6 bg-slate-50">
-      <div className="px-6 py-8">
+    <section id="performance-analysis" className="px-4 md:px-6 py-16 bg-slate-50">
+      <div className="md:px-6 py-8">
         <h2 className="font-serif text-4xl font-bold mb-8">
           4. Performance Analysis and Benchmarks
         </h2>

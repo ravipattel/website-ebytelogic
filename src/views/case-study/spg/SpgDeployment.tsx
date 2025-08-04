@@ -3,7 +3,7 @@ import React from 'react';
 const SpgDeployment = () => {
   return (
     <section id="deployment" className="bg-gray-50 py-16 px-6">
-      <div className="px-6 py-8">
+      <div className="md:px-6 py-8">
         {/* Heading */}
         <h2 className="font-serif text-4xl font-bold mb-8">6. Deployment and Environment</h2>
 

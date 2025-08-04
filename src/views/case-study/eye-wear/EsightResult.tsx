@@ -2,8 +2,8 @@ import React from "react";
 
 const EsightResult = () => {
   return (
-    <section id="results" className="py-16 px-6">
-      <div className="px-6 py-8">
+    <section id="results" className="px-4 md:px-6 py-16">
+      <div className="md:px-6 py-8">
         <div className="mb-12">
           <h2 className="font-serif text-4xl font-semibold mb-6">
             Results and Impact: A New Benchmark in Smart Glass Performance

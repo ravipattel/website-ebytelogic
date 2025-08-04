@@ -4,13 +4,13 @@ import React from 'react';
 import { FaGlobe, FaNetworkWired } from 'react-icons/fa';
 import { FaShield } from 'react-icons/fa6';
 
-import NanoPi5 from '@/src/assets/images/caseStudy/nanopi5.png'
+import NanoPi5 from '@/src/assets/images/blogs/blogDetails/nanopi.jpg'
 import Gstreamer from '@/src/assets/images/caseStudy/gstreamer.webp'
 
 const ArmTechnical = () => {
   return (
-    <section id="technical-architecture" className="py-16 px-6">
-      <div className="px-6 py-8">
+    <section id="technical-architecture" className="px-4 md:px-6 py-16">
+      <div className="md:px-6 py-8">
         <h2 className="font-serif text-4xl font-bold text-slate-900 mb-8">
           3. Technical Architecture and Design
         </h2>

@@ -10,43 +10,43 @@ import { SiQase } from "react-icons/si";
 const services = [
   {
     icon: <FaCogs />,
-    title: "Embedded Software Development",
+    title: "Streaming Media Solutions",
     description:
-      "We deliver high-performance firmware and system software in C/C++ for multimedia, industrial, and consumer devices.",
-    showcase: "Reliable code. Faster releases."
+      "End-to-end AV pipeline design using GStreamer, FFMPEG, Live555 — with ±10ms AV sync and support for SRT, NDI, HDMI, SDI, and more.",
+    showcase: "AV pipelines tuned for precision."
   },
   {
     icon: <FaChartLine />,
-    title: "BSP & Board Bring-Up Services",
+    title: "Linux BSP & Board Bring-Up",
     description:
-      "Linux & Android BSP customization with driver integration, device tree, bootloader tuning, and board validation.",
-    showcase: "From bare PCB to boot-ready."
-  },
-  {
-    icon: <MdOutlinePermMedia />,
-    title: "Streaming Media Solutions",
-    description:
-      "End-to-end video/audio pipeline design using GStreamer, FFmpeg, SRT, NDI, HDMI, and SDI on ARM/x86 platforms.",
-    showcase: "AV pipelines engineered for precision."
+      "Custom BSPs for Android & Linux with driver integration, bootloader tuning, device tree config, and secure boot validation.",
+    showcase: "From bare PCB to production-ready."
   },
   {
     icon: <SiQase />,
-    title: "Embedded QA & Test Automation",
-    description: "Automated functional, regression, and performance testing across embedded platforms from AV sync to stability.",
-    showcase: "Test smarter. Ship better."
+    title: "Embedded App Development",
+    description: "High-performance firmware and embedded software in C/C++, Qt & Python — for multimedia, control, and industrial logic.",
+    showcase: "Reliable code. Real-time results."
   },
   {
     icon: <FaCloud />,
-    title: "IoT Connectivity & Cloud Integration",
-    description: "Secure device-to-cloud architecture with MQTT, OTA, REST APIs, and cloud platforms like AWS, Azure, and GCP.",
-    showcase: "Smarter devices. Seamless updates."
+    title: "AV Protocol & Codec Engineering",
+    description: "Protocol handling across HDMI, RTP, RTMP, SRT, and NDI — with FFMPEG/GStreamer codec customization and latency optimization.",
+    showcase: "Built for broadcast-grade delivery."
   },
   {
     icon: <FaHeadset />,
-    title: "Ongoing Engineering Support",
-    description: "We offer feature upgrades, security patching, and long-term maintenance to keep your products current.",
-    showcase: "Sustain innovation with expert backing."
-  }
+    title: "Embedded QA & Test Automation",
+    description: "QA coverage from system-level to streaming-specific automation — with real hardware validation and CI-ready testbeds.",
+    showcase: "Fewer bugs. Faster releases."
+  },
+  {
+    icon: <MdOutlinePermMedia />,
+    title: "IoT & Cloud Integration",
+    description:
+      "Device-to-cloud sync using MQTT, CoAP, and custom APIs — with OTA updates, diagnostics, and secure IoT gateways.",
+    showcase: "Cloud-ready, edge-secure."
+  },
 ];
 
 const Services = () => {
@@ -58,8 +58,8 @@ const Services = () => {
           Professional services
         </h2>
         <p className='text-sm sm:text-[15px] text-[#5d6471] max-w-lg mx-auto mb-4'>
-          We help product teams build scalable, secure, and performance-optimized software for
-          multimedia, IoT, and embedded systems
+          {`We help MediaTech and semiconductor innovators build scalable, secure, and
+production-ready systems — from AV pipelines to BSP-level customization.`}
         </p>
         <div className="flex flex-wrap justify-center gap-5 pt-4">
           {services.map((service, index) => (

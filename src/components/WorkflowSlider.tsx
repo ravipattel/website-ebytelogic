@@ -1,9 +1,12 @@
 "use client"
 import React, { useState, useEffect } from 'react';
-
+import Slider1 from '@/src/assets/images/home/homeSlider/slider1.png'
+import Slider2 from '@/src/assets/images/home/homeSlider/slider2.png'
+import Slider3 from '@/src/assets/images/home/homeSlider/slider3.png'
+import Image from 'next/image';
 interface SlideData {
   id: number;
-  image: string;
+  image: any;
   title: string;
   description: string;
 }
@@ -11,19 +14,19 @@ interface SlideData {
 const slides: SlideData[] = [
   {
     id: 1,
-    image: "/images/multimedia-workflow-transparent.png",
+    image: Slider1,
     title: "Multimedia Workflow",
     description: "End-to-end multimedia processing pipeline from acquisition to delivery"
   },
   {
     id: 2,
-    image: "/images/embedded-architecture.svg",
+    image: Slider2,
     title: "Linux BSP & Board Bring-up",
     description: "Production-grade hardware enablement with scalable embedded systems"
   },
   {
     id: 3,
-    image: "/images/iot-development.svg", 
+    image: Slider3, 
     title: "Low-Latency Streaming",
     description: "Real-time video streaming systems with sub-32ms end-to-end latency"
   }
@@ -82,7 +85,7 @@ const WorkflowSlider: React.FC = () => {
             }`}
           >
             <div className="relative group">
-              <img 
+              <Image 
                 src={slide.image}
                 alt={slide.title}
                 className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"

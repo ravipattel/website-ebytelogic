@@ -10,7 +10,7 @@ const EsightHero = () => {
       id="hero"
       className="flex items-center px-6 py-8 bg-gray-50"
     >
-      <div className="px-6 py-8">
+      <div className="md:px-6 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <div className="mb-6">

@@ -1,5 +1,5 @@
 import React from "react";
-import CaseStudySidebar from "../../../components/CaseStudySidebar";
+import Sidebar from "../../../components/Sidebar";
 import YoctoHero from "./YoctoHero";
 import YoctoExecutive from "./YoctoExecutive";
 import YoctoChallenge from "./YoctoChallenge";
@@ -9,9 +9,9 @@ import YoctoConclusion from "./YoctoConclusion";
 
 const Yocto = () => {
   return (
-    <div className="flex">
+       <div className="lg:flex">
       <div className="w-72 h-fit lg:sticky lg:top-[98px]">
-        <CaseStudySidebar />
+        <Sidebar />
       </div>
       <div className="overflow-y-auto">
         <YoctoHero />

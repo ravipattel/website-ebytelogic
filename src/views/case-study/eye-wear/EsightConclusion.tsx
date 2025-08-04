@@ -2,8 +2,8 @@ import React from "react";
 
 const EsightConclusion = () => {
     return (
-        <section id="conclusion" className="py-16 px-6">
-            <div className="px-6 py-8">
+        <section id="conclusion" className="px-4 md:px-6 py-16">
+            <div className="md:px-6 py-8">
                 <div className="mb-12">
                     <h2 className="font-serif text-4xl font-bold mb-6">
                         Conclusion: Delivering Cutting-Edge Performance for Smart Glass Technology
@@ -11,7 +11,7 @@ const EsightConclusion = () => {
                 </div>
 
                 <div>
-                    <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                    <p className="text-gray-600 leading-relaxed mb-8">
                         This case study exemplifies our capability to{" "}
                         <span className="text-black font-semibold">
                             deliver cutting-edge performance optimizations for complex embedded systems, even under
@@ -43,7 +43,7 @@ const EsightConclusion = () => {
                         </div>
                     </div>
 
-                    <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                    <p className="text-gray-600 leading-relaxed mb-6">
                         This achievement was accomplished within an{" "}
                         <span className="text-black font-semibold">aggressive 20-day timeframe</span>, a testament to our rapid execution and deep
                         technical expertise. The{" "}
@@ -56,7 +56,7 @@ const EsightConclusion = () => {
 
                     <div className="bg-gradient-to-r from-teal-900 to-blue-900 p-8 rounded-lg mb-8">
                         <h3 className="text-2xl font-semibold mb-4 text-white">Transformative Impact</h3>
-                        <p className="text-lg leading-relaxed text-white">
+                        <p className="leading-relaxed text-white">
                             This success, where larger OEMs had previously not met the target, highlights our specialized
                             skills in latency optimization and our commitment to delivering tangible results that
                             significantly enhance product usability and user experience. We{" "}
@@ -66,7 +66,7 @@ const EsightConclusion = () => {
                         </p>
                     </div>
 
-                    <p className="text-lg leading-relaxed">
+                    <p className="text-gray-600 leading-relaxed">
                         This project serves as a span indicator of our ability to tackle complex technical challenges and
                         deliver high-impact solutions for our clients in the smart device and wearable technology sectors.
                         Our expertise in Android framework and HAL customization, combined with innovative problem-solving

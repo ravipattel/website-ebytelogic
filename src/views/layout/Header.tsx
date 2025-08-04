@@ -31,7 +31,7 @@ interface MenuItem {
 
 const menuItems: MenuItem[] = [
   { label: "Home", path: "/" },
-  { label: "Preview", path: "/preview" },
+  // { label: "Preview", path: "/preview" },
   {
     label: "Our Company",
     path: "#",

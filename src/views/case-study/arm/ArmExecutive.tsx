@@ -3,7 +3,7 @@ import React from 'react';
 const ArmExecutive = () => {
   return (
     <section id="executive-summary" className="py-8 px-6 bg-white">
-      <div className="px-6 py-8">
+      <div className="md:px-6 py-8">
         <div className="accent-border pl-6 mb-8">
           <h2 className="font-display text-3xl font-bold text-slate-900 mb-4">Executive Summary</h2>
         </div>

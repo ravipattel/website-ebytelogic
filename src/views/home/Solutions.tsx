@@ -11,19 +11,19 @@ const solutionsData = [
     img: ProjectPng,
     title: "Embedded Engineering Edge",
     description:
-      "From Linux BSPs to AV pipelines, our software is engineered for real-time performance.",
+      "From ultra-low-latency AV pipelines to secure BSP bring-ups, our embedded software delivers real-time performance across MediaTech and semiconductor platforms.",
   },
   {
     img: AnalysisPng,
     title: "Full-Cycle Product Partner",
     description:
-      "We support your product journey from PoC to production with agile, expert teams.",
+      "From proof-of-concept to production, we partner with product teams to build and scale embedded systems—agile, modular, and market-ready.",
   },
   {
     img: TeamPng,
-    title: "Best-of-Stack Expertise",
+    title: "Platform-Aware Expertise",
     description:
-      "We work across Android AOSP, Qt, GStreamer, FFMPEG & more to suit your embedded needs.",
+      "We specialize in GStreamer, FFMPEG, Yocto, Buildroot, and AOSP—offering stack-level integration, protocol handling, and driver tuning for complex systems.",
   },
 ];
 

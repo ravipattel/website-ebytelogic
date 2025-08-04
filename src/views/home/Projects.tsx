@@ -4,8 +4,7 @@ import Image from 'next/image'
 
 import React from 'react'
 
-import SelfPng from '@/src/assets/images/home/self.png'
-import EarthPng from '@/src/assets/images/home/earth.png'
+import ProjectsPng from '@/src/assets/images/home/projects/projects.png'
 import StreamingPng from '@/src/assets/images/home/straming.png'
 import IOt from '@/src/assets/images/home/projects/internet-of-things.png'
 import ElectricalPng from '@/src/assets/images/home/projects/electrical.png'
@@ -25,8 +24,16 @@ const Projects = () => {
             <div className='max-w-[1400px] mx-auto px-4 sm:px-6 overflow-hidden'>
                 <div className="pt-36 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-8 items-end">
                     <div className='relative'>
-                        <Image src={SelfPng} alt="SelfPng" width={505} height={404} className='mx-auto relative z-10 lg:h-96 lg:w-96 xl:w-auto xl:h-auto' />
-                        <Image src={EarthPng} alt="EarthPng" width={505} height={404} className='mx-auto opacity-25 absolute -top-24 lg:-top-11 xl:-top-16 left-0 md:left-36 lg:left-6 z-0 spin-slow lg:h-96 lg:w-96 xl:w-auto xl:h-auto' />
+                        {/* <Image src={SelfPng} alt="SelfPng" width={505} height={404} className='mx-auto relative z-10 lg:h-96 lg:w-96 xl:w-auto xl:h-auto' />
+                        <Image src={EarthPng} alt="EarthPng" width={505} height={404} className='mx-auto opacity-25 absolute -top-24 lg:-top-11 xl:-top-16 left-0 md:left-36 lg:left-6 z-0 spin-slow lg:h-96 lg:w-96 xl:w-auto xl:h-auto' /> */}
+                        <Image
+                            src={ProjectsPng}
+                            alt="ProjectsPng"
+                            width={1152}
+                            height={768}
+                            className="w-full h-auto"
+                            priority
+                        />
                     </div>
                     <div className='grid grid-cols-1 sm:grid-cols-2 gap-7'>
                         {stats.map((stat, index) => (

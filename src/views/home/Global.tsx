@@ -3,51 +3,51 @@ import Image from 'next/image';
 import React from 'react'
 import { FaCalendarAlt, } from 'react-icons/fa';
 
-import WearablesJpg from '@/src/assets/images/home/wearables.jpg';
-import StreamingJpg from '@/src/assets/images/home/streaming.jpg';
-import SemiconductorsJpeg from '@/src/assets/images/home/semiconductors.jpeg';
-import FirelineJpg from '@/src/assets/images/home/fireline.jpg';
-import AerospaceAvif from '@/src/assets/images/home/aerospace.webp';
-import IotJpg from '@/src/assets/images/home/iot.jpeg';
+import WearablesPng from '@/src/assets/images/home/industry/wearables.png';
+import StreamingPng from '@/src/assets/images/home/industry/streaming.png';
+import SemiconductorsPng from '@/src/assets/images/home/industry/semiconductors.png';
+import FirelinePng from '@/src/assets/images/home/industry/fireline.png';
+import AerospacePng from '@/src/assets/images/home/industry/aerospace.png';
+import IotJpeg from '@/src/assets/images/home/industry/iot.jpeg';
 
 const globalCards = [
     {
-        image: WearablesJpg,
+        image: WearablesPng,
         title: 'Wearables & Smart Devices',
         description: 'Seamless connectivity and real-time UX for smart, battery-efficient wearables.',
         date: '20 July, 2019',
         tags: ['BLE firmware', 'mobile app integration', 'OTA support'],
     },
     {
-        image: StreamingJpg,
+        image: StreamingPng,
         title: 'Media Broadcasting & Streaming',
         description: 'Low-latency GStreamer/FFmpeg pipelines for AV sync and embedded video delivery',
         date: '13 May, 2018',
         tags: ['SDI', 'HDMI', 'NDI', 'SRT', 'macOS & Linux support'],
     },
     {
-        image: SemiconductorsJpeg,
+        image: SemiconductorsPng,
         title: 'Semiconductor & BSP Services',
         description: 'Accelerated SoC development with Linux BSP, Android HAL, and driver integration.',
         date: '24 April, 2019',
         tags: ['Rockchip', 'i.MX', 'U-Boot', 'Android Porting'],
     },
     {
-        image: FirelineJpg,
+        image: FirelinePng,
         title: 'Fire Safety & Industrial Panels',
         description: 'Mission-critical HMI systems with QT/C++ for industrial and safety applications.',
         date: '18 Oct, 2020',
         tags: ['Serial/CAN protocols', 'alarm systems', 'touchscreen UX'],
     },
     {
-        image: AerospaceAvif,
+        image: AerospacePng,
         title: 'Aerospace, Drones & Remote Imaging',
         description: 'Embedded video processing from camera capture to real-time network streaming.',
         date: '08 Jan, 2023',
         tags: ['V4L2', 'FFmpeg', 'remote sensing', 'data sync'],
     },
     {
-        image: IotJpg,
+        image: IotJpeg,
         title: 'IoT & Edge Devices',
         description: 'Connected systems built for control, analytics, and remote updates.',
         date: '25 Dec, 2022',

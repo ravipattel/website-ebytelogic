@@ -5,9 +5,9 @@ import React, { useState } from 'react';
 import { GoCheckCircleFill } from 'react-icons/go';
 
 import LinuxJpeg from '@/src/assets/images/home/development/linux.jpeg';
-import StreamingJpg from '@/src/assets/images/home/development/streaming.jpg';
-import CrossPlatformJpg from '@/src/assets/images/home/development/crossPlatform.jpg';
-import QaJpg from '@/src/assets/images/home/development/qa.jpg';
+import StreamingJpg from '@/src/assets/images/home/development/streaming.png';
+import CrossPlatformPng from '@/src/assets/images/home/development/crossPlatform.png';
+import QaPng from '@/src/assets/images/home/development/QA engineering & Support.png';
 
 const tabContents = [
     {
@@ -38,7 +38,7 @@ const tabContents = [
     },
     {
         tab: "Cross-Platform App Development",
-        image: CrossPlatformJpg,
+        image: CrossPlatformPng,
         title: "Unified Experience Across Devices",
         description: "Used to demonstrate the appearance of different typefaces and layouts, and in general the content of dummy text is nonsensical. text is also used to demonstrate the appearance of different typefaces and layouts, and in general the content of dummy text is nonsensical",
         points: [
@@ -51,7 +51,7 @@ const tabContents = [
     },
     {
         tab: "QA Engineering & Support",
-        image: QaJpg,
+        image: QaPng,
         title: "Stability You Can Launch With",
         description: "Dummy text is also used. used to demonstrate the appearance of different typefaces and layouts, and in general the content of dummy text is nonsensica to demonstrate the appearance of different typefaces and layouts, and in general the content of dummy text is nonsensical.",
         points: [
@@ -70,7 +70,7 @@ const Development = () => {
     const activeContent = tabContents[activeTab];
 
     return (
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-16 sm:py-28">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-4 px-6 py-16 sm:py-28">
             <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-center gap-3">
                 {tabContents.map((tab, index) => (
                     <li key={index} className="w-full">
@@ -87,7 +87,7 @@ const Development = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 gap-8 pt-8'>
                 <div>
-                    <Image src={activeContent.image} alt={activeContent.title} height={416} width={555} className="w-full sm:h-[220px] rounded-lg mx-auto" />
+                    <Image src={activeContent.image} alt={activeContent.title} height={416} width={555} className="w-full sm:h-[220px] rounded-lg mx-auto object-cover" />
                 </div>
                 <div className='space-y-5'>
                     <h2 className='text-primaryText text-xl sm:text-3xl'>{activeContent.title}</h2>

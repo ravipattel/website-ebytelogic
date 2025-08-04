@@ -2,8 +2,8 @@ import React from "react";
 
 const YoctoConclusion = () => {
   return (
-    <section id="conclusion" className="py-16 px-6 bg-gray-50">
-      <div className="px-6 py-8">
+    <section id="conclusion" className="px-4 md:px-6 py-16 bg-gray-50">
+      <div className="md:px-6 py-8">
         <h2 className="serif text-3xl font-semibold mb-8">
           Conclusion: Yocto Powered Efficiency in Embedded Development
         </h2>

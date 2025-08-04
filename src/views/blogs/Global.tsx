@@ -8,139 +8,55 @@ import { FaCalendarAlt } from 'react-icons/fa';
 
 import Button from '@/src/components/Button';
 
-import CreativeDesignsJpg from '@/src/assets/images/home/creativeDesigns.jpg'
-import ConsultancyJpg from '@/src/assets/images/home/consultancy.jpg'
-import BussinessJpg from '@/src/assets/images/home/bussiness.jpg'
-import SolarJpg from '@/src/assets/images/home/solar.jpg';
-import ProcurementJpg from '@/src/assets/images/home/procurement.jpg';
-import BenefitsJpg from '@/src/assets/images/home/benefits.jpg';
+import SomSocJpg from '@/src/assets/images/blogs/blogDetails/som-soc.jpg'
+import QaHeroJpg from '@/src/assets/images/blogs/blogDetails/qaHero.jpg'
+import DevGuideHeroPng from '@/src/assets/images/blogs/blogDetails/devGuideHero.png'
+import MultiviewerJpg from '@/src/assets/images/blogs/blogDetails/multiviewer.jpg'
+import GstreamerJpg from '@/src/assets/images/blogs/blogDetails/g-streamer.jpg'
+import ButtonDbounceWebp from '@/src/assets/images/blogs/blogDetails/buttonDebounce.webp'
 
 const globalCards = [
     {
-        image: CreativeDesignsJpg,
-        title: 'Creative design clients response is better',
+        image: SomSocJpg,
+        title: 'Introduction to SoC and SoM',
         author: 'Admin',
         date: '20 July, 2019',
-        comments: 13,
+        route: "/blogs/som-soc"
     },
     {
-        image: ConsultancyJpg,
-        title: 'Web development is a best work in future world',
+        image: QaHeroJpg,
+        title: 'The Unique World of Embedded QA',
         author: 'Admin',
         date: '13 May, 2018',
-        comments: 16,
+        route: "/blogs/qa"
     },
     {
-        image: BussinessJpg,
-        title: 'You can trust me and business with together',
+        image: DevGuideHeroPng,
+        title: 'RK3588 Multimedia Development Guide',
         author: 'Admin',
         date: '24 April, 2019',
-        comments: 10,
+        route: "/blogs/rk3588-guide"
     },
     {
-        image: SolarJpg,
-        title: 'business man want to be benifit any way',
+        image: MultiviewerJpg,
+        title: 'Multiviewer Smack-down',
         author: 'Admin',
         date: '18 Oct, 2020',
-        comments: 17,
+        route: "/blogs/multiviewer"
     },
     {
-        image: ProcurementJpg,
-        title: 'Procurement trends for digital era',
+        image: GstreamerJpg,
+        title: `eByteLogic's Approach to GStreamer`,
         author: 'Admin',
         date: '08 Jan, 2023',
-        comments: 5,
+        route: "/blogs/g-streamer"
     },
     {
-        image: BenefitsJpg,
-        title: 'Benefits of cloud-first IT strategy',
-        author: 'Admin',
-        date: '25 Dec, 2022',
-        comments: 9,
-    },
-    {
-        image: ConsultancyJpg,
-        title: 'Web development is a best work in future world',
-        author: 'Admin',
-        date: '13 May, 2018',
-        comments: 16,
-    },
-    {
-        image: BussinessJpg,
-        title: 'You can trust me and business with together',
-        author: 'Admin',
-        date: '24 April, 2019',
-        comments: 10,
-    },
-    {
-        image: SolarJpg,
-        title: 'business man want to be benifit any way',
-        author: 'Admin',
-        date: '18 Oct, 2020',
-        comments: 17,
-    },
-    {
-        image: ProcurementJpg,
-        title: 'Procurement trends for digital era',
+        image: ButtonDbounceWebp,
+        title: 'Button Debounce Methods: A Comprehensive Guide to Reliable Input',
         author: 'Admin',
         date: '08 Jan, 2023',
-        comments: 5,
-    },
-    {
-        image: BenefitsJpg,
-        title: 'Benefits of cloud-first IT strategy',
-        author: 'Admin',
-        date: '25 Dec, 2022',
-        comments: 9,
-    },
-    {
-        image: ProcurementJpg,
-        title: 'Procurement trends for digital era',
-        author: 'Admin',
-        date: '08 Jan, 2023',
-        comments: 5,
-    },
-    {
-        image: BenefitsJpg,
-        title: 'Benefits of cloud-first IT strategy',
-        author: 'Admin',
-        date: '25 Dec, 2022',
-        comments: 9,
-    },
-    {
-        image: ConsultancyJpg,
-        title: 'Web development is a best work in future world',
-        author: 'Admin',
-        date: '13 May, 2018',
-        comments: 16,
-    },
-    {
-        image: BussinessJpg,
-        title: 'You can trust me and business with together',
-        author: 'Admin',
-        date: '24 April, 2019',
-        comments: 10,
-    },
-    {
-        image: SolarJpg,
-        title: 'business man want to be benifit any way',
-        author: 'Admin',
-        date: '18 Oct, 2020',
-        comments: 17,
-    },
-    {
-        image: ProcurementJpg,
-        title: 'Procurement trends for digital era',
-        author: 'Admin',
-        date: '08 Jan, 2023',
-        comments: 5,
-    },
-    {
-        image: BenefitsJpg,
-        title: 'Benefits of cloud-first IT strategy',
-        author: 'Admin',
-        date: '25 Dec, 2022',
-        comments: 9,
+        route: "/blogs/button-debounce"
     },
 ];
 
@@ -171,8 +87,8 @@ const Global = () => {
                 </p>
                 <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pt-4'>
                     {currentCards.map((card, index) => (
-                        <div key={index} onClick={() => router.push("/blogs/blog-details")} className="cursor-pointer bg-white border border-gray-200 shadow-[rgba(0,0,0,0.1)_0px_5px_25px] flex flex-col">
-                            <Image src={card.image} alt={card.title} className="object-cover" />
+                        <div key={index} onClick={() => router.push(card.route)} className="cursor-pointer bg-white border border-gray-200 shadow-[rgba(0,0,0,0.1)_0px_5px_25px] flex flex-col">
+                            <Image src={card.image} alt={card.title} className={`object-fill w-[436px] h-[363px]`} />
                             <div className="space-y-4 text-primaryText p-7">
                                 <div className="flex items-center gap-1">
                                     <FaCalendarAlt className="text-primary text-sm" />

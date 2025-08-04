@@ -3,7 +3,7 @@ import React from 'react';
 const YoctoExecutive = () => {
   return (
     <section id="executive-summary" className="py-8 px-6">
-      <div className="px-6 py-8">
+      <div className="md:px-6 py-8">
         <h2 className="serif text-3xl font-semibold mb-8">Executive Summary</h2>
 
         <div className="highlight-box mb-10">

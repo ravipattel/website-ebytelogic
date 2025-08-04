@@ -3,8 +3,8 @@ import { FaCheckCircle } from "react-icons/fa";
 
 const QtAppIntro = () => {
   return (
-    <section id="introduction" className="py-16 px-6">
-      <div className="px-6 py-8">
+    <section id="introduction" className="px-4 md:px-6 py-16">
+      <div className="md:px-6 py-8">
         <h2 className="font-serif text-3xl font-bold mb-8">
           The Challenge of Fast Boot Times
         </h2>

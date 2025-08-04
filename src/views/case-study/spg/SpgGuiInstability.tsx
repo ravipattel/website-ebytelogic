@@ -2,8 +2,8 @@ import React from 'react';
 
 const SpgGuiInstability = () => {
   return (
-    <section id="gui-stability" className="py-16 px-6">
-      <div className="px-6 py-8">
+    <section id="gui-stability" className="px-4 md:px-6 py-16">
+      <div className="md:px-6 py-8">
         {/* Section Title */}
         <h2 className="font-serif text-4xl font-bold mb-8">
           3. Diagnosing and Resolving GUI Instability

@@ -4,8 +4,8 @@ import Oled from '@/src/assets/images/caseStudy/oled.jpg'
 
 const EsightTechnical = () => {
   return (
-    <section id="technical-details" className="py-16 px-6 bg-slate-50">
-      <div className="px-6 py-8">
+    <section id="technical-details" className="px-4 md:px-6 py-16 bg-slate-50">
+      <div className="md:px-6 py-8">
         <div className="mb-12">
           <h2 className="font-serif text-4xl font-bold mb-6">
             Technical Details of the Latency Optimization

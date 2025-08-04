@@ -2,8 +2,8 @@ import React from 'react';
 
 const QtAppHardware = () => {
   return (
-    <section id="hardware" className="py-16 px-6">
-      <div className="px-6 py-8">
+    <section id="hardware" className="px-4 md:px-6 py-16">
+      <div className="md:px-6 py-8">
         <h2 className="font-serif text-3xl font-bold mb-8">
           Hardware and Platform Specific Considerations
         </h2>

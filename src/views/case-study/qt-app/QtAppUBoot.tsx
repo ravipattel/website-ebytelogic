@@ -3,8 +3,8 @@ import { FaClock, FaCut, FaDownload } from "react-icons/fa";
 
 const QtAppUBoot = () => {
   return (
-    <section id="u-boot" className="py-16 px-6">
-      <div className="px-6 py-8">
+    <section id="u-boot" className="px-4 md:px-6 py-16">
+      <div className="md:px-6 py-8">
         <h2 className="font-serif text-3xl font-bold mb-8">
           U-Boot Optimization Strategies
         </h2>

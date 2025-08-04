@@ -5,7 +5,7 @@ import QtApp from '@/src/assets/images/caseStudy/qtApp.jpg'
 const QtAppHero = () => {
   return (
     <section className="hero-gradient text-white relative overflow-hidden px-6">
-      <div className="px-6 py-8">
+      <div className="md:px-6 py-8">
         <div className="grid grid-cols-5 gap-4">
           <div className="bento-main relative col-span-4">
             <Image

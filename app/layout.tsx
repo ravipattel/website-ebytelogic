@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 
 import Header from "@/src/views/layout/Header";
 
-import "@/src/assets/css/globals.css";
+import "@/src/assets/css/globals.css"
+
 import Footer from "@/src/views/layout/Footer";
 import TopButton from "@/src/components/TopButton";
 import Loader from "@/src/components/Loader";
-import Script from "next/script";
+import Tawk from "@/src/components/tawk";
+
 // import { Poppins } from 'next/font/google'
 <link
   rel="shortcut icon"
@@ -43,44 +45,14 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet"
         />
-
-        {/* Microsoft Clarity */}
-        <Script
-          id="clarity-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(c,l,a,r,i,t,y){ 
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i; 
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "smd3oiuiik");`,
-          }}
-        />
-
-        {/* Tawk.to Chat Widget */}
-        <Script
-          id="tawkto-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-              (function(){
-                var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-                s1.async=true;
-                s1.src='https://embed.tawk.to/6888b575a7e9db192a60e65b/1j1b09lf0';
-                s1.charset='UTF-8';
-                s1.setAttribute('crossorigin','*');
-                s0.parentNode.insertBefore(s1,s0);
-              })();
-            `,
-          }}
-        />      </head>
+     </head>
       <body>
         <Loader>
           <Header />
           <main>{children}</main>
           <Footer />
           <TopButton />
+           <Tawk />
         </Loader>
       </body>
     </html>

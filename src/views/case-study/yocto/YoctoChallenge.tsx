@@ -2,8 +2,8 @@ import React from 'react';
 
 const YoctoChallenge = () => {
   return (
-    <section id="the-challenge" className="py-16 px-6">
-      <div className="px-6 py-8">
+    <section id="the-challenge" className="px-4 md:px-6 py-16">
+      <div className="md:px-6 py-8">
         <h2 className="serif text-3xl font-semibold mb-8">
           The Challenge: Tight Timelines for EW24 Demonstration
         </h2>

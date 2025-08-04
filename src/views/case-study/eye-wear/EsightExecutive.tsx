@@ -2,8 +2,8 @@ import React from "react";
 
 const EsightExecutive = () => {
   return (
-    <section id="executive-summary" className="py-16 px-6">
-      <div className="px-6 py-8">
+    <section id="executive-summary" className="px-4 md:px-6 py-16">
+      <div className="md:px-6 py-8">
         <div className="mb-12">
           <span className="inline-block px-4 py-2 bg-blue-100 text-blue-800 text-sm font-medium rounded-full mb-4">
             Executive Summary

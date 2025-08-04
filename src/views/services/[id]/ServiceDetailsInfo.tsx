@@ -360,7 +360,7 @@ const serviceData = [
         category: "Middleware SDK & Framework Customization",
         imageName: SdkWebp,
         bannerImage: "/images/middleware-sdkBanner.webp",
-        overviewImage: "/images/aboutBanner.jpg",
+        overviewImage: "/images/aboutBanner.png",
         overview: "eByteLogic offers deep expertise in customizing middleware layers and building Software Development Kits (SDKs) that simplify application development over complex embedded systems. Whether you're working with multimedia, connectivity stacks, or board-level abstraction layers — we build reliable frameworks and modular APIs that accelerate integration and deployment.",
         capabilities: [
             {

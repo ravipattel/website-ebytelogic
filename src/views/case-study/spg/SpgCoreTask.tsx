@@ -2,8 +2,8 @@ import React from 'react';
 
 const SpgCoreTask = () => {
   return (
-    <section id="core-task" className="py-16 px-6">
-      <div className="px-6 py-8">
+    <section id="core-task" className="px-4 md:px-6 py-16">
+      <div className="md:px-6 py-8">
         {/* Section Heading */}
         <h2 className="font-serif text-4xl font-bold mb-8">
           1. Core Task: NDI Integration and GUI Stability

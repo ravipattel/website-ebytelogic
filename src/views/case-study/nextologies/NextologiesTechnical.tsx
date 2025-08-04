@@ -1,7 +1,8 @@
+import Image from 'next/image';
 import React from 'react';
 import { FaAd, FaClosedCaptioning, FaCloud, FaMicrochip, FaServer, FaTag } from 'react-icons/fa';
 import { FaHardDrive } from 'react-icons/fa6';
-
+import NextologiesTechnicalJpg from '@/src/assets/images/caseStudy/nextologiesTechnical.jpg'
 const NextologiesTechnical = () => {
   return (
     <section id="technical-innovation" className="py-16 bg-white">
@@ -39,10 +40,10 @@ const NextologiesTechnical = () => {
               </div>
             </div>
             <div>
-              <img
-                src="https://kimi-web-img.moonshot.cn/img/www.raritan.com/e32c8f1dbec96ae4cb9381d14fe7e69792968a0a.jpg"
+              <Image
+                src={NextologiesTechnicalJpg}
                 alt="Broadcast server room"
-                className="w-full h-80 object-cover rounded-lg shadow-lg"
+                className="w-full object-cover rounded-lg shadow-lg"
               />
             </div>
           </div>

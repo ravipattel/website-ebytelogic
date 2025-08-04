@@ -9,13 +9,13 @@ import { MdOutlineMiscellaneousServices } from 'react-icons/md'
 
 import Button from '@/src/components/Button'
 
-import WearablesAvif from '@/src/assets/images/industry/wearables.avif'
-import MediaJpg from '@/src/assets/images/industry/media.webp'
-import MotherBoardJpg from '@/src/assets/images/industry/motherboard.jpg'
-import PanelJpg from '@/src/assets/images/industry/panel.jpeg'
-import IotJpg from '@/src/assets/images/industry/iot.jpg'
+import wearablesPng from '@/src/assets/images/industry/industryWearables.png'
+import MediaPng from '@/src/assets/images/industry/industryMedia.png'
+import MotherBoardPng from '@/src/assets/images/industry/industrySemiconductor.png'
+import FirelinePng from '@/src/assets/images/home/industry/fireline.png';
+import IotPng from '@/src/assets/images/industry/iotAutomation.png'
 import AerospaceJpg from '@/src/assets/images/industry/aerospace.jpg'
-import HeroIotJPg from '@/src/assets/images/industry/heroIot.jpg'
+import HeroIotPng from '@/src/assets/images/industry/heroIot.png'
 
 
 const industries = [
@@ -39,7 +39,7 @@ const industries = [
             "iOS/Android app sync QA and connectivity testing",
             "UX-tuned device-to-app experience"
         ],
-        image: WearablesAvif,
+        image: wearablesPng,
         success: '✔ Reduced field issues and faster time-to-market for consumer launches.'
     },
     {
@@ -62,7 +62,7 @@ const industries = [
             "±10ms AV sync tuning on x86 & ARM",
             "Low-latency decoding and video wall support"
         ],
-        image: MediaJpg,
+        image: MediaPng,
         success: '✔ Deployed in drone camera systems, video switchers, and broadcast encoders.'
     },
     {
@@ -86,7 +86,7 @@ const industries = [
             "Linux/Android kernel adaptation & driver integration",
             "Production image and factory-ready partitioning"
         ],
-        image: MotherBoardJpg,
+        image: MotherBoardPng,
         success: '✔ Trusted by ODMs for production firmware & board bring-up.'
     },
     {
@@ -109,7 +109,7 @@ const industries = [
             "Fast boot, watchdogs, and safe OTA logic",
             "Application preload as system apps"
         ],
-        image: PanelJpg,
+        image: FirelinePng,
         success: '✔ Running in 24/7 industrial environments across Europe.'
     },
     {
@@ -132,7 +132,7 @@ const industries = [
             "Peripheral driver integration (CAN, SPI, GPIO)",
             "Cloud integration readiness"
         ],
-        image: IotJpg,
+        image: IotPng,
         success: '✔ Delivered for energy monitoring, protocol bridging, and gateway systems.'
     },
     {
@@ -189,11 +189,12 @@ const IndustryCards = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-3 ">
                     <div>
                         <h1 className="text-2xl sm:text-[34px] font-medium leading-tight capitalize mb-2">
-                            Embedded & IoT Solutions <span className='text-primary'>Tailored</span> for Your Industry
+                            <span className='text-primary'>Tailored Embedded Solutions</span> for Streaming, Silicon & Smart Devices
                         </h1>
                         <p className="mt-6 text-gray-700 text-sm sm:text-base max-w-2xl mx-auto">
-                            From wearables to industrial gateways, we bring deep domain knowledge to build secure,
-                            scalable, and production-ready software for your market.
+                            We specialize in high-performance software for product innovators in MediaTech,
+                            Semiconductors, IoT, and Wearables — delivering faster AV sync, reliable board bring-up,
+                            and scalable integration.
                         </p>
                         <div className="mt-10 flex flex-wrap items-center justify-center gap-8">
                             <Button onClick={() => router.push('/contact-us')} className='px-6 py-3'>
@@ -210,11 +211,11 @@ const IndustryCards = () => {
                     </div>
                     <div>
                         <Image
-                            src={HeroIotJPg}
+                            src={HeroIotPng}
                             alt="Embedded Solutions Hero"
                             width={600}
-                            height={400}
-                            className="w-full h-auto object-cover mt-8 sm:mt-0"
+                            height={327}
+                            className="w-full h-80 object-cover mt-8 sm:mt-0 rounded-lg"
                             priority
                             loading="eager"
                         />

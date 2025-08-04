@@ -3,8 +3,8 @@ import { FaClock, FaCode, FaLightbulb } from "react-icons/fa";
 
 const EsightSolution = () => {
   return (
-    <section id="solution" className="py-16 px-6">
-      <div className="px-6 py-8">
+    <section id="solution" className="px-4 md:px-6 py-16">
+      <div className="md:px-6 py-8">
         <div className="mb-12">
           <h2 className="font-serif text-4xl font-bold mb-6">
             Our Solution: Android Framework and HAL Customization Expertise

@@ -8,7 +8,7 @@ const NextologiesIntro = () => {
       <div className='bg-gray-50 p-6'>
         <div>
           <h2 className="font-serif text-4xl font-bold text-brand-navy mb-8">Introduction</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12 items-center">
             <div>
               <h3 className="font-serif text-2xl font-bold text-brand-navy mb-4">
                 Challenges in Professional Video Transport
@@ -59,7 +59,7 @@ const NextologiesIntro = () => {
               <Image
                 src={ControlRoom}
                 alt="Professional broadcast control room"
-                className="w-full h-64 object-cover rounded-lg shadow-lg"
+                className="w-full object-cover rounded-lg shadow-lg"
               />
             </div>
           </div>

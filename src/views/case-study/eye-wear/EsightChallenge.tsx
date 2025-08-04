@@ -2,8 +2,8 @@ import React from "react";
 
 const EsightChallenge = () => {
   return (
-    <section id="challenge" className="py-16 px-6 bg-slate-50">
-      <div className="px-6 py-8">
+    <section id="challenge" className="px-4 md:px-6 py-16 bg-slate-50">
+      <div className="md:px-6 py-8">
         <div className="mb-12">
           <h2 className="font-serif text-4xl font-bold mb-6">
             The Challenge: High Latency in eSightEyewear&apos;s Smart Glass
