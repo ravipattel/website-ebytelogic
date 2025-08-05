@@ -73,7 +73,7 @@ const ContactDetails = () => {
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.9672021225238!2d72.86509362429975!3d21.233149130223257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04fde33b05dcf%3A0x1d331b2a1edb7fbc!2sCyber%20City!5e0!3m2!1sen!2sin!4v1750681452261!5m2!1sen!2sin" width="100%"
                             height="210"
                             loading="lazy"></iframe>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.9672021225238!2d72.86509362429975!3d21.233149130223257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04fde33b05dcf%3A0x1d331b2a1edb7fbc!2sCyber%20City!5e0!3m2!1sen!2sin!4v1750681452261!5m2!1sen!2sin" width="100%"
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3669.5486502562144!2d72.53816832617801!3d23.11361272911007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e82db3e5d2fab%3A0xcee716cdd8325a18!2seByteLogic!5e0!3m2!1sen!2sin!4v1754375465545!5m2!1sen!2sin" width="100%"
                             height="210"
                             loading="lazy"></iframe>
                     </div>
@@ -89,7 +89,9 @@ const ContactDetails = () => {
                             <HiOutlineLocationMarker className='!w-7 !h-7 mt-0.5 text-primary' />
                             <div>
                                 <h4 className='text-primaryText font-semibold text-base md:text-lg'>Ahmedabad Office</h4>
-                                <span className='text-[#5d6471] text-sm md:text-[15px]'>4th Floor, ABC Tech Park, Satellite, Ahmedabad – 380015</span>
+                                <span className='text-[#5d6471] text-sm md:text-[15px]'>1114, Ganesh Glory, Jagatpur Rd,
+                                    S.G. Highway, Gota,
+                                    Ahmedabad - 382481</span>
                             </div>
                         </div>
                         <div className="flex items-start gap-3">

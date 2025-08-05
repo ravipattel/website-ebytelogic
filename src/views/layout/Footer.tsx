@@ -66,7 +66,9 @@ const Footer = () => {
                             </div>
                             <div className='xl:col-span-3 md:col-span-1 space-y-4'>
                                 <h3 className="font-medium text-primaryText text-xl mb-3">Get in Touch</h3>
-                                <p className="mb-2 text-primaryText text-sm sm:text-[15px]"><span className="font-medium text-primary">Location</span> :  B-201, IT Tower, Rajkot, India – 360001</p>
+                                <p className="mb-2 text-primaryText text-sm sm:text-[15px]"><span className="font-medium text-primary">Location</span> :
+                                    {` 913, Silver Trade Center, between Moon Garden & Oxygen Garden,
+                                    (DIGITAL VALLEY) Utran, Surat-394105`}</p>
                                 <p className="mb-2 text-primaryText text-sm sm:text-[15px] py-3"><span className="font-medium text-primary">Tel</span> : +91-9876543210</p>
                                 <p className="mb-4 text-primaryText text-sm sm:text-[15px]"><span className="font-medium text-primary">Email</span> :  hello@ebyteLogic.com</p>
 
