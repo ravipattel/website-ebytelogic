@@ -41,12 +41,12 @@ const menuItems: MenuItem[] = [
         label: "Services",
         path: "/services",
         subItems: [
-          { icon: SoftwareIconPng, label: "Embedded Software", path: "/services/0" },
-          { icon: LinuxIconPng, label: "Linux BSP & Android", path: "/services/1" },
-          { icon: FrameworkIconPng, label: "Multimedia Framework", path: "/services/2" },
-          { icon: AndroidIconPng, label: "Mobile App Development", path: "/services/3" },
-          { icon: QaIconPng, label: "QA & Validation", path: "/services/4" },
-          { icon: SdkIconPng, label: "Middleware SDK", path: "/services/5" },
+          { icon: SoftwareIconPng, label: "Embedded App Development", path: "/services/0" },
+          { icon: LinuxIconPng, label: "Linux BSPs & Hardware Bring-Up", path: "/services/1" },
+          { icon: FrameworkIconPng, label: "Multimedia & Streaming Frameworks", path: "/services/2" },
+          { icon: AndroidIconPng, label: "IoT & Cloud Integration", path: "/services/3" },
+          { icon: QaIconPng, label: "Embedded QA & Test Automation", path: "/services/4" },
+          { icon: SdkIconPng, label: "AV Protocol & Codec Engineering", path: "/services/5" },
         ],
       },
       { label: "Blogs", path: "/blogs" },
@@ -141,7 +141,7 @@ const Header = () => {
                               {subItem.label}
                             </Link>
                             {subItem.subItems && (
-                              <ul className="absolute left-52 top-0 ml-2 w-64 bg-white shadow-lg border-t-4 border-primary opacity-0 group-hover/services:opacity-100 invisible group-hover/services:visible transition-all duration-300 ease-in-out rounded-md p-4 space-y-3 z-50">
+                              <ul className="absolute left-52 top-0 ml-2 w-72 bg-white shadow-lg border-t-4 border-primary opacity-0 group-hover/services:opacity-100 invisible group-hover/services:visible transition-all duration-300 ease-in-out rounded-md p-4 space-y-3 z-50">
                                 {subItem.subItems.map((childItem, childIndex) => (
                                   <li key={childIndex}>
                                     <Link

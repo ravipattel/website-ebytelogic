@@ -69,7 +69,7 @@ const services = [
 const Services = () => {
   const router = useRouter();
   return (
-    <section id="services" className="py-16 sm:py-28 bg-[#f5f8fb]">
+    <section id="services" className="py-16 sm:pb-28 bg-[#f5f8fb]">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 text-center space-y-4">
         <h2 className="text-2xl sm:text-[34px] font-medium text-primaryText leading-tight">
           What We Do

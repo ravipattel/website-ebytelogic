@@ -70,7 +70,7 @@ const Footer = () => {
                                     {` 913, Silver Trade Center, between Moon Garden & Oxygen Garden,
                                     (DIGITAL VALLEY) Utran, Surat-394105`}</p>
                                 <p className="mb-2 text-primaryText text-sm sm:text-[15px] py-3"><span className="font-medium text-primary">Tel</span> : +91-9876543210</p>
-                                <p className="mb-4 text-primaryText text-sm sm:text-[15px]"><span className="font-medium text-primary">Email</span> :  hello@ebyteLogic.com</p>
+                                <p className="mb-4 text-primaryText text-sm sm:text-[15px]"><span className="font-medium text-primary">Email</span> :  sales@ebyteLogic.com</p>
 
                                 <div className="flex space-x-3">
                                     <Button variant='default' className="bg-primary rounded h-8 w-8 !p-0 grid place-items-center"><FaLinkedinIn /></Button>

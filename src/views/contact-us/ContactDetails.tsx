@@ -79,14 +79,14 @@ const ContactDetails = () => {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="flex items-start gap-3">
-                            <HiOutlineLocationMarker className='!w-7 !h-7 mt-0.5 text-primary' />
+                            <HiOutlineLocationMarker className='!w-10 !h-10 mt-0.5 text-primary' />
                             <div>
                                 <h4 className='text-primaryText font-semibold text-base md:text-lg'>Surat Office</h4>
                                 <span className='text-[#5d6471] text-sm md:text-[15px]'>913, Silver Trade Center, near VIP Circle, Mota Varachha, Surat, Gujarat 394101</span>
                             </div>
                         </div>
                         <div className="flex items-start gap-3">
-                            <HiOutlineLocationMarker className='!w-7 !h-7 mt-0.5 text-primary' />
+                            <HiOutlineLocationMarker className='!w-10 !h-10 mt-0.5 text-primary' />
                             <div>
                                 <h4 className='text-primaryText font-semibold text-base md:text-lg'>Ahmedabad Office</h4>
                                 <span className='text-[#5d6471] text-sm md:text-[15px]'>1114, Ganesh Glory, Jagatpur Rd,
@@ -95,17 +95,17 @@ const ContactDetails = () => {
                             </div>
                         </div>
                         <div className="flex items-start gap-3">
-                            <BiPhoneCall className='!w-7 !h-7 mt-0.5 text-primary' />
+                            <BiPhoneCall className='!w-5 !h-5 mt-0.5 text-primary' />
                             <div>
                                 <h4 className='text-primaryText font-semibold text-base md:text-lg'>Calling Support</h4>
-                                <span className='text-[#5d6471] text-sm md:text-[15px]'>+91-9876543210</span>
+                                <span className='text-[#5d6471] text-sm md:text-[15px]'>+91-7948000874</span>
                             </div>
                         </div>
                         <div className="flex items-start gap-3">
-                            <MdMailOutline className='!w-7 !h-7 mt-0.5 text-primary' />
+                            <MdMailOutline className='!w-5 !h-5 mt-0.5 text-primary' />
                             <div>
                                 <h4 className='text-primaryText font-semibold text-base md:text-lg'>Email Information</h4>
-                                <span className='text-[#5d6471] text-sm md:text-[15px]'>hello@ebyteLogic.com</span>
+                                <span className='text-[#5d6471] text-sm md:text-[15px]'>Contact@ebytelogic.com</span>
                             </div>
                         </div>
                     </div>

@@ -12,15 +12,16 @@ import Development from './Development'
 import Global from './Global'
 import Testimonial from './Testimonial'
 import Cta from './Cta'
+import PlatformExpertise from './PlatformExpertise'
 
 const Home = () => {
   return (
     <div>
       <HeroSection />
       <div className='overflow-hidden'>
-        <Solutions />
-        <Technology />
         <Services />
+        <Technology />
+        <Solutions />
         <Projects />
         <RenderIt />
         <Goals />
@@ -29,6 +30,7 @@ const Home = () => {
         <Global />
         <Cta />
         <Testimonial />
+        <PlatformExpertise />
       </div>
     </div>
   )

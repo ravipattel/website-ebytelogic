@@ -26,14 +26,19 @@ const slides: SlideData[] = [
   },
   {
     id: 3,
-    image: Slider3, 
+    image: Slider3,
     title: "Low-Latency Streaming",
     description: "Real-time video streaming systems with sub-32ms end-to-end latency"
   }
 ];
-
-const WorkflowSlider: React.FC = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+const imageData = [
+  Slider1,
+  Slider2,
+  Slider3,
+  Slider2,
+];
+const WorkflowSlider = ({ currentSlide }) => {
+  const [currentSlides, setCurrentSlides] = useState(0);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -42,30 +47,30 @@ const WorkflowSlider: React.FC = () => {
 
   useEffect(() => {
     if (!isClient) return;
-    
+
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setCurrentSlides((prev) => (prev + 1) % slides.length);
     }, 5000);
 
     return () => clearInterval(interval);
   }, [isClient]);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setCurrentSlides((prev) => (prev + 1) % slides.length);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setCurrentSlides((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
   const goToSlide = (index: number) => {
-    setCurrentSlide(index);
+    setCurrentSlides(index);
   };
 
   if (!isClient) {
     return (
       <div className="relative w-full max-w-[600px] h-auto">
-        <img 
+        <img
           src="/images/multimedia-workflow-transparent.png"
           alt="Multimedia Workflow"
           className="w-full h-auto object-contain"
@@ -80,23 +85,22 @@ const WorkflowSlider: React.FC = () => {
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`transition-opacity duration-500 ${
-              index === currentSlide ? 'opacity-100' : 'opacity-0 absolute inset-0'
-            }`}
+            className={`transition-opacity duration-500 ${index === currentSlides ? 'opacity-100' : 'opacity-0 absolute inset-0'
+              }`}
           >
             <div className="relative group">
-              <Image 
-                src={slide.image}
+              <Image
+                src={imageData[currentSlide]}
                 alt={slide.title}
                 className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
                 style={{ width: 'auto', height: 'auto' }}
               />
-              
+
               {/* Left half transparent overlay for multimedia workflow image */}
               {slide.id === 1 && (
                 <>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/20 pointer-events-none"></div>
-                  <div 
+                  <div
                     className="absolute inset-0 pointer-events-none"
                     style={{
                       background: 'linear-gradient(to right, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.3) 25%, rgba(255,255,255,0.1) 40%, transparent 50%)'
@@ -104,7 +108,7 @@ const WorkflowSlider: React.FC = () => {
                   ></div>
                 </>
               )}
-              
+
               {/* Slide info overlay */}
               <div className="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm rounded-lg p-4 transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                 <h3 className="text-white font-semibold text-lg mb-2">{slide.title}</h3>
@@ -114,9 +118,9 @@ const WorkflowSlider: React.FC = () => {
           </div>
         ))}
       </div>
-      
+
       {/* Navigation buttons */}
-      <button 
+      <button
         onClick={prevSlide}
         className="absolute top-1/2 left-4 -translate-y-1/2 z-10 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
       >
@@ -124,8 +128,8 @@ const WorkflowSlider: React.FC = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
       </button>
-      
-      <button 
+
+      <button
         onClick={nextSlide}
         className="absolute top-1/2 right-4 -translate-y-1/2 z-10 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
       >
@@ -133,18 +137,17 @@ const WorkflowSlider: React.FC = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>
-      
+
       {/* Pagination dots */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${
-              index === currentSlide 
-                ? 'bg-white/90 scale-125' 
-                : 'bg-white/40 hover:bg-white/60'
-            }`}
+            className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${index === currentSlides
+              ? 'bg-white/90 scale-125'
+              : 'bg-white/40 hover:bg-white/60'
+              }`}
           />
         ))}
       </div>

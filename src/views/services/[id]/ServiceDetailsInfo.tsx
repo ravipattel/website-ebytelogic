@@ -8,12 +8,12 @@ import { GoArrowRight } from 'react-icons/go';
 import Button from '@/src/components/Button';
 
 import WhyJpeg from '@/src/assets/images/services/why.jpeg'
-import UsecaseJpg from '@/src/assets/images/services/usecase.avif'
+import UsecaseJpg from '@/src/assets/images/services/usecase.png'
 import OverviewJPg from '@/src/assets/images/services/overview.jpg'
 import EmbeddedDevelopmentJPg from '@/src/assets/images/services/embedded-development.jpg'
-import QaJPg from '@/src/assets/images/services/qa.jpg'
+import QaJPg from '@/src/assets/images/services/qa.avif'
 import IosJPg from '@/src/assets/images/services/iot.avif'
-import SdkWebp from '@/src/assets/images/services/sdk.webp'
+import SdkWebp from '@/src/assets/images/services/avProtocol.jpg'
 import FrameworkWebp from '@/src/assets/images/services/multimedia.webp'
 import LinuxPng from '@/src/assets/images/services/linux.png'
 
@@ -637,10 +637,10 @@ const ServiceDetailsInfo = () => {
             {/* Use Cases */}
             <section className="bg-white py-16 sm:py-28">
                 <div className='max-w-[1400px] mx-auto px-4 sm:px-6 space-y-4'>
-                    <div className='grid grig-cols-2 lg:grid-cols-6 gap-3'>
+                    <div className='grid grig-cols-2 lg:grid-cols-6 gap-7'>
                         <div className='lg:col-span-3 space-y-8'>
                             <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize pb-4'>Use <span className='text-primary'>Cases</span> We <span className='text-primary'>Serve</span></h3>
-                            <div className="relative border-l border-[#3078fb]/40 pl-6 space-y-7">
+                            <div className="relative border-l border-[#3078fb]/40 pl-6 space-y-6">
                                 {service.useCases.map((usecase, i) => (
                                     <div key={i} className="relative group">
                                         <div className="absolute -left-[13px] top-5 w-5 h-5 bg-white border-2 border-primary rounded-full group-hover:scale-110 transition" />
@@ -670,7 +670,7 @@ const ServiceDetailsInfo = () => {
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 space-y-4">
                     <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize text-center'>Why <span className='text-primary'>eByteLogic?</span></h3>
                     <div className='grid lg:grid-cols-6 py-8 gap-3'>
-                        <div className='lg:col-span-3 space-y-12'>
+                        <div className='lg:col-span-3 space-y-6'>
                             {service.whyChooseUs.map((reason, i) => (
                                 <div key={i} className="flex flex-nowrap gap-6 items-center">
                                     <div className="text-[#d1e2fc] text-4xl font-black select-none pointer-events-none leading-none">

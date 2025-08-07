@@ -1,50 +1,27 @@
 'use client';
-import React, { useState } from 'react';
+import Image from 'next/image';
+
+import React from 'react';
+import Marquee from "react-fast-marquee";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { MdOutlineStarBorderPurple500 } from 'react-icons/md';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
-const testimonials = [
-    {
-        name: 'Edward',
-        role: 'General customer',
-        message: 'When replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines. When replacing a selection. help agencies.',
-    },
-    {
-        name: 'Charlotte',
-        role: 'General customer',
-        message: 'When replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines. When replacing a selection. help agencies.',
-    },
-    {
-        name: 'Daniel',
-        role: 'General customer',
-        message: 'When replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines. When replacing a selection. help agencies.',
-    },
-    {
-        name: 'Graham',
-        role: 'General customer',
-        message: 'When replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines. When replacing a selection. help agencies.',
-    },
-    {
-        name: 'Edward',
-        role: 'General customer',
-        message: 'When replacing a multi-lined selection of text, the generated dummy text maintains the amount of lines. When replacing a selection. help agencies.',
-    },
-];
-
+import AscemenPng from "@/src/assets/images/home/testimonial/ascemen.png";
+import EmbeddedSolutionsPng from "@/src/assets/images/home/testimonial/embeddedSolutions.png";
+import ESightPng from "@/src/assets/images/home/testimonial/esight.png";
+import FabesisPng from "@/src/assets/images/home/testimonial/fabesis.png";
+import ImageMetryPng from "@/src/assets/images/home/testimonial/imageMetry.png";
+import NextologiesPng from "@/src/assets/images/home/testimonial/nextologies.png";
+import RhombPng from "@/src/assets/images/home/testimonial/rhomb.png";
+import SmartDataPng from "@/src/assets/images/home/testimonial/smartData.svg";
+import SpgWebp from "@/src/assets/images/home/testimonial/spg.webp";
+import WrcPng from "@/src/assets/images/home/testimonial/wrc.png";
+import XchangePng from "@/src/assets/images/home/testimonial/xchange.png";
 
 const Testimonial = () => {
-    const [centerIndex, setCenterIndex] = useState(0);
-
-    const handleSlideChange = (swiper: any) => {
-        const visibleSlides = swiper.params.slidesPerView >= 1 ? swiper.params.slidesPerView : 1;
-        const current = swiper.activeIndex;
-        const centerOffset = Math.floor(visibleSlides / 2);
-        setCenterIndex(current + centerOffset);
-    };
-
     return (
         <section className="py-16 sm:py-28">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 text-center space-y-3">
@@ -55,47 +32,35 @@ const Testimonial = () => {
                     We’ve had the privilege of working with forward-thinking companies across media,
                     semiconductors, IoT, aerospace, and more
                 </p>
-                <div className="relative pt-4">
-                    <Swiper
-                        slidesPerView={1}
-                        spaceBetween={30}
-                        pagination={{ el: '.custom-swiper-pagination', clickable: true }}
-                        modules={[Pagination]}
-                        className="px-6 md:px-12 testimonial"
-                        breakpoints={{
-                            640: { slidesPerView: 1 },
-                            768: { slidesPerView: 2 },
-                            1024: { slidesPerView: 3 },
-                        }}
-                        onSlideChange={handleSlideChange}
-                        onSwiper={handleSlideChange}
-                    >
-                        {testimonials.map((testimonial, index) => {
-                            const isCenter = index === centerIndex;
-
-                            return (
-                                <SwiperSlide key={index}>
-                                    <div className={`rounded border p-[30px] space-y-5 text-left transition duration-300 ${isCenter
-                                        ? 'bg-secondary border-secondary'
-                                        : 'bg-white border-[#dddddd]'
-                                        }`}>
-                                        <div className='flex items-center text-yellow-400 text-xl'>
-                                            {[...Array(5)].map((_, i) => (
-                                                <MdOutlineStarBorderPurple500 key={i} />
-                                            ))}
-                                        </div>
-                                        <p className={`text-sm sm:text-[15px] ${isCenter ? 'text-white' : 'text-[#5d6471]'}`}>{testimonial.message}</p>
-                                        <div>
-                                            <h5 className={`text-lg sm:text-xl ${isCenter ? 'text-white' : 'text-primaryText'}`}>{testimonial.name}</h5>
-                                            <p className={`text-sm sm:text-[15px] ${isCenter ? 'text-white' : 'text-[#5d6471]'}`}>{testimonial.role}</p>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                            );
-                        })}
-                    </Swiper>
-                    <div className="custom-swiper-pagination mt-8 flex justify-center"></div>
-                </div>
+            </div>
+            <div className="mt-16 py-5 bg-[#243559]">
+                <Marquee
+                    gradient={false}
+                    speed={50}
+                    pauseOnHover={true}
+                >
+                    {[
+                        { src: AscemenPng, alt: 'AscemenPng' },
+                        { src: EmbeddedSolutionsPng, alt: 'EmbeddedSolutionsPng' },
+                        { src: ESightPng, alt: 'ESightPng' },
+                        { src: FabesisPng, alt: 'FabesisPng' },
+                        { src: ImageMetryPng, alt: 'ImageMetryPng' },
+                        { src: NextologiesPng, alt: 'NextologiesPng' },
+                        { src: RhombPng, alt: 'RhombPng' },
+                        { src: SmartDataPng, alt: 'SmartDataPng' },
+                        { src: SpgWebp, alt: 'SpgWebp' },
+                        { src: WrcPng, alt: 'WrcPng' },
+                        { src: XchangePng, alt: 'XchangePng' },
+                    ].map((logo, index) => (
+                        <div key={index} className="flex justify-center items-center px-6">
+                            <Image
+                                src={logo.src}
+                                alt={logo.alt}
+                                className="size-36 object-contain"
+                            />
+                        </div>
+                    ))}
+                </Marquee>
             </div>
         </section>
     );
