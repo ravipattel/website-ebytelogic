@@ -4,7 +4,6 @@ import { useParams, useRouter } from 'next/navigation';
 
 import { useEffect, useState } from 'react';
 import { GoArrowRight } from 'react-icons/go';
-import { RiArrowRightSLine } from 'react-icons/ri';
 
 import Button from '@/src/components/Button';
 
@@ -13,416 +12,536 @@ import UsecaseJpg from '@/src/assets/images/services/usecase.avif'
 import OverviewJPg from '@/src/assets/images/services/overview.jpg'
 import EmbeddedDevelopmentJPg from '@/src/assets/images/services/embedded-development.jpg'
 import QaJPg from '@/src/assets/images/services/qa.jpg'
-import IosJPg from '@/src/assets/images/services/ios.jpg'
+import IosJPg from '@/src/assets/images/services/iot.avif'
 import SdkWebp from '@/src/assets/images/services/sdk.webp'
-import FrameworkWebp from '@/src/assets/images/services/framework.webp'
-import AndroidBspPng from '@/src/assets/images/services/android-bsp.png'
+import FrameworkWebp from '@/src/assets/images/services/multimedia.webp'
+import LinuxPng from '@/src/assets/images/services/linux.png'
 
 const serviceData = [
     {
         id: 0,
         slug: "embedded-software",
-        category: "Embedded Software Development",
+        category: "Powering Smart Devices with Embedded Intelligence",
+        tagLine: "C/C++, Qt, Python | Low-Level to UI | Real-Time Performance",
         imageName: EmbeddedDevelopmentJPg,
         overview:
-            "At eByteLogic, we engineer robust embedded software tailored to your hardware, product goals, and end-user requirements. From bare-metal firmware to OS-level abstraction and protocol integration, our team delivers production-ready code that is secure, efficient, and scalable.",
+            ["We specialize in building embedded applications that run efficiently on Linux-based and RTOS-driven platforms. From control logic and device communication to sophisticated HMI interfaces, our development approach focuses on performance, modularity, and maintainability.", "With deep experience in C/C++, Qt, and Python, our team delivers production-ready apps tailored to the device's hardware and use case — whether it’s a touchscreen panel, industrial controller, wearable device, or medical equipment."],
         capabilities: [
             {
-                title: "Custom Firmware Development",
+                title: "C/C++ Embedded System Applications",
+                desc: "Development of core system applications tightly integrated with the OS and hardware.",
                 points: [
-                    "Real-time and event-driven applications on MCUs and SoCs",
-                    "Memory-optimized code for performance-critical environments",
-                    "Power-aware algorithms for battery-operated systems",
+                    "Sensor and peripheral data acquisition",
+                    "Communication protocol handling (UART, CAN, I2C, SPI)",
+                    "Custom state machines and logic control",
                 ],
             },
             {
-                title: "Device Drivers & HAL Development",
+                title: "Qt-based HMI & UI Development",
+                desc: "Cross-platform, modern interfaces for devices with displays or touchscreens.",
                 points: [
-                    "Linux and RTOS-based driver design",
-                    "Integration with sensors, displays, wireless modules, and I/O peripherals",
-                    "Hardware Abstraction Layer (HAL) for platform portability",
+                    "QtWidgets and QML-based GUI design",
+                    "Multilingual and theming support",
+                    "Performance tuning for resource-constrained UIs",
                 ],
             },
             {
-                title: "Protocol Stack Implementation",
+                title: "Python Applications for Embedded Linux",
+                desc: "Agile development of scripting or automation components in embedded systems.",
                 points: [
-                    "Wired and wireless protocols: UART, SPI, I2C, CAN, BLE, Zigbee, Modbus, TCP/IP",
-                    "Custom stack development and optimization for constrained devices",
+                    "System control scripts and monitoring apps",
+                    "Integration with APIs, MQTT, and DBus",
+                    "Lightweight GUIs using PyQt or Tkinter",
                 ],
             },
             {
-                title: "RTOS & Multithreading Integration",
+                title: "Embedded IPC & Middleware Integration",
+                desc: "Reliable inter-process communication and software stack connectivity.",
                 points: [
-                    "FreeRTOS, Zephyr, ThreadX, custom schedulers",
-                    "Task scheduling, inter-process communication, and interrupt handling",
+                    "DBus, gRPC, sockets, and shared memory IPC",
+                    "Middleware SDK integration",
+                    "Multithreaded and event-driven design",
                 ],
             },
             {
-                title: "Secure Boot & OTA Update Systems",
+                title: "Real-Time App Optimization & Debugging",
+                desc: "Ensuring apps meet timing, memory, and stability constraints in production.",
                 points: [
-                    "Bootloader development with flash partitioning",
-                    "Encrypted firmware updates and rollback mechanisms",
-                    "Secure element integration (TPM, TrustZone, etc.)",
+                    "Profiling and memory usage optimization",
+                    "Handling concurrency and priority tuning",
+                    "Performance benchmarking and fault handling",
                 ],
             },
             {
-                title: "Platform Support",
+                title: "Real-Time Data Handling Applications",
+                desc: "We develop performance-critical apps that acquire, process, and respond to real-time data inputs, often from sensors, AV sources, or user commands.",
                 points: [
-                    "ARM Cortex-M/A, RISC-V, x86 embedded",
-                    "STM32, NXP, TI, Microchip, Nordic, Renesas, Espressif",
-                    "OS: Bare-metal, Embedded Linux, RTOS (FreeRTOS, Zephyr, etc.)",
+                    "Multithreaded C/C++ applications for real-time processing",
+                    "Data acquisition, filtering, and feedback control systems",
+                    "Event-driven frameworks using libevent/libev/libuv",
                 ],
             },
         ],
         useCases: [
-            "Wearable device firmware and battery management",
-            "Industrial control and sensor gateways",
-            "Smart home and automation controllers",
-            "Custom bootloader and security-critical applications",
+            "Human-Machine Interface (HMI) development using Qt/C++",
+            "Control and diagnostic applications for industrial and wearable devices",
+            "Sensor data acquisition, processing, and real-time response",
+            "Custom protocol implementation (MODBUS, CAN, TCP/IP)",
+            "Embedded Python apps for automation and scripting",
+            "Embedded GUIs and dashboard utilities for constrained devices",
         ],
         whyChooseUs: [
-            "Deep experience in embedded platforms and MCU architectures",
-            "Clean, testable, and maintainable code aligned to industry standards",
-            "Aligned with long-term product lifecycle and certification needs",
+            "Cross-platform embedded app development across Linux, RTOS, and Android",
+            "Proficiency in Qt, LVGL, GTK, and custom UI frameworks",
+            "Lightweight, modular codebase that runs on low-resources systems",
+            "Experts in real-time event handling, threading, and memory safety",
+            "Agile collaboration with in-house and external hardware teams",
+            "End-to-end delivery: from architecture to deployment",
         ],
-        cta: "Let us help you build reliable, future-proof embedded firmware that works seamlessly with your hardware and delivers a great user experience.",
+        cta: [
+            {
+                ctaTitle: "Embedded <span class='text-primary'>Apps</span> , Engineered to Perform",
+                Ctadescription: "We craft high-performance embedded applications that interact directly with hardware, sensors, and users — tuned for reliability, real-time response, and usability.",
+                ctaButtonText: "Discuss Your App Requirements",
+            }
+        ]
     },
     {
         id: 1,
         slug: "linux-bsp-android",
-        imageName: AndroidBspPng,
-        category: "Linux BSP & Android Customization",
-        overview: "At eByteLogic, we offer complete Board Support Package (BSP) development and customization for Linux and Android platforms. From kernel porting to device driver integration, we help product companies accelerate hardware bring-up and OS-level stability across a wide range of chipsets and embedded boards.",
+        imageName: LinuxPng,
+        category: "Bring Hardware to Life with Linux.",
+        tagLine: "Custom BSPs | Fast Bring-Up | Production-Grade Integration",
+        overview: ["At eByteLogic, we help hardware teams rapidly bring embedded devices to life with reliable, production-ready Linux BSPs. From bootloader customization to driver and secure boot implementation, our BSP experts work across Yocto and Buildroot to ensure seamless hardware-software alignment.", "Whether you’re building an evaluation board, a custom SoM, or a full-fledged production board, we accelerate bring-up, streamline peripheral support, and fine-tune your platform for speed, security, and stability."],
         capabilities: [
             {
-                title: "Kernel & Bootloader Customization",
+                title: "Board Bring-Up & Peripheral Integration",
+                desc: "We handle the complete bring-up of new boards and peripherals, enabling early testing, validation, and productization.",
                 points: [
-                    "U-Boot, Barebox, and GRUB bootloader configuration",
-                    "Linux kernel porting and patch management",
-                    "Secure boot and fast boot optimization"
+                    "UART, I2C, SPI, USB, Ethernet, and GPIO driver integration",
+                    "Display, touchscreen, audio, camera sensor support",
+                    "Custom device tree configuration and validation",
                 ]
             },
             {
-                title: "Device Tree & Driver Integration",
+                title: "Bootloader & Secure Boot Customization",
+                desc: "We customize U-Boot and implement secure boot mechanisms to protect your IP and ensure verified firmware.",
                 points: [
-                    "Peripheral enablement through DTS configuration",
-                    "I2C, SPI, UART, GPIO, PWM, USB, Ethernet drivers",
-                    "In-house driver development and upstreaming support"
+                    "U-Boot porting and splash screen enablement",
+                    "Secure boot with verified boot chain",
+                    "Custom boot sequences and fast boot optimization"
                 ]
             },
             {
-                title: "Yocto & Buildroot Frameworks",
+                title: "Yocto & Buildroot Customization",
+                desc: "We tailor embedded Linux distributions for your board using the right build system for your needs.",
                 points: [
-                    "Custom image builds with Yocto/OpenEmbedded",
-                    "Buildroot-based filesystem and package management",
-                    "SDK and toolchain generation for app development"
+                    "Yocto layer creation and meta-layer integration",
+                    "Buildroot migration, optimization, and firmware packaging",
+                    "Hybrid build system support and debugging"
                 ]
             },
             {
-                title: "Android AOSP Customization",
+                title: "Kernel & Driver Development",
+                desc: "We backport, port, or develop drivers from scratch to ensure every component is fully supported.",
                 points: [
-                    "AOSP bring-up for Qualcomm, Rockchip, MediaTek, TI",
-                    "HAL development, device configuration, and build system tuning",
-                    "Android framework and system UI modification"
+                    "Forward/backward Linux driver porting",
+                    "Kernel configuration and patch management",
+                    "In-tree and out-of-tree module development",
                 ]
             },
             {
-                title: "Debugging & Bring-Up Services",
+                title: "OTA Firmware Update & Recovery Systems",
+                desc: "We implement robust over-the-air (OTA) mechanisms with safety and rollback capabilities.",
                 points: [
-                    "Early-stage bring-up and serial console access",
-                    "Boot logs, kernel panic, and peripheral probing",
-                    "Board diagnostics and regression validation"
+                    "Dual-partition firmware update logic",
+                    "Factory reset and fallback image support",
+                    "Custom update utilities and shell-based scripts",
                 ]
             },
             {
-                title: "Platform Support",
+                title: "Display, Camera & Audio Interface Integration",
+                desc: "We enable and tune hardware peripherals (DSI, CSI, I2S, HDMI, etc.) for production-ready multimedia, vision, and control use cases.",
                 points: [
-                    "ARM Cortex-A SoCs (NXP, Rockchip, TI, Qualcomm, Amlogic)",
-                    "NVIDIA Jetson, Raspberry Pi, i.MX, Allwinner",
-                    "OS: Embedded Linux (Yocto, Buildroot), AOSP"
+                    "MIPI-DSI/CSI display and camera support on Linux",
+                    "Audio codec enablement and ALSA-level tuning",
+                    "HDMI & LVDS integration with u-boot and kernel drivers",
                 ]
             }
         ],
         useCases: [
-            "Custom SBC-based products and evaluation boards",
-            "Industrial controllers and multimedia appliances",
-            "Fire safety panels and embedded HMI terminals",
-            "Android-based wearable or infotainment systems"
+            "BSP customization for new boards or SoC-based modules",
+            "Rapid bring-up of peripheral interfaces (USB, UART, SPI, I2C, Ethernet, HDMI, CSI/DSI)",
+            "Bootloader (U-Boot) customization with secure boot and splash",
+            "Yocto or Buildroot migration and SDK optimization",
+            "Linux driver porting for legacy or new silicon",
+            "OTA firmware update integration with fallback mechanisms",
         ],
         whyChooseUs: [
-            "Extensive multi-vendor BSP experience with proven board bring-up results",
-            "Kernel-to-app knowledge that bridges hardware and system-level needs",
-            "Flexible engagement: full BSP ownership or targeted module support"
+            "100+ successful BSP bring-up projects across ARM-based platforms",
+            "Fast turnaround for hardware enablement and validation",
+            "Strong experience in Buildroot, Yocto, U-Boot, and secure boot",
+            "Deep understanding of low-level device tree, clocks, regulators",
+            "Silicon vendor SDK customization (Rockchip, NXP, Qualcomm, NVIDIA, etc.)",
+            "Focused on reducing boot time and system start latency",
         ],
-        cta: "Let us help you bring your hardware to life with stable, optimized BSPs ready for production deployment."
+        cta: [
+            {
+                ctaTitle: "From <span class='text-primary'>Bare Board to Booting</span> in Days",
+                Ctadescription: "We help product teams bring up Linux on custom hardware fast — from U-Boot to kernel to rootfs — with BSPs that are reliable, maintainable, and production-ready.",
+                ctaButtonText: "Schedule Your Board Bring-Up Call",
+            }
+        ]
     },
     {
         id: 2,
         slug: "multimedia-framework",
         imageName: FrameworkWebp,
-        category: "Multimedia Framework Development",
-        overview: "At eByteLogic, we specialize in developing high-performance multimedia solutions tailored for embedded systems and broadcast-grade applications. From real-time video streaming to AV sync tuning and pipeline optimization, we bring deep expertise in frameworks like GStreamer, FFMPEG, Live555, and more.",
+        category: "Build Better Streaming Experiences.",
+        tagLine: "Custom Media Pipelines | Real-Time Processing | Protocol Expertise",
+        overview: ["At eByteLogic, we specialize in engineering multimedia frameworks and low-latency streaming solutions for the most demanding use cases—from live broadcast systems and AV-over-IP pipelines to drone video transmission and surveillance devices. Our expertise spans GStreamer, FFmpeg, and custom encoder pipelines, enabling pixel-perfect performance, seamless AV sync, and integration with industry-standard protocols like NDI, SRT, and RTP.", "Whether you're developing a high-performance camera system, a next-gen encoder, or a media-rich IoT device, our framework-level expertise ensures you achieve quality,reliability, and real-time responsiveness."],
         capabilities: [
             {
-                title: "Framework Integration & Customization",
+                title: "GStreamer & FFmpeg Customization",
+                desc: "From modular pipelines to advanced plugin development, we tailor open-source frameworks to meet your real-world media delivery needs.",
                 points: [
-                    "GStreamer pipeline architecture and plugin development",
-                    "FFMPEG-based decoding/encoding and filter graphs",
-                    "Live555-based RTP/RTSP streaming modules",
-                    "OpenMAX and V4L2 pipeline handling for camera integration"
+                    "Plugin development for custom source/sink elements",
+                    "Performance tuning for low-latency encoding/decoding",
+                    "Integration with hardware accelerators (VAAPI, V4L2, NVDEC, etc.)",
                 ]
             },
             {
-                title: "Media Protocol Support",
+                title: "Protocol-Level Handling (NDI, RTP, SRT, RTSP, HLS, RTMP)",
+                desc: "We enable smooth, resilient streaming across local and global networks with deep protocol know-how.",
                 points: [
-                    "HDMI, SDI, NDI, SRT, RTP/RTSP, HLS, MPEG-DASH",
-                    "Protocol bridging and custom transmitter/receiver implementation"
+                    "Building robust sender/receiver pipelines",
+                    "Optimizing for jitter, buffering, and packet loss",
+                    "Secure, firewall-friendly media transport design"
                 ]
             },
             {
-                title: "Advanced AV Sync & Playback Tuning",
+                title: "AV Synchronization & Tuning",
+                desc: "Precision matters—our team ensures audio/video frames stay perfectly in sync across the pipeline.",
                 points: [
-                    "±10ms audio-video synchronization in SDI/HDMI outputs",
-                    "Timestamps, clock references, and buffer optimization",
-                    "Low-latency playback on embedded and x86 platforms"
+                    "±10ms A/V sync tuning for live systems",
+                    "Timestamp correction and buffer management",
+                    "End-to-end sync validation with test utilities"
                 ]
             },
             {
-                title: "Media Player & Pipeline Optimization",
+                title: "Closed Captioning & Compliance (LINE21, CEA608/708)",
+                desc: "Broadcast-ready text encoding and decoding—delivered in fully compliant formats.",
                 points: [
-                    "CPU/GPU utilization profiling and tuning",
-                    "Multi-channel video rendering and compositing",
-                    "Hardware-accelerated decoding/encoding (VAAPI, V4L2, NVDEC, etc.)"
+                    "Analog LINE21 decoding and embedding",
+                    "DTVCC (CEA608/CEA708) insertion",
+                    "LINE21 <--> DTVCC conversion modules"
                 ]
             },
             {
-                title: "Platform Coverage",
+                title: "Open Broadcast & Encoder SDK Customization",
+                desc: "We help you optimize open-source broadcast software for specific chipsets and use cases.",
                 points: [
-                    "Embedded Linux, Android, and x86 Ubuntu",
-                    "Platforms: NVIDIA Jetson, Rockchip, NXP i.MX, TI, Qualcomm, Raspberry Pi"
+                    "OBS (Open Broadcaster Software) pipeline customization",
+                    "Integration with hardware encoder SDKs (Xilinx, Ambarella, Rockchip, etc.)",
+                    "Encoding format tuning for quality vs. Bandwidth"
+                ]
+            },
+            {
+                title: "Hardware-Accelerated Video Processing",
+                desc: "We optimize your multimedia pipelines using GPU, VPU, and hardware codecs (e.g., Rockchip, NVIDIA Jetson, NXP i.MX) to enable smooth, power-efficient performance on embedded platforms.",
+                points: [
+                    "Integration with hardware decoders/encoders (V4L2, NVDEC/NVENC)",
+                    "Zero-copy buffer management to reduce CPU load",
+                    "Custom pipeline tuning for RK3588, i.MX8, Jetson, and more"
                 ]
             }
         ],
         useCases: [
-            "Live broadcast encoder/decoders",
-            "Surveillance camera video pipelines",
-            "Wearables and media accessories",
-            "Video wall and multiview display systems"
+            "Real-time live streaming with ultra-low latency (AV sync-sensitive applications)",
+            "Broadcast & OTT pipeline customization (GStreamer, FFMPEG, OBS)",
+            "SDI/NDI/SRT/HLS/RTMP-based video routing solutions",
+            "Closed captioning workflows for live and recorded video (CEA-608/708, LINE21)",
+            "Surveillance and drone video encoding with bandwidth optimization",
+            "HDMI and USB camera-based input/output for vision systems",
         ],
         whyChooseUs: [
-            "Delivered AV solutions with ±10ms sync accuracy in real deployments",
-            "Expertise in both open-source and proprietary media frameworks",
-            "Strong debugging and profiling experience across chipsets"
+            "Deep expertise in protocol-level streaming (RTP, SRT, RTSP, WebRTC)",
+            "Hardware-accelerated media pipelines tuned for RK3588, Jetson, i.MX8",
+            "Custom AV sync tuning down to ±10ms lip-sync accuracy",
+            "Proven track record in broadcast and surveillance deployments",
+            "Flexible integration with OBS, Open Broadcast Encoder, and custom sinks",
+            "Specialized in high-performance, low-footprint embedded pipelines",
         ],
-        cta: "Let us help you build and optimize multimedia pipelines that work seamlessly across devices, protocols, and resolutions."
+        cta: [
+            {
+                ctaTitle: "Build <span class='text-primary'>Streaming Pipelines</span> That Just Work",
+                Ctadescription: "Whether you're building the next live media device or customizing a complex broadcast encoder, our multimedia engineering helps you deliver seamless video experiences — with accuracy, performance, and reliability.",
+                ctaButtonText: "Talk to a MediaTech Expert",
+            }
+        ]
     },
     {
         id: 3,
         slug: "mobile-app-development",
         imageName: IosJPg,
-        category: "Android & iOS App Development",
-        overview: "eByteLogic designs and develops custom Android and iOS applications that interface seamlessly with embedded systems and connected devices. Our mobile apps are built to manage, control, stream from, or monitor embedded hardware — delivering user-friendly front-ends to powerful back-end firmware.",
+        category: "Seamless Data Connectivity for Smart Devices & Edge Systems",
+        tagLine: "Connect. Stream. Control. Build Smarter Embedded Systems with Cloud-Aware Architecture.",
+        overview: ["Modern embedded products no longer operate in isolation — they communicate, stream data, receive updates, and trigger actions through the cloud. At eByteLogic, we in IoT and cloud integration for embedded systems, enabling secure, low-latency communication between devices, edge platforms, and cloud backends.", "We design and implement firmware-to-cloud data pipelines, event handling, OTA mechanisms, and protocol stacks that work reliably across real-world environments.", "Whether it’s a remote sensing device, fire safety panel, or connected multimedia node, we bring full-stack IoT expertise to your product."],
         capabilities: [
             {
-                title: "Native & Cross-Platform App Development",
+                title: "Embedded-to-Cloud Communication",
+                desc: "Secure and reliable communication protocols for data push/pull between devices and cloud services.",
                 points: [
-                    "Android (Java/Kotlin), iOS (Swift), Flutter-based hybrid apps",
-                    "App architecture, UI/UX design, and platform compliance",
-                    "Tight coupling with embedded device communication protocols"
+                    "MQTT, CoAP, HTTP/HTTPS integration",
+                    "TLS security for encrypted transmission",
+                    "RESTful APIs and WebSocket-based bi-directional data flows",
                 ]
             },
             {
-                title: "Embedded Hardware Integration",
+                title: "Device Provisioning & Identity Management",
+                desc: "Manage unique device identities, credentials, and secure onboarding at scale.",
                 points: [
-                    "BLE, Wi-Fi, and serial communication with embedded products",
-                    "Real-time data sync, telemetry, and command-response systems",
-                    "OTA firmware upgrade workflows integrated with the app"
+                    "Secure element integration for hardware-backed keys",
+                    "Cloud-side certificate provisioning and validation",
+                    "Token-based device authorization (JWT/OAuth)",
                 ]
             },
             {
-                title: "Multimedia & Streaming Interfaces",
+                title: "OTA (Over-The-Air) Updates & Remote Configuration",
+                desc: "Deploy firmware and configuration updates across distributed devices with rollback safety.",
                 points: [
-                    "Mobile video/audio player integration (HLS, RTP, RTSP, MJPEG)",
-                    "Camera streaming control and media buffer handling",
-                    "Companion apps for multimedia boards and AV encoders"
+                    "Full + delta firmware update delivery mechanisms",
+                    "Factory reset and version rollback support",
+                    "Integration with AWS IoT, Azure IoT Hub, or custom update servers",
                 ]
             },
             {
-                title: "Security & Data Protection",
+                title: "Edge-to-Cloud Data Pipeline Engineering",
+                desc: "Design efficient data pipelines from edge devices to analytics dashboards or cloud functions.",
                 points: [
-                    "Secure communication (TLS, encrypted payloads)",
-                    "Authentication layers, user roles, and access policies",
-                    "Secure storage and permission management for mobile OSes"
+                    "Buffering, retry mechanisms, and data integrity checks",
+                    "Local caching and conditional sync",
+                    "Cloud-to-device message processing and command execution",
                 ]
             },
             {
-                title: "Mobile QA & Deployment Support",
+                title: "IoT Cloud Platform Integration",
+                desc: "Embed your system into major IoT ecosystems or custom cloud stacks.",
                 points: [
-                    "Functional and UI testing across Android/iOS versions",
-                    "CI/CD for mobile builds and OTA deployments",
-                    "Google Play & App Store publishing support"
+                    "AWS IoT Core, Azure IoT Hub, GCP IoT Core integrations",
+                    "Dashboard enablement, alert triggers, and device state monitoring",
+                    "Custom microservices and backend APIs for device management",
                 ]
             },
             {
-                title: "Platform Support",
+                title: "Edge Analytics & Device Intelligence",
+                desc: "We enable on-device processing, alerting, and decision-making through embedded ML,rule engines, and stream processing.",
                 points: [
-                    "Android (10+), iOS (13+), Cross-platform (Flutter)",
-                    "Integration with ESP32, STM32, TI, Qualcomm, NXP-based products",
-                    "Companion apps for Linux/RTOS-powered devices"
+                    "Edge ML models deployed via TensorFlow Lite or ONNX",
+                    "Rule-based engines for threshold-based actions",
+                    "Local stream aggregation before cloud sync",
                 ]
             }
         ],
         useCases: [
-            "Remote control apps for industrial and consumer devices",
-            "Video streaming or playback controllers for embedded AV systems",
-            "OTA-updatable wearables or HMI panels with mobile companion apps",
-            "Data monitoring dashboards for sensors and field devices"
+            "MQTT-based data publishing from edge to cloud",
+            "Remote monitoring and OTA updates for field devices",
+            "AWS IoT, Azure IoT Hub, and Google Cloud integrations",
+            "Lightweight protocol implementation (CoAP, LWM2M, HTTP REST)",
+            "Secure data flow pipelines (TLS, authentication, token-based)",
+            "Edge computing and device rule engine implementation",
         ],
         whyChooseUs: [
-            "Deep embedded-mobile integration experience with over 30+ projects",
-            "Full-stack support from hardware communication to UX refinement",
-            "Proven success building apps for high-reliability B2B use cases"
+            "Experts in IoT protocols, security, and device-cloud sync",
+            "Deep Linux experience ensures stable edge-side integrations",
+            "Full-stack solutions: device firmware + cloud dashboard",
+            "Rapid POCs and MVPs for connected product startups",
+            "Extensive testing for real-world deployment readiness",
+            "Experience across wearable, fire safety, industrial, and broadcast IoT",
         ],
-        cta: "Let us help you create powerful mobile experiences that enhance and extend the functionality of your embedded products."
+        cta: [
+            {
+                ctaTitle: "<span class='text-primary'>Connect</span> Your Devices, <span class='text-primary'>Unlock Their</span> Potential",
+                Ctadescription: "We help you turn embedded systems into connected solutions — enabling data flow, remote control, and intelligence across the cloud-edge continuum.",
+                ctaButtonText: "Start My IoT Integration",
+            }
+        ]
     },
     {
         id: 4,
         slug: "qa-validation",
         imageName: QaJPg,
-        category: "QA & Validation Services",
-        overview: "At eByteLogic, we deliver end-to-end Quality Assurance and Validation services for embedded systems, mobile applications, and web platforms. Our testing strategies are tightly aligned with product development goals — ensuring stability, performance, and compliance across the entire lifecycle.",
+        category: "Ensuring Quality, Reliability & Stability at Every Embedded Layer",
+        tagLine: "Tested for Production. Validated for Scale. Engineered for Zero Defects.",
+        overview: ["Our QA and test automation services are purpose-built for embedded systems — where hardware, firmware, and software interact in real time. We help product teams uncover edge-case bugs, prevent regressions, and ensure their systems remain stable in production environments.", "Whether you’re validating BSP bring-up, AV streaming stability, or end-to-end device workflows, we create robust testing strategies that simulate real-world usage across edge devices, protocols, and networks. The result: rock-solid embedded products with confidence at scale."],
         capabilities: [
             {
-                title: "Embedded System Testing",
+                title: "Embedded QA Strategy & Test Planning",
+                desc: "Tailored test strategy for embedded lifecycle — from board bring-up to production deployment.",
                 points: [
-                    "Functional testing of firmware, drivers, and hardware interactions",
-                    "Interface validation for UART, I2C, SPI, GPIO, CAN, BLE, Wi-Fi",
-                    "Long-duration stability testing on custom boards"
+                    "Test strategy aligned with hardware-software integration",
+                    "Static code analysis and peer review planning",
+                    "QA checklist design across system, integration, and regression phases",
                 ]
             },
             {
-                title: "Mobile App Testing",
+                title: "Test Automation Framework Development",
+                desc: "Automation built for embedded devices — headless, hardware-controlled, and network-aware.",
                 points: [
-                    "Android & iOS compatibility and UI/UX validation",
-                    "Device integration testing with sensors and embedded devices",
-                    "App automation using Appium, Espresso, and real-device labs"
+                    "Python, PyTest, Robot Framework integration",
+                    "CLI-based test harness for embedded Linux targets",
+                    "Hardware-in-loop (HIL) and peripheral-driven automation",
                 ]
             },
             {
-                title: "Web & Backend Validation",
+                title: "Multimedia & Streaming Test Automation",
+                desc: "Validate audio-video quality, protocol flows, and streaming stability.",
                 points: [
-                    "API testing (Postman, REST Assured) and performance benchmarking",
-                    "Cross-browser testing and responsive UI validation",
-                    "Security and penetration testing upon request"
+                    "Automated GStreamer/FFmpeg pipeline testing",
+                    "AV sync validation under variable network conditions",
+                    "Codec, framerate, latency, and buffer underflow test cases",
                 ]
             },
             {
-                title: "Test Automation & Framework Development",
+                title: "BSP-Level & Driver Validation",
+                desc: "Ensure reliability of low-level firmware and peripheral interfaces.",
                 points: [
-                    "Custom test scripts for embedded test environments",
-                    "Robot Framework, Python, Pytest, and Jenkins CI pipelines",
-                    "HIL (Hardware-in-the-Loop) simulation and logging"
+                    "Peripheral bring-up verification (UART, SPI, I2C, GPIO, etc.)",
+                    "U-Boot and Linux boot sequence test coverage",
+                    "Driver porting and version compatibility testing",
                 ]
             },
             {
-                title: "Regression & Compliance Testing",
+                title: "Continuous Integration & Test Reporting",
+                desc: "Seamless QA integration into your dev lifecycle for faster releases.",
                 points: [
-                    "Structured regression planning for continuous builds",
-                    "Protocol-level and certification-grade validations",
-                    "IEC/ISO-driven test traceability and reporting"
+                    "GitLab CI, Jenkins, and custom CI pipelines for embedded QA",
+                    "Test dashboards and pass/fail metrics",
+                    "Alerts for regressions, broken builds, or hardware-level failures",
                 ]
             },
             {
-                title: "Reporting & Test Management",
+                title: "Performance, Power & Stress Testing",
+                desc: "We design and execute high-load test cases to validate embedded systems under real-world constraints and continuous operation.",
                 points: [
-                    "Real-time defect tracking (JIRA, TestRail, Zephyr)",
-                    "Detailed test cases, execution logs, and coverage reports",
-                    "Release-ready documentation and sign-off protocols"
+                    "CPU/GPU/memory stress tests for embedded devices",
+                    "Power consumption and thermal profiling",
+                    "Long-duration soak and reliability testing",
                 ]
             }
         ],
         useCases: [
-            "Safety-critical embedded device testing (fire panels, wearables)",
-            "Media streaming QA across platforms and protocols",
-            "Industrial HMI panel validation and touchscreen testing",
-            "Mobile companion app testing for IoT and smart devices"
+            "Automated testing of embedded GUIs and hardware I/Os",
+            "End-to-end system testing for firmware, apps, and drivers",
+            "Stress testing and power profiling for industrial devices",
+            "Regression testing setup for CI/CD pipelines",
+            "Custom test harnesses for board validation and factory QA",
+            "Test strategy consulting for product companies",
         ],
         whyChooseUs: [
-            "Embedded-focused QA team with product engineering background",
-            "In-house lab setup for automation and long-run testing",
-            "Rapid defect isolation and continuous feedback to dev teams"
+            "Complete embedded test automation stack: Squish, PyTest, CI tools",
+            "Hardware-in-loop (HIL) test setups for real-time validation",
+            "Coverage reports, performance metrics, and bug tracking built-in",
+            "Deep integration with dev and QA teams for faster iteration",
+            "Domain-specific testing: AV pipelines, sensor data, protocol stacks",
+            "Strong focus on reliability, edge-case handling, and fault injection",
         ],
-        cta: "Ensure your product is not just functional — but resilient, responsive, and release-ready with our comprehensive QA services."
+        cta: [
+            {
+                ctaTitle: "Embedded Testing You Can <span class='text-primary'>Trust</span>",
+                Ctadescription: "From automated GUI tests to hardware-level validation, we help you deliver rock-solid embedded products with fewer bugs, faster cycles, and real-world resilience.",
+                ctaButtonText: "Explore Test Automation with Us",
+            }
+        ]
     },
     {
         id: 5,
         slug: "middleware-sdk",
-        category: "Middleware SDK & Framework Customization",
+        category: "Mastering Protocols, Sync, and Codecs for Seamless Streaming",
+        tagLine: "NDI | RTP | SRT | H.264/H.265 | AAC | Lip-Sync | Closed Captions",
         imageName: SdkWebp,
         bannerImage: "/images/middleware-sdkBanner.webp",
         overviewImage: "/images/aboutBanner.png",
-        overview: "eByteLogic offers deep expertise in customizing middleware layers and building Software Development Kits (SDKs) that simplify application development over complex embedded systems. Whether you're working with multimedia, connectivity stacks, or board-level abstraction layers — we build reliable frameworks and modular APIs that accelerate integration and deployment.",
+        overview: ["We engineer high-performance audio-video pipelines by fine-tuning every layer of the AV stack — from protocols and codecs to timestamp handling and sync alignment. Our expertise ensures real-time transport, ultra-low latency, and flawless lip-sync across professional broadcasting systems and embedded platforms.", "With deep knowledge of open standards and proprietary formats, we help teams build reliable media delivery solutions — whether it’s a live production encoder, a smart camera, or a software-defined AV device."],
         capabilities: [
             {
-                title: "SDK Architecture & Development",
+                title: "Audio-Video Protocol Implementation",
+                desc: "Custom integration, optimization, and troubleshooting of AV protocols.",
                 points: [
-                    "Cross-platform SDKs for Linux, Android, and RTOS platforms",
-                    "Modular API design with abstraction for hardware complexity",
-                    "Well-documented C/C++, Java/Kotlin, or Python SDKs"
+                    "Protocols: RTP, RTSP, SRT, HLS, RTMP, RIST, NDI",
+                    "Timestamp management and jitter handling",
+                    "Protocol bridging and format translation",
                 ]
             },
             {
-                title: "Middleware Integration & Customization",
+                title: "Codec Integration & Tuning",
+                desc: "Seamless handling of audio/video compression for embedded systems.",
                 points: [
-                    "Protocol middleware (BLE, Zigbee, CAN, MQTT, Modbus)",
-                    "Multimedia SDK layers (FFMPEG, GStreamer plugin abstraction)",
-                    "Device abstraction layers for sensors, displays, network modules"
+                    "Video codecs: H.264, H.265, MJPEG",
+                    "Audio codecs: AAC, Opus, PCM, MP3",
+                    "Hardware-accelerated encoding/decoding setup",
                 ]
             },
             {
-                title: "Application Framework Porting",
+                title: "Lip-Sync & AV Sync Optimization",
+                desc: "Precise sync between audio and video for real-time systems.",
                 points: [
-                    "Porting existing middleware stacks to custom boards",
-                    "Adaptation for platform-specific IO, clocking, and power domains",
-                    "Integration with Linux device drivers and HAL"
+                    "Handling PTS/DTS and sync buffers",
+                    "Clock skew and drift compensation",
+                    "Sync validation and tuning for GStreamer/FFMPEG",
                 ]
             },
             {
-                title: "API Documentation & Developer Enablement",
+                title: "Closed Captioning & Subtitles Handling",
+                desc: "Standards-compliant captioning pipelines for regulated markets.",
                 points: [
-                    "Doxygen, Swagger, or Markdown-based SDK documentation",
-                    "Sample code, unit test harnesses, and integration templates",
-                    "Developer support packages for rapid onboarding"
+                    "LINE21 analog captions (CEA-608)",
+                    "DTVCC (CEA-708) digital closed captions",
+                    "Conversion: LINE21 ↔ DTVCC",
                 ]
             },
             {
-                title: "System Integration & Validation",
+                title: "Embedded Media Pipeline Debugging",
+                desc: "Systematic troubleshooting and fine-tuning of AV pipelines.",
                 points: [
-                    "Validation of middleware layer integration with upper-layer apps",
-                    "Compatibility testing across OS versions, kernel updates",
-                    "Bug tracking, interface versioning, and release packaging"
+                    "Buffer management and data flow analysis",
+                    "Latency tracing and reduction strategies",
+                    "Codec negotiation and error resilience",
                 ]
             },
             {
-                title: "Platform Support",
+                title: "Captioning & Subtitle Pipeline Integration",
+                desc: "We implement analog and digital captioning support across multiple formats for live and offline use cases.",
                 points: [
-                    "Embedded Linux (Yocto, Buildroot), Android AOSP, RTOS-based devices",
-                    "STM32, TI Sitara, NXP i.MX, Qualcomm, Rockchip, and other SoCs"
+                    "LINE21 analog closed captioning (CEA-608)",
+                    "DTVCC digital captions (CEA-708) support",
+                    "Conversion between LINE21 <--> DTVCC for regulatory compliance",
                 ]
             }
         ],
         useCases: [
-            "SDKs for camera control, AV streaming, or remote monitoring",
-            "Connectivity middleware for industrial and IoT applications",
-            "OEM APIs for configuring or updating field devices",
-            "Middleware abstraction for board families with shared firmware base"
+            "Custom implementation of AV streaming protocols (NDI, RTP, SRT, RTMP, HLS)",
+            "Codec integration and tuning (H.264/H.265, VP9, AV1, MJPEG)",
+            "Hardware codec offloading for performance and power gains",
+            "Legacy protocol support and transcoding bridges",
+            "Video/audio muxing/demuxing for embedded pipelines",
+            "End-to-end AV sync optimization across capture, encode, transmit",
         ],
         whyChooseUs: [
-            "Full-stack expertise from device drivers to user APIs",
-            "Strong documentation, testing, and developer support",
-            "Proven middleware work in media, industrial, and connected devices"
+            "Experts in both legacy and modern AV streaming protocols",
+            "Direct work with encoder/decoder IP and GPU/VPU units",
+            "Proven in 60fps, low-latency, multi-channel applications",
+            "Ability to trace, debug, and patch AV pipeline issues at protocol level",
+            "Successful integration across security, drone, and broadcast products",
+            "Deep understanding of buffer management, timestamping, and sync logic",
         ],
-        cta: "Let us help you simplify integration and enhance reusability with customized SDKs and robust middleware frameworks tailored to your embedded product line."
+        cta: [
+            {
+                ctaTitle: "Make <span class='text-primary'>AV Protocols</span> Your Competitive Advantage",
+                Ctadescription: "Whether you're integrating NDI, optimizing for AV1, or achieving perfect lip-sync — our protocol engineers help you unlock low-latency, high-fidelity media flows.",
+                ctaButtonText: "Optimize My AV Pipeline",
+            }
+        ]
     }
 ];
 
@@ -446,8 +565,8 @@ const ServiceDetailsInfo = () => {
                 <section className='relative bg-no-repeat bg-cover bg-right py-28 lg:py-52' style={{ backgroundImage: `url('/images/embeddedBanner.webp')` }}>
                     <div className='absolute bg-[#0e191eb3] top-0 size-full z-0'></div>
                     <div className='max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10'>
-                        <h2 className='text-2xl md:text-5xl xl:text-[54px] font-semibold text-white leading-tight text-center'>{service.category}</h2>
-                        <p className='text-sm md:text-lg text-white flex items-center gap-4 justify-center'>Services <RiArrowRightSLine className='text-primary text-2xl' />{service.category}</p>
+                        <h2 className='text-2xl md:text-5xl xl:text-[50px] font-normal text-white leading-tight text-center pb-4'>{service.category}</h2>
+                        <p className='text-sm md:text-lg text-white flex items-center gap-4 justify-center'>{service.tagLine}</p>
                     </div>
                 </section>
             </section>
@@ -458,9 +577,21 @@ const ServiceDetailsInfo = () => {
                     <div className='space-y-4 pb-12'>
                         <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize text-center'>Overview
                         </h3>
-                        <p className='text-[#5d6471] text-sm sm:text-[15px] md:px-6 text-center'>
-                            {service.overview}
-                        </p>
+                        {Array.isArray(service.overview) ? (
+                            service.overview.map((para, index) => (
+                                <p
+                                    key={index}
+                                    className='text-[#5d6471] text-sm sm:text-[15px] md:px-6 text-center'
+                                >
+                                    {para}
+                                </p>
+                            ))
+                        ) : (
+                            <p className='text-[#5d6471] text-sm sm:text-[15px] md:px-6 text-center'>
+                                {service.overview}
+                            </p>
+                        )}
+
                     </div>
                     <div className="relative w-full h-96 rounded-[5px] overflow-hidden">
                         <Image
@@ -471,7 +602,6 @@ const ServiceDetailsInfo = () => {
                             priority
                         />
                     </div>
-
                 </div>
             </section>
 
@@ -491,6 +621,7 @@ const ServiceDetailsInfo = () => {
                                 </div>
                                 <div className="p-6 md:p-8">
                                     <h4 className="text-lg md:text-xl font-semibold text-primary mb-3">{cap.title}</h4>
+                                    <p className='text-sm sm:text-[15px] text-[#5d6471] mb-3'>{cap.desc}</p>
                                     <ul className="list-disc pl-5 text-sm sm:text-[15px] text-[#5d6471] space-y-1">
                                         {cap.points.map((pt, idx) => (
                                             <li key={idx}>{pt}</li>
@@ -542,7 +673,7 @@ const ServiceDetailsInfo = () => {
                         <div className='lg:col-span-3 space-y-12'>
                             {service.whyChooseUs.map((reason, i) => (
                                 <div key={i} className="flex flex-nowrap gap-6 items-center">
-                                    <div className="text-[#d1e2fc] text-4xl md:text-7xl 2xl:text-[90px] font-black select-none pointer-events-none leading-none">
+                                    <div className="text-[#d1e2fc] text-4xl font-black select-none pointer-events-none leading-none">
                                         0{i + 1}
                                     </div>
                                     <div>
@@ -561,16 +692,24 @@ const ServiceDetailsInfo = () => {
             {/* CTA */}
             <section className="bg-white py-16 sm:py-28 bg-[url('/images/image.png')] bg-cover bg-bottom">
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 space-y-4 text-center">
-                    <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize text-center'> Build <span className='text-primary'>Embedded</span>  Firmware with <span className='text-primary'>Confidence</span></h3>
-                    <p className="text-sm sm:text-[15px] lg:text-lg text-[#5d6471] md:max-w-3xl mx-auto">
-                        {service.cta}
-                    </p>
-                    <Button onClick={() => router.push('/contact')}
-                        variant="default" className='w-full sm:w-fit mx-auto text-center flex items-center justify-center gap-1'
-                    >
-                        Get Started
-                        <GoArrowRight className="text-xl" />
-                    </Button>
+                    {Array.isArray(service?.cta) && service.cta.length > 0 ? (
+                        service.cta.map((item, i) => (
+                            <div key={i} className='space-y-4'>
+                                <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize text-center' dangerouslySetInnerHTML={{ __html: item.ctaTitle }} />
+                                <p className="text-sm sm:text-[15px] text-[#5d6471] md:max-w-3xl mx-auto">
+                                    {item.Ctadescription}
+                                </p>
+                                <Button onClick={() => router.push('/contact-us')}
+                                    variant="default" className='w-full sm:w-fit mx-auto text-center flex items-center justify-center gap-1'
+                                >
+                                    {item.ctaButtonText}
+                                    <GoArrowRight className="text-xl" />
+                                </Button>
+                            </div>
+                        ))
+                    ) : (
+                        <p>No CTA data available.</p>
+                    )}
                 </div>
             </section>
         </div>

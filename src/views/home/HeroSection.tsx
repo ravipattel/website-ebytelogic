@@ -49,11 +49,11 @@ const HeroSection = () => {
           </p>
           <div className="flex space-x-4 pt-4">
             <a href="#services"><Button variant="default" className="w-full h-12">Explore Services</Button></a>
-            <Button onClick={() => router.push('/contact-us')}
+            <Button onClick={() => router.push('/case-study')}
               variant="default"
-              className="max-w-[180px] w-full h-12 !bg-white !text-primary hover:!bg-primary hover:!text-white"
+              className="h-12 !bg-white !text-primary hover:!bg-primary hover:!text-white"
             >
-              Talk to Our Team
+              View Case Studies
             </Button>
           </div>
         </div>

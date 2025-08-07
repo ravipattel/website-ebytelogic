@@ -7,62 +7,62 @@ import Button from '@/src/components/Button';
 
 const serviceData = [
   {
-    category: "Embedded Software Development",
-    description: "Custom embedded solutions using C/C++, Qt, and Python for efficient and scalable product performance.",
+    category: "Embedded App Development",
+    description: "Cross-platform embedded apps in C/C++, Qt, and Python for control panels, GUIs, data acquisition, and real-time logic.",
     subServices: [
-      "Firmware & Device Driver Development",
-      "Middleware & Protocol Stack Integration",
-      "Performance Optimization & Debugging"
+      "Qt/QML GUI for Embedded Linux",
+      "Protocol-Based Control & Monitoring Apps",
+      "Storage, Logging & UI Middleware"
     ],
     slug: "embedded-software"
   },
   {
-    category: "Linux BSP & Android Customization",
-    description: "Board Support Package (BSP) services for faster product bring-up and OS-level stability.",
+    category: "Linux BSPs & Hardware Bring-Up",
+    description: "Customized BSPs, secure boot, and rapid peripheral enablement across Yocto, Buildroot, and Android platforms.",
     subServices: [
-      "Kernel Porting & Device Tree Setup",
-      "Yocto, Buildroot, AOSP Customization",
-      "Board Bring-Up for ARM/x86 platforms"
+      "Quick Bring-Up for Custom Boards",
+      "U-Boot, Secure Boot & Splash Setup",
+      "Yocto & Buildroot Migration"
     ],
     slug: "linux-bsp"
   },
   {
-    category: "Multimedia Framework Development",
-    description: "Robust video/audio pipeline integration for broadcast, streaming, and camera applications.",
+    category: "Multimedia & Streaming Frameworks",
+    description: "Real-time video pipelines using GStreamer, FFmpeg & protocol engineering for low-latency, high-fidelity streaming.",
     subServices: [
-      "GStreamer, FFMPEG, Live555 Customization",
-      "HDMI/SDI/NDI/SRT Pipeline Integration",
-      "AV Sync & Real-Time Playback Tuning"
+      "GStreamer & FFmpeg Customization",
+      "Protocol Handling (SRT, RTP, RTMP, NDI)",
+      "Codec Tuning for ARM & Embedded"
     ],
     slug: "multimedia-framework"
   },
   {
-    category: "Mobile Application Development",
-    description: "Cross-platform Android & iOS apps that control, stream, or monitor embedded systems.",
+    category: "IoT & Cloud Integration",
+    description: "Seamless integration of devices with cloud platforms using secure protocols, OTA mechanisms, and telemetry sync.",
     subServices: [
-      "Native + Flutter App Development",
-      "Media Player & Device Controller Apps",
-      "BLE/Wi-Fi Connectivity & OTA Update Support"
+      "Device-to-Cloud (AWS, Azure, GCP)",
+      "OTA Update Systems with Rollback",
+      "MQTT, REST, WebSocket Protocols"
     ],
     slug: "mobile-apps"
   },
   {
-    category: "QA & Validation Services",
-    description: "Complete embedded, mobile, and web testing coverage using manual and automated tools.",
+    category: "Embedded QA & Test Automation",
+    description: "Test infrastructure, real-device validation, and automation frameworks tailored for embedded product pipelines.",
     subServices: [
-      "Functional, Regression & System Testing",
-      "Device QA & HIL Testing",
-      "Test Automation Frameworks (Robot, Appium, Pytest)"
+      "Test Automation for Embedded Targets",
+      "HIL Setup & Regression Testing",
+      "CI/CD Integration for QA"
     ],
     slug: "qa-validation"
   },
   {
-    category: "Middleware SDK & Framework Customization",
-    description: "Reliable SDK and middleware development for embedded systems — from protocol stacks to modular APIs.",
+    category: "AV Protocol & Codec Engineering",
+    description: "End-to-end handling of streaming protocols, sync, and encoding/decoding pipelines in embedded environments.",
     subServices: [
-      "Cross-Platform SDK Architecture",
-      "Protocol & Multimedia Middleware",
-      "Application Framework Porting & API Enablement"
+      "SDI/HDMI AV Sync Engineering",
+      "NDI, RTP, SRT, HLS, RTMP Integration",
+      "Codec-Level Optimization for ARM"
     ],
     slug: "middleware-sdk"
   }
