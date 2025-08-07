@@ -37,20 +37,20 @@ const menuItems: MenuItem[] = [
     path: "#",
     subItems: [
       { label: "About Us", path: "/about" },
-      {
-        label: "Services",
-        path: "/services",
-        subItems: [
-          { icon: SoftwareIconPng, label: "Embedded App Development", path: "/services/0" },
-          { icon: LinuxIconPng, label: "Linux BSPs & Hardware Bring-Up", path: "/services/1" },
-          { icon: FrameworkIconPng, label: "Multimedia & Streaming Frameworks", path: "/services/2" },
-          { icon: AndroidIconPng, label: "IoT & Cloud Integration", path: "/services/3" },
-          { icon: QaIconPng, label: "Embedded QA & Test Automation", path: "/services/4" },
-          { icon: SdkIconPng, label: "AV Protocol & Codec Engineering", path: "/services/5" },
-        ],
-      },
       { label: "Blogs", path: "/blogs" },
       { label: "FAQs", path: "/faqs" },
+    ],
+  },
+  {
+    label: "Services",
+    path: "/services",
+    subItems: [
+      { icon: SoftwareIconPng, label: "Embedded App Development", path: "/services/0" },
+      { icon: LinuxIconPng, label: "Linux BSPs & Hardware Bring-Up", path: "/services/1" },
+      { icon: FrameworkIconPng, label: "Multimedia & Streaming Frameworks", path: "/services/2" },
+      { icon: AndroidIconPng, label: "IoT & Cloud Integration", path: "/services/3" },
+      { icon: QaIconPng, label: "Embedded QA & Test Automation", path: "/services/4" },
+      { icon: SdkIconPng, label: "AV Protocol & Codec Engineering", path: "/services/5" },
     ],
   },
   {
@@ -128,7 +128,7 @@ const Header = () => {
                       </Link>
                     </div>
                     {item.subItems && (
-                      <ul className="p-4 space-y-3 absolute top-20 -left-10 w-56 bg-white shadow-xl border-t-4 border-primary opacity-0 group-hover:opacity-100 invisible group-hover:visible group-hover:top-14 transition-all duration-300 ease-in-out z-50 rounded-md">
+                      <ul className={`p-4 space-y-3 absolute top-20 -left-10 w-56 bg-white shadow-xl border-t-4 border-primary opacity-0 group-hover:opacity-100 invisible group-hover:visible group-hover:top-14 transition-all duration-300 ease-in-out z-50 rounded-md`}>
                         {item.subItems.map((subItem, subIndex) => (
                           <li key={subIndex} className="relative group/services">
                             <Link
@@ -161,7 +161,6 @@ const Header = () => {
                         ))}
                       </ul>
                     )}
-
                   </li>
                 ))}
               </ul>
