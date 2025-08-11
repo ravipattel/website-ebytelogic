@@ -1,12 +1,13 @@
 import React from 'react'
 import { BiPhoneCall } from 'react-icons/bi'
-import { FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaGoogle, FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 import { MdMailOutline } from 'react-icons/md'
 
 import Button from '@/src/components/Button'
 import { IoLogoGithub } from 'react-icons/io'
 import Subscribe from '../about/Subscribe'
+import Link from 'next/link'
 
 const ContactDetails = () => {
     return (
@@ -114,16 +115,10 @@ const ContactDetails = () => {
                         <p className="font-semibold mb-3 text-primaryText">Follow Us On Social Media</p>
                         <div className="flex gap-4 text-white">
                             <Button className='!rounded-full !w-11 !h-11 flex items-center justify-center !p-0'>
-                                <FaYoutube className='!w-5 !h-5' />
+                               <Link href={'https://www.google.com/search?q=ebytelogic&oq=ebytelogic&gs_lcrp=EgZjaHJvbWUqDggAEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTIGCAEQRRg8MgYIAhBFGDwyCggDEAAYgAQYogQyBggEEEUYPDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDQ2OTVqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8'}><FaGoogle className='!w-5 !h-5' /></Link> 
                             </Button>
                             <Button className='!rounded-full !w-11 !h-11 flex items-center justify-center !p-0'>
-                                <FaTwitter className='!w-5 !h-5' />
-                            </Button>
-                            <Button className='!rounded-full !w-11 !h-11 flex items-center justify-center !p-0'>
-                                <IoLogoGithub className='!w-5 !h-5' />
-                            </Button>
-                            <Button className='!rounded-full !w-11 !h-11 flex items-center justify-center !p-0'>
-                                <FaLinkedinIn className='!w-5 !h-5' />
+                               <Link href={'https://in.linkedin.com/company/ebytelogic'}><FaLinkedinIn className='!w-5 !h-5' /></Link> 
                             </Button>
                         </div>
                     </div>
