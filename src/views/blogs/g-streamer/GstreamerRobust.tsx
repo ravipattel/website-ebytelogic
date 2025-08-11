@@ -10,6 +10,7 @@ const robustData = {
                 description:
                     "Maintaining precise AV sync is critical, with desynchronization becoming noticeable beyond ±150ms. eByteLogic's expertise in 'Real-time AV Sync' involves comprehensive timestamp management",
                 citation: "[166]",
+                link: 'https://in.linkedin.com/company/ebytelogic',
                 mechanisms: [
                     "Accurate PTS generation at source elements",
                     "Minimized processing jitter in both paths",
@@ -29,6 +30,7 @@ const robustData = {
                 description:
                     "Embedded systems run multiple services concurrently, causing resource contention. Consistent performance requires careful pipeline tuning and system-level optimizations.",
                 citation: "[166]",
+                link: 'https://in.linkedin.com/company/ebytelogic',
                 subsections: [
                     {
                         title: "Pipeline Tuning",
@@ -85,7 +87,8 @@ const robustData = {
                 ],
                 expertInsight:
                     "Ravi Patel of eByteLogic emphasizes looking beyond network issues to consider codecs, BSP, and buffering as potential latency sources, requiring comprehensive debugging across the entire system stack.",
-                citation: "[185]"
+                citation: "[185]",
+                link: "https://www.linkedin.com/posts/ravipatelll_real-time-video-delivery-mastering-low-latency-activity-7325504636612702208-bfFR"
             }
         }
     ]
@@ -113,7 +116,7 @@ const GstreamerRobust = () => {
                         {/* Description and Citation */}
                         <p className="text-gray-600 mb-6">
                             {subsection.content.description}{' '}
-                            <a href="#ref-166" className="text-primary hover:underline">
+                            <a href={subsection.content.link} className="text-primary hover:underline">
                                 {subsection.content.citation}
                             </a>
                         </p>
@@ -163,7 +166,7 @@ const GstreamerRobust = () => {
                             <div className="mt-6 p-4 bg-white/10 rounded-lg">
                                 <p className="text-sm text-gray-600">
                                     <span className='font-semibold'>Expert Insight:</span> {subsection.content.expertInsight}{' '}
-                                    <a href="#ref-185" className="text-primary hover:underline">
+                                    <a href={subsection.content.link} className="text-primary hover:underline">
                                         {subsection.content.citation}
                                     </a>
                                 </p>

@@ -24,7 +24,7 @@ const QaLowLevel = () => {
             </h3>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6">
                 Embedded QA involves <span className='font-semibold'>managing and verifying low-level communication</span> with peripheral devices through interfaces such as{' '}
-                <a href="#ref-31" className="text-primary">GPIO pins, I2C buses, SPI channels, UARTs, and BLE</a>. These interfaces form primary pathways for data exchange and control between microcontrollers and external components.
+                <span className="text-primary">GPIO pins, I2C buses, SPI channels, UARTs, and BLE</span>. These interfaces form primary pathways for data exchange and control between microcontrollers and external components.
             </p>
 
             <div className="mb-6 grid sm:grid-cols-2 md:grid-cols-4 gap-4">
@@ -51,7 +51,7 @@ const QaLowLevel = () => {
             </h3>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6">
                 Beyond data transmission, embedded QA must <span className='font-semibold'>ensure signal integrity and strict protocol adherence</span>.{' '}
-                <a href="#ref-46" className="text-primary">Signal integrity issues like noise, crosstalk, and improper voltage levels</a> can lead to data corruption. Timing requirements for protocols like I2C and SPI have specific constraints for clock signals, data setup, and hold times.
+                <span className="text-primary">Signal integrity issues like noise, crosstalk, and improper voltage levels</span> can lead to data corruption. Timing requirements for protocols like I2C and SPI have specific constraints for clock signals, data setup, and hold times.
             </p>
 
             <div className="pull-quote bg-gray-100 p-6 rounded-md shadow-lg mb-6 text-sm md:text-base">
@@ -88,7 +88,7 @@ const QaLowLevel = () => {
             </h3>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed">
                 Web and mobile developers work at <span className='font-semibold'>much higher abstraction levels</span>, interacting with standardized OS APIs and browser interfaces.{' '}
-                <a href="#ref-2" className="text-primary">Operating systems and hardware abstraction layers handle low-level details</a>, allowing QA to focus on functional correctness, UI/UX, and application-level performance.
+                <span className="text-primary">Operating systems and hardware abstraction layers handle low-level details</span>, allowing QA to focus on functional correctness, UI/UX, and application-level performance.
             </p>
         </section>
     )

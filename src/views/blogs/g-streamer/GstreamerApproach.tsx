@@ -6,6 +6,7 @@ const approachData = {
         description:
             "eByteLogic specializes in engineering high-performance multimedia software and embedded streaming systems, with a strong emphasis on achieving ultra-low-latency solutions through comprehensive optimization strategies.",
         citation: "[166]",
+        link: 'https://in.linkedin.com/company/ebytelogic',
         keyPoints: [
             "Real-time AV synchronization expertise",
             "Protocol bridging capabilities",
@@ -43,7 +44,7 @@ const GstreamerApproach = () => {
                     <div>
                         <p className="text-gray-600 mb-6">
                             {approachData.approach.description}{' '}
-                            <a href="#ref-166" className="text-primary hover:underline">
+                            <a href={approachData.approach.link} className="text-primary hover:underline">
                                 {approachData.approach.citation}
                             </a>
                         </p>
@@ -81,7 +82,7 @@ const GstreamerApproach = () => {
                     <span className='font-semibold'>
                         media pipeline tuning with specific emphasis on latency optimization and buffer management
                     </span>{' '}
-                    <a href="#ref-166" className="text-primary hover:underline">
+                    <a href="https://in.linkedin.com/company/ebytelogic" className="text-primary hover:underline">
                         [166]
                     </a>.
                 </p>

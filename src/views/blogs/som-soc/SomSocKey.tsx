@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa'; 
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
 const SomSocKey = () => {
   // Data for the sections
@@ -107,7 +107,7 @@ const SomSocKey = () => {
                 </div>
                 <p className="text-sm md:text-base text-gray-600 mt-4">
                   The architecture is highly application-specific, tailored to meet performance, power, and cost targets.{' '}
-                  <a href={citation} className="citation" target="_blank" rel="noopener noreferrer">
+                  <a href={citation} className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
                     [198]
                   </a>
                 </p>

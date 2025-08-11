@@ -25,7 +25,7 @@ const QaTimings = () => {
             </h3>
             <p className="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">
                 Embedded systems frequently operate under <span className='font-semibold'>real-time constraints, requiring responses within strictly defined timeframes</span>.{' '}
-                <a href="#ref-97" className="text-blue-600">These systems manage multiple concurrent operations</a>—reading sensors, processing data, controlling actuators, and communicating—while adhering to timing requirements.
+                <span className="text-primary">These systems manage multiple concurrent operations</span>—reading sensors, processing data, controlling actuators, and communicating—while adhering to timing requirements.
             </p>
 
             <div className='text-sm md:text-base'>
@@ -37,7 +37,7 @@ const QaTimings = () => {
             </h3>
             <p className="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">
                 <span className='font-semibold'>Race conditions and timing-sensitive bugs are notoriously difficult to simulate and reproduce</span>.{' '}
-                <a href="#ref-82" className="text-blue-600">Race conditions occur when concurrent processes access shared resources without proper synchronization</a>, with outcomes depending on non-deterministic execution order. Because timing varies between runs, these issues may manifest only intermittently.
+                <span className="text-primary">Race conditions occur when concurrent processes access shared resources without proper synchronization</span>, with outcomes depending on non-deterministic execution order. Because timing varies between runs, these issues may manifest only intermittently.
             </p>
 
             <h3 className="font-serif text-xl md:text-2xl font-semibold mb-4">
@@ -45,7 +45,7 @@ const QaTimings = () => {
             </h3>
             <p className="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">
                 Interrupts are fundamental for handling asynchronous events but <span className='font-semibold'>improper use is a common source of race conditions</span>.{' '}
-                <a href="#ref-83" className="text-blue-600">When ISRs and tasks access shared resources without synchronization</a>, data corruption or inconsistent states can occur. The challenge is compounded by hardware-specific interrupt control operations.
+                <span className="text-primary">When ISRs and tasks access shared resources without synchronization</span>, data corruption or inconsistent states can occur. The challenge is compounded by hardware-specific interrupt control operations.
             </p>
 
             <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 mb-6">
@@ -65,7 +65,7 @@ const QaTimings = () => {
             </h3>
             <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                 Web and mobile applications operate in <span className='font-semibold'>more deterministic execution environments</span>.{' '}
-                <a href="#ref-1" className="text-blue-600">Browsers and mobile OSs provide higher abstraction levels</a>, managing resources, scheduling, and I/O operations while shielding developers from low-level timing concerns.
+                <span className="text-primary">Browsers and mobile OSs provide higher abstraction levels</span>, managing resources, scheduling, and I/O operations while shielding developers from low-level timing concerns.
             </p>
         </section>
     )

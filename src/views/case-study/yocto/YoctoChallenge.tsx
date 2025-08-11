@@ -3,7 +3,7 @@ import React from 'react';
 const YoctoChallenge = () => {
   return (
     <section id="the-challenge" className="px-4 md:px-6 py-16">
-      <div className="md:px-6 py-8">
+      <div className="md:px-6 pt-8">
         <h2 className="serif text-3xl font-semibold mb-8">
           The Challenge: Tight Timelines for EW24 Demonstration
         </h2>
@@ -40,7 +40,7 @@ const YoctoChallenge = () => {
           </h3>
           <p className="text-gray-600 mb-6">
             The core technical challenge involved integrating a <span className='text-black font-semibold'>Toradex Verdin i.MX8MP SoM</span> onto a <span className='text-black font-semibold'>custom-designed carrier
-            board</span>. This process required ensuring that the SoM&apos;s capabilities were correctly extended to the new carrier board&apos;s
+              board</span>. This process required ensuring that the SoM&apos;s capabilities were correctly extended to the new carrier board&apos;s
             peripherals, most notably the display and touch screen.
           </p>
 

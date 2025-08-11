@@ -16,7 +16,8 @@ const PlatformData = {
             ],
             optimization:
                 "Configure ratecontrol=2, EncodingPreset=2, and SingleNalUnit=TRUE for low-latency encoding",
-            citation: "[77]"
+            citation: "[77]",
+            link: "https://community.nxp.com/t5/i-MX-Processors/Reduce-Latency-in-Gstreamer-RTSP-on-IMX8M-Plus/m-p/2093971?profile.language=zh-CN"
         },
         {
             name: "Rockchip RK356x",
@@ -29,7 +30,8 @@ const PlatformData = {
             ],
             optimization:
                 "Use CQP rate control, minimal GOP sizes, and disabled B-frames for low-latency scenarios",
-            citation: "[22]"
+            citation: "[22]",
+            link: "https://doc.embedfire.com/linux/rk356x/quick_start/zh/latest/lubancat_rk_software_hardware/software/gstreamer/gstreamer.html"
         },
         {
             name: "TI Sitara",
@@ -42,7 +44,8 @@ const PlatformData = {
             ],
             optimization:
                 "Leverage TI's Processor SDK with optimized GStreamer plugins and CMA configuration for video buffers",
-            citation: "[150]"
+            citation: "[150]",
+            link: "https://developer.ridgerun.com/wiki/index.php/Embedded_GStreamer_Performance_Tuning"
         }
     ],
     commonOptimizationPatterns: [
@@ -105,7 +108,7 @@ const GstreamerPlatform = () => {
                                 <div>
                                     <h4 className="font-semibold mb-2">Optimization</h4>
                                     <p className="text-sm text-gray-600">
-                                        {platform.optimization} <a href="#ref-77" className="text-primary hover:underline">{platform.citation}</a>
+                                        {platform.optimization} <a href={platform.link} className="text-primary hover:underline">{platform.citation}</a>
                                     </p>
                                 </div>
                             </div>

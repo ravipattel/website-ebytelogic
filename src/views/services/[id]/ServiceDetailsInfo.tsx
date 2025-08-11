@@ -16,12 +16,14 @@ import IosJPg from '@/src/assets/images/services/iot.avif'
 import SdkWebp from '@/src/assets/images/services/avProtocol.jpg'
 import FrameworkWebp from '@/src/assets/images/services/multimedia.webp'
 import LinuxPng from '@/src/assets/images/services/linux.png'
+import { RiArrowRightSLine } from 'react-icons/ri';
 
 const serviceData = [
     {
         id: 0,
         slug: "embedded-software",
         category: "Powering Smart Devices with Embedded Intelligence",
+        pathText: "Embedded App Development",
         tagLine: "C/C++, Qt, Python | Low-Level to UI | Real-Time Performance",
         imageName: EmbeddedDevelopmentJPg,
         overview:
@@ -109,6 +111,7 @@ const serviceData = [
     {
         id: 1,
         slug: "linux-bsp-android",
+        pathText: "Linux BSPs & Hardware Bring-Up",
         imageName: LinuxPng,
         category: "Bring Hardware to Life with Linux.",
         tagLine: "Custom BSPs | Fast Bring-Up | Production-Grade Integration",
@@ -197,6 +200,7 @@ const serviceData = [
         id: 2,
         slug: "multimedia-framework",
         imageName: FrameworkWebp,
+        pathText: "Multimedia & Streaming Frameworks",
         category: "Build Better Streaming Experiences.",
         tagLine: "Custom Media Pipelines | Real-Time Processing | Protocol Expertise",
         overview: ["At eByteLogic, we specialize in engineering multimedia frameworks and low-latency streaming solutions for the most demanding use cases—from live broadcast systems and AV-over-IP pipelines to drone video transmission and surveillance devices. Our expertise spans GStreamer, FFmpeg, and custom encoder pipelines, enabling pixel-perfect performance, seamless AV sync, and integration with industry-standard protocols like NDI, SRT, and RTP.", "Whether you're developing a high-performance camera system, a next-gen encoder, or a media-rich IoT device, our framework-level expertise ensures you achieve quality,reliability, and real-time responsiveness."],
@@ -283,6 +287,7 @@ const serviceData = [
     {
         id: 3,
         slug: "mobile-app-development",
+        pathText: "IoT & Cloud Integration",
         imageName: IosJPg,
         category: "Seamless Data Connectivity for Smart Devices & Edge Systems",
         tagLine: "Connect. Stream. Control. Build Smarter Embedded Systems with Cloud-Aware Architecture.",
@@ -371,6 +376,7 @@ const serviceData = [
         id: 4,
         slug: "qa-validation",
         imageName: QaJPg,
+        pathText: "Embedded QA & Test Automation",
         category: "Ensuring Quality, Reliability & Stability at Every Embedded Layer",
         tagLine: "Tested for Production. Validated for Scale. Engineered for Zero Defects.",
         overview: ["Our QA and test automation services are purpose-built for embedded systems — where hardware, firmware, and software interact in real time. We help product teams uncover edge-case bugs, prevent regressions, and ensure their systems remain stable in production environments.", "Whether you’re validating BSP bring-up, AV streaming stability, or end-to-end device workflows, we create robust testing strategies that simulate real-world usage across edge devices, protocols, and networks. The result: rock-solid embedded products with confidence at scale."],
@@ -457,6 +463,7 @@ const serviceData = [
     {
         id: 5,
         slug: "middleware-sdk",
+        pathText: "AV Protocol & Codec Engineering",
         category: "Mastering Protocols, Sync, and Codecs for Seamless Streaming",
         tagLine: "NDI | RTP | SRT | H.264/H.265 | AAC | Lip-Sync | Closed Captions",
         imageName: SdkWebp,
@@ -564,7 +571,8 @@ const ServiceDetailsInfo = () => {
             <section>
                 <section className='relative bg-no-repeat bg-cover bg-right py-28 lg:py-52' style={{ backgroundImage: `url('/images/embeddedBanner.webp')` }}>
                     <div className='absolute bg-[#0e191eb3] top-0 size-full z-0'></div>
-                    <div className='max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10'>
+                    <div className='max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10 space-y-4'>
+                        <p className='text-sm md:text-lg text-white flex items-center gap-4 justify-center'>Home <RiArrowRightSLine className='text-primary text-2xl' /> Services <RiArrowRightSLine className='text-primary text-2xl' /> {service.pathText}</p>
                         <h2 className='text-2xl md:text-5xl xl:text-[50px] font-normal text-white leading-tight text-center pb-4'>{service.category}</h2>
                         <p className='text-sm md:text-lg text-white flex items-center gap-4 justify-center'>{service.tagLine}</p>
                     </div>
@@ -670,14 +678,14 @@ const ServiceDetailsInfo = () => {
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 space-y-4">
                     <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize text-center'>Why <span className='text-primary'>eByteLogic?</span></h3>
                     <div className='grid lg:grid-cols-6 py-8 gap-3'>
-                        <div className='lg:col-span-3 space-y-6'>
+                        <div className='lg:col-span-3 space-y-6 w-fit'>
                             {service.whyChooseUs.map((reason, i) => (
-                                <div key={i} className="flex flex-nowrap gap-6 items-center">
-                                    <div className="text-[#d1e2fc] text-4xl font-black select-none pointer-events-none leading-none">
+                                <div key={i} className="flex justify-start flex-nowrap gap-4 items-center">
+                                    <div className="min-w-[50px] text-[#d1e2fc] text-4xl font-black select-none pointer-events-none leading-none">
                                         0{i + 1}
                                     </div>
-                                    <div>
-                                        <p className="text-sm sm:text-[15px] text-[#5d6471] font-medium leading-relaxed">
+                                    <div className='w-fit'>
+                                        <p className="text-sm sm:text-[15px] text-[#5d6471] font-medium">
                                             {reason}
                                         </p>
                                     </div>

@@ -8,7 +8,8 @@ import {
   FaTwitter,
   FaPhoneSquareAlt, FaRegClock, FaSearch,
   FaLinkedinIn,
-  FaYoutube
+  FaYoutube,
+  FaGoogle
 } from "react-icons/fa";
 import { IoMdMail, IoMdMenu, IoMdClose, IoLogoGithub } from "react-icons/io";
 
@@ -64,6 +65,10 @@ const menuItems: MenuItem[] = [
   { label: "Contact Us", path: "/contact-us" },
 ];
 
+const socialLinks = [
+  { Icon: FaLinkedinIn, href: "https://in.linkedin.com/company/ebytelogic" },
+  { Icon: FaGoogle, href: "https://www.google.com/search?q=ebytelogic&oq=ebytelogic&gs_lcrp=EgZjaHJvbWUqDggAEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTIGCAEQRRg8MgYIAhBFGDwyCggDEAAYgAQYogQyBggEEEUYPDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDQ2OTVqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8" },
+];
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -75,21 +80,26 @@ const Header = () => {
       <nav className="bg-[#243559] py-1.5">
         <div className="max-w-[1400px] mx-auto text-sm px-6 py-2 flex flex-wrap justify-center sm:justify-between items-center gap-2 sm:gap-4">
           <div className="flex flex-wrap gap-4 text-xs md:text-sm">
-            <div className="flex items-center gap-1 text-[#CCCCCC] cursor-pointer">
-              <IoMdMail className="text-white" /> connect@ebyteLogic.com
-            </div>
-            <div className="flex items-center gap-1 text-[#CCCCCC] cursor-pointer">
+            <a href="mailto:Contact@ebytelogic.com" className="flex items-center gap-1 text-[#CCCCCC]">
+              <IoMdMail className="text-white" /> Contact@ebytelogic.com
+            </a>
+            <a href="tel:+91-9876543210" className="flex items-center gap-1 text-[#CCCCCC]">
               <FaPhoneSquareAlt className="text-white" /> +91-9876543210
-            </div>
+            </a>
             <div className="flex items-center gap-1 text-[#CCCCCC] cursor-pointer">
               <FaRegClock className="text-white" /> Mon - Fri: 10:00 - 18:00
             </div>
           </div>
           <div className="flex gap-2">
-            {[FaLinkedinIn, FaTwitter, IoLogoGithub, FaYoutube].map((Icon, i) => (
-              <div key={i} className="bg-primary hover:bg-[#205ed1] transition-all duration-200 h-6 w-6 flex items-center justify-center rounded-sm cursor-pointer">
+            {socialLinks.map(({ Icon, href }, i) => (
+              <Link
+                key={i}
+                href={href}
+                target="_blank"
+                className="bg-primary hover:bg-[#205ed1] transition-all duration-200 h-6 w-6 flex items-center justify-center rounded-sm"
+              >
                 <Icon className="text-white text-sm" />
-              </div>
+              </Link>
             ))}
           </div>
         </div>

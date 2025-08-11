@@ -11,7 +11,8 @@ const GstreamerData = {
             icon: FaClock,
             title: "High Decoding Latency",
             description: "Stream bursts can introduce 300ms latency in RTSP streams, especially during initialization and keyframe processing.",
-            citation: "[188]"
+            citation: "[188]",
+            link: "https://community.nxp.com/t5/i-MX-Processors/Reduce-Latency-in-Gstreamer-RTSP-on-IMX8M-Plus/m-p/2093971?profile.language=zh-CN"
         },
         {
             icon: FaBuffer,
@@ -22,7 +23,8 @@ const GstreamerData = {
             icon: FaSyncAlt,
             title: "AV Desynchronization",
             description: "Clock drift exceeding ±150ms occurs when audio and video paths have differing processing latencies or incorrect timestamping.",
-            citation: "[191]"
+            citation: "[191]",
+            link: "https://gstreamer.freedesktop.org/documentation/additional/design/latency.html?gi-language=c"
         },
         {
             icon: FaMicrochip,
@@ -79,7 +81,7 @@ const GstreamerChallenge = () => {
                                         <h4 className="font-semibold mb-2">{issue.title}</h4>
                                         <p className="text-gray-600 text-sm">
                                             {issue.description}
-                                            {issue.citation && <a href="#ref" className="text-primary hover:underline">{issue.citation}</a>}
+                                            {issue.citation && <a href={issue.link} className="text-primary hover:underline">{issue.citation}</a>}
                                         </p>
                                     </div>
                                 </div>

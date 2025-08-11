@@ -13,7 +13,7 @@ const MultiViewerGstreamer = () => {
                     GStreamer is a powerful, open-source multimedia framework designed with a highly modular architecture,
                     allowing developers to construct complex media processing pipelines by connecting various components, known
                     as elements{' '}
-                    <a href="https://medium.com/@contact_45426/ffmpeg-vs-gstreamer-a-comprehensivecomparison-23217be772d3" className="citation-link" target="_blank" rel="noopener noreferrer">
+                    <a href="https://medium.com/@contact_45426/ffmpeg-vs-gstreamer-a-comprehensivecomparison-23217be772d3" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
                         [2]
                     </a>.
                 </p>

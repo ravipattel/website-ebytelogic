@@ -11,8 +11,8 @@ const RequestForm = () => {
                         Request a <span className="text-primary">Call back</span>
                     </h2>
                     <p className="text-sm sm:text-[15px] text-[#dddddd]">
-                        Lorem ipsum dolor sit amet conse adipis elit Assumenda repud eum
-                        veniam optio modi sit explicabo nisi magnam quibusdam.
+                        Looking to elevate your tech capabilities or need expert insights on embedded solutions?
+                        Leave your details, and one of our specialists will get in touch shortly to discuss how eByteLogic can empower your business.
                     </p>
                 </div>
                 <form className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-4 xl:gap-6">

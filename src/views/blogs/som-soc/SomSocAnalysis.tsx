@@ -8,14 +8,16 @@ const SomSocAnalysis = () => {
         {
           title: "SoC Development",
           text: "Requires expertise in high-speed digital design, signal integrity, and RF engineering. Complex PCB layout for DDR routing and power delivery networks.",
+          citationNo: '[209]',
           citation:
-            "https://www.ezurio.com/resources/blog/system-on-module-vs-system-on-chipwhat-s-the-difference",
+            "https://www.ezurio.com/resources/blog/system-on-module-vs-system-on-chip-what-s-the-difference",
         },
         {
           title: "SoM Development",
           text: "Focus on application-specific carrier board design. High-speed memory routing and RF design abstracted by pre-integrated module.",
+          citationNo: '[209]',
           citation:
-            "https://www.ezurio.com/resources/blog/system-on-module-vs-system-on-chipwhat-s-the-difference",
+            "https://www.ezurio.com/resources/blog/system-on-module-vs-system-on-chip-what-s-the-difference",
         },
       ],
     },
@@ -25,14 +27,16 @@ const SomSocAnalysis = () => {
         {
           title: "SoC Timeline",
           text: "Extended development cycles: custom PCB design, fabrication, assembly, testing, and certification. Typically 12-24 months for complex designs.",
+          citationNo: '[202]',
           citation:
             "https://www.ezurio.com/resources/blog/system-on-module-vs-system-on-chipwhat-s-the-difference",
         },
         {
           title: "SoM Timeline",
           text: "Dramatically shorter: focus on carrier board design while using pre-tested modules. Parallel hardware/software development reduces time by 6-12 months.",
+          citationNo: '[205]',
           citation:
-            "https://www.electronicsweekly.com/news/five-reasons-to-consider-a-som-vs-achip-down-design-2024-06/",
+            "https://www.electronicsweekly.com/news/five-reasons-to-consider-a-som-vs-a-chip-down-design-2024-06/",
         },
       ],
     },
@@ -77,7 +81,7 @@ const SomSocAnalysis = () => {
               rel="noopener noreferrer"
               className="text-primary hover:underline"
             >
-              [209]
+              {item.citationNo}
             </a>
           )}
         </p>

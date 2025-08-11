@@ -98,14 +98,14 @@ const ContactDetails = () => {
                             <BiPhoneCall className='!w-5 !h-5 mt-0.5 text-primary' />
                             <div>
                                 <h4 className='text-primaryText font-semibold text-base md:text-lg'>Calling Support</h4>
-                                <span className='text-[#5d6471] text-sm md:text-[15px]'>+91-7948000874</span>
+                                <a href="tel:+919876543210" className='text-[#5d6471] text-sm md:text-[15px]'>+91-7948000874</a>
                             </div>
                         </div>
                         <div className="flex items-start gap-3">
                             <MdMailOutline className='!w-5 !h-5 mt-0.5 text-primary' />
                             <div>
                                 <h4 className='text-primaryText font-semibold text-base md:text-lg'>Email Information</h4>
-                                <span className='text-[#5d6471] text-sm md:text-[15px]'>Contact@ebytelogic.com</span>
+                                <a href="mailto:Contact@ebytelogic.com" className='text-[#5d6471] text-sm md:text-[15px]'>Contact@ebytelogic.com</a>
                             </div>
                         </div>
                     </div>

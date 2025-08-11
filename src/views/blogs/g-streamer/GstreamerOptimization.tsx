@@ -9,6 +9,7 @@ const section3Data = {
             description:
                 "Effective memory management using DMAbuf for zero-copy operations is foundational to real-time performance.",
             citation: "[78]",
+            link: "https://gstreamer.freedesktop.org/documentation/plugin-development/advanced/allocation.html?gi-language=c",
             points: [
                 "DMAbuf sharing between hardware components",
                 "Zero-copy buffer transfer",
@@ -21,6 +22,7 @@ const section3Data = {
             description:
                 "Meticulous tuning of encoders and decoders involves selecting hardware-accelerated codecs and configuring for low-latency operation.",
             citation: "[173]",
+            link: "https://blog.csdn.net/YiHeboy/article/details/141329347",
             points: [
                 "Hardware-accelerated H.264/H.265",
                 "Minimal B-frame usage",
@@ -36,13 +38,15 @@ const section3Data = {
                 subtitle: "Hardware Acceleration",
                 description:
                     "Use platform-specific elements like vpuenc_h264 for i.MX8 VPU, mppvideodec for Rockchip MPP, and TI-specific codecs for Sitara processors.",
-                citation: "[122]"
+                citation: "[122]",
+                link: "https://variwiki.com/index.php?title=MX8_GSTREAMER&release=RELEASE_ZEUS_V1.0_VAR-SOM-MX8"
             },
             {
                 subtitle: "Queue Management",
                 description:
                     "Configure queue elements with appropriate max-size-buffers and leaky properties to balance latency and stability.",
-                citation: "[92]"
+                citation: "[92]",
+                link: "https://developer.ridgerun.com/wiki/index.php/Embedded_GStreamer_Performance_Tuning"
             }
         ]
     },
@@ -50,6 +54,7 @@ const section3Data = {
         title: "System-Level Optimizations: Kernels and BSPs",
         description:
             "Customizing Board Support Packages (BSPs) for rapid hardware response is fundamental to achieving low-latency performance. This includes real-time Linux kernels and driver optimization.",
+        link: "https://in.linkedin.com/company/ebytelogic",
         citation: "[166]",
         optimizations: [
             {
@@ -96,7 +101,7 @@ const GstreamerOptimization = () => {
                                 {strategy.title}
                             </h3>
                             <p className="text-gray-600 mb-4">
-                                {strategy.description} <a href="#ref-78" className="text-primary hover:underline">{strategy.citation}</a>
+                                {strategy.description} <a href={strategy.link} className="text-primary hover:underline">{strategy.citation}</a>
                             </p>
                             <ul className="text-sm text-gray-600 space-y-1">
                                 {strategy.points.map((point, i) => (
@@ -117,7 +122,7 @@ const GstreamerOptimization = () => {
                             <div key={index}>
                                 <h4 className="font-semibold mb-3">{item.subtitle}</h4>
                                 <p className="text-gray-600 text-sm mb-4">
-                                    {item.description} <a href="#ref-122" className="text-primary hover:underline">{item.citation}</a>
+                                    {item.description} <a href={item.link} className="text-primary hover:underline">{item.citation}</a>
                                 </p>
                             </div>
                         ))}

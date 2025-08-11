@@ -24,7 +24,7 @@ const QaDebugging = () => {
             </h3>
             <p className="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">
                 A pervasive challenge in embedded QA is <span className='font-semibold'>limited debugging visibility from inherent resource constraints</span>.{' '}
-                <a href="#ref-1" className="text-primary hover:underline">Embedded devices operate with severely restricted RAM, flash storage, and CPU cycles</a>, directly impacting the ability to incorporate extensive debugging code or large log buffers.
+                <span className="text-primary">Embedded devices operate with severely restricted RAM, flash storage, and CPU cycles</span>, directly impacting the ability to incorporate extensive debugging code or large log buffers.
             </p>
 
             <div className="text-sm md:text-base">
@@ -36,7 +36,7 @@ const QaDebugging = () => {
             </h3>
             <p className="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">
                 Given inherent limitations, <span className='font-semibold'>proactive logging strategy and specialized debugging tools become critical</span>. Engineers must strategically instrument code with conditional logging, lightweight circular buffers, and trace points.{' '}
-                <a href="#ref-239" className="text-primary hover:underline">Specialized hardware debugging tools are essential</a> for effective troubleshooting.
+                <span className="text-primary">Specialized hardware debugging tools are essential</span> for effective troubleshooting.
             </p>
 
             <div className="flex flex-col gap-4">
@@ -75,7 +75,7 @@ const QaDebugging = () => {
             </h3>
             <p className="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">
                 Acquiring real-time debugging data from fielded devices presents <span className='font-semibold'>distinct challenges</span>.{' '}
-                <a href="#ref-238" className="text-blue-600">Devices may have intermittent connectivity, limited network access, or be deployed in remote locations</a>. Security considerations and constrained bandwidth complicate remote diagnostics.
+                <span className="text-primary">Devices may have intermittent connectivity, limited network access, or be deployed in remote locations</span>. Security considerations and constrained bandwidth complicate remote diagnostics.
             </p>
 
             <h3 className="font-serif text-xl md:text-2xl font-semibold mb-4">
@@ -83,7 +83,7 @@ const QaDebugging = () => {
             </h3>
             <p className="text-gray-600 leading-relaxed">
                 Web and mobile development benefits from <span className='font-semibold'>rich debugging environments and ubiquitous logging</span>.{' '}
-                <a href="#ref-2" className="text-blue-600">Browser developer tools, server logs, mobile IDEs, and crash reporting systems</a> provide comprehensive diagnostics, making issue identification significantly more straightforward.
+                <span className="text-primary">Browser developer tools, server logs, mobile IDEs, and crash reporting systems</span> provide comprehensive diagnostics, making issue identification significantly more straightforward.
             </p>
         </section>
     )

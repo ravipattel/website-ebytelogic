@@ -1,43 +1,38 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import Slider1 from '@/src/assets/images/home/homeSlider/slider1.png'
-import Slider2 from '@/src/assets/images/home/homeSlider/slider2.png'
-import Slider3 from '@/src/assets/images/home/homeSlider/slider3.png'
+"use client";
 import Image from 'next/image';
+
+import React, { useState, useEffect } from 'react';
+
+import Slider1 from '@/src/assets/images/home/homeSlider/slider1.png';
+import Slider2 from '@/src/assets/images/home/homeSlider/slider2.png';
+import Slider3 from '@/src/assets/images/home/homeSlider/slider3.png';
+import Slider4 from '@/src/assets/images/home/homeSlider/slider4.png';
+
 interface SlideData {
   id: number;
   image: any;
-  title: string;
-  description: string;
 }
 
 const slides: SlideData[] = [
   {
     id: 1,
     image: Slider1,
-    title: "Multimedia Workflow",
-    description: "End-to-end multimedia processing pipeline from acquisition to delivery"
   },
   {
     id: 2,
     image: Slider2,
-    title: "Linux BSP & Board Bring-up",
-    description: "Production-grade hardware enablement with scalable embedded systems"
   },
   {
     id: 3,
     image: Slider3,
-    title: "Low-Latency Streaming",
-    description: "Real-time video streaming systems with sub-32ms end-to-end latency"
+  },
+  {
+    id: 4,
+    image: Slider4,
   }
 ];
-const imageData = [
-  Slider1,
-  Slider2,
-  Slider3,
-  Slider2,
-];
-const WorkflowSlider = ({ currentSlide }) => {
+
+const WorkflowSlider = ({ currentSlide }: { currentSlide: number }) => {
   const [currentSlides, setCurrentSlides] = useState(0);
   const [isClient, setIsClient] = useState(false);
 
@@ -50,7 +45,7 @@ const WorkflowSlider = ({ currentSlide }) => {
 
     const interval = setInterval(() => {
       setCurrentSlides((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 8000);
 
     return () => clearInterval(interval);
   }, [isClient]);
@@ -63,90 +58,52 @@ const WorkflowSlider = ({ currentSlide }) => {
     setCurrentSlides((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-  const goToSlide = (index: number) => {
-    setCurrentSlides(index);
-  };
-
-  if (!isClient) {
-    return (
-      <div className="relative w-full max-w-[600px] h-auto">
-        <img
-          src="/images/multimedia-workflow-transparent.png"
-          alt="Multimedia Workflow"
-          className="w-full h-auto object-contain"
-        />
-      </div>
-    );
-  }
+  // if (!isClient) {
+  //   return (
+  //     <div className="relative w-full max-w-[600px] h-auto">
+  //       <img
+  //         src="/images/multimedia-workflow-transparent.png"
+  //         alt="Multimedia Workflow"
+  //         className="w-full h-auto object-contain"
+  //       />
+  //     </div>
+  //   );
+  // }
 
   return (
-    <div className="relative w-full max-w-[600px] h-auto overflow-hidden rounded-lg">
+    <div className="relative w-full max-w-[600px] mx-auto rounded-lg overflow-hidden">
+      {/* Image */}
       <div className="relative">
-        {slides.map((slide, index) => (
-          <div
-            key={slide.id}
-            className={`transition-opacity duration-500 ${index === currentSlides ? 'opacity-100' : 'opacity-0 absolute inset-0'
-              }`}
-          >
-            <div className="relative group">
-              <Image
-                src={imageData[currentSlide]}
-                alt={slide.title}
-                className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-105"
-                style={{ width: 'auto', height: 'auto' }}
-              />
-
-              {/* Left half transparent overlay for multimedia workflow image */}
-              {slide.id === 1 && (
-                <>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-white/20 pointer-events-none"></div>
-                  <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                      background: 'linear-gradient(to right, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.3) 25%, rgba(255,255,255,0.1) 40%, transparent 50%)'
-                    }}
-                  ></div>
-                </>
-              )}
-
-              {/* Slide info overlay */}
-              <div className="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm rounded-lg p-4 transform translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                <h3 className="text-white font-semibold text-lg mb-2">{slide.title}</h3>
-                <p className="text-gray-200 text-sm">{slide.description}</p>
-              </div>
-            </div>
-          </div>
-        ))}
+        <Image
+          src={slides[currentSlide].image}
+          alt="slider-image"
+          className="w-full object-contain transition-transform duration-500 hover:scale-105"
+        />
       </div>
 
-      {/* Navigation buttons */}
-      <button
+      {/* Navigation Arrows */}
+      {/* <button
         onClick={prevSlide}
-        className="absolute top-1/2 left-4 -translate-y-1/2 z-10 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
+        className="absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white w-8 h-8 rounded-full flex items-center justify-center z-10"
       >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
+        ‹
       </button>
-
       <button
         onClick={nextSlide}
-        className="absolute top-1/2 right-4 -translate-y-1/2 z-10 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
+        className="absolute top-1/2 right-4 -translate-y-1/2 bg-black/30 hover:bg-black/50 text-white w-8 h-8 rounded-full flex items-center justify-center z-10"
       >
-        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
+        ›
+      </button> */}
 
-      {/* Pagination dots */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
-        {slides.map((_, index) => (
+      {/* Pagination Dots */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+        {slides.map((_, index: number) => (
           <button
             key={index}
-            onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full cursor-pointer transition-all duration-300 ${index === currentSlides
-              ? 'bg-white/90 scale-125'
-              : 'bg-white/40 hover:bg-white/60'
+            onClick={() => setCurrentSlides(index)}
+            className={`w-3 h-3 rounded-full transition-all ${index === currentSlide
+                ? 'bg-white'
+                : 'bg-white/40 hover:bg-white/70'
               }`}
           />
         ))}

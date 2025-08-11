@@ -77,7 +77,7 @@ const NextologiesIntro = () => {
               By utilizing commercial off-the-shelf (COTS) x86 server platforms, Nextologies offers a{' '}
               <span className='font-semibold'>cost-effective solution</span> that does not compromise on performance, while facilitating{' '}
               <span className='font-semibold'>scalability</span> through software licensing and server environment capabilities{' '}
-              <a href="https://www.nextologies.com/nextologies-takes-home-three-awards-at-nab-show-2023.html" className="text-secoborder-secondary hover:underline" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.nextologies.com/nextologies-takes-home-three-awards-at-nab-show-2023.html" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">
                 [327]
               </a>.
             </p>

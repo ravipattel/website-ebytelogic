@@ -20,12 +20,11 @@ import FrameworkIconPng from '@/src/assets/images/home/whatwedo/frameworkIcon.pn
 
 const services = [
   {
-    icon: MediaIconPng,
-    image: MediaSolutionsJpg,
-    title: "Multimedia & Streaming Frameworks",
-    description:
-      "Custom GStreamer, FFMPEG, and protocol-level streaming pipelines for real-time, low-latency video systems.",
-    showcase: "From AV sync and SDI integration to NDI/SRT delivery and closed captioning, we engineer end-to-end streaming workflows."
+    icon: ApplicationIconPng,
+    image: ApplicationToolsJpg,
+    title: "Embedded App Development",
+    description: "Embedded apps in C/C++/Qt/Python tailored for performance, stability, and hardware interaction.",
+    showcase: "UI, device logic, multi-threading, storage management, and full lifecycle embedded software."
   },
   {
     icon: FrameworkIconPng,
@@ -36,25 +35,12 @@ const services = [
     showcase: "Bootloader config, driver porting, Yocto/Buildroot customization, secure boot, splash screen, and more."
   },
   {
-    icon: ApplicationIconPng,
-    image: ApplicationToolsJpg,
-    title: "Embedded App Development",
-    description: "Embedded apps in C/C++/Qt/Python tailored for performance, stability, and hardware interaction.",
-    showcase: "UI, device logic, multi-threading, storage management, and full lifecycle embedded software."
-  },
-  {
-    icon: EngineerIconPng,
-    image: EngineeringJpg,
-    title: "AV Protocol & Codec Engineering",
-    description: "Deep expertise in audio/video protocol stacks and custom codec pipeline integration.",
-    showcase: "RTP, RTMP, RIST, HLS, and adaptive bitrate logic, with encoder tuning and protocol troubleshooting."
-  },
-  {
-    icon: EmbeddedIconPng,
-    image: EmbeddedJpg,
-    title: "Embedded QA & Test Automation",
-    description: "Validation pipelines that simulate real-world embedded conditions and system behaviors.",
-    showcase: "HIL testing, black-box/white-box testing, interface simulators, CI/CD-based embedded QA."
+    icon: MediaIconPng,
+    image: MediaSolutionsJpg,
+    title: "Multimedia & Streaming Frameworks",
+    description:
+      "Custom GStreamer, FFMPEG, and protocol-level streaming pipelines for real-time, low-latency video systems.",
+    showcase: "From AV sync and SDI integration to NDI/SRT delivery and closed captioning, we engineer end-to-end streaming workflows."
   },
   {
     icon: IotIconPng,
@@ -64,12 +50,26 @@ const services = [
       "Secure, real-time connectivity between your embedded system and cloud backends.",
     showcase: "MQTT, OTA, REST APIs, AWS IoT/Azure integration, and remote configuration at scale."
   },
+  {
+    icon: EmbeddedIconPng,
+    image: EmbeddedJpg,
+    title: "Embedded QA & Test Automation",
+    description: "Validation pipelines that simulate real-world embedded conditions and system behaviors.",
+    showcase: "HIL testing, black-box/white-box testing, interface simulators, CI/CD-based embedded QA."
+  },
+  {
+    icon: EngineerIconPng,
+    image: EngineeringJpg,
+    title: "AV Protocol & Codec Engineering",
+    description: "Deep expertise in audio/video protocol stacks and custom codec pipeline integration.",
+    showcase: "RTP, RTMP, RIST, HLS, and adaptive bitrate logic, with encoder tuning and protocol troubleshooting."
+  },
 ];
 
 const Services = () => {
   const router = useRouter();
   return (
-    <section id="services" className="py-16 sm:pb-28 bg-[#f5f8fb]">
+    <section id="services" className="py-16 sm:pb-28 sm:pt-0 bg-gradient-to-r from-gray-50 to-blue-50">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 text-center space-y-4">
         <h2 className="text-2xl sm:text-[34px] font-medium text-primaryText leading-tight">
           What We Do
@@ -106,8 +106,8 @@ const Services = () => {
                 </p>
               </div>
               <button
-                onClick={() => router.push('/services')}
-                className="mt-4 w-10 h-10 flex items-center justify-center rounded bg-[#f6f9fc] hover:bg-primary text-primary hover:text-white transition z-10 relative"
+                onClick={() => router.push(`/services/${index}`)}
+                className="cursor-pointer mt-4 w-10 h-10 flex items-center justify-center rounded bg-[#f6f9fc] hover:bg-primary text-primary hover:text-white transition z-10 relative"
               >
                 <GoArrowRight />
               </button>

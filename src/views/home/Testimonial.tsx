@@ -33,7 +33,7 @@ const Testimonial = () => {
                     semiconductors, IoT, aerospace, and more
                 </p>
             </div>
-            <div className="mt-16 py-5 bg-[#243559]">
+            <div className="mt-16 py-5 bg-primary/50 border-y-2 border-secondary">
                 <Marquee
                     gradient={false}
                     speed={50}

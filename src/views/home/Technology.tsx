@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react'
 
 const LeftList = [
@@ -16,9 +17,16 @@ const RightList = [
 
 const Technology = () => {
     return (
-        <section className='bg-[url("/images/technology.webp")] bg-conatin xl:pb-14'>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-3'>
-                <div className='flex justify-center items-center py-20 lg:py-0'>
+        <section className=''>
+            <div className='grid grid-cols-1 lg:grid-cols-2'>
+                <div className=''>
+                    <Image
+                        src="/images/technology.webp"
+                        alt="Technology Background"
+                        width={1920}
+                        height={1080}
+                        className='w-full h-full object-cover'
+                    />
                 </div>
                 <div className='bg-secondary py-6 lg:py-24 px-4 sm:px-6 lg:px-16 space-y-6'>
                     <h2 className="text-2xl sm:text-[34px] font-medium text-white leading-tight">

@@ -136,12 +136,12 @@ const Goals = () => {
                                                 <h4 className={`text-[21px] text-nowrap text-[#2a354e] font-medium group-hover/card:text-primary transition-all duration-200 ${index === 0 && "text-nowrap"}`}>
                                                     {card.title}
                                                 </h4>
-                                                <Button
+                                                {/* <Button
                                                     variant="default"
                                                     className="h-8 w-12 grid place-items-center !p-0 me-8 opacity-0 group-hover/card:opacity-100 group-hover/card:me-0 transition-all duration-300"
                                                 >
                                                     <GoArrowRight className="text-xl" />
-                                                </Button>
+                                                </Button> */}
                                             </div>
                                             <p className="text-sm text-[#5d6471] leading-relaxed">
                                                 {card.description}

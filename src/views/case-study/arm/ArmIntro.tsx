@@ -56,7 +56,7 @@ const ArmIntro = () => {
               ARM platforms{' '}
               <a
                 href="https://forum.libreelec.tv/thread/12151-feedback-for-test-build-libreelec-rk3328/?pageNo=29"
-                className="citation"
+                className="text-primary hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >

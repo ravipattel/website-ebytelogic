@@ -25,7 +25,7 @@ const QaHardware = () => {
             </h3>
             <p className="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">
                 Embedded systems are defined by their <span className='font-semibold'>intimate connection to physical hardware</span>. The software directly controls and responds to physical components including sensors, actuators, and specialized hardware interfaces like{' '}
-                <a href="#ref-31" className="text-primary">GPIO, I2C, SPI, UART, and BLE</a>. The behavior and performance of embedded software are <span className='font-semibold'>inextricably linked to hardware characteristics</span>, including timing, electrical properties, and environmental responses.
+                <span className="text-primary">GPIO, I2C, SPI, UART, and BLE</span>. The behavior and performance of embedded software are <span className='font-semibold'>inextricably linked to hardware characteristics</span>, including timing, electrical properties, and environmental responses.
             </p>
 
             <div className="bg-gray-100 p-6 rounded-lg shadow-lg mb-6 text-sm md:text-base">
@@ -37,14 +37,14 @@ const QaHardware = () => {
             </h3>
             <p className="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">
                 While valuable in early development stages, simulators and emulators have <span className='font-semibold'>inherent limitations when replicating real-world conditions</span>. Achieving perfect fidelity in simulating complex hardware interactions, subtle timing issues, electrical characteristics, and environmental influences is{' '}
-                <a href="#ref-3" className="text-primary">extremely difficult and often impractical</a>.
+                <span className="text-primary">extremely difficult and often impractical</span>.
             </p>
 
             <h3 className="font-serif text-xl md:text-2xl font-semibold mb-4">
                 HIL Testing: Bridging the Gap
             </h3>
             <p className="text-gray-600 leading-relaxed mb-6 text-sm md:text-base">
-                <span className='font-semibold'>Hardware-in-the-Loop (HIL) testing incorporates actual embedded hardware into test setups</span>, connecting devices to test benches with real-time simulation of physical environments. This methodology enables verification of <a href="#ref-9" className="text-primary">complex hardware-software interactions, real-time performance, fault tolerance, and safety mechanisms</a> that are difficult or impossible to assess through software-only simulations.
+                <span className='font-semibold'>Hardware-in-the-Loop (HIL) testing incorporates actual embedded hardware into test setups</span>, connecting devices to test benches with real-time simulation of physical environments. This methodology enables verification of <span className="text-primary">complex hardware-software interactions, real-time performance, fault tolerance, and safety mechanisms</span> that are difficult or impossible to assess through software-only simulations.
             </p>
 
             <div className="my-8">
@@ -102,7 +102,7 @@ const QaHardware = () => {
             </h3>
             <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                 Web and mobile applications operate on <span className='font-semibold'>standardized hardware platforms with abstraction layers</span> that shield applications from direct hardware interaction. This allows testing on emulators and simulators with high confidence, as{' '}
-                <a href="#ref-1" className="text-primary">underlying hardware variations are largely managed by the platform</a>.
+                <span className="text-primary">underlying hardware variations are largely managed by the platform</span>.
             </p>
         </section>
     )

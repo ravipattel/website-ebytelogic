@@ -5,11 +5,13 @@ import { MdPhoneAndroid } from 'react-icons/md'
 const contactData = [
     {
         icon: <MdPhoneAndroid className='text-lg sm:text-2xl' />,
-        info: "Talk to Us: +91-76545-XXXX"
+        info: "Talk to Us: +91-9876543210",
+        link: "tel:+919876543210"
     },
     {
         icon: <FiMail className='text-lg sm:text-2xl' />,
-        info: "Write to Us: connect@ebyteLogic.com"
+        info: "Write to Us: Contact@ebytelogic.com",
+        link: "mailto:Contact@ebytelogic.com"
     }
 ]
 
@@ -28,7 +30,18 @@ const RenderIt = () => {
                                 return (
                                     <div key={index} className='flex items-center gap-2'>
                                         <div className='bg-primary h-8 w-8 sm:w-[50px] sm:h-[50px] rounded grid place-items-center text-white'>{contact.icon}</div>
-                                        <p className='text-white text-base md:text-lg sm:text-xl'>{contact.info}</p>
+                                        {contact.link ? (
+                                            <a
+                                                href={contact.link}
+                                                className='text-white text-base md:text-lg sm:text-xl hover:underline'
+                                            >
+                                                {contact.info}
+                                            </a>
+                                        ) : (
+                                            <p className='text-white text-base md:text-lg sm:text-xl'>
+                                                {contact.info}
+                                            </p>
+                                        )}
                                     </div>
                                 )
                             })

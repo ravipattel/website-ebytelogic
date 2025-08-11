@@ -24,7 +24,7 @@ const QaRisk = () => {
             </h3>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6">
                 <span className='font-semibold'>Over-the-Air updates have become critical for modern embedded systems</span>, particularly IoT devices deployed in large numbers or inaccessible locations.{' '}
-                <a href="#ref-17" className="text-primary hover:underline">OTA updates enable remote deployment of firmware upgrades, security patches, and new features</a>, essential for maintaining functionality and addressing post-deployment vulnerabilities.
+                <span className="text-primary">OTA updates enable remote deployment of firmware upgrades, security patches, and new features</span>, essential for maintaining functionality and addressing post-deployment vulnerabilities.
             </p>
 
             <h3 className="font-serif text-xl md:text-2xl font-semibold mb-4">
@@ -32,7 +32,7 @@ const QaRisk = () => {
             </h3>
             <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6">
                 One of the most significant OTA risks is <span className='font-semibold'>potential device &#34;bricking&#34;</span>—rendering devices inoperable. This can occur from interrupted updates, corrupted packages, or unexpected device states during updates.{' '}
-                <a href="#ref-18" className="text-primary hover:underline">Unlike web or mobile apps where failed updates typically require reinstallation</a>, failed firmware updates can corrupt bootloaders or critical system software.
+                <span className="text-primary">Unlike web or mobile apps where failed updates typically require reinstallation</span>, failed firmware updates can corrupt bootloaders or critical system software.
             </p>
 
             <div className="bg-red-50 border-l-4 border-red-400 p-6 mb-6">
@@ -93,7 +93,7 @@ const QaRisk = () => {
             </h3>
             <p className="text-gray-600 leading-relaxed text-sm md:text-base">
                 Web and mobile application updates carry <span className='font-semibold'>much lower risk of bricking underlying devices</span>.{' '}
-                <a href="#ref-63" className="text-primary hover:underline">Web app updates deploy server-side, while mobile app updates operate within protected OS environments</a>, isolating application failures from core system functionality.
+                <span className="text-primary">Web app updates deploy server-side, while mobile app updates operate within protected OS environments</span>, isolating application failures from core system functionality.
             </p>
         </section>
     )

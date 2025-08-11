@@ -102,7 +102,7 @@ const tocData = {
     },
   ],
   'arm': [
-    { id: 'executive-summary', label: 'Executive Summary' },
+    { id: 'executive-summary', label: '1. Executive Summary' },
     { id: 'target-market', label: '2. Target Market & Use Cases' },
     { id: 'technical-architecture', label: '3. Technical Architecture' },
     { id: 'performance-analysis', label: '4. Performance Analysis' },

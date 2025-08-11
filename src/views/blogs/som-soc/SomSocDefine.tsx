@@ -20,7 +20,7 @@ const SomSocDefine = () => {
                         A single integrated circuit that encapsulates all or most of the essential components of a computer or electronic system onto a single microchip.{' '}
                         <a
                             href="https://aichiplink.com/blog/System-on-Chip-VSSystem-on-Module-Key-Differences-and-Applications_377"
-                            className="citation"
+                            className="text-primary hover:underline"
                         >
                             [198]
                         </a>
@@ -49,7 +49,7 @@ const SomSocDefine = () => {
                         A compact, self-contained circuit board that integrates an SoC along with other critical components necessary for a fully functional computing system.{' '}
                         <a
                             href="https://aichiplink.com/blog/System-on-Chip-VS-System-on-Module-KeyDifferences-and-Applications_377"
-                            className="citation"
+                            className="text-primary hover:underline"
                         >
                             [198]
                         </a>

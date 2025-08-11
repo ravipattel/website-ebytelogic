@@ -7,6 +7,7 @@ const SomSocExamples = () => {
       title: "Qualcomm Snapdragon",
       description:
         "High-performance mobile processors with integrated connectivity.",
+      citationNo: "[163]",
       citation:
         "https://www.e-spincorp.com/system-on-chip-soc-evolution-advancements/",
       borderColor: "border-blue-500",
@@ -15,12 +16,14 @@ const SomSocExamples = () => {
       title: "Apple Silicon",
       description:
         "Custom M-series and A-series processors for Mac and iOS devices.",
+      citationNo: "[164]",
       citation: "https://www.ampheo.com/blog/soc-vs-som-whats-the-difference",
       borderColor: "border-green-500",
     },
     {
       title: "ESP32 Series",
       description: "Popular IoT SoCs with integrated Wi-Fi and Bluetooth.",
+      citationNo: "[10]",
       citation:
         "https://oxeltech.de/system-on-chip-soc-vs-system-on-module-som/",
       borderColor: "border-purple-500",
@@ -29,6 +32,7 @@ const SomSocExamples = () => {
       title: "NXP i.MX",
       description:
         "Industrial and automotive processors for embedded applications.",
+      citationNo: "[163]",
       citation:
         "https://www.e-spincorp.com/system-on-chip-soc-evolution-advancements/",
       borderColor: "border-orange-500",
@@ -40,6 +44,7 @@ const SomSocExamples = () => {
     {
       title: "NVIDIA Jetson",
       description: "AI-focused modules for edge computing and robotics.",
+      citationNo: "[150]",
       citation:
         "https://www.unmannedsystemstechnology.com/feature/why-system-on-modules-are-used-in-high-performance-computing-systems/",
       borderColor: "border-blue-500",
@@ -47,18 +52,19 @@ const SomSocExamples = () => {
     {
       title: "Raspberry Pi Compute Module",
       description: "Industrial version of popular SBC in SoM form factor.",
-      citation: "",
       borderColor: "border-green-500",
     },
     {
       title: "Google Coral",
       description: "AI acceleration modules with Edge TPU coprocessor.",
+      citationNo: "[52]",
       citation: "https://docs.rs-online.com/7742/A700000007334641.pdf",
       borderColor: "border-purple-500",
     },
     {
       title: "Toradex SoMs",
       description: "Industrial-grade modules based on NXP processors.",
+      citationNo: "[167]",
       citation:
         "https://www.linkedin.com/posts/chetan-shidling-1aa749159_soc-som-embedded-systems-activity-7296458356423106561-zeTq",
       borderColor: "border-orange-500",
@@ -91,7 +97,7 @@ const SomSocExamples = () => {
                       rel="noopener noreferrer"
                       className="text-primary hover:underline"
                     >
-                      [Citation]
+                      {example.citationNo}
                     </a>
                   )}
                 </p>
@@ -120,7 +126,7 @@ const SomSocExamples = () => {
                         rel="noopener noreferrer"
                         className="text-primary hover:underline w-fit"
                       >
-                        [Citation]
+                        {example.citationNo}
                       </a>
                     )}
                   </p>

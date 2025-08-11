@@ -15,6 +15,7 @@ const SomSocUseCase = () => {
       title: "Consumer Electronics",
       description:
         "Smartphones, tablets, wearables where size and power efficiency are critical.",
+      citationNo: '[156]',
       citation:
         "https://www.e-spincorp.com/system-on-chip-soc-evolution-advancements/",
       bgColor: "bg-blue-100",
@@ -25,6 +26,7 @@ const SomSocUseCase = () => {
       title: "Automotive Systems",
       description:
         "ADAS, infotainment, autonomous driving platforms requiring high performance.",
+      citationNo: '[152]',
       citation: "https://patents.google.com/patent/WO2024230948A1/en",
       bgColor: "bg-green-100",
       iconColor: "text-green-600",
@@ -34,6 +36,7 @@ const SomSocUseCase = () => {
       title: "IoT Devices",
       description:
         "Battery-powered sensors, smart home devices with space constraints.",
+      citationNo: '[163]',
       citation:
         "https://www.espincorp.com/system-on-chip-soc-evolution-advancements/",
       bgColor: "bg-purple-100",
@@ -47,6 +50,7 @@ const SomSocUseCase = () => {
       title: "Industrial Automation",
       description:
         "Control systems, robotics, and manufacturing equipment requiring reliability.",
+      citationNo: "[153]",
       citation: "https://www.ttelectronics.com/blog/system-on-module/",
       bgColor: "bg-orange-100",
       iconColor: "text-orange-600",
@@ -56,8 +60,9 @@ const SomSocUseCase = () => {
       title: "Medical Devices",
       description:
         "Equipment requiring regulatory compliance and long-term support.",
+      citationNo: "[147]",
       citation:
-        "https://medium.com/@geniatech/som-vs-soc-in-edge-ai-applications-balancing-flexibility-scalability-and-integration-b4e4ce9dc97e",
+        "https://geniatech.medium.com/som-vs-soc-in-edge-ai-applications-balancing-flexibility-scalability-and-integration-b4e4ce9dc97e",
       bgColor: "bg-red-100",
       iconColor: "text-red-600",
     },
@@ -66,6 +71,7 @@ const SomSocUseCase = () => {
       title: "Edge AI & Vision",
       description:
         "Machine vision, surveillance, and AI inference at the edge.",
+      citationNo: "[150]",
       citation:
         "https://www.unmannedsystemstechnology.com/feature/why-system-on-modules-are-used-in-high-performance-computing-systems/",
       bgColor: "bg-indigo-100",
@@ -103,7 +109,7 @@ const SomSocUseCase = () => {
                       rel="noopener noreferrer"
                       className="text-primary hover:underline"
                     >
-                      [156]
+                      {app.citationNo}
                     </a>
                   </p>
                 </div>
@@ -135,7 +141,7 @@ const SomSocUseCase = () => {
                       rel="noopener noreferrer"
                       className="text-primary hover:underline"
                     >
-                      [153]
+                      {app.citationNo}
                     </a>
                   </p>
                 </div>
@@ -165,7 +171,7 @@ const SomSocUseCase = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              [147]
+              {[147]}
             </a>
           </p>
 

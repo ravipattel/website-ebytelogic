@@ -47,15 +47,6 @@ const Solutions = () => {
               <p className="text-[#5d6471] text-sm sm:text-[15px] mb-3">
                 {solution.description}
               </p>
-              <a
-                href="/details"
-                className="relative text-[#444444] text-[15px] font-medium transition-all duration-500 hover:text-primary group"
-              >
-                Read more
-                <span
-                  className="absolute left-0 -bottom-1 h-[2px] w-0 bg-primary transition-all duration-500 group-hover:w-full"
-                ></span>
-              </a>
             </div>
           ))}
         </div>

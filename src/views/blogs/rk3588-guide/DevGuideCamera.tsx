@@ -7,7 +7,7 @@ const cameraConfigData = {
         "Configuring the Device Tree Source (DTS) is fundamental for enabling camera functionality. The DTS defines hardware components, their interconnections, and parameters for the Linux kernel.",
     deviceTreeConfigCitation: {
         text: "[65]",
-        link: "https://wiki.tfirefly.com/en/ROC-RK3588S-PC/usage_camera.html"
+        link: "https://wiki.t-firefly.com/en/ROC-RK3588S-PC/usage_camera.html"
     },
     codeBlock: `/* Example IMX577 sensor configuration */
 &;i2c3 { status = "okay"; imx577: imx577@1a { compatible =

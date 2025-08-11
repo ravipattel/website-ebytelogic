@@ -10,6 +10,7 @@ const SomSocFramework = () => {
       title: 'Production Volume',
       description:
         'High volume (>100K units) favors SoC for cost optimization. Low-medium volume favors SoM for lower NRE.',
+      citationNo: "[198]",
       citation: 'https://aichiplink.com/blog/System-on-Chip-VS-System-on-Module-KeyDifferences-and-Applications_377',
       bgColor: 'bg-blue-100',
       textColor: 'text-blue-600',
@@ -27,6 +28,7 @@ const SomSocFramework = () => {
       title: 'Expertise Availability',
       description:
         'Limited hardware expertise makes SoM more accessible. Strong design teams can pursue custom SoC development.',
+      citationNo: "[216]",
       citation: 'https://oxeltech.de/soc-vs-som-in-low-power-devices/',
       bgColor: 'bg-purple-100',
       textColor: 'text-purple-600',
@@ -44,6 +46,7 @@ const SomSocFramework = () => {
       title: 'Regulatory Compliance',
       description:
         'Pre-certified SoMs reduce regulatory burden. Custom SoC designs require full certification process.',
+      citationNo: "[158]",
       citation: 'https://www.ezurio.com/resources/blog/system-on-module-vs-system-on-chip-what-s-the-difference',
       bgColor: 'bg-red-100',
       textColor: 'text-red-600',
@@ -97,7 +100,7 @@ const SomSocFramework = () => {
                     rel="noopener noreferrer"
                     className="citation text-blue-600 underline"
                   >
-                    [Citation]
+                    {item.citationNo}
                   </a>
                 )}
               </p>

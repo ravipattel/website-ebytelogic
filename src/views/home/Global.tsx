@@ -87,7 +87,7 @@ const Global = () => {
                                         <span>{card.comments}</span>
                                     </div> */}
                                 </div>
-                                <h3 className="text-lg sm:text-[21px] leading-normal cursor-pointer hover:text-primary transition-colors duration-300">
+                                <h3 className="text-lg sm:text-[21px] leading-normal">
                                     {card.title}
                                 </h3>
                                 <p className='text-[#5d6471] text-sm sm:text-[15px]'>{card.description}</p>
