@@ -69,7 +69,7 @@ const Footer = () => {
                                 <h3 className="font-medium text-primaryText text-xl mb-3">Get in Touch</h3>
                                 <p className="mb-2 text-primaryText text-sm sm:text-[15px]"><span className="font-medium text-primary">Location</span> :
                                     {` 1114, Ganesh Glory, Jagatpur Rd, S.G. Highway, Gota, Ahmedabad - 382481`}</p>
-                                <a href='tel:+91-9876543210' className="block mb-2 text-primaryText text-sm sm:text-[15px]"><span className="font-medium text-primary">Tel</span> : +91-9876543210</a>
+                                <a href="tel:+919033223700" className="block mb-2 text-primaryText text-sm sm:text-[15px]"><span className="font-medium text-primary">Tel</span> : +91 90332 23700</a>
                                 <a href='mailto:Contact@ebytelogic.com' className="block mb-4 text-primaryText text-sm sm:text-[15px]"><span className="font-medium text-primary">Email</span> :  Contact@ebytelogic.com</a>
 
                                 <div className="flex space-x-3">

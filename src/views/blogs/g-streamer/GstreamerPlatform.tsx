@@ -1,92 +1,21 @@
 import React from 'react'
-import { FaClock, FaFile } from 'react-icons/fa';
-import { FaMicrochip } from 'react-icons/fa6';
 
-const PlatformData = {
-    title: "Platform-Specific Considerations and Techniques",
-    platforms: [
-        {
-            name: "NXP i.MX8 Series",
-            icon: FaMicrochip,
-            keyElements: [
-                "vpuenc_h264 for encoding",
-                "v4l2src with DMABUF import",
-                "imxvideoconvert_g2d",
-                "waylandsink for display"
-            ],
-            optimization:
-                "Configure ratecontrol=2, EncodingPreset=2, and SingleNalUnit=TRUE for low-latency encoding",
-            citation: "[77]",
-            link: "https://community.nxp.com/t5/i-MX-Processors/Reduce-Latency-in-Gstreamer-RTSP-on-IMX8M-Plus/m-p/2093971?profile.language=zh-CN"
-        },
-        {
-            name: "Rockchip RK356x",
-            icon: FaMicrochip,
-            keyElements: [
-                "mppvideodec for decoding",
-                "mpph264enc for encoding",
-                "DMABUF memory sharing",
-                "RKISP driver integration"
-            ],
-            optimization:
-                "Use CQP rate control, minimal GOP sizes, and disabled B-frames for low-latency scenarios",
-            citation: "[22]",
-            link: "https://doc.embedfire.com/linux/rk356x/quick_start/zh/latest/lubancat_rk_software_hardware/software/gstreamer/gstreamer.html"
-        },
-        {
-            name: "TI Sitara",
-            icon: FaMicrochip,
-            keyElements: [
-                "IVA-HD for video codecs",
-                "C66x DSP for processing",
-                "ticodecbin elements",
-                "DMA buffer management"
-            ],
-            optimization:
-                "Leverage TI's Processor SDK with optimized GStreamer plugins and CMA configuration for video buffers",
-            citation: "[150]",
-            link: "https://developer.ridgerun.com/wiki/index.php/Embedded_GStreamer_Performance_Tuning"
-        }
-    ],
-    commonOptimizationPatterns: [
-        {
-            title: "Zero-Copy Architecture",
-            icon: FaFile,
-            points: [
-                "DMAbuf import/export across elements",
-                "Hardware-accelerated memory sharing",
-                "Avoid unnecessary buffer copies",
-                "Memory pool pre-allocation"
-            ]
-        },
-        {
-            title: "Latency Optimization",
-            icon: FaClock,
-            points: [
-                "Real-time kernel configurations",
-                "CPU affinity and priority scheduling",
-                "Interrupt latency minimization",
-                "Continuous performance monitoring"
-            ]
-        }
-    ]
-};
-
-const GstreamerPlatform = () => {
+const GstreamerPlatform = ({ data }) => {
+    const platform = data?.platformData;
     return (
         <section id="section-4" className="px-4 md:px-6 py-16 bg-slate-50">
             {/* Section Title */}
             <div className="mb-8">
-                <span className="text-primary mr-3">04</span>
+                <span className="text-primary mr-3">{platform?.no}</span>
                 <h2 className="font-serif text-3xl font-semibold inline">
-                    {PlatformData.title}
+                    {platform?.title}
                 </h2>
             </div>
 
             <div className="prose prose-lg max-w-none">
                 {/* Platforms */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-                    {PlatformData.platforms.map((platform, index) => (
+                    {platform?.platforms?.map((platform, index) => (
                         <div key={index} className="bg-white p-8 rounded-md shadow-sm">
                             <div className="flex items-center mb-6">
                                 <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4 text-white text-lg">
@@ -100,7 +29,7 @@ const GstreamerPlatform = () => {
                                 <div>
                                     <h4 className="font-semibold mb-2">Key Elements</h4>
                                     <ul className="text-sm text-gray-600 space-y-1">
-                                        {platform.keyElements.map((element, i) => (
+                                        {platform?.keyElements?.map((element, i) => (
                                             <li key={i}>• {element}</li>
                                         ))}
                                     </ul>
@@ -108,7 +37,7 @@ const GstreamerPlatform = () => {
                                 <div>
                                     <h4 className="font-semibold mb-2">Optimization</h4>
                                     <p className="text-sm text-gray-600">
-                                        {platform.optimization} <a href={platform.link} className="text-primary hover:underline">{platform.citation}</a>
+                                        {platform?.optimization} <a href={platform?.link} className="text-primary hover:underline">{platform?.citation}</a>
                                     </p>
                                 </div>
                             </div>
@@ -120,7 +49,7 @@ const GstreamerPlatform = () => {
                 <div className="bg-primary/5 border-l-4 border-primary p-8 rounded-md">
                     <h3 className="font-serif text-2xl font-semibold mb-6">Common Optimization Patterns</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {PlatformData.commonOptimizationPatterns.map((pattern, index) => (
+                        {platform?.commonOptimizationPatterns?.map((pattern, index) => (
                             <div key={index}>
                                 <h4 className="font-semibold mb-4 flex items-center gap-3">
                                     <pattern.icon className="text-primary" />

@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import React from 'react'
 
+import TechnologyLedLeft from '@/src/assets/images/home/techLedSolution/technologyLedLeft.png';
+
 const LeftList = [
     "±10ms AV Sync | Broadcast-Grade Real-Time Streaming",
     "GStreamer, FFMPEG, Live555 | Framework Customization",
@@ -21,7 +23,7 @@ const Technology = () => {
             <div className='grid grid-cols-1 lg:grid-cols-2'>
                 <div className=''>
                     <Image
-                        src="/images/technology.webp"
+                        src={TechnologyLedLeft}
                         alt="Technology Background"
                         width={1920}
                         height={1080}

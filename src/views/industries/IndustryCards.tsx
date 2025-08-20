@@ -12,9 +12,9 @@ import Button from '@/src/components/Button'
 import wearablesPng from '@/src/assets/images/industry/industryWearables.png'
 import MediaPng from '@/src/assets/images/industry/industryMedia.png'
 import MotherBoardPng from '@/src/assets/images/industry/industrySemiconductor.png'
-import FirelinePng from '@/src/assets/images/home/industry/fireline.png';
-import IotPng from '@/src/assets/images/industry/iotAutomation.png'
-import AerospaceJpg from '@/src/assets/images/industry/aerospace.jpg'
+import FirelinePng from '@/src/assets/images/industry/industryFireAlarm.png';
+import IotPng from '@/src/assets/images/industry/industryIot.png'
+import AerospaceJpg from '@/src/assets/images/industry/industryAerospace.png'
 import HeroIotPng from '@/src/assets/images/industry/heroIot.png'
 
 
@@ -200,13 +200,11 @@ const IndustryCards = () => {
                             <Button onClick={() => router.push('/contact-us')} className='px-6 py-3'>
                                 Book a Consultation
                             </Button>
-                            <a href='#industries'>
-                                <Button
+                                <Button onClick={() => router.push('/case-study')}
                                     className='!bg-blue-100 !border-0 !text-blue-600 px-6 py-3 hover:!bg-blue-200 transition flex items-center gap-2'
                                 >
-                                    Explore Industries <FaArrowRightLong />
+                                    Explore Our Case-Studies <FaArrowRightLong />
                                 </Button>
-                            </a>
                         </div>
                     </div>
                     <div>

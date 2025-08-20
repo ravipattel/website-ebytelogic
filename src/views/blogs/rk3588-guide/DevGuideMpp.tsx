@@ -4,84 +4,9 @@ import React from 'react'
 
 import DevGuideArchitecturePng from '@/src/assets/images/blogs/blogDetails/devGuideArchitecture.png'
 
-const mppRgaData = {
-    title: "MPP & RGA Processing",
-    multimediaProcessingPlatformTitle: "Multimedia Processing Platform",
-    multimediaProcessingPlatformDescription:
-        "The Rockchip Multimedia Processing Platform (MPP) provides hardware-accelerated video encoding and decoding capabilities. It supports H.265, H.264, VP9, and other codecs with significant CPU load reduction.",
-    multimediaProcessingPlatformCitation: {
-        text: "[76]",
-        link: "https://www.ebaina.com/articles/140000017044"
-    },
-    supportedCodecsTitle: "Supported Codecs",
-    supportedCodecs: {
-        decoding: [
-            "H.265/HEVC",
-            "H.264/AVC",
-            "VP9, VP8",
-            "MPEG4/2/1",
-            "VC1, MJPEG"
-        ],
-        encoding: ["H.264/AVC", "VP8", "MJPEG"]
-    },
-    mppApiWorkflowTitle: "MPP API Workflow",
-    mppApiWorkflowSteps: [
-        "mpp_create() - Initialize context",
-        "mpp_init() - Set codec type",
-        "mpi->control() - Configure parameters",
-        "encode_put_frame() - Input frames",
-        "encode_get_packet() - Output packets",
-        "Resource cleanup"
-    ],
-    rockchipGraphicsAcceleratorTitle: "Rockchip Graphics Accelerator",
-    rockchipGraphicsAcceleratorDescription:
-        "The RGA is a dedicated 2D graphics processor for high-performance image operations including scaling, rotation, format conversion, and blending.",
-    rockchipGraphicsAcceleratorCitation: {
-        text: "[49]",
-        link:
-            "https://dl.khadas.com/products/edge2/datasheet/rockchip_rk3588_trm_v1.0_part2_20220309.pdf"
-    },
-    rgaProcessingCapabilitiesTitle: "RGA Processing Capabilities",
-    rgaProcessingCapabilitiesImage: DevGuideArchitecturePng,
-    commonRgaUseCasesTitle: "Common RGA Use Cases",
-    commonRgaUseCases: [
-        "Resizing camera frames for AI model input",
-        "Format conversion (YUV to RGB, NV12 to RGB888)",
-        "Image rotation and flipping for serif",
-        "Alpha blending for video overlays",
-        "Color space conversion for different processing pipelines"
-    ],
-    integrationWithMultimediaFrameworksTitle: "Integration with Multimedia Frameworks",
-    integrationWithMultimediaFrameworksDescription:
-        "Both MPP and RGA can be integrated with popular multimedia frameworks for streamlined development.",
-    integrationWithMultimediaFrameworksCitation: {
-        text: "[83]",
-        link: "https://blog.csdn.net/Leon_Chenl/article/details/144839093"
-    },
-    integrations: [
-        {
-            title: "FFmpeg Integration",
-            code: `# FFmpeg with RGA filters
-ffmpeg -init_hw_device rkmpp=hw \ 
--filter_hw_device hw \ 
--f v4l2 -i /dev/video11 \ 
--vf hwupload,scale_rkrga=w=1920:h=1080:format=nv12 \ 
--c:v h264_rkmpp \ 
--f rtsp rtsp://192.168.31.253:8554/live/stream`
-        },
-        {
-            title: "GStreamer Integration",
-            code: `# GStreamer pipeline with MPP 
-gst-launch-1.0 v4l2src device=/dev/video0 ! \ 
-video/x-raw,width=640,height=480 ! \ 
-videoconvert ! video/x-raw,format=NV12 ! \ 
-mpph264enc ! h264parse ! \ 
-rtph264pay ! udpsink host=10.42.0.1 port=1234`
-        }
-    ]
-};
 
-const DevGuideMpp = () => {
+const DevGuideMpp = ({data}) => {
+    const mppRgaData = data?.mppRgaData;
     return (
         <section id="mpp-rga" className="px-4 md:px-6 py-16">
             {/* Title of the Section */}

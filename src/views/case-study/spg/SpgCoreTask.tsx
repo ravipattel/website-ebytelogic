@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import React from 'react';
 
+import systemArchitectureSPG from '@/src/assets/images/caseStudy/systemArchitectureSPG.svg'
 const SpgCoreTask = () => {
   return (
     <section id="core-task" className="px-4 md:px-6 py-16">
@@ -51,35 +53,9 @@ const SpgCoreTask = () => {
         </div>
 
         {/* Architecture Diagram */}
-        <div className="chart-container">
+        <div>
           <h3 className="font-serif text-xl font-bold mb-4">System Architecture Overview</h3>
-          <div className="relative bg-gray-50 p-4 rounded-lg shadow-inner">
-            <div className="mermaid" id="architecture-diagram">
-              {`
-                graph TD
-                  A["QML/Qt5 GUI"] --> B["GStreamer Framework"]
-                  B --> C["NDI Plugin <br />gst-plugin-ndi"]
-                  C --> D["NDI SDK"]
-                  B --> E["Audio Processing"]
-                  E --> F["Echo Cancellation <br />webrtcdsp"]
-                  E --> G["Audio Sinks"]
-                  C --> H["Network Streams"]
-                  H --> I["NDI Sources"]
-                  H --> J["NDI Sinks"]
-
-                  style A fill:#e3f2fd,stroke:#1976d2,stroke-width:2px,color:#000
-                  style B fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px,color:#000
-                  style C fill:#fff3e0,stroke:#f57c00,stroke-width:2px,color:#000
-                  style D fill:#e8f5e8,stroke:#388e3c,stroke-width:2px,color:#000
-                  style E fill:#fce4ec,stroke:#c2185b,stroke-width:2px,color:#000
-                  style F fill:#e0f7fa,stroke:#0097a7,stroke-width:2px,color:#000
-                  style G fill:#f1f8e9,stroke:#689f38,stroke-width:2px,color:#000
-                  style H fill:#fff8e1,stroke:#fbc02d,stroke-width:2px,color:#000
-                  style I fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px,color:#000
-                  style J fill:#e0f2f1,stroke:#00695c,stroke-width:2px,color:#000
-              `}
-            </div>
-          </div>
+          <Image src={systemArchitectureSPG} alt='systemArchitectureSPG' className='mx-auto'/>
         </div>
       </div>
     </section>

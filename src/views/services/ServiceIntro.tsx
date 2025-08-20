@@ -7,6 +7,7 @@ import React from 'react'
 import Button from '@/src/components/Button'
 
 import ServiceWebp from '@/src/assets/images/services/service.webp'
+import Link from 'next/link'
 const ServiceIntro = () => {
     const router = useRouter();
 
@@ -22,9 +23,7 @@ const ServiceIntro = () => {
                             mobile apps to validation support.</p>
 
                         <div className="flex flex-wrap gap-4">
-                            <a href='#services'>
-                                <Button className='px-6 py-3'>Explore Our Services</Button>
-                            </a>
+                            <Button onClick={() => router.push('/case-study')} className='px-6 py-3'>Explore Our Case-Studies</Button>
                             <Button onClick={() => router.push('/contact-us')} className='!bg-blue-100 !border-0 !text-blue-600 px-6 py-3 hover:!bg-blue-200 transition'>Request a Free Consultation</Button>
                         </div>
                     </div>

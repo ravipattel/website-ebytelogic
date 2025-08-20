@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import React from 'react'
 
-import ProjectsPng from '@/src/assets/images/home/projects/projects.png'
+import WorldMapTechPng from '@/src/assets/images/home/projects/worldMapTech.png'
 import StreamingPng from '@/src/assets/images/home/straming.png'
 import IOt from '@/src/assets/images/home/projects/internet-of-things.png'
 import ElectricalPng from '@/src/assets/images/home/projects/electrical.png'
@@ -27,11 +27,11 @@ const Projects = () => {
                         {/* <Image src={SelfPng} alt="SelfPng" width={505} height={404} className='mx-auto relative z-10 lg:h-96 lg:w-96 xl:w-auto xl:h-auto' />
                         <Image src={EarthPng} alt="EarthPng" width={505} height={404} className='mx-auto opacity-25 absolute -top-24 lg:-top-11 xl:-top-16 left-0 md:left-36 lg:left-6 z-0 spin-slow lg:h-96 lg:w-96 xl:w-auto xl:h-auto' /> */}
                         <Image
-                            src={ProjectsPng}
-                            alt="ProjectsPng"
+                            src={WorldMapTechPng}
+                            alt="WorldMapTechPng"
                             width={1152}
-                            height={768}
-                            className="w-full h-auto"
+                            height={450}
+                            className="w-full lg:h-[450px]"
                             priority
                         />
                     </div>

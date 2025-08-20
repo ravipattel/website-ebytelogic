@@ -3,7 +3,7 @@ import { RiArrowRightSLine } from 'react-icons/ri'
 
 const AboutHero = () => {
     return (
-        <section className='relative bg-[url("/images/aboutBanner.png")] bg-no-repeat bg-cover py-28 lg:py-64'>
+        <section className='relative bg-[url("/images/bg/aboutBanner.png")] bg-no-repeat bg-center bg-cover py-28 lg:py-64'>
             <div className='absolute bg-[#0e191eb3] top-0 size-full z-0'></div>
             <div className='max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10 space-y-4'>
                 <p className='text-sm md:text-lg text-white flex items-center gap-4 justify-center'>Home <RiArrowRightSLine className='text-primary text-2xl' /> About</p>

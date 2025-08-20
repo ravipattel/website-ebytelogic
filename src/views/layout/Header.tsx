@@ -83,8 +83,8 @@ const Header = () => {
             <a href="mailto:Contact@ebytelogic.com" className="flex items-center gap-1 text-[#CCCCCC]">
               <IoMdMail className="text-white" /> Contact@ebytelogic.com
             </a>
-            <a href="tel:+91-9876543210" className="flex items-center gap-1 text-[#CCCCCC]">
-              <FaPhoneSquareAlt className="text-white" /> +91-9876543210
+            <a href="tel:+919033223700" className="flex items-center gap-1 text-[#CCCCCC]">
+              <FaPhoneSquareAlt className="text-white" /> +91 90332 23700
             </a>
             <div className="flex items-center gap-1 text-[#CCCCCC] cursor-pointer">
               <FaRegClock className="text-white" /> Mon - Fri: 10:00 - 18:00
@@ -105,7 +105,7 @@ const Header = () => {
         </div>
       </nav>
       <header className="sticky top-0 left-0 z-[99999] bg-white/90">
-        <div className="px-6 py-4 shadow-lg  relative z-50">
+        <div className="px-6 py-4 shadow-lg relative z-50">
           <div className="max-w-[1400px] mx-auto flex justify-between items-center">
             <Link
               href={'/'} >

@@ -2,25 +2,25 @@ import Image from "next/image";
 
 import React from "react";
 
-import TeamPng from "@/src/assets/images/home/team.png";
-import ProjectPng from "@/src/assets/images/home/project-management.png";
-import AnalysisPng from "@/src/assets/images/home/product-management.png";
+import EngineeringEdgePng from "@/src/assets/images/home/techLedSolution/engineer.jpg";
+import ExpertisePng from "@/src/assets/images/home/techLedSolution/expertise.png";
+import ProductPartnerPng from "@/src/assets/images/home/techLedSolution/productPartner.png";
 
 const solutionsData = [
   {
-    img: ProjectPng,
+    img: EngineeringEdgePng,
     title: "Embedded Engineering Edge",
     description:
       "From ultra-low-latency AV pipelines to secure BSP bring-ups, our embedded software delivers real-time performance across MediaTech and semiconductor platforms.",
   },
   {
-    img: AnalysisPng,
+    img: ProductPartnerPng,
     title: "Full-Cycle Product Partner",
     description:
       "From proof-of-concept to production, we partner with product teams to build and scale embedded systems—agile, modular, and market-ready.",
   },
   {
-    img: TeamPng,
+    img: ExpertisePng,
     title: "Platform-Aware Expertise",
     description:
       "We specialize in GStreamer, FFMPEG, Yocto, Buildroot, and AOSP—offering stack-level integration, protocol handling, and driver tuning for complex systems.",
@@ -40,7 +40,7 @@ const Solutions = () => {
                 : ""
                 }`}
             >
-              <Image src={solution.img} alt={solution.title} height={80} width={80} className="mx-auto" />
+              <Image src={solution.img} alt={solution.title} height={120} width={120} className={`mx-auto`} />
               <h3 className="text-xl font-medium text-primaryText my-2">
                 {solution.title}
               </h3>

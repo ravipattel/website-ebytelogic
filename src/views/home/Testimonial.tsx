@@ -20,6 +20,10 @@ import SmartDataPng from "@/src/assets/images/home/testimonial/smartData.svg";
 import SpgWebp from "@/src/assets/images/home/testimonial/spg.webp";
 import WrcPng from "@/src/assets/images/home/testimonial/wrc.png";
 import XchangePng from "@/src/assets/images/home/testimonial/xchange.png";
+import sipRadiusPng from "@/src/assets/images/home/testimonial/sipRadius.png";
+import AntennityPng from "@/src/assets/images/home/testimonial/antennity.png";
+import OSEJpg from "@/src/assets/images/home/testimonial/ose.jpg";
+import DeviceSolutionsPng from "@/src/assets/images/home/testimonial/deviceSolutions.png";
 
 const Testimonial = () => {
     return (
@@ -51,12 +55,16 @@ const Testimonial = () => {
                         { src: SpgWebp, alt: 'SpgWebp' },
                         { src: WrcPng, alt: 'WrcPng' },
                         { src: XchangePng, alt: 'XchangePng' },
+                        { src: sipRadiusPng, alt: 'sipRadiusPng' },
+                        { src: AntennityPng, alt: 'AntennityPng' },
+                        { src: OSEJpg, alt: 'OSEJpg' },
+                        { src: DeviceSolutionsPng, alt: 'DeviceSolutionsPng' },
                     ].map((logo, index) => (
                         <div key={index} className="flex justify-center items-center px-6">
                             <Image
                                 src={logo.src}
                                 alt={logo.alt}
-                                className="size-36 object-contain"
+                                className={`${logo.alt === 'AntennityPng' ? 'size-24' : 'size-36'} object-contain`}
                             />
                         </div>
                     ))}

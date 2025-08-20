@@ -5,12 +5,12 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import { GoArrowRight } from "react-icons/go";
 
-import MediaSolutionsJpg from '@/src/assets/images/home/whatwedo/mediaSolutions.jpg'
-import EmbeddedJpg from '@/src/assets/images/home/whatwedo/embeddedSystems.jpg'
+import MediaSolutionsJpg from '@/src/assets/images/home/whatwedo/multimediaStreaming.png'
+import EmbeddedJpg from '@/src/assets/images/home/whatwedo/embeddedQA.png'
 import EngineeringJpg from '@/src/assets/images/home/whatwedo/engineer.jpg'
-import IotJpg from '@/src/assets/images/home/whatwedo/iot.jpg'
-import FrameworkJpg from '@/src/assets/images/home/whatwedo/frameworks.jpg'
-import ApplicationToolsJpg from '@/src/assets/images/home/whatwedo/applicationsTool.jpg'
+import IotJpg from '@/src/assets/images/home/whatwedo/iot.png'
+import LinuxBspPng from '@/src/assets/images/home/whatwedo/linuxBsp.png'
+import EmbeddedAppPng from '@/src/assets/images/home/whatwedo/embeddedApp.png'
 import ApplicationIconPng from '@/src/assets/images/home/whatwedo/appIcon.png'
 import MediaIconPng from '@/src/assets/images/home/whatwedo/mediaIcon.png'
 import EmbeddedIconPng from '@/src/assets/images/home/whatwedo/embeddeIcon.png'
@@ -21,14 +21,14 @@ import FrameworkIconPng from '@/src/assets/images/home/whatwedo/frameworkIcon.pn
 const services = [
   {
     icon: ApplicationIconPng,
-    image: ApplicationToolsJpg,
+    image: EmbeddedAppPng,
     title: "Embedded App Development",
     description: "Embedded apps in C/C++/Qt/Python tailored for performance, stability, and hardware interaction.",
     showcase: "UI, device logic, multi-threading, storage management, and full lifecycle embedded software."
   },
   {
     icon: FrameworkIconPng,
-    image: FrameworkJpg,
+    image: LinuxBspPng,
     title: "Linux BSP & Board Bring-Up",
     description:
       "Quick and stable board-level software bring-up for custom hardware, SoMs, and chipsets.",

@@ -38,42 +38,6 @@ const CardData = [
         description:
             'We ramp up fast, adapt to your tools, and stay transparent through every sprint. With proactive updates and detailed handovers, we’re your extended engineering arm, not just a vendor.',
     },
-    {
-        preview: TechnicalPng,
-        title: 'Industry support',
-        description:
-            'Our development opt in to the projects they genuinely want to work on, committing wholeheartedly to delivering.',
-    },
-    {
-        preview: EbyteLogicPng,
-        title: 'Technical energy',
-        description:
-            'Our developers strive for excellent delivery by being actively engaged in what they do.',
-    },
-    {
-        preview: EcosystemPng,
-        title: 'Solar innovation',
-        description:
-            'Empowering future with clean energy and technical expertise.',
-    },
-    {
-        preview: TechnicalPng,
-        title: 'Industry support',
-        description:
-            'Our development opt in to the projects they genuinely want to work on, committing wholeheartedly to delivering.',
-    },
-    {
-        preview: EbyteLogicPng,
-        title: 'Technical energy',
-        description:
-            'Our developers strive for excellent delivery by being actively engaged in what they do.',
-    },
-    {
-        preview: EcosystemPng,
-        title: 'Solar innovation',
-        description:
-            'Empowering future with clean energy and technical expertise.',
-    },
 ];
 
 const Goals = () => {

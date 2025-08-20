@@ -4,6 +4,7 @@ import { useParams, useRouter } from 'next/navigation';
 
 import { useEffect, useState } from 'react';
 import { GoArrowRight } from 'react-icons/go';
+import { RiArrowRightSLine } from 'react-icons/ri';
 
 import Button from '@/src/components/Button';
 
@@ -16,11 +17,11 @@ import IosJPg from '@/src/assets/images/services/iot.avif'
 import SdkWebp from '@/src/assets/images/services/avProtocol.jpg'
 import FrameworkWebp from '@/src/assets/images/services/multimedia.webp'
 import LinuxPng from '@/src/assets/images/services/linux.png'
-import { RiArrowRightSLine } from 'react-icons/ri';
 
 const serviceData = [
     {
         id: 0,
+        bgImg: '/images/bg/serviceBg/embeddedAppBg.png',
         slug: "embedded-software",
         category: "Powering Smart Devices with Embedded Intelligence",
         pathText: "Embedded App Development",
@@ -110,6 +111,7 @@ const serviceData = [
     },
     {
         id: 1,
+        bgImg: '/images/bg/serviceBg/linuxBsp.png',
         slug: "linux-bsp-android",
         pathText: "Linux BSPs & Hardware Bring-Up",
         imageName: LinuxPng,
@@ -198,6 +200,7 @@ const serviceData = [
     },
     {
         id: 2,
+        bgImg: '/images/bg/serviceBg/multimedia.png',
         slug: "multimedia-framework",
         imageName: FrameworkWebp,
         pathText: "Multimedia & Streaming Frameworks",
@@ -286,6 +289,7 @@ const serviceData = [
     },
     {
         id: 3,
+        bgImg: '/images/bg/serviceBg/iotConnectivity.png',
         slug: "mobile-app-development",
         pathText: "IoT & Cloud Integration",
         imageName: IosJPg,
@@ -374,6 +378,7 @@ const serviceData = [
     },
     {
         id: 4,
+        bgImg: '/images/bg/serviceBg/embeddedQa.png',
         slug: "qa-validation",
         imageName: QaJPg,
         pathText: "Embedded QA & Test Automation",
@@ -462,6 +467,7 @@ const serviceData = [
     },
     {
         id: 5,
+        bgImg: '/images/bg/serviceBg/avProtocol.png',
         slug: "middleware-sdk",
         pathText: "AV Protocol & Codec Engineering",
         category: "Mastering Protocols, Sync, and Codecs for Seamless Streaming",
@@ -564,12 +570,13 @@ const ServiceDetailsInfo = () => {
             if (found) setService(found);
         }
     }, [id]);
+    
 
     if (!service) return <div className="p-8 text-gray-600">Loading or not found...</div>;
     return (
         <div>
             <section>
-                <section className='relative bg-no-repeat bg-cover bg-right py-28 lg:py-52' style={{ backgroundImage: `url('/images/embeddedBanner.webp')` }}>
+                <section className='relative bg-no-repeat bg-cover bg-right py-28 lg:py-52 ' style={{ backgroundImage:`url('${service.bgImg}')` }}>
                     <div className='absolute bg-[#0e191eb3] top-0 size-full z-0'></div>
                     <div className='max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10 space-y-4'>
                         <p className='text-sm md:text-lg text-white flex items-center gap-4 justify-center'>Home <RiArrowRightSLine className='text-primary text-2xl' /> Services <RiArrowRightSLine className='text-primary text-2xl' /> {service.pathText}</p>

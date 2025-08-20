@@ -5,6 +5,7 @@ import { BsBadgeCcFill } from 'react-icons/bs';
 import { FaAd, FaCheck, FaClock, FaCogs, FaDatabase, FaPaintBrush, FaRecordVinyl, FaSyncAlt, FaTv } from 'react-icons/fa';
 
 import Remote from '@/src/assets/images/caseStudy/remote.jpg'
+import VancNextologies from '@/src/assets/images/caseStudy/vancNextologies.svg'
 
 const NextologiesDecoder = () => {
   return (
@@ -88,26 +89,7 @@ const NextologiesDecoder = () => {
             {/* Mermaid Diagram */}
             <div className="mb-8">
               <h4 className="font-semibold text-brand-navy mb-4 text-center">VANC Data Flow Architecture</h4>
-              <div className="mermaid-container">
-                <div className="mermaid-controls">
-                  <button className="mermaid-control-btn zoom-in" title="Zoom In"><i className="fas fa-search-plus"></i></button>
-                  <button className="mermaid-control-btn zoom-out" title="Zoom Out"><i className="fas fa-search-minus"></i></button>
-                  <button className="mermaid-control-btn reset-zoom" title="Reset Zoom"><i className="fas fa-expand-arrows-alt"></i></button>
-                  <button className="mermaid-control-btn fullscreen" title="Fullscreen View"><i className="fas fa-expand"></i></button>
-                </div>
-                <div className="mermaid">
-                  graph LR
-                  {` A["IP Stream Input"] --> B["VANC Data Extraction"]
-                    B --> C["Closed Captions Line 21, CEA-608/708"]
-                    B --> D["SCTE-35 Signals"]
-                    B --> E["Timecode Data"]
-                    B --> F["Other Ancillary Data"]
-                    C --> G["SDI Output"]
-                    D --> G
-                    E --> G
-                    F --> G`}
-                </div>
-              </div>
+                <Image src={VancNextologies} alt='VancNextologies'/>
             </div>
 
             {/* Supported Metadata and Downstream Integration */}

@@ -1,10 +1,8 @@
 import Image from 'next/image'
 
 import React from 'react'
-import { FaBolt, FaMicrochip, FaSearch, FaWifi } from 'react-icons/fa'
-
-import QaHeroJpg from '@/src/assets/images/blogs/blogDetails/qaHero.jpg'
-const QaHero = () => {
+const QaHero = ({ data }) => {
+    const herodata = data?.hero;
     return (
         <section className="relative overflow-hidden">
             {/* Hero Overlay */}
@@ -13,8 +11,10 @@ const QaHero = () => {
             {/* Hero Image */}
             <div className="absolute inset-0 opacity-20">
                 <Image
-                    src={QaHeroJpg}
-                    alt="Circuit board with integrated microcontroller and connected components"
+                    src={herodata?.heroImage?.src}
+                    alt={herodata?.heroImage?.alt}
+                    width={1000}
+                    height={1000}
                     className="w-full h-full object-cover"
                 />
             </div>
@@ -26,37 +26,36 @@ const QaHero = () => {
                     <div className="lg:col-span-8">
                         <div className="mb-6">
                             <span className="inline-block px-4 py-2 bg-primary text-white text-sm font-medium rounded-full mb-4">
-                                Embedded Systems Engineering
+                                {herodata?.chipTitle}
                             </span>
                         </div>
                         <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                            The Unseen Complexity
+                            {herodata?.heroContentGrid?.mainTitleArea.titleText}
                             <span className="block text-white text-2xl sm:text-3xl mt-2">
-                                Why Embedded QA Demands Specialized Mastery
+                                {herodata?.heroContentGrid?.mainTitleArea.subTitleText}
                             </span>
                         </h1>
                         <p className="text-white leading-relaxed mb-8 max-w-3xl text-sm md:text-base">
-                            Exploring the fundamental differences that make embedded quality assurance a discipline apart from conventional software testing.
+                            {herodata?.heroContentGrid?.mainTitleArea.paragraphText}
                         </p>
                     </div>
 
                     {/* Key Highlights */}
                     <div className="lg:col-span-4">
                         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                            <h3 className="font-serif text-lg font-semibold text-white mb-4">Key Challenges</h3>
+                            <h3 className="font-serif text-lg font-semibold text-white mb-4">
+                                {herodata?.heroContentGrid?.keyHighlights.titleText}
+                            </h3>
                             <ul className="space-y-3">
-                                <li className="text-sm md:text-base flex items-center gap-3 text-blue-100">
-                                    <FaMicrochip className="text-blue-400" /> Hardware-Software Integration
-                                </li>
-                                <li className="text-sm md:text-base flex items-center gap-3 text-blue-100">
-                                    <FaBolt className="text-yellow-400" /> Real-Time Constraints
-                                </li>
-                                <li className="text-sm md:text-base flex items-center gap-3 text-blue-100">
-                                    <FaWifi className="text-green-400" /> OTA Update Risks
-                                </li>
-                                <li className="text-sm md:text-base flex items-center gap-3 text-blue-100">
-                                    <FaSearch className="text-purple-400" /> Limited Debugging
-                                </li>
+                                {herodata?.heroContentGrid?.keyHighlights?.listItems?.map((item, index) => (
+                                    <li key={index} className="text-sm md:text-base flex items-center gap-3 text-blue-100">
+                                        {/* {React.createElement(item.icon, {
+                                            className: item.iconColor 
+                                        })} */}
+                                        {item.icon}
+                                        {item.text}
+                                    </li>
+                                ))}
                             </ul>
                         </div>
                     </div>

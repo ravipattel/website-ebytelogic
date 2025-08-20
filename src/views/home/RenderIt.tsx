@@ -5,8 +5,8 @@ import { MdPhoneAndroid } from 'react-icons/md'
 const contactData = [
     {
         icon: <MdPhoneAndroid className='text-lg sm:text-2xl' />,
-        info: "Talk to Us: +91-9876543210",
-        link: "tel:+919876543210"
+        info: "Talk to Us: +91 90332 23700",
+        link: "tel:+919033223700"
     },
     {
         icon: <FiMail className='text-lg sm:text-2xl' />,

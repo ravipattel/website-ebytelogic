@@ -99,7 +99,7 @@ const ContactDetails = () => {
                             <BiPhoneCall className='!w-5 !h-5 mt-0.5 text-primary' />
                             <div>
                                 <h4 className='text-primaryText font-semibold text-base md:text-lg'>Calling Support</h4>
-                                <a href="tel:+919876543210" className='text-[#5d6471] text-sm md:text-[15px]'>+91-7948000874</a>
+                                <a href="tel:+919033223700" className='text-[#5d6471] text-sm md:text-[15px]'>+91 90332 23700</a>
                             </div>
                         </div>
                         <div className="flex items-start gap-3">

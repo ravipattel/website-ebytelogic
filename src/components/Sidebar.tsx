@@ -1,9 +1,10 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 import React, { useEffect, useState } from 'react';
-import { FaAngleRight, FaArrowRight } from 'react-icons/fa';
+import { FaAngleRight } from 'react-icons/fa';
+import { IoChevronBack } from 'react-icons/io5';
 
 
 const tocData = {
@@ -175,26 +176,30 @@ const tocData = {
   ],
 };
 
-
 const Sidebar = () => {
   const pathname = usePathname();
   const section = pathname?.split('/')[2];
   const items = tocData[section] || [];
   const [isOpen, setIsOpen] = useState(false);
   const [scrollTop, setScrollTop] = useState(false);
-
+  const router = useRouter()
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollTop(window.scrollY > 10);
+      setScrollTop(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const backTarget = pathname?.startsWith('/case-study')
+    ? '/case-study'
+    : '/blogs';
+
   return (
     <>
       <button
@@ -214,41 +219,9 @@ const Sidebar = () => {
           />
         )
       }
-      {/* <nav className="hidden lg:block sticky left-0 top-0 w-72 bg-white/95 backdrop-blur-sm border-r border-gray-200 z-40 overflow-y-auto transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
-        <div className="p-6">
-          <h3 className="font-serif text-lg font-bold text-brand-navy mb-2">Table of Contents</h3>
-          <div className="w-12 h-0.5 bg-brand-teal mb-8" />
-          <ul className="space-y-3 text-sm">
-            {items.map((item) => (
-              <li key={item.id}>
-                <a
-                  href={`#${item.id}`}
-                  className="block py-2 px-3 rounded-lg text-brand-charcoal hover:bg-gray-100 hover:text-brand-navy transition-colors"
-                >
-                  {item.label}
-                </a>
-                {item.children && (
-                  <ul className="ml-4 mt-2 space-y-2">
-                    {item.children.map((child) => (
-                      <li key={child.id}>
-                        <a
-                          href={`#${child.id}`}
-                          className="block py-1 px-2 text-xs text-gray-600 hover:text-brand-navy transition-colors"
-                        >
-                          {child.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </nav> */}
       <nav
         className={`
-          fixed top-0 left-0 h-full w-72 bg-white z-50 p-6 border-r border-gray-200 
+          fixed ${scrollTop ? 'top-20 md:top-23' : 'min-[606px]:top-30 sm:top-30 md:top-36'}  left-0 h-full w-72 bg-white z-50 p-6 border-r border-gray-200 
           transform transition-transform duration-300 ease-in-out 
           ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
           lg:static lg:translate-x-0 lg:block lg:h-fit lg:top-[98px]
@@ -265,11 +238,11 @@ const Sidebar = () => {
             &times;
           </button>
         </div>
-
         <h3 className="hidden lg:block font-serif text-lg font-bold text-brand-navy mb-2">Table of Contents</h3>
-        <div className="hidden lg:block w-12 h-0.5 bg-brand-teal mb-8" />
+        <button onClick={() => router.push(backTarget)} className="absolute right-12 lg:-right-3 top-7 cursor-pointer lg:border lg:border-primary lg:rounded-full size-6 lg:bg-primary lg:text-white flex justify-center items-center shadow-2xl lg:hover:bg-white lg:hover:text-primary transition-all duration-300"><IoChevronBack /></button>
+        {/* <div className="hidden lg:block w-12 h-0.5 bg-brand-teal mb-8" /> */}
 
-        <ul className="space-y-3 text-sm">
+        <ul className="space-y-3 text-sm pt-5">
           {items.map((item) => (
             <li key={item.id}>
               <a

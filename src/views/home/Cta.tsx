@@ -24,12 +24,11 @@ const Cta = () => {
                     >
                         Let’s Connect
                     </Button>
-                    <a
-                        href="/case-study"
-                        className="inline-flex items-center text-white hover:text-primary-300 font-medium transition-all duration-300 gap-2"
+                    <Button onClick={() => router.push('/case-study')}
+                        className="!bg-transparent !border-0 inline-flex items-center text-white hover:text-primary-300 font-medium transition-all duration-300 gap-2"
                     >
                         View Our Case Studies <FaArrowRightLong />
-                    </a>
+                    </Button>
                 </div>
             </div>
         </section>
