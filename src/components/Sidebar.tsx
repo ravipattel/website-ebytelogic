@@ -1,188 +1,202 @@
-'use client';
+"use client";
 
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter } from "next/navigation";
 
-import React, { useEffect, useState } from 'react';
-import { FaAngleRight } from 'react-icons/fa';
-import { IoChevronBack } from 'react-icons/io5';
-
+import React, { useEffect, useState } from "react";
+import { FaAngleRight } from "react-icons/fa";
 
 const tocData = {
-  'nextologies': [
-    { id: 'introduction', label: '1. Introduction' },
+  //case studies
+
+  "reducing-wearable-display-latency": [
+    { id: "challenge", label: "1. The Challenge" },
     {
-      id: 'encoder-capabilities',
-      label: '2. Encoder Capabilities',
-      children: [
-        { id: 'ultra-low-latency', label: '2.1 Ultra-Low Latency' },
-        { id: 'stability-reliability', label: '2.2 Stability & Reliability' },
-        { id: 'vanc-support-encoder', label: '2.3 VANC Data Support' },
-      ],
+      id: "tech-highlights",
+      label: "2. Technical Highlights",
     },
     {
-      id: 'decoder-capabilities',
-      label: '3. Decoder Capabilities',
-      children: [
-        { id: 'decoder-latency', label: '3.1 Low Latency Performance' },
-        { id: 'lip-sync', label: '3.2 Precision Lip Sync' },
-        { id: 'vanc-support-decoder', label: '3.3 VANC Data Support' },
-      ],
+      id: "step-process",
+      label: "3. Optimization Process",
     },
     {
-      id: 'technical-innovation',
-      label: '4. Technical Innovation',
-      children: [
-        { id: 'software-architecture', label: '4.1 Software-Defined Architecture' },
-        { id: 'native-services', label: '4.2 Native Services Integration' },
-        { id: 'deployment-models', label: '4.3 Flexible Deployment' },
-      ],
+      id: "results",
+      label: "4. Impact & Results",
     },
-    { id: 'conclusion', label: '5. Conclusion' },
-  ],
-  'spg': [
-    { id: 'core-task', label: '1. Core Task Overview' },
-    { id: 'ndi-support', label: '2. NDI Support with GStreamer' },
-    { id: 'gui-stability', label: '3. GUI Stability Solutions' },
-    { id: 'pipeline-considerations', label: '4. Pipeline Considerations' },
-    { id: 'audio-enhancements', label: '5. Audio Processing' },
-    { id: 'deployment', label: '6. Deployment & Environment' },
-  ],
-  'yocto': [
-    { id: 'executive-summary', label: 'Executive Summary' },
-    { id: 'the-challenge', label: 'The Challenge' },
-    { id: 'challenge-hardware', label: 'Pressure Hardware Integration' },
-    { id: 'challenge-functionality', label: 'Critical Functionality' },
-    { id: 'the-solution', label: 'The Solution' },
-    { id: 'solution-yocto', label: 'Yocto Foundation' },
-    { id: 'solution-toradex', label: 'Toradex Ecosystem' },
-    { id: 'solution-custom-layer', label: 'Custom Layer Creation' },
-    { id: 'solution-device-tree', label: 'Device Tree Configuration' },
-    { id: 'solution-iteration', label: 'Efficient Iteration' },
-    { id: 'the-result', label: 'The Result: Time Savings' },
-    { id: 'result-functionality', label: 'Achieved Functionality' },
-    { id: 'result-demonstration', label: 'Successful Demonstration' },
-    { id: 'conclusion', label: 'Conclusion' },
-  ],
-  'eye-wear': [
-    { id: 'executive-summary', label: 'Executive Summary' },
-    { id: 'challenge', label: 'The Challenge' },
-    { id: 'solution', label: 'Our Solution' },
-    { id: 'technical-details', label: 'Technical Details' },
-    { id: 'results', label: 'Results & Impact' },
-    { id: 'testimonial', label: 'Client Testimonial' },
-    { id: 'conclusion', label: 'Conclusion' },
     {
-      id: 'key-metrics',
-      label: 'Key Metrics',
-      children: [
-        { id: 'latency-reduction', label: 'Latency Reduction: >60%' },
-        { id: 'timeline', label: 'Timeline: 20 days' },
-        { id: 'target', label: 'Target: <100ms' },
-      ],
+      id: "cta",
+      label: "5. Call to Action",
     },
   ],
-  'qt-app': [
-    { id: 'introduction', label: 'Introduction' },
-    { id: 'boot-process', label: 'Understanding Boot Process' },
-    { id: 'u-boot', label: 'U-Boot Optimization' },
-    { id: 'kernel', label: 'Kernel Optimization' },
-    { id: 'user-space', label: 'User Space & Init' },
-    { id: 'qt-app', label: 'QT Application' },
-    { id: 'hardware', label: 'Hardware Considerations' },
-    { id: 'case-studies', label: 'Case Studies' },
-    { id: 'porting', label: 'Porting Considerations' },
-    { id: 'conclusion', label: 'Conclusion' },
-    {
-      id: 'key-metrics',
-      label: 'Key Metrics',
-      children: [
-        { id: 'target', label: 'Target: <10s boot' },
-        { id: 'best-case', label: 'Best Case: 1.56s' },
-        { id: 'platforms', label: 'Platforms: Exynos 4412, i.MX6Q' },
-      ],
-    },
+  "bypassing-proprietary-audio-pipeline": [
+    { id: "challenge", label: "1. The Challenge" },
+    { id: "tech-highlights", label: "2. Technical Highlights" },
+    { id: "results", label: "3. Impact & Results" },
+    { id: "cta", label: "4. Call to Action" },
   ],
-  'arm': [
-    { id: 'executive-summary', label: '1. Executive Summary' },
-    { id: 'target-market', label: '2. Target Market & Use Cases' },
-    { id: 'technical-architecture', label: '3. Technical Architecture' },
-    { id: 'performance-analysis', label: '4. Performance Analysis' },
-    { id: 'comparative-analysis', label: '5. Comparative Analysis' },
-    { id: 'conclusion', label: '6. Conclusion' },
-    { id: 'technical-case-study', label: 'Technical Case Study: ARM-Based Multiviewer Player Development' },
+  "broadcast-grade-sdi-encoder-decoder-with-sub100ms-latency": [
+    { id: "challenge", label: "1. The Challenge" },
+    { id: "tech-highlights", label: "2. Technical Highlights" },
+    { id: "results", label: "3. Impact & Results" },
+    { id: "cta", label: "4. Call to Action" },
   ],
-  'som-soc': [
-    { id: 'introduction', label: '1. Introduction' },
-    { id: 'definitions', label: '1.1 Definitions' },
-    { id: 'key-components', label: '2. Key Components' },
-    { id: 'advantages', label: '2.1 Advantages & Disadvantages' },
-    { id: 'comparative-analysis', label: '3. Comparative Analysis' },
-    { id: 'use-cases', label: '3.1 Use Cases' },
-    { id: 'examples', label: '3.2 Examples' },
-    { id: 'decision-framework', label: '4. Decision Framework' },
-    { id: 'conclusion', label: '4.1 Conclusion' },
+  "u-boot-logo-for-IMX8MQ": [
+    { id: "challenge", label: "1. The Challenge" },
+    { id: "step-process", label: "2. Our Solution" },
+    { id: "tech-highlights", label: "3. Technical Highlights" },
+    { id: "results", label: "4. Impact & Results" },
+    { id: "cta", label: "5. Call to Action" },
   ],
-  'qa': [
-    { id: 'introduction', label: 'Introduction' },
-    { id: 'hardware-dependency', label: 'Hardware Dependency' },
-    { id: 'low-level-interactions', label: 'Low-Level Hardware Interactions' },
-    { id: 'ota-risks', label: 'OTA Update Perils' },
-    { id: 'timing-challenges', label: 'Asynchronous Timing' },
-    { id: 'debuggingvisibility', label: 'Limited Debugging' },
-    { id: 'conclusion', label: 'Conclusion' },
+  "multi-platform-driver-development-uBoot-customization": [
+    { id: "challenge", label: "1. The Challenge" },
+    { id: "tech-highlights", label: "2. Technical Highlights" },
+    { id: "results", label: "3. Impact & Results" },
+    { id: "cta", label: "4. Call to Action" }
   ],
-  'multiviewer': [
-    { id: 'overview', label: 'Overview' },
-    { id: 'ffmpeg', label: 'FFmpeg filter_complex' },
-    { id: 'gstreamer', label: 'GStreamer compositor' },
-    { id: 'ndi', label: 'NDI Multiview' },
-    { id: 'feature', label: 'Feature Comparison' },
-    { id: 'performance', label: 'Performance Analysis' },
-    { id: 'decision', label: 'Decision Matrix' },
-    { id: 'conclusion', label: 'Conclusion' },
+   "ndi-protocol-integration-inremote-recorder-player": [
+    { id: "challenge", label: "1. The Challenge" },
+    { id: "step-process", label: "2. Our Integrated NDI Solution" },
+    { id: "tech-highlights", label: "3. Technical Highlights" },
+    { id: "results", label: "4. Impact & Results" },
+    { id: "cta", label: "5. Call to Action" }
   ],
-  'g-streamer': [
-    { id: 'section-1', label: 'The Challenge' },
-    { id: 'section-2', label: `eByteLogic's Approach` },
-    { id: 'section-3', label: 'Optimization Strategies' },
-    { id: 'section-4', label: 'PlatformSpecific Techniques' },
-    { id: 'section-5', label: 'Robust Performance' },
-    { id: 'section-6', label: 'Conclusion' },
+  "rapid-lcd-touchscreen-bring-up-for-telematics-display": [
+    { id: "challenge", label: "1. The Challenge" },
+    { id: "tech-highlights", label: "2. Technical Highlights" },
+    { id: "results", label: "3. Impact & Results" },
+    { id: "flowchartPlusContent", label: "4. Bring-Up Workflow" },
+    { id: "cta", label: "5. Call to Action" }
   ],
-  'button-debounce': [
-    { id: 'introduction', label: 'Introduction' },
-    { id: 'comparison', label: 'Hardware vs Software Comparison' },
-    { id: 'rc-filter', label: 'RC Low-Pass Filter' },
-    { id: 'srlatch', label: 'SR Latch' },
-    { id: 'dedicated-ics', label: 'Dedicated ICs' },
-    { id: 'software-methods', label: 'Software Debounce Methods' },
-    { id: 'arduino', label: 'Arduino Implementation' },
-    { id: 'raspberry-pi', label: 'Raspberry Pi' },
-    { id: 'considerations', label: 'Key Considerations' },
-    { id: 'reliability', label: 'Maximizing Reliability' },
-    { id: 'power', label: 'Power Consumption' },
-    { id: 'cost', label: 'Cost Analysis' },
-    { id: 'conclusion', label: 'Conclusion' },
+  "secure-mcu-firmware-upgrade-via-canopen": [
+    { id: "challenge", label: "1. The Challenge" },
+    { id: "tech-highlights", label: "2. Technical Highlights" },
+    { id: "results", label: "3. Impact & Results" },
+    { id: "flowchartPlusContent", label: "4. Firmware Update Flow" },
+    { id: "cta", label: "5. Call to Action" }
   ],
-  'rk3588-guide': [
-    { id: 'overview', label: 'Overview' },
-    { id: 'architecture', label: 'RK3588 Architecture' },
-    { id: 'camera-config', label: 'Camera Configuration' },
-    { id: 'isp-3a', label: 'ISP & 3A Processing' },
-    { id: 'mpp-rga', label: 'MPP & RGA' },
-    { id: 'ai-integration', label: 'AI Integration' },
-    { id: 'development', label: 'Software Development' },
-    { id: 'troubleshooting', label: 'Troubleshooting' },
+   "hdmi-multiview-player": [
+    { id: "challenge", label: "1. The Challenge" },
+    { id: "tech-highlights", label: "2. Technical Highlights" },
+    { id: "results", label: "3. Impact & Results" },
+    { id: "flowchartPlusContent", label: "4. System Architecture" },
+    { id: "compatibility", label: "5. Protocol Compatibility" },
+    { id: "cta", label: "6. Call to Action" }
+  ],
+    "sub-100ms-latency-in-uav-video-streaming": [
+    { "id": "challenge", "label": "1. The Challenge" },
+    { "id": "tech-highlights", "label": "2. Technical Highlights" },
+    { "id": "results", "label": "3. Impact & Results" },
+    { "id": "flowchartPlusContent", "label": "4. Video Streaming Pipeline" },
+    { "id": "cta", "label": "5. Call to Action" }
+  ],
+  "can-to-modbus-bridge": [
+    { "id": "challenge", "label": "1. The Challenge" },
+    { "id": "tech-highlights", "label": "2. Technical Highlights" },
+    { "id": "compatibility", "label": "3. Configuration Table" },
+    { "id": "results", "label": "4. Impact & Results" },
+    { "id": "flowchartPlusContent", "label": "5. Protocol Bridging Solution" },
+    { "id": "cta", "label": "6. Call to Action" }
+  ],
+  "yocto-migration-for-safety-panel": [
+    { "id": "challenge", "label": "1. The Challenge" },
+    { "id": "tech-highlights", "label": "2. Technical Highlights" },
+    { "id": "results", "label": "3. Impact & Results" },
+    { "id": "flowchartPlusContent", "label": "4. Migration Process" },
+    { "id": "cta", "label": "5. Call to Action" }
+  ],
+  "yocto-buildroot-migration": [
+    { "id": "challenge", "label": "1. The Challenge" },
+    { "id": "tech-highlights", "label": "2. Technical Highlights" },
+    { "id": "onlyFowchart", "label": "3. Migration Solution" },
+    { "id": "results", "label": "4. Impact & Results" },
+    { "id": "cta", "label": "5. Call to Action" }
+  ],
+    "multi-master-i2c-problem-resolution": [
+    { "id": "challenge", "label": "1. The Challenge" },
+    { "id": "tech-highlights", "label": "2. Technical Highlights" },
+    { "id": "flowchartPlusContent", "label": "3. Recovery Solution" },
+    { "id": "results", "label": "4. Impact & Results" },
+    { "id": "cta", "label": "5. Call to Action" }
+  ],
+    "multi-os-bsp-porting-and-boot-time-optimization": [
+    { "id": "challenge", "label": "1. The Challenge" },
+    { "id": "tech-highlights", "label": "2. Technical Highlights" },
+    { "id": "flowchartPlusContent", "label": "3. Optimization Approach" },
+    { "id": "results", "label": "4. Impact & Results" },
+    { "id": "cta", "label": "5. Call to Action" }
+  ],
+  //blogs
+  "som-soc": [
+    { id: "introduction", label: "1. Introduction" },
+    { id: "definitions", label: "1.1 Definitions" },
+    { id: "key-components", label: "2. Key Components" },
+    { id: "advantages", label: "2.1 Advantages & Disadvantages" },
+    { id: "comparative-analysis", label: "3. Comparative Analysis" },
+    { id: "use-cases", label: "3.1 Use Cases" },
+    { id: "examples", label: "3.2 Examples" },
+    { id: "decision-framework", label: "4. Decision Framework" },
+    { id: "conclusion", label: "4.1 Conclusion" },
+  ],
+  qa: [
+    { id: "introduction", label: "Introduction" },
+    { id: "hardware-dependency", label: "Hardware Dependency" },
+    { id: "low-level-interactions", label: "Low-Level Hardware Interactions" },
+    { id: "ota-risks", label: "OTA Update Perils" },
+    { id: "timing-challenges", label: "Asynchronous Timing" },
+    { id: "debuggingvisibility", label: "Limited Debugging" },
+    { id: "conclusion", label: "Conclusion" },
+  ],
+  multiviewer: [
+    { id: "overview", label: "Overview" },
+    { id: "ffmpeg", label: "FFmpeg filter_complex" },
+    { id: "gstreamer", label: "GStreamer compositor" },
+    { id: "ndi", label: "NDI Multiview" },
+    { id: "feature", label: "Feature Comparison" },
+    { id: "performance", label: "Performance Analysis" },
+    { id: "decision", label: "Decision Matrix" },
+    { id: "conclusion", label: "Conclusion" },
+  ],
+  "g-streamer": [
+    { id: "section-1", label: "The Challenge" },
+    { id: "section-2", label: `eByteLogic's Approach` },
+    { id: "section-3", label: "Optimization Strategies" },
+    { id: "section-4", label: "PlatformSpecific Techniques" },
+    { id: "section-5", label: "Robust Performance" },
+    { id: "section-6", label: "Conclusion" },
+  ],
+  "button-debounce": [
+    { id: "introduction", label: "Introduction" },
+    { id: "comparison", label: "Hardware vs Software Comparison" },
+    { id: "rc-filter", label: "RC Low-Pass Filter" },
+    { id: "srlatch", label: "SR Latch" },
+    { id: "dedicated-ics", label: "Dedicated ICs" },
+    { id: "software-methods", label: "Software Debounce Methods" },
+    { id: "arduino", label: "Arduino Implementation" },
+    { id: "raspberry-pi", label: "Raspberry Pi" },
+    { id: "considerations", label: "Key Considerations" },
+    { id: "reliability", label: "Maximizing Reliability" },
+    { id: "power", label: "Power Consumption" },
+    { id: "cost", label: "Cost Analysis" },
+    { id: "conclusion", label: "Conclusion" },
+  ],
+  "rk3588-guide": [
+    { id: "overview", label: "Overview" },
+    { id: "architecture", label: "RK3588 Architecture" },
+    { id: "camera-config", label: "Camera Configuration" },
+    { id: "isp-3a", label: "ISP & 3A Processing" },
+    { id: "mpp-rga", label: "MPP & RGA" },
+    { id: "ai-integration", label: "AI Integration" },
+    { id: "development", label: "Software Development" },
+    { id: "troubleshooting", label: "Troubleshooting" },
   ],
 };
 
 const Sidebar = () => {
   const pathname = usePathname();
-  const section = pathname?.split('/')[2];
+  const section = pathname?.split("/")[2];
   const items = tocData[section] || [];
   const [isOpen, setIsOpen] = useState(false);
   const [scrollTop, setScrollTop] = useState(false);
-  const router = useRouter()
+  const router = useRouter();
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
@@ -192,38 +206,42 @@ const Sidebar = () => {
       setScrollTop(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const backTarget = pathname?.startsWith('/case-study')
-    ? '/case-study'
-    : '/blogs';
+  const backTarget = pathname?.startsWith("/case-study")
+    ? "/case-study"
+    : "/blogs";
 
   return (
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className={`lg:hidden fixed left-1 z-50 p-2 rounded-full shadow-md  ${scrollTop ? 'top-26' : 'top-64'}`}
+        className={`lg:hidden fixed left-1 z-50 p-2 rounded-full shadow-md  ${
+          scrollTop ? "top-26" : "top-64"
+        }`}
         aria-label="Open Sidebar"
       >
         <FaAngleRight />
       </button>
 
       {/* Overlay when sidebar is open (mobile) */}
-      {
-        isOpen && (
-          <div
-            className="fixed inset-0 bg-opacity-40 z-40 lg:hidden"
-            onClick={() => setIsOpen(false)}
-          />
-        )
-      }
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-opacity-40 z-40 lg:hidden"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
       <nav
         className={`
-          fixed ${scrollTop ? 'top-20 md:top-23' : 'min-[606px]:top-30 sm:top-30 md:top-36'}  left-0 h-full w-72 bg-white z-50 p-6 border-r border-gray-200 
+          fixed ${
+            scrollTop
+              ? "top-20 md:top-23"
+              : "min-[606px]:top-30 sm:top-30 md:top-36"
+          }  left-0 h-full w-72 bg-white z-50 p-6 border-r border-gray-200 
           transform transition-transform duration-300 ease-in-out 
-          ${isOpen ? 'translate-x-0' : '-translate-x-full'} 
+          ${isOpen ? "translate-x-0" : "-translate-x-full"} 
           lg:static lg:translate-x-0 lg:block lg:h-fit lg:top-[98px]
         `}
       >
@@ -238,8 +256,10 @@ const Sidebar = () => {
             &times;
           </button>
         </div>
-        <h3 className="hidden lg:block font-serif text-lg font-bold text-brand-navy mb-2">Table of Contents</h3>
-        <button onClick={() => router.push(backTarget)} className="absolute right-12 lg:-right-3 top-7 cursor-pointer lg:border lg:border-primary lg:rounded-full size-6 lg:bg-primary lg:text-white flex justify-center items-center shadow-2xl lg:hover:bg-white lg:hover:text-primary transition-all duration-300"><IoChevronBack /></button>
+        <h3 className="hidden lg:block font-serif text-lg font-bold text-brand-navy mb-2">
+          Table of Contents
+        </h3>
+
         {/* <div className="hidden lg:block w-12 h-0.5 bg-brand-teal mb-8" /> */}
 
         <ul className="space-y-3 text-sm pt-5">
@@ -274,4 +294,3 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
-

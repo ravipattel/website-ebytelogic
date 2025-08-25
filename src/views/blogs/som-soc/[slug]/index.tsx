@@ -12,6 +12,7 @@ import SomSocFramework from '../SomSocFramework'
 import SomSocConclusion from '../SomSocConclusion'
 import Sidebar from '@/src/components/Sidebar'
 import { globalCards } from '../../Global'
+
 const SomSoc = ({ slug }) => {
     const filter = globalCards.find((item, idx) => {
         if (slug === item.slug) {
@@ -29,15 +30,15 @@ const SomSoc = ({ slug }) => {
             </div>
             <div className='overflow-y-auto px-4 md:px-6'>
                 <SomSocHero data={filter} />
-                <SomSocIntro data={filter}/>
-                <SomSocDefine data={filter}/>
-                <SomSocKey data={filter}/>
-                <SomSocProsCons data={filter}/>
-                <SomSocAnalysis data={filter}/>
-                <SomSocUseCase data={filter}/>
-                <SomSocExamples data={filter}/>
+                <SomSocIntro data={filter} />
+                <SomSocDefine data={filter} />
+                <SomSocKey data={filter} />
+                <SomSocProsCons data={filter} />
+                <SomSocAnalysis data={filter} />
+                <SomSocUseCase data={filter} />
+                <SomSocExamples data={filter} />
                 <SomSocFramework data={filter} />
-                <SomSocConclusion data={filter}/>
+                <SomSocConclusion data={filter} />
             </div>
         </div>
     )

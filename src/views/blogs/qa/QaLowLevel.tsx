@@ -3,7 +3,9 @@ import Image from 'next/image'
 import React from 'react'
 
 const QaLowLevel = ({ data }) => {
+
     const lowlevel = data?.lowlevel;
+
     return (
         <section id={lowlevel?.id} className="px-4 md:px-6 py-16">
             <h2 className="font-serif text-2xl md:text-3xl font-semibold mb-8">
@@ -34,19 +36,27 @@ const QaLowLevel = ({ data }) => {
                     case 'grid':
                         return (
                             <div key={index} className="mb-6 grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-                                {item?.items?.map((gridItem, gridIndex) => (
+                                {item?.cards?.map((card, gridIndex) => (
                                     <div key={gridIndex} className="bg-white p-4 rounded-md border border-gray-300 shadow-md">
-                                        <h4 className={`font-serif text-base md:text-lg font-semibold mb-3 ${gridItem?.color}`}>{gridItem?.title}</h4>
-                                        <p className="text-sm text-gray-600">{gridItem?.description}</p>
+                                        <h4 className={`font-serif text-base md:text-lg font-semibold mb-3`} style={{color:card?.color}}>{card?.title}</h4>
+                                        <p className="text-sm text-gray-600">{card?.description}</p>
                                     </div>
                                 ))}
                             </div>
                         );
-                    case 'quote':
+                    case 'quoteBlock':
                         return (
-                            <div key={index} className="bg-gray-100 p-6 rounded-md shadow-lg mb-6 text-sm md:text-base">
-                                &#34;{item?.text}&#34;
-                            </div>
+                            <>
+                            {item?.quoteBlock && (
+                                <>
+                                {item?.quoteBlock?.map((block) => (
+                                    <div key={index} className={`p-6 rounded-md shadow-lg mb-6 text-sm md:text-base`} style={{ backgroundColor: block?.bgColor }}>
+                                      {`"${block?.text}"`}
+                                    </div>
+                                ))}
+                                </>
+                            )}
+                            </>
                         );
                     case 'list':
                         return (

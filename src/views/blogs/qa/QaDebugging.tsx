@@ -35,23 +35,27 @@ const QaDebugging = ({ data }) => {
 
           case "quote":
             return (
-              <div key={index} className="text-sm md:text-base italic mb-6">
-                “{block?.text}”
-              </div>
+              <>
+                {block?.block?.map((block) => (
+                  <div key={index} className="text-sm md:text-base italic mb-6">
+                    “{block?.text}”
+                  </div>
+                ))}
+              </>
             );
 
           case "grid":
             return (
               <div key={index} className="flex flex-col gap-4 mb-6">
-                {block?.items?.map((item, idx) => (
+                {block?.cards?.map((card, idx) => (
                   <div key={idx} className="border border-gray-300 rounded-md p-3">
                     <div className="flex items-center mb-3 gap-2">
-                      {item?.icon}
+                      {card?.icon}
                       <h4 className="font-serif text-lg font-semibold">
-                        {item?.title}
+                        {card?.title}
                       </h4>
                     </div>
-                    <p className="text-sm text-gray-600">{item?.description}</p>
+                    <p className="text-sm text-gray-600">{card?.description}</p>
                   </div>
                 ))}
               </div>

@@ -35,27 +35,46 @@ const QaTimings = ({ data }) => {
 
           case "quote":
             return (
-              <div key={index} className="mb-6">
-                {block?.icon ? (
-                  <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6">
-                    <div className="flex gap-2">
-                      {block?.icon}
-                      <div>
-                        <h4 className="font-serif text-base md:text-lg font-semibold text-yellow-800 mb-2">
-                          {block?.heading}
-                        </h4>
-                        <p className="text-sm md:text-base text-yellow-700">
-                          {block?.text}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="text-sm md:text-base italic">
-                    {block?.text}
-                  </div>
-                )}
-              </div>
+              <>
+                <div key={index} className="mb-6">
+                  <>
+                    {
+                      block?.block && (
+                        <>
+                          {block?.block?.map((item , idx) => (
+                            <div key={idx} className={`p-6`} style={{backgroundColor:item?.bgColor,borderLeft:`4px solid ${item?.borderColor}`}}>
+                              <div className="flex gap-2">
+                                {item?.icon}
+                                <div>
+                                  <h4 className={`font-serif text-base md:text-lg font-semibold mb-2`} style={{color:item?.color}}>
+                                    {item?.heading}
+                                  </h4>
+                                  <p className={`text-sm md:text-base`} style={{color:item?.color}}>
+                                    {item?.text}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </>
+                      )
+                    }
+                  </>
+                  <>
+                    {
+                      block?.quoteBlock && (
+                        <>
+                          {block?.quoteBlock?.map((block ,idx) => (
+                            <div key={idx} className="text-sm md:text-base italic">
+                              {block?.text}
+                            </div>
+                          ))}
+                        </>
+                      )
+                    }
+                  </>
+                </div>
+              </>
             );
 
           default:

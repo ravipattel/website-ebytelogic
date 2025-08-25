@@ -1,5 +1,4 @@
 import React from 'react'
-import { FaExpand, FaExpandArrowsAlt, FaSearchMinus, FaSearchPlus } from 'react-icons/fa';
 
 const DevGuideArchitecture = ({ data }) => {
     const architecture = data?.architecture
@@ -10,37 +9,24 @@ const DevGuideArchitecture = ({ data }) => {
                 {architecture?.title}
             </h2>
 
-            {/* Description with Citation */}
-            <p className="text-gray-600 mb-6">
-                {architecture?.description}
-                <a
-                    href={architecture?.citation.link}
-                    className="text-primary hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    {architecture?.citation.text}
-                </a>
-            </p>
+            <p
+                className="text-gray-600 mb-6"
+                dangerouslySetInnerHTML={{ __html: architecture?.description }}
+            />
 
             {/* Camera Subsystem Architecture */}
             <h3 className="font-serif text-xl font-semibold mb-4">
                 {architecture?.cameraSubsystemTitle}
             </h3>
             <div className="mermaidcontainer">
-                <div className="mermaid-controls">
-                    <button className="mermaid-control-btn zoom-in" title="Zoom In">
-                        <FaSearchPlus />
-                    </button>
-                    <button className="mermaid-control-btn zoom-out" title="Zoom Out">
-                        <FaSearchMinus />
-                    </button>
-                    <button className="mermaid-control-btn reset-zoom" title="Reset">
-                        <FaExpandArrowsAlt />
-                    </button>
-                    <button className="mermaid-control-btn fullscreen" title="Full Screen">
-                        <FaExpand />
-                    </button>
+                <div className="mermaid-controls flex">
+                    {architecture?.icon?.map((i, index) => (
+                        <div key={index}>
+                            <button title={i?.title}>
+                                {i?.icon}
+                            </button>
+                        </div>
+                    ))}
                 </div>
                 <div className="mermaid">
                     {architecture?.cameraSubsystemDiagram}
@@ -51,49 +37,45 @@ const DevGuideArchitecture = ({ data }) => {
             <h3 className="font-serif text-2xl font-semibold mb-4 mt-8">
                 {architecture?.mipiCsi2Title}
             </h3>
-            <p className="mb-4 text-gray-600">
-                {architecture?.tableLine}
-                <a
-                    href={architecture?.mipiCsi2Citation.link}
-                    className="text-primary hover:underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    {architecture?.mipiCsi2Citation.text}
-                </a>
-            </p>
+
+            <p
+                className="mb-4 text-gray-600"
+                dangerouslySetInnerHTML={{ __html: architecture?.tableLine }}
+            />
 
             {/* MIPI CSI-2 Configuration Table */}
-            <div className="comparison-table">
-                <table className="w-full text-left border-collapse rounded-lg overflow-hidden shadow-sm">
-                    <thead className="bg-teal-700 text-white text-sm">
-                        <tr>
-                            <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.tableHead1}</th>
-                            <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.tableHead2}</th>
-                            <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.tableHead3}</th>
-                            <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.tableHead4}</th>
-                            <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.tableHead5}</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {architecture?.mipiCsi2Table.map((row, index) => (
-                            <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                                <td className="px-4 py-3">{row.PHY}</td>
-                                <td className="px-4 py-3">{row.mode}</td>
-                                <td className="px-4 py-3">{row.lanes}</td>
-                                <td className="px-4 py-3">{row.maxSpeed}</td>
-                                <td className="px-4 py-3">{row.usage}</td>
+            {
+                architecture?.mipiCsi2Table && (
+                    <table className="w-full text-left border-collapse rounded-lg overflow-hidden shadow-sm">
+                        <thead className={`text-white text-sm`} style={{backgroundColor:architecture?.tableHeadColor}}>
+                            <tr>
+                                <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.column1}</th>
+                                <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.column2}</th>
+                                <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.column3}</th>
+                                <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.column4}</th>
+                                <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.column5}</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+                        </thead>
+                        <tbody>
+                            {architecture?.mipiCsi2Table?.map((row, index) => (
+                                <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                                    <td className="px-4 py-3">{row?.row1}</td>
+                                    <td className="px-4 py-3">{row?.row2}</td>
+                                    <td className="px-4 py-3">{row?.row3}</td>
+                                    <td className="px-4 py-3">{row?.row4}</td>
+                                    <td className="px-4 py-3">{row?.row5}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                )
+            }
 
             {/* Key Architecture Features */}
             <div className="mt-6">
                 <p className="font-semibold mb-2">{architecture?.keyFeaturesTitle}:</p>
                 <ul className="space-y-2">
-                    {architecture?.keyFeatures.map((feature, index) => (
+                    {architecture?.keyFeatures?.map((feature, index) => (
                         <li key={index} className='text-gray-600'>• {feature}</li>
                     ))}
                 </ul>

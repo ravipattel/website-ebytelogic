@@ -17,7 +17,7 @@ const GstreamerApproach = ({ data }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <p className="text-gray-600 mb-6">
-              {approach?.approach.description}{" "}
+              {approach?.approach?.description}{" "}
               <a
                 href={approach?.approach?.link}
                 className="text-primary hover:underline"
@@ -78,9 +78,9 @@ const GstreamerApproach = ({ data }) => {
               className="text-center bg-primary/5 rounded-md p-5"
             >
               <div className="text-3xl font-semibold text-primary mb-2">
-                {stat.value}
+                {stat?.value}
               </div>
-              <div className="text-sm text-gray-600">{stat.label}</div>
+              <div className="text-sm text-gray-600">{stat?.label}</div>
             </div>
           ))}
         </div>

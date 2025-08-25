@@ -3,7 +3,9 @@ import Image from "next/image";
 import React from "react";
 
 const QaRisk = ({ data }) => {
+
   const risk = data?.risks;
+
   return (
     <section id={risk?.id} className="px-4 md:px-6 py-16 bg-slate-50">
       <h2 className="font-serif text-2xl md:text-3xl font-bold mb-8">
@@ -35,22 +37,33 @@ const QaRisk = ({ data }) => {
 
           case "quote":
             return (
-              <div
-                key={index}
-                className="bg-red-50 border-l-4 border-red-400 p-6 mb-6"
-              >
-                <div className="flex gap-3">
-                  {block?.icon}
-                  <div>
-                    <h4 className="font-serif text-lg font-semibold text-red-800 mb-2">
-                      {block?.heading}
-                    </h4>
-                    <p className={`text-sm md:text-base ${block?.color}`}>
-                      {block?.text}
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <>
+                {
+                  block?.quoteBlock && (
+                    <>
+                      {block?.quoteBlock?.map((block) => (
+                        <div
+                          key={index}
+                          className={`p-6 mb-6`}
+                          style={{backgroundColor:block?.bgColor,borderLeft:`4px solid ${block?.borderColor}`}}
+                        >
+                          <div className="flex gap-3">
+                            {block?.icon}
+                            <div>
+                              <h4 className="font-serif text-lg font-semibold mb-2" style={{color:block?.color}}>
+                                {block?.heading}
+                              </h4>
+                              <p className={`text-sm md:text-base`}>
+                                {block?.text}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </>
+                  )
+                }
+              </>
             );
 
           case "grid":
@@ -59,18 +72,18 @@ const QaRisk = ({ data }) => {
                 key={index}
                 className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-6"
               >
-                {block.items.map((item, idx) => (
+                {block?.cards?.map((card, idx) => (
                   <div
                     key={idx}
                     className="bg-white p-4 rounded-md border border-gray-300 shadow-md"
                   >
                     <div className="flex items-center mb-3 gap-2">
-                      {item?.icon}
+                      {card?.icon}
                       <h4 className="font-serif text-base md:text-lg font-semibold">
-                        {item?.title}
+                        {card?.title}
                       </h4>
                     </div>
-                    <p className="text-sm text-gray-600">{item?.description}</p>
+                    <p className="text-sm text-gray-600">{card?.description}</p>
                   </div>
                 ))}
               </div>

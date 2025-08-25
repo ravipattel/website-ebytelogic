@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 
 import { useEffect, useState } from 'react';
@@ -570,16 +571,15 @@ const ServiceDetailsInfo = () => {
             if (found) setService(found);
         }
     }, [id]);
-    
 
     if (!service) return <div className="p-8 text-gray-600">Loading or not found...</div>;
     return (
         <div>
             <section>
-                <section className='relative bg-no-repeat bg-cover bg-right py-28 lg:py-52 ' style={{ backgroundImage:`url('${service.bgImg}')` }}>
+                <section className='relative bg-no-repeat bg-cover bg-right py-28 lg:py-52 ' style={{ backgroundImage: `url('${service.bgImg}')` }}>
                     <div className='absolute bg-[#0e191eb3] top-0 size-full z-0'></div>
                     <div className='max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10 space-y-4'>
-                        <p className='text-sm md:text-lg text-white flex items-center gap-4 justify-center'>Home <RiArrowRightSLine className='text-primary text-2xl' /> Services <RiArrowRightSLine className='text-primary text-2xl' /> {service.pathText}</p>
+                        <p className='text-sm md:text-lg text-white flex items-center gap-4 justify-center'><Link href={'/'}>Home</Link>  <RiArrowRightSLine className='text-primary text-2xl' /> <Link href={'/services'}>Services</Link>  <RiArrowRightSLine className='text-primary text-2xl' /> {service.pathText}</p>
                         <h2 className='text-2xl md:text-5xl xl:text-[50px] font-normal text-white leading-tight text-center pb-4'>{service.category}</h2>
                         <p className='text-sm md:text-lg text-white flex items-center gap-4 justify-center'>{service.tagLine}</p>
                     </div>

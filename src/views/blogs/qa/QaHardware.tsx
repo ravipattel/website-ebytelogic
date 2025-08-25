@@ -28,11 +28,15 @@ const QaHardware = ({ data }) => {
           );
         }
 
-        if (item?.type === 'quote') {
+        if (item?.quoteBlock) {
           return (
-            <div key={index} className="bg-gray-100 p-6 rounded-lg shadow-lg mb-6 text-sm md:text-base">
-              {item?.text}
-            </div>
+            <>
+              {item?.quoteBlock?.map((block) => (
+                <div key={index} className={`p-6 rounded-lg shadow-lg mb-6 text-sm md:text-base`} style={{ backgroundColor: block?.bgColor }}>
+                  {block?.text}
+                </div>
+              ))}
+            </>
           );
         }
 
@@ -44,7 +48,7 @@ const QaHardware = ({ data }) => {
                 {/* <GraphControls /> */}
                 <div className="mermaid text-sm md:text-base overflow-auto">
                   {/* <Mermaid chart={item.mermaidGraph} /> */}
-                  mermaid
+                  {item?.mermaidText}
                 </div>
               </div>
             </div>
