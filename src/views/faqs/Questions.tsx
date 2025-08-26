@@ -130,14 +130,17 @@ const AccordionItem = ({ index, openIndex, setOpenIndex, question, answer }: any
 };
 
 const Questions = () => {
-  const [openIndex1, setOpenIndex1] = useState<number | null>(null);
-  const [openIndex2, setOpenIndex2] = useState<number | null>(null);
-  const [openIndex3, setOpenIndex3] = useState<number | null>(null);
+  const [openIndex1, setOpenIndex1] = useState<number | null>(null); // General
+  const [openIndex2, setOpenIndex2] = useState<number | null>(null); // Multimedia
+  const [openIndex3, setOpenIndex3] = useState<number | null>(null); // Embedded Linux
+  const [openIndex4, setOpenIndex4] = useState<number | null>(null); // Testing
+  const [openIndex5, setOpenIndex5] = useState<number | null>(null); // IoT
+
 
   return (
     <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
       <div className="py-16 sm:py-28">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div>
             <div className="space-y-4">
               <h6 className="text-base md:text-lg text-primary font-medium flex items-center gap-2">FAQ</h6>
@@ -162,8 +165,8 @@ const Questions = () => {
           </div>
 
           <div>
-            <Image src={QuestionsJpg} alt="QuestionsJpg" />
-            <div className="p-10 bg-primary flex items-center gap-3 w-fit ms-auto z-10 relative -top-26 before:absolute before:bottom-0 before:-left-11 before:w-0 before:h-0 before:border-t-[35px] before:border-t-primary before:border-l-[44px] before:border-l-transparent">
+            <Image src={QuestionsJpg} alt="QuestionsJpg" width={600} height={600} className='ml-auto' />
+            <div className="p-10 bg-primary flex items-center gap-3 size-fit ms-auto z-10 relative -top-26 before:absolute before:bottom-0 before:-left-11 before:w-0 before:h-0 before:border-t-[35px] before:border-t-primary before:border-l-[44px] before:border-l-transparent">
               <div className="bg-white rounded-full h-14 w-14 grid place-items-center">
                 <IoMdMail className="text-primary text-3xl" />
               </div>
@@ -175,7 +178,7 @@ const Questions = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-20 gap-x-12 items-center mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-20 gap-x-12 items-center">
           <div>
             <h3 className="text-2xl font-semibold text-primaryText leading-tight capitalize mb-3">2. Multimedia & Streaming Frameworks</h3>
             <p className="text-[#5d6471] text-sm sm:text-[15px]">
@@ -220,8 +223,8 @@ const Questions = () => {
                 <AccordionItem
                   key={index}
                   index={index}
-                  openIndex={openIndex2}
-                  setOpenIndex={setOpenIndex2}
+                  openIndex={openIndex4}
+                  setOpenIndex={setOpenIndex4}
                   {...faq}
                 />
               ))}
@@ -237,8 +240,8 @@ const Questions = () => {
                 <AccordionItem
                   key={index}
                   index={index}
-                  openIndex={openIndex2}
-                  setOpenIndex={setOpenIndex2}
+                  openIndex={openIndex5}
+                  setOpenIndex={setOpenIndex5}
                   {...faq}
                 />
               ))}

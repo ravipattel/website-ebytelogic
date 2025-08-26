@@ -94,7 +94,7 @@ const HeroSection = () => {
           <p className="text-sm md:text-lg text-[#5d6471]">
             From BSPs and board bring-up to real-time video streaming and multimedia stacks, we help hardware teams ship scalable, production-grade systems.
           </p>
-          <div className="flex space-x-4 pt-4">
+          <div className="flex flex-wrap gap-4 pt-4">
             <a href="#services"><Button variant="default" className="w-full h-12">Explore Services</Button></a>
             <Button onClick={() => router.push('/case-study')}
               variant="default"

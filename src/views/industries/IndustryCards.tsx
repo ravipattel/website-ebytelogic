@@ -196,8 +196,8 @@ const IndustryCards = () => {
                             Semiconductors, IoT, and Wearables — delivering faster AV sync, reliable board bring-up,
                             and scalable integration.
                         </p>
-                        <div className="mt-10 flex flex-wrap items-center justify-center gap-8">
-                            <Button onClick={() => router.push('/contact-us')} className='px-6 py-3'>
+                        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+                            <Button onClick={() => router.push('/contact-us')} className='px-6 h-12'>
                                 Book a Consultation
                             </Button>
                                 <Button onClick={() => router.push('/case-study')}
@@ -309,11 +309,11 @@ const IndustryCards = () => {
                     <p className="text-sm sm:text-[15px] font-medium text-white max-w-3xl mx-auto mb-10">
                         Let’s discuss your industry use case and how we can bring it to life with embedded expertise.
                     </p>
-                    <div className="flex flex-wrap justify-center gap-4 sm:space-x-4">
-                        <Button onClick={() => router.push('/contact-us')} className='w-full sm:w-fit !bg-white !text-primary hover:!bg-primary hover:!text-white'>
+                    <div className="flex flex-wrap justify-center gap-4">
+                        <Button onClick={() => router.push('/contact-us')} className='h-12 w-full sm:w-fit !bg-white !text-primary hover:!bg-primary hover:!text-white'>
                             Book a Strategy Call
                         </Button>
-                        <Button onClick={() => router.push('/case-study')} className='w-full sm:w-fit !bg-white !text-primary hover:!bg-primary hover:!text-white'>
+                        <Button onClick={() => router.push('/case-study')} className='h-12 w-full sm:w-fit !bg-white !text-primary hover:!bg-primary hover:!text-white'>
                             Explore Our Case Studies
                         </Button>
                     </div>

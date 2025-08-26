@@ -225,7 +225,7 @@ const CaseStudyCard = () => {
               Explore how we’ve helped product teams solve real-world challenges
               in embedded systems, multimedia streaming, Linux BSPs, and more.
             </p>
-            <div className="flex flex-wrap justify-center gap-4 sm:space-x-4">
+            <div className="flex flex-wrap justify-center gap-4">
               <Button
                 onClick={() => router.push("/blogs")}
                 className="w-fit !bg-white !text-primary hover:!bg-primary hover:!text-white"

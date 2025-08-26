@@ -20,7 +20,7 @@ const HeroSection = () => {
           <p className="text-sm md:text-lg text-[#5d6471]">
             We develop effective plans to move your customers behaviour.
           </p>
-          <div className="flex space-x-4 pt-4">
+          <div className="flex flex-wrap gap-4 pt-4">
             <Button onClick={() => router.push('/services')} variant="default" className="max-w-[158px] w-full h-12">Our Services</Button>
             <Button onClick={() => router.push('/contact-us')}
               variant="default"

@@ -25,7 +25,7 @@ const Cta = () => {
                         Let’s Connect
                     </Button>
                     <Button onClick={() => router.push('/case-study')}
-                        className="!bg-transparent !border-0 inline-flex items-center text-white hover:text-primary-300 font-medium transition-all duration-300 gap-2"
+                        className="!bg-transparent !h-fit !py-0 !border-0 inline-flex items-center text-white hover:text-primary-300 font-medium transition-all duration-300 gap-2"
                     >
                         View Our Case Studies <FaArrowRightLong />
                     </Button>
