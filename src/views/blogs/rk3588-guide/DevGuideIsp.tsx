@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react'
 
 const DevGuideIsp = ({ data }) => {
@@ -18,12 +19,13 @@ const DevGuideIsp = ({ data }) => {
 
             {/* ISP Processing Pipeline Diagram */}
             {processing?.ispProcessingPipelineTitle && (
-                <div className="architecture-diagram">
+                <div>
                     <h3 className="font-serif text-xl font-semibold mb-4">
                         {processing?.ispProcessingPipelineTitle}
                     </h3>
-                    <div className="mermaid-container">
-                        <div className="mermaid">{processing?.ispProcessingPipelineDiagram}</div>
+                    <div className="py-8">
+                        {/* <div className="mermaid">{processing?.ispProcessingPipelineDiagram}</div> */}
+                        <Image src={processing?.ispProcessingPipelineDiagram} alt='diagram' />
                     </div>
                 </div>
             )
@@ -45,7 +47,7 @@ const DevGuideIsp = ({ data }) => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                     {processing?.components?.map((component, index) => (
                         <div className="bg-white rounded-md border border-gray-300 shadow-md p-3" key={index}>
-                            <h4 className={`font-semibold mb-2`} style={{color:component?.color}}>
+                            <h4 className={`font-semibold mb-2`} style={{ color: component?.color }}>
                                 {component?.title}
                             </h4>
                             <p className="text-sm text-gray-600">{component?.description}</p>

@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import React from 'react'
 
 const DebounceIntro = ({ data }) => {
@@ -16,23 +17,23 @@ const DebounceIntro = ({ data }) => {
                         {introData?.paragraph1}
                     </p>
                 )}
-                <div>
-                    {introData?.diagram && (
+                {introData?.diagram?.graph && (
+                    <div>
                         <div>
-                            {introData?.controls?.map((control) => (
+                            {/* {introData?.controls?.map((control) => (
                                 <button
                                     key={control?.id}
                                     title={control?.title}
                                 >
                                     {control?.icon}
                                 </button>
-                            ))}
+                            ))} */}
                         </div>
-                    )}
-                    <div>
-                        {introData?.diagram?.graph}
+                        <div>
+                            <Image src={introData?.diagram?.graph} alt='diagram' />
+                        </div>
                     </div>
-                </div>
+                )}
                 {introData?.paragraph2 && (
                     <p className="mt-6 text-gray-600">{introData?.paragraph2}</p>
                 )}

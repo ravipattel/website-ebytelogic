@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const DevGuideArchitecture = ({ data }) => {
@@ -19,7 +20,7 @@ const DevGuideArchitecture = ({ data }) => {
                 {architecture?.cameraSubsystemTitle}
             </h3>
             <div className="mermaidcontainer">
-                <div className="mermaid-controls flex">
+                {/* <div className="mermaid-controls flex">
                     {architecture?.icon?.map((i, index) => (
                         <div key={index}>
                             <button title={i?.title}>
@@ -27,9 +28,10 @@ const DevGuideArchitecture = ({ data }) => {
                             </button>
                         </div>
                     ))}
-                </div>
-                <div className="mermaid">
-                    {architecture?.cameraSubsystemDiagram}
+                </div> */}
+                <div>
+                    {/* {architecture?.cameraSubsystemDiagram} */}
+                    <Image src={architecture?.cameraSubsystemDiagram} alt='diagram'/>
                 </div>
             </div>
 
@@ -47,7 +49,7 @@ const DevGuideArchitecture = ({ data }) => {
             {
                 architecture?.mipiCsi2Table && (
                     <table className="w-full text-left border-collapse rounded-lg overflow-hidden shadow-sm">
-                        <thead className={`text-white text-sm`} style={{backgroundColor:architecture?.tableHeadColor}}>
+                        <thead className={`text-white text-sm`} style={{ backgroundColor: architecture?.tableHeadColor }}>
                             <tr>
                                 <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.column1}</th>
                                 <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.column2}</th>

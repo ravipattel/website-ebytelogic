@@ -5,7 +5,7 @@ import Sidebar from '@/src/components/Sidebar'
 const CaseStudyDetails = () => {
   return (
       <div className="lg:flex bg-[#F0F4F8]">
-        <div className="w-72 h-fit lg:sticky lg:top-[92px]">
+        <div className="w-72 h-fit lg:sticky lg:top-[70px]">
           <Sidebar />
         </div>
         <div className='overflow-y-auto px-4 md:px-6'>

@@ -1,12 +1,21 @@
 "use client";
-import Button from "@/src/components/Button";
+import Image from "next/image";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
+
 import React from "react";
 import { BsArrows, BsArrowsVertical } from "react-icons/bs";
 import { FaArrowDownLong, FaArrowRightLong } from "react-icons/fa6";
 import { RiArrowRightSLine } from "react-icons/ri";
-import { Bar, BarChart, CartesianGrid, Cell, LabelList, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, Cell, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+
+import Button from "@/src/components/Button";
+
+import AfterPng from '@/src/assets/images/caseStudy/after.png'
+import BeforePng from '@/src/assets/images/caseStudy/before.png'
+import BeforeMockupPng from '@/src/assets/images/caseStudy/beforeMockup.png'
+import AfterMockupPng from '@/src/assets/images/caseStudy/afterMockup.png'
+import EbyteMockupPng from '@/src/assets/images/caseStudy/ebyteMockup.png'
 
 const caseStudyData = [
   // 1 done
@@ -500,6 +509,8 @@ const caseStudyData = [
       sectionId: "results",
       title: "Impact & Results: Instant User Feedback",
       description: `By enabling an early boot logo, we transformed the user's first interaction with the device, providing immediate visual confirmation and enhancing the product's perceived quality.`,
+      beforeImg: BeforeMockupPng,
+      afterImg: EbyteMockupPng,
       translucentCard: {
         card: [
           {
@@ -1186,6 +1197,8 @@ const caseStudyData = [
       description:
         "Our successful PoC demonstrated the feasibility of achieving ultra-low latency, validating the chosen SoC platform and providing a crucial foundation for the client's next-generation UAV products.",
       title: "Impact & Results: Validating Future Product Lines",
+      beforeImg: BeforePng,
+      afterImg: AfterPng,
       translucentCard: {
         card: [
           {
@@ -2617,10 +2630,30 @@ const CaseStudyInfo = () => {
                 </ResponsiveContainer>
 
               )}
-
               {/* {data?.results?.img && (
                 <Image />
               )} */}
+              {data?.results?.beforeImg && data?.results?.afterImg && (
+                <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+                  <div className="text-center">
+                    <p className="font-medium mb-2" style={{ color: data?.secondaryTitleColor }}>Before</p>
+                    <Image
+                      src={data?.results?.beforeImg}
+                      alt="Before"
+                      className="rounded shadow-md max-w-full h-auto"
+                    />
+                  </div>
+                  <div className="text-center">
+                    <p className="font-medium mb-2" style={{ color: data?.secondaryTitleColor }}>After</p>
+                    <Image
+                      src={data?.results?.afterImg}
+                      alt="After"
+                      className="rounded shadow-md max-w-full h-auto"
+                    />
+                  </div>
+                </div>
+              )}
+
               {data?.results?.translucentCard && (
                 <div className="grid grid-cols-2">
                   {data?.results?.translucentCard?.card?.map((item, idx) => {

@@ -11,8 +11,9 @@ const RequestForm = () => {
                         Request a <span className="text-primary">Call back</span>
                     </h2>
                     <p className="text-sm sm:text-[15px] text-[#dddddd]">
-                        Looking to elevate your tech capabilities or need expert insights on embedded solutions?
-                        Leave your details, and one of our specialists will get in touch shortly to discuss how eByteLogic can empower your business.
+                        Have a product idea or a performance challenge in MediaTech or embedded systems?
+                        Share your details, and our experts will connect with you to explore how eByteLogic can
+                        accelerate your roadmap with proven low-latency streaming and BSP expertise.
                     </p>
                 </div>
                 <form className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-4 xl:gap-6">

@@ -87,6 +87,10 @@ import QaLowLevelPng from "@/src/assets/images/blogs/blogDetails/qaLowLevel.png"
 import QaRisksJpg from "@/src/assets/images/blogs/blogDetails/qaRisks.jpg";
 import QaTimePng from "@/src/assets/images/blogs/blogDetails/qaTime.png";
 import QaDebuggingJpeg from "@/src/assets/images/blogs/blogDetails/qaDebugging.jpeg";
+import MermiadRk from '@/src/assets/images/caseStudy/mermaid-rk.png'
+import PipeLineDiagram from '@/src/assets/images/caseStudy/PipeLineDiagram.png'
+import BtnDebounceMermaid from '@/src/assets/images/caseStudy/btn-debounce-mermaid.png'
+import BtnDebounceArchitecture from '@/src/assets/images/caseStudy/debounce_architecture.png'
 
 export const globalCards = [
   {
@@ -1262,8 +1266,7 @@ export const globalCards = [
           icon: <FaExpand />,
         },
       ],
-      cameraSubsystemDiagram:
-        'graph LR A["Camera Sensor"] --> B["MIPI CSI-2 PHY"] B --> C["VICAP Unit"] C --> D["ISP 3.0"] D --> E["RGA"] E --> F["MPP Encoder"] D --> G["NPU for AI"] F --> H["Network/Storage"] G --> I["AI Results"]',
+      cameraSubsystemDiagram: MermiadRk,
       mipiCsi2Title: "MIPI CSI-2 Interface Configuration",
       tableHeadColor: "#00786f",
       mipiCsi2Table: [
@@ -1371,9 +1374,7 @@ endpoint { remote-endpoint = <&mipi_in_ucam0>; data-lanes = <1 2 3 4>;
         link: "https://doc.embedfire.com/linux/rk356x/quick_start/zh/latest/quick_start/isp/isp.html",
       },
       ispProcessingPipelineTitle: "ISP Processing Pipeline",
-      ispProcessingPipelineDiagram:
-        'flowchart TD A["RAW Sensor Data"] --> B["Defective Pixel Correction"] B --> C["Lens Shading Correction"] C --> D["Demosaicing"] D --> E["Noise Reduction"] E --> F["Color Correction"] F --> G["Gamma Correction"] G --> H["Sharpness Enhancement"] H --> I["3A Algorithms"] I --> J["YUV/RGB Output"] subgraph "3A Control" K["Auto Exposure"] --> I L["Auto White Balance"] --> I M["Auto Focus"] --> I end style A fill:#8B5CF6,stroke:#6D28D9,stroke-width:3px,color:#FFFFFF style I fill:#F59E0B,stroke:#D97706,stroke-width:3px,color:#FFFFFF style J fill:#06B6D4,stroke:#0891B2,stroke-width:3px,color:#FFFFFF style K fill:#10B981,stroke:#059669,stroke-width:3px,color:#FFFFFF style L fill:#10B981,stroke:#059669,stroke-width:3px,color:#FFFFFF style M fill:#10B981,stroke:#059669,stroke-width:3px,color:#FFFFFF',
-      threeAAlgorithmTitle: "3A Algorithm Integration",
+      ispProcessingPipelineDiagram: PipeLineDiagram,
       threeAAlgorithmDescription:
         "The 3A algorithms (Auto Exposure, Auto White Balance, Auto Focus) are implemented through the Rockchip Camera Engine (RCE) framework.",
       threeAAlgorithmCitation: {
@@ -2513,7 +2514,7 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
     },
   },
   {
-    design : 'gStreamer',
+    design: 'gStreamer',
     image: GstreamerJpg,
     title: `eByteLogic's Approach to GStreamer`,
     author: "Admin",
@@ -3046,10 +3047,7 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
         "When designing embedded systems that interact with mechanical switches or buttons, ensuring reliable input is a fundamental challenge. The phenomenon of 'switch bounce,' where a single press or release generates a rapid series of electrical pulses instead of a clean transition, can lead to erroneous readings and unpredictable behavior.",
       diagram: {
         description: "Button Pressing and its Impact",
-        graph: `graph LR A["Button Pressed"] --> B["Contact Bounce"]
-              B --> C["Multiple Pulses"]
-              C --> D["Erroneous Input"]
-              D --> E["System Malfunction"]`,
+        graph: BtnDebounceMermaid,
       },
       paragraph2:
         "To mitigate this, engineers employ debouncing techniques, which can be broadly categorized into hardware and software solutions. The choice between these two approaches involves a careful trade-off of factors including cost, power consumption, reliability, and implementation complexity.",
@@ -3480,13 +3478,7 @@ pause()
               title: "Sleep Modes & Interrupts",
               description:
                 "Implement sleep modes with interrupt-driven wake-up for lowest power consumption. The processor only activates briefly to handle button presses.",
-              diagram: `
-            graph TD 
-              A["Deep Sleep"] -->|"Button Press"| B["Wake on Interrupt"] 
-              B --> C["Run Debounce Routine"] 
-              C --> D["Process Button Event"] 
-              D --> A
-                      `,
+              diagram:BtnDebounceArchitecture,
             },
           ],
         },

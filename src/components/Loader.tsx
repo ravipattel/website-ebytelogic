@@ -8,50 +8,67 @@ export default function Loader({ children }: { children: React.ReactNode }) {
   const [fadeOut, setFadeOut] = useState(false);
   const [progress, setProgress] = useState(0);
   const [hasLoadedOnce, setHasLoadedOnce] = useState(false);
+  const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+
+  const messages = [
+    'Optimizing Pipelines…',
+    'Booting in 3 Seconds…',
+    'Syncing Audio & Video…',
+    'Loading Innovation…',
+  ];
+
+  const messageDisplayTime = 1200; // ms
+  const fadeOutDelay = 800;
+  const totalLoadingTime = messages.length * messageDisplayTime + fadeOutDelay;
 
   useEffect(() => {
-    // If already shown once (i.e. after refresh), skip the loader
     if (hasLoadedOnce) return;
 
     setLoading(true);
     setFadeOut(false);
     setProgress(0);
 
-    const interval = setInterval(() => {
+    const totalLoadingTime = 6000; // total loader time in ms (you can tweak this)
+    const messageDisplayTime = totalLoadingTime / messages.length;
+
+    // Progress bar increase
+    const progressInterval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
-          clearInterval(interval);
+          clearInterval(progressInterval);
           return 100;
         }
         return prev + 1;
       });
-    }, 30);
+    }, totalLoadingTime / 100); // one step every 1% of total time
 
-    const fadeTimer = setTimeout(() => setFadeOut(true), 5000);
+    // Show messages one-by-one, equally spaced
+    let messageIndex = 0;
+    const messageInterval = setInterval(() => {
+      messageIndex += 1;
+      if (messageIndex < messages.length) {
+        setCurrentMessageIndex(messageIndex);
+      } else {
+        clearInterval(messageInterval);
+      }
+    }, messageDisplayTime);
+
+    // Fade out and hide
+    const fadeTimer = setTimeout(() => setFadeOut(true), totalLoadingTime);
     const hideTimer = setTimeout(() => {
       setLoading(false);
       setHasLoadedOnce(true);
-    }, 5500);
+    }, totalLoadingTime + 500); // wait a bit for fade
 
     return () => {
+      clearInterval(progressInterval);
+      clearInterval(messageInterval);
       clearTimeout(fadeTimer);
       clearTimeout(hideTimer);
-      clearInterval(interval);
     };
-  }, [hasLoadedOnce]); // only on first render
+  }, [hasLoadedOnce]);
 
-  useEffect(() => {
-    if (progress >= 100) {
-      setFadeOut(true);
 
-      const hideTimer = setTimeout(() => {
-        setLoading(false);
-        setHasLoadedOnce(true);
-      }, 1000); // fade-out duration only
-
-      return () => clearTimeout(hideTimer);
-    }
-  }, [progress]);
 
   if (loading) {
     return (
@@ -61,7 +78,9 @@ export default function Loader({ children }: { children: React.ReactNode }) {
       >
         <div className="text-center">
           <Image src={Logo} alt="logo" className="h-12 w-auto mx-auto mb-2" />
-          <p className="text-base text-gray-500 mb-4">Transforming Ideas into Intelligent Software</p>
+          <p className="text-base text-gray-500 mb-4">
+            From Silicon to Streaming – Smarter Embedded Software
+          </p>
 
           <div className="w-60 h-2 bg-gray-200 rounded-full overflow-hidden mx-auto">
             <div
@@ -70,7 +89,7 @@ export default function Loader({ children }: { children: React.ReactNode }) {
             />
           </div>
 
-          <p className="text-sm text-gray-400 mt-1">Loading {progress}%</p>
+          <p className="text-sm text-gray-400 mt-1">{messages[currentMessageIndex]}</p>
         </div>
       </div>
     );

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 
 const DebounceKey = ({ data }) => {
@@ -50,7 +51,7 @@ const DebounceKey = ({ data }) => {
                                                 )}
                                                 {section?.diagram && (
                                                     <div>
-                                                        <div>{section?.diagram}</div>
+                                                        <Image src={section?.diagram} alt='diagram'/>
                                                     </div>
                                                 )}
                                                 {section?.items && (
