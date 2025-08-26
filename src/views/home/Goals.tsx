@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { GoArrowRight } from 'react-icons/go';
 import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
@@ -12,8 +12,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-
-import Button from '@/src/components/Button';
 
 import EbyteLogicPng from '@/src/assets/images/home/goals/ebytelogic.png';
 import TechnicalPng from '@/src/assets/images/home/goals/technical.png';
@@ -41,6 +39,8 @@ const CardData = [
 ];
 
 const Goals = () => {
+    const [isImageOpen, setIsImageOpen] = useState(false);
+
     return (
         <section>
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-28 space-y-4">
@@ -88,7 +88,7 @@ const Goals = () => {
                                                 className="w-full transition-transform duration-400 transform group-hover/card:scale-100 scale-[1.1]"
                                             />
                                             <div className="absolute inset-0 bg-[#002c57f2] opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                                <PhotoView src={card.preview.src}>
+                                                <PhotoView src={card.preview.src} >
                                                     <span>
                                                         <HiMiniMagnifyingGlassPlus className="text-white text-4xl" />
                                                     </span>

@@ -49,7 +49,7 @@ const Footer = () => {
                                         <li onClick={() => router.push('/case-study')} className='flex items-center gap-1 text-primaryText text-sm sm:text-[15px] cursor-pointer transition-all duration-300 hover:text-primary'><MdKeyboardArrowRight />Case Studies</li>
                                         <li onClick={() => router.push('/services')} className='flex items-center gap-1 text-primaryText text-sm sm:text-[15px] cursor-pointer transition-all duration-300 hover:text-primary'><MdKeyboardArrowRight />Services</li>
                                         <li onClick={() => router.push('/industries')} className='flex items-center gap-1 text-primaryText text-sm sm:text-[15px] cursor-pointer transition-all duration-300 hover:text-primary'><MdKeyboardArrowRight />Industries We Serve</li>
-                                        {/* <li onClick={() => router.push('/about')} className='flex items-center gap-1 text-primaryText text-sm sm:text-[15px] cursor-pointer transition-all duration-300 hover:text-primary'><MdKeyboardArrowRight />Careers</li> */}
+                                        <li onClick={() => router.push('/blogs')} className='flex items-center gap-1 text-primaryText text-sm sm:text-[15px] cursor-pointer transition-all duration-300 hover:text-primary'><MdKeyboardArrowRight />Blogs</li>
                                         <li onClick={() => router.push('/contact-us')} className='flex items-center gap-1 text-primaryText text-sm sm:text-[15px] cursor-pointer transition-all duration-300 hover:text-primary'><MdKeyboardArrowRight />Contact Us</li>
                                     </ul>
                                 </div>

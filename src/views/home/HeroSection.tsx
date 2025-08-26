@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 import React, { useEffect, useRef, useState } from "react";
@@ -7,6 +8,8 @@ import Typed from "typed.js";
 
 import Button from "@/src/components/Button";
 import WorkflowSlider from "@/src/components/WorkflowSlider";
+
+import why from '@/public/images/bg/why.png'
 
 
 const dynamicData = [
@@ -72,8 +75,11 @@ const HeroSection = () => {
 
 
   return (
-    <div className='bg-gradient-to-r from-gray-50 to-blue-50 h-[90vh]'>
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 gap-5 h-full flex items-center">
+    <div className="bg-gradient-to-r from-gray-50 to-blue-50 h-[calc(100vh-128px)] relative">
+      {/* <div className="absolute top-0 z-10 h-full">
+        <Image src={why} alt="why" className="opacity-15 h-full object-cover" />
+      </div> */}
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 gap-5 h-full flex items-center relative z-20">
         <div className="w-full lg:w-3/5 space-y-6">
           <p className="text-base md:text-lg text-primary font-medium">
             Linux BSPs. Low-Latency Streaming. Protocol-Driven Embedded Innovation.
@@ -85,8 +91,6 @@ const HeroSection = () => {
               onMouseLeave={handleMouseLeave}
             />
           </h1>
-
-
           <p className="text-sm md:text-lg text-[#5d6471]">
             From BSPs and board bring-up to real-time video streaming and multimedia stacks, we help hardware teams ship scalable, production-grade systems.
           </p>

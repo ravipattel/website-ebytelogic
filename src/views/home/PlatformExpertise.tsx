@@ -36,7 +36,7 @@ const PlatformExpertise = () => {
                     We specialize in building, optimizing, and maintaining solutions across industry- leading embedded platforms and chipsets.
                     From board bring-up to BSP, middleware tuning, and multimedia stack integration, our team works seamlessly across a wide range of SoC environments.
                 </p>
-                <div className='bg-slate-300 py-3 mt-8'>
+                <div className='py-3 mt-8'>
                     <div className="max-w-[1400px] mx-auto px-4 sm:px-6 relative">
                         <div className="swiper-button-prev-custom absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 flex items-center justify-center bg-white border rounded-full shadow hover:bg-gray-100 transition cursor-pointer">
                             <FaArrowLeft className="text-gray-600" />

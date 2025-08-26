@@ -78,7 +78,7 @@ const Header = () => {
   return (
     <>
       <nav className="bg-[#243559] py-1.5">
-        <div className="max-w-[1400px] mx-auto text-sm px-6 py-2 flex flex-wrap justify-center sm:justify-between items-center gap-2 sm:gap-4">
+        <div className="max-w-[1400px] mx-auto text-sm px-4 py-2 flex flex-wrap justify-center sm:justify-between items-center gap-2 sm:gap-4">
           <div className="flex flex-wrap gap-4 text-xs md:text-sm">
             <a href="mailto:Contact@ebytelogic.com" className="flex items-center gap-1 text-[#CCCCCC]">
               <IoMdMail className="text-white" /> Contact@ebytelogic.com
@@ -105,11 +105,11 @@ const Header = () => {
         </div>
       </nav>
       <header className="sticky top-0 left-0 z-[99999] bg-white/90">
-        <div className="px-6 py-4 shadow-lg relative z-50">
-          <div className="max-w-[1400px] mx-auto flex justify-between items-center">
+        <div className="px-6 py-2 shadow-lg relative z-50">
+          <div className="max-w-[1400px] mx-auto px-3 flex justify-between items-center">
             <Link
               href={'/'} >
-              <Image src={LogoPng} alt="Logo" width={200} height={45} className="md:w-56 md:h-15" />
+              <Image src={LogoPng} alt="Logo" width={200} height={35} className="md:w-56 md:h-14" />
             </Link>
             <nav className="hidden md:block relative">
               <ul className="flex flex-wrap items-center gap-3 lg:gap-6">
@@ -138,7 +138,7 @@ const Header = () => {
                       </Link>
                     </div>
                     {item.subItems && (
-                      <ul className={`p-4 space-y-3 absolute top-20 -left-10 w-56 bg-white shadow-xl border-t-4 border-primary opacity-0 group-hover:opacity-100 invisible group-hover:visible group-hover:top-14 transition-all duration-300 ease-in-out z-50 rounded-md`}>
+                      <ul className={`p-4 space-y-3 absolute top-16 -left-10 w-56 bg-white shadow-xl border-t-4 border-primary opacity-0 group-hover:opacity-100 invisible group-hover:visible group-hover:top-10 transition-all duration-700 ease-in-out z-50 rounded-md`}>
                         {item.subItems.map((subItem, subIndex) => (
                           <li key={subIndex} className="relative group/services">
                             <Link

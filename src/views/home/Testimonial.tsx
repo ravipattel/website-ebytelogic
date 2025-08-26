@@ -3,11 +3,8 @@ import Image from 'next/image';
 
 import React from 'react';
 import Marquee from "react-fast-marquee";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 import AscemenPng from "@/src/assets/images/home/testimonial/ascemen.png";
 import EmbeddedSolutionsPng from "@/src/assets/images/home/testimonial/embeddedSolutions.png";
@@ -37,7 +34,7 @@ const Testimonial = () => {
                     semiconductors, IoT, aerospace, and more
                 </p>
             </div>
-            <div className="mt-16 py-5 bg-primary/50 border-y-2 border-secondary">
+            <div className="mt-16 py-5 bg-primary/40">
                 <Marquee
                     gradient={false}
                     speed={50}
