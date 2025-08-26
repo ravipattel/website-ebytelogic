@@ -1,13 +1,15 @@
 import React from "react";
 
 const GstreamerApproach = ({ data }) => {
+
   const approach = data?.approachData;
+
   return (
-    <section id="section-2" className="px-4 md:px-6 py-16 bg-slate-50">
+    <section id={approach?.id} className="px-4 md:px-6 py-16 bg-slate-50">
       {/* Section Title */}
       <div className="mb-8">
-        <span className="text-primary me-3">{approach?.approach?.no}</span>
-        <h2 className="font-serif text-3xl font-semibold text-deep-blue inline">
+        <span className="me-3" style={{ color: approach?.approach?.color }}>{approach?.approach?.no}</span>
+        <h2 className="font-serif text-3xl font-semibold inline">
           {approach?.approach?.title}
         </h2>
       </div>
@@ -16,15 +18,10 @@ const GstreamerApproach = ({ data }) => {
       <div className="bg-white p-8 rounded-xl shadow-sm mb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
-            <p className="text-gray-600 mb-6">
-              {approach?.approach?.description}{" "}
-              <a
-                href={approach?.approach?.link}
-                className="text-primary hover:underline"
-              >
-                {approach?.approach?.citation}
-              </a>
-            </p>
+            <p
+              className="text-gray-600 mb-6"
+              dangerouslySetInnerHTML={{ __html: approach?.approach?.description }}
+            />
             <div className="space-y-4">
               {/* Key Points */}
               {approach?.approach?.keyPoints?.map((point, index) => (
@@ -59,28 +56,28 @@ const GstreamerApproach = ({ data }) => {
 
         <p className="text-gray-600 mb-6">
           {approach?.armExpertise?.description?.text}{" "}
-          <span className="font-semibold">
-            {approach?.armExpertise?.description?.emphasis}
-          </span>{" "}
-          <a
-            href={approach?.armExpertise?.description?.link?.href}
-            className="text-primary hover:underline"
-          >
-            {approach?.armExpertise?.description?.link?.label}
-          </a>
-          .
+          <span
+            className="font-semibold">
+              {approach?.armExpertise?.description?.emphasis}
+            </span>
+           <span
+            dangerouslySetInnerHTML={{
+              __html: approach?.armExpertise?.description?.link
+            }}
+          />
         </p>
 
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {approach?.armExpertise?.stats?.map((stat, index) => (
+          {approach?.armExpertise?.cards?.map((card, index) => (
             <div
               key={index}
               className="text-center bg-primary/5 rounded-md p-5"
             >
-              <div className="text-3xl font-semibold text-primary mb-2">
-                {stat?.value}
+              <div className="text-3xl font-semibold mb-2" style={{ color: card?.color }}>
+                {card?.value}
               </div>
-              <div className="text-sm text-gray-600">{stat?.label}</div>
+              <div className="text-sm text-gray-600">{card?.label}</div>
             </div>
           ))}
         </div>

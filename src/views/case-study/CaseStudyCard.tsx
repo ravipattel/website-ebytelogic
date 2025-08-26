@@ -13,6 +13,15 @@ import ToradexPng from "@/src/assets/images/caseStudy/sdi.png";
 import EsightWearJpeg from "@/src/assets/images/caseStudy/bootLogo.png";
 import BootTimeJpg from "@/src/assets/images/caseStudy/socs.png";
 import MultiViewerJpg from "@/src/assets/images/caseStudy/ndiProtocol.png";
+import LcdPng from "@/src/assets/images/caseStudy/lcd.png";
+import CanBusPng from "@/src/assets/images/caseStudy/canBus.png";
+import YoctoBuildPng from "@/src/assets/images/caseStudy/yoctoBuild.png";
+import YoctoBuildRootPng from "@/src/assets/images/caseStudy/yoctoBuildroot.png";
+import ModBusPng from "@/src/assets/images/caseStudy/modBus.png";
+import LowCostPng from "@/src/assets/images/caseStudy/lowCost.png";
+import DisplayLatencyPng from "@/src/assets/images/caseStudy/displayLatency.png";
+import BootLogoPng from "@/src/assets/images/caseStudy/bootLogo.png";
+import I2CPng from "@/src/assets/images/caseStudy/busLockUp.png";
 
 const caseStudyCard = [
   {
@@ -86,6 +95,119 @@ const caseStudyCard = [
     ],
     img: MultiViewerJpg,
   },
+  {
+    id: "rapid-lcd-touchscreen-bring-up-for-telematics-display",
+    title: "Rapid LCD & Touchscreen Bring-Up for Telematics Display",
+    industry: "(Telematics Hardware Integration)",
+    highlights: [
+      "Fully functional LCD and capacitive touchscreen integration within 3 days",
+      "Custom OS installer development under extreme time pressure",
+      "Successful demo at Embedded World event meeting critical deadlines"
+    ],
+    img: LcdPng
+  },
+  {
+    id: "secure-mcu-firmware-upgrade-via-canopen",
+    title: "Secure MCU Firmware Upgrade via CANopen",
+    industry: "(Fire Safety Systems)",
+    highlights: [
+      "Secure and reliable MCU firmware updates over CAN bus",
+      "Remote firmware updates eliminate on-site visits and reduce costs",
+      "Large-scale, distributed deployments for mission-critical systems"
+    ],
+    img: CanBusPng
+  },
+  {
+    id: "hdmi-multiview-player",
+    title: "HDMI Multiview Player",
+    industry: "(Broadcast Solutions)",
+    highlights: [
+      "Low-cost, low-power multiview player for professional monitoring",
+      "Supports multiple streaming protocols (UDP, SRT, HLS)",
+      "Hardware-accelerated decoding for efficient video processing"
+    ],
+    img: LowCostPng
+  },
+  {
+    id: "sub-100ms-latency-in-uav-video-streaming",
+    title: "Sub-100ms Latency in UAV Video Streaming",
+    industry: "(Drone Technology)",
+    highlights: [
+      "Achieved <100ms camera-to-display latency for UAV control",
+      "No production hardware during PoC, solution built on evaluation kits",
+      "Validated NXP i.MX8MP platform for next-gen UAV products"
+    ],
+    img: DisplayLatencyPng
+  },
+  {
+    id: "can-to-modbus-bridge",
+    title: "CAN-to-Modbus Bridge",
+    industry: "(Industrial Electronics)",
+    highlights: [
+      "Seamlessly integrates CAN-based devices with Modbus controllers",
+      "Error recovery and mapping flexibility for reliable protocol translation",
+      "Reduces the need for costly hardware replacements in industrial systems"
+    ],
+    img: ModBusPng
+  },
+  {
+    id: "yocto-migration-for-safety-panel",
+    title: "Yocto Migration for Safety Panel",
+    industry: "(Safety Systems Manufacturing)",
+    highlights: [
+      "Migrated an outdated Yocto build to a modern release",
+      "Ensured full compatibility with existing peripherals",
+      "Extended product lifecycle with a modern, secure software stack"
+    ],
+    img: YoctoBuildPng
+  },
+  {
+    id: "yocto-buildroot-migration",
+    title: "Yocto ↔ Buildroot Migration",
+    industry: "(OEMs with Diverse Embedded Platforms)",
+    highlights: [
+      "Bidirectional migration between Yocto and Buildroot",
+      "Unified codebase supporting multiple platforms",
+      "Streamlined development with a single repo"
+    ],
+    img: YoctoBuildRootPng
+  },
+  {
+    id: "multi-master-i2c-problem-resolution",
+    title: "Multi-Master I2C Problem Resolution",
+    industry: "(High-Volume Electronics Manufacturer)",
+    highlights: [
+      "Eliminated I2C bus lock-ups causing system instability",
+      "Implemented dummy clock recovery for multi-master I2C bus",
+      "Saved costs by avoiding hardware redesign"
+    ],
+    img: I2CPng
+  },
+  {
+    "id": "multi-os-bsp-porting-and-boot-time-optimization",
+    "title": "Multi-OS BSP Porting and Boot Time Optimization",
+    "industry": "(European Embedded Hardware Solutions Company)",
+    "highlights": [
+      "Achieved sub-10 second boot to Qt app",
+      "Ported multiple operating systems (Ubuntu, Debian, Android, Lubuntu, CentOS)",
+      "Optimized boot sequence and kernel for faster startups"
+    ],
+    "img": BootTimeJpg
+  },
+  {
+    "id": "unified-yocto-build-environment-for-multi-SoM-product-lines",
+    "title": "Unified Yocto Build Environment for Multi-SoM Product Lines",
+    "industry": "(Asia-Pacific Embedded Hardware Manufacturer)",
+    "highlights": [
+      "Created a single-repository Yocto environment for multiple SoMs and product lines",
+      "Reduced redundancy and centralized updates",
+      "Accelerated firmware rollouts and build times"
+    ],
+    "img": BootLogoPng
+  }
+
+
+
 ];
 
 const CaseStudyCard = () => {
@@ -141,7 +263,7 @@ const CaseStudyCard = () => {
                       <h3 className="text-lg sm:text-xl font-semibold text-[#1d2433] mb-2">
                         {caseStudy.title}
                       </h3>
-                      <span className="text-xs bg-primary/15 px-2 py-0.5 rounded-full inline-block mb-3">
+                      <span className="text-xs bg-primary/15 px-2 py-1 rounded-full inline-block mb-3">
                         {caseStudy.industry}
                       </span>
                       <ul className="list-disc list-inside text-[#5d6471] text-sm sm:text-[15px] space-y-2">
@@ -159,7 +281,7 @@ const CaseStudyCard = () => {
                       </a>
                     </div>
                     <div>
-                      <div className="w-full h-[250px]">
+                      <div className="w-full h-[210px]">
                         <Image
                           src={caseStudy.img}
                           alt="Case Study Illustration"
@@ -170,7 +292,7 @@ const CaseStudyCard = () => {
                           quality={100}
                           placeholder="blur"
                           blurDataURL={caseStudy.img.src}
-                          className="w-full h-full object-cover rounded-xl"
+                          className="rounded-xl lg:mx-auto"
                         />
                       </div>
                     </div>

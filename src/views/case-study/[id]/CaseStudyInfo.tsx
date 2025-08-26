@@ -183,7 +183,7 @@ const caseStudyData = [
         "A Case Study in OS-level Customization for a US-based Semiconductor Company",
     },
     onlyFowchart: {
-      sectionId: "challenge",
+      sectionId: "onlyFlowchart",
       title: "Our Custom-Built Solution",
       dataFlow: [
         {
@@ -262,20 +262,6 @@ const caseStudyData = [
     results: {
       sectionId: "results",
       title: "Impact & Results: Demonstrating Success",
-      // description: `By enabling an early boot logo, we transformed the user's first interaction with the device, providing immediate visual confirmation and enhancing the product's perceived quality.`,
-      // translucentCard:
-      // {
-      //     card: [
-      //         {
-      //             SubTitle: 'Before: Blank Screen',
-      //             para: '5-7 seconds of no visual feedback.'
-      //         },
-      //         {
-      //             SubTitle: 'After: Instant Logo',
-      //             para: 'Logo displayed in <1 second after power-on.'
-      //         }
-      //     ]
-      // },
       stats: [
         {
           title: "Successful CES Demo",
@@ -416,41 +402,6 @@ const caseStudyData = [
         },
       ],
     },
-    // compatibility: {
-    //     title: "Protocol Compatibility",
-    //     bgColor: "#b4bccd66",
-    //     columns: [
-    //         {
-    //             label: "Protocol",
-    //             key: "name"
-    //         },
-    //         {
-    //             label: "Support Status",
-    //             key: "supportStatus"
-    //         },
-    //         {
-    //             label: "Key Benefit",
-    //             key: "keyBenefit"
-    //         }
-    //     ],
-    //     rows: [
-    //         {
-    //             name: "UDP",
-    //             supportStatus: "Full",
-    //             keyBenefit: "Low overhead, common for local networks"
-    //         },
-    //         {
-    //             name: "SRT",
-    //             supportStatus: "Full",
-    //             keyBenefit: "Secure, reliable transport over unreliable networks"
-    //         },
-    //         {
-    //             name: "HLS",
-    //             supportStatus: "Full",
-    //             keyBenefit: "Adaptive bitrate streaming for web delivery"
-    //         }
-    //     ]
-    // },
     cta: {
       sectionId: "cta",
       title: "Need a High-Performance Broadcast Solution?",
@@ -575,41 +526,6 @@ const caseStudyData = [
         },
       ],
     },
-    // compatibility: {
-    //     title: "Protocol Compatibility",
-    //     bgColor: "#b4bccd66",
-    //     columns: [
-    //         {
-    //             label: "Protocol",
-    //             key: "name"
-    //         },
-    //         {
-    //             label: "Support Status",
-    //             key: "supportStatus"
-    //         },
-    //         {
-    //             label: "Key Benefit",
-    //             key: "keyBenefit"
-    //         }
-    //     ],
-    //     rows: [
-    //         {
-    //             name: "UDP",
-    //             supportStatus: "Full",
-    //             keyBenefit: "Low overhead, common for local networks"
-    //         },
-    //         {
-    //             name: "SRT",
-    //             supportStatus: "Full",
-    //             keyBenefit: "Secure, reliable transport over unreliable networks"
-    //         },
-    //         {
-    //             name: "HLS",
-    //             supportStatus: "Full",
-    //             keyBenefit: "Adaptive bitrate streaming for web delivery"
-    //         }
-    //     ]
-    // },
     cta: {
       sectionId: "cta",
       title: "Facing Complex Embedded Challenges?",
@@ -635,6 +551,7 @@ const caseStudyData = [
         "A Case Study in Cross-Platform Embedded Systems Integration for Global OEMs",
     },
     flowchartPlusContent: {
+      sectionId: "flowchartPlusContent",
       sectionTitle: "Our Multi-Faceted Solution",
       chart: {
         title: "An Integrated, Platform Agnostic Approach",
@@ -937,6 +854,7 @@ const caseStudyData = [
       ],
     },
     flowchartPlusContent: {
+      sectionId: "flowchartPlusContent",
       sectionTitle: "Our Streamlined BringUp Workflow",
       chart: {
         title: "Our Rapid Development Process",
@@ -1034,6 +952,7 @@ const caseStudyData = [
       ],
     },
     flowchartPlusContent: {
+      sectionId: "flowchartPlusContent",
       sectionTitle: "Our Robust Firmware Update Solution",
       chart: {
         title: "The CANopen Update Flow",
@@ -1134,6 +1053,7 @@ const caseStudyData = [
       ],
     },
     flowchartPlusContent: {
+      sectionId: "flowchartPlusContent",
       sectionTitle: "Our Optimized Multiview Solution",
       chart: {
         title: "System Architecture Overview",
@@ -1167,6 +1087,7 @@ const caseStudyData = [
       },
     },
     compatibility: {
+      sectionId: 'compatibility',
       title: "Protocol Compatibility",
       bgColor: "#b4bccd66",
       columns: [
@@ -1293,6 +1214,7 @@ const caseStudyData = [
       ],
     },
     flowchartPlusContent: {
+      sectionId: "flowchartPlusContent",
       sectionTitle: "Our Optimized Video Streaming Pipeline",
       chart: {
         title: "UAV Video Pipeline Diagram",
@@ -1387,6 +1309,7 @@ const caseStudyData = [
       ],
     },
     compatibility: {
+      sectionId: 'compatibility',
       title: "Example Configuration Table (Conceptual)",
       description:
         "Customizable mapping ensures precise data exchange between protocols.",
@@ -1450,6 +1373,7 @@ const caseStudyData = [
       ],
     },
     flowchartPlusContent: {
+      sectionId: "flowchartPlusContent",
       sectionTitle: "Our Robust Protocol Bridging Solution",
       chart: {
         title: "Protocol Translation Diagram",
@@ -1560,6 +1484,7 @@ const caseStudyData = [
       ],
     },
     flowchartPlusContent: {
+      sectionId: "flowchartPlusContent",
       sectionTitle: "Our Systematic Migration Process",
       chart: {
         title: "Migration Flowchart",
@@ -1678,7 +1603,7 @@ const caseStudyData = [
       ],
     },
     onlyFowchart: {
-      sectionId: "challenge",
+      sectionId: "onlyFlowchart",
       title: "Our Bidirectional Migration Solution",
       dataFlow: [
         {
@@ -1808,6 +1733,7 @@ const caseStudyData = [
       ],
     },
     flowchartPlusContent: {
+      sectionId: "flowchartPlusContent",
       sectionTitle: "Our Software Based Recovery Solution",
       chart: {
         title: "I2C Bus Recovery Sequence",
@@ -1908,6 +1834,7 @@ const caseStudyData = [
       ],
     },
     flowchartPlusContent: {
+      sectionId: "flowchartPlusContent",
       sectionTitle: "Our Multi-Layered Optimization Approach",
       chart: {
         title: "Boot Sequence Optimization Timeline",
@@ -1987,33 +1914,33 @@ const caseStudyData = [
   },
   // 16 done but impacts pending
   {
-    id: "multi-os-bsp-porting-and-boot-time-optimization",
-    crumbs: "Multi-OS BSP Porting and Boot Time Optimization",
+    id: "unified-yocto-build-environment-for-multi-SoM-product-lines",
+    crumbs: "Unified Yocto Build Environment for Multi-SoM Product Lines",
     textColor: "#6d688d",
     statCardColor: "#6d688d",
     secondaryTitleColor: "#374C80",
     gradient: "linear-gradient(to right, #6C5B7B, #70b0d7)",
     title: {
       mainTitle:
-        'Porting Multiple Operating Systems and Achieving  <span class="text-[#6d688d]">Sub 10 Second Boot</span> to Qt Application',
+        'Creating a Single-Repository Yocto Environment to Support Multiple SoMs and Products',
       tagLine:
-        "A Case Study for a European Embedded Hardware Solutions Company",
+        "A Case Study for an Asia-Pacific Embedded Hardware Manufacturer",
     },
     challenge: {
       sectionId: "challenge",
-      title: "The Challenge: Diverse OS & Fast Boot",
+      title: "The Challenge: Fragmented Build Environments",
       description:
-        "A European embedded hardware company needed to enable multiple EVM platforms (Samsung Exynos 4412, NXP i.MX6Q) to run various operating systems (Ubuntu, Debian, Android, Lubuntu, CentOS). The critical requirement was to achieve a boot time of less than 10 seconds directly into a Qt-based application, a significant improvement over existing, much slower systems.",
-      constraintsTitle: "Key Requirements:",
+        "An embedded hardware manufacturer faced growing inefficiencies due to managing separate Yocto build environments for each of its numerous SoMs and product lines. This led to significant duplication of effort, increased maintenance overhead, and slowed down firmware updates across their diverse product portfolio.",
+      constraintsTitle: "Key Obstacles:",
       constraints: [
-        `Support for multiple diverse operating systems.`,
-        `Boot directly into Qt app in <10 seconds.`,
-        `Overcoming significantly longer existing boot times.`,
+        `Duplication of effort in recipe and layer updates.`,
+        `Increased maintenance overhead.`,
+        `Slower rollout of firmware updates.`,
       ],
       statCard: {
-        title: "Target Boot Time",
-        value: "<10s",
-        goal: "To Qt Application",
+        title: "The Problem",
+        value: "Inefficiency",
+        goal: "Across Product Lines",
       },
     },
     techHighlights: {
@@ -2041,6 +1968,7 @@ const caseStudyData = [
       ],
     },
     flowchartPlusContent: {
+      sectionId: "flowchartPlusContent",
       sectionTitle: "Our Multi-Layered Optimization Approach",
       chart: {
         title: "Boot Sequence Optimization Timeline",
@@ -2094,8 +2022,8 @@ const caseStudyData = [
     },
     results: {
       sectionId: "results",
-      title: "Impact & Results: Enhanced User Experience & Efficiency",
-      description : 'Our unified Yocto environment significantly improved efficiency, accelerated development, and simplified maintenance across all product lines.',
+      title: "Impact & Results: Streamlined Operations & Faster Rollouts",
+      description: 'Our unified Yocto environment significantly improved efficiency, accelerated development, and simplified maintenance across all product lines.',
       stats: [
         {
           title: "Reduced Maintenance Time",
@@ -2146,10 +2074,10 @@ const CaseStudyInfo = () => {
   const chartInfo = data?.results?.reChart?.results;
 
   const chartData = chartInfo
-    ? Object.entries(chartInfo.chartData).map(([name, details]) => ({
+    ? Object?.entries(chartInfo?.chartData)?.map(([name, details]) => ({
       name,
-      latency: details.value,
-      fill: details.fill,
+      latency: details?.value,
+      fill: details?.fill,
     }))
     : [];
 
@@ -2207,7 +2135,7 @@ const CaseStudyInfo = () => {
                       {data?.challenge?.constraintsTitle}
                     </h3>
                     <ul className="list-none space-y-2">
-                      {data?.challenge?.constraints.map((item, index) => (
+                      {data?.challenge?.constraints?.map((item, index) => (
                         <li key={index} className="flex items-center">
                           <span className="text-xl highlight-text mr-3">•</span>{" "}
                           {item}
@@ -2220,14 +2148,14 @@ const CaseStudyInfo = () => {
                     style={{ backgroundColor: data?.statCardColor }}
                   >
                     <div className="text-sm md:text-base lg:text-lg font-semibold opacity-80">
-                      {data?.challenge?.statCard.title}
+                      {data?.challenge?.statCard?.title}
                     </div>
                     <div className="text-xl md:text-3xl lg:text-5xl mt-2 mb-5">
-                      {data?.challenge?.statCard.value}
+                      {data?.challenge?.statCard?.value}
                     </div>
                     <div className="text-sm md:text-base lg:text-lg font-semibold opacity-80">
                       {" "}
-                      {data?.challenge?.statCard.goal}
+                      {data?.challenge?.statCard?.goal}
                     </div>
                   </div>
                 </div>
@@ -2250,10 +2178,10 @@ const CaseStudyInfo = () => {
                 <h3
                   className={`text-xl font-semibold text-[${data?.secondaryTitleColor}] mb-4 ${data?.secondaryTitleColor}`}
                 >
-                  {data?.stepProcess?.descriptionBlock.subtitle}
+                  {data?.stepProcess?.descriptionBlock?.subtitle}
                 </h3>
                 <p className="text-gray-600 text-sm md:text-base">
-                  {data?.stepProcess?.descriptionBlock.description}
+                  {data?.stepProcess?.descriptionBlock?.description}
                 </p>
 
                 <div className="mt-6 p-4 bg-gray-50 rounded-lg">
@@ -2261,10 +2189,10 @@ const CaseStudyInfo = () => {
                     className={`font-semibold mb-3`}
                     style={{ color: data?.textColor }}
                   >
-                    {data?.stepProcess?.descriptionBlock.flowTitle}
+                    {data?.stepProcess?.descriptionBlock?.flowTitle}
                   </h4>
                   <div className="flex flex-col lg:flex-row gap-4 lg:items-center lg:justify-around text-center font-semibold">
-                    {data?.stepProcess?.descriptionBlock.flowSteps.map(
+                    {data?.stepProcess?.descriptionBlock?.flowSteps?.map(
                       (step, index) => (
                         <div
                           key={index}
@@ -2276,7 +2204,7 @@ const CaseStudyInfo = () => {
                             {step.label}
                           </div>
                           {index !==
-                            data?.stepProcess?.descriptionBlock.flowSteps
+                            data?.stepProcess?.descriptionBlock?.flowSteps
                               .length -
                             1 && (
                               <div>
@@ -2298,8 +2226,8 @@ const CaseStudyInfo = () => {
               </div>
               {/* bottom Column */}
               <div className="space-y-8">
-                {data?.stepProcess?.steps.map((step, index) => (
-                  <div key={step.step} className="relative">
+                {data?.stepProcess?.steps?.map((step, index) => (
+                  <div key={step?.step} className="relative">
                     {/* Vertical line above the circle */}
                     {index !== 0 && (
                       <div className="absolute -top-14 lg:-top-10 left-3 lg:left-5 h-15 w-[2px] bg-slate-300 z-0" />
@@ -2312,15 +2240,15 @@ const CaseStudyInfo = () => {
                           className="rounded-full size-7 lg:size-11 grid place-items-center text-white font-semibold"
                           style={{ backgroundColor: data?.statCardColor }}
                         >
-                          {step.step}
+                          {step?.step}
                         </div>
                       </div>
                       <div>
                         <h4 className="font-semibold text-base md:text-lg text-[#374C80]">
-                          {step.title}
+                          {step?.title}
                         </h4>
                         <p className="text-gray-600 text-sm md:text-base">
-                          {step.description}
+                          {step?.description}
                         </p>
                       </div>
                     </div>
@@ -2348,17 +2276,17 @@ const CaseStudyInfo = () => {
                         className="text-xl mb-4"
                         style={{ color: data?.secondaryTitleColor }}
                       >
-                        {pipeline.subtitle}
+                        {pipeline?.subtitle}
                       </h3>
                       <div className="flex flex-col items-center space-y-4">
-                        {pipeline.steps.map((step, sIdx) => (
+                        {pipeline?.steps?.map((step, sIdx) => (
                           <div key={sIdx}>
                             <div
-                              className={`${step.bg} ${step.text} p-3 rounded-lg`}
+                              className={`${step?.bg} ${step?.text} p-3 rounded-lg`}
                             >
                               {step.label}
                             </div>
-                            {sIdx < pipeline.steps.length - 1 && (
+                            {sIdx < pipeline?.steps.length - 1 && (
                               <div className="text-2xl font-mono">&darr;</div>
                             )}
                           </div>
@@ -2416,7 +2344,7 @@ const CaseStudyInfo = () => {
         )}
         {/* flow chart plus content */}
         {data?.flowchartPlusContent && (
-          <section id="solution" className="py-16">
+          <section id={data?.flowchartPlusContent?.sectionId} className="py-16">
             <h2
               className="text-2xl font-semibold text-[#E0E0E0] mb-6 text-center"
               style={{ color: data?.textColor }}
@@ -2593,7 +2521,7 @@ const CaseStudyInfo = () => {
         )}
         {/* compatibility */}
         {data?.compatibility && (
-          <section className="py-16">
+          <section id={data?.compatibility?.sectionId} className="py-16">
             <h3
               className="text-2xl font-semibold mb-6 text-center"
               style={{ color: data?.textColor }}
@@ -2723,7 +2651,7 @@ const CaseStudyInfo = () => {
                       {stat.title}
                     </h3>
                     <p
-                      className={`text-sm mt-1 ${stat.variant === "dark" ? "opacity-80" : "text-gray-600"
+                      className={`text-sm mt-1 ${stat?.variant === "dark" ? "opacity-80" : "text-gray-600"
                         }`}
                     >
                       {stat.description}

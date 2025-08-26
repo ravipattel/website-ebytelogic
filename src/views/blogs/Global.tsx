@@ -2513,20 +2513,27 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
     },
   },
   {
-    design: 'gStreamer',
+    design : 'gStreamer',
     image: GstreamerJpg,
     title: `eByteLogic's Approach to GStreamer`,
     author: "Admin",
     date: "08 Jan, 2023",
     slug: "g-streamer",
-    heroData: {
+    hero: {
       chipTitle: {
-        chipBgColor: "#3078fb",
-        color: "white",
+        bgColor: '#3078fb',
+        color: '#ffffff',
         icon: <FaMicrochip />,
         label: "Embedded Systems Engineering",
       },
+      background: {
+        overlay: true,
+      },
       heroGrid: {
+        container: {
+          padding: "px-8 py-16",
+          height: "h-full",
+        },
         content: {
           title: {
             text: "Delivering RealTime Multimedia on Embedded Hardware",
@@ -2561,6 +2568,10 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
           alt: "Embedded ARM processor chip",
           class: "w-full h-full object-cover rounded-2xl shadow-2xl opacity-90",
         },
+        overlay: {
+          gradientFrom: "black/50",
+          gradientTo: "transparent",
+        },
       },
       keyMetrics: {
         container: {
@@ -2573,26 +2584,22 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
         },
         metrics: [
           {
-            color: "#3078fb",
-            bgColor: "white",
+            color: '#3078fb',
             value: "300ms",
             label: "Target Latency",
           },
           {
-            color: "#3078fb",
-            bgColor: "white",
+            color: '#3078fb',
             value: "±150ms",
             label: "AV Sync Tolerance",
           },
           {
-            color: "#3078fb",
-            bgColor: "white",
+            color: '#3078fb',
             value: "Zero",
             label: "Copy Goal",
           },
           {
-            color: "#3078fb",
-            bgColor: "white",
+            color: '#3078fb',
             value: "RT",
             label: "Kernel Priority",
           },
@@ -2600,58 +2607,65 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
       },
     },
     challeneg: {
+      id: 'section-1',
       challenge: {
         no: "01",
+        color: '#3078fb',
         title: "The Challenge: GStreamer on Resource-Constrained ARM Platforms",
         description:
           "Deploying GStreamer on embedded ARM platforms like Rockchip RK356x, NXP i.MX8, and TI Sitara families presents formidable challenges where restricted CPU cycles, limited memory bandwidth, and hardware acceleration constraints can significantly impede real-time multimedia performance.",
       },
       performanceIssueTitle: "Common Performance Issues",
-      iconBgColor: "#3078fb",
-      bgColor: "rgba(48, 120, 251, 0.1)",
-      borderColor: "rgba(48, 120, 251)",
-      performanceIssues: [
+      borderColor: '#3078fb',
+      block: [
         {
-          icon: FaClock,
+          bgColor: '#3078fb',
+          icon: <FaClock className='text-white text-sm' />,
           title: "High Decoding Latency",
           description:
-            'Stream bursts can introduce 300ms latency in RTSP streams, especially during initialization and keyframe processing. <a href="https://community.nxp.com/t5/i-MX-Processors/Reduce-Latency-in-Gstreamer-RTSP-on-IMX8M-Plus/m-p/2093971?profile.language=zh-CN" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">[188]</a>',
+            "Stream bursts can introduce 300ms latency in RTSP streams, especially during initialization and keyframe processing.<a href=\"https://community.nxp.com/t5/i-MX-Processors/Reduce-Latency-in-Gstreamer-RTSP-on-IMX8M-Plus/m-p/2093971?profile.language=zh-CN\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:underline\">[188]</a>",
         },
         {
-          icon: FaBuffer,
+          bgColor: '#3078fb',
+          icon: <FaBuffer className='text-white text-sm' />,
           title: "Buffer Queue Issues",
           description:
             "Overruns cause dropped frames while underruns lead to pipeline stalls, often due to mismatched processing speeds and improper queue sizing.",
         },
         {
-          icon: FaSyncAlt,
+          bgColor: '#3078fb',
+          icon: <FaSyncAlt className='text-white text-sm' />,
           title: "AV Desynchronization",
           description:
-            'Clock drift exceeding ±150ms occurs when audio and video paths have differing processing latencies or incorrect timestamping.  <a href="https://gstreamer.freedesktop.org/documentation/additional/design/latency.html?gi-language=c" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">[191]</a>',
+            "Clock drift exceeding ±150ms occurs when audio and video paths have differing processing latencies or incorrect timestamping.<a href=\"https://gstreamer.freedesktop.org/documentation/additional/design/latency.html?gi-language=c\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:underline\">[191]</a>",
         },
         {
-          icon: FaMicrochip,
+          bgColor: '#3078fb',
+          icon: <FaMicrochip className='text-white text-sm' />,
           title: "Hardware Integration",
           description:
             "Limited plugin availability and misconfigured elements can prevent effective hardware acceleration utilization.",
         },
       ],
       realTimeAppsTitle: "Impact on Real-Time Applications",
-      impact: [
+      cardBlock: [
         {
-          icon: FaBorderNone,
+          bgColor: '#3078fb',
+          icon: <FaBorderNone className="text-white text-2xl" />,
           title: "Drone Feeds",
           description:
             "High latency makes piloting unsafe as operators react to outdated visual information, potentially causing collisions.",
         },
         {
-          icon: FaBroadcastTower,
+          bgColor: '#3078fb',
+          icon: <FaBroadcastTower className="text-white text-2xl" />,
           title: "Live Encoders",
           description:
             "Broadcast and interactive streams require minimal end-to-end latency to maintain audience engagement and event synchronization.",
         },
         {
-          icon: FaVideo,
+          bgColor: '#3078fb',
+          icon: <FaVideo className="text-white text-2xl" />,
           title: "Video Switchers",
           description:
             "Frame-accurate synchronization with extremely low switching latency is essential for glitch-free live production.",
@@ -2659,13 +2673,13 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
       ],
     },
     approachData: {
+      id: 'section-2',
       approach: {
+        color: '#3078fb',
         no: "02",
         title: "eByteLogic's Approach to GStreamer Optimization",
         description:
-          "eByteLogic specializes in engineering high-performance multimedia software and embedded streaming systems, with a strong emphasis on achieving ultra-low-latency solutions through comprehensive optimization strategies.",
-        citation: "[166]",
-        link: "https://in.linkedin.com/company/ebytelogic",
+          "eByteLogic specializes in engineering high-performance multimedia software and embedded streaming systems, with a strong emphasis on achieving ultra-low-latency solutions through comprehensive optimization strategies.<a href=\"https://in.linkedin.com/company/ebytelogic\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:underline\">[166]</a>",
         keyPoints: [
           "Real-time AV synchronization expertise",
           "Protocol bridging capabilities",
@@ -2685,22 +2699,22 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
         description: {
           text: "Deep expertise spans various ARM architectures including NXP i.MX and Rockchip SoCs, enabling effective navigation of hardware acceleration, memory management, and power constraints. Core competencies include",
           emphasis:
-            "media pipeline tuning with specific emphasis on latency optimization and buffer management",
-          link: {
-            href: "https://in.linkedin.com/company/ebytelogic",
-            label: "[166]",
-          },
+            "media pipeline tuning with specific emphasis on latency optimization and buffer management ",
+          link: '<a href=\"https://in.linkedin.com/company/ebytelogic\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:underline\">[166]</a>.'
         },
-        stats: [
+        cards: [
           {
+            color: '#3078fb',
             label: "Years ARM Experience",
             value: "12+",
           },
           {
+            color: '#3078fb',
             label: "Optimized Pipelines",
             value: "30+",
           },
           {
+            color: '#3078fb',
             label: "Best Achieved Latency",
             value: "2ms",
           },
@@ -2708,15 +2722,15 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
       },
     },
     optimize: {
+      id: 'section-3',
       no: "03",
+      color: '#3078fb',
       title: "Key Optimization Strategies for Low Latency and High Performance",
       strategies: [
         {
           title: "Low-Level Memory Management",
           description:
-            "Effective memory management using DMAbuf for zero-copy operations is foundational to real-time performance.",
-          citation: "[78]",
-          link: "https://gstreamer.freedesktop.org/documentation/plugin-development/advanced/allocation.html?gi-language=c",
+            "Effective memory management using DMAbuf for zero-copy operations is foundational to real-time performance. <a href=\"https://gstreamer.freedesktop.org/documentation/plugin-development/advanced/allocation.html?gi-language=c\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:underline\">[78]</a>",
           points: [
             "DMAbuf sharing between hardware components",
             "Zero-copy buffer transfer",
@@ -2727,9 +2741,7 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
         {
           title: "Encoder/Decoder Tuning",
           description:
-            "Meticulous tuning of encoders and decoders involves selecting hardware-accelerated codecs and configuring for low-latency operation.",
-          citation: "[173]",
-          link: "https://blog.csdn.net/YiHeboy/article/details/141329347",
+            "Meticulous tuning of encoders and decoders involves selecting hardware-accelerated codecs and configuring for low-latency operation. <a href=\"https://blog.csdn.net/YiHeboy/article/details/141329347\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:underline\">[173]</a>",
           points: [
             "Hardware-accelerated H.264/H.265",
             "Minimal B-frame usage",
@@ -2744,25 +2756,20 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
           {
             subtitle: "Hardware Acceleration",
             description:
-              "Use platform-specific elements like vpuenc_h264 for i.MX8 VPU, mppvideodec for Rockchip MPP, and TI-specific codecs for Sitara processors.",
-            citation: "[122]",
-            link: "https://variwiki.com/index.php?title=MX8_GSTREAMER&release=RELEASE_ZEUS_V1.0_VAR-SOM-MX8",
+              "Use platform-specific elements like vpuenc_h264 for i.MX8 VPU, mppvideodec for Rockchip MPP, and TI-specific codecs for Sitara processors. <a href=\"https://variwiki.com/index.php?title=MX8_GSTREAMER&release=RELEASE_ZEUS_V1.0_VAR-SOM-MX8\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:underline\">[122]</a>",
           },
           {
             subtitle: "Queue Management",
             description:
-              "Configure queue elements with appropriate max-size-buffers and leaky properties to balance latency and stability.",
-            citation: "[92]",
-            link: "https://developer.ridgerun.com/wiki/index.php/Embedded_GStreamer_Performance_Tuning",
+              "Configure queue elements with appropriate max-size-buffers and leaky properties to balance latency and stability. <a href=\"https://developer.ridgerun.com/wiki/index.php/Embedded_GStreamer_Performance_Tuning\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:underline\">[92]</a>",
           },
         ],
       },
       systemLevelOptimizations: {
+        borderColor: '#3078fb',
         title: "System-Level Optimizations: Kernels and BSPs",
         description:
-          "Customizing Board Support Packages (BSPs) for rapid hardware response is fundamental to achieving low-latency performance. This includes real-time Linux kernels and driver optimization.",
-        link: "https://in.linkedin.com/company/ebytelogic",
-        citation: "[166]",
+          "Customizing Board Support Packages (BSPs) for rapid hardware response is fundamental to achieving low-latency performance. This includes real-time Linux kernels and driver optimization. <a href=\"https://in.linkedin.com/company/ebytelogic\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:underline\">[166]</a>",
         optimizations: [
           {
             title: "PREEMPT-RT Kernel",
@@ -2783,56 +2790,85 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
       },
     },
     platformData: {
+      id: 'section-4',
+      color: '#3078fb',
       no: "04",
       title: "Platform-Specific Considerations and Techniques",
       platforms: [
         {
+          bgColor: "#3078fb",
           name: "NXP i.MX8 Series",
-          icon: FaMicrochip,
-          keyElements: [
-            "vpuenc_h264 for encoding",
-            "v4l2src with DMABUF import",
-            "imxvideoconvert_g2d",
-            "waylandsink for display",
-          ],
-          optimization:
-            "Configure ratecontrol=2, EncodingPreset=2, and SingleNalUnit=TRUE for low-latency encoding",
-          citation: "[77]",
-          link: "https://community.nxp.com/t5/i-MX-Processors/Reduce-Latency-in-Gstreamer-RTSP-on-IMX8M-Plus/m-p/2093971?profile.language=zh-CN",
+          icon: <FaMicrochip />,
+          sections: [
+            {
+              title: "Key Elements",
+              type: "list",
+              items: [
+                "vpuenc_h264 for encoding",
+                "v4l2src with DMABUF import",
+                "imxvideoconvert_g2d",
+                "waylandsink for display"
+              ]
+            },
+            {
+              title: "Optimization",
+              type: "html",
+              content: "Configure ratecontrol=2, EncodingPreset=2, and SingleNalUnit=TRUE for low-latency encoding <a href=\"https://community.nxp.com/t5/i-MX-Processors/Reduce-Latency-in-Gstreamer-RTSP-on-IMX8M-Plus/m-p/2093971?profile.language=zh-CN\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:underline\">[77]</a>"
+            }
+          ]
         },
         {
+          bgColor: "#3078fb",
           name: "Rockchip RK356x",
-          icon: FaMicrochip,
-          keyElements: [
-            "mppvideodec for decoding",
-            "mpph264enc for encoding",
-            "DMABUF memory sharing",
-            "RKISP driver integration",
-          ],
-          optimization:
-            "Use CQP rate control, minimal GOP sizes, and disabled B-frames for low-latency scenarios",
-          citation: "[22]",
-          link: "https://doc.embedfire.com/linux/rk356x/quick_start/zh/latest/lubancat_rk_software_hardware/software/gstreamer/gstreamer.html",
+          icon: <FaMicrochip />,
+          sections: [
+            {
+              title: "Key Elements",
+              type: "list",
+              items: [
+                "mppvideodec for decoding",
+                "mpph264enc for encoding",
+                "DMABUF memory sharing",
+                "RKISP driver integration"
+              ]
+            },
+            {
+              title: "Optimization",
+              type: "html",
+              content: "Use CQP rate control, minimal GOP sizes, and disabled B-frames for low-latency scenarios <a href=\"https://doc.embedfire.com/linux/rk356x/quick_start/zh/latest/lubancat_rk_software_hardware/software/gstreamer/gstreamer.html\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:underline\">[22]</a>"
+            }
+          ]
         },
         {
+          bgColor: "#3078fb",
           name: "TI Sitara",
-          icon: FaMicrochip,
-          keyElements: [
-            "IVA-HD for video codecs",
-            "C66x DSP for processing",
-            "ticodecbin elements",
-            "DMA buffer management",
-          ],
-          optimization:
-            "Leverage TI's Processor SDK with optimized GStreamer plugins and CMA configuration for video buffers",
-          citation: "[150]",
-          link: "https://developer.ridgerun.com/wiki/index.php/Embedded_GStreamer_Performance_Tuning",
-        },
+          icon: <FaMicrochip />,
+          sections: [
+            {
+              title: "Key Elements",
+              type: "list",
+              items: [
+                "IVA-HD for video codecs",
+                "C66x DSP for processing",
+                "ticodecbin elements",
+                "DMA buffer management"
+              ]
+            },
+            {
+              title: "Optimization",
+              type: "html",
+              content: "Leverage TI's Processor SDK with optimized GStreamer plugins and CMA configuration for video buffers <a href=\"https://developer.ridgerun.com/wiki/index.php/Embedded_GStreamer_Performance_Tuning\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:underline\">[150]</a>"
+            }
+          ]
+        }
       ],
+      borderColor: '#3078fb',
+      commonTitle: 'Common Optimization Patterns',
       commonOptimizationPatterns: [
         {
           title: "Zero-Copy Architecture",
-          icon: FaFile,
+          icon: <FaFile className='text-[#3078fb]' />,
+          color: '#3078fb',
           points: [
             "DMAbuf import/export across elements",
             "Hardware-accelerated memory sharing",
@@ -2842,7 +2878,8 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
         },
         {
           title: "Latency Optimization",
-          icon: FaClock,
+          icon: <FaClock className='text-[#3078fb]' />,
+          color: '#3078fb',
           points: [
             "Real-time kernel configurations",
             "CPU affinity and priority scheduling",
@@ -2853,46 +2890,46 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
       ],
     },
     robustData: {
+      id: 'section-5',
       no: "05",
       title: "Achieving Robust and Reliable Real-Time Multimedia",
-      subsections: [
+      color: '#3078fb',
+      cards: [
         {
           title: "Managing Audio-Video Synchronization",
+          borderColor: '#3078fb',
+          bgColor: '#f2f8fe',
           content: {
-            description:
-              "Maintaining precise AV sync is critical, with desynchronization becoming noticeable beyond ±150ms. eByteLogic's expertise in 'Real-time AV Sync' involves comprehensive timestamp management",
-            citation: "[166]",
-            link: "https://in.linkedin.com/company/ebytelogic",
+            description: "Maintaining precise AV sync is critical, with desynchronization becoming noticeable beyond ±150ms. eByteLogic's expertise in 'Real-time AV Sync' involves comprehensive timestamp management <a href=\"https://in.linkedin.com/company/ebytelogic\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:underline\">[166]</a>",
             mechanisms: [
               "Accurate PTS generation at source elements",
               "Minimized processing jitter in both paths",
-              "Hardware-accelerated decoding/encoding",
+              "Hardware-accelerated decoding/encoding"
             ],
-            syncTitle: "Sync Mechanisms",
+            syncTitle: 'Sync Mechanisms',
             syncMechanisms: [
               "GstClock global timeline management",
               "RTCP sender reports for network streams",
               "Platform-specific sink synchronization",
-              "Custom sync elements when required",
-            ],
-          },
+              "Custom sync elements when required"
+            ]
+          }
         },
         {
           title: "Ensuring Consistent Performance Under Load",
+          borderColor: '#3078fb',
+          bgColor: '#f2f8fe',
           content: {
-            description:
-              "Embedded systems run multiple services concurrently, causing resource contention. Consistent performance requires careful pipeline tuning and system-level optimizations.",
-            citation: "[166]",
-            link: "https://in.linkedin.com/company/ebytelogic",
-            subsections: [
+            description: "Embedded systems run multiple services concurrently, causing resource contention. Consistent performance requires careful pipeline tuning and system-level optimizations. <a href=\"https://in.linkedin.com/company/ebytelogic\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:underline\">[166]</a>",
+            cards: [
               {
                 title: "Pipeline Tuning",
                 points: [
                   "Appropriate queue sizing",
                   "Leaky bucket strategies",
                   "Buffer pool management",
-                  "Element configuration",
-                ],
+                  "Element configuration"
+                ]
               },
               {
                 title: "System Priority",
@@ -2900,8 +2937,8 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
                   "Real-time scheduling (SCHED_FIFO)",
                   "CPU affinity and isolation",
                   "Interrupt latency reduction",
-                  "Power management tuning",
-                ],
+                  "Power management tuning"
+                ]
               },
               {
                 title: "Monitoring",
@@ -2909,25 +2946,27 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
                   "Continuous latency tracking",
                   "Resource utilization alerts",
                   "Performance profiling",
-                  "Bottleneck identification",
-                ],
-              },
-            ],
-          },
+                  "Bottleneck identification"
+                ]
+              }
+            ]
+          }
         },
         {
           title: "Debugging and Profiling GStreamer Pipelines",
+          borderColor: '#3078fb',
+          bgColor: '#f2f8fe',
           content: {
-            subsectionTitle: "Expert Insight:",
-            subsections: [
+            subsectionTitle: 'Expert Insight: ',
+            cards: [
               {
                 title: "Built-in Tools",
                 points: [
                   "GST_DEBUG environment variable control",
                   "gst-launch-1.0 with verbose options",
                   "Tracer framework for latency measurement",
-                  "Platform-specific debug utilities",
-                ],
+                  "Platform-specific debug utilities"
+                ]
               },
               {
                 title: "System Tools",
@@ -2935,45 +2974,40 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
                   "perf for CPU profiling",
                   "valgrind for memory analysis",
                   "Kernel debug logs (dmesg)",
-                  "Vendor-specific debug tools",
-                ],
-              },
+                  "Vendor-specific debug tools"
+                ]
+              }
             ],
-            expertInsight:
-              "Ravi Patel of eByteLogic emphasizes looking beyond network issues to consider codecs, BSP, and buffering as potential latency sources, requiring comprehensive debugging across the entire system stack.",
-            citation: "[185]",
-            link: "https://www.linkedin.com/posts/ravipatelll_real-time-video-delivery-mastering-low-latency-activity-7325504636612702208-bfFR",
-          },
-        },
-      ],
+            expertInsight: "Ravi Patel of eByteLogic emphasizes looking beyond network issues to consider codecs, BSP, and buffering as potential latency sources, requiring comprehensive debugging across the entire system stack.<a href=\"https://www.linkedin.com/posts/ravipatelll_real-time-video-delivery-mastering-low-latency-activity-7325504636612702208-bfFR\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"text-primary hover:underline\">[185]</a>",
+          }
+        }
+      ]
     },
     conclusion: {
-      no: "06",
+      no: '06',
       id: "section-6",
+      color: '#3078fb',
       sectionTitle: "The Path to Low-Latency Embedded Multimedia",
       intro: {
-        description:
-          "Delivering real-time multimedia on embedded ARM hardware using GStreamer is a complex endeavor that requires a meticulous, multi-layered optimization strategy addressing every component from the GStreamer pipeline down to the kernel and BSP.",
+        description: "Delivering real-time multimedia on embedded ARM hardware using GStreamer is a complex endeavor that requires a meticulous, multi-layered optimization strategy addressing every component from the GStreamer pipeline down to the kernel and BSP."
       },
-      keyTitle: "Key Success Factors",
+      keyTitle: 'Key Success Factors',
       keySuccessFactors: [
         "Fine-tuning encoders and decoders for speed and efficiency",
         "Leveraging hardware acceleration capabilities",
         "Implementing zero-copy memory management",
-        "Structuring pipelines for minimal latency",
+        "Structuring pipelines for minimal latency"
       ],
       framework: {
         title: "eByteLogic's Framework",
-        description:
-          "By focusing on end-to-end pipeline optimization, real-time AV sync, and deep ARM expertise, it's possible to achieve the low-latency, high-performance multimedia delivery required by demanding applications.",
-        goal: "Transform GStreamer into a finely-tuned engine capable of delivering seamless multimedia experiences on resource-constrained embedded devices.",
+        description: "By focusing on end-to-end pipeline optimization, real-time AV sync, and deep ARM expertise, it's possible to achieve the low-latency, high-performance multimedia delivery required by demanding applications.",
+        goal: "Transform GStreamer into a finely-tuned engine capable of delivering seamless multimedia experiences on resource-constrained embedded devices."
       },
       callToAction: {
         title: "Ready to Optimize?",
-        subtitle:
-          "Start your embedded multimedia journey with expert GStreamer optimization",
-      },
-    },
+        subtitle: "Start your embedded multimedia journey with expert GStreamer optimization"
+      }
+    }
   },
   {
     design: 'btn-debounce',
@@ -3029,7 +3063,9 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
     comparisonData: {
       id: "comparison",
       title: "Hardware vs. Software Debounce: A Comprehensive Comparison",
+      tableHeadColor: '#1a4d78',
       quickReference: {
+        title: 'Quick Reference Comparison',
         headers: ["Feature", "Hardware Debounce", "Software Debounce"],
         rows: [
           {
@@ -3086,29 +3122,25 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
       inDepthAnalysis: [
         {
           title: "Cost Analysis",
-          icon: FaDollarSign,
-          iconColor: "text-green-600",
+          icon: <FaDollarSign className="text-green-600" />,
           content:
             "The cost implications extend beyond component prices. Hardware debouncing incurs direct costs for each switch (resistors, capacitors, ICs) and consumes PCB real estate. In mass production, these costs become significant. Software debouncing has virtually zero component cost but requires engineering effort for development, testing, and debugging.",
         },
         {
           title: "Power Consumption",
-          icon: FaBatteryHalf,
-          iconColor: "text-red-600",
+          icon: <FaBatteryHalf className="text-red-600" />,
           content:
             "Hardware RC circuits contribute to continuous power draw when switches are closed. Software debouncing requires CPU activity but can leverage sleep modes and interrupts for optimization. Advanced techniques like dynamically enabling pull-up resistors can reduce consumption to nanoamp levels.",
         },
         {
           title: "Reliability",
-          iconColor: "text-black",
-          icon: FaShieldAlt,
+          icon: <FaShieldAlt className="text-black" />,
           content:
             "Hardware debouncing is generally more robust and reliable. SR latches provide clean, bounce-free signals independent of microcontroller software. This is crucial for safety-critical systems where a single misread input could have serious consequences.",
         },
         {
           title: "Flexibility",
-          iconColor: "text-purple-600",
-          icon: FaCogs,
+          icon: <FaCogs className="text-purple-600" />,
           content:
             "Software debouncing offers superior flexibility. Debounce time can be adjusted with a simple code modification, allowing fine-tuning without hardware changes. This is particularly useful during development and for products using different switch types.",
         },
@@ -3118,11 +3150,11 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
       id: "rc-filter",
       title: "RC (Resistor-Capacitor) Low-Pass Filter",
       description: {
-        text: "The RC low-pass filter is one of the most common hardware debouncing methods. It works by exploiting the inherent properties of a resistor and capacitor to smooth out rapid voltage fluctuations caused by switch bounce. The capacitor charges and discharges at a rate determined by the time constant (τ = R × C), effectively averaging out the noisy signal.",
-        citation: "[160]",
+        text: 'The RC low-pass filter is one of the most common hardware debouncing methods. It works by exploiting the inherent properties of a resistor and capacitor to smooth out rapid voltage fluctuations caused by switch bounce. The capacitor charges and discharges at a rate determined by the time constant (τ = R × C), effectively averaging out the noisy signal. <a href="https://embedded.cherry.de/jaguar-sbc-rk3588-amr-user-manual/latest.pdf" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">[160]</a>',
       },
       keyInsight: {
         title: "Key Insight",
+        bgColor: '#FEF9C2',
         icon: "fas fa-lightbulb",
         text: "The RC time constant should be 5-10 times longer than the maximum expected bounce time (typically 1-20ms) for reliable debouncing.",
       },
@@ -3140,15 +3172,15 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
         calculation: "τ = R × C = 100,000 Ω × 0.0000001 F = 0.01 s (10 ms)",
         advancedDescription:
           "Advanced circuits incorporate diodes to create different charging and discharging time constants, allowing independent control over debounce delay for button press and release.",
-        citation: "[170]",
       },
     },
-    srLatchData: {
+    blockData: {
       id: "srlatch",
       title: "SR Latch (Flip-Flop) Debounce",
       description: {
         text: "The SR latch is considered by many to be the most reliable hardware debounce method. Unlike RC filters that smooth signals, the SR latch uses digital logic to 'latch' the switch state, effectively ignoring subsequent bounces. This method requires a single-pole, double-throw (SPDT) switch.",
-        citation: "[158]",
+        bgColor: '#0096890f',
+        borderColor: '#009689',
       },
       advantages: {
         title: "Advantages over RC Circuits",
@@ -3168,19 +3200,20 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
       \\ | +Vcc
     `,
       },
+      requireTitle: 'Required Components',
       requiredComponents: [
         {
-          icon: FaMicrochip,
+          icon: <FaMicrochip className="text-primary text-3xl mx-auto mb-2" />,
           title: "Logic IC",
           description: "74HC00 (Quad NAND Gate)",
         },
         {
-          icon: FaPiedPiper,
+          icon: <FaPiedPiper className="text-primary text-3xl mx-auto mb-2" />,
           title: "Resistors",
           description: "2 × 10 kΩ Pull-ups",
         },
         {
-          icon: FaToggleOff,
+          icon: <FaToggleOff className="text-primary text-3xl mx-auto mb-2" />,
           title: "Switch",
           description: "SPDT Type",
         },
@@ -3191,7 +3224,6 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
       title: "Dedicated Debounce ICs",
       description: {
         text: "For applications requiring debouncing multiple switches or where board space is critical, dedicated debounce ICs offer an excellent solution. These chips integrate all necessary logic to filter noise from mechanical switches, providing clean, stable digital outputs.",
-        citation: "[2]",
       },
       sections: [
         {
@@ -3204,14 +3236,14 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
               description:
                 "Single-switch debouncer with ESD protection and low-power shutdown mode",
               icon: <FaMicrochip className="text-blue-600" />,
-              color: "blue",
+              bgColor: "#0000ff2b",
             },
             {
               name: "MC14490",
               description:
                 "Hex contact bounce eliminator - debounces up to six switches",
               icon: <FaMicrochip className="text-green-600" />,
-              color: "green",
+              bgColor: "#00800030",
             },
           ],
         },
@@ -3412,24 +3444,25 @@ pause()
               title: "Critical Systems",
               description:
                 "For medical devices, aerospace systems, or industrial safety controls, hardware debouncing is preferred. SR latches provide physically guaranteed bounce-free signals, operating independently of software crashes or timing issues.",
-              icon: FaExclamationTriangle,
-              color: "red",
-              citation: "[152]",
+              icon: <FaExclamationTriangle className="text-red-600" />,
+              bgColor: "#ff000014",
+              borderColor: "red",
             },
             {
               title: "User Interfaces",
               description:
                 "For consumer electronics and user interfaces, well-implemented software debounce is often sufficient. The flexibility and cost savings typically outweigh the need for absolute hardware-level reliability.",
-              icon: FaDesktop,
-              color: "blue",
+              icon: <FaDesktop className="text-blue-600" />,
+              bgColor: "#0000ff0d",
+              borderColor: "#3078fb",
             },
             {
               title: "Testing & Measurement",
               description:
                 "Use an oscilloscope to measure actual switch bounce characteristics. This provides critical data for tuning debounce algorithms and selecting appropriate component values for hardware solutions.",
-              icon: FaSearch,
-              color: "purple",
-              citation: "[2]",
+              icon: <FaSearch className="text-purple-600" />,
+              bgColor: "#8000801a",
+              borderColor: "purple",
             },
           ],
         },
@@ -3465,22 +3498,19 @@ pause()
               title: "Hardware Costs",
               items: [
                 {
-                  icon: FaCircle,
+                  icon: <FaCircle className="text-blue-600 mt-1" />,
                   label: "RC Circuit",
                   cost: "$0.05-0.10 per button (resistor + capacitor)",
-                  color: "blue",
                 },
                 {
-                  icon: FaCircle,
+                  icon: <FaCircle className="text-green-600 mt-1" />,
                   label: "SR Latch",
                   cost: "$0.50-1.00 per button (IC + resistors + SPDT switch)",
-                  color: "green",
                 },
                 {
-                  icon: FaCircle,
+                  icon: <FaCircle className="text-purple-600 mt-1" />,
                   label: "Dedicated IC",
                   cost: "$1-5 per chip (multiple channels)",
-                  color: "purple",
                 },
               ],
             },
@@ -3488,22 +3518,19 @@ pause()
               title: "Software Costs",
               items: [
                 {
-                  icon: FaCircle,
+                  icon: <FaCircle className="text-green-600 mt-1" />,
                   label: "Component Cost",
                   cost: "$0 (uses existing microcontroller)",
-                  color: "green",
                 },
                 {
-                  icon: FaCircle,
+                  icon: <FaCircle className="text-orange-600 mt-1" />,
                   label: "Development Time",
                   cost: "2-20 hours (depending on complexity)",
-                  color: "orange",
                 },
                 {
-                  icon: FaCircle,
+                  icon: <FaCircle className="text-red-600 mt-1" />,
                   label: "Testing & Debugging",
                   cost: "Additional engineering effort",
-                  color: "red",
                 },
               ],
             },
@@ -3511,13 +3538,13 @@ pause()
               title: "Production Volume Considerations",
               items: [
                 {
-                  icon: FaCircle,
+                  icon: <FaCircle className="mt-1" />,
                   subtitle: "Prototyping Phase",
                   description:
                     "Focus on speed and flexibility. Software debouncing allows rapid iteration and easy adjustment without hardware modifications.",
                 },
                 {
-                  icon: FaCircle,
+                  icon: <FaCircle className="mt-1" />,
                   subtitle: "Mass Production",
                   description:
                     "Focus shifts to cost, reliability, and manufacturability. Hardware solutions may be more economical for high-volume products despite higher initial cost.",
@@ -3535,20 +3562,17 @@ pause()
         "The choice between hardware and software debouncing depends on your specific project requirements. Software debouncing is the most common and flexible method, offering cost-effectiveness and easy adjustability, though it consumes CPU cycles. Hardware debouncing provides superior reliability and zero CPU load, making it ideal for critical systems, but increases component cost and board space.",
       options: [
         {
-          icon: FaDollarSign,
-          color: "green-400",
+          icon: <FaDollarSign className="text-green-400 text-2xl" />,
           title: "Cost-Effective",
           description: "Choose software for minimal component cost",
         },
         {
-          icon: FaShieldAlt,
-          color: "red-400",
+          icon: <FaShieldAlt className="text-red-400 text-2xl" />,
           title: "High Reliability",
           description: "Choose hardware for critical applications",
         },
         {
-          icon: FaBatteryHalf,
-          color: "blue-400",
+          icon: <FaBatteryHalf className="text-blue-400 text-2xl" />,
           title: "Low Power",
           description: "Both methods can be optimized",
         },
@@ -3618,8 +3642,8 @@ const Global = () => {
               key={index + 1}
               onClick={() => handlePageChange(index + 1)}
               className={`!py-0 !px-3 border text-sm !h-[34px] rounded ${currentPage === index + 1
-                  ? "bg-blue-500 text-white"
-                  : "!bg-[#F4F5F5] hover:!bg-primary !border-[#F4F5F5] hover:!border-primary !text-secondary hover:!text-white"
+                ? "bg-blue-500 text-white"
+                : "!bg-[#F4F5F5] hover:!bg-primary !border-[#F4F5F5] hover:!border-primary !text-secondary hover:!text-white"
                 }`}
             >
               {index + 1}

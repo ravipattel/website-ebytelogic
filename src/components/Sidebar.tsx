@@ -7,7 +7,6 @@ import { FaAngleRight } from "react-icons/fa";
 
 const tocData = {
   //case studies
-
   "reducing-wearable-display-latency": [
     { id: "challenge", label: "1. The Challenge" },
     {
@@ -52,7 +51,7 @@ const tocData = {
     { id: "results", label: "3. Impact & Results" },
     { id: "cta", label: "4. Call to Action" }
   ],
-   "ndi-protocol-integration-inremote-recorder-player": [
+  "ndi-protocol-integration-inremote-recorder-player": [
     { id: "challenge", label: "1. The Challenge" },
     { id: "step-process", label: "2. Our Integrated NDI Solution" },
     { id: "tech-highlights", label: "3. Technical Highlights" },
@@ -73,7 +72,7 @@ const tocData = {
     { id: "flowchartPlusContent", label: "4. Firmware Update Flow" },
     { id: "cta", label: "5. Call to Action" }
   ],
-   "hdmi-multiview-player": [
+  "hdmi-multiview-player": [
     { id: "challenge", label: "1. The Challenge" },
     { id: "tech-highlights", label: "2. Technical Highlights" },
     { id: "results", label: "3. Impact & Results" },
@@ -81,7 +80,7 @@ const tocData = {
     { id: "compatibility", label: "5. Protocol Compatibility" },
     { id: "cta", label: "6. Call to Action" }
   ],
-    "sub-100ms-latency-in-uav-video-streaming": [
+  "sub-100ms-latency-in-uav-video-streaming": [
     { "id": "challenge", "label": "1. The Challenge" },
     { "id": "tech-highlights", "label": "2. Technical Highlights" },
     { "id": "results", "label": "3. Impact & Results" },
@@ -106,24 +105,32 @@ const tocData = {
   "yocto-buildroot-migration": [
     { "id": "challenge", "label": "1. The Challenge" },
     { "id": "tech-highlights", "label": "2. Technical Highlights" },
-    { "id": "onlyFowchart", "label": "3. Migration Solution" },
+    { "id": "onlyFlowchart", "label": "3. Migration Solution" },
     { "id": "results", "label": "4. Impact & Results" },
     { "id": "cta", "label": "5. Call to Action" }
   ],
-    "multi-master-i2c-problem-resolution": [
+  "multi-master-i2c-problem-resolution": [
     { "id": "challenge", "label": "1. The Challenge" },
     { "id": "tech-highlights", "label": "2. Technical Highlights" },
     { "id": "flowchartPlusContent", "label": "3. Recovery Solution" },
     { "id": "results", "label": "4. Impact & Results" },
     { "id": "cta", "label": "5. Call to Action" }
   ],
-    "multi-os-bsp-porting-and-boot-time-optimization": [
+  "multi-os-bsp-porting-and-boot-time-optimization": [
     { "id": "challenge", "label": "1. The Challenge" },
     { "id": "tech-highlights", "label": "2. Technical Highlights" },
     { "id": "flowchartPlusContent", "label": "3. Optimization Approach" },
     { "id": "results", "label": "4. Impact & Results" },
     { "id": "cta", "label": "5. Call to Action" }
   ],
+  "unified-yocto-build-environment-for-multi-SoM-product-lines": [
+    { "id": "challenge", "label": "1. The Challenge" },
+    { "id": "tech-highlights", "label": "2. Technical Highlights" },
+    { "id": "flowchartPlusContent", "label": "3. Optimization Approach" },
+    { "id": "results", "label": "4. Impact & Results" },
+    { "id": "cta", "label": "5. Call to Action" }
+  ],
+
   //blogs
   "som-soc": [
     { id: "introduction", label: "1. Introduction" },
@@ -218,9 +225,8 @@ const Sidebar = () => {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className={`lg:hidden fixed left-1 z-50 p-2 rounded-full shadow-md  ${
-          scrollTop ? "top-26" : "top-64"
-        }`}
+        className={`lg:hidden fixed left-1 z-50 p-2 rounded-full shadow-md  ${scrollTop ? "top-26" : "top-64"
+          }`}
         aria-label="Open Sidebar"
       >
         <FaAngleRight />
@@ -235,14 +241,13 @@ const Sidebar = () => {
       )}
       <nav
         className={`
-          fixed ${
-            scrollTop
-              ? "top-20 md:top-23"
-              : "min-[606px]:top-30 sm:top-30 md:top-36"
+          fixed ${scrollTop
+            ? "top-20 md:top-23"
+            : "min-[606px]:top-30 sm:top-30 md:top-36"
           }  left-0 h-full w-72 bg-white z-50 p-6 border-r border-gray-200 
           transform transition-transform duration-300 ease-in-out 
           ${isOpen ? "translate-x-0" : "-translate-x-full"} 
-          lg:static lg:translate-x-0 lg:block lg:h-fit lg:top-[98px]
+          lg:static lg:translate-x-0 lg:block lg:h-fit
         `}
       >
         {/* Close button on mobile */}

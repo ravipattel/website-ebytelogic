@@ -19,7 +19,7 @@ const DevelopmentGuide = ({ slug }) => {
     })
     return (
         <div className="lg:flex">
-            <div className="w-72 h-fit lg:sticky lg:top-[98px]">
+            <div className="w-72 h-fit lg:sticky lg:top-[92px]">
                 <Sidebar />
             </div>
             <div className='overflow-y-auto px-4 md:px-6 w-full'>

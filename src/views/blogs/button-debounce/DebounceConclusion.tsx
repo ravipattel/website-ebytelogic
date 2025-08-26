@@ -15,7 +15,7 @@ const DebounceConclusion = ({ data }) => {
                         className="bg-slate-50 backdrop-blur-sm rounded-md p-6"
                     >
                         <div className='flex items-start gap-3'>
-                            <option.icon className={`text-${option?.color} text-2xl`} />
+                            {option?.icon}
                             <div>
                                 <h3 className="font-semibold mb-2">{option?.title}</h3>
                                 <p className="text-sm text-gray-600">{option?.description}</p>

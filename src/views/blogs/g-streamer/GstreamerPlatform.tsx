@@ -3,10 +3,10 @@ import React from 'react'
 const GstreamerPlatform = ({ data }) => {
     const platform = data?.platformData;
     return (
-        <section id="section-4" className="px-4 md:px-6 py-16 bg-slate-50">
+        <section id={platform?.id} className="px-4 md:px-6 py-16 bg-slate-50">
             {/* Section Title */}
             <div className="mb-8">
-                <span className="text-primary mr-3">{platform?.no}</span>
+                <span className="mr-3" style={{ color: platform?.color }}>{platform?.no}</span>
                 <h2 className="font-serif text-3xl font-semibold inline">
                     {platform?.title}
                 </h2>
@@ -18,52 +18,58 @@ const GstreamerPlatform = ({ data }) => {
                     {platform?.platforms?.map((platform, index) => (
                         <div key={index} className="bg-white p-8 rounded-md shadow-sm">
                             <div className="flex items-center mb-6">
-                                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mr-4 text-white text-lg">
-                                    <platform.icon />
+                                <div className="w-12 h-12 rounded-full flex items-center justify-center mr-4 text-white text-lg" style={{ backgroundColor: platform?.bgColor }}>
+                                    {platform.icon}
                                 </div>
                                 <h3 className="font-serif text-xl font-semibold">
-                                    {platform.name}
+                                    {platform?.name}
                                 </h3>
                             </div>
                             <div className="space-y-4">
-                                <div>
-                                    <h4 className="font-semibold mb-2">Key Elements</h4>
-                                    <ul className="text-sm text-gray-600 space-y-1">
-                                        {platform?.keyElements?.map((element, i) => (
-                                            <li key={i}>• {element}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 className="font-semibold mb-2">Optimization</h4>
-                                    <p className="text-sm text-gray-600">
-                                        {platform?.optimization} <a href={platform?.link} className="text-primary hover:underline">{platform?.citation}</a>
-                                    </p>
-                                </div>
+                                {platform?.sections?.map((section, idx) => (
+                                    <div key={idx}>
+                                        <h4 className="font-semibold mb-2">{section.title}</h4>
+                                        {section.type === "list" && (
+                                            <ul className="text-sm text-gray-600 space-y-1">
+                                                {section.items?.map((item, i) => (
+                                                    <li key={i}>• {item}</li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                        {section.type === "html" && (
+                                            <p
+                                                className="text-sm text-gray-600"
+                                                dangerouslySetInnerHTML={{ __html: section.content }}
+                                            />
+                                        )}
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     ))}
                 </div>
 
                 {/* Common Optimization Patterns */}
-                <div className="bg-primary/5 border-l-4 border-primary p-8 rounded-md">
-                    <h3 className="font-serif text-2xl font-semibold mb-6">Common Optimization Patterns</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {platform?.commonOptimizationPatterns?.map((pattern, index) => (
-                            <div key={index}>
-                                <h4 className="font-semibold mb-4 flex items-center gap-3">
-                                    <pattern.icon className="text-primary" />
-                                    {pattern.title}
-                                </h4>
-                                <ul className="space-y-2 text-sm text-gray-600">
-                                    {pattern.points.map((point, i) => (
-                                        <li key={i}>• {point}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
+                {platform?.commonOptimizationPatterns && (
+                    <div className="bg-primary/5 p-8 rounded-md" style={{ borderLeft: `4px solid ${platform?.borderColor}` }}>
+                        <h3 className="font-serif text-2xl font-semibold mb-6">{platform?.commonTitle}</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            {platform?.commonOptimizationPatterns?.map((pattern, index) => (
+                                <div key={index}>
+                                    <h4 className="font-semibold mb-4 flex items-center gap-3">
+                                        {pattern.icon}
+                                        {pattern?.title}
+                                    </h4>
+                                    <ul className="space-y-2 text-sm text-gray-600">
+                                        {pattern?.points?.map((point, i) => (
+                                            <li key={i}>• {point}</li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
+                )}
             </div>
         </section>
     )

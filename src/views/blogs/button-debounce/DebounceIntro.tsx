@@ -11,26 +11,31 @@ const DebounceIntro = ({ data }) => {
                 {introData?.title}
             </h2>
             <div>
-                <p className="text-gray-600 mb-6">
-                    {introData?.paragraph1}
-                </p>
-                <div className="mermaid-container">
-                    <div className="mermaid-controls">
-                        {introData?.controls?.map((control) => (
-                            <button
-                                key={control.id}
-                                className="mermaid-control-btn"
-                                title={control.title}
-                            >
-                                {control.icon}
-                            </button>
-                        ))}
-                    </div>
-                    <div className="mermaid">
+                {introData?.paragraph1 && (
+                    <p className="text-gray-600 mb-6">
+                        {introData?.paragraph1}
+                    </p>
+                )}
+                <div>
+                    {introData?.diagram && (
+                        <div>
+                            {introData?.controls?.map((control) => (
+                                <button
+                                    key={control?.id}
+                                    title={control?.title}
+                                >
+                                    {control?.icon}
+                                </button>
+                            ))}
+                        </div>
+                    )}
+                    <div>
                         {introData?.diagram?.graph}
                     </div>
                 </div>
-                <p className="mt-6 text-gray-600">{introData?.paragraph2}</p>
+                {introData?.paragraph2 && (
+                    <p className="mt-6 text-gray-600">{introData?.paragraph2}</p>
+                )}
             </div>
         </section>
     )

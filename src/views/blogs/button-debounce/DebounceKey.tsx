@@ -9,79 +9,84 @@ const DebounceKey = ({ data }) => {
             <h2 className="font-serif text-3xl font-semibold mb-12 text-center">
                 {keyData?.title}
             </h2>
-            {keyData?.considerations?.map((consideration, index) => (
-                <div key={index} id={consideration?.id} className='mt-16'>
-                    <h3 className="font-serif text-2xl font-bold mb-8">
-                        {consideration?.title}
-                    </h3>
-                    {consideration?.points ? (
-                        <div className="grid lg:grid-cols-3 gap-8">
-                            {consideration?.points?.map((point, idx) => (
-                                <div
-                                    key={idx}
-                                    className={`bg-${point?.color}-50 border-l-4 border-${point?.color}-600 p-6 rounded-r-lg`}
-                                >
-                                    <h4 className="font-serif text-xl font-semibold mb-4">
-                                        <point.icon className={`text-${point?.color}-600 mr-2 inline`} />
-                                        {point?.title}
-                                    </h4>
-                                    <p className="text-gray-600">
-                                        {point?.description} {point.citation && <a href="#" className="text-primary hover:underline">{point?.citation}</a>}
-                                    </p>
+            {keyData?.considerations && (
+                <div>
+                    {keyData?.considerations?.map((consideration, index) => (
+                        <div key={index} id={consideration?.id} className='mt-16'>
+                            <h3 className="font-serif text-2xl font-bold mb-8">
+                                {consideration?.title}
+                            </h3>
+                            {consideration?.points ? (
+                                <div className="grid lg:grid-cols-3 gap-8">
+                                    {consideration?.points?.map((point, idx) => (
+                                        <div
+                                            key={idx}
+                                            className={`p-6 rounded-r-lg`} style={{ background: point?.bgColor, borderLeft: `4px solid ${point?.borderColor}` }}
+                                        >
+                                            <h4 className="font-serif text-xl font-semibold mb-4 flex gap-2 items-center">
+                                                {point?.icon}
+                                                {point?.title}
+                                            </h4>
+                                            <p className="text-gray-600">
+                                                {point?.description}
+                                            </p>
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
-                        </div>
-                    ) : null}
-                    {consideration?.sections && (
-                        <div className="bg-white rounded-lg p-8 shadow-sm">
-                            <div className="grid md:grid-cols-2 gap-8">
-                                {consideration?.sections?.map((section: any, idx: any) => (
-                                    <div key={idx}>
-                                        <h4 className="font-serif text-xl font-semibold mb-4">
-                                            {section?.title}
-                                        </h4>
-                                        <p className="text-gray-600 mb-4">{section?.description}</p>
-                                        {section?.code && (
-                                            <div className="bg-gray-100 p-4 rounded">
-                                                <code>{section?.code}</code>
-                                            </div>
-                                        )}
-                                        {section?.diagram && (
-                                            <div className="mermaid-container">
-                                                <div className="mermaid">{section?.diagram}</div>
-                                            </div>
-                                        )}
-                                        {section?.items && (
-                                            <ul className="space-y-4 text-gray-600">
-                                                {section.items.map((item: any, itemIdx: any) => (
-                                                    <li key={itemIdx} className="flex items-start gap-3">
-                                                        {item.icon && (
-                                                            <item.icon className={`text-${item?.color || 'gray'}-600 mt-1 text-base`} />
-                                                        )}
-                                                        <div>
-                                                            {item?.label && item?.cost ? (
-                                                                <span>
-                                                                    <span className="font-semibold">{item.label}:</span> {item?.cost}
-                                                                </span>
-                                                            ) : (
-                                                                <>
-                                                                    <p className="font-semibold">{item?.subtitle}</p>
-                                                                    <p className="text-sm">{item?.description}</p>
-                                                                </>
-                                                            )}
-                                                        </div>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        )}
+                            ) : null}
+                            {consideration?.sections && (
+                                <div className="bg-white rounded-lg p-8 shadow-sm">
+                                    <div className="grid md:grid-cols-2 gap-8">
+                                        {consideration?.sections?.map((section: any, idx: any) => (
+                                            <div key={idx}>
+                                                <h4 className="font-serif text-xl font-semibold mb-4">
+                                                    {section?.title}
+                                                </h4>
+                                                <p className="text-gray-600 mb-4">{section?.description}</p>
+                                                {section?.code && (
+                                                    <div className="bg-gray-100 p-4 rounded">
+                                                        <code>{section?.code}</code>
+                                                    </div>
+                                                )}
+                                                {section?.diagram && (
+                                                    <div>
+                                                        <div>{section?.diagram}</div>
+                                                    </div>
+                                                )}
+                                                {section?.items && (
+                                                    <ul className="space-y-4 text-gray-600">
+                                                        {section.items.map((item: any, itemIdx: any) => (
+                                                            <li key={itemIdx} className="flex items-start gap-3">
+                                                                {item?.icon && (
+                                                                    item?.icon
+                                                                )}
+                                                                <div>
+                                                                    {item?.label && item?.cost ? (
+                                                                        <span>
+                                                                            <span className="font-semibold">{item?.label}:</span> {item?.cost}
+                                                                        </span>
+                                                                    ) : (
+                                                                        <>
+                                                                            <p className="font-semibold">{item?.subtitle}</p>
+                                                                            <p className="text-sm">{item?.description}</p>
+                                                                        </>
+                                                                    )}
+                                                                </div>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                )}
 
+                                            </div>
+                                        ))}
                                     </div>
-                                ))}
-                            </div>
+                                </div>
+                            )}
                         </div>
-                    )}
+                    ))}
                 </div>
-            ))}
+            )}
+
         </section>
     )
 }

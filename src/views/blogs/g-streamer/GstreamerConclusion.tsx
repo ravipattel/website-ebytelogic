@@ -7,7 +7,7 @@ const GstreamerConclusion = ({ data }) => {
         <section id={conclusion?.id} className="py-8 px-6 bg-slate-50">
             {/* Section Title */}
             <div className="mb-8">
-                <span className="text-primary mr-3">{conclusion?.no}</span>
+                <span className="mr-3" style={{color:conclusion?.color}}>{conclusion?.no}</span>
                 <h2 className="font-serif text-4xl font-semibold inline">
                     {conclusion?.sectionTitle}
                 </h2>

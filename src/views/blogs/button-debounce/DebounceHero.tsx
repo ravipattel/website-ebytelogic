@@ -1,4 +1,5 @@
 import Link from 'next/link'
+
 import React from 'react'
 import { RiArrowRightSLine } from 'react-icons/ri'
 
@@ -34,13 +35,13 @@ const DebounceHero = ({ data }) => {
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
                     <h3 className="font-serif text-xl font-semibold mb-4">{heroData?.keyTitle}</h3>
                     <ul className="space-y-3 text-sm">
-                        {heroData?.keyInsights.map((insight, index) => {
+                        {heroData?.keyInsights?.map((insight, index) => {
                             return (
                                 <li key={index} className="flex items-start gap-3">
                                     <span className='mt-1'>
-                                        {insight.icon}
+                                        {insight?.icon}
                                     </span>
-                                    {insight.text}
+                                    {insight?.text}
                                 </li>
                             )
                         })}
