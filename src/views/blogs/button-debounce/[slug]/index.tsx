@@ -11,6 +11,7 @@ import DebounceSoftware from '../DebounceSoftware'
 import DebounceKey from '../DebounceKey'
 import DebounceConclusion from '../DebounceConclusion'
 import { globalCards } from '../../Global'
+import BlogSuggestions from '@/src/components/Suggestion'
 
 const ButtonDebounce = ({ slug }) => {
     const filter = globalCards.find((item) => {
@@ -34,6 +35,7 @@ const ButtonDebounce = ({ slug }) => {
                 <DebounceSoftware data={filter} />
                 <DebounceKey data={filter} />
                 <DebounceConclusion data={filter} />
+                <BlogSuggestions currentSlug={slug} />
             </div>
         </div>
     )

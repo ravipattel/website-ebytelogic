@@ -10,6 +10,7 @@ import DevGuideTroubleShooting from '../DevGuideTroubleShooting'
 import DevGuideCamera from '../DevGuideCamera'
 import DevGuideMpp from '../DevGuideMpp'
 import { globalCards } from '../../Global'
+import BlogSuggestions from '@/src/components/Suggestion'
 
 const DevelopmentGuide = ({ slug }) => {
     const filter = globalCards.find((item, idx) => {
@@ -32,6 +33,7 @@ const DevelopmentGuide = ({ slug }) => {
                 <DevGuideAi data={filter}/>
                 <DevGuideDevelopment data={filter}/>
                 <DevGuideTroubleShooting data={filter}/>
+                <BlogSuggestions currentSlug={slug} />
             </div>
         </div>
     )

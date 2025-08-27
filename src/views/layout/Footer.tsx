@@ -73,8 +73,8 @@ const Footer = () => {
                                 <a href='mailto:Contact@ebytelogic.com' className="block mb-4 text-primaryText text-sm sm:text-[15px]"><span className="font-medium text-primary">Email</span> :  Contact@ebytelogic.com</a>
 
                                 <div className="flex space-x-3">
-                                    <Link href="https://in.linkedin.com/company/ebytelogic" target="_blank"><Button variant='default' className="bg-primary rounded h-8 w-8 !p-0 grid place-items-center"><FaLinkedinIn /></Button></Link>
-                                    <Link href="https://www.google.com/search?q=ebytelogic&oq=ebytelogic&gs_lcrp=EgZjaHJvbWUqDggAEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTIGCAEQRRg8MgYIAhBFGDwyCggDEAAYgAQYogQyBggEEEUYPDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDQ2OTVqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8" target="_blank"> <Button variant='default' className="bg-primary rounded h-8 w-8 !p-0 grid place-items-center"><FaGoogle /></Button></Link>
+                                    <Link href="https://in.linkedin.com/company/ebytelogic" target="_blank"><Button variant='default' className="bg-primary rounded !h-8 w-8 !p-0 grid place-items-center"><FaLinkedinIn /></Button></Link>
+                                    <Link href="https://www.google.com/search?q=ebytelogic&oq=ebytelogic&gs_lcrp=EgZjaHJvbWUqDggAEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTIGCAEQRRg8MgYIAhBFGDwyCggDEAAYgAQYogQyBggEEEUYPDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDQ2OTVqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8" target="_blank"> <Button variant='default' className="bg-primary rounded !h-8 w-8 !p-0 grid place-items-center"><FaGoogle /></Button></Link>
                                 </div>
                             </div>
                         </div>

@@ -12,6 +12,7 @@ import SomSocFramework from '../SomSocFramework'
 import SomSocConclusion from '../SomSocConclusion'
 import Sidebar from '@/src/components/Sidebar'
 import { globalCards } from '../../Global'
+import BlogSuggestions from '@/src/components/Suggestion'
 
 const SomSoc = ({ slug }) => {
     const filter = globalCards.find((item, idx) => {
@@ -39,6 +40,7 @@ const SomSoc = ({ slug }) => {
                 <SomSocExamples data={filter} />
                 <SomSocFramework data={filter} />
                 <SomSocConclusion data={filter} />
+                <BlogSuggestions currentSlug={slug} />
             </div>
         </div>
     )

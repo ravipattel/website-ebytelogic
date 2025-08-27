@@ -16,6 +16,7 @@ import BeforePng from '@/src/assets/images/caseStudy/before.png'
 import BeforeMockupPng from '@/src/assets/images/caseStudy/beforeMockup.png'
 import AfterMockupPng from '@/src/assets/images/caseStudy/afterMockup.png'
 import EbyteMockupPng from '@/src/assets/images/caseStudy/ebyteMockup.png'
+import { MdArrowForwardIos } from "react-icons/md";
 
 const caseStudyData = [
   // 1 done
@@ -176,6 +177,13 @@ const caseStudyData = [
         text: "Contact Us",
       },
     },
+    highlights: [
+      "Wearable technology",
+      "Latency reduction",
+      "Real-time optimization",
+      "Embedded systems"
+    ],
+    industry: "Wearable Tech",
   },
   // 2 done
   {
@@ -295,6 +303,13 @@ const caseStudyData = [
         text: "Request a Consultation",
       },
     },
+    highlights: [
+      "Audio pipeline",
+      "Latency reduction",
+      "Embedded systems",
+      "Android customization"
+    ],
+    industry: "Semiconductor",
   },
   // 3 done
   {
@@ -420,6 +435,14 @@ const caseStudyData = [
         text: "Learn More",
       },
     },
+    highlights: [
+      "SDI encoder",
+      "Low latency",
+      "Broadcast",
+      "Lip sync",
+      "VANC data"
+    ],
+    industry: "Broadcast Solutions",
   },
   // 4 done
   {
@@ -546,6 +569,13 @@ const caseStudyData = [
         text: "Let's Discuss Your Project",
       },
     },
+    highlights: [
+      "Early boot logo",
+      "U-Boot driver porting",
+      "Display initialization",
+      "Embedded Linux"
+    ],
+    industry: "Industrial Electronics",
   },
   // 5 done
   {
@@ -646,6 +676,13 @@ const caseStudyData = [
         text: "Get a Custom Solution",
       },
     },
+    highlights: [
+      "Driver development",
+      "Bootloader customization",
+      "Cross-platform integration",
+      "Secure boot"
+    ],
+    industry: "Embedded Systems",
   },
   // 6 done but img pending
   {
@@ -794,6 +831,13 @@ const caseStudyData = [
         text: "Explore Our Media Solutions",
       },
     },
+    highlights: [
+      "NDI protocol",
+      "GStreamer integration",
+      "Low-latency streaming",
+      "Broadcast workflows"
+    ],
+    industry: "Media Production",
   },
   // 7 done but img pending
   {
@@ -892,6 +936,13 @@ const caseStudyData = [
         text: "Accelerate Your Project",
       },
     },
+    highlights: [
+      "LCD bring-up",
+      "Touchscreen integration",
+      "Rapid prototyping",
+      "Telematics display"
+    ],
+    industry: "Automotive Electronics",
   },
   // 8 done
   {
@@ -989,6 +1040,13 @@ const caseStudyData = [
         text: "Discuss Your Project",
       },
     },
+    highlights: [
+      "MCU firmware upgrade",
+      "CANopen protocol",
+      "Remote updates",
+      "Safety systems"
+    ],
+    industry: "Fire Safety Systems",
   },
   // 9 done
   {
@@ -1142,6 +1200,13 @@ const caseStudyData = [
         text: "Contact Our Experts",
       },
     },
+    highlights: [
+      "HDMI multiview",
+      "Hardware decoding",
+      "Streaming protocols",
+      "Broadcast monitoring"
+    ],
+    industry: "Broadcast Solutions",
   },
   // 10 done but img left in results
   {
@@ -1270,6 +1335,13 @@ const caseStudyData = [
         text: "Optimize Your System",
       },
     },
+    highlights: [
+      "UAV video streaming",
+      "Low latency",
+      "RTP pipeline",
+      "Embedded video"
+    ],
+    industry: "Drone Technology",
   },
   // 11 done
   {
@@ -1427,6 +1499,13 @@ const caseStudyData = [
         text: "Connect Your Devices",
       },
     },
+    highlights: [
+      "CAN protocol",
+      "Modbus bridge",
+      "Industrial interoperability",
+      "Embedded firmware"
+    ],
+    industry: "Industrial Automation",
   },
   // 12 done
   {
@@ -1564,6 +1643,13 @@ const caseStudyData = [
         text: "Modernize Your Systems",
       },
     },
+    highlights: [
+      "Yocto migration",
+      "Safety-critical systems",
+      "OS upgrade",
+      "Peripheral compatibility"
+    ],
+    industry: "Safety Systems",
   },
   // 13 done
   {
@@ -1694,6 +1780,13 @@ const caseStudyData = [
         text: "Streamline Your Workflow",
       },
     },
+    highlights: [
+      "Yocto migration",
+      "Buildroot migration",
+      "Unified codebase",
+      "Multi-platform support"
+    ],
+    industry: "Embedded Software",
   },
   // 14 done
   {
@@ -1790,6 +1883,13 @@ const caseStudyData = [
         text: "Get a Solution",
       },
     },
+    highlights: [
+      "I2C bus recovery",
+      "Multi-master systems",
+      "Firmware fix",
+      "Embedded hardware"
+    ],
+    industry: "Electronics Manufacturing",
   },
   // 15 done but impacts pending
   {
@@ -1924,6 +2024,13 @@ const caseStudyData = [
         text: "Accelerate Your Product",
       },
     },
+    highlights: [
+      "BSP porting",
+      "Boot time optimization",
+      "Multi-OS support",
+      "Qt application"
+    ],
+    industry: "Embedded Hardware",
   },
   // 16 done but impacts pending
   {
@@ -2064,8 +2171,58 @@ const caseStudyData = [
         text: "Optimize Your Build Process",
       },
     },
+    highlights: [
+      "Yocto build environment",
+      "Multi-SoM support",
+      "Single repository",
+      "Firmware updates"
+    ],
+    industry: "Embedded Systems",
   },
 ];
+
+
+// Suggestion logic (move to utils if needed)
+const getSuggestions = (currentId: string) => {
+  const currentCard = caseStudyData.find((card) => card.id === currentId);
+  if (!currentCard) return [];
+
+  const currentHighlights = currentCard.highlights ?? [];
+  const currentIndustry = currentCard.industry ?? "";
+
+  const keywords = [
+    ...currentHighlights.join(" ").toLowerCase().split(/\W+/),
+    currentIndustry.toLowerCase(),
+  ];
+
+  const uniqueKeywords = [...new Set(keywords.filter((word) => word.length > 2))];
+
+  const scored = caseStudyData
+    .filter((card) => card.id !== currentId)
+    .map((card) => {
+      const cardHighlights = card.highlights ?? [];
+      const cardIndustry = card.industry ?? "";
+
+      const cardText = `${cardHighlights.join(" ")} ${cardIndustry}`.toLowerCase();
+      const score = uniqueKeywords.reduce(
+        (acc, word) => (cardText.includes(word) ? acc + 1 : acc),
+        0
+      );
+      return { ...card, score };
+    })
+    .filter((card) => card.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3);
+
+  return scored;
+};
+
+interface CaseStudyInfoProps {
+  highlights?: string[];
+  industry?: string;
+}
+
+
 type ReChart = {
   chartData: Record<string, number>;
   yAxisLabel: string;
@@ -2076,7 +2233,8 @@ type Data = {
   reChart: ReChart;
 };
 
-const CaseStudyInfo = () => {
+
+const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) => {
   const router = useRouter();
   const { id } = useParams() as { id: string };
   const data = caseStudyData?.find((item, idx) => {
@@ -2751,6 +2909,59 @@ const CaseStudyInfo = () => {
             >
               {data?.cta?.button?.text}
             </Button>
+          </section>
+        )}
+        {/* suggestion */}
+        {getSuggestions(id).length > 0 && (
+          <section className="py-16 bg-gradient-to-b from-gray-100 to-white">
+            <h2 className="text-2xl font-semibold mb-10 text-center tracking-wide" style={{ color: data?.textColor }}>
+              You Might Also Like
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto px-6">
+              {getSuggestions(id).map((card) => (
+                <div
+                  key={card?.id}
+                  className="relative bg-white/30 backdrop-blur-md rounded-xl border border-white/30 shadow-lg 
+                   hover:shadow-2xl hover:scale-[1.03] transition-transform duration-300 p-8 flex flex-col justify-between"
+                >
+                  {/* Colored accent bar */}
+                  <div className="absolute left-0 top-0 bottom-0 w-2 rounded-l-xl" style={{ background: data?.textColor }}></div>
+
+                  {/* Optional Image */}
+                  {/* {card?.img && (
+          <img
+            src={card?.img}
+            alt={card?.title}
+            className="w-full h-44 object-cover rounded-lg mb-6"
+          />
+        )} */}
+
+                  <div className="pl-4">
+                    <h3 className="text-lg text-[#1e293b] mb-3">
+                      {card?.crumbs}
+                    </h3>
+                    <p className="font-semibold mb-4 uppercase tracking-wide" style={{ color: data?.textColor }}>
+                      {card?.industry}
+                    </p>
+                    <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
+                      {card?.highlights?.slice(0, 3).map((hl, idx) => (
+                        <li key={idx} className="leading-relaxed">
+                          {hl}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <Link
+                    href={`/case-study/${card?.id}`}
+                    className="inline-flex items-center gap-2 text-primary font-semibold hover:text-indigo-900 transition-colors duration-300"
+                  >
+                    <MdArrowForwardIos/>
+                    View Case Study
+                  </Link>
+                </div>
+              ))}
+            </div>
           </section>
         )}
       </div>

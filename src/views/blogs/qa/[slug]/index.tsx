@@ -10,6 +10,7 @@ import QaTimings from '../QaTimings'
 import QaDebugging from '../QaDebugging'
 import QaConclusions from '../QaConclusions'
 import { globalCards } from '../../Global'
+import BlogSuggestions from '@/src/components/Suggestion'
 
 const Qa = ({ slug }) => {
     const filter = globalCards.find((item, idx) => {
@@ -31,6 +32,7 @@ const Qa = ({ slug }) => {
                 <QaTimings data={filter} />
                 <QaDebugging data={filter} />
                 <QaConclusions data={filter} />
+                <BlogSuggestions currentSlug={slug} />
             </div>
         </div>
     )

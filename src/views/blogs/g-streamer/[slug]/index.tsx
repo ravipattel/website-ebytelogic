@@ -8,6 +8,7 @@ import GstreamerPlatform from "../GstreamerPlatform";
 import GstreamerRobust from "../GstreamerRobust";
 import GstreamerConclusion from "../GstreamerConclusion";
 import { globalCards } from "../../Global";
+import BlogSuggestions from "@/src/components/Suggestion";
 
 const Gstreamer = ({ slug }) => {
     const filter = globalCards.find((item, idx) => {
@@ -28,6 +29,7 @@ const Gstreamer = ({ slug }) => {
                 <GstreamerPlatform data={filter} />
                 <GstreamerRobust data={filter} />
                 <GstreamerConclusion data={filter} />
+                <BlogSuggestions currentSlug={slug} />
             </div>
         </div>
     );

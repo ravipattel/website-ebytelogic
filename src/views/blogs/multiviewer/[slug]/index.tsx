@@ -11,6 +11,7 @@ import MultiViewerPerformance from '../MultiViewerPerformance'
 import MultiViewerConclusion from '../MultiViewerConclusion'
 import MultiViewerDecision from '../MultiViewerDecision'
 import { globalCards } from '../../Global'
+import BlogSuggestions from '@/src/components/Suggestion'
 
 const MultiViewer = ({ slug }) => {
     const filter = globalCards.find((item) => {
@@ -33,6 +34,7 @@ const MultiViewer = ({ slug }) => {
                 <MultiViewerPerformance data={filter} />
                 <MultiViewerDecision data={filter} />
                 <MultiViewerConclusion data={filter} />
+                <BlogSuggestions currentSlug={slug} />
             </div>
         </div>
     )

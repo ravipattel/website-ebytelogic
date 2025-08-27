@@ -679,6 +679,16 @@ export const globalCards = [
         },
       ],
     },
+    highlights: [
+      "System on Chip",
+      "System on Module",
+      "Hardware Architecture",
+      "Integration Strategies",
+      "Modular Design",
+      "Production Volume",
+      "Embedded Electronics"
+    ],
+    category: "Hardware Design",
   },
   {
     design: "qa",
@@ -1157,6 +1167,16 @@ export const globalCards = [
         },
       ],
     },
+    highlights: [
+      "System on Chip",
+      "System on Module",
+      "Hardware Architecture",
+      "Integration Strategies",
+      "Modular Design",
+      "Production Volume",
+      "Embedded Electronics"
+    ],
+    category: "Hardware Design",
   },
   {
     design: "devGuide",
@@ -1819,6 +1839,16 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
         "Use performance profiling tools to identify bottlenecks",
       ],
     },
+    highlights: [
+      "RK3588",
+      "Multimedia Processing",
+      "Camera Integration",
+      "V4L2",
+      "Image Signal Processor",
+      "AI Acceleration",
+      "Linux SDK"
+    ],
+    category: "Multimedia Development",
   },
   {
     design: "multiviewer",
@@ -2512,6 +2542,16 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
       closing:
         "Ultimately, success depends on matching the tool's strengths to your specific use case, available infrastructure, and operational requirements. All three solutions are capable of delivering professional multiviewer functionality when properly configured and deployed on appropriate hardware.",
     },
+    highlights: [
+      "Multiviewer",
+      "FFmpeg",
+      "GStreamer",
+      "NDI",
+      "Video Compositing",
+      "Performance Analysis",
+      "Broadcast Solutions"
+    ],
+    category: "Video Engineering",
   },
   {
     design: 'gStreamer',
@@ -3008,7 +3048,17 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
         title: "Ready to Optimize?",
         subtitle: "Start your embedded multimedia journey with expert GStreamer optimization"
       }
-    }
+    },
+    highlights: [
+      "GStreamer",
+      "ARM Optimization",
+      "Low Latency",
+      "Buffer Management",
+      "Hardware Acceleration",
+      "Real-Time Multimedia",
+      "Embedded Streaming"
+    ],
+    category: "Embedded Software",
   },
   {
     design: 'btn-debounce',
@@ -3478,7 +3528,7 @@ pause()
               title: "Sleep Modes & Interrupts",
               description:
                 "Implement sleep modes with interrupt-driven wake-up for lowest power consumption. The processor only activates briefly to handle button presses.",
-              diagram:BtnDebounceArchitecture,
+              diagram: BtnDebounceArchitecture,
             },
           ],
         },
@@ -3570,6 +3620,16 @@ pause()
         },
       ],
     },
+    highlights: [
+      "Button Debounce",
+      "Hardware Debounce",
+      "Software Debounce",
+      "RC Filter",
+      "SR Latch",
+      "Reliable Input",
+      "Embedded Systems"
+    ],
+    category: "Embedded Hardware",
   },
 ];
 

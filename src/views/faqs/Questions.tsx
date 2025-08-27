@@ -147,9 +147,9 @@ const Questions = () => {
               <h3 className="text-2xl sm:text-[27px] font-medium text-primaryText leading-tight capitalize">
                 1. General Company & Engagement FAQs
               </h3>
-              <p className="text-[#5d6471] text-sm sm:text-[15px]">
+              {/* <p className="text-[#5d6471] text-sm sm:text-[15px]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-              </p>
+              </p> */}
             </div>
             <div className="my-8 space-y-4">
               {generalFaqs.map((faq, index) => (
@@ -181,9 +181,9 @@ const Questions = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-20 gap-x-12 items-center">
           <div>
             <h3 className="text-2xl font-semibold text-primaryText leading-tight capitalize mb-3">2. Multimedia & Streaming Frameworks</h3>
-            <p className="text-[#5d6471] text-sm sm:text-[15px]">
+            {/* <p className="text-[#5d6471] text-sm sm:text-[15px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-            </p>
+            </p> */}
             <div className="my-8 space-y-4">
               {multimediaFaqs.map((faq, index) => (
                 <AccordionItem
@@ -198,9 +198,9 @@ const Questions = () => {
           </div>
           <div>
             <h3 className="text-2xl font-semibold text-primaryText leading-tight capitalize mb-3">3. Linux BSP & Embedded Software</h3>
-            <p className="text-[#5d6471] text-sm sm:text-[15px]">
+            {/* <p className="text-[#5d6471] text-sm sm:text-[15px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-            </p>
+            </p> */}
             <div className="my-8 space-y-4">
               {embeddedLinuxFaqs.map((faq, index) => (
                 <AccordionItem
@@ -215,9 +215,9 @@ const Questions = () => {
           </div>
           <div>
             <h3 className="text-2xl font-semibold text-primaryText leading-tight capitalize mb-3">4. QA, Testing & Validation</h3>
-            <p className="text-[#5d6471] text-sm sm:text-[15px]">
+            {/* <p className="text-[#5d6471] text-sm sm:text-[15px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-            </p>
+            </p> */}
             <div className="my-8 space-y-4">
               {embeddedTestingFaqs.map((faq, index) => (
                 <AccordionItem
@@ -232,9 +232,9 @@ const Questions = () => {
           </div>
           <div>
             <h3 className="text-2xl font-semibold text-primaryText leading-tight capitalize mb-3">5. IoT, Mobile Apps & Cloud Integration</h3>
-            <p className="text-[#5d6471] text-sm sm:text-[15px]">
+            {/* <p className="text-[#5d6471] text-sm sm:text-[15px]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
-            </p>
+            </p> */}
             <div className="my-8 space-y-4">
               {iotMobileIntegrationFaqs.map((faq, index) => (
                 <AccordionItem
