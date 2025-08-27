@@ -8,3 +8,5 @@ const ServiceDetailsPage = () => {
 }
 
 export default ServiceDetailsPage
+
+export const runtime = 'edge';

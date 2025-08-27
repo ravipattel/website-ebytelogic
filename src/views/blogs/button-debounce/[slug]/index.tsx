@@ -42,3 +42,5 @@ const ButtonDebounce = ({ slug }) => {
 }
 
 export default ButtonDebounce
+
+export const runtime = 'edge';

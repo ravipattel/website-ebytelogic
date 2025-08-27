@@ -41,3 +41,5 @@ const MultiViewer = ({ slug }) => {
 }
 
 export default MultiViewer
+
+export const runtime = 'edge';

@@ -39,3 +39,5 @@ const Qa = ({ slug }) => {
 }
 
 export default Qa
+
+export const runtime = 'edge';

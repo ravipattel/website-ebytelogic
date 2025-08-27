@@ -36,3 +36,5 @@ const Gstreamer = ({ slug }) => {
 };
 
 export default Gstreamer;
+
+export const runtime = 'edge';

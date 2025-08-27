@@ -40,3 +40,5 @@ const DevelopmentGuide = ({ slug }) => {
 }
 
 export default DevelopmentGuide
+
+export const runtime = 'edge';

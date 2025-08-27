@@ -3200,3 +3200,5 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
 };
 
 export default CaseStudyInfo;
+
+export const runtime = 'edge';

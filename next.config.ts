@@ -1,10 +1,15 @@
-// next.config.js
+import { setupDevPlatform } from '@cloudflare/next-on-pages/next-dev';
+
 const nextConfig = {
-  output: 'standalone', // required for edge/runtime deployment
+  output: 'standalone',
   reactStrictMode: true,
   experimental: {
-    runtime: 'edge', // enables edge runtime
+    runtime: 'edge',
   },
+}
+
+if (process.env.NODE_ENV === 'development') {
+  await setupDevPlatform();
 }
 
 module.exports = nextConfig

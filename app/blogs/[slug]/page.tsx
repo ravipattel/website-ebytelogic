@@ -87,3 +87,5 @@ const BlogDetailPage = () => {
 };
 
 export default BlogDetailPage;
+
+export const runtime = 'edge';
