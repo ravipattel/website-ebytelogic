@@ -26,16 +26,16 @@ import YoctoPng from "@/src/assets/images/about/yocto.png";
 import EspressifPng from "@/src/assets/images/about/espressif.svg";
 // import BorderPng from "@/src/assets/images/about/border.png";
 // import ExpertiseJpeg from "@/src/assets/images/about/expertise.jpeg";
-import AboutFramePng from "@/src/assets/images/about/aboutFrame.png";
+import AboutFramePng from "@/src/assets/images/about/expertise.jpg";
 
 const Testimonials = () => {
     const router = useRouter();
     return (
         <div className='max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-28'>
             <div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-0 items-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 items-center">
                     <div className='lg:col-span-2 flex justify-center'>
-                        <Image src={AboutFramePng} alt='AboutFramePng' height={450} />
+                        <Image src={AboutFramePng} alt='AboutFramePng' height={450} className='rounded-lg'/>
                     </div>
                     <div className="lg:col-span-3 space-y-4 text-left">
                         <h2 className="text-2xl sm:text-[34px] font-medium text-primary leading-tight">

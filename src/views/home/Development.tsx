@@ -4,7 +4,7 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { GoCheckCircleFill } from 'react-icons/go';
 
-import LinuxJpeg from '@/src/assets/images/home/development/linux.jpeg';
+import LinuxPng from '@/src/assets/images/home/development/linux.png';
 import StreamingJpg from '@/src/assets/images/home/development/streaming.png';
 import CrossPlatformPng from '@/src/assets/images/home/development/crossPlatform.png';
 import QaPng from '@/src/assets/images/home/development/QA engineering & Support.png';
@@ -12,7 +12,7 @@ import QaPng from '@/src/assets/images/home/development/QA engineering & Support
 const tabContents = [
     {
         tab: "Linux BSP & Driver Development",
-        image: LinuxJpeg,
+        image: LinuxPng,
         title: "Powering Devices from the Core",
         description: "Dummy text is also used to demonstrate the appearance of different typefaces and layouts, and in general the content of dummy text is nonsensical. used to demonstrate the appearance of different typefaces and layouts, and in general the content of dummy text is nonsensical",
         points: [

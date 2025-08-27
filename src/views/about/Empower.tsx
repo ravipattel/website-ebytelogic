@@ -10,7 +10,7 @@ import Button from '@/src/components/Button'
 
 import AboutUsPng from '@/src/assets/images/about/aboutUs.png'
 import AboutLeftPng from '@/src/assets/images/about/aboutLeft.png'
-import CrossPlatform from '@/src/assets/images/about/crossPlatform.png'
+import CrossPlatform from '@/src/assets/images/about/crossPlatform.jpg'
 
 const aboutData = [
     "Linux BSP Customization & Board Bring-Up", "Streaming Pipelines (GStreamer, FFMPEG, Live555)", "Cross-Platform App Development (Qt, C++, Android)", "Embedded QA & System Validation"

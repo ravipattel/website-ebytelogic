@@ -21,52 +21,53 @@ export default function Loader({ children }: { children: React.ReactNode }) {
   const fadeOutDelay = 800;
   const totalLoadingTime = messages.length * messageDisplayTime + fadeOutDelay;
 
-  useEffect(() => {
-    if (hasLoadedOnce) return;
+useEffect(() => {
+  if (hasLoadedOnce) return;
 
-    setLoading(true);
-    setFadeOut(false);
-    setProgress(0);
+  setLoading(true);
+  setFadeOut(false);
+  setProgress(0);
 
-    const totalLoadingTime = 6000; // total loader time in ms (you can tweak this)
-    const messageDisplayTime = totalLoadingTime / messages.length;
+  const totalLoadingTime = 3000; // 3 seconds
+  const messageDisplayTime = totalLoadingTime / messages.length;
 
-    // Progress bar increase
-    const progressInterval = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(progressInterval);
-          return 100;
-        }
-        return prev + 1;
-      });
-    }, totalLoadingTime / 100); // one step every 1% of total time
-
-    // Show messages one-by-one, equally spaced
-    let messageIndex = 0;
-    const messageInterval = setInterval(() => {
-      messageIndex += 1;
-      if (messageIndex < messages.length) {
-        setCurrentMessageIndex(messageIndex);
-      } else {
-        clearInterval(messageInterval);
+  // Progress bar
+  const progressInterval = setInterval(() => {
+    setProgress((prev) => {
+      if (prev >= 100) {
+        clearInterval(progressInterval);
+        return 100;
       }
-    }, messageDisplayTime);
+      return prev + 1;
+    });
+  }, totalLoadingTime / 100);
 
-    // Fade out and hide
-    const fadeTimer = setTimeout(() => setFadeOut(true), totalLoadingTime);
-    const hideTimer = setTimeout(() => {
-      setLoading(false);
-      setHasLoadedOnce(true);
-    }, totalLoadingTime + 500); // wait a bit for fade
-
-    return () => {
-      clearInterval(progressInterval);
+  // Message transition
+  let messageIndex = 0;
+  const messageInterval = setInterval(() => {
+    messageIndex += 1;
+    if (messageIndex < messages.length) {
+      setCurrentMessageIndex(messageIndex);
+    } else {
       clearInterval(messageInterval);
-      clearTimeout(fadeTimer);
-      clearTimeout(hideTimer);
-    };
-  }, [hasLoadedOnce]);
+    }
+  }, messageDisplayTime);
+
+  // Fade out and hide
+  const fadeTimer = setTimeout(() => setFadeOut(true), totalLoadingTime);
+  const hideTimer = setTimeout(() => {
+    setLoading(false);
+    setHasLoadedOnce(true);
+  }, totalLoadingTime + 500); // small fade delay
+
+  return () => {
+    clearInterval(progressInterval);
+    clearInterval(messageInterval);
+    clearTimeout(fadeTimer);
+    clearTimeout(hideTimer);
+  };
+}, [hasLoadedOnce]);
+
 
 
 
