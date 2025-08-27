@@ -8,20 +8,22 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import Button from "@/src/components/Button";
 
 import WearableDisplayPng from "@/src/assets/images/caseStudy/wearableDisplay.png";
-import DubbingJpg from "@/src/assets/images/caseStudy/audioPipeine.png";
-import ToradexPng from "@/src/assets/images/caseStudy/sdi.png";
+import AudioPipeinePng from "@/src/assets/images/caseStudy/audioPipeine.png";
+import SdiPng from "@/src/assets/images/caseStudy/sdi.png";
 import EsightWearJpeg from "@/src/assets/images/caseStudy/bootLogo.png";
-import BootTimeJpg from "@/src/assets/images/caseStudy/socs.png";
+import UbootPng from "@/src/assets/images/caseStudy/uboot.png";
 import MultiViewerJpg from "@/src/assets/images/caseStudy/ndiProtocol.png";
 import LcdPng from "@/src/assets/images/caseStudy/lcd.png";
 import CanBusPng from "@/src/assets/images/caseStudy/canBus.png";
-import YoctoBuildPng from "@/src/assets/images/caseStudy/yoctoBuild.png";
+import YoctoBuildPng from "@/src/assets/images/caseStudy/yoctoMigration.png";
 import YoctoBuildRootPng from "@/src/assets/images/caseStudy/yoctoBuildroot.png";
 import ModBusPng from "@/src/assets/images/caseStudy/modBus.png";
-import LowCostPng from "@/src/assets/images/caseStudy/lowCost.png";
+import HdmiPng from "@/src/assets/images/caseStudy/hdmi.png";
 import DisplayLatencyPng from "@/src/assets/images/caseStudy/displayLatency.png";
 import BootLogoPng from "@/src/assets/images/caseStudy/bootLogo.png";
 import I2CPng from "@/src/assets/images/caseStudy/busLockUp.png";
+import UnifiedPng from "@/src/assets/images/caseStudy/unified.png";
+import OttPng from "@/src/assets/images/caseStudy/ott.png";
 
 const caseStudyCard = [
   {
@@ -45,7 +47,7 @@ const caseStudyCard = [
       "Technologies: AudioFlinger bypass, JNI integration",
       "Output: Perfectly timed audio playback",
     ],
-    img: DubbingJpg,
+    img: AudioPipeinePng,
     route: "/spg",
   },
   {
@@ -58,7 +60,7 @@ const caseStudyCard = [
       "Lip Sync Accuracy: ±10ms",
       "VANC Support: LINE21, CEA-608/708, SCTE-35",
     ],
-    img: ToradexPng,
+    img: SdiPng,
   },
   {
     id: "u-boot-logo-for-IMX8MQ",
@@ -81,7 +83,7 @@ const caseStudyCard = [
       "Drivers: ADV7611 (HDMI), WM8960 (audio codec), touch controllers, modems",
       "Additional Goals: Secure boot, branded splash screen, upstream compatibility",
     ],
-    img: BootTimeJpg,
+    img: UbootPng,
   },
   {
     id: 'ndi-protocol-integration-inremote-recorder-player',
@@ -126,7 +128,7 @@ const caseStudyCard = [
       "Supports multiple streaming protocols (UDP, SRT, HLS)",
       "Hardware-accelerated decoding for efficient video processing"
     ],
-    img: LowCostPng
+    img: HdmiPng
   },
   {
     id: "sub-100ms-latency-in-uav-video-streaming",
@@ -192,7 +194,7 @@ const caseStudyCard = [
       "Ported multiple operating systems (Ubuntu, Debian, Android, Lubuntu, CentOS)",
       "Optimized boot sequence and kernel for faster startups"
     ],
-    "img": BootTimeJpg
+    "img": UbootPng
   },
   {
     "id": "unified-yocto-build-environment-for-multi-SoM-product-lines",
@@ -203,7 +205,7 @@ const caseStudyCard = [
       "Reduced redundancy and centralized updates",
       "Accelerated firmware rollouts and build times"
     ],
-    "img": BootLogoPng
+    "img": UnifiedPng
   },
   {
     "id": "low-cost-android-ott-tv-box-development",
@@ -214,7 +216,7 @@ const caseStudyCard = [
       "Optimized boot time and media playback",
       "Custom UI and HAL tuning for performance"
     ],
-    "img": BootLogoPng
+    "img": OttPng
   }
 ];
 
