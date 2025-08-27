@@ -1,7 +1,10 @@
-import type { NextConfig } from "next";
+// next.config.js
+const nextConfig = {
+  output: 'standalone', // required for edge/runtime deployment
+  reactStrictMode: true,
+  experimental: {
+    runtime: 'edge', // enables edge runtime
+  },
+}
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
-
-export default nextConfig;
+module.exports = nextConfig
