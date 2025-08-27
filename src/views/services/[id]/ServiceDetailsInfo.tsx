@@ -732,3 +732,5 @@ const ServiceDetailsInfo = () => {
 };
 
 export default ServiceDetailsInfo;
+
+export const runtime = 'edge';

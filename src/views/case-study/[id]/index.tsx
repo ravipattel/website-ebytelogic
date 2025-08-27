@@ -16,3 +16,5 @@ const CaseStudyDetails = () => {
 }
 
 export default CaseStudyDetails
+
+export const runtime = 'edge';

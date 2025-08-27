@@ -47,3 +47,5 @@ const SomSoc = ({ slug }) => {
 }
 
 export default SomSoc
+
+export const runtime = 'edge';
