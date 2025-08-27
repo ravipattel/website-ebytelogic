@@ -22,7 +22,7 @@ const SomSocHero = ({ data }) => {
             </p>
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
             <div className="relative z-10 px-4 md:px-8 pb-16">
-                <div className="flex flex-wrap gap-6 lg:gap-3 xl:gap-6 justify-between">
+                <div className="flex flex-wrap xl:flex-nowrap gap-6 lg:gap-3 xl:gap-6 justify-between">
                     <div className="space-y-6">
                         <div className="inline-block px-4 py-2 rounded-full text-xs md:text-sm font-medium" style={{ color: heroData?.color, backgroundColor: heroData?.chipBgColor }}>
                             {heroData?.chipTitle}
@@ -48,7 +48,7 @@ const SomSocHero = ({ data }) => {
                         <Image
                             src={heroData?.heroImage?.src}
                             alt={heroData?.heroImage?.alt}
-                            className="rounded-2xl shadow-2xl lg:w-[600px] xl:w-[650px]"
+                            className="rounded-2xl shadow-2xl lg:w-[580px]"
                             width={650}
                         />
                     )}

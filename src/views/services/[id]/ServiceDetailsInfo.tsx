@@ -683,7 +683,7 @@ const ServiceDetailsInfo = () => {
             {/* Why eByteLogic */}
             <section className="bg-[#f9fbfd] py-16 sm:py-28">
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 space-y-4">
-                    <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize text-center'>Why <span className='text-primary'>eByteLogic?</span></h3>
+                    <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight text-center'>Why <span className='text-primary'>eByteLogic?</span></h3>
                     <div className='grid lg:grid-cols-6 py-8 gap-3'>
                         <div className='lg:col-span-3 space-y-6 w-fit'>
                             {service.whyChooseUs.map((reason, i) => (
