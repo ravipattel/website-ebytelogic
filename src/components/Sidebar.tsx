@@ -130,6 +130,13 @@ const tocData = {
     { "id": "results", "label": "4. Impact & Results" },
     { "id": "cta", "label": "5. Call to Action" }
   ],
+  "low-cost-android-ott-tv-box-development": [
+    { "id": "challenge", "label": "1. The Challenge" },
+    { "id": "tech-highlights", "label": "2. Key Technical Highlights" },
+    { "id": "flowchartSecondary", "label": "3. Optimization Approach" },
+    { "id": "results", "label": "4. Impact & Results" },
+    { "id": "cta", "label": "5. Call to Action" }
+  ],
 
   //blogs
   "som-soc": [

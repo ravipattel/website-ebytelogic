@@ -3,11 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build && npx @cloudflare/next-on-pages",
-    "start": "next start",
-    "lint": "next lint",
-    "preview": "npx wrangler pages dev .vercel/output/static"
+    "dev": "next dev",
+    "build": "npx @cloudflare/next-on-pages --skip-build",
+    "preview": "npx wrangler pages dev .vercel/output/static",
+    "lint": "next lint"
   },
   "dependencies": {
     "framer-motion": "^12.23.6",

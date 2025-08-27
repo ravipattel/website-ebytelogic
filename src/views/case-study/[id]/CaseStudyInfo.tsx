@@ -447,7 +447,7 @@ const caseStudyData = [
   // 4 done
   {
     id: "u-boot-logo-for-IMX8MQ",
-    crumbs: " U-Boot Logo for IMX8MQ ",
+    crumbs: "U-Boot Logo for IMX8MQ ",
     textColor: "#6d688d",
     statCardColor: "#6d688d",
     secondaryTitleColor: "#374C80",
@@ -2179,6 +2179,138 @@ const caseStudyData = [
     ],
     industry: "Embedded Systems",
   },
+  // 17
+  {
+    id: "low-cost-android-ott-tv-box-development",
+    crumbs: "Low-Cost Android OTT TV Box Development",
+    textColor: "#6d688d",
+    statCardColor: "#6d688d",
+    secondaryTitleColor: "#374C80",
+    gradient: "linear-gradient(to right, #6C5B7B, #70b0d7)",
+    title: {
+      mainTitle:
+        'Delivering a Custom Android TV OTT Platform on a Sub-$50 Hardware Budget',
+      tagLine:
+        "A Case Study for OTT Streaming in Emerging Markets",
+    },
+    challenge: {
+      sectionId: "challenge",
+      title: "The Challenge: Cost- Effective Performance",
+      description:
+        "An OTT provider needed an affordable Android TV box for emerging markets. The challenge was to deliver a high-performance, stable, and branded experience on hardware with a bulk cost of under $50 USD, while also optimizing for boot time and media playback.",
+      constraintsTitle: "Key Obstacles:",
+      constraints: [
+        'Meeting a strict sub-$50 hardware budget.',
+        'Optimizing boot time for a fast user experience.',
+        'Ensuring high performance & stability for streaming.',
+      ],
+      statCard: {
+        title: "Budget Target",
+        value: "<$50",
+        goal: "Per unit in bulk",
+      },
+    },
+    techHighlights: {
+      sectionId: "tech-highlights",
+      title: "Key Technical Highlights",
+      gradient:
+        "bg-gradient-to-r from-[#055b77de] via-[#24355980] to-[#006c8a63]",
+      items: [
+        {
+          label: "Hardware",
+          value: ["NanoPi 5C (RK3588S)"],
+        },
+        {
+          label: "OS",
+          value: ["AOSP Android TV OS"],
+        },
+        {
+          label: "Customizations",
+          value: ["Boot, UI, HAL Tuning"],
+        },
+      ],
+    },
+    results: {
+      sectionId: "results",
+      title: "Impact & Results: Scalable, High-Value Solution",
+      stats: [
+        {
+          title: "Met Aggressive Budget",
+          description: "Delivered a high-performance device at the targeted sub-$50 price point.",
+          variant: "dark",
+        },
+        {
+          title: "Improved User Experience",
+          description: "Faster boot times, smoother playback, and custom branding delighted end users.",
+          variant: "light",
+        },
+      ],
+    },
+    cta: {
+      sectionId: "cta",
+      title: "Launching an Embedded Product?",
+      description:
+        "Our expertise in BSP customization and OS optimization helps you deliver high-performance, cost-effective solutions to market, faster.",
+      button: {
+        text: "Request a Consultation",
+      },
+    },
+    flowchartSecondary: {
+      sectionTitle: "Our Comprehensive Android OS Optimization",
+      features: [
+        {
+          title: "Boot Time Optimization",
+          before: {
+            label: "Before",
+            time: "~30s",
+            color: "red"
+          },
+          after: {
+            label: "After",
+            time: "<10s",
+            color: "#1A5276"
+          },
+        },
+        {
+          title: "Android System Optimizations",
+          items: [
+            {
+              label: "Android Framework Tuning",
+              color: "#007bff"
+            },
+            {
+              label: "Hardware Abstraction Layer (HAL) Tuning",
+              color: "#17a2b8"
+            },
+            {
+              label: "Media Playback Pipeline Enhancements",
+              color: "#28a745"
+            },
+            {
+              label: "Bug Fixes in AOSP",
+              color: "#ffc107"
+            }
+          ]
+        }
+      ],
+      launcherUI: {
+        title: "Custom OTT Launcher UI",
+        items: [
+          { label: "Live TV", bgColor: "#4a4a4a" },
+          { label: "Movies", bgColor: "#4a4a4a" },
+          { label: "Music", bgColor: "#4a4a4a" },
+          { label: "Settings", bgColor: "#4a4a4a" }
+        ]
+      },
+    },
+    highlights: [
+      "Yocto build environment",
+      "Multi-SoM support",
+      "Single repository",
+      "Firmware updates"
+    ],
+    industry: "Embedded Systems",
+  },
 ];
 
 
@@ -2222,7 +2354,6 @@ interface CaseStudyInfoProps {
   industry?: string;
 }
 
-
 type ReChart = {
   chartData: Record<string, number>;
   yAxisLabel: string;
@@ -2232,7 +2363,6 @@ type ReChart = {
 type Data = {
   reChart: ReChart;
 };
-
 
 const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) => {
   const router = useRouter();
@@ -2510,6 +2640,106 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
                   </p>
                 </div>
               )}
+            </div>
+          </section>
+        )}
+        {/* flowchartSecondary */}
+        {data?.flowchartSecondary && (
+          <section id="flowchartSecondary" className="py-16">
+            <h2 className="text-2xl font-semibold text-[#212529] mb-6 text-center" style={{color : data?.textColor}}>
+              {data?.flowchartSecondary?.sectionTitle}
+            </h2>
+            <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                {/* Left Side */}
+                <div className="flex flex-col gap-8">
+                  {/* Optimization */}
+                  {data?.flowchartSecondary?.features[0] && (
+                    <div>
+                      <h3 className="text-xl font-semibold text-[#212529] mb-4">
+                        {data?.flowchartSecondary?.features[0].title}
+                      </h3>
+                      <div className="p-6 bg-[#E9ECEF] rounded-lg shadow-inner flex justify-around items-center">
+                        {/* Before */}
+                        <div className="text-center">
+                          <div className="text-gray-600 text-sm">
+                            {data?.flowchartSecondary?.features[0]?.before?.label}
+                          </div>
+                          <div
+                            className="text-4xl font-semibold mt-1"
+                            style={{ color: data?.flowchartSecondary?.features[0].before?.color }}
+                          >
+                            {data?.flowchartSecondary?.features[0]?.before?.time}
+                          </div>
+                        </div>
+
+                        {/* Arrow */}
+                        <div className="text-5xl font-black" style={{ color: "#1A5276" }}>
+                          &rarr;
+                        </div>
+
+                        {/* After */}
+                        <div className="text-center">
+                          <div className="text-gray-600 text-sm">
+                            {data?.flowchartSecondary?.features[0]?.after?.label}
+                          </div>
+                          <div
+                            className="text-4xl font-semibold mt-1"
+                            style={{ color: data?.flowchartSecondary?.features[0]?.after?.color }}
+                          >
+                            {data?.flowchartSecondary?.features[0]?.after?.time}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Android System Optimizations */}
+                  {data?.flowchartSecondary?.features[1] && (
+                    <div>
+                      <h3 className="text-xl font-semibold text-[#212529] mb-4">
+                        {data.flowchartSecondary.features[1].title}
+                      </h3>
+                      <div className="flex flex-col gap-4">
+                        {data?.flowchartSecondary?.features[1]?.items?.map((item, index) => (
+                          <div
+                            key={index}
+                            className="bg-gray-100 p-3 rounded-lg"
+                            style={{ color: item.color }}
+                          >
+                            {item.label}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Right Side - Custom OTT Launcher */}
+                {data?.flowchartSecondary?.launcherUI && (
+                  <div className="py-14 px-5 flex items-end relative">
+                    <div className="absolute inset-0 bg-black/50 rounded-lg"></div>
+                    <div className="relative z-10 w-full">
+                      <h3 className="text-xl font-bold text-white mb-4">
+                        {data.flowchartSecondary.launcherUI.title}
+                      </h3>
+                      <div className="grid grid-cols-4 gap-4">
+                        {data.flowchartSecondary.launcherUI.items.map((app, index) => (
+                          <div key={index} className="text-center text-white">
+                            <div
+                              className="w-12 h-12 md:w-16 md:h-16 rounded-md mx-auto flex items-center justify-center text-3xl"
+                              style={{ backgroundColor: app.bgColor }}
+                            >
+                              {/* Optional: Add icon */}
+                            </div>
+                            <div className="text-xs mt-1">{app.label}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </section>
         )}
@@ -2956,7 +3186,7 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
                     href={`/case-study/${card?.id}`}
                     className="inline-flex items-center gap-2 text-primary font-semibold hover:text-indigo-900 transition-colors duration-300"
                   >
-                    <MdArrowForwardIos/>
+                    <MdArrowForwardIos />
                     View Case Study
                   </Link>
                 </div>

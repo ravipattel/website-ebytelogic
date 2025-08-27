@@ -7,7 +7,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 import Button from "@/src/components/Button";
 
-import NextologiesWebp from "@/src/assets/images/caseStudy/wearableDisplay.png";
+import WearableDisplayPng from "@/src/assets/images/caseStudy/wearableDisplay.png";
 import DubbingJpg from "@/src/assets/images/caseStudy/audioPipeine.png";
 import ToradexPng from "@/src/assets/images/caseStudy/sdi.png";
 import EsightWearJpeg from "@/src/assets/images/caseStudy/bootLogo.png";
@@ -26,19 +26,19 @@ import I2CPng from "@/src/assets/images/caseStudy/busLockUp.png";
 const caseStudyCard = [
   {
     id: "reducing-wearable-display-latency",
-    title: "Reducing Wearable Display Latency",
+    title: "Smart Glass Latency Optimization",
     industry: "Reduced latency from ~250ms to <100ms",
     highlights: [
       "Platform: NXP i.MX8MP",
       "Display: Dual OLED",
       "Time to Result: 20 days",
     ],
-    img: NextologiesWebp,
+    img: WearableDisplayPng,
   },
   {
     id: "bypassing-proprietary-audio-pipeline",
     title:
-      "Bypassing Proprietary Audio Pipeline",
+      "Android AudioFlinger Bypass",
     industry: "Achieving Precision Audio Playback",
     highlights: [
       "Platform: Qualcomm DragonBoard",
@@ -204,10 +204,18 @@ const caseStudyCard = [
       "Accelerated firmware rollouts and build times"
     ],
     "img": BootLogoPng
+  },
+  {
+    "id": "low-cost-android-ott-tv-box-development",
+    "title": "Low-Cost Android OTT TV Box Development",
+    "industry": "Embedded Systems (OTT / Emerging Markets)",
+    "highlights": [
+      "Delivered Android TV experience on sub-$50 hardware",
+      "Optimized boot time and media playback",
+      "Custom UI and HAL tuning for performance"
+    ],
+    "img": BootLogoPng
   }
-
-
-
 ];
 
 const CaseStudyCard = () => {
