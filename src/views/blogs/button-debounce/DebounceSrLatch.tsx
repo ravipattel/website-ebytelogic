@@ -6,12 +6,12 @@ const DebounceSrLatch = ({ data }) => {
 
     return (
         <section id={blockData?.id} className="px-4 md:px-6 py-16 bg-slate-50">
-            <h3 className="font-serif text-3xl font-semibold mb-8">
+            <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-8">
                 {blockData?.title}
             </h3>
             <div className="grid lg:grid-cols-2 gap-8">
                 <div>
-                    <p className="text-gray-600 mb-6">
+                    <p className="text-gray-600 mb-6 text-sm md:text-base">
                         {blockData?.description?.text} <a href="#" className="text-primary hover:underline">{blockData?.description?.citation}</a>
                     </p>
                     <div className="p-4 mb-6" style={{background : blockData?.description?.bgColor , borderLeft : `4px solid ${blockData?.description?.borderColor}`}}>

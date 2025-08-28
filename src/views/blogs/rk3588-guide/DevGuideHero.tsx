@@ -10,7 +10,7 @@ const DevGuideHero = ({ data }) => {
 
     return (
         <section className="px-4 md:px-6 py-8 bg-gradient-to-br from-purple-50 to-cyan-50">
-             <p className="text-sm flex items-center gap-2 py-8">
+             <p className="text-sm flex flex-wrap items-center gap-2 py-8">
                 <Link href="/" className="text-primary">
                     Home
                 </Link>
@@ -21,10 +21,10 @@ const DevGuideHero = ({ data }) => {
                 <RiArrowRightSLine className="text-primary text-xl" />
                 <span className='text-gray-600'>{data?.title}</span>
             </p>
-            <div className='grid grid-cols-2'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
                 {/* Left Column: Text Content */}
                 <div>
-                    <h1 className="font-serif text-6xl mb-6">
+                    <h1 className="font-serif text-3xl md:text-4xl lg:text-6xl mb-6">
                         <span className="hero-text">{rkHero?.heroData?.title}</span>
                         <br />
                         <span>{rkHero?.heroData?.subtitle}</span>

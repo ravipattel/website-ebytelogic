@@ -10,19 +10,19 @@ const GstreamerRobust = ({ data }) => {
       {/* Section Title */}
       <div className="mb-8">
         <span className="mr-3" style={{ color: robust?.color }}>{robust?.no}</span>
-        <h2 className="font-serif text-3xl font-semibold inline">
+        <h2 className="font-serif text-2xl md:text-3xl font-semibold inline">
           {robust?.title}
         </h2>
       </div>
 
       {/* Subsections */}
       {robust?.cards?.map((card, index) => (
-        <div key={index} className="bg-primary/5 p-8 rounded-md mb-12" style={{ borderLeft: `4px solid ${card?.borderColor}`, backgroundColor: card?.bgColor }}>
+        <div key={index} className="bg-primary/5 p-4 md:p-8 rounded-md mb-12" style={{ borderLeft: `4px solid ${card?.borderColor}`, backgroundColor: card?.bgColor }}>
           <h3 className="font-serif text-2xl font-semibold mb-6">{card?.title}</h3>
 
           {/* Description and Citation */}
           <p
-            className="text-gray-600 mb-6"
+            className="text-gray-600 mb-6 text-sm md:text-base"
             dangerouslySetInnerHTML={{ __html: card?.content?.description }}
           />
 
@@ -67,11 +67,11 @@ const GstreamerRobust = ({ data }) => {
 
           {/* Expert Insight (if present) */}
           {card?.content?.expertInsight && (
-            <div className="mt-6 p-4 bg-white/10 rounded-lg">
+            <div className="mt-6 p-2 md:p-4 bg-white/10 rounded-lg">
               <span className="text-sm text-gray-600">
                 <span className="font-semibold">{card?.content?.cardTitle}</span>
                 <span
-                  className="text-gray-600 mb-6"
+                  className="text-gray-600 mb-6 text-sm md:text-base"
                   dangerouslySetInnerHTML={{ __html: card?.content?.expertInsight }}
                 />
               </span>

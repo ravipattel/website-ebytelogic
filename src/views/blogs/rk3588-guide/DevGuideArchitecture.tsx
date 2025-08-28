@@ -11,7 +11,7 @@ const DevGuideArchitecture = ({ data }) => {
             </h2>
 
             <p
-                className="text-gray-600 mb-6"
+                className="text-gray-600 mb-6 text-sm md:text-base"
                 dangerouslySetInnerHTML={{ __html: architecture?.description }}
             />
 
@@ -31,7 +31,7 @@ const DevGuideArchitecture = ({ data }) => {
                 </div> */}
                 <div>
                     {/* {architecture?.cameraSubsystemDiagram} */}
-                    <Image src={architecture?.cameraSubsystemDiagram} alt='diagram'/>
+                    <Image src={architecture?.cameraSubsystemDiagram} alt='diagram' />
                 </div>
             </div>
 
@@ -48,28 +48,30 @@ const DevGuideArchitecture = ({ data }) => {
             {/* MIPI CSI-2 Configuration Table */}
             {
                 architecture?.mipiCsi2Table && (
-                    <table className="w-full text-left border-collapse rounded-lg overflow-hidden shadow-sm">
-                        <thead className={`text-white text-sm`} style={{ backgroundColor: architecture?.tableHeadColor }}>
-                            <tr>
-                                <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.column1}</th>
-                                <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.column2}</th>
-                                <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.column3}</th>
-                                <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.column4}</th>
-                                <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.column5}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {architecture?.mipiCsi2Table?.map((row, index) => (
-                                <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                                    <td className="px-4 py-3">{row?.row1}</td>
-                                    <td className="px-4 py-3">{row?.row2}</td>
-                                    <td className="px-4 py-3">{row?.row3}</td>
-                                    <td className="px-4 py-3">{row?.row4}</td>
-                                    <td className="px-4 py-3">{row?.row5}</td>
+                    <div className='w-full overflow-auto'>
+                        <table className="text-left border-collapse rounded-lg shadow-sm">
+                            <thead className={`text-white text-sm`} style={{ backgroundColor: architecture?.tableHeadColor }}>
+                                <tr>
+                                    <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.column1}</th>
+                                    <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.column2}</th>
+                                    <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.column3}</th>
+                                    <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.column4}</th>
+                                    <th className="px-4 py-3 font-medium">{architecture?.mipiCsi2Table[0]?.column5}</th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                {architecture?.mipiCsi2Table?.map((row, index) => (
+                                    <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                                        <td className="px-4 py-3">{row?.row1}</td>
+                                        <td className="px-4 py-3">{row?.row2}</td>
+                                        <td className="px-4 py-3">{row?.row3}</td>
+                                        <td className="px-4 py-3">{row?.row4}</td>
+                                        <td className="px-4 py-3">{row?.row5}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 )
             }
 

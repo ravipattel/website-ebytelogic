@@ -11,7 +11,7 @@ const QaHero = ({ data }) => {
         <section className="relative overflow-hidden">
             {/* Hero Overlay */}
             <div className="bg-black/60 absolute inset-0"></div>
-            <p className="text-sm flex items-center gap-2 px-9 py-8 relative z-50">
+            <p className="text-sm flex flex-wrap items-center gap-2 px-9 py-8 relative z-50">
                 <Link href="/" className="text-white">
                     Home
                 </Link>
@@ -20,7 +20,7 @@ const QaHero = ({ data }) => {
                     Blogs
                 </Link>
                 <RiArrowRightSLine className="text-white text-xl" />
-                <span>{data?.title}</span>
+                <span className='text-white'>{data?.title}</span>
             </p>
             {/* Hero Image */}
             {heroData?.heroImage && (

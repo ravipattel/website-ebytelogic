@@ -8,7 +8,7 @@ const GstreamerOptimization = ({ data }) => {
             {/* Section Title */}
             <div className="mb-8">
                 <span className="me-3" style={{ color: optimize?.color }}>{optimize?.no}</span>
-                <h2 className="font-serif text-3xl font-semibold inline">
+                <h2 className="font-serif text-2xl md:text-3xl font-semibold inline">
                     {optimize?.title}
                 </h2>
             </div>
@@ -17,8 +17,8 @@ const GstreamerOptimization = ({ data }) => {
                 {/* Optimization Strategies */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
                     {optimize?.strategies?.map((strategy, index) => (
-                        <div key={index} className="bg-slate-50 p-8 rounded-md border border-gray-300">
-                            <h3 className="font-serif text-xl font-semibold mb-4 flex items-center gap-3">
+                        <div key={index} className="bg-slate-50 p-4 md:p-8 rounded-md border border-gray-300">
+                            <h3 className="font-serif text-xl font-semibold mb-4 flex flex-wrap items-center gap-3">
                                 {index === 0 ? (
                                     <FaMemory className="text-primary mr-3" />
                                 ) : (
@@ -27,7 +27,7 @@ const GstreamerOptimization = ({ data }) => {
                                 {strategy?.title}
                             </h3>
                             <p
-                                className="text-gray-600 mb-6"
+                                className="text-gray-600 mb-6 text-sm md:text-base"
                                 dangerouslySetInnerHTML={{ __html: strategy?.description }}
                             />
                             <ul className="text-sm text-gray-600 space-y-1">
@@ -40,7 +40,7 @@ const GstreamerOptimization = ({ data }) => {
                 </div>
 
                 {/* Pipeline Structure */}
-                <div className="p-8 rounded-md mb-12">
+                <div className="p-0 md:p-8 rounded-md mb-12">
                     <h3 className="font-serif text-2xl font-semibold mb-6">
                         {optimize?.pipelineStructure?.title}
                     </h3>
@@ -58,12 +58,12 @@ const GstreamerOptimization = ({ data }) => {
                 </div>
 
                 {/* System-Level Optimizations */}
-                <div className="bg-primary/5 p-8 rounded-md" style={{ borderLeft: `4px solid ${optimize?.systemLevelOptimizations?.borderColor}` }}>
+                <div className="bg-primary/5 p-4 md:p-8 rounded-md" style={{ borderLeft: `4px solid ${optimize?.systemLevelOptimizations?.borderColor}` }}>
                     <h3 className="font-serif text-2xl font-semibold mb-6">
                         {optimize?.systemLevelOptimizations?.title}
                     </h3>
                     <p
-                        className="text-gray-600 mb-6"
+                        className="text-gray-600 mb-6 text-sm md:text-base"
                         dangerouslySetInnerHTML={{ __html: optimize?.systemLevelOptimizations?.description }}
                     />
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

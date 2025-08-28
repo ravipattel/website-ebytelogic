@@ -20,6 +20,7 @@ import FrameworkIconPng from '@/src/assets/images/home/whatwedo/frameworkIcon.pn
 
 const services = [
   {
+    path: "/embedded-software",
     icon: ApplicationIconPng,
     image: EmbeddedAppPng,
     title: "Embedded App Development",
@@ -27,6 +28,7 @@ const services = [
     showcase: "UI, device logic, multi-threading, storage management, and full lifecycle embedded software."
   },
   {
+    path: "/linux-bsp-android",
     icon: FrameworkIconPng,
     image: LinuxBspPng,
     title: "Linux BSP & Board Bring-Up",
@@ -35,6 +37,7 @@ const services = [
     showcase: "Bootloader config, driver porting, Yocto/Buildroot customization, secure boot, splash screen, and more."
   },
   {
+    path: "/multimedia-framework",
     icon: MediaIconPng,
     image: MediaSolutionsJpg,
     title: "Multimedia & Streaming Frameworks",
@@ -43,6 +46,7 @@ const services = [
     showcase: "From AV sync and SDI integration to NDI/SRT delivery and closed captioning, we engineer end-to-end streaming workflows."
   },
   {
+    path: "/iot-integration",
     icon: IotIconPng,
     image: IotJpg,
     title: "IoT & Cloud Integration",
@@ -51,6 +55,7 @@ const services = [
     showcase: "MQTT, OTA, REST APIs, AWS IoT/Azure integration, and remote configuration at scale."
   },
   {
+    path: "/qa-validation",
     icon: EmbeddedIconPng,
     image: EmbeddedJpg,
     title: "Embedded QA & Test Automation",
@@ -58,6 +63,7 @@ const services = [
     showcase: "HIL testing, black-box/white-box testing, interface simulators, CI/CD-based embedded QA."
   },
   {
+    path: "/av-protocol",
     icon: EngineerIconPng,
     image: EngineeringJpg,
     title: "AV Protocol & Codec Engineering",
@@ -106,7 +112,7 @@ const Services = () => {
                 </p>
               </div>
               <button
-                onClick={() => router.push(`/services/${index}`)}
+                onClick={() => router.push(`/services/${service?.path}`)}
                 className="cursor-pointer mt-4 w-10 h-10 flex items-center justify-center rounded bg-[#f6f9fc] hover:bg-primary text-primary hover:text-white transition z-10 relative"
               >
                 <GoArrowRight />

@@ -7,23 +7,23 @@ const GstreamerChallenge = ({ data }) => {
             {/* Challenge Section */}
             <div className="mb-3">
                 <span className="me-3" style={{ color: challeneg?.challenge?.color }}>{challeneg?.challenge?.no}</span>
-                <h2 className="font-serif text-3xl font-semibold inline">
+                <h2 className="font-serif text-2xl md:text-3xl font-semibold inline">
                     {challeneg?.challenge?.title}
                 </h2>
             </div>
             <div>
-                <p className="text-gray-600 leading-relaxed mb-8">
+                <p className="text-gray-600 leading-relaxed mb-8 text-sm md:text-base">
                     {challeneg?.challenge?.description}
                 </p>
 
                 {/* Common Performance Issues Section */}
-                <div className="bg-primary/5 p-8 rounded-md mb-12" style={{ borderLeft: `4px solid ${challeneg?.borderColor}` }}>
+                <div className="bg-primary/5 p-4 md:p-8 rounded-md mb-12" style={{ borderLeft: `4px solid ${challeneg?.borderColor}` }}>
                     <h3 className="font-serif text-2xl font-semibold mb-6">{challeneg?.performanceIssueTitle}</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Map through Performance Issues */}
                         {challeneg?.block?.map((card, index) => (
                             <div key={index} className="space-y-6">
-                                <div className="flex items-start space-x-4">
+                                <div className="flex flex-wrap gap-3 items-start space-x-4">
                                     <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0`} style={{ backgroundColor: card?.bgColor }}>
                                         {card?.icon}
                                     </div>
@@ -42,7 +42,7 @@ const GstreamerChallenge = ({ data }) => {
 
                 {/* Impact on Real-Time Applications */}
                 {challeneg?.challenge && (
-                    <div className="bg-slate-50 p-8 rounded-md">
+                    <div className="bg-slate-50 p-4 md:p-8 rounded-md">
                         <h3 className="font-serif text-2xl font-semibold mb-6">{challeneg?.challenge?.realTimeAppsTitle}</h3>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                             {/* Map through Real-Time Applications */}

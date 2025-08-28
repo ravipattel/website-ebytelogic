@@ -7,7 +7,7 @@ const SomSocFramework = ({ data }) => {
   
   return (
     <section id={framework?.id} className="px-4 md:px-6 py-16 bg-slate-50">
-      <h2 className="font-serif text-3xl font-semibold mb-8">{framework?.title}</h2>
+      <h2 className="font-serif text-2xl md:text-3xl font-semibold mb-8">{framework?.title}</h2>
 
       <div className="bg-white rounded-lg p-8 border border-gray-300">
         <h3 className="text-2xl font-semibold mb-6">{framework?.subtitle}</h3>

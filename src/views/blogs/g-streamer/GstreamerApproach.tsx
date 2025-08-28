@@ -9,17 +9,17 @@ const GstreamerApproach = ({ data }) => {
       {/* Section Title */}
       <div className="mb-8">
         <span className="me-3" style={{ color: approach?.approach?.color }}>{approach?.approach?.no}</span>
-        <h2 className="font-serif text-3xl font-semibold inline">
+        <h2 className="font-serif text-2xl md:text-3xl font-semibold inline">
           {approach?.approach?.title}
         </h2>
       </div>
 
       {/* eByteLogic's Approach Overview */}
-      <div className="bg-white p-8 rounded-xl shadow-sm mb-12">
+      <div className="bg-white p-4 md:p-8 rounded-xl shadow-sm mb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div>
             <p
-              className="text-gray-600 mb-6"
+              className="text-gray-600 mb-6 text-sm md:text-base"
               dangerouslySetInnerHTML={{ __html: approach?.approach?.description }}
             />
             <div className="space-y-4">
@@ -49,12 +49,12 @@ const GstreamerApproach = ({ data }) => {
       </div>
 
       {/* Leveraging ARM Expertise */}
-      <div className="p-8 rounded-xl">
+      <div className="p-4 md:p-8 rounded-xl">
         <h3 className="font-serif text-2xl font-semibold text-deep-blue mb-6">
           {approach?.armExpertise?.title}
         </h3>
 
-        <p className="text-gray-600 mb-6">
+        <p className="text-gray-600 mb-6 text-sm md:text-base">
           {approach?.armExpertise?.description?.text}{" "}
           <span
             className="font-semibold">

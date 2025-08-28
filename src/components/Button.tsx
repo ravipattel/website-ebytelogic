@@ -21,7 +21,7 @@ const Button: React.FC<ButtonProps> = ({
     ...props
 }) => {
     const buttonClassNames = `
-           cursor-pointer select-none h-12
+           cursor-pointer select-none sm:h-12
            ${variant === "default" && "text-white bg-primary border border-primary hover:bg-white hover:text-primary px-3 py-2 lg:px-5 lg:py-3 transition-all duration-400"}
            ${variant === "outline" && "bg-white text-primary hover:bg-[#EAEAEA] border-2 border-[#ECECEC]"}
            ${variant === "curvedFilled" && "bg-primary text-white px-6 hover:bg-[#0c417f] transition"}

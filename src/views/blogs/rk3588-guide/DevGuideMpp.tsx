@@ -97,12 +97,14 @@ const DevGuideMpp = ({ data }) => {
                 <div className='space-y-6 lg:space-y-0'>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                         {processingPlatformData?.integrations?.map((integration, index) => (
-                            <div key={index}>
+                            <div key={index} className='mb-5'>
                                 <h4 className="font-semibold mb-3">{integration?.title}</h4>
                                 <div className="bg-[#1e293b] p-4 h-full text-white rounded-md">
-                                    <pre>
-                                        <code className='text-sm'>{integration?.code}</code>
-                                    </pre>
+                                    <div className="w-full overflow-auto">
+                                        <pre>
+                                            <code className='text-sm'>{integration?.code}</code>
+                                        </pre>
+                                    </div>
                                 </div>
                             </div>
                         ))}

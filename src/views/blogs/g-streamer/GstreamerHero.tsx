@@ -8,7 +8,7 @@ const GstreamerHero = ({ data }) => {
   const hero = data?.hero;
   return (
     <section className={`relative bg-primary/10 overflow-hidden`}>
-        <p className="text-sm flex items-center gap-2 px-9 py-8 z-50 relative">
+        <p className="text-sm flex flex-wrap items-center gap-2 px-9 py-8 z-50 relative">
           <Link href="/" className="text-primary">
             Home
           </Link>
@@ -19,7 +19,7 @@ const GstreamerHero = ({ data }) => {
           <RiArrowRightSLine className="text-primary text-xl" />
           <span className="text-slate-500">{data?.title}</span>
         </p>
-      <div className="relative z-10 sm:px-4 px-6 pb-16 pt-3 h-full">
+      <div className="relative z-10 px-3 sm:px-4 md:px-6 pb-16 pt-3 h-full">
         <div className="flex flex-col justify-center space-y-8">
           <div className="space-y-6">
             <div className={`flex gap-2 items-center w-fit px-4 py-2 backdrop-blur-sm rounded-full text-sm font-medium`} style={{ backgroundColor: hero?.chipTitle?.bgColor, color: hero?.chipTitle?.color }}>

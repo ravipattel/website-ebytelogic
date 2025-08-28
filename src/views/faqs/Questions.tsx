@@ -166,11 +166,11 @@ const Questions = () => {
 
           <div>
             <Image src={QuestionsJpg} alt="QuestionsJpg" width={600} height={600} className='ml-auto' />
-            <div className="p-10 bg-primary flex items-center gap-3 size-fit ms-auto z-10 relative -top-26 before:absolute before:bottom-0 before:-left-11 before:w-0 before:h-0 before:border-t-[35px] before:border-t-primary before:border-l-[44px] before:border-l-transparent">
-              <div className="bg-white rounded-full h-14 w-14 grid place-items-center">
-                <IoMdMail className="text-primary text-3xl" />
+            <div className="p-2 md:p-10 bg-primary flex items-center gap-3 size-fit ms-auto z-10 relative -top-9 md:-top-26 before:absolute before:bottom-0 before:-left-11 before:w-0 before:h-0 before:border-t-[35px] before:border-t-primary before:border-l-[44px] before:border-l-transparent">
+              <div className="bg-white rounded-full size-6 md:size-14 grid place-items-center">
+                <IoMdMail className="text-primary text-lg md:text-3xl" />
               </div>
-              <div className="space-y-2">
+              <div className="space-y-0.5 md:space-y-2">
                 <h5 className="text-white font-semibold text-lg">Contact Us</h5>
                 <p className="text-white text-sm">Support@domain.com</p>
               </div>

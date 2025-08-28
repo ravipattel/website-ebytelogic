@@ -12,8 +12,8 @@ import Link from 'next/link'
 const ContactDetails = () => {
     return (
         <section>
-            <div className='max-w-[1400px] pt-28 pb-36 mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 items-center'>
-                <div className="bg-white shadow-[0px_5px_20px_0px_rgba(0,0,0,0.09)] rounded p-8">
+            <div className='max-w-[1400px] pt-28 pb-16 md:pb-36 mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 items-center'>
+                <div className="bg-white shadow-[0px_5px_20px_0px_rgba(0,0,0,0.09)] rounded p-4 md:p-8">
                     <form className="space-y-8">
                         <div>
                             <label className="font-medium">Name</label>
@@ -124,7 +124,7 @@ const ContactDetails = () => {
                     </div>
                 </div>
             </div>
-            <div className="-mb-[120px]">
+            <div className="md:-mb-[120px]">
                 <Subscribe className='z-20' />
             </div>
         </section>

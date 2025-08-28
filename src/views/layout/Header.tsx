@@ -46,12 +46,12 @@ const menuItems: MenuItem[] = [
     label: "Services",
     path: "/services",
     subItems: [
-      { icon: SoftwareIconPng, label: "Embedded App Development", path: "/services/0" },
-      { icon: LinuxIconPng, label: "Linux BSPs & Hardware Bring-Up", path: "/services/1" },
-      { icon: FrameworkIconPng, label: "Multimedia & Streaming Frameworks", path: "/services/2" },
-      { icon: AndroidIconPng, label: "IoT & Cloud Integration", path: "/services/3" },
-      { icon: QaIconPng, label: "Embedded QA & Test Automation", path: "/services/4" },
-      { icon: SdkIconPng, label: "AV Protocol & Codec Engineering", path: "/services/5" },
+      { icon: SoftwareIconPng, label: "Embedded App Development", path: "/services/embedded-software" },
+      { icon: LinuxIconPng, label: "Linux BSPs & Hardware Bring-Up", path: "/services/linux-bsp-android" },
+      { icon: FrameworkIconPng, label: "Multimedia & Streaming Frameworks", path: "/services/multimedia-framework" },
+      { icon: AndroidIconPng, label: "IoT & Cloud Integration", path: "/services/iot-integration" },
+      { icon: QaIconPng, label: "Embedded QA & Test Automation", path: "/services/qa-validation" },
+      { icon: SdkIconPng, label: "AV Protocol & Codec Engineering", path: "/services/av-protocol" },
     ],
   },
   {
@@ -74,6 +74,11 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
+  const [expandedMenu, setExpandedMenu] = useState<string | null>(null);
+
+  const toggleMenu = (label: string) => {
+    setExpandedMenu(prev => (prev === label ? null : label));
+  };
 
   return (
     <>
@@ -105,7 +110,7 @@ const Header = () => {
         </div>
       </nav>
       <header className="sticky top-0 left-0 z-[99999] bg-white/90">
-        <div className="px-6 py-2 shadow-lg relative z-50">
+        <div className="py-2 shadow-lg relative z-50">
           <div className="max-w-[1400px] mx-auto px-3 flex justify-between items-center">
             <Link
               href={'/'} >
@@ -186,21 +191,50 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <div className={`fixed top-0 left-0 h-full w-[250px] bg-white shadow-lg z-[1000] p-5 transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+      <div className={`fixed top-0 left-0 h-full w-[250px] bg-white shadow-lg z-[100000] p-5 transition-transform duration-300 ease-in-out ${menuOpen ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className="flex justify-between items-center mb-6">
           <Image src={LogoPng} alt="Logo" width={120} height={40} className="w-[120px] h-10" />
           <button onClick={() => setMenuOpen(false)} className="text-2xl text-gray-700">
             <IoMdClose />
           </button>
         </div>
-        <ul className="flex flex-col gap-4">
-          {["Home", "About Us", "Blogs", "FAQs", "Contact Us"].map((label, idx) => (
-            <li
-              key={idx}
-              className="text-[#444444] text-base font-medium cursor-pointer flex items-center gap-1"
-            >
-              {label}
-              {["Home", "About Us", "Blogs", "FAQs", "Contact Us"].includes(label)}
+        <ul className="flex flex-col gap-2">
+          {menuItems.map((item, index) => (
+            <li key={index}>
+              {item.subItems ? (
+                <>
+                  <button
+                    onClick={() => toggleMenu(item.label)}
+                    className="w-full text-left text-[#243559] font-medium text-base flex justify-between items-center py-2"
+                  >
+                    {item.label}
+                    <span className="text-xl">{expandedMenu === item.label ? '−' : '+'}</span>
+                  </button>
+                  {expandedMenu === item.label && (
+                    <ul className="ml-3 mt-1 space-y-2 border-l-2 border-gray-200 pl-3">
+                      {item.subItems.map((subItem, subIndex) => (
+                        <li key={subIndex}>
+                          <Link
+                            href={subItem.path}
+                            onClick={() => setMenuOpen(false)}
+                            className="text-gray-700 text-sm block py-1 hover:text-primary"
+                          >
+                            {subItem.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </>
+              ) : (
+                <Link
+                  href={item.path}
+                  onClick={() => setMenuOpen(false)}
+                  className="text-[#243559] font-medium text-base block py-2"
+                >
+                  {item.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>

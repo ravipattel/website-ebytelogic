@@ -78,9 +78,11 @@ const DevGuideIsp = ({ data }) => {
                     <p className="mb-4 text-gray-600" dangerouslySetInnerHTML={{ __html: processing?.iqFileConfigDescription }} />
                     {/* IQ File Example Code */}
                     <div className="bg-[#1E293B] p-4 rounded-md text-white">
-                        <pre>
-                            <code className='text-sm'>{processing?.codeBlock}</code>
-                        </pre>
+                        <div className="w-full overflow-auto">
+                            <pre>
+                                <code className='text-sm'>{processing?.codeBlock}</code>
+                            </pre>
+                        </div>
                     </div>
                 </div>
             )}
