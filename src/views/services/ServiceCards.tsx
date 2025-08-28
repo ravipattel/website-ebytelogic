@@ -5,8 +5,9 @@ import React from 'react';
 
 import Button from '@/src/components/Button';
 
-const serviceData = [
+export const serviceDataCard = [
   {
+    id: "embedded-software",
     category: "Embedded App Development",
     description: "Cross-platform embedded apps in C/C++, Qt, and Python for control panels, GUIs, data acquisition, and real-time logic.",
     subServices: [
@@ -14,9 +15,9 @@ const serviceData = [
       "Protocol-Based Control & Monitoring Apps",
       "Storage, Logging & UI Middleware"
     ],
-    slug: "embedded-software"
   },
   {
+    id: "linux-bsp-android",
     category: "Linux BSPs & Hardware Bring-Up",
     description: "Customized BSPs, secure boot, and rapid peripheral enablement across Yocto, Buildroot, and Android platforms.",
     subServices: [
@@ -24,7 +25,6 @@ const serviceData = [
       "U-Boot, Secure Boot & Splash Setup",
       "Yocto & Buildroot Migration"
     ],
-    slug: "linux-bsp"
   },
   {
     category: "Multimedia & Streaming Frameworks",
@@ -34,7 +34,7 @@ const serviceData = [
       "Protocol Handling (SRT, RTP, RTMP, NDI)",
       "Codec Tuning for ARM & Embedded"
     ],
-    slug: "multimedia-framework"
+    id: "multimedia-framework"
   },
   {
     category: "IoT & Cloud Integration",
@@ -44,7 +44,7 @@ const serviceData = [
       "OTA Update Systems with Rollback",
       "MQTT, REST, WebSocket Protocols"
     ],
-    slug: "mobile-apps"
+    id: "iot-integration",   
   },
   {
     category: "Embedded QA & Test Automation",
@@ -54,7 +54,7 @@ const serviceData = [
       "HIL Setup & Regression Testing",
       "CI/CD Integration for QA"
     ],
-    slug: "qa-validation"
+    id: "qa-validation"
   },
   {
     category: "AV Protocol & Codec Engineering",
@@ -64,7 +64,7 @@ const serviceData = [
       "NDI, RTP, SRT, HLS, RTMP Integration",
       "Codec-Level Optimization for ARM"
     ],
-    slug: "middleware-sdk"
+    id: "av-protocol"
   }
 
 ];
@@ -75,7 +75,7 @@ const ServiceCards = () => {
   return (
     <section id='services' className="bg-[#f5f7fa] py-16 sm:py-20">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {serviceData.map((item, index) => (
+        {serviceDataCard.map((item, index) => (
           <div
             key={index}
             className="relative group p-[1px] rounded-2xl bg-gradient-to-br from-[#3078fb] via-white to-[#7fb8ff] hover:via-[#eaf3ff] transition-transform hover:-translate-y-2 hover:shadow-2xl"
@@ -93,7 +93,7 @@ const ServiceCards = () => {
                 </ul>
               </div>
               <Button
-                onClick={() => router.push(`/services/${index}`)}
+                onClick={() => router.push(`/services/${item?.id}`)}
                 className="text-sm font-medium text-white bg-[#3078fb] px-5 py-2 rounded-full w-fit hover:bg-[#2462d6] transition"
               >
                 Read More

@@ -10,7 +10,7 @@ const DebounceHero = ({ data }) => {
     return (
         <section id={heroData?.id} className="px-4 md:px-6 py-8 bg-slate-50">
             <div>
-                <p className="text-sm flex items-center gap-2 py-8">
+                <p className="text-sm flex flex-wrap items-center gap-2 py-8">
                     <Link href="/" className="text-primary">
                         Home
                     </Link>
@@ -25,14 +25,14 @@ const DebounceHero = ({ data }) => {
                     <div className="inline-block bg-primary text-white backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium">
                         {heroData?.sectionTitle}
                     </div>
-                    <h1 className="font-serif text-4xl font-semibold leading-tight">
+                    <h1 className="font-serif text-2xl md:text-4xl font-semibold leading-tight">
                         <span>{heroData?.heading}</span>
                     </h1>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 text-sm md:text-base">
                         {heroData?.description}
                     </p>
                 </div>
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl md:p-6 mt-5">
                     <h3 className="font-serif text-xl font-semibold mb-4">{heroData?.keyTitle}</h3>
                     <ul className="space-y-3 text-sm">
                         {heroData?.keyInsights?.map((insight, index) => {

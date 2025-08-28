@@ -11,7 +11,7 @@ const DebounceRcFilter = ({ data }) => {
             </h3>
             <div className="grid lg:grid-cols-2 gap-8 mb-8">
                 <div>
-                    <p className="text-gray-600 mb-6" dangerouslySetInnerHTML={{
+                    <p className="text-gray-600 mb-6 text-sm md:text-base" dangerouslySetInnerHTML={{
                         __html: filterData?.description?.text
                     }} />
                     {filterData?.keyInsight && (
@@ -19,7 +19,7 @@ const DebounceRcFilter = ({ data }) => {
                             <h4 className="font-semibold mb-2">
                                 {filterData?.keyInsight?.title}
                             </h4>
-                            <p className="text-gray-600">
+                            <p className="text-gray-600 text-sm md:text-base">
                                 {filterData?.keyInsight?.text}
                             </p>
                         </div>
@@ -39,7 +39,7 @@ const DebounceRcFilter = ({ data }) => {
                     <h4 className="font-serif text-xl font-semibold mb-4">
                         {filterData?.componentCalculation?.title}
                     </h4>
-                    <p className="text-gray-600 mb-4">
+                    <p className="text-gray-600 mb-4 text-sm md:text-base">
                         {filterData?.componentCalculation?.description}
                     </p>
                     <div className="bg-white p-4 rounded-md border-l-4 border-teal-600">

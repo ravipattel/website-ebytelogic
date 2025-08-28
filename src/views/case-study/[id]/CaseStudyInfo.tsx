@@ -2388,9 +2388,9 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
 
   return (
     <>
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 py-16">
+      <div className="max-w-[1400px] mx-auto sm:px-6 py-16">
         {/* breadCrumbs */}
-        <p className="text-sm flex items-center gap-2 justify-center pb-15">
+        <p className="text-sm flex flex-wrap items-center gap-2 justify-center pb-4 md:pb-15">
           <Link href="/" className="text-primary">
             Home
           </Link>
@@ -2405,19 +2405,19 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
         {data?.title && (
           <section>
             <h2
-              className="md:text-xl xl:text-4xl font-semibold text-[#333] mb-6 text-center leading-12"
+              className="text-xl md:text-2xl xl:text-4xl font-semibold text-[#333] mb-6 text-center md:leading-12"
               dangerouslySetInnerHTML={{ __html: data?.title?.mainTitle ?? "" }}
             />
-            <p className="mt-4 text-base text-gray-600 text-center">
+            <p className="mt-4 text-sm md:text-base text-gray-600 text-center">
               {data?.title?.tagLine}
             </p>
           </section>
         )}
         {/* intro */}
         {data?.challenge && (
-          <section id={data?.challenge?.sectionId} className="py-16">
-            <div className="bg-white rounded-lg shadow-md border border-slate-200 p-6 md:p-8 flex flex-col gap-4">
-              <div className="text-center md:text-left">
+          <section id={data?.challenge?.sectionId} className="py-6 md:py-16">
+            <div className="bg-white rounded-lg shadow-md border border-slate-200 p-4 sm:p-6 md:p-8 flex flex-col gap-4">
+              <div className="md:text-left">
                 <h2
                   className={`text-xl lg:text-2xl font-semibold mb-4`}
                   style={{ color: data?.textColor }}
@@ -2437,8 +2437,8 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
                     </h3>
                     <ul className="list-none space-y-2">
                       {data?.challenge?.constraints?.map((item, index) => (
-                        <li key={index} className="flex items-center">
-                          <span className="text-xl highlight-text mr-3">•</span>{" "}
+                        <li key={index} className="flex sm:items-center text-sm md:text-base">
+                          <span className="text-sm md:text-xl mr-3">•</span>{" "}
                           {item}
                         </li>
                       ))}
@@ -2466,9 +2466,9 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
         )}
         {/* 4 step process */}
         {data?.stepProcess && (
-          <section id={data?.stepProcess?.sectionId} className="py-16">
+          <section id={data?.stepProcess?.sectionId} className="py-6 md:py-16">
             <h2
-              className={`text-2xl font-semibold mb-6 text-center`}
+              className={`text-xl md:text-2xl font-semibold mb-6 text-center`}
               style={{ color: data?.textColor }}
             >
               {data?.stepProcess?.title}
@@ -2561,9 +2561,9 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
         )}
         {/* only flowchart */}
         {data?.onlyFowchart && (
-          <section id={data?.onlyFowchart?.sectionId} className="py-16">
+          <section id={data?.onlyFowchart?.sectionId} className="py-6 md:py-16">
             <h2
-              className="text-2xl font-semibold mb-6 text-center"
+              className="text-xl md:text-2xl font-semibold mb-6 text-center"
               style={{ color: data?.textColor }}
             >
               {data?.onlyFowchart?.title}
@@ -2635,7 +2635,7 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
                       {data?.onlyFowchart?.biDirectionalChart?.nestedTitle}
                     </p>
                   </div>
-                  <p className="text-sm text-gray-600 text-center max-w-2xl mx-auto">
+                  <p className="text-sm text-gray-600 text-left md:text-center md:max-w-2xl md:mx-auto">
                     {data?.onlyFowchart?.biDirectionalChart?.description}
                   </p>
                 </div>
@@ -2645,8 +2645,8 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
         )}
         {/* flowchartSecondary */}
         {data?.flowchartSecondary && (
-          <section id="flowchartSecondary" className="py-16">
-            <h2 className="text-2xl font-semibold text-[#212529] mb-6 text-center" style={{color : data?.textColor}}>
+          <section id="flowchartSecondary" className="py-6 md:py-16">
+            <h2 className="text-2xl font-semibold text-[#212529] mb-6 text-center" style={{ color: data?.textColor }}>
               {data?.flowchartSecondary?.sectionTitle}
             </h2>
             <div className="bg-white rounded-lg shadow-md p-6 md:p-8">
@@ -2745,9 +2745,9 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
         )}
         {/* flow chart plus content */}
         {data?.flowchartPlusContent && (
-          <section id={data?.flowchartPlusContent?.sectionId} className="py-16">
+          <section id={data?.flowchartPlusContent?.sectionId} className="py-6 md:py-16">
             <h2
-              className="text-2xl font-semibold text-[#E0E0E0] mb-6 text-center"
+              className="text-xl md:text-2xl font-semibold text-[#E0E0E0] mb-6 text-center"
               style={{ color: data?.textColor }}
             >
               {data?.flowchartPlusContent?.sectionTitle}
@@ -2756,7 +2756,7 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {data?.flowchartPlusContent?.chart && (
                   <div className="text-center space-y-4">
-                    <h3 className="text-xl !mb-4">
+                    <h3 className="text-base md:text-xl !mb-4">
                       {data?.flowchartPlusContent?.chart?.title}
                     </h3>
                     {data?.flowchartPlusContent?.chart?.description && (
@@ -2768,7 +2768,7 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
                           key={index}
                           className="flex flex-col items-center gap-3"
                         >
-                          <div className="w-full p-3 rounded-lg border border-slate-600">
+                          <div className="w-full p-3 rounded-lg border border-slate-600 text-sm md:text-base">
                             {step}
                           </div>
                           {index <
@@ -2780,8 +2780,8 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
                   </div>
                 )}
                 {data?.flowchartPlusContent?.Onlycontent && (
-                  <div className="p-6 rounded-lg shadow-inner border border-gray-300">
-                    <h3 className="text-xl mb-4 text-center">
+                  <div className="p-4 md:p-6 rounded-lg shadow-inner border border-gray-300">
+                    <h3 className="text-base md:text-xl mb-4 text-center">
                       {data?.flowchartPlusContent?.Onlycontent?.title}
                     </h3>
                     <div className="space-y-4">
@@ -2922,9 +2922,9 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
         )}
         {/* compatibility */}
         {data?.compatibility && (
-          <section id={data?.compatibility?.sectionId} className="py-16">
+          <section id={data?.compatibility?.sectionId} className="py-6 md:py-16">
             <h3
-              className="text-2xl font-semibold mb-6 text-center"
+              className="text-xl md:text-2xl font-semibold mb-6 text-center"
               style={{ color: data?.textColor }}
             >
               {data?.compatibility?.title}
@@ -2976,16 +2976,16 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
         )}
         {/* impacts and result */}
         {data?.results && (
-          <section id={data?.results.sectionId} className="py-16">
+          <section id={data?.results.sectionId} className="py-6 md:py-16">
             <h2
-              className={`text-2xl font-semibold mb-6 text-center`}
+              className={`text-xl md:text-2xl font-semibold mb-6 text-center`}
               style={{ color: data?.textColor }}
             >
               {data?.results?.title}
             </h2>
             <div className="bg-white rounded-lg shadow-md p-6 md:p-8 space-y-5">
               {data?.results?.description && (
-                <p className="text-sm text-gray-600 text-center">
+                <p className="text-sm text-gray-600 text-left md:text-center">
                   {data?.results?.description}
                 </p>
               )}
@@ -3085,9 +3085,9 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
         )}
         {/* Technical Highlights Section */}
         {data?.techHighlights && (
-          <section id={data?.techHighlights?.sectionId} className="py-16">
+          <section id={data?.techHighlights?.sectionId} className="py-6 md:py-16">
             <h2
-              className={`text-2xl font-semibold mb-6 text-center`}
+              className={`text-xl md:text-2xl font-semibold mb-6 text-center`}
               style={{ color: data?.textColor }}
             >
               {data?.techHighlights?.title}
@@ -3128,7 +3128,7 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
             <h2 className="text-2xl md:text-3xl font-semibold text-white">
               {data?.cta?.title}
             </h2>
-            <p className="text-white opacity-90 mt-2 mb-6 max-w-xl mx-auto">
+            <p className="text-white opacity-90 mt-2 mb-6 text-sm md:text-base md:max-w-xl md:mx-auto">
               {data?.cta?.description}
             </p>
 
@@ -3144,7 +3144,7 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
         {/* suggestion */}
         {getSuggestions(id).length > 0 && (
           <section className="py-16 bg-gradient-to-b from-gray-100 to-white">
-            <h2 className="text-2xl font-semibold mb-10 text-center tracking-wide" style={{ color: data?.textColor }}>
+            <h2 className="text-xl md:text-2xl font-semibold mb-10 text-center tracking-wide" style={{ color: data?.textColor }}>
               You Might Also Like
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto px-6">
@@ -3152,7 +3152,7 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
                 <div
                   key={card?.id}
                   className="relative bg-white/30 backdrop-blur-md rounded-xl border border-white/30 shadow-lg 
-                   hover:shadow-2xl hover:scale-[1.03] transition-transform duration-300 p-8 flex flex-col justify-between"
+                   hover:shadow-2xl hover:scale-[1.03] transition-transform duration-300 p-4 md:p-8 flex flex-col justify-between"
                 >
                   {/* Colored accent bar */}
                   <div className="absolute left-0 top-0 bottom-0 w-2 rounded-l-xl" style={{ background: data?.textColor }}></div>
@@ -3167,24 +3167,23 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
         )} */}
 
                   <div className="pl-4">
-                    <h3 className="text-lg text-[#1e293b] mb-3">
+                    <h3 className="text-base md:text-lg text-[#1e293b] mb-3">
                       {card?.crumbs}
                     </h3>
-                    <p className="font-semibold mb-4 uppercase tracking-wide" style={{ color: data?.textColor }}>
+                    <p className="font-semibold mb-4 uppercase tracking-wide text-sm md:text-base" style={{ color: data?.textColor }}>
                       {card?.industry}
                     </p>
                     <ul className="list-disc list-inside text-gray-700 space-y-2 mb-6">
                       {card?.highlights?.slice(0, 3).map((hl, idx) => (
-                        <li key={idx} className="leading-relaxed">
+                        <li key={idx} className="leading-relaxed text-sm md:text-base">
                           {hl}
                         </li>
                       ))}
                     </ul>
                   </div>
-
                   <Link
                     href={`/case-study/${card?.id}`}
-                    className="inline-flex items-center gap-2 text-primary font-semibold hover:text-indigo-900 transition-colors duration-300"
+                    className="pl-4 text-sm md:text-base inline-flex items-center gap-2 text-primary font-semibold hover:text-indigo-900 transition-colors duration-300"
                   >
                     <MdArrowForwardIos />
                     View Case Study

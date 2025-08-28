@@ -9,21 +9,30 @@ import { RiArrowRightSLine } from 'react-icons/ri';
 
 import Button from '@/src/components/Button';
 
-import WhyJpeg from '@/src/assets/images/services/why.jpeg'
-import UsecaseJpg from '@/src/assets/images/services/usecase.png'
 import OverviewJPg from '@/src/assets/images/services/overview.jpg'
-import EmbeddedDevelopmentJPg from '@/src/assets/images/services/embedded-development.jpg'
-import QaJPg from '@/src/assets/images/services/qa.jpg'
-import IosJPg from '@/src/assets/images/services/iot.avif'
-import SdkWebp from '@/src/assets/images/services/avProtocol.jpg'
-import FrameworkWebp from '@/src/assets/images/services/multimedia.webp'
+import EmbeddedDevelopmentJPg from '@/src/assets/images/services/embedded-development.png'
+import QaJPg from '@/src/assets/images/services/qa.png'
+import IosJPg from '@/src/assets/images/services/iot.png'
+import SdkWebp from '@/src/assets/images/services/avProtocol.png'
+import FrameworkWebp from '@/src/assets/images/services/multimedia.png'
 import LinuxPng from '@/src/assets/images/services/linux.png'
+import whyEmbedded from '@/src/assets/images/services/whyEmbedded.png'
+import useCaseEmbedded from '@/src/assets/images/services/useCaseEmbedded.png'
+import LinuxUsecase from '@/src/assets/images/services/linuxUsecase.png'
+import LinuxWhy from '@/src/assets/images/services/linuxWhy.png'
+import StreamingUsecase from '@/src/assets/images/services/streamingUsecase.png'
+import StreamingWhy from '@/src/assets/images/services/streamingWhy.png'
+import IotUseCase from '@/src/assets/images/services/iotUseacase.png'
+import IotWhy from '@/src/assets/images/services/iotWhy.png'
+import QaUseCase from '@/src/assets/images/services/qaUsecase.png'
+import QaWhy from '@/src/assets/images/services/qaWhy.png'
+import AvUseCase from '@/src/assets/images/services/avUseCase.png'
+import AvWhy from '@/src/assets/images/services/avWhy.png'
 
 const serviceData = [
     {
-        id: 0,
         bgImg: '/images/bg/serviceBg/embeddedAppBg.png',
-        slug: "embedded-software",
+        id: "embedded-software",
         category: "Powering Smart Devices with Embedded Intelligence",
         pathText: "Embedded App Development",
         tagLine: "C/C++, Qt, Python | Low-Level to UI | Real-Time Performance",
@@ -86,6 +95,8 @@ const serviceData = [
                 ],
             },
         ],
+        useCaseImg: useCaseEmbedded,
+        whyImg: whyEmbedded,
         useCases: [
             "Human-Machine Interface (HMI) development using Qt/C++",
             "Control and diagnostic applications for industrial and wearable devices",
@@ -111,9 +122,8 @@ const serviceData = [
         ]
     },
     {
-        id: 1,
+        id: "linux-bsp-android",
         bgImg: '/images/bg/serviceBg/linuxBsp.png',
-        slug: "linux-bsp-android",
         pathText: "Linux BSPs & Hardware Bring-Up",
         imageName: LinuxPng,
         category: "Bring Hardware to Life with Linux.",
@@ -175,6 +185,8 @@ const serviceData = [
                 ]
             }
         ],
+        useCaseImg: LinuxUsecase,
+        whyImg: LinuxWhy,
         useCases: [
             "BSP customization for new boards or SoC-based modules",
             "Rapid bring-up of peripheral interfaces (USB, UART, SPI, I2C, Ethernet, HDMI, CSI/DSI)",
@@ -200,9 +212,8 @@ const serviceData = [
         ]
     },
     {
-        id: 2,
         bgImg: '/images/bg/serviceBg/multimedia.png',
-        slug: "multimedia-framework",
+        id: "multimedia-framework",
         imageName: FrameworkWebp,
         pathText: "Multimedia & Streaming Frameworks",
         category: "Build Better Streaming Experiences.",
@@ -264,6 +275,8 @@ const serviceData = [
                 ]
             }
         ],
+        useCaseImg: StreamingUsecase,
+        whyImg: StreamingWhy,
         useCases: [
             "Real-time live streaming with ultra-low latency (AV sync-sensitive applications)",
             "Broadcast & OTT pipeline customization (GStreamer, FFMPEG, OBS)",
@@ -289,9 +302,8 @@ const serviceData = [
         ]
     },
     {
-        id: 3,
         bgImg: '/images/bg/serviceBg/iotConnectivity.png',
-        slug: "mobile-app-development",
+        id: "iot-integration",
         pathText: "IoT & Cloud Integration",
         imageName: IosJPg,
         category: "Seamless Data Connectivity for Smart Devices & Edge Systems",
@@ -353,6 +365,8 @@ const serviceData = [
                 ]
             }
         ],
+        useCaseImg: IotUseCase,
+        whyImg: IotWhy,
         useCases: [
             "MQTT-based data publishing from edge to cloud",
             "Remote monitoring and OTA updates for field devices",
@@ -378,9 +392,8 @@ const serviceData = [
         ]
     },
     {
-        id: 4,
         bgImg: '/images/bg/serviceBg/embeddedQa.png',
-        slug: "qa-validation",
+        id: "qa-validation",
         imageName: QaJPg,
         pathText: "Embedded QA & Test Automation",
         category: "Ensuring Quality, Reliability & Stability at Every Embedded Layer",
@@ -442,6 +455,8 @@ const serviceData = [
                 ]
             }
         ],
+        useCaseImg: QaUseCase,
+        whyImg: QaWhy,
         useCases: [
             "Automated testing of embedded GUIs and hardware I/Os",
             "End-to-end system testing for firmware, apps, and drivers",
@@ -467,9 +482,8 @@ const serviceData = [
         ]
     },
     {
-        id: 5,
         bgImg: '/images/bg/serviceBg/avProtocol.png',
-        slug: "middleware-sdk",
+        id: "av-protocol",
         pathText: "AV Protocol & Codec Engineering",
         category: "Mastering Protocols, Sync, and Codecs for Seamless Streaming",
         tagLine: "NDI | RTP | SRT | H.264/H.265 | AAC | Lip-Sync | Closed Captions",
@@ -533,6 +547,8 @@ const serviceData = [
                 ]
             }
         ],
+        useCaseImg: AvUseCase,
+        whyImg: AvWhy,
         useCases: [
             "Custom implementation of AV streaming protocols (NDI, RTP, SRT, RTMP, HLS)",
             "Codec integration and tuning (H.264/H.265, VP9, AV1, MJPEG)",
@@ -561,64 +577,73 @@ const serviceData = [
 
 const ServiceDetailsInfo = () => {
     const router = useRouter();
-    const { id } = useParams() as { id: string };
+    const { id } = useParams() as { id: string }; // Extract 'id' from URL
     const [service, setService] = useState<typeof serviceData[0] | null>(null);
 
     useEffect(() => {
-        const index = parseInt(id);
-        if (!isNaN(index)) {
-            const found = serviceData.find((item) => item.id === index);
-            if (found) setService(found);
-        }
-    }, [id]);
+        const foundService = serviceData.find(item => item.id === id);
+        if (foundService) setService(foundService);
+    }, [id]);  // This will trigger whenever 'id' changes.
 
     if (!service) return <div className="p-8 text-gray-600">Loading or not found...</div>;
+
     return (
         <div>
             <section>
                 <section className='relative bg-no-repeat bg-cover bg-right py-28 lg:py-52 ' style={{ backgroundImage: `url('${service.bgImg}')` }}>
                     <div className='absolute bg-[#0e191eb3] top-0 size-full z-0'></div>
                     <div className='max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10 space-y-4'>
-                        <p className='text-sm md:text-lg text-white flex items-center gap-4 justify-center'><Link href={'/'}>Home</Link>  <RiArrowRightSLine className='text-primary text-2xl' /> <Link href={'/services'}>Services</Link>  <RiArrowRightSLine className='text-primary text-2xl' /> {service.pathText}</p>
+                        <p className='text-sm md:text-lg text-white flex flex-wrap items-center gap-4 justify-center'><Link href={'/'}>Home</Link>  <RiArrowRightSLine className='text-primary text-2xl' /> <Link href={'/services'}>Services</Link>  <RiArrowRightSLine className='text-primary text-2xl' /> {service.pathText}</p>
                         <h2 className='text-2xl md:text-5xl xl:text-[50px] font-normal text-white leading-tight text-center pb-4'>{service.category}</h2>
-                        <p className='text-sm md:text-lg text-white flex items-center gap-4 justify-center'>{service.tagLine}</p>
+                        <p className='text-sm md:text-lg text-white flex items-center gap-4 justify-center text-center'>{service.tagLine}</p>
                     </div>
                 </section>
             </section>
 
             {/* Overview */}
-            <section className="py-16 sm:py-28">
-                <div className='max-w-[1400px] mx-auto px-4 sm:px-6'>
-                    <div className='space-y-4 pb-12'>
-                        <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize text-center'>Overview
-                        </h3>
-                        {Array.isArray(service.overview) ? (
-                            service.overview.map((para, index) => (
-                                <p
-                                    key={index}
-                                    className='text-[#5d6471] text-sm sm:text-[15px] md:px-6 text-center'
-                                >
-                                    {para}
-                                </p>
-                            ))
-                        ) : (
-                            <p className='text-[#5d6471] text-sm sm:text-[15px] md:px-6 text-center'>
-                                {service.overview}
-                            </p>
-                        )}
+            <section className="relative py-16 sm:py-28 bg-gradient-to-b from-white via-gray-50 to-white">
+                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
+                    {/* Text Block */}
+                    <div className="space-y-6">
+                        <h3 className="text-3xl md:text-4xl font-semibold text-gray-900 leading-snug relative inline-block">
+                            <span className="relative z-10">Overview</span>
+                            <span className="absolute left-0 bottom-1 w-full h-2 bg-primary/20 rounded-md -z-0"></span>
+                        </h3>
+
+                        <div className="space-y-4">
+                            {Array.isArray(service.overview) ? (
+                                service.overview.map((para, index) => (
+                                    <p
+                                        key={index}
+                                        className="text-gray-600 text-sm sm:text-base leading-relaxed"
+                                    >
+                                        {para}
+                                    </p>
+                                ))
+                            ) : (
+                                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                                    {service.overview}
+                                </p>
+                            )}
+                        </div>
                     </div>
-                    <div className="relative w-full h-96 rounded-[5px] overflow-hidden">
-                        <Image
-                            src={service.imageName ?? OverviewJPg}
-                            alt={service.category}
-                            fill
-                            className={`${service.id === 5 ? 'object-contain' : 'object-cover'}`}
-                            priority
-                        />
+
+                    {/* Image Block */}
+                    <div className="relative group">
+                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary/20 to-transparent blur-2xl opacity-60 group-hover:opacity-80 transition duration-500"></div>
+
+                        <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                            <Image
+                                src={service.imageName ?? OverviewJPg}
+                                alt={service.category}
+                                className="object-cover w-full h-96 transform group-hover:scale-105 transition duration-700"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
+
 
             {/* Capabilities */}
             <section className="bg-[#f9fbfd] py-16 sm:py-28">
@@ -631,7 +656,7 @@ const ServiceDetailsInfo = () => {
                                 className="relative bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group overflow-hidden"
                             >
                                 <div className="absolute top-0 left-0 h-full w-1.5 bg-gradient-to-b from-[#5d647150] to-[#7fb8ff50] group-hover:bg-gradient-to-b group-hover:from-primary group-hover:to-[#7fb8ff] transition-all duration-300" />
-                                <div className="absolute top-4 right-4 text-white bg-primary w-8 h-8 flex items-center justify-center rounded-full text-sm font-medium shadow-md">
+                                <div className="hidden sm:flex absolute top-4 right-4 text-white bg-primary w-8 h-8 items-center justify-center rounded-full text-sm font-medium shadow-md">
                                     {i + 1}
                                 </div>
                                 <div className="p-6 md:p-8">
@@ -652,30 +677,32 @@ const ServiceDetailsInfo = () => {
             {/* Use Cases */}
             <section className="bg-white py-16 sm:py-28">
                 <div className='max-w-[1400px] mx-auto px-4 sm:px-6 space-y-4'>
-                    <div className='grid grig-cols-2 lg:grid-cols-6 gap-7'>
-                        <div className='lg:col-span-3 space-y-8'>
-                            <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize pb-4'>Use <span className='text-primary'>Cases</span> We <span className='text-primary'>Serve</span></h3>
-                            <div className="relative border-l border-[#3078fb]/40 pl-6 space-y-6">
-                                {service.useCases.map((usecase, i) => (
-                                    <div key={i} className="relative group">
-                                        <div className="absolute -left-[13px] top-5 w-5 h-5 bg-white border-2 border-primary rounded-full group-hover:scale-110 transition" />
-                                        <div className="bg-[#f9fbfd] p-5 rounded-md shadow-sm hover:shadow-md transition border-b border-primary/30">
-                                            <p className="text-sm sm:text-[15px] text-[#5d6471] font-medium leading-relaxed">
-                                                {usecase}
-                                            </p>
-                                        </div>
+                    <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize pb-4'>Use <span className='text-primary'>Cases</span> We <span className='text-primary'>Serve</span></h3>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-7 items-center'>
+                        <div className="relative border-l border-[#3078fb]/40 pl-6 space-y-6">
+                            {service.useCases.map((usecase, i) => (
+                                <div key={i} className="relative group">
+                                    <div className="absolute -left-[13px] top-5 w-5 h-5 bg-white border-2 border-primary rounded-full group-hover:scale-110 transition" />
+                                    <div className="bg-[#f9fbfd] p-5 rounded-md shadow-sm hover:shadow-md transition border-b border-primary/30">
+                                        <p className="text-sm sm:text-[15px] text-[#5d6471] font-medium leading-relaxed">
+                                            {usecase}
+                                        </p>
                                     </div>
-                                ))}
-                            </div>
+                                </div>
+                            ))}
                         </div>
-                        <Image
-                            src={UsecaseJpg}
-                            alt="Usecase"
-                            height={600}
-                            width={400}
-                            className="object-cover h-full w-full lg:col-span-3"
-                            priority
-                        />
+                        <div className=''>
+                            {service?.useCaseImg && (
+                                <Image
+                                    src={service.useCaseImg}
+                                    alt="Usecase"
+                                    height={400}
+                                    width={400}
+                                    className="object-cover h-[510px] w-full rounded-lg"
+                                    priority
+                                />
+                            )}
+                        </div>
                     </div>
                 </div>
             </section>
@@ -684,10 +711,10 @@ const ServiceDetailsInfo = () => {
             <section className="bg-[#f9fbfd] py-16 sm:py-28">
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 space-y-4">
                     <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight text-center'>Why <span className='text-primary'>eByteLogic?</span></h3>
-                    <div className='grid lg:grid-cols-6 py-8 gap-3'>
-                        <div className='lg:col-span-3 space-y-6 w-fit'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 py-8 gap-3 items-center'>
+                        <div className='space-y-6 w-fit'>
                             {service.whyChooseUs.map((reason, i) => (
-                                <div key={i} className="flex justify-start flex-nowrap gap-4 items-center">
+                                <div key={i} className="flex justify-start flex-wrap sm:flex-nowrap gap-4 items-center">
                                     <div className="min-w-[50px] text-[#d1e2fc] text-4xl font-black select-none pointer-events-none leading-none">
                                         0{i + 1}
                                     </div>
@@ -699,7 +726,13 @@ const ServiceDetailsInfo = () => {
                                 </div>
                             ))}
                         </div>
-                        <Image src={WhyJpeg} alt='WhyJpeg' width={500} className='col-span-3 rounded-2xl mt-4 md:mt-0 mx-auto' />
+                        {service?.whyImg && (
+                            <Image
+                                src={service?.whyImg}
+                                alt="Usecase"
+                                width={500} className='rounded-2xl mt-4 h-[350px] object-cover md:mt-0 mx-auto'
+                            />
+                        )}
                     </div>
                 </div>
             </section>

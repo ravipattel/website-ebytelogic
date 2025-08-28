@@ -9,7 +9,7 @@ const MultiViewerConclusion = ({ data }) => {
         {conclusionData?.title}
       </h2>
       <div
-        className="rounded-xl p-8 mb-8"
+        className="rounded-xl p-5 md:p-8 mb-8"
         style={{
           border: `1px solid ${conclusionData?.borderColor}`,
           background: conclusionData?.gradient,
@@ -19,13 +19,13 @@ const MultiViewerConclusion = ({ data }) => {
           {conclusionData?.recommendationsSection?.title}
         </h3>
         {conclusionData?.recommendationsSection?.blocks && (
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {conclusionData?.recommendationsSection?.blocks?.map((block, i) => (
               <div key={i}>
                 <h4 className="font-semibold text-lg mb-4">{block?.title}</h4>
                 <ul className="space-y-3 text-gray-600 text-sm md:text-base">
                   {block?.cards?.map((card, j) => (
-                    <li key={j} className="flex items-center gap-3 space-x-3">
+                    <li key={j} className="flex flex-wrap items-center gap-3 space-x-3">
                       {card?.icon}
                       <div>
                         <span className="font-semibold">{card?.label}</span>{" "}
@@ -47,7 +47,7 @@ const MultiViewerConclusion = ({ data }) => {
       {conclusionData?.chooseToolSection && (
         <div>
           {conclusionData?.chooseToolSection?.intro && (
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed mb-6">
+            <p className="text-sm md:text-xl text-gray-600 leading-relaxed mb-6">
               {conclusionData?.chooseToolSection?.intro?.map((part, i) => {
                 switch (part.type) {
                   case "text":

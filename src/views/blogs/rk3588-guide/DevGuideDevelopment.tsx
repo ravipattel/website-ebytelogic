@@ -82,7 +82,7 @@ const DevGuideDevelopment = ({ data }) => {
 
             {/* Comparison Table */}
             {developmentData?.comparisonTable && (
-                <div className="comparison-table mt-8">
+                <div className="w-full overflow-auto mt-8">
                     <table className="w-full text-left border-collapse rounded-md overflow-hidden shadow-sm">
                         <thead className="text-white text-sm" style={{backgroundColor:developmentData?.tableHeadColor}}>
                             <tr>

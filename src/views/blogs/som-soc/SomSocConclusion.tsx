@@ -7,7 +7,7 @@ const SomSocConclusion = ({ data }) => {
 
   return (
     <section id={conclusion?.id} className="px-4 md:px-6 py-16 bg-white">
-      <h2 className="font-serif text-3xl font-semibold mb-8">{conclusion?.title}</h2>
+      <h2 className="font-serif text-2xl md:text-3xl font-semibold mb-8">{conclusion?.title}</h2>
 
       <div className="space-y-6 text-sm md:text-base text-gray-600 leading-relaxed">
         {conclusion?.content?.map((item, index) => {

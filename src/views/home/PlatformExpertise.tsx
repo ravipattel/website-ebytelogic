@@ -27,7 +27,7 @@ import FfmpegSvg from "@/src/assets/images/about/ffmpeg.png";
 
 const PlatformExpertise = () => {
     return (
-        <section className="py-16 sm:pb-28">
+        <section className="px-4 sm:px-6 py-16 sm:pb-28">
             <div className="text-center space-y-3">
                 <h2 className="text-2xl sm:text-[34px] font-medium text-primaryText leading-tight text-center">
                     Our Platform Expertise

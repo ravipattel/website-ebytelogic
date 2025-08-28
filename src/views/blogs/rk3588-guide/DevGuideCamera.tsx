@@ -1,3 +1,4 @@
+import { div } from 'framer-motion/client';
 import React from 'react'
 
 const DevGuideCamera = ({ data }) => {
@@ -21,9 +22,11 @@ const DevGuideCamera = ({ data }) => {
             {/* Code Block for Example DTS Configuration */}
             {camera?.codeBlock && (
                 <div className="bg-[#1E293B] text-white p-4 rounded-md mb-6">
-                    <pre>
-                        <code className='text-sm'>{camera?.codeBlock}</code>
-                    </pre>
+                    <div className='w-full overflow-auto'>
+                        <pre>
+                            <code className='text-sm'>{camera?.codeBlock}</code>
+                        </pre>
+                    </div>
                 </div>
             )}
 
@@ -40,7 +43,7 @@ const DevGuideCamera = ({ data }) => {
                     {camera?.integration?.map((int, index) => (
                         <div key={index}>
                             <div className="bg-white border border-gray-300 rounded-md shadow-md p-4 h-full">
-                                <h4 className={`font-semibold mb-3`} style={{color:int?.color}}>
+                                <h4 className={`font-semibold mb-3`} style={{ color: int?.color }}>
                                     {int?.title}
                                 </h4>
                                 <ul className="space-y-2 text-sm">

@@ -68,9 +68,11 @@ const DevGuideAi = ({ data }) => {
             {/* RKNN Inference Code Example */}
             {aiIntegrationData?.rknnInferenceCode && (
                 <div className="bg-[#1E293B] rounded-md p-4 mb-6 text-white">
-                    <pre>
-                        <code className='text-sm'>{aiIntegrationData?.rknnInferenceCode}</code>
-                    </pre>
+                    <div className="w-full overflow-auto">
+                        <pre>
+                            <code className='text-sm'>{aiIntegrationData?.rknnInferenceCode}</code>
+                        </pre>
+                    </div>
                 </div>
             )}
 
@@ -88,9 +90,11 @@ const DevGuideAi = ({ data }) => {
                         />
                         {app?.codeExample && (
                             <div className="bg-[#1E293B] p-4 rounded-md text-white">
-                                <pre>
-                                    <code className='text-sm text-wrap'>{app?.codeExample}</code>
-                                </pre>
+                                <div className="w-full overflow-auto">
+                                    <pre>
+                                        <code className='text-sm text-wrap'>{app?.codeExample}</code>
+                                    </pre>
+                                </div>
                             </div>
                         )}
                     </div>

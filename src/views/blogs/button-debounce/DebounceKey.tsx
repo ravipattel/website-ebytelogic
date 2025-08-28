@@ -7,14 +7,14 @@ const DebounceKey = ({ data }) => {
 
     return (
         <section id={keyData?.id} className="px-4 md:px-6 py-16">
-            <h2 className="font-serif text-3xl font-semibold mb-12 text-center">
+            <h2 className="font-serif text-2xl md:text-3xl font-semibold md:mb-12 text-center">
                 {keyData?.title}
             </h2>
             {keyData?.considerations && (
                 <div>
                     {keyData?.considerations?.map((consideration, index) => (
-                        <div key={index} id={consideration?.id} className='mt-16'>
-                            <h3 className="font-serif text-2xl font-bold mb-8">
+                        <div key={index} id={consideration?.id} className='mt-6 md:mt-16'>
+                            <h3 className="font-serif text-xl md:text-2xl font-bold mb-8">
                                 {consideration?.title}
                             </h3>
                             {consideration?.points ? (
@@ -28,7 +28,7 @@ const DebounceKey = ({ data }) => {
                                                 {point?.icon}
                                                 {point?.title}
                                             </h4>
-                                            <p className="text-gray-600">
+                                            <p className="text-gray-600 text-sm md:text-base">
                                                 {point?.description}
                                             </p>
                                         </div>
@@ -36,14 +36,14 @@ const DebounceKey = ({ data }) => {
                                 </div>
                             ) : null}
                             {consideration?.sections && (
-                                <div className="bg-white rounded-lg p-8 shadow-sm">
+                                <div className="bg-white rounded-lg p-4 md:p-8 shadow-sm">
                                     <div className="grid md:grid-cols-2 gap-8">
                                         {consideration?.sections?.map((section: any, idx: any) => (
                                             <div key={idx}>
                                                 <h4 className="font-serif text-xl font-semibold mb-4">
                                                     {section?.title}
                                                 </h4>
-                                                <p className="text-gray-600 mb-4">{section?.description}</p>
+                                               <p className="text-gray-600 text-sm md:text-base mb-4">{section?.description}</p>
                                                 {section?.code && (
                                                     <div className="bg-gray-100 p-4 rounded">
                                                         <code>{section?.code}</code>
@@ -55,7 +55,7 @@ const DebounceKey = ({ data }) => {
                                                     </div>
                                                 )}
                                                 {section?.items && (
-                                                    <ul className="space-y-4 text-gray-600">
+                                                    <ul className="space-y-4 text-gray-600 text-sm md:text-base">
                                                         {section.items.map((item: any, itemIdx: any) => (
                                                             <li key={itemIdx} className="flex items-start gap-3">
                                                                 {item?.icon && (

@@ -2581,11 +2581,11 @@ rtph264pay ! udpsink host=10.42.0.1 port=1234`,
             emphasis: "RealTime Multimedia",
             emphasisColor: "text-blue-600",
             class:
-              "font-serif text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight",
+              "font-serif text-2xl sm:text-5xl lg:text-6xl font-bold leading-tight",
           },
           description: {
             text: "Master the art of GStreamer optimization for ARM platforms: from latency reduction and buffer management to hardware-accelerated performance tuning.",
-            class: "text-base text-gray-600 leading-relaxed",
+            class: "text-sm md:text-base text-gray-600 leading-relaxed",
           },
           badgeList: [
             {

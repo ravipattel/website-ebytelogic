@@ -8,15 +8,15 @@ const GstreamerConclusion = ({ data }) => {
             {/* Section Title */}
             <div className="mb-8">
                 <span className="mr-3" style={{color:conclusion?.color}}>{conclusion?.no}</span>
-                <h2 className="font-serif text-4xl font-semibold inline">
+                <h2 className="font-serif text-2xl md:text-4xl font-semibold inline">
                     {conclusion?.sectionTitle}
                 </h2>
             </div>
 
             <div>
                 {/* Intro Description */}
-                <div className="bg-white p-8 rounded-md shadow-sm mb-12">
-                    <p className="text-gray-600 leading-relaxed mb-8">
+                <div className="bg-white p-4 md:p-8 rounded-md shadow-sm mb-12">
+                    <p className="text-gray-600 leading-relaxed mb-8 text-sm md:text-base">
                         {conclusion?.intro?.description}
                     </p>
 
@@ -30,7 +30,7 @@ const GstreamerConclusion = ({ data }) => {
                                 {conclusion?.keySuccessFactors?.map((item, index) => (
                                     <li key={index} className="flex items-start gap-3">
                                         <FaArrowRight className="text-primary mt-1" />
-                                        <span className="text-gray-600">{item}</span>
+                                        <span className="text-gray-600 text-sm md:text-base">{item}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -41,7 +41,7 @@ const GstreamerConclusion = ({ data }) => {
                             <h3 className="font-serif text-xl font-semibold mb-4">
                                 {conclusion?.framework?.title}
                             </h3>
-                            <p className="text-gray-600 mb-4">{conclusion?.framework?.description}</p>
+                            <p className="text-gray-600 mb-4 text-sm md:text-base">{conclusion?.framework?.description}</p>
 
                             <div className="bg-primary/5 p-4 rounded-md">
                                 <p className="text-sm text-gray-600">{conclusion?.framework?.goal}</p>
@@ -52,7 +52,7 @@ const GstreamerConclusion = ({ data }) => {
 
                 {/* Call to Action */}
                 <div className="text-center">
-                    <div className="inline-block px-8 py-4 rounded-md">
+                    <div className="inline-block md:px-8 py-4 rounded-md">
                         <div className="text-2xl font-semibold mb-2">{conclusion?.callToAction?.title}</div>
                         <div className="text-sm">{conclusion?.callToAction?.subtitle}</div>
                     </div>

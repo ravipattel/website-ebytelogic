@@ -61,7 +61,7 @@ const QaLowLevel = ({ data }) => {
                     case 'list':
                         return (
                             <div key={index}>
-                                <ul className="list-disc list-inside space-y-2 text-gray-600 mb-6">
+                                <ul className="list-disc list-inside space-y-2 text-gray-600 mb-6 text-sm md:text-base">
                                     {item?.items?.map((listItem, listIndex) => (
                                         <li key={listIndex} className="text-sm md:text-base">
                                             {listItem?.icon}

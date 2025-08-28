@@ -238,7 +238,7 @@ const CaseStudyCard = () => {
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 onClick={() => router.push("/blogs")}
-                className="w-fit !bg-white !text-primary hover:!bg-primary hover:!text-white"
+                className="w-full sm:w-fit !bg-white !text-primary hover:!bg-primary hover:!text-white"
               >
                 View Our Blogs
               </Button>
@@ -263,17 +263,17 @@ const CaseStudyCard = () => {
               {caseStudyCard.map((caseStudy, i) => (
                 <div
                   key={i}
-                  className={`relative pl-10 pr-6 before:content-[''] before:absolute before:left-[-9px] before:top-1.5 before:w-4 before:h-4 before:bg-primary before:rounded-full`}
+                  className={`relative pl-4 md:pl-10 pr-6 before:content-[''] before:absolute before:left-[-9px] before:top-1.5 before:w-4 before:h-4 before:bg-primary before:rounded-full`}
                 >
                   <div
-                    className={`grid grid-cols-1 sm:grid-cols-2 gap-8 ${i % 2 === 1 ? "sm:flex-row-reverse" : ""
+                    className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${i % 2 === 1 ? "sm:flex-row-reverse" : ""
                       }`}
                   >
                     <div>
                       <h3 className="text-lg sm:text-xl font-semibold text-[#1d2433] mb-2">
                         {caseStudy.title}
                       </h3>
-                      <span className="text-xs bg-primary/15 px-2 py-1 rounded-full inline-block mb-3">
+                      <span className="text-xs bg-primary/15 px-4 md:px-2 py-1 rounded-full inline-block mb-3">
                         {caseStudy.industry}
                       </span>
                       <ul className="list-disc list-inside text-[#5d6471] text-sm sm:text-[15px] space-y-2">
@@ -291,7 +291,7 @@ const CaseStudyCard = () => {
                       </a>
                     </div>
                     <div>
-                      <div className="w-full h-[210px]">
+                      <div className="w-full md:h-[210px]">
                         <Image
                           src={caseStudy.img}
                           alt="Case Study Illustration"

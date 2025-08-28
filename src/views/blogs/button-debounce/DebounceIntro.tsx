@@ -8,12 +8,12 @@ const DebounceIntro = ({ data }) => {
 
     return (
         <section id={introData?.id} className="px-4 md:px-6 py-16">
-            <h2 className="font-serif text-3xl font-semibold mb-8">
+            <h2 className="font-serif text-2xl md:text-3xl font-semibold mb-8">
                 {introData?.title}
             </h2>
             <div>
                 {introData?.paragraph1 && (
-                    <p className="text-gray-600 mb-6">
+                    <p className="text-gray-600 mb-6 text-sm md:text-base">
                         {introData?.paragraph1}
                     </p>
                 )}
@@ -35,7 +35,7 @@ const DebounceIntro = ({ data }) => {
                     </div>
                 )}
                 {introData?.paragraph2 && (
-                    <p className="mt-6 text-gray-600">{introData?.paragraph2}</p>
+                    <p className="mt-6 text-gray-600 text-sm md:text-base">{introData?.paragraph2}</p>
                 )}
             </div>
         </section>

@@ -91,7 +91,7 @@ const Global = () => {
                                     {card.title}
                                 </h3>
                                 <p className='text-[#5d6471] text-sm sm:text-[15px]'>{card.description}</p>
-                                <div className="flex gap-2 pt-2">
+                                <div className="flex flex-wrap gap-2 pt-2">
                                     {card.tags?.map((tag, i) => (
                                         <span
                                             key={i}

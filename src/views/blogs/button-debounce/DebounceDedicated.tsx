@@ -6,11 +6,11 @@ const DebounceDedicated = ({ data }) => {
 
   return (
     <section id={dedicatedData?.id} className="px-4 md:px-6 py-16">
-      <h3 className="font-serif text-3xl font-semibold mb-8">
+      <h3 className="font-serif text-2xl md:text-3xl font-semibold mb-8">
         {dedicatedData?.title}
       </h3>
       <div className="bg-white rounded-md p-8 shadow-sm border border-gray-300">
-        <p className="text-gray-600 mb-6">
+        <p className="text-gray-600 mb-6 text-sm md:text-base">
           {dedicatedData?.description?.text}
         </p>
         {dedicatedData?.sections && (
@@ -39,7 +39,7 @@ const DebounceDedicated = ({ data }) => {
                           </>
                         )}
                         {item?.text && (
-                          <p className="text-gray-600">{item?.text}</p>
+                          <p className="text-gray-600 text-sm md:text-base">{item?.text}</p>
                         )}
                       </div>
                     </div>

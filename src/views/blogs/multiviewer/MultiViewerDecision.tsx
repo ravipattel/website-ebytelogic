@@ -10,7 +10,7 @@ const MultiViewerDecision = ({ data }) => {
           id={decisionData?.id}
           className="px-4 md:px-6 py-8 bg-slate-50"
         >
-          <h2 className="font-serif text-3xl font-semibold mb-8">
+          <h2 className="font-serif text-2xl md:text-3xl font-semibold mb-8">
             {decisionData?.title}
           </h2>
           {decisionData?.blocks && (
@@ -20,13 +20,13 @@ const MultiViewerDecision = ({ data }) => {
                   key={idx}
                   className="bg-white rounded-md shadow-lg overflow-hidden"
                 >
-                  <div className={`px-8 py-4`}>
+                  <div className={`px-5 md:px-8 py-4`}>
                     <h3 className="font-serif text-2xl font-semibold flex items-center">
                       <i className={`${block?.icon} mr-3`}></i>
                       {block?.title}
                     </h3>
                   </div>
-                  <div className="px-8 pb-8">
+                  <div className={`px-5 md:px-8 py-4`}>
                     <div className="grid md:grid-cols-3 gap-6">
                       {block?.cards?.map((card, idx) => (
                         <div

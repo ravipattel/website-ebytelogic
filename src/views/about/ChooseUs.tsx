@@ -22,15 +22,15 @@ const ChooseUs = () => {
                 <p className='text-white max-w-lg text-sm sm:text-[15px] mb-8'>We help OEMs and product companies accelerate development with high-performance software, real-time systems, and protocol-level expertise — from board bring-up to deployment.</p>
                 <div className="flex flex-col gap-4 relative max-w-xl">
                     <Image src={cardConnect} alt='sasasas' className='absolute md:-right-11 lg:right-4 top-26 hidden md:block' width={50} height={100} />
-                    <div className="lg:w-lg border-2 border-[#1A2429] p-5 rounded-2xl">
-                        <div className="flex items-center gap-3">
+                    <div className="lg:w-lg border-2 border-[#1A2429] sm:p-5 rounded-2xl">
+                        <div className="flex flex-wrap items-center gap-3">
                             <IoMdBuild className='text-white w-9 h-9' />
                             <h3 className='text-white text-[21px] font-medium'>Embedded Systems & Board Bring-Up</h3>
                         </div>
                         <p className='text-[#FFFFFFCC] text-[15px] mt-4'>We specialize in BSP development, driver integration, and hardware-software co-design for custom boards, STBs, fire panels, and wearables.</p>
                     </div>
-                    <div className="lg:w-lg border-2 border-[#1A2429] p-5 rounded-2xl">
-                        <div className="flex items-center gap-3">
+                    <div className="lg:w-lg border-2 border-[#1A2429] sm:p-5 rounded-2xl">
+                        <div className="flex flex-wrap items-center gap-3">
                             <BiCameraMovie className='text-white w-9 h-9' />
                             <h3 className='text-white text-[21px] font-medium'>Multimedia & Streaming Engineering</h3>
                         </div>

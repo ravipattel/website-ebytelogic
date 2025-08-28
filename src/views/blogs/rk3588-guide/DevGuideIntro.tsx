@@ -14,7 +14,7 @@ const DevGuideIntro = ({ data }) => {
             {/* Highlight Box */}
             {overview?.description?.map((desc,idx) => (
                 <div className="highlight-box" key={idx}>
-                    <p className="text-gray-600 mb-4">{desc?.desc}</p>
+                    <p className="text-gray-600 mb-4 text-sm md:text-base">{desc?.desc}</p>
                 </div>
             ))}
 

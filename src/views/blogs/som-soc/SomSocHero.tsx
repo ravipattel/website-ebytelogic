@@ -9,7 +9,7 @@ const SomSocHero = ({ data }) => {
 
     return (
         <section className="w-full bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
-            <p className="text-sm flex items-center gap-2 px-9 py-8 z-50 relative">
+            <p className="text-sm flex flex-wrap items-center gap-2 px-9 py-8 z-50 relative">
                 <Link href="/" className="text-primary">
                     Home
                 </Link>

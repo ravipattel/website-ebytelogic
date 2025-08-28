@@ -6,7 +6,7 @@ const SomSocUseCase = ({ data }) => {
 
   return (
     <section id={usecase?.id} className="px-4 md:px-6 py-16 bg-slate-50">
-      <h2 className="font-serif text-3xl font-semibold mb-8">
+      <h2 className="font-serif text-2xl md:text-3xl font-semibold mb-8">
         {usecase?.title}
       </h2>
 

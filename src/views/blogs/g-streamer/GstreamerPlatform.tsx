@@ -7,7 +7,7 @@ const GstreamerPlatform = ({ data }) => {
             {/* Section Title */}
             <div className="mb-8">
                 <span className="mr-3" style={{ color: platform?.color }}>{platform?.no}</span>
-                <h2 className="font-serif text-3xl font-semibold inline">
+                <h2 className="font-serif text-2xl md:text-3xl font-semibold inline">
                     {platform?.title}
                 </h2>
             </div>
@@ -16,9 +16,9 @@ const GstreamerPlatform = ({ data }) => {
                 {/* Platforms */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
                     {platform?.platforms?.map((platform, index) => (
-                        <div key={index} className="bg-white p-8 rounded-md shadow-sm">
+                        <div key={index} className="bg-white p-4 md:p-8 rounded-md shadow-sm">
                             <div className="flex items-center mb-6">
-                                <div className="w-12 h-12 rounded-full flex items-center justify-center mr-4 text-white text-lg" style={{ backgroundColor: platform?.bgColor }}>
+                                <div className="size-6 md:size-12 rounded-full flex items-center justify-center mr-4 text-white text-xs md:text-lg" style={{ backgroundColor: platform?.bgColor }}>
                                     {platform.icon}
                                 </div>
                                 <h3 className="font-serif text-xl font-semibold">
@@ -51,12 +51,12 @@ const GstreamerPlatform = ({ data }) => {
 
                 {/* Common Optimization Patterns */}
                 {platform?.commonOptimizationPatterns && (
-                    <div className="bg-primary/5 p-8 rounded-md" style={{ borderLeft: `4px solid ${platform?.borderColor}` }}>
+                    <div className="bg-primary/5 p-4 md:p-8 rounded-md" style={{ borderLeft: `4px solid ${platform?.borderColor}` }}>
                         <h3 className="font-serif text-2xl font-semibold mb-6">{platform?.commonTitle}</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             {platform?.commonOptimizationPatterns?.map((pattern, index) => (
                                 <div key={index}>
-                                    <h4 className="font-semibold mb-4 flex items-center gap-3">
+                                    <h4 className="font-semibold mb-4 flex flex-wrap items-center gap-3">
                                         {pattern.icon}
                                         {pattern?.title}
                                     </h4>

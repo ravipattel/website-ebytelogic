@@ -6,7 +6,7 @@ const SomSocExamples = ({ data }) => {
 
   return (
     <section id={examples?.id} className="px-4 md:px-6 py-16 bg-white">
-      <h2 className="font-serif text-3xl font-semibold mb-8">
+      <h2 className="font-serif text-2xl md:text-3xl font-semibold mb-8">
         {examples?.title}
       </h2>
 

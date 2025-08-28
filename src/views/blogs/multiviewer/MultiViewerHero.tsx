@@ -7,7 +7,7 @@ const MultiViewerHero = ({ data }) => {
   const heroData = data?.heroData;
 
   return (
-    <section id={heroData?.id} className="relative overflow-hidden px-6 py-8">
+    <section id={heroData?.id} className="relative overflow-hidden md:px-6 py-8">
       <p className="text-sm flex items-center gap-2 py-4">
         <Link href="/" className="text-primary">
           Home
@@ -20,7 +20,7 @@ const MultiViewerHero = ({ data }) => {
         <span className="text-slate-500">{data?.title}</span>
       </p>
       <div
-        className="rounded-md p-8 flex flex-wrap justify-between gap-4 relative"
+        className="rounded-md p-5 md:p-8 flex flex-wrap justify-between gap-4 relative"
         style={{ background: heroData?.bgColor }}
       >
         {/* <div className="absolute inset-0 rounded-md"></div> */}
