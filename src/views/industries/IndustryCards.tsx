@@ -160,12 +160,14 @@ const industries = [
     }
 ]
 
-const IndustryCards = () => {
+const IndustryCards = ({ meta }) => {
     const [openId, setOpenId] = useState<number | null>(null)
     const openModal = (id: number) => setOpenId(id)
     const closeModal = () => setOpenId(null)
     const currentIndustry = industries.find(item => item.id === openId)
     const [isVisible, setIsVisible] = useState(false)
+    const [metaId, setMetaId] = useState<number | null>(null);
+
     const router = useRouter()
 
     useEffect(() => {
@@ -181,6 +183,18 @@ const IndustryCards = () => {
             document.body.style.overflow = ''
         }
     }, [openId])
+
+
+    useEffect(() => {
+        if (openId !== null) {
+            const found = industries.find(item => item.id === openId);
+            if (found) {
+                setMetaId(found.id);
+            }
+        } else {
+            setMetaId(null);
+        }
+    }, [openId]);
 
     return (
         <>
@@ -200,11 +214,11 @@ const IndustryCards = () => {
                             <Button onClick={() => router.push('/contact-us')} className='px-6 h-12'>
                                 Book a Consultation
                             </Button>
-                                <Button onClick={() => router.push('/case-study')}
-                                    className='!bg-blue-100 !border-0 !text-blue-600 px-6 py-3 hover:!bg-blue-200 transition flex items-center gap-2'
-                                >
-                                    Explore Our Case-Studies <FaArrowRightLong />
-                                </Button>
+                            <Button onClick={() => router.push('/case-study')}
+                                className='!bg-blue-100 !border-0 !text-blue-600 px-6 py-3 hover:!bg-blue-200 transition flex items-center gap-2'
+                            >
+                                Explore Our Case-Studies <FaArrowRightLong />
+                            </Button>
                         </div>
                     </div>
                     <div>
@@ -287,7 +301,7 @@ const IndustryCards = () => {
                                                 <p className="text-xs lg:text-sm text-gray-600 mb-3">{currentIndustry.success}</p>
                                                 <Button
                                                     onClick={closeModal}
-                                                    className="absolute top-2 right-3 rounded-full size-10 text-xl !p-0 !grid !place-items-center"
+                                                    className="absolute top-2 right-3 rounded-full !size-10 text-xl !p-0 !grid !place-items-center"
                                                 >
                                                     <RxCross2 />
                                                 </Button>

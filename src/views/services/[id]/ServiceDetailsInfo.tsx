@@ -575,15 +575,24 @@ const serviceData = [
     }
 ];
 
-const ServiceDetailsInfo = () => {
+const ServiceDetailsInfo = ({ meta }) => {
     const router = useRouter();
-    const { id } = useParams() as { id: string }; // Extract 'id' from URL
+    const { id } = useParams() as { id: string };
     const [service, setService] = useState<typeof serviceData[0] | null>(null);
+    const [metaId, setMetaId] = useState<string | null>(null);
 
     useEffect(() => {
         const foundService = serviceData.find(item => item.id === id);
         if (foundService) setService(foundService);
-    }, [id]);  // This will trigger whenever 'id' changes.
+    }, [id]);
+
+
+    useEffect(() => {
+        const found = serviceData.find(item => item.id === id);
+        if (found) {
+            setMetaId(found.id);
+        }
+    }, [id]);
 
     if (!service) return <div className="p-8 text-gray-600">Loading or not found...</div>;
 
@@ -606,7 +615,7 @@ const ServiceDetailsInfo = () => {
 
                     {/* Text Block */}
                     <div className="space-y-6">
-                        <h3 className="text-3xl md:text-4xl font-semibold text-gray-900 leading-snug relative inline-block">
+                        <h3 className="text-2xl md:text-4xl font-semibold text-gray-900 leading-snug relative inline-block">
                             <span className="relative z-10">Overview</span>
                             <span className="absolute left-0 bottom-1 w-full h-2 bg-primary/20 rounded-md -z-0"></span>
                         </h3>
@@ -656,7 +665,7 @@ const ServiceDetailsInfo = () => {
                                 className="relative bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group overflow-hidden"
                             >
                                 <div className="absolute top-0 left-0 h-full w-1.5 bg-gradient-to-b from-[#5d647150] to-[#7fb8ff50] group-hover:bg-gradient-to-b group-hover:from-primary group-hover:to-[#7fb8ff] transition-all duration-300" />
-                                <div className="hidden sm:flex absolute top-4 right-4 text-white bg-primary w-8 h-8 items-center justify-center rounded-full text-sm font-medium shadow-md">
+                                <div className="hidden sm:flex absolute top-4 right-4 text-white bg-primary size-6 lg:size-8 items-center justify-center rounded-full text-xs lg:text-sm font-medium shadow-md">
                                     {i + 1}
                                 </div>
                                 <div className="p-6 md:p-8">
@@ -678,7 +687,7 @@ const ServiceDetailsInfo = () => {
             <section className="bg-white py-16 sm:py-28">
                 <div className='max-w-[1400px] mx-auto px-4 sm:px-6 space-y-4'>
                     <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize pb-4'>Use <span className='text-primary'>Cases</span> We <span className='text-primary'>Serve</span></h3>
-                    <div className='grid grid-cols-1 md:grid-cols-2 gap-7 items-center'>
+                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-7 items-center'>
                         <div className="relative border-l border-[#3078fb]/40 pl-6 space-y-6">
                             {service.useCases.map((usecase, i) => (
                                 <div key={i} className="relative group">
@@ -714,7 +723,7 @@ const ServiceDetailsInfo = () => {
                     <div className='grid grid-cols-1 md:grid-cols-2 py-8 gap-3 items-center'>
                         <div className='space-y-6 w-fit'>
                             {service.whyChooseUs.map((reason, i) => (
-                                <div key={i} className="flex justify-start flex-wrap sm:flex-nowrap gap-4 items-center">
+                                <div key={i} className="flex justify-start flex-wrap min-[477px]:flex-nowrap gap-4 items-center">
                                     <div className="min-w-[50px] text-[#d1e2fc] text-4xl font-black select-none pointer-events-none leading-none">
                                         0{i + 1}
                                     </div>

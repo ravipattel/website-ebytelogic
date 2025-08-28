@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { GoCheckCircleFill } from 'react-icons/go';
 
 import LinuxPng from '@/src/assets/images/home/development/linux.png';
@@ -13,7 +13,7 @@ const tabContents = [
         tab: "Linux BSP & Driver Development",
         image: LinuxPng,
         title: "Powering Devices from the Core",
-        description: "Dummy text is also used to demonstrate the appearance of different typefaces and layouts, and in general the content of dummy text is nonsensical.",
+        description: "Dummy text is also used to demonstrate...",
         points: [
             "Custom Board Support Packages (Yocto, Buildroot)",
             "Linux Kernel & Device Driver Development",
@@ -26,7 +26,7 @@ const tabContents = [
         tab: "Streaming & Multimedia Engineering",
         image: StreamingJpg,
         title: "Real-Time Media, Perfectly Aligned",
-        description: "Dummy text is also used to demonstrate the appearance of different typefaces and layouts, and in general the content of dummy text is nonsensical.",
+        description: "Dummy text is also used to demonstrate...",
         points: [
             "±10ms AV Sync with SDI, HDMI, RTP",
             "GStreamer/FFMPEG/Live555 Integration",
@@ -39,7 +39,7 @@ const tabContents = [
         tab: "Cross-Platform App Development",
         image: CrossPlatformPng,
         title: "Unified Experience Across Devices",
-        description: "Used to demonstrate the appearance of different typefaces and layouts, and in general the content of dummy text is nonsensical.",
+        description: "Used to demonstrate the appearance...",
         points: [
             "Qt/C++ and Python App Development",
             "Android/iOS with Native & Hybrid Support",
@@ -52,7 +52,7 @@ const tabContents = [
         tab: "QA Engineering & Support",
         image: QaPng,
         title: "Stability You Can Launch With",
-        description: "Dummy text is also used. used to demonstrate the appearance of different typefaces and layouts, and in general the content of dummy text is nonsensical.",
+        description: "Dummy text is also used...",
         points: [
             "Manual & Automated QA for Embedded/AV Apps",
             "Real-Device Media Testing",
@@ -64,13 +64,21 @@ const tabContents = [
 ];
 
 const Development = () => {
-    const [activeTab, setActiveTab] = useState(0);  // Make sure this starts at a valid index (0)
+    const [activeTab, setActiveTab] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
+    const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-    const handleTabChange = (index: number) => {
-        if (index >= 0 && index < tabContents.length) {
-            setActiveTab(index);  // Only update the tab if the index is valid
-        }
-    };
+    useEffect(() => {
+        if (isHovered) return;
+
+        intervalRef.current = setInterval(() => {
+            setActiveTab(prev => (prev + 1) % tabContents.length);
+        }, 1000);
+
+        return () => {
+            if (intervalRef.current) clearInterval(intervalRef.current);
+        };
+    }, [isHovered]);
 
     const activeContent = tabContents[activeTab];
 
@@ -80,10 +88,14 @@ const Development = () => {
                 {tabContents.map((tab, index) => (
                     <li key={index} className="w-full">
                         <button
-                            onClick={() => handleTabChange(index)}
-                            onMouseEnter={() => handleTabChange(index)}  // Update on hover
-                            className={`w-full rounded py-5 px-2 text-base border border-primary cursor-pointer ${activeTab === index ? 'text-white bg-primary' : ''
-                                } hover:text-white hover:bg-primary`}  // Active styling + hover effect
+                            onMouseEnter={() => {
+                                setActiveTab(index);
+                                setIsHovered(true);
+                            }}
+                            onMouseLeave={() => setIsHovered(false)}
+                            className={`w-full rounded py-5 px-2 text-base border border-primary cursor-default 
+                ${activeTab === index ? 'text-white bg-primary' : ''}
+                hover:text-white hover:bg-primary`}
                         >
                             {tab.tab}
                         </button>
@@ -91,7 +103,9 @@ const Development = () => {
                 ))}
             </ul>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8" onMouseEnter={() => {
+                setIsHovered(true);
+            }} onMouseLeave={() => setIsHovered(false)}>
                 <div>
                     <Image
                         src={activeContent.image}
