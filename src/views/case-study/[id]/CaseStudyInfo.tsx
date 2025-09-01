@@ -14,7 +14,7 @@ import Button from "@/src/components/Button";
 import AfterPng from '@/src/assets/images/caseStudy/after.png'
 import BeforePng from '@/src/assets/images/caseStudy/before.png'
 import BeforeMockupPng from '@/src/assets/images/caseStudy/beforeMockup.png'
-import AfterMockupPng from '@/src/assets/images/caseStudy/afterMockup.png'
+// import AfterMockupPng from '@/src/assets/images/caseStudy/afterMockup.png'
 import EbyteMockupPng from '@/src/assets/images/caseStudy/ebyteMockup.png'
 import { MdArrowForwardIos } from "react-icons/md";
 

@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 import React, { useEffect, useRef, useState } from "react";
@@ -8,9 +7,6 @@ import Typed from "typed.js";
 
 import Button from "@/src/components/Button";
 import WorkflowSlider from "@/src/components/WorkflowSlider";
-
-import why from '@/public/images/bg/why.png'
-
 
 const dynamicData = [
   `We Power the <span class="text-primary">Software</span> Behind Smart Devices and High-Performance <span class="text-primary">Media Systems</span>`,
