@@ -3,13 +3,6 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Logo from '@/src/assets/images/logo.png';
 
-export default function Loader({ children }: { children: React.ReactNode }) {
-  const [loading, setLoading] = useState(true);
-  const [fadeOut, setFadeOut] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [hasLoadedOnce, setHasLoadedOnce] = useState(false);
-  const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
-
   const messages = [
     'Optimizing Pipelines…',
     'Booting in 3 Seconds…',
@@ -17,7 +10,14 @@ export default function Loader({ children }: { children: React.ReactNode }) {
     'Loading Innovation…',
   ];
 
-  const messageDisplayTime = 1200; // ms
+export default function Loader({ children }: { children: React.ReactNode }) {
+  const [loading, setLoading] = useState(true);
+  const [fadeOut, setFadeOut] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [hasLoadedOnce, setHasLoadedOnce] = useState(false);
+  const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+
+  const messageDisplayTime = 1200; 
   const fadeOutDelay = 800;
   const totalLoadingTime = messages.length * messageDisplayTime + fadeOutDelay;
 
@@ -28,7 +28,7 @@ useEffect(() => {
   setFadeOut(false);
   setProgress(0);
 
-  const totalLoadingTime = 3000; // 3 seconds
+  const totalLoadingTime = 1500; 
   const messageDisplayTime = totalLoadingTime / messages.length;
 
   // Progress bar
@@ -58,7 +58,7 @@ useEffect(() => {
   const hideTimer = setTimeout(() => {
     setLoading(false);
     setHasLoadedOnce(true);
-  }, totalLoadingTime + 500); // small fade delay
+  }, totalLoadingTime + 500); 
 
   return () => {
     clearInterval(progressInterval);
@@ -67,9 +67,6 @@ useEffect(() => {
     clearTimeout(hideTimer);
   };
 }, [hasLoadedOnce]);
-
-
-
 
   if (loading) {
     return (

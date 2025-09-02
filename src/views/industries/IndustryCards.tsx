@@ -4,7 +4,6 @@ import { useRouter } from 'next/navigation'
 
 import React, { useEffect, useState } from 'react'
 import { FaArrowRightLong } from 'react-icons/fa6'
-import { RxCross2 } from 'react-icons/rx'
 import { MdOutlineMiscellaneousServices } from 'react-icons/md'
 
 import Button from '@/src/components/Button'
@@ -20,7 +19,7 @@ import HeroIotPng from '@/src/assets/images/industry/heroIot.png'
 
 const industries = [
     {
-        id: 1,
+        id: 'smarter-power-efficient-wearables',
         title: "Wearables & Consumer Electronics",
         description:
             "From BLE-enabled smartwatches to fitness trackers, we deliver reliable embedded firmware, mobile app integration, and power-optimized system software for consumer devices.",
@@ -43,7 +42,7 @@ const industries = [
         success: '✔ Reduced field issues and faster time-to-market for consumer launches.'
     },
     {
-        id: 2,
+        id: 'media-broadcasting-multimedia',
         title: "Media Broadcasting & Multimedia",
         description:
             "High-performance pipelines for real-time streaming, multiviewers, AV sync, and custom SDI/NDI/HDMI interfaces. Built on GStreamer, FFmpeg, and multimedia hardware SDKs.",
@@ -66,7 +65,7 @@ const industries = [
         success: '✔ Deployed in drone camera systems, video switchers, and broadcast encoders.'
     },
     {
-        id: 3,
+        id: 'semiconductor-platforms',
         title: "Semiconductor Platforms (BSP Services)",
         description:
             "Deep expertise in BSPs, kernel bring-up, and driver customization for NXP, TI, Rockchip, and more. We help silicon vendors and OEMs get to production faster.",
@@ -90,7 +89,7 @@ const industries = [
         success: '✔ Trusted by ODMs for production firmware & board bring-up.'
     },
     {
-        id: 4,
+        id: 'fire-alarm-panels-control-systems',
         title: "Fire Alarm Panels & Control Systems",
         description:
             "Customized Android firmware and embedded apps for industrial control panels with touchscreen UIs and secure alarm handling logic.",
@@ -113,7 +112,7 @@ const industries = [
         success: '✔ Running in 24/7 industrial environments across Europe.'
     },
     {
-        id: 5,
+        id: 'industrial-automation-iot-gateways',
         title: "Industrial Automation & IoT Gateways",
         description:
             "Complete software stacks for smart edge devices, including industrial gateways, connected sensors, and protocol bridges.",
@@ -136,7 +135,7 @@ const industries = [
         success: '✔ Delivered for energy monitoring, protocol bridging, and gateway systems.'
     },
     {
-        id: 6,
+        id: 'aerospace-remote-sensing-systems',
         title: "Aerospace & Remote Sensing Systems",
         description:
             "Precision-focused development for data acquisition, image processing, and control software in airborne and satellite environments.",
@@ -161,11 +160,11 @@ const industries = [
 ]
 
 const IndustryCards = () => {
-    const [openId, setOpenId] = useState<number | null>(null)
-    const openModal = (id: number) => setOpenId(id)
+    const [openId, setOpenId] = useState<string | null>(null)
     const closeModal = () => setOpenId(null)
     const currentIndustry = industries.find(item => item.id === openId)
     const [isVisible, setIsVisible] = useState(false)
+
     const router = useRouter()
 
     useEffect(() => {
@@ -200,11 +199,11 @@ const IndustryCards = () => {
                             <Button onClick={() => router.push('/contact-us')} className='px-6 h-12'>
                                 Book a Consultation
                             </Button>
-                                <Button onClick={() => router.push('/case-study')}
-                                    className='!bg-blue-100 !border-0 !text-blue-600 px-6 py-3 hover:!bg-blue-200 transition flex items-center gap-2'
-                                >
-                                    Explore Our Case-Studies <FaArrowRightLong />
-                                </Button>
+                            <Button onClick={() => router.push('/case-study')}
+                                className='!bg-blue-100 !border-0 !text-blue-600 px-6 py-3 hover:!bg-blue-200 transition flex items-center gap-2'
+                            >
+                                Explore Our Case-Studies <FaArrowRightLong />
+                            </Button>
                         </div>
                     </div>
                     <div>
@@ -231,10 +230,10 @@ const IndustryCards = () => {
                         </p>
                     </div>
                     <div className="grid md:grid-cols-2 gap-8 mt-6">
-                        {industries.map((item) => (
+                        {industries.map((item , index) => (
                             <div key={item.id} className="bg-white border border-primary/30 shadow rounded-xl p-6">
                                 <h3 className="text-xl font-semibold mb-2">
-                                    {item.id}. {item.title}
+                                    {index + 1}. {item.title}
                                 </h3>
                                 <p className="text-gray-700 mb-3 text-sm">{item.description}</p>
                                 <p className="font-medium text-primary text-sm flex items-center gap-2"><MdOutlineMiscellaneousServices /> Services: </p>
@@ -244,57 +243,11 @@ const IndustryCards = () => {
                                     ))}
                                 </ul>
                                 <Button
-                                    onClick={() => openModal(item.id)}
+                                    onClick={() => router.push(`/industries/${item.id}`)}
                                     className='!bg-white !text-primary hover:!bg-primary hover:!text-white !h-11 !py-0'
                                 >
                                     Read More
                                 </Button>
-
-                                {/* Modal */}
-                                {currentIndustry && (
-                                    <div
-                                        className="fixed inset-0 backdrop-blur-[1.5px] z-50 flex items-center justify-center px-4 py-8 transition-opacity duration-300"
-                                        onClick={closeModal}
-                                    >
-                                        <div
-                                            className={`bg-white rounded-xl overflow-hidden shadow-lg w-full max-w-2xl relative transition-all duration-300 ease-in-out ${isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
-                                                }`}
-                                            onClick={(e) => e.stopPropagation()}
-                                        >
-                                            <Image
-                                                src={currentIndustry.image || ''}
-                                                alt={currentIndustry.title}
-                                                className="w-full object-cover"
-                                                priority
-                                                width={1920}
-                                                height={1080}
-                                                loading="eager"
-                                                quality={100}
-                                            />
-
-                                            <div className="p-6">
-                                                <h2 className="text-lg lg:text-2xl font-semibold text-primary mb-1">
-                                                    {currentIndustry.title}
-                                                </h2>
-                                                <h4 className="text-sm font-medium text-gray-700 mb-2">{currentIndustry.subtitle}</h4>
-                                                <p className="text-xs lg:text-sm text-gray-600 mb-3">{currentIndustry.subDescription}</p>
-
-                                                <ul className="list-disc list-inside text-xs lg:text-sm text-gray-700 space-y-1 mb-4">
-                                                    {currentIndustry.details.map((point, idx) => (
-                                                        <li key={idx}>{point}</li>
-                                                    ))}
-                                                </ul>
-                                                <p className="text-xs lg:text-sm text-gray-600 mb-3">{currentIndustry.success}</p>
-                                                <Button
-                                                    onClick={closeModal}
-                                                    className="absolute top-2 right-3 rounded-full size-10 text-xl !p-0 !grid !place-items-center"
-                                                >
-                                                    <RxCross2 />
-                                                </Button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                )}
                             </div>
                         ))}
                     </div>
