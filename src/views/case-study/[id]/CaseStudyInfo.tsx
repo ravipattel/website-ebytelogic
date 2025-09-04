@@ -94,14 +94,17 @@ const caseStudyData = [
           {
             label: "Camera",
             color: "blue",
+            bgColor: "#dbeafe",
           },
           {
             label: "i.MX8MP Processor",
             color: "purple",
+            bgColor: "#f3e8ff",
           },
           {
             label: "OLED Displays",
             color: "green",
+            bgColor: "#b4e1b4",
           },
         ],
       },
@@ -155,16 +158,13 @@ const caseStudyData = [
       },
       stats: [
         {
-          title: "Successful CES Demo",
-          description:
-            "Our solution enabled a flawless live demonstration at the Consumer Electronics Show.",
-          variant: "dark",
+          title: "60% Latency Reduction",
         },
         {
-          title: "Showcased Chipset Capabilities",
-          description:
-            "We bypassed OS constraints to prove the hardware's true potential.",
-          variant: "light",
+          title: "Improved Usability",
+        },
+        {
+          title: "Strengthened Competitiveness",
         },
       ],
     },
@@ -486,14 +486,17 @@ const caseStudyData = [
           {
             label: "Kernel DSI Host",
             color: "blue",
+            bgColor: "#dbeafe",
           },
           {
             label: "UBoot Driver Port",
             color: "purple",
+            bgColor: "#f3e8ff",
           },
           {
             label: "Early Logo Render",
             color: "green",
+            bgColor: "#b4e1b4",
           },
         ],
       },
@@ -657,13 +660,13 @@ const caseStudyData = [
           title: "Reduced Time-toMarket",
           description:
             "Efficient development workflows accelerated product launches.",
-          variant: "dark",
+          variant: "light",
         },
         {
           title: "Increased Stability & Compatibility",
           description:
             "Our solutions ensured robust performance across all platforms.",
-          variant: "light",
+          variant: "dark",
         },
       ],
     },
@@ -726,14 +729,17 @@ const caseStudyData = [
           {
             label: "NDI Input",
             color: "blue",
+            bgColor: "#dbeafe",
           },
           {
             label: "Custom GStreamer Plugin",
             color: "purple",
+            bgColor: "#f3e8ff",
           },
           {
             label: "Audio/Video Mixer",
             color: "green",
+            bgColor: "#b4e1b4",
           },
         ],
       },
@@ -1018,6 +1024,7 @@ const caseStudyData = [
       sectionTitle: "Our Robust Firmware Update Solution",
       chart: {
         title: "The CANopen Update Flow",
+        bgColor : '#dbd9e9',
         steps: [
           "Master Board (Yocto BSP)",
           "CANopen-based Update Mechanism",
@@ -1126,6 +1133,7 @@ const caseStudyData = [
       sectionTitle: "Our Optimized Multiview Solution",
       chart: {
         title: "System Architecture Overview",
+        bgColor : '#dbd9e9',
         steps: [
           "Multiple Input Streams (UDP, SRT, HLS)",
           "Platform-Specific GStreamer Pipelines",
@@ -1208,7 +1216,7 @@ const caseStudyData = [
     ],
     industry: "Broadcast Solutions",
   },
-  // 10 done but img left in results
+  // 10 done kuu
   {
     id: "sub-100ms-latency-in-uav-video-streaming",
     crumbs: "Sub-100ms Latency in UAV Video Streaming",
@@ -1294,14 +1302,29 @@ const caseStudyData = [
     flowchartPlusContent: {
       sectionId: "flowchartPlusContent",
       sectionTitle: "Our Optimized Video Streaming Pipeline",
-      chart: {
+      highlightedchart: {
         title: "UAV Video Pipeline Diagram",
         steps: [
-          "MIPI CSI (Camera Input)",
-          "HW H.264 Encode",
-          "RTP Streaming",
-          "HW H.264 Decode",
-          "DSI LCD (Display Output)",
+          {
+            label: "MIPI CSI (Camera Input)",
+            color: "bg-[#6D688D] text-white",
+          },
+          {
+            label: "HW H.264 Encode",
+            color: "bg-gray-100 text-black",
+          },
+          {
+            label: "RTP Streaming",
+            color: "bg-[#6D688D] text-white",
+          },
+          {
+            label: "HW H.264 Decode",
+            color: "bg-gray-100 text-black",
+          },
+          {
+            label: "DSI LCD (Display Output)",
+            color: "bg-[#6D688D] text-white",
+          },
         ],
       },
       Onlycontent: {
@@ -1462,6 +1485,7 @@ const caseStudyData = [
       sectionTitle: "Our Robust Protocol Bridging Solution",
       chart: {
         title: "Protocol Translation Diagram",
+        bgColor : '#dbd9e9',
         steps: [
           "CAN-based Device",
           "STM32 Firmware (CAN-Modbus Translation)",
@@ -1580,6 +1604,7 @@ const caseStudyData = [
       sectionTitle: "Our Systematic Migration Process",
       chart: {
         title: "Migration Flowchart",
+        bgColor : '#dbd9e9',
         steps: [
           "Yocto Zeus Build (Legacy)",
           "Update Layers & Recipes",
@@ -1843,6 +1868,7 @@ const caseStudyData = [
       sectionTitle: "Our Software Based Recovery Solution",
       chart: {
         title: "I2C Bus Recovery Sequence",
+        bgColor : '#dbd9e9',
         steps: ["Detect Lock-Up", "Generate Dummy Clocks", "Bus Recovery"],
       },
       biDirectionalChart: {
@@ -2408,7 +2434,7 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
               className="text-xl md:text-2xl xl:text-4xl font-semibold text-[#333] mb-6 text-center md:leading-12"
               dangerouslySetInnerHTML={{ __html: data?.title?.mainTitle ?? "" }}
             />
-            <p className="mt-4 text-sm md:text-base text-gray-600 text-center">
+            <p className="mt-4 text-sm md:text-base text-[#6D688D] text-center">
               {data?.title?.tagLine}
             </p>
           </section>
@@ -2499,8 +2525,11 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
                           key={index}
                           className="flex flex-col lg:flex-row items-center gap-5 lg:gap-44"
                         >
-                          <div
-                            className={`p-3 text-${step.color}-600 bg-${step.color}-100 rounded-lg`}
+                          <div style={{
+                            backgroundColor: `${step.bgColor}`,
+                            color: step.color,
+                          }}
+                            className={`p-3 rounded-lg`}
                           >
                             {step.label}
                           </div>
@@ -2762,23 +2791,46 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
                     {data?.flowchartPlusContent?.chart?.description && (
                       <p className="text-gray-600 text-sm text-center">{data?.flowchartPlusContent?.chart?.description}</p>
                     )}
-                    {data?.flowchartPlusContent?.chart?.steps?.map(
+                    {(data?.flowchartPlusContent?.chart?.steps).map(
                       (step, index) => (
                         <div
                           key={index}
-                          className="flex flex-col items-center gap-3"
+                          className="flex flex-col items-center gap-3" 
                         >
-                          <div className="w-full p-3 rounded-lg border border-slate-600 text-sm md:text-base">
+                          <div className="w-full p-3 rounded-lg border border-slate-600 text-sm md:text-base" style={{background : data?.flowchartPlusContent?.chart?.bgColor}}>
                             {step}
                           </div>
-                          {index <
-                            data?.flowchartPlusContent?.chart?.steps?.length -
-                            1 && <FaArrowDownLong />}
+                          {(data?.flowchartPlusContent?.chart?.steps?.length ?? 0) > index + 1 && (
+                            <FaArrowDownLong />
+                          )}
                         </div>
                       )
                     )}
                   </div>
                 )}
+                {data?.flowchartPlusContent?.highlightedchart && (
+                  <div className="text-center space-y-4">
+                    <h3 className="text-base md:text-xl !mb-4">
+                      {data?.flowchartPlusContent?.highlightedchart?.title}
+                    </h3>
+                    {data?.flowchartPlusContent?.highlightedchart?.steps?.map(
+                      (step, index) => (
+                        <div
+                          key={index}
+                          className="flex flex-col items-center gap-3"
+                        >
+                          <div className={`w-fit p-3 rounded-lg border border-slate-600 text-sm md:text-base ${step.color}`}>
+                            {step.label}
+                          </div>
+                          {(data?.flowchartPlusContent?.highlightedchart?.steps?.length ?? 0) > index + 1 && (
+                            <FaArrowDownLong />
+                          )}
+                        </div>
+                      )
+                    )}
+                  </div>
+                )}
+
                 {data?.flowchartPlusContent?.Onlycontent && (
                   <div className="p-4 md:p-6 rounded-lg shadow-inner border border-gray-300">
                     <h3 className="text-base md:text-xl mb-4 text-center">
@@ -2869,7 +2921,7 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
                     <p className="text-base md:text-lg font-semibold py-2 text-center">
                       {data?.flowchartPlusContent?.beforeAfter?.title}
                     </p>
-                    <div className="grid grid-cols-2 gap-4 text-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 text-center">
                       <div>
                         <h4 className="font-bold text-[#2B3B4B]">
                           {data?.flowchartPlusContent?.beforeAfter?.before?.title}
@@ -3041,7 +3093,6 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
                   </div>
                 </div>
               )}
-
               {data?.results?.translucentCard && (
                 <div className="grid grid-cols-2">
                   {data?.results?.translucentCard?.card?.map((item, idx) => {
@@ -3063,16 +3114,29 @@ const CaseStudyInfo: React.FC<CaseStudyInfoProps> = ({ highlights, industry }) =
                 {data?.results?.stats?.map((stat, i) => (
                   <div
                     key={i}
-                    className={`bg-[#f9f9f9] text-[#333] shadow-md transform hover:scale-105 hover:shadow-xl p-6 rounded-lg transition-all duration-300 cursor-pointer`}
+                    className={`shadow-md transform hover:scale-105 hover:shadow-xl p-6 rounded-lg transition-all duration-300 cursor-pointer ${stat?.variant === "dark" ? "" : "bg-[#f9f9f9] text-[#333]"
+                      }`}
+                    style={
+                      stat?.variant === "dark"
+                        ? {
+                          backgroundColor: data?.statCardColor,
+                        }
+                        : undefined
+                    }
                   >
                     <h3
                       className={`font-semibold text-lg`}
-                      style={{ color: data?.secondaryTitleColor }}
+                      style={
+                        stat?.variant === "dark"
+                          ? {
+                            color: 'white'
+                          }
+                          : { color: data?.secondaryTitleColor }}
                     >
                       {stat.title}
                     </h3>
                     <p
-                      className={`text-sm mt-1 ${stat?.variant === "dark" ? "opacity-80" : "text-gray-600"
+                      className={`text-sm mt-1 ${stat?.variant === "dark" ? "text-white" : "text-gray-600"
                         }`}
                     >
                       {stat.description}
