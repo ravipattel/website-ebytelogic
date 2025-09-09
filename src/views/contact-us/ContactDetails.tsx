@@ -1,4 +1,5 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import { BiPhoneCall } from 'react-icons/bi'
 import { FaGoogle, FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
@@ -9,56 +10,182 @@ import { IoLogoGithub } from 'react-icons/io'
 import Subscribe from '../about/Subscribe'
 import Link from 'next/link'
 
+import { createClient } from "@supabase/supabase-js"
+import { SuccessToast } from '@/utils /toast'
+import { ToastContainer } from 'react-toastify'
+
+// Use NEXT_PUBLIC_ prefix for client-side environment variables
+const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_PRIVATE_KEY!
+)
+
 const ContactDetails = () => {
+
+    type FormData = {
+        name: string;
+        telephone: string;
+        email: string;
+        subject: string;
+        message: string;
+      };
+
+    const [formData, setFormData] = useState<FormData>({
+        name: '',
+        telephone: '',
+        email: '',
+        subject: '',
+        message: '',
+    });
+    const [errors, setErrors] = useState<{ [key: string]: string }>({});
+    const [submitError, setSubmitError] = useState<string | null>(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
+    };
+
+    const validate = () => {
+        const newErrors: { [key: string]: string } = {};
+    
+        if (!formData.name.trim()) {
+          newErrors.name = "Name is required";
+        }
+    
+        if (!formData.telephone.trim()) {
+          newErrors.telephone = "Telephone is required";
+        } else if (!/^\d{7,15}$/.test(formData.telephone)) {
+          newErrors.telephone = "Enter a valid phone number (7–15 digits)";
+        }
+    
+        if (!formData.email.trim()) {
+          newErrors.email = "Email is required";
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+          newErrors.email = "Enter a valid email address";
+        }
+    
+        if (!formData.subject.trim()) {
+          newErrors.subject = "Subject is required";
+        }
+    
+        if (!formData.message.trim()) {
+          newErrors.message = "Message is required";
+        }
+    
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+      };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        console.log('Form submitted:', formData);
+        
+        if(validate()){
+            setIsSubmitting(true);
+            setSubmitError(null);
+            
+            try {
+                // You can send formData to an API or perform other actions here
+                const { error } = await supabase.from('Contact_Table').insert(formData).single();
+                console.log(error);
+                
+                if (error) {
+                    setSubmitError(error.message);
+                } else {
+                    // Reset form on success
+                    setFormData({
+                        name: '',
+                        telephone: '',
+                        email: '',
+                        subject: '',
+                        message: '',
+                    });
+                    SuccessToast("Data send successfully")
+                }
+            } catch (err) {
+                setSubmitError('An unexpected error occurred');
+            } finally {
+                setIsSubmitting(false);
+            }
+        }
+    };
+
     return (
         <section>
             <div className='max-w-[1400px] pt-28 pb-16 md:pb-36 mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 items-center'>
                 <div className="bg-white shadow-[0px_5px_20px_0px_rgba(0,0,0,0.09)] rounded p-4 md:p-8">
-                    <form className="space-y-8">
+                    <form className="space-y-8" onSubmit={handleSubmit}>
                         <div>
+                            {submitError && <p className="text-red-500 mb-4">{submitError}</p>}
                             <label className="font-medium">Name</label>
                             <input
                                 type="text"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
                                 placeholder="Your Name"
                                 className="w-full mt-2 border border-gray-300 px-4 py-2 rounded placeholder:text-[#999] focus:outline-none focus:ring focus:border-[#3078fb]"
                             />
+                            {errors.name && <p className="text-red-500 text-sm mt-2 ml-2">{errors.name}</p>}
                         </div>
+
                         <div className="grid md:grid-cols-2 gap-4">
                             <div>
                                 <label className="font-medium">Telephone</label>
                                 <input
                                     type="tel"
+                                    name="telephone"
+                                    value={formData.telephone}
+                                    onChange={handleChange}
                                     placeholder="Your Phone"
                                     className="w-full mt-2 border border-gray-300 px-4 py-2 rounded placeholder:text-[#999] focus:outline-none focus:ring focus:border-[#3078fb]"
                                 />
+                                {errors.telephone && <p className="text-red-500 text-sm mt-2 ml-2">{errors.telephone}</p>}
                             </div>
                             <div>
                                 <label className="font-medium">Email</label>
                                 <input
                                     type="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
                                     placeholder="Your Email"
                                     className="w-full mt-2 border border-gray-300 px-4 py-2 rounded placeholder:text-[#999] focus:outline-none focus:ring focus:border-[#3078fb]"
                                 />
+                                {errors.email && <p className="text-red-500 text-sm mt-2 ml-2">{errors.email}</p>}
                             </div>
                         </div>
                         <div>
                             <label className="font-medium">Subject</label>
                             <input
                                 type="text"
+                                name="subject"
+                                value={formData.subject}
+                                onChange={handleChange}
                                 placeholder="Your Subject"
                                 className="w-full mt-2 border border-gray-300 px-4 py-2 rounded placeholder:text-[#999] focus:outline-none focus:ring focus:border-[#3078fb]"
                             />
+                            {errors.subject && <p className="text-red-500 text-sm mt-2 ml-2">{errors.subject}</p>}
                         </div>
                         <div>
                             <label className="font-medium">Message</label>
                             <textarea
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
                                 placeholder="Your Message"
                                 rows={6}
                                 className="w-full mt-2 border border-gray-300 px-4 py-2 rounded placeholder:text-[#999] focus:outline-none focus:ring focus:border-[#3078fb]"
                             />
+                            {errors.message && <p className="text-red-500 text-sm mt-2 ml-2">{errors.message}</p>}
                         </div>
-                        <Button>
-                            SUBMIT MESSAGE
+                        <Button type="submit" disabled={isSubmitting}>
+                            {isSubmitting ? 'SUBMITTING...' : 'SUBMIT MESSAGE'}
                         </Button>
                     </form>
                 </div>
@@ -115,10 +242,10 @@ const ContactDetails = () => {
                         <p className="font-semibold mb-3 text-primaryText">Follow Us On Social Media</p>
                         <div className="flex gap-4 text-white">
                             <Button className='!rounded-full !w-11 !h-11 flex items-center justify-center !p-0'>
-                               <Link href={'https://www.google.com/search?q=ebytelogic&oq=ebytelogic&gs_lcrp=EgZjaHJvbWUqDggAEEUYJxg7GIAEGIoFMg4IABBFGCcYOxiABBiKBTIGCAEQRRg8MgYIAhBFGDwyCggDEAAYgAQYogQyBggEEEUYPDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDQ2OTVqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8'}><FaGoogle className='!w-5 !h-5' /></Link> 
+                                <Link href={'https://www.google.com/search?q=ebytelogic&oq=ebytelogic&gs_lcrp=EgZjaHJvbWUqDggAEEUYJxg7GIAEGIoFMg0IABBFGCcYOxiABBiKBTIGCAEQRRg8MgYIAhBFGDwyCggDEAAYgAQYogQyBggEEEUYPDIGCAUQRRg8MgYIBhBFGDwyBggHEEUYPNIBCDQ2OTVqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8'}><FaGoogle className='!w-5 !h-5' /></Link>
                             </Button>
                             <Button className='!rounded-full !w-11 !h-11 flex items-center justify-center !p-0'>
-                               <Link href={'https://in.linkedin.com/company/ebytelogic'}><FaLinkedinIn className='!w-5 !h-5' /></Link> 
+                                <Link href={'https://in.linkedin.com/company/ebytelogic'}><FaLinkedinIn className='!w-5 !h-5' /></Link>
                             </Button>
                         </div>
                     </div>
@@ -127,6 +254,7 @@ const ContactDetails = () => {
             <div className="md:-mb-[120px]">
                 <Subscribe className='z-20' />
             </div>
+            <ToastContainer className="z-[3]" />
         </section>
     )
 }
