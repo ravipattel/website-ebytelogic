@@ -10,3 +10,4 @@ const BlogPage = () => {
 }
 
 export default BlogPage
+export const runtime = 'edge';

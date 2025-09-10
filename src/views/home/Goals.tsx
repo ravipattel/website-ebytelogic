@@ -2,14 +2,10 @@
 import Image from 'next/image';
 
 import React, { useState } from 'react';
-import { GoArrowRight } from 'react-icons/go';
-import { MdArrowBackIosNew, MdArrowForwardIos } from 'react-icons/md';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { HiMiniMagnifyingGlassPlus } from 'react-icons/hi2';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -52,80 +48,39 @@ const Goals = () => {
                     precision to every build.
                 </p>
                 <PhotoProvider>
-                    <div className="relative group max-w-[1400px] mx-auto pt-3">
-                        <Swiper
-                            navigation={{
-                                nextEl: '.custom-swiper-button-next',
-                                prevEl: '.custom-swiper-button-prev',
-                            }}
-                            modules={[Navigation]}
-                            spaceBetween={30}
-                            breakpoints={{
-                                320: {
-                                    slidesPerView: 1,
-                                },
-                                640: {
-                                    slidesPerView: 2,
-                                },
-                                768: {
-                                    slidesPerView: 2,
-                                },
-                                1024: {
-                                    slidesPerView: 3,
-                                },
-                            }}
-                            className="mySwiper"
-                        >
-                            {CardData.map((card, index) => (
-                                <SwiperSlide key={index}>
-                                    <div className="w-full sm:mx-auto group/card">
-                                        <div className="overflow-hidden w-full relative cursor-pointer">
-                                            <Image
-                                                src={card.preview.src}
-                                                alt={card.title}
-                                                width={400}
-                                                height={300}
-                                                className="w-full transition-transform duration-400 transform group-hover/card:scale-100 scale-[1.1]"
-                                            />
-                                            <div className="absolute inset-0 bg-[#002c57f2] opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                                <PhotoView src={card.preview.src} >
-                                                    <span>
-                                                        <HiMiniMagnifyingGlassPlus className="text-white text-4xl" />
-                                                    </span>
-                                                </PhotoView>
-                                            </div>
-                                        </div>
-                                        <div className="py-4 space-y-2">
-                                            <div className="flex items-center justify-between">
-                                                <h4 className={`text-[21px] text-nowrap text-[#2a354e] font-medium group-hover/card:text-primary transition-all duration-200 ${index === 0 && "text-nowrap"}`}>
-                                                    {card.title}
-                                                </h4>
-                                                {/* <Button
-                                                    variant="default"
-                                                    className="h-8 w-12 grid place-items-center !p-0 me-8 opacity-0 group-hover/card:opacity-100 group-hover/card:me-0 transition-all duration-300"
-                                                >
-                                                    <GoArrowRight className="text-xl" />
-                                                </Button> */}
-                                            </div>
-                                            <p className="text-sm text-[#5d6471] leading-relaxed">
-                                                {card.description}
-                                            </p>
-                                        </div>
+                    <div className="relative max-w-[1400px] mx-auto pt-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {CardData.map((card, index) => (
+                            <div className="w-full sm:mx-auto group/card" key={index}>
+                                <div className="overflow-hidden w-full relative cursor-pointer">
+                                    <Image
+                                        src={card.preview.src}
+                                        alt={card.title}
+                                        width={400}
+                                        height={300}
+                                        className="w-full transition-transform duration-400 transform group-hover/card:scale-100 scale-[1.1]"
+                                    />
+                                    <div
+                                        className="absolute inset-0 bg-[#002c57f2] opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none group-hover/card:pointer-events-auto"
+                                    >
+                                        <PhotoView src={card.preview.src} >
+                                            <span>
+                                                <HiMiniMagnifyingGlassPlus className="text-white text-4xl" />
+                                            </span>
+                                        </PhotoView>
                                     </div>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-                        <button
-                            className="custom-swiper-button-prev border border-white absolute left-36 top-1/2 group-hover:left-8 z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-md rounded-full w-10 h-10 grid place-items-center cursor-pointer hover:border-primary hover:bg-primary"
-                        >
-                            <span className="text-primary text-2xl"><MdArrowBackIosNew className='text-white text-base' /></span>
-                        </button>
-
-                        <button
-                            className="custom-swiper-button-next border border-white absolute right-36 top-1/2 group-hover:right-8 z-20 opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-md rounded-full w-10 h-10 grid place-items-center cursor-pointer hover:border-primary hover:bg-primary"
-                        >
-                            <span className="text-primary text-2xl"><MdArrowForwardIos className='text-white text-base' /></span>
-                        </button>
+                                </div>
+                                <div className="py-4 space-y-2">
+                                    <div className="flex items-center justify-between">
+                                        <h4 className={`user-select-text text-[21px] text-nowrap text-[#2a354e] font-medium group-hover/card:text-primary transition-all duration-200 ${index === 0 && "text-nowrap"}`} style={{ userSelect: "text" }}>
+                                            {card.title}
+                                        </h4>
+                                    </div>
+                                    <p className="user-select-text text-sm text-[#5d6471] leading-relaxed">
+                                        {card.description}
+                                    </p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </PhotoProvider>
             </div>
