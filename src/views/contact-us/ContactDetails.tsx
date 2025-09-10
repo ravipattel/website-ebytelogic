@@ -104,7 +104,7 @@ const ContactDetails = () => {
                         subject: '',
                         message: '',
                     });
-                    SuccessToast("Data send successfully")
+                    SuccessToast("Your query sent!! you will get an answer within few hours")
                 }
             } catch (err) {
                 setSubmitError('An unexpected error occurred');
