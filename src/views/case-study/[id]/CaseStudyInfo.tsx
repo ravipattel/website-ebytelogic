@@ -2339,8 +2339,6 @@ const caseStudyData = [
   },
 ];
 
-
-// Suggestion logic (move to utils if needed)
 const getSuggestions = (currentId: string) => {
   const currentCard = caseStudyData.find((card) => card.id === currentId);
   if (!currentCard) return [];

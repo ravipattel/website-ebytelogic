@@ -139,69 +139,43 @@ const tocData = {
   ],
 
   //blogs
-  "som-soc": [
-    { id: "introduction", label: "1. Introduction" },
-    { id: "definitions", label: "1.1 Definitions" },
-    { id: "key-components", label: "2. Key Components" },
-    { id: "advantages", label: "2.1 Advantages & Disadvantages" },
-    { id: "comparative-analysis", label: "3. Comparative Analysis" },
-    { id: "use-cases", label: "3.1 Use Cases" },
-    { id: "examples", label: "3.2 Examples" },
-    { id: "decision-framework", label: "4. Decision Framework" },
-    { id: "conclusion", label: "4.1 Conclusion" },
+  "av-lip-sync-in-2025": [
+    { "id": "introduction", "label": "1. Introduction" },
+    { "id": "qa", "label": "2. Lip-Sync Sync Deep Dive" },
+    { "id": "conclusion", "label": "3. Conclusion" }
   ],
-  qa: [
-    { id: "introduction", label: "Introduction" },
-    { id: "hardware-dependency", label: "Hardware Dependency" },
-    { id: "low-level-interactions", label: "Low-Level Hardware Interactions" },
-    { id: "ota-risks", label: "OTA Update Perils" },
-    { id: "timing-challenges", label: "Asynchronous Timing" },
-    { id: "debuggingvisibility", label: "Limited Debugging" },
-    { id: "conclusion", label: "Conclusion" },
+  "SRT-vs-RIST-vs-RTMP": [
+    { "id": "introduction", "label": "1. Introduction" },
+    { "id": "qa", "label": "2. Protocol Wars Deep Dive" },
+    { "id": "conclusion", "label": "3. Conclusion" }
   ],
-  multiviewer: [
-    { id: "overview", label: "Overview" },
-    { id: "ffmpeg", label: "FFmpeg filter_complex" },
-    { id: "gstreamer", label: "GStreamer compositor" },
-    { id: "ndi", label: "NDI Multiview" },
-    { id: "feature", label: "Feature Comparison" },
-    { id: "performance", label: "Performance Analysis" },
-    { id: "decision", label: "Decision Matrix" },
-    { id: "conclusion", label: "Conclusion" },
+  "the-future-of-embedded-systems": [
+    { "id": "introduction", "label": "1. Introduction" },
+    { "id": "qa", "label": "2. Market Growth" },
+    { "id": "trends", "label": "3. 7 Key Trends" },
+    { "id": "challenges", "label": "4. Challenges" },
+    { "id": "case-study", "label": "5. Case Studies" },
+    { "id": "impact", "label": "6. Impact" },
+    { "id": "conclusion", "label": "3. Conclusion" }
   ],
-  "g-streamer": [
-    { id: "section-1", label: "The Challenge" },
-    { id: "section-2", label: `eByteLogic's Approach` },
-    { id: "section-3", label: "Optimization Strategies" },
-    { id: "section-4", label: "PlatformSpecific Techniques" },
-    { id: "section-5", label: "Robust Performance" },
-    { id: "section-6", label: "Conclusion" },
-  ],
-  "button-debounce": [
-    { id: "introduction", label: "Introduction" },
-    { id: "comparison", label: "Hardware vs Software Comparison" },
-    { id: "rc-filter", label: "RC Low-Pass Filter" },
-    { id: "srlatch", label: "SR Latch" },
-    { id: "dedicated-ics", label: "Dedicated ICs" },
-    { id: "software-methods", label: "Software Debounce Methods" },
-    { id: "arduino", label: "Arduino Implementation" },
-    { id: "raspberry-pi", label: "Raspberry Pi" },
-    { id: "considerations", label: "Key Considerations" },
-    { id: "reliability", label: "Maximizing Reliability" },
-    { id: "power", label: "Power Consumption" },
-    { id: "cost", label: "Cost Analysis" },
-    { id: "conclusion", label: "Conclusion" },
-  ],
-  "rk3588-guide": [
-    { id: "overview", label: "Overview" },
-    { id: "architecture", label: "RK3588 Architecture" },
-    { id: "camera-config", label: "Camera Configuration" },
-    { id: "isp-3a", label: "ISP & 3A Processing" },
-    { id: "mpp-rga", label: "MPP & RGA" },
-    { id: "ai-integration", label: "AI Integration" },
-    { id: "development", label: "Software Development" },
-    { id: "troubleshooting", label: "Troubleshooting" },
-  ],
+  "ndi-in-hybrid-ip-sdi-workflows": [
+    { "id": "introduction", "label": "1. Introduction" },
+    { "id": "qa", "label": "2. Understanding the Hybrid Broadcast Landscape" },
+    { "id": "trends", "label": "4. Key Benefits of NDI in Hybrid Workflows" },
+    { "id": "challenges", "label": "5. Common Challenges Product Teams Face with NDI" },
+    { "id": "scenarios", "label": "6. NDI Integration Scenarios & Best Practices" },
+    { "id": "conclusion", "label": "7. Conclusion & Call-to-Action" }
+  ]
+  ,
+  "buildroot-vs-yocto-for-video-devices": [
+    { "id": "introduction", "label": "1. Introduction" },
+    { "id": "qa", "label": "2. The Embedded Video Device Challenge & Buildroot at a Glance" },
+    { "id": "scenarios", "label": "4. Pragmatic Scenarios: Which to Choose?" },
+    { "id": "case-study", "label": "5. Case Study Snapshot: eByteLogic Experience" },
+    { "id": "recommendations", "label": "6. Key Recommendations" },
+    { "id": "conclusion", "label": "7. Conclusion" }
+  ]
+
 };
 
 const Sidebar = () => {

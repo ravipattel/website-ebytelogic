@@ -109,7 +109,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
-      <header className="sticky top-0 left-0 z-[1] bg-white/90">
+      <header className="sticky top-0 left-0 z-[99999] bg-white/90">
         <div className="py-2 shadow-lg relative z-50">
           <div className="max-w-[1400px] mx-auto px-3 flex justify-between items-center">
             <Link

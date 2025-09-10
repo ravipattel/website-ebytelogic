@@ -1,12 +1,11 @@
 "use client"
 import React, { useState } from 'react'
 import { BiPhoneCall } from 'react-icons/bi'
-import { FaGoogle, FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaGoogle, FaLinkedinIn } from 'react-icons/fa'
 import { HiOutlineLocationMarker } from 'react-icons/hi'
 import { MdMailOutline } from 'react-icons/md'
 
 import Button from '@/src/components/Button'
-import { IoLogoGithub } from 'react-icons/io'
 import Subscribe from '../about/Subscribe'
 import Link from 'next/link'
 
@@ -28,7 +27,7 @@ const ContactDetails = () => {
         email: string;
         subject: string;
         message: string;
-      };
+    };
 
     const [formData, setFormData] = useState<FormData>({
         name: '',
@@ -52,48 +51,48 @@ const ContactDetails = () => {
 
     const validate = () => {
         const newErrors: { [key: string]: string } = {};
-    
+
         if (!formData.name.trim()) {
-          newErrors.name = "Name is required";
+            newErrors.name = "Name is required";
         }
-    
+
         if (!formData.telephone.trim()) {
-          newErrors.telephone = "Telephone is required";
+            newErrors.telephone = "Telephone is required";
         } else if (!/^\d{7,15}$/.test(formData.telephone)) {
-          newErrors.telephone = "Enter a valid phone number (7–15 digits)";
+            newErrors.telephone = "Enter a valid phone number (7–15 digits)";
         }
-    
+
         if (!formData.email.trim()) {
-          newErrors.email = "Email is required";
+            newErrors.email = "Email is required";
         } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-          newErrors.email = "Enter a valid email address";
+            newErrors.email = "Enter a valid email address";
         }
-    
+
         if (!formData.subject.trim()) {
-          newErrors.subject = "Subject is required";
+            newErrors.subject = "Subject is required";
         }
-    
+
         if (!formData.message.trim()) {
-          newErrors.message = "Message is required";
+            newErrors.message = "Message is required";
         }
-    
+
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
-      };
+    };
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log('Form submitted:', formData);
-        
-        if(validate()){
+
+        if (validate()) {
             setIsSubmitting(true);
             setSubmitError(null);
-            
+
             try {
                 // You can send formData to an API or perform other actions here
                 const { error } = await supabase.from('Contact_Table').insert(formData).single();
                 console.log(error);
-                
+
                 if (error) {
                     setSubmitError(error.message);
                 } else {
@@ -254,7 +253,7 @@ const ContactDetails = () => {
             <div className="md:-mb-[120px]">
                 <Subscribe className='z-20' />
             </div>
-            <ToastContainer className="z-[3]" />
+            <ToastContainer className="!z-[999999]" />
         </section>
     )
 }
