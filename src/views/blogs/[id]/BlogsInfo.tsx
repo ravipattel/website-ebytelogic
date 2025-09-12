@@ -5,18 +5,6 @@ import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 
 import React from "react";
-import {
-    Chart as ChartJS,
-    LineElement,
-    PointElement,
-    LinearScale,
-    CategoryScale,
-    Title,
-    Tooltip,
-    Legend,
-    BarElement,
-} from "chart.js";
-import { Bar, Line } from "react-chartjs-2";
 import { CgLoadbarSound, CgPullClear } from "react-icons/cg";
 import {
     BiCloud,
@@ -30,35 +18,23 @@ import {
 import { BsShieldCheck } from "react-icons/bs";
 import { FaBolt, FaCheckCircle, FaCloud, FaMicrochip, FaVideo } from "react-icons/fa";
 import { RiArrowRightSLine } from "react-icons/ri";
-import { IoArrowForward } from "react-icons/io5";
 
 import { motion } from "framer-motion";
 import { easeOut } from "framer-motion";
 
 import Button from "@/src/components/Button";
 
-import AfterLipSyncPng from "@/src/assets/images/blogs/blogDetails/afterLipSync.png";
-import IotJpeg from "@/src/assets/images/home/industry/iot.jpeg";
-import BeforeLipSyncPng from "@/src/assets/images/blogs/blogDetails/beforeLipSync.png";
-import SrtPng from "@/src/assets/images/blogs/blogDetails/srt.png";
-import SrtLatencyFlowchartPng from "@/src/assets/images/blogs/blogDetails/srcLatencyFlowchart.png";
-import DecisionChartPng from "@/src/assets/images/blogs/blogDetails/decisionChart.png";
-
-ChartJS.register(
-    LineElement,
-    BarElement,
-    PointElement,
-    LinearScale,
-    CategoryScale,
-    Title,
-    Tooltip,
-    Legend
-);
+import NdiPng from "@/src/assets/images/blogs/blogDetails/ndi.png";
+import YoctoPng from "@/src/assets/images/blogs/blogDetails/yocto.png";
+import SrtRtmpPng from "@/src/assets/images/blogs/blogDetails/srt-rtmp.png";
+import AvPng from "@/src/assets/images/blogs/blogDetails/av-lip-sync.png";
+import BufferPng from "@/src/assets/images/blogs/blogDetails/buffers.png";
 
 const blogsData = [
     // 1st Blog
     {
         id: "av-lip-sync-in-2025",
+        breadCrumb: "AV Lip Sync in 2025",
         introData: {
             title: "Why Lip-Sync Still Breaks in 2025",
             highlight: "2025",
@@ -72,7 +48,7 @@ const blogsData = [
                 link: "/case-study",
             },
             image: {
-                src: IotJpeg,
+                src: AvPng,
                 alt: "Lip Sync Visual",
             },
         },
@@ -99,15 +75,6 @@ const blogsData = [
                     "5. <span class='font-semibold'>Render – </span> audio device buffer vs video display vs compositor queue.",
                     "The fix is <span class='font-semibold'>consistent timing </span> end-to-end: assign a trustworthy clock, carry timestamps cleanly, and size buffers for the worst realistic jitter without bloating latency.",
                 ],
-                chartTitle: "Typical Latency Breakdown",
-                chartType: "horizontal",
-                chart: [
-                    { name: "Capture", latency: "20–40 ms" },
-                    { name: "Encode", latency: "30–50 ms" },
-                    { name: "Network", latency: "50–100 ms" },
-                    { name: "Decode", latency: "30–50 ms" },
-                    { name: "Render", latency: "20–40 ms" },
-                ],
             },
             {
                 id: 3,
@@ -125,74 +92,6 @@ const blogsData = [
                     "<span class='font-semibold'> • </span> Use <span class='font-semibold'> clocksync </span> if you need to re-align timestamps to the current clock before a sink. <a href='https://gstreamer.freedesktop.org/documentation/coreelements/clocksync.html?gi-language=c' target='_blank' class='text-blue-600 underline'>GStreamer</a>",
                     "<span class='font-semibold'> • </span> Watch and cap internal buffers (queues) so back-pressure doesn’t balloon end-to-end delay. <a href='https://gstreamer.freedesktop.org/documentation/coreelements/queue.html?gi-language=c' target='_blank' class='text-blue-600 underline'>GStreamer+1.</a>",
                 ],
-                chartType: "vertical",
-                chartTitle: "GStreamer Pipeline Stages",
-                chart: [
-                    {
-                        name: "Source",
-                        type: "source",
-                        description: "Input stream source (e.g., v4l2src, alsasrc)",
-                        flow: "source → depay/decoder",
-                    },
-                    {
-                        name: "Depay/Decoder",
-                        type: "decoder",
-                        description: "Payload/codec decoder (e.g., h264dec, avdec_aac)",
-                        flow: "depay/decoder → filters",
-                    },
-                    {
-                        name: "Filters",
-                        type: "filter",
-                        description: "Filter elements (e.g., videoconvert, audioresample)",
-                        flow: "filters → jitterbuffer",
-                    },
-                    {
-                        name: "Jitterbuffer",
-                        type: "buffer",
-                        description:
-                            "Buffer to handle network jitter (e.g., rtpjitterbuffer)",
-                        flow: "jitterbuffer → sink",
-                    },
-                    {
-                        name: "Sink",
-                        type: "sink",
-                        description:
-                            "Final output sink (e.g., autovideosink, autoaudiosink)",
-                        flow: "sink → clock",
-                    },
-                    {
-                        name: "Clock",
-                        type: "clock",
-                        description:
-                            "Master clock for synchronization (often the audio sink)",
-                        flow: "clock → sync",
-                    },
-                ],
-                chartData: {
-                    chartTitle: "Queue Level Over Time",
-                    chartType: "line",
-                    data: {
-                        labels: ["0s", "1s", "2s", "3s", "4s", "5s"],
-                        datasets: [
-                            {
-                                label: "Healthy Queue",
-                                data: [5, 6, 8, 7, 6, 5],
-                                borderColor: "#28a745",
-                                backgroundColor: "rgba(40, 167, 69, 0.2)",
-                                fill: true,
-                                tension: 0.4,
-                            },
-                            {
-                                label: "Runaway Back-Pressure",
-                                data: [1, 2, 4, 7, 10, 12],
-                                borderColor: "#dc3545",
-                                backgroundColor: "rgba(220, 53, 69, 0.2)",
-                                fill: true,
-                                tension: 0.4,
-                            },
-                        ],
-                    },
-                },
             },
             {
                 id: 4,
@@ -208,10 +107,6 @@ const blogsData = [
                     "<span class='font-semibold'> Tip :</span> Latency refers to <span class='font-semibold'> SRT transport only </span>, not the total device/codec/display pipeline.",
                     "Measure <span class='font-semibold'>glass-to-glass </span>, then optimize each segment separately. <a href='https://video.matrox.com/en/media/guides-articles/srt-protocol?utm_source=chatgpt.com' target='_blank' class='text-blue-600 underline'>doc.haivision.com</a>",
                 ],
-                flowchart: {
-                    title: "SRT Latency Selection Flow",
-                    image: SrtLatencyFlowchartPng,
-                },
             },
             {
                 id: 5,
@@ -251,15 +146,6 @@ const blogsData = [
                     "<span class='font-semibold'>•</span> Enable <span class='font-semibold'>GStreamer tracers</span> (queue-levels) to watch back-pressure growth.",
                     "<span class='font-semibold'>•</span> Log <span class='font-semibold'>sink render times</span>, late/dropped frames, and jitterbuffer stats. <a href='https://gstreamer.freedesktop.org/documentation/rstracers/queue-levels.html?utm_source=chatgpt.com' class='text-blue-600 underline' target='_blank'>GStreamer</a>",
                 ],
-                beforeAfter: {
-                    title: "Oscilloscope Δt Comparison: Before vs After Sync Tuning",
-                    description:
-                        "A visual comparison of lip-sync error measured using a clap/flash test. Δt reduced from 45 ms to 8 ms after tuning.",
-                    beforeImage: BeforeLipSyncPng,
-                    afterImage: AfterLipSyncPng,
-                    deltaBefore: "Before (Δt: 45 ms)",
-                    deltaAfter: "After (Δt: 8 ms)",
-                },
             },
             {
                 id: 7,
@@ -330,6 +216,7 @@ const blogsData = [
     // 2nd Blog
     {
         id: 'SRT-vs-RIST-vs-RTMP',
+        breadCrumb: 'SRT vs RIST vs RTMP',
         introData: {
             title: "Protocol Wars in Live Contribution",
             highlight: "Live Contribution",
@@ -344,7 +231,7 @@ const blogsData = [
                 link: "/protocol-comparison"
             },
             image: {
-                src: SrtPng,
+                src: SrtRtmpPng,
                 alt: "Protocol Comparison Visual"
             }
         },
@@ -392,33 +279,6 @@ const blogsData = [
                     "<span class='font-bold'>•</span> Some implementations show <span class='font-semibold'>150–400 ms</span> in controlled tests.",
                     "<span class='font-semibold'>Verdict: RTMP is out</span> if you need <1 s. Both SRT and RIST can hit sub-second reliably."
                 ],
-                chartData: {
-                    chartTitle: "Latency vs Buffer Size",
-                    chartType: "bar",
-                    rttData: [100, 150, 200, 250, 300], // (y-axis)
-                    bufferData: [10, 20, 30, 40, 50], // (x-axis)
-                    data: {
-                        labels: ["10 KB", "20 KB", "30 KB", "40 KB", "50 KB"],
-                        datasets: [
-                            {
-                                "chartType": "bar",
-                                "bufferData": ["100 KB", "200 KB", "300 KB", "400 KB", "500 KB"],
-                                "rttData": [200, 300, 250, 400, 350],
-                                "rttLabel": "RTT (ms)",
-                                "barColor": "#4c6ef5b3",
-                                "borderColor": "#4c6ef5b3",
-                                "borderWidth": 1,
-                                "hoverBarColor": "#2b6ff5",
-                                "xAxisLabel": "Buffer Size (KB)",
-                                "yAxisLabel": "RTT (ms)",
-                                "barRadius": 4,
-                                "barThickness": 50,
-                                "maxBarThickness": 50,
-                                "layoutPadding": 20
-                            }
-                        ],
-                    },
-                }
             },
             {
                 id: 3,
@@ -437,27 +297,6 @@ const blogsData = [
                     "<span class='font-bold'>•</span> Designed with professional contribution in mind.",
                     "<span class='font-semibold'>Verdict: RIST edges out SRT </span> in redundancy features, but both handle packet loss gracefully. RTMP suffers most."
                 ],
-                chartData: {
-                    chartTitle: "Network Latency Comparison",
-                    chartType: "line",
-                    data: {
-                        labels: ['0s', '1s', '2s', '3s', '4s'],
-                        datasets: [
-                            {
-                                label: 'SRT Latency',
-                                data: [100, 120, 150, 130, 140],
-                                borderColor: 'rgba(75, 192, 192, 1)',
-                                fill: false,
-                            },
-                            {
-                                label: 'RIST Latency',
-                                data: [80, 90, 110, 100, 115],
-                                borderColor: 'rgba(153, 102, 255, 1)',
-                                fill: false,
-                            },
-                        ],
-                    }
-                },
             },
             {
                 id: 4,
@@ -475,7 +314,6 @@ const blogsData = [
                     "<span class='font-bold'>•</span> Some vendors add tunneling to simplify.",
                     "<span class='font-semibold'>Verdict: SRT wins for ease of firewall/NAT traversal.</span>"
                 ],
-                image: DecisionChartPng,
             },
             {
                 id: 5,
@@ -624,8 +462,9 @@ const blogsData = [
     // 3rd Blog
     {
         id: "the-future-of-embedded-systems",
+        breadCrumb: 'The Future of Embedded Systems',
         introData: {
-            title: " Why Embedded Systems Are Driving Innovation Across Industries",
+            title: "Why Embedded Systems Are Driving Innovation Across Industries",
             highlight: "Innovation Across Industries",
             subtitle:
                 "Embedded Systems",
@@ -639,7 +478,7 @@ const blogsData = [
                 link: "/protocol-comparison",
             },
             image: {
-                src: SrtPng,
+                src: BufferPng,
                 alt: "Protocol Comparison Visual",
             },
         },
@@ -799,6 +638,7 @@ const blogsData = [
     // 4th Blog
     {
         id: "ndi-in-hybrid-ip-sdi-workflows",
+        breadCrumb: "NDI in Hybrid IP SDI Workflows",
         introData: {
             title: "NDI in Hybrid IP/SDI Workflows: What Product Teams Must Know",
             highlight: "Teams Must Know",
@@ -812,7 +652,7 @@ const blogsData = [
                 link: "/ndi-hybrid-workflows",
             },
             image: {
-                src: DecisionChartPng,
+                src: NdiPng,
                 alt: "NDI in Hybrid IP/SDI Workflows",
             },
         },
@@ -987,29 +827,30 @@ const blogsData = [
     // 5th Blog
     {
         id: "buildroot-vs-yocto-for-video-devices",
-        "introData": {
-            "title": "Buildroot vs Yocto for Video Devices: A Pragmatic Product Guide",
-            "highlight": "Pragmatic Product Guide",
-            "paragraphs": [
+        breadCrumb: "Buildroot vs yocto for video-devices",
+        introData: {
+            title: "Buildroot vs Yocto for Video Devices: A Pragmatic Product Guide",
+            highlight: "Pragmatic Product Guide",
+            paragraphs: [
                 "For companies building <span class='font-semibold'>video encoders, broadcast equipment, or multimedia devices</span>, one of the first technical roadblocks is selecting the right <span class='font-semibold'>embedded Linux build system</span>. Two names dominate the space: <span class='font-semibold'>Buildroot</span> and <span class='font-semibold'>Yocto</span>.",
                 "Both are open-source, battle-tested, and widely adopted. Yet for product teams, the decision is rarely straightforward. Choose Buildroot, and you’ll enjoy speed and simplicity — but may face limits in complex pipelines. Choose Yocto, and you’ll unlock flexibility and long-term maintainability — but risk higher setup costs and a steep learning curve.",
                 "This guide takes a pragmatic, product-focused look at <span class='font-semibold'>Buildroot vs Yocto for video devices</span>."
             ],
-            "button": {
-                "label": "Explore Buildroot vs Yocto",
-                "link": "/buildroot-vs-yocto"
+            button: {
+                label: "Explore Buildroot vs Yocto",
+                link: "/buildroot-vs-yocto"
             },
-            "image": {
-                "src": DecisionChartPng,
-                "alt": "Buildroot vs Yocto for Video Devices"
+            image: {
+                src: YoctoPng,
+                alt: "Buildroot vs Yocto for Video Devices"
             }
         },
-        "qaTitle": "The Embedded Video Device Challenge & Buildroot at a Glance",
-        "qa": [
+        qaTitle: "The Embedded Video Device Challenge & Buildroot at a Glance",
+        qa: [
             {
-                "id": 1,
-                "title": "The Embedded Video Device Challenge",
-                "content": [
+                id: 1,
+                title: "The Embedded Video Device Challenge",
+                content: [
                     "Modern video devices face pressures far beyond “just working.” Whether you’re building a <span class='font-semibold'>streaming encoder, a broadcast transceiver, or a custom multimedia device</span>, you must deliver:",
                     "<span class='font-semibold'>• Ultra-low latency</span> (±10ms AV sync).",
                     "<span class='font-semibold'>• Protocol diversity </span>(NDI, RTP, SRT, RTMP, RIST).",
@@ -1019,16 +860,16 @@ const blogsData = [
                 ]
             },
             {
-                "id": 2,
-                "title": "Buildroot at a Glance – Key Philosophy & Approach",
-                "content": [
+                id: 2,
+                title: "Buildroot at a Glance – Key Philosophy & Approach",
+                content: [
                     "Buildroot is designed for <span class='font-semibold'>simplicity and speed</span>. It generates a root filesystem, kernel, and bootloader with minimal fuss. Its configuration is menu-driven (<span class='font-semibold'>make menuconfig</span>), making it easy to get started."
                 ]
             },
             {
-                "id": 3,
-                "title": "Buildroot at a Glance – Strengths in Video Devices",
-                "content": [
+                id: 3,
+                title: "Buildroot at a Glance – Strengths in Video Devices",
+                content: [
                     "<span class='font-semibold'>• Small footprint –</span> Ideal for devices with constrained storage or memory.",
                     "<span class='font-semibold'>• Fast boot times –</span> Can be tuned to achieve sub-2-second boots.",
                     "<span class='font-semibold'>• Straightforward customization –</span> Quick to add/remove packages.",
@@ -1036,29 +877,29 @@ const blogsData = [
                 ]
             },
             {
-                "id": 4,
-                "title": "Buildroot at a Glance – Limitations",
-                "content": [
+                id: 4,
+                title: "Buildroot at a Glance – Limitations",
+                content: [
                     "<span class='font-semibold'>• Limited scalability –</span> Managing complex pipelines or large systems becomes difficult.",
                     "<span class='font-semibold'>• Package dependencies –</span>Less modular than Yocto; harder to integrate advanced stacks.",
                     "<span class='font-semibold'>• Community ecosystem –</span> Active, but not as extensive as Yocto’s."
                 ]
             }
         ],
-        "twiceQa": {
-            "qaTitle": "Yocto at a Glance",
-            "qa": [
+        twiceQa: {
+            qaTitle: "Yocto at a Glance",
+            qa: [
                 {
-                    "id": 1,
-                    "title": "Key Philosophy & Approach",
-                    "content": [
+                    id: 1,
+                    title: "Key Philosophy & Approach",
+                    content: [
                         "The <span class='font-semibold'>Yocto Project</span> is built for <span class='font-semibold'> flexibility, scalability, and ecosystem  support.</span> Its metalayer approach allows developers to create highly modular, reusable components across projects."
                     ]
                 },
                 {
-                    "id": 2,
-                    "title": "Strengths in Video Devices",
-                    "content": [
+                    id: 2,
+                    title: "Strengths in Video Devices",
+                    content: [
                         "• <span class='font-semibold'>Rich ecosystem</span> – Wide support for codecs, multimedia frameworks, and device drivers.",
                         "• <span class='font-semibold'>Scalable</span> – Handles everything from small encoders to enterprise broadcast gear.",
                         "• <span class='font-semibold'>Update strategies</span> – Easier to implement OTA updates and long-term maintainability.",
@@ -1066,53 +907,53 @@ const blogsData = [
                     ]
                 },
                 {
-                    "id": 3,
-                    "title": "Limitations",
-                    "content": [
+                    id: 3,
+                    title: "Limitations",
+                    content: [
                         "• <span class='font-semibold'>Learning curve</span> – Requires knowledge of recipes, layers, and bitbake.",
                         "• <span class='font-semibold'>Build time</span> – Slower initial builds compared to Buildroot.",
                         "• <span class='font-semibold'>Overhead</span> – Can be excessive for lightweight or single-purpose devices."
                     ]
                 },
                 {
-                    "id": 4,
-                    "title": "Head-to-Head Comparison for Video Devices",
-                    "table": {
-                        "header": [
+                    id: 4,
+                    title: "Head-to-Head Comparison for Video Devices",
+                    table: {
+                        header: [
                             "Factor",
                             "Buildroot",
                             "Yocto"
                         ],
-                        "rows": [
+                        rows: [
                             {
-                                "feature": "Boot Time & Footprint",
-                                "Buildroot": "Minimal, boots in seconds",
-                                "Yocto": "Larger, optimized but slower"
+                                feature: "Boot Time & Footprint",
+                                Buildroot: "Minimal, boots in seconds",
+                                Yocto: "Larger, optimized but slower"
                             },
                             {
-                                "feature": "Codec & Protocol Support",
-                                "Buildroot": "Good but requires manual effort",
-                                "Yocto": "Wide support out-of-the-box"
+                                feature: "Codec & Protocol Support",
+                                Buildroot: "Good but requires manual effort",
+                                Yocto: "Wide support out-of-the-box"
                             },
                             {
-                                "feature": "BSP Customization",
-                                "Buildroot": "Very fast",
-                                "Yocto": "Slower, but more robust"
+                                feature: "BSP Customization",
+                                Buildroot: "Very fast",
+                                Yocto: "Slower, but more robust"
                             },
                             {
-                                "feature": "Speed",
-                                "Buildroot": "Very fast",
-                                "Yocto": "Slower, but more robust"
+                                feature: "Speed",
+                                Buildroot: "Very fast",
+                                Yocto: "Slower, but more robust"
                             },
                             {
-                                "feature": "Long-Term Maintenance",
-                                "Buildroot": "Harder to manage upgrades",
-                                "Yocto": "Strong OTA & lifecycle support"
+                                feature: "Long-Term Maintenance",
+                                Buildroot: "Harder to manage upgrades",
+                                Yocto: "Strong OTA & lifecycle support"
                             },
                             {
-                                "feature": "Learning Curve",
-                                "Buildroot": "Easy to start",
-                                "Yocto": "Steep for beginners"
+                                feature: "Learning Curve",
+                                Buildroot: "Easy to start",
+                                Yocto: "Steep for beginners"
                             }
                         ]
                     },
@@ -1123,52 +964,48 @@ const blogsData = [
         scenariosDescription: "Choosing the Right Tool for Your Product",
         scenarios: [
             {
-                "id": 1,
-                "category": "Choose Buildroot if:",
-                "items": [
+                id: 1,
+                category: "Choose Buildroot if:",
+                items: [
                     "<span class='font-semibold'>Prototyping or lightweight devices:</span> Ideal for simple or resource-constrained projects.",
                     "<span class='font-semibold'>Fast boot time & small footprint:</span> Prioritize minimal builds that boot in seconds.",
                     "<span class='font-semibold'>Limited protocol needs:</span> Works when you don’t need complex multi-protocol support."
                 ]
             },
             {
-                "id": 2,
-                "category": "Choose Yocto if:",
-                "items": [
+                id: 2,
+                category: "Choose Yocto if:",
+                items: [
                     "<span class='font-semibold'>Full-featured broadcast/multimedia gear:</span> Best for complex, high-end video devices.",
                     "<span class='font-semibold'>Long-term maintenance & compliance:</span> Supports OTA updates, regulatory standards, and lifecycle management.",
                     "<span class='font-semibold'>Vendor-backed ecosystem:</span> Strong support from semiconductor vendors and community."
                 ]
             }
         ],
-        "caseStudy": {
-            "title": "Case Study Snapshot: eByteLogic Experience",
-            "description": "Recently, <span class='font-semibold'>eByteLogic</span> helped a client running hardware based on a <span class='font-semibold'>Rockchip SoC platform</span> by customizing <span class='font-semibold'>Buildroot from scratch</span> and deploying it on custom hardware. The client had its own proprietary OS and required:",
-            "caseStudies": [
+        caseStudy: {
+            title: "Case Study Snapshot: eByteLogic Experience",
+            description: "Recently, <span class='font-semibold'>eByteLogic</span> helped a client running hardware based on a <span class='font-semibold'>Rockchip SoC platform</span> by customizing <span class='font-semibold'>Buildroot from scratch</span> and deploying it on custom hardware. The client had its own proprietary OS and required:",
+            caseStudies: [
                 {
-                    "id": 1,
-                    "title": "Custom BSP adaptation",
-                    "description": "Delivered <span class='font-semibold'>tailored BSP bring-up</span> for the client’s proprietary OS and hardware platform.",
-                    "icon": <FaMicrochip className='size-4 group-hover:text-white text-green-500' />
+                    id: 1,
+                    title: "Custom BSP adaptation",
+                    description: "Delivered <span class='font-semibold'>tailored BSP bring-up</span> for the client’s proprietary OS and hardware platform.",
+                    icon: <FaMicrochip className='size-4 group-hover:text-white text-green-500' />
                 },
                 {
-                    "id": 2,
-                    "title": "Low-latency streaming",
-                    "description": "Optimized the streaming stack for <span class='font-semibold'>high reliability</span> and <span class='font-semibold'>low-latency</span> video pipelines.",
-                    "icon": <FaVideo className='size-4 group-hover:text-white text-indigo-500' />
+                    id: 2,
+                    title: "Low-latency streaming",
+                    description: "Optimized the streaming stack for <span class='font-semibold'>high reliability</span> and <span class='font-semibold'>low-latency</span> video pipelines.",
+                    icon: <FaVideo className='size-4 group-hover:text-white text-indigo-500' />
                 },
                 {
-                    "id": 3,
-                    "title": "Boot-time optimization",
-                    "description": "Achieved a <span class='font-semibold'>dramatic reduction in boot time</span> through deep Buildroot customization.",
-                    "icon": <FaBolt className='size-4 group-hover:text-white text-yellow-500' />
+                    id: 3,
+                    title: "Boot-time optimization",
+                    description: "Achieved a <span class='font-semibold'>dramatic reduction in boot time</span> through deep Buildroot customization.",
+                    icon: <FaBolt className='size-4 group-hover:text-white text-yellow-500' />
                 }
             ]
         },
-
-
-
-
         recommendations: [
             {
                 id: 1,
@@ -1205,12 +1042,6 @@ type QAItem = {
     id: number;
     title: string;
     content?: string[];
-    chartTitle?: string;
-    chartType?: string;
-    chart?: any;
-    chartData?: any;
-    beforeAfter?: any;
-    flowchart?: any;
     image?: StaticImageData;
     table?: {
         header: string[];
@@ -1253,7 +1084,7 @@ const BlogsInfo = () => {
                     Blogs
                 </Link>
                 <RiArrowRightSLine className="text-primary text-xl" />
-                <span className="text-slate-500"> {data?.id}</span>
+                <span className="text-slate-500"> {data?.breadCrumb}</span>
             </p>
             {/* intro */}
             {data?.introData && (
@@ -1310,12 +1141,6 @@ const BlogsInfo = () => {
                                     id,
                                     title,
                                     content,
-                                    chart,
-                                    chartTitle,
-                                    chartType,
-                                    chartData,
-                                    beforeAfter,
-                                    flowchart,
                                     table,
                                     image,
                                 }: QAItem) => (
@@ -1352,194 +1177,6 @@ const BlogsInfo = () => {
                                                 />
                                             ))}
                                         </div>
-                                        {chart && (
-                                            <div className="mt-12">
-                                                <h3 className="text-xl font-semibold text-gray-800 mb-6">
-                                                    {chartTitle}
-                                                </h3>
-
-                                                <div
-                                                    className={`flex ${chartType === "vertical"
-                                                        ? "flex-col"
-                                                        : "flex-wrap justify-center"
-                                                        } items-center`}
-                                                >
-                                                    <div
-                                                        className={`flex ${chartType === "vertical" ? "flex-col" : "flex-row"
-                                                            } gap-4 items-center`}
-                                                    >
-                                                        {chart.map((stage, index) => (
-                                                            <div
-                                                                key={index}
-                                                                className={`flex gap-4 ${chartType === "vertical"
-                                                                    ? "flex-col"
-                                                                    : "flex-row"
-                                                                    } items-center`}
-                                                            >
-                                                                <div className="bg-white p-4 rounded-lg shadow-lg border border-gray-300 text-center">
-                                                                    <p className="font-semibold text-lg text-primary">
-                                                                        {stage?.name}
-                                                                    </p>
-                                                                    <p className="text-sm text-gray-600">
-                                                                        {stage?.latency}
-                                                                    </p>
-                                                                    <p className="text-sm text-gray-600">
-                                                                        {stage?.description}
-                                                                    </p>
-                                                                </div>
-                                                                {index < chart.length - 1 && (
-                                                                    <IoArrowForward
-                                                                        className={`text-primary ${chartType === "vertical"
-                                                                            ? "rotate-90"
-                                                                            : ""
-                                                                            }`}
-                                                                        size={24}
-                                                                    />
-                                                                )}
-                                                            </div>
-                                                        ))}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        )}
-                                        {/* {chartData && (
-                                    <div className="mt-8">
-                                        <h3 className="text-lg font-semibold text-gray-800 mb-4">{chartData?.chartTitle}</h3>
-                                        <Line data={chartData?.data} />
-                                    </div>
-                                )} */}
-                                        {chartData && (
-                                            <div className="mt-8">
-                                                <h3 className="text-lg font-semibold text-gray-800 mb-4">
-                                                    {chartData?.chartTitle}
-                                                </h3>
-                                                {chartData?.chartType === "bar" ? (
-                                                    <Bar
-                                                        data={{
-                                                            labels: chartData?.data?.labels, // Buffer sizes (x-axis) from JSON
-                                                            datasets: chartData?.data?.datasets.map(
-                                                                (dataset) => ({
-                                                                    label: dataset?.rttLabel, // Dynamic RTT label from JSON
-                                                                    data: dataset?.rttData, // RTT values (y-axis) from JSON
-                                                                    backgroundColor: dataset?.barColor, // Bar color from JSON
-                                                                    borderColor: dataset?.borderColor, // Border color from JSON
-                                                                    borderWidth: dataset?.borderWidth, // Border width from JSON
-                                                                    hoverBackgroundColor: dataset?.hoverBarColor, // Hover color from JSON
-                                                                })
-                                                            ),
-                                                        }}
-                                                        options={{
-                                                            responsive: true,
-                                                            scales: {
-                                                                x: {
-                                                                    title: {
-                                                                        display: true,
-                                                                        text: chartData?.data?.datasets[0]
-                                                                            ?.xAxisLabel, // X-axis label from JSON
-                                                                    },
-                                                                    ticks: {
-                                                                        autoSkip: true,
-                                                                        maxTicksLimit: 10, // Optional: You can adjust the number of ticks on the x-axis.
-                                                                    },
-                                                                },
-                                                                y: {
-                                                                    title: {
-                                                                        display: true,
-                                                                        text: chartData?.data?.datasets[0]
-                                                                            ?.yAxisLabel, // Y-axis label from JSON
-                                                                    },
-                                                                    beginAtZero: true, // Ensure y-axis starts from 0
-                                                                },
-                                                            },
-                                                            plugins: {
-                                                                tooltip: {
-                                                                    callbacks: {
-                                                                        label: (context) => {
-                                                                            return `${context.dataset.label}: ${context.raw} ms`; // Dynamic tooltip text from JSON
-                                                                        },
-                                                                    },
-                                                                },
-                                                            },
-                                                            elements: {
-                                                                bar: {
-                                                                    borderRadius:
-                                                                        chartData?.data?.datasets[0]?.barRadius, // Optional: Bar corner radius from JSON
-                                                                },
-                                                            },
-                                                            layout: {
-                                                                padding:
-                                                                    chartData?.data?.datasets[0]?.layoutPadding, // Optional: Padding between bars and chart edges
-                                                            },
-                                                            datasets: {
-                                                                bar: {
-                                                                    barThickness:
-                                                                        chartData?.data?.datasets[0]?.barThickness, // Dynamic bar thickness (default: 15)
-                                                                    maxBarThickness:
-                                                                        chartData?.data?.datasets[0]
-                                                                            ?.maxBarThickness, // Maximum bar thickness (default: 30)
-                                                                },
-                                                            },
-                                                        }}
-                                                    />
-                                                ) : (
-                                                    <Line data={chartData?.data} />
-                                                )}
-                                            </div>
-                                        )}
-                                        {beforeAfter && (
-                                            <div className="mt-8">
-                                                <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                                                    {beforeAfter?.title}
-                                                </h3>
-                                                <p className="text-gray-600 mb-4">
-                                                    {beforeAfter?.description}
-                                                </p>
-                                                <div className="flex flex-wrap gap-6">
-                                                    <div>
-                                                        <p className="text-sm text-gray-500 mb-2">
-                                                            {beforeAfter?.deltaBefore}
-                                                        </p>
-                                                        <Image
-                                                            src={beforeAfter?.beforeImage}
-                                                            alt={beforeAfter?.title}
-                                                            height={400}
-                                                            width={400}
-                                                            className="rounded-xl"
-                                                        />
-                                                    </div>
-                                                    <div>
-                                                        <p className="text-sm text-gray-500 mb-2">
-                                                            {beforeAfter?.deltaAfter}
-                                                        </p>
-                                                        <Image
-                                                            src={beforeAfter?.afterImage}
-                                                            alt={beforeAfter?.title}
-                                                            height={400}
-                                                            width={400}
-                                                            className="rounded-xl"
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        )}
-                                        {flowchart && (
-                                            <div className="mt-8">
-                                                <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                                                    {flowchart?.title}
-                                                </h3>
-                                                {flowchart?.image && (
-                                                    <div className="mt-4">
-                                                        <Image
-                                                            src={flowchart?.image}
-                                                            width={300}
-                                                            height={300}
-                                                            alt="SRT Latency Flowchart"
-                                                            className="rounded border"
-                                                        />
-                                                    </div>
-                                                )}
-                                            </div>
-                                        )}
                                         {table && (
                                             <div className="overflow-x-auto p-6 rounded-lg shadow-md">
                                                 <table className="min-w-full border-collapse text-sm text-left bg-white rounded-lg shadow-md">
@@ -1629,7 +1266,6 @@ const BlogsInfo = () => {
                                     {qaItem?.table && (
                                         <div className="overflow-x-auto p-6 rounded-lg shadow-md">
                                             <table className="min-w-full border-collapse text-sm text-left bg-white rounded-lg shadow-md">
-                                                {/* Table Header */}
                                                 <thead className="bg-gradient-to-r from-blue-400 to-indigo-400 text-white">
                                                     <tr>
                                                         {qaItem.table.header.map((head, index) => (
@@ -1642,8 +1278,6 @@ const BlogsInfo = () => {
                                                         ))}
                                                     </tr>
                                                 </thead>
-
-                                                {/* Table Body */}
                                                 <tbody>
                                                     {qaItem.table.rows.map((row, index) => (
                                                         <tr
