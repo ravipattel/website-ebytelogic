@@ -10,62 +10,53 @@ import {
 
 import Button from "@/src/components/Button";
 
-import SomSocPng from "@/src/assets/images/blogs/blogDetails/somSoc.png";
-import QaHeroJpg from "@/src/assets/images/blogs/blogDetails/qaHero.jpg";
-import DevGuideHeroPng from "@/src/assets/images/blogs/blogDetails/devGuideHero.png";
-import MultiviewerJpg from "@/src/assets/images/blogs/blogDetails/multiviewer.png";
-import GstreamerJpg from "@/src/assets/images/blogs/blogDetails/g-streamer.jpg";
-import ButtonDbounceWebp from "@/src/assets/images/blogs/blogDetails/buttonDebounce.png";
+import NdiPng from "@/src/assets/images/blogs/blogDetails/ndi.png";
+import YoctoPng from "@/src/assets/images/blogs/blogDetails/yocto.png";
+import SrtRtmpPng from "@/src/assets/images/blogs/blogDetails/srt-rtmp.png";
+import AvPng from "@/src/assets/images/blogs/blogDetails/av-lip-sync.png";
+import BufferPng from "@/src/assets/images/blogs/blogDetails/buffers.png";
 
 export const globalCards = [
   {
-    design: "av-lip-sync-in-2025",
-    image: SomSocPng,
-    title: "Introduction to SoC and SoM",
+    design: "av lip sync",
+    image: AvPng,
+    title: "AV Lip-Sync in 2025: How to Hit ±10 ms in GStreamer + SRT Pipelines",
     author: "Admin",
     date: "20 July, 2019",
     id: "av-lip-sync-in-2025",
   },
   {
-    design: "qa",
-    image: QaHeroJpg,
-    title: "The Unique World of Embedded QA",
+    design: "srt",
+    image: SrtRtmpPng,
+    title: "SRT vs RIST vs RTMP: Which Protocol Wins for Sub-Second Contribution?",
     author: "Admin",
     date: "13 May, 2018",
     id: 'SRT-vs-RIST-vs-RTMP',
   },
   {
-    design: "devGuide",
-    image: DevGuideHeroPng,
-    title: "RK3588 Multimedia Development Guide",
+    design: "gstreamer",
+    image: BufferPng,
+    title: "The Future of Embedded Systems",
     author: "Admin",
     date: "24 April, 2019",
     id: "the-future-of-embedded-systems",
   },
   {
-    design: "multiviewer",
-    image: MultiviewerJpg,
-    title: "Multiviewer Smack-down",
+    design: "ndi",
+    image: NdiPng,
+    title: "NDI in Hybrid IP/SDI Workflows: What Product Teams Must Know",
     author: "Admin",
     date: "18 Oct, 2020",
     route: "/blogs/multiviewer",
     id: "ndi-in-hybrid-ip-sdi-workflows",
   },
   {
-    design: 'gStreamer',
-    image: GstreamerJpg,
-    title: `eByteLogic's Approach to GStreamer`,
+    design: 'yocto',
+    image: YoctoPng,
+    title: `Buildroot vs Yocto for Video Devices: A Pragmatic Product Guide`,
     author: "Admin",
     date: "08 Jan, 2023",
     id: "buildroot-vs-yocto-for-video-devices",
-  },
-  {
-    design: 'btn-debounce',
-    image: ButtonDbounceWebp,
-    title: "Button Debounce Methods: A Comprehensive Guide to Reliable Input",
-    author: "Admin",
-    date: "08 Jan, 2023",
-    id: "button-debounce",
   },
 ];
 
@@ -108,7 +99,7 @@ const Global = () => {
                   <FaCalendarAlt className="text-primary text-sm" />
                   <span className="text-sm text-[#757b82]">{card.date}</span>
                 </div>
-                <h3 className="text-lg sm:text-[21px] leading-normal cursor-pointer hover:text-primary transition-colors duration-300">
+                <h3 className="text-lg sm:text-lg leading-normal cursor-pointer hover:text-primary transition-colors duration-300">
                   {card.title}
                 </h3>
               </div>
