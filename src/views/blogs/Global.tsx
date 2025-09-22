@@ -33,7 +33,7 @@ export const globalCards = [
     title: "AV Lip-Sync in 2025: How to Hit ±10 ms in GStreamer + SRT Pipelines",
     image: AvPng,
     author: "Admin",
-    date: "20 July, 2019",
+    date: "20 July, 2025",
   },
   {
     design: "srt",
@@ -41,7 +41,7 @@ export const globalCards = [
     title: "SRT vs RIST vs RTMP: Which Protocol Wins for Sub-Second Contribution?",
     image: SrtRtmpPng,
     author: "Admin",
-    date: "13 May, 2018",
+    date: "13 May, 2025",
   },
   {
     design: "gstreamer",
@@ -49,7 +49,7 @@ export const globalCards = [
     title: "The Future of Embedded Systems",
     image: EmbeddedPng,
     author: "Admin",
-    date: "24 April, 2019",
+    date: "24 April, 2025",
   },
   {
     design: "ndi",
@@ -57,7 +57,7 @@ export const globalCards = [
     title: "NDI in Hybrid IP/SDI Workflows: What Product Teams Must Know",
     image: NdiPng,
     author: "Admin",
-    date: "18 Oct, 2020",
+    date: "18 Jan, 2025",
     route: "/blogs/multiviewer",
   },
   {
@@ -66,7 +66,7 @@ export const globalCards = [
     title: `Buildroot vs Yocto for Video Devices: A Pragmatic Product Guide`,
     image: YoctoPng,
     author: "Admin",
-    date: "08 Jan, 2023",
+    date: "18 Sep, 2025",
   },
   {
     design: 'linux-bsp',
@@ -74,7 +74,7 @@ export const globalCards = [
     title: `Boot to First Frame in 3 Seconds: Linux BSP Techniques That Work`,
     image: LinuxBspPng,
     author: "Admin",
-    date: "08 Jan, 2023",
+    date: "01 Feb, 2025",
   },
   {
     design: 'dtvcc',
@@ -82,7 +82,7 @@ export const globalCards = [
     title: `Closed Captions Demystified: CEA-608/708 and Line21⇄DTVCC Conversion`,
     image: CeaPng,
     author: "Admin",
-    date: "08 Jan, 2023",
+    date: "13th March, 2025",
   },
   {
     design: 'ptp',
@@ -90,7 +90,7 @@ export const globalCards = [
     title: "PTP & SMPTE ST 2110 for Non-Broadcasters: Timing Without Tears",
     image: PtpPng,
     author: "Admin",
-    date: "08 Jan, 2023",
+    date: "26th June, 2025",
   },
   {
     design: 'protocol-switching',
@@ -98,7 +98,7 @@ export const globalCards = [
     title: "Fixing Frame Drops During Protocol Switching (Real-World Postmortem)",
     image: FixingFramePng,
     author: "Admin",
-    date: "08 Jan, 2023",
+    date: "12 Jan, 2025",
   },
   {
     design: 'ffmpeg',
@@ -106,7 +106,7 @@ export const globalCards = [
     title: "FFmpeg Filters for Broadcast-Grade Sync, Frame Pacing, and Lip-Sync",
     image: ffmpegPng,
     author: "Admin",
-    date: "08 Jan, 2023",
+    date: "08 J, 2025",
   },
   {
     design: 'glass-latency',
@@ -114,7 +114,7 @@ export const globalCards = [
     title: "Measuring Glass-to-Glass Latency: Methods, Tools, and Pitfalls",
     image: GlassPng,
     author: "Admin",
-    date: "08 Jan, 2023",
+    date: "5 Sep, 2025",
   },
   {
     design: 'edge-encoders',
@@ -122,7 +122,7 @@ export const globalCards = [
     title: "Edge Encoders for Rugged Environments: Thermal, Power & Network Design",
     image: EncodersPng,
     author: "Admin",
-    date: "08 Jan, 2023",
+    date: "19 Aug, 2025",
   },
   {
     design: 'automated-qa',
@@ -130,7 +130,7 @@ export const globalCards = [
     title: "Automated QA for Live Video: gst-validate, tracers, and soak tests",
     image: QaPng,
     author: "Admin",
-    date: "08 Jan, 2023",
+    date: "08 July, 2025",
   },
   {
     design: 'secure-streaming',
@@ -138,7 +138,7 @@ export const globalCards = [
     title: "Secure Streaming: Hardening SRT, SRTP, TLS & Key Management",
     image: SecurePng,
     author: "Admin",
-    date: "08 Jan, 2023",
+    date: "20 April, 2025",
   },
   {
     design: 'hardware-accelerated',
@@ -147,7 +147,7 @@ export const globalCards = [
       "Hardware-Accelerated Transcoding on Jetson & i.MX: What Actually Matters",
     image: HardwarePng,
     author: "Admin",
-    date: "08 Jan, 2023",
+    date: "22 Sep, 2025",
   },
 ];
 
