@@ -11,52 +11,143 @@ import {
 import Button from "@/src/components/Button";
 
 import NdiPng from "@/src/assets/images/blogs/blogDetails/ndi.png";
-import YoctoPng from "@/src/assets/images/blogs/blogDetails/yocto.png";
-import SrtRtmpPng from "@/src/assets/images/blogs/blogDetails/srt-rtmp.png";
+import YoctoPng from "@/src/assets/images/blogs/blogDetails/buildroot.png";
+import SrtRtmpPng from "@/src/assets/images/blogs/blogDetails/srt.png";
 import AvPng from "@/src/assets/images/blogs/blogDetails/av-lip-sync.png";
-import BufferPng from "@/src/assets/images/blogs/blogDetails/buffers.png";
+import EmbeddedPng from "@/src/assets/images/blogs/blogDetails/embedded.png";
+import LinuxBspPng from "@/src/assets/images/blogs/blogDetails/linux-bsp.png";
+import CeaPng from "@/src/assets/images/blogs/blogDetails/cea.png";
+import PtpPng from "@/src/assets/images/blogs/blogDetails/ptp.png";
+import FixingFramePng from "@/src/assets/images/blogs/blogDetails/fixing-frame.png";
+import ffmpegPng from "@/src/assets/images/blogs/blogDetails/ffmpeg.png";
+import GlassPng from "@/src/assets/images/blogs/blogDetails/glass-to-glass.png";
+import EncodersPng from "@/src/assets/images/blogs/blogDetails/encoders.png";
+import QaPng from "@/src/assets/images/blogs/blogDetails/qa.png";
+import SecurePng from "@/src/assets/images/blogs/blogDetails/secure.png";
+import HardwarePng from "@/src/assets/images/blogs/blogDetails/hardware-jetson.png";
 
 export const globalCards = [
   {
     design: "av lip sync",
-    image: AvPng,
+    id: "av-lip-sync-in-2025",
     title: "AV Lip-Sync in 2025: How to Hit ±10 ms in GStreamer + SRT Pipelines",
+    image: AvPng,
     author: "Admin",
     date: "20 July, 2019",
-    id: "av-lip-sync-in-2025",
   },
   {
     design: "srt",
-    image: SrtRtmpPng,
+    id: 'SRT-vs-RIST-vs-RTMP',
     title: "SRT vs RIST vs RTMP: Which Protocol Wins for Sub-Second Contribution?",
+    image: SrtRtmpPng,
     author: "Admin",
     date: "13 May, 2018",
-    id: 'SRT-vs-RIST-vs-RTMP',
   },
   {
     design: "gstreamer",
-    image: BufferPng,
+    id: "the-future-of-embedded-systems",
     title: "The Future of Embedded Systems",
+    image: EmbeddedPng,
     author: "Admin",
     date: "24 April, 2019",
-    id: "the-future-of-embedded-systems",
   },
   {
     design: "ndi",
-    image: NdiPng,
+    id: "ndi-in-hybrid-ip-sdi-workflows",
     title: "NDI in Hybrid IP/SDI Workflows: What Product Teams Must Know",
+    image: NdiPng,
     author: "Admin",
     date: "18 Oct, 2020",
     route: "/blogs/multiviewer",
-    id: "ndi-in-hybrid-ip-sdi-workflows",
   },
   {
     design: 'yocto',
-    image: YoctoPng,
+    id: "buildroot-vs-yocto-for-video-devices",
     title: `Buildroot vs Yocto for Video Devices: A Pragmatic Product Guide`,
+    image: YoctoPng,
     author: "Admin",
     date: "08 Jan, 2023",
-    id: "buildroot-vs-yocto-for-video-devices",
+  },
+  {
+    design: 'linux-bsp',
+    id: "linux-bsp-techniques-that-work",
+    title: `Boot to First Frame in 3 Seconds: Linux BSP Techniques That Work`,
+    image: LinuxBspPng,
+    author: "Admin",
+    date: "08 Jan, 2023",
+  },
+  {
+    design: 'dtvcc',
+    id: "cea-608-708-and-line21-dtvcc-conversion",
+    title: `Closed Captions Demystified: CEA-608/708 and Line21⇄DTVCC Conversion`,
+    image: CeaPng,
+    author: "Admin",
+    date: "08 Jan, 2023",
+  },
+  {
+    design: 'ptp',
+    id: "ptp-and-smpte-st-2110-for-non-broadcasters",
+    title: "PTP & SMPTE ST 2110 for Non-Broadcasters: Timing Without Tears",
+    image: PtpPng,
+    author: "Admin",
+    date: "08 Jan, 2023",
+  },
+  {
+    design: 'protocol-switching',
+    id: "fixing-frame-drops-during-protocol-switching",
+    title: "Fixing Frame Drops During Protocol Switching (Real-World Postmortem)",
+    image: FixingFramePng,
+    author: "Admin",
+    date: "08 Jan, 2023",
+  },
+  {
+    design: 'ffmpeg',
+    id: "ffmpeg-filters-frame-pacing-lip-sync",
+    title: "FFmpeg Filters for Broadcast-Grade Sync, Frame Pacing, and Lip-Sync",
+    image: ffmpegPng,
+    author: "Admin",
+    date: "08 Jan, 2023",
+  },
+  {
+    design: 'glass-latency',
+    id: "measuring-glass-to-glass-latency",
+    title: "Measuring Glass-to-Glass Latency: Methods, Tools, and Pitfalls",
+    image: GlassPng,
+    author: "Admin",
+    date: "08 Jan, 2023",
+  },
+  {
+    design: 'edge-encoders',
+    id: "edge-encoders-for-rugged-environments",
+    title: "Edge Encoders for Rugged Environments: Thermal, Power & Network Design",
+    image: EncodersPng,
+    author: "Admin",
+    date: "08 Jan, 2023",
+  },
+  {
+    design: 'automated-qa',
+    id: "automated-qa-for-live-video",
+    title: "Automated QA for Live Video: gst-validate, tracers, and soak tests",
+    image: QaPng,
+    author: "Admin",
+    date: "08 Jan, 2023",
+  },
+  {
+    design: 'secure-streaming',
+    id: "secure-streaming",
+    title: "Secure Streaming: Hardening SRT, SRTP, TLS & Key Management",
+    image: SecurePng,
+    author: "Admin",
+    date: "08 Jan, 2023",
+  },
+  {
+    design: 'hardware-accelerated',
+    id: "hardware-accelerated-transcoding-on-jetson-i.MX",
+    title:
+      "Hardware-Accelerated Transcoding on Jetson & i.MX: What Actually Matters",
+    image: HardwarePng,
+    author: "Admin",
+    date: "08 Jan, 2023",
   },
 ];
 

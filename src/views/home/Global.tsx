@@ -15,42 +15,36 @@ const globalCards = [
         image: WearablesPng,
         title: 'Wearables & Smart Devices',
         description: 'Seamless connectivity and real-time UX for smart, battery-efficient wearables.',
-        date: '20 July, 2019',
         tags: ['BLE firmware', 'mobile app integration', 'OTA support'],
     },
     {
         image: StreamingPng,
         title: 'Media Broadcasting & Streaming',
         description: 'Low-latency GStreamer/FFmpeg pipelines for AV sync and embedded video delivery',
-        date: '13 May, 2018',
         tags: ['SDI', 'HDMI', 'NDI', 'SRT', 'macOS & Linux support'],
     },
     {
         image: SemiconductorsPng,
         title: 'Semiconductor & BSP Services',
         description: 'Accelerated SoC development with Linux BSP, Android HAL, and driver integration.',
-        date: '24 April, 2019',
         tags: ['Rockchip', 'i.MX', 'U-Boot', 'Android Porting'],
     },
     {
         image: FirelinePng,
         title: 'Fire Safety & Industrial Panels',
         description: 'Mission-critical HMI systems with QT/C++ for industrial and safety applications.',
-        date: '18 Oct, 2020',
         tags: ['Serial/CAN protocols', 'alarm systems', 'touchscreen UX'],
     },
     {
         image: AerospacePng,
         title: 'Aerospace, Drones & Remote Imaging',
         description: 'Embedded video processing from camera capture to real-time network streaming.',
-        date: '08 Jan, 2023',
         tags: ['V4L2', 'FFmpeg', 'remote sensing', 'data sync'],
     },
     {
         image: IotJpeg,
         title: 'IoT & Edge Devices',
         description: 'Connected systems built for control, analytics, and remote updates.',
-        date: '25 Dec, 2022',
         tags: ['MQTT/HTTP', 'UI dashboards', 'OTA', 'secure protocols'],
     }
 ];
@@ -73,20 +67,6 @@ const Global = () => {
                                 <Image width={435} height={196} src={card.image} alt={card.title} className="w-full h-full object-cover" />
                             </div>
                             <div className="space-y-3 text-primaryText p-7">
-                                <div className="flex flex-wrap items-center gap-3 sm:gap-5 text-sm text-[#757b82]">
-                                    {/* <div className="flex items-center gap-1">
-                                        <FaUser className="text-primary" />
-                                        <span>{card.author}</span>
-                                    </div> */}
-                                    <div className="flex items-center gap-1">
-                                        <FaCalendarAlt className="text-primary" />
-                                        <span>{card.date}</span>
-                                    </div>
-                                    {/* <div className="flex items-center gap-1">
-                                        <FaCommentDots className="text-primary" />
-                                        <span>{card.comments}</span>
-                                    </div> */}
-                                </div>
                                 <h3 className="text-lg sm:text-[21px] leading-normal">
                                     {card.title}
                                 </h3>

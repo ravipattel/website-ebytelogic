@@ -114,10 +114,10 @@ const Header = () => {
           <div className="max-w-[1400px] mx-auto px-3 flex justify-between items-center">
             <Link
               href={'/'} >
-              <Image src={LogoPng} alt="Logo" width={200} height={35} className="md:w-56 md:h-14" />
+              <Image src={LogoPng} alt="Logo" width={200} height={35} className="w-36 h-10 lg:w-56 lg:h-14" />
             </Link>
             <nav className="hidden md:block relative">
-              <ul className="flex flex-wrap items-center gap-3 lg:gap-6">
+              <ul className="flex flex-wrap items-center gap-4 lg:gap-6">
                 {menuItems.map((item, index) => (
                   <li
                     key={index}
@@ -181,7 +181,7 @@ const Header = () => {
               </ul>
             </nav>
             <div className="hidden md:flex items-center gap-4">
-              <Button onClick={() => router.push('/contact-us')} variant="default">Get In Thouch</Button>
+              <Button onClick={() => router.push('/contact-us')} variant="default" className="text-sm">Get In Thouch</Button>
             </div>
             <div className="md:hidden">
               <button onClick={() => setMenuOpen(true)} className="text-2xl text-gray-800">

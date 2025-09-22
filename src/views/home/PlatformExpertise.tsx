@@ -22,7 +22,6 @@ import YoctoPng from "@/src/assets/images/about/yocto.png";
 import EspressifPng from "@/src/assets/images/about/espressif.svg";
 import AmdSvg from "@/src/assets/images/about/amd.svg";
 import IntelSvg from "@/src/assets/images/about/intel.svg";
-import LogoWineSvg from "@/src/assets/images/about/logoWine.svg";
 import FfmpegSvg from "@/src/assets/images/about/ffmpeg.png";
 
 const PlatformExpertise = () => {
@@ -79,7 +78,6 @@ const PlatformExpertise = () => {
                                 { src: EspressifPng, alt: 'EspressifPng' },
                                 { src: AmdSvg, alt: 'AmdSvg' },
                                 { src: IntelSvg, alt: 'IntelSvg' },
-                                { src: LogoWineSvg, alt: 'LogoWineSvg' },
                                 { src: FfmpegSvg, alt: 'FfmpegSvg' },
                             ].map((logo, index) => (
                                 <SwiperSlide key={index}>
