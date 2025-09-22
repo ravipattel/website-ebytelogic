@@ -112,7 +112,7 @@ const Services = () => {
                 </p>
               </div>
               <button
-                onClick={() => router.push(`/services/${service?.path}`)}
+                onClick={() => router.push(`/services${service?.path}`)}
                 className="cursor-pointer mt-4 w-10 h-10 flex items-center justify-center rounded bg-[#f6f9fc] hover:bg-primary text-primary hover:text-white transition z-10 relative"
               >
                 <GoArrowRight />
