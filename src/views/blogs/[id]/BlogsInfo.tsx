@@ -67,6 +67,7 @@ import { motion } from "framer-motion";
 import { easeOut } from "framer-motion";
 
 import Button from "@/src/components/Button";
+import BlogSuggestions from "@/src/components/Suggestion";
 
 import AfterLipSyncPng from "@/src/assets/images/blogs/blogDetails/afterav.png";
 import BeforeLipSyncPng from "@/src/assets/images/blogs/blogDetails/beforeav.png";
@@ -126,7 +127,7 @@ const blogsData = [
             ],
             button: {
                 label: "Explore Sync Solutions",
-                link: "/case-study",
+                link: "/case-study/broadcast-grade-sdi-encoder-decoder-with-sub100ms-latency",
             },
             image: {
                 src: AvPng,
@@ -400,7 +401,7 @@ const blogsData = [
             ],
             button: {
                 label: "Explore Protocol Choices",
-                link: "/case-study",
+                link: "/case-study/hdmi-multiview-player",
             },
             image: {
                 src: SrtRtmpPng,
@@ -717,7 +718,7 @@ const blogsData = [
             ],
             button: {
                 label: "Explore Protocol Choices",
-                link: "/case-study",
+                link: "/case-study/low-cost-android-ott-tv-box-development",
             },
             image: {
                 src: EmbeddedPng,
@@ -962,7 +963,7 @@ const blogsData = [
             ],
             button: {
                 label: "Explore NDI for Hybrid Workflows",
-                link: "/case-study",
+                link: "/case-study/ndi-protocol-integration-inremote-recorder-player",
             },
             image: {
                 src: NdiPng,
@@ -1279,7 +1280,7 @@ const blogsData = [
             ],
             button: {
                 label: "Explore Buildroot vs Yocto",
-                link: "/case-study",
+                link: "/case-study/yocto-buildroot-migration",
             },
             image: {
                 src: YoctoPng,
@@ -1553,7 +1554,7 @@ const blogsData = [
             ],
             button: {
                 label: "Explore Linux BSP Techniques",
-                link: "/case-study",
+                link: "/case-study/multi-os-bsp-porting-and-boot-time-optimization",
             },
             image: {
                 src: LinuxBspPng,
@@ -1824,7 +1825,7 @@ const blogsData = [
             ],
             button: {
                 label: "Explore DTVCC Conversion",
-                link: "/case-study",
+                link: "/case-study/broadcast-grade-sdi-encoder-decoder-with-sub100ms-latency",
             },
             image: {
                 src: CeaPng,
@@ -2332,7 +2333,7 @@ const blogsData = [
             ],
             button: {
                 label: "Explore Protocol Switching",
-                link: "/case-study",
+                link: "/case-study/unified-yocto-build-environment-for-multi-SoM-product-lines",
             },
             image: {
                 src: FixingFramePng,
@@ -2864,7 +2865,7 @@ const blogsData = [
             ],
             button: {
                 label: "Explore Glass-to-Glass Latency",
-                link: "/case-study",
+                link: "/case-study/reducing-wearable-display-latency",
             },
             image: {
                 src: GlassPng,
@@ -3139,7 +3140,7 @@ const blogsData = [
             ],
             button: {
                 label: "Explore Edge Encoders",
-                link: "/case-study",
+                link: "/case-study/broadcast-grade-sdi-encoder-decoder-with-sub100ms-latency",
             },
             image: {
                 src: EncodersPng,
@@ -3652,7 +3653,7 @@ timestamp drift, previously caught only after live events, were automatically fl
             ],
             button: {
                 label: "Explore Secure Streaming",
-                link: "/case-study",
+                link: "/case-study/multi-platform-driver-development-uBoot-customization",
             },
             image: {
                 src: SecurePng,
@@ -3907,7 +3908,7 @@ timestamp drift, previously caught only after live events, were automatically fl
             ],
             button: {
                 label: "Explore Jetson & i.MX",
-                link: "/case-study",
+                link: "/case-study/hdmi-multiview-player",
             },
             image: {
                 src: HardwarePng,
@@ -4239,7 +4240,7 @@ const BlogsInfo = () => {
     //for bar chart responisve
     useEffect(() => {
         const handleResize = () => {
-            setIsSmallScreen(window.innerWidth < 768); // Adjust to your breakpoint for small screens
+            setIsSmallScreen(window.innerWidth < 768); 
         };
 
         window.addEventListener('resize', handleResize);
@@ -4402,14 +4403,14 @@ const BlogsInfo = () => {
                                                                 key={index}
                                                                 className={`flex gap-4 ${chartType === "vertical"
                                                                     ? "flex-col"
-                                                                    : "flex-row"
+                                                                    : "flex-row h-full"
                                                                     } items-center`}
                                                             >
-                                                                <div className="bg-white p-4 rounded-lg shadow-lg border border-gray-300 text-center">
-                                                                    <p className="mx-auto text-lg md:text-xl">
+                                                                <div className="bg-white min-w-80 xl:min-w-auto h-full p-4 rounded-lg shadow-lg border border-gray-300 text-center">
+                                                                    <p className="mx-auto md:text-lg lg:text-xl">
                                                                         {stage?.icon}
                                                                     </p>
-                                                                    <p className="font-semibold md:text-lg text-primary">
+                                                                    <p className="font-semibold text-sm xl:text-lg text-primary">
                                                                         {stage?.name}
                                                                     </p>
                                                                     <p className="text-sm text-gray-600">
@@ -5450,10 +5451,12 @@ const BlogsInfo = () => {
                     </div>
                 </section>
             )}
+            {/* suggestion */}
+            <BlogSuggestions currentSlug={id} />
         </div>
     );
 };
 
 export default BlogsInfo;
 
-// export const runtime = "edge";
+export const runtime = "edge";
