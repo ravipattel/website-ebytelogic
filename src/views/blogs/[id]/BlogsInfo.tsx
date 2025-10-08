@@ -142,7 +142,7 @@ const blogsData = [
                 id: 1,
                 title: "What “±10 ms” actually means",
                 content: [
-                    "Lip-sync error is the <span class='font-semibold'>relative</span> timing between audio and video at the output. If the video path is 70 ms and audio path is 80 ms, you’re at <span class='font-semibold'> audio late by 10 ms.</span>",
+                    "<a href='https://www.ebytelogic.com/services/av-protocol' target='_blank' class='text-blue-600 underline'>Lip-sync</a> error is the <span class='font-semibold'>relative</span> timing between audio and video at the output. If the video path is 70 ms and audio path is 80 ms, you’re at <span class='font-semibold'> audio late by 10 ms.</span>",
                     "The ±10 ms target is not a law; it’s a <span class='font-semibold'> design guardrail</span> that sits well within human perception thresholds and typical broadcaster QoS tolerances.",
                     "In complex chains (e.g., SRT contribution → cloud transcode → HLS distribution), you want to hold ±10 ms at each hand-off to avoid drift accumulation.",
                     "ITU and EBU documents formalize acceptable ranges; product teams adopt a tighter band to avoid edge-case complaints. <a href='https://tech.ebu.ch/docs/techreview/trev_2009-Q1_HD-Audio-Delays.pdf?utm_source=chatgpt.com' target='_blank' class='text-blue-600 underline'>ITU Tech EBU</a>",
@@ -154,7 +154,7 @@ const blogsData = [
                 content: [
                     "1. <span class='font-semibold'>Capture – </span> unsynchronized cameras/mics, different driver latencies.",
                     "2. <span class='font-semibold'>Encode – </span> look-ahead, buffering; audio and video encoders not slaved to a common clock.",
-                    "3. <span class='font-semibold'>Network – </span> jitter, packet re-ordering, retransmissions; SRT/UDP buffers.",
+                    "3. <span class='font-semibold'>Network – </span> <a href='https://www.ebytelogic.com/services/multimedia-framework' target='_blank' class='text-blue-600 underline'>jitter</a>, packet re-ordering, retransmissions; SRT/UDP buffers.",
                     "4. <span class='font-semibold'>Decode – </span> codec pipeline buffering and reordering (B-frames).",
                     "5. <span class='font-semibold'>Render – </span> audio device buffer vs video display vs compositor queue.",
                     "The fix is <span class='font-semibold'>consistent timing </span> end-to-end: assign a trustworthy clock, carry timestamps cleanly, and size buffers for the worst realistic jitter without bloating latency.",
@@ -450,7 +450,7 @@ const blogsData = [
                     "<span class='font-bold'>•</span> Typical glass-to-glass: <span class='font-semibold'>150–500 ms</span> depending on network stability.",
                     "<span class='font-semibold'>RIST</span>",
                     "<span class='font-bold'>•</span> Also UDP + ARQ.",
-                    "<span class='font-bold'>•</span> Matches SRT in latency under similar conditions.",
+                    "<span class='font-bold'>•</span> Matches <a href='https://www.ebytelogic.com/case-study/hdmi-multiview-player' target='_blank' class='text-blue-600 underline'>SRT</a> in latency under similar conditions.",
                     "<span class='font-bold'>•</span> Some implementations show <span class='font-semibold'>150–400 ms</span> in controlled tests.",
                     "<span class='font-semibold'>Verdict: RTMP is out</span> if you need <1 s. Both SRT and <a href='https://static.vsf.tv/activity_groups/RIST_poster_for_VidTrans2018Feb25.pdf ' target='_blank' class='text-blue-600 underline'>RIST</a> can hit sub-second reliably.",
                 ],
@@ -544,7 +544,7 @@ const blogsData = [
                 title: "Ecosystem & Tooling",
                 content: [
                     "<span class='font-semibold'>RTMP</span>",
-                    "<span class='font-bold'>•</span> Supported everywhere: OBS, CDNs, ingest points.",
+                    "<span class='font-bold'>•</span> Supported everywhere: <a href='https://www.ebytelogic.com/case-study/multi-os-bsp-porting-and-boot-time-optimization' target='_blank' class='text-blue-600 underline'>OBS</a>, CDNs, ingest points.",
                     "<span class='font-bold'>•</span> But few innovations since Flash’s death.",
                     "<span class='font-semibold'>SRT</span>",
                     "<span class='font-bold'>•</span> Widely adopted: OBS, GStreamer, VLC, FFmpeg, cloud providers.",
@@ -714,7 +714,7 @@ const blogsData = [
             highlight: "Innovation Across Industries",
             subtitle: "Embedded Systems",
             paragraphs: [
-                "Embedded systems are no longer just the “hidden” computers inside devices. From live broadcast pipelines to autonomous drones, from smart medical devices to industrial IoT, they are now the <span class='font-semibold'>brains that make products intelligent, connected, and reliable.</span>",
+                "<a href='https://www.ebytelogic.com/services' target='_blank' class='text-blue-600 underline'>Embedded systems</a> are no longer just the “hidden” computers inside devices. From live broadcast pipelines to autonomous drones, from smart medical devices to industrial IoT, they are now the <span class='font-semibold'>brains that make products intelligent, connected, and reliable.</span>",
                 "As we step into 2025, the <span class='font-semibold'> embedded systems market is accelerating faster than ever.</span> Fueled by demands for <span class='font-semibold'> real-time processing, low-latency streaming, secure IoT connectivity, and <a href='https://ijarsct.co.in/Paper28133.pdf' target='_blank' class='text-blue-600 underline'>AI-driven intelligence</a>,</span> this decade is set to redefine what embedded platforms can achieve.",
                 "In this article, we’ll explore <span class='font-semibold'>key trends, market forecasts, challenges, and real-world applications</span> that every product company, R&D team, and engineering leader should be watching.",
             ],
@@ -734,7 +734,7 @@ const blogsData = [
                 title: "Market Growth and Industry Outlook",
                 content: [
                     "<span class='font-bold'>•</span> The <span class='font-semibold'>global embedded systems market</span> is projected to grow from <span class='font-semibold'>$116 billion in 2024</span> to <span class='font-semibold'>over $160 billion by 2030</span>, driven by industries such as <span class='font-semibold'>automotive, aerospace, industrial IoT, healthcare, and MediaTech</span>.",
-                    "<span class='font-bold'>•</span> Increasing adoption of <span class='font-semibold'>edge AI chips, 5G-enabled IoT devices, and streaming frameworks</span> is fueling R&D investments.",
+                    "<span class='font-bold'>•</span> Increasing adoption of <span class='font-semibold'>edge AI chips, 5G-enabled <a href='https://www.ebytelogic.com/services/iot-integration' target='_blank' class='text-blue-600 underline'>IoT devices</a>, and streaming frameworks</span> is fueling R&D investments.",
                     "<span class='font-bold'>•</span> In sectors like <span class='font-semibold'>media broadcasting</span>, embedded systems are not just enablers—they are the <span class='font-semibold'>core platforms</span> that make ultra-low latency video delivery possible.",
                 ],
                 chartData: {
@@ -959,8 +959,8 @@ const blogsData = [
             title: "NDI in Hybrid IP/SDI Workflows: What Product Teams Must Know",
             highlight: "Teams Must Know",
             paragraphs: [
-                "The broadcast industry is undergoing a rapid transformation. For decades, <span class='font-semibold'>Serial Digital Interface (SDI)</span> cables were the gold standard of professional video production—delivering reliability, consistency, and predictable performance. But as audiences demand more content across more platforms, and as remote/cloud production gains traction, <span class='font-semibold'>Internet Protocol (IP)-based workflows</span> have emerged as a flexible and scalable alternative.",
-                "Caught between these two worlds, many organizations are deploying <span class='font-semibold'>hybrid IP/SDI workflows</span>, where legacy SDI infrastructure coexists with newer IP systems. At the center of this hybrid era is <span class='font-semibold'><a href='https://ndi.video/wp-content/uploads/2023/09/NDI-5.6-White-Paper-2023.pdf' target='_blank' class='text-blue-600 underline'>NDI (Network Device Interface)</a></span>, a protocol developed by NewTek that has quickly become a key enabler for product teams building modern broadcast solutions.",
+                "The <a href='https://www.ebytelogic.com/services/multimedia-framework' target='_blank' class='text-blue-600 underline'>broadcast</a> industry is undergoing a rapid transformation. For decades, <span class='font-semibold'>Serial Digital Interface (SDI)</span> cables were the gold standard of professional video production—delivering reliability, consistency, and predictable performance. But as audiences demand more content across more platforms, and as remote/cloud production gains traction, <span class='font-semibold'>Internet Protocol (IP)-based workflows</span> have emerged as a flexible and scalable alternative.",
+                "Caught between these two worlds, many organizations are deploying <span class='font-semibold'>hybrid IP/SDI workflows</span>, where legacy SDI infrastructure coexists with newer IP systems. At the center of this hybrid era is <a href='https://ndi.video/wp-content/uploads/2023/09/NDI-5.6-White-Paper-2023.pdf' target='_blank' class='text-blue-600 underline'>NDI (Network Device Interface)</a>, a protocol developed by NewTek that has quickly become a key enabler for product teams building modern broadcast solutions.",
                 "This article explores <span class='font-semibold'>what NDI means for hybrid workflows</span>, the opportunities it offers, the challenges product teams must anticipate, and best practices for smooth adoption.",
             ],
             button: {
@@ -978,7 +978,7 @@ const blogsData = [
                 id: 1,
                 title: "The Traditional SDI Backbone – Reliability and Limitations",
                 content: [
-                    "SDI has been the workhorse of live video production since the late 1980s. Its strengths include:",
+                    "<a href='https://www.ebytelogic.com/case-study/broadcast-grade-sdi-encoder-decoder-with-sub100ms-latency' target='_blank' class='text-blue-600 underline'>SDI</a> has been the workhorse of live video production since the late 1980s. Its strengths include:",
                     "• Deterministic performance with minimal latency.",
                     "• Wide availability of compatible hardware.",
                     "• Broadcast-proven reliability.",
@@ -989,7 +989,7 @@ const blogsData = [
                 id: 2,
                 title: "The Rise of IP Workflows – Flexibility and Scalability",
                 content: [
-                    "IP workflows replace dedicated SDI cabling with <span class='font-semibold'><a href='https://www.etsi.org/deliver/etsi_ts/102800_102899/102814/01.02.01_60/ts_102814v010201p.pdf' target='_blank' class='text-blue-600 underline'>standard Ethernet networks</a></span>.",
+                    "IP workflows replace dedicated SDI cabling with <a href='https://www.etsi.org/deliver/etsi_ts/102800_102899/102814/01.02.01_60/ts_102814v010201p.pdf' target='_blank' class='text-blue-600 underline'>standard Ethernet networks</a>.",
                     "Advantages include:",
                     "• Easy scaling to multi-location and cloud environments.",
                     "• More efficient bandwidth usage.",
@@ -1106,7 +1106,7 @@ const blogsData = [
                 title: "Flexibility for Remote and Cloud Production",
                 icon: <BiCloud className="size-4 text-blue-600" />,
                 content: [
-                    "With <span class='font-semibold'>NDI 5</span> and <span class='font-semibold'><a href='https://netchange.nl/wp-content/uploads/2021/09/newtek-ndi-technical-brief2190.pdf' target='_blank' class='text-blue-600 underline'>NDI Bridge</a></span>, teams can transmit <span class='font-semibold'>live video</span> across <span class='font-semibold'>WANs</span> or to the <span class='font-semibold'>cloud</span>, enabling <span class='font-semibold'>distributed production models</span>.",
+                    "With <span class='font-semibold'>NDI 5</span> and <a href='https://netchange.nl/wp-content/uploads/2021/09/newtek-ndi-technical-brief2190.pdf' target='_blank' class='text-blue-600 underline'>NDI Bridge</a>, teams can transmit <span class='font-semibold'>live video</span> across <span class='font-semibold'>WANs</span> or to the <span class='font-semibold'>cloud</span>, enabling <span class='font-semibold'>distributed production models</span>.",
                 ],
             },
         ],
@@ -1185,7 +1185,7 @@ const blogsData = [
                     id: 2,
                     title: "BSP bring-up",
                     description:
-                        "Customized <span class='font-semibold'>Buildroot from scratch</span> for a semiconductor client’s <span class='font-semibold'><a href='https://dl.vamrs.com/products/rock960/docs/sw/Rockchip%C2%A0Linux%20Camera%C2%A0Developer%20Guide%20V1.1.pdf' target='_blank' class='text-blue-600 underline'>Rockchip-based platform</a></span>.",
+                        "Customized <span class='font-semibold'>Buildroot from scratch</span> for a semiconductor client’s <a href='https://dl.vamrs.com/products/rock960/docs/sw/Rockchip%C2%A0Linux%20Camera%C2%A0Developer%20Guide%20V1.1.pdf' target='_blank' class='text-blue-600 underline'>Rockchip-based platform</a>.",
                     icon: (
                         <FaMicrochip className="size-4 group-hover:text-white text-green-500" />
                     ),
@@ -1252,7 +1252,7 @@ const blogsData = [
             title: "Buildroot vs Yocto for Video Devices: A Pragmatic Product Guide",
             highlight: "Pragmatic Product Guide",
             paragraphs: [
-                "For companies building <span class='font-semibold'>video encoders, broadcast equipment, or multimedia devices</span>, one of the first technical roadblocks is selecting the right <span class='font-semibold'>embedded Linux build system</span>. Two names dominate the space: <span class='font-semibold'>Buildroot</span> and <span class='font-semibold'>Yocto</span>.",
+                "For companies building <span class='font-semibold'>video encoders, broadcast equipment, or multimedia devices</span>, one of the first technical roadblocks is selecting the right <span class='font-semibold'>embedded Linux build system</span>. Two names dominate the space: <a href='https://www.ebytelogic.com/case-study/yocto-buildroot-migration' target='_blank' class='text-blue-600 underline'>Buildroot and Yocto</a>.",
                 "Both are open-source, battle-tested, and widely adopted. Yet for product teams, the decision is rarely straightforward. Choose Buildroot, and you’ll enjoy speed and simplicity — but may face limits in complex pipelines. Choose Yocto, and you’ll unlock flexibility and long-term maintainability — but risk higher setup costs and a steep learning curve.",
                 "This guide takes a pragmatic, product-focused look at <a href='https://events19.linuxfoundation.org/wp-content/uploads/2017/12/Buildroot-vs-Yocto-Differences-for-Your-Daily-Job-Luca-Ceresoli-AIM-Sportline.pdf' target='_blank' class='text-blue-600 underline'>Buildroot vs Yocto for video devices</a>.",
             ],
@@ -1276,7 +1276,7 @@ const blogsData = [
                     "<span class='font-semibold'>• Protocol diversity </span>(NDI, RTP, SRT, RTMP, RIST).",
                     "<span class='font-semibold'>• Codec flexibility</span> (H.264, H.265/HEVC, VP9).",
                     "<span class='font-semibold'>• Reliability</span> under 24/7 live workloads.",
-                    "This is why the <span class='font-semibold'><a href='https://docs.yoctoproject.org/1.6.1/bsp-guide/bsp-guide.pdf' target='_blank' class='text-blue-600 underline'>Board Support Package (BSP)</a></span> and its build system matter. The BSP defines how fast your device boots, how stable it stays, and how easily it can be updated. Selecting <span class='font-semibold'>Buildroot</span> or <span class='font-semibold'>Yocto</span> sets the tone for your entire product lifecycle.",
+                    "This is why the <a href='https://docs.yoctoproject.org/1.6.1/bsp-guide/bsp-guide.pdf' target='_blank' class='text-blue-600 underline'>Board Support Package (BSP)</a> and its build system matter. The BSP defines how fast your device boots, how stable it stays, and how easily it can be updated. Selecting <span class='font-semibold'>Buildroot</span> or <span class='font-semibold'>Yocto</span> sets the tone for your entire product lifecycle.",
                 ],
             },
             {
@@ -1457,13 +1457,13 @@ const blogsData = [
         caseStudy: {
             title: "Case Study Snapshot: eByteLogic Experience",
             description:
-                "Recently, <span class='font-semibold'>eByteLogic</span> helped a client running hardware based on a <span class='font-semibold'><a href='https://docs.u-boot.org/en/latest/board/rockchip/rockchip.html' target='_blank' class='text-blue-600 underline'>Rockchip SoC platform</a></span> by customizing <span class='font-semibold'>Buildroot from scratch</span> and deploying it on custom hardware. The client had its own proprietary OS and required:",
+                "Recently, <span class='font-semibold'>eByteLogic</span> helped a client running hardware based on a <a href='https://docs.u-boot.org/en/latest/board/rockchip/rockchip.html' target='_blank' class='text-blue-600 underline'>Rockchip SoC platform</a> by customizing <span class='font-semibold'>Buildroot from scratch</span> and deploying it on custom hardware. The client had its own proprietary OS and required:",
             caseStudies: [
                 {
                     id: 1,
                     title: "Custom BSP adaptation",
                     description:
-                        "Delivered <span class='font-semibold'>tailored BSP bring-up</span> for the client’s proprietary OS and hardware platform.",
+                        "Delivered <span class='font-semibold'>tailored</span> <a href='https://www.ebytelogic.com/services/linux-bsp-android' target='_blank' class='text-blue-600 underline'>BSP bring-up</a> for the client’s proprietary OS and hardware platform.",
                     icon: (
                         <FaMicrochip className="size-4 group-hover:text-white text-green-500" />
                     ),
@@ -1576,7 +1576,7 @@ const blogsData = [
                     id: 1,
                     title: "1. Bootloader Optimization",
                     content: [
-                        "<span class='font-semibold'>• Skip unnecessary drivers –</span> Disable unused peripheral bring-up in U-Boot.",
+                        "<span class='font-semibold'>• Skip unnecessary drivers –</span> Disable unused peripheral bring-up in <a href='https://www.ebytelogic.com/case-study/u-boot-logo-for-IMX8MQ' target='_blank' class='text-blue-600 underline'>U-Boot</a>.",
                         "<span class='font-semibold'>• Use splash at U-Boot level –</span> Load a static splash screen directly in U-Boot to give “instant feedback.”",
                         "<span class='font-semibold'>• Fast Boot commands –</span> Preconfigure boot arguments and skip autoboot delays.",
                         "👉 Example: Setting bootdelay=0 in <a href='https://docs.u-boot.org/en/latest/' target='_blank' class='text-blue-600 underline'> U-Boot </a> can save ~2 seconds.",
@@ -1771,7 +1771,7 @@ const blogsData = [
                 "Recap of the Linux BSP techniques and strategies for achieving sub-3 second boot times in video-enabled devices.",
             content: [
                 "Achieving a <span class='font-semibold'>sub-3 second boot</span> is essential for modern video devices, whether it's a set-top box, OTT streaming device, or in-vehicle infotainment system.",
-                "The Linux BSP techniques we've discussed — from <span class='font-semibold'>bootloader optimization</span> to <span class='font-semibold'>multimedia pipeline acceleration</span> — can drastically reduce boot times and improve user experience.",
+                "The <a href='https://www.ebytelogic.com/services/linux-bsp-android' target='_blank' class='text-blue-600 underline'>Linux BSP</a> techniques we've discussed — from <span class='font-semibold'>bootloader optimization</span> to <span class='font-semibold'>multimedia pipeline acceleration</span> — can drastically reduce boot times and improve user experience.",
                 "At <span class='font-semibold'>eByteLogic</span>, we've successfully implemented these techniques in real-world projects, resulting in significant performance gains and an optimized user experience.",
                 "With future trends like <span class='font-semibold'>suspend-to-RAM</span> and <span class='font-semibold'>AI-assisted boot profiling</span>, boot times will only get faster and more efficient.",
                 "If you're working on a video device and want to optimize boot time, we're here to help. <span class='font-semibold'>Let's discuss how our Linux BSP expertise</span> can accelerate your product development and enhance the user experience.",
@@ -1797,8 +1797,8 @@ const blogsData = [
                 "Closed Captions Demystified: CEA-608/708 and Line21 ⇄ DTVCC Conversion",
             highlight: "DTVCC Conversion",
             paragraphs: [
-                "Closed captions aren’t just about compliance—they are critical for accessibility, multilingual broadcasting, and meeting regulatory requirements across industries. From <span class='font-semibold'> linear broadcast TV to OTT platforms</span>, captions ensure inclusivity and expand audience reach.",
-                "But standards have evolved. What began as <span class='font-semibold'> Line21 analog captions <a href='https://download.tek.com/document/2PW-24267-0.pdf' target='_blank' class='text-blue-600 underline'>(CEA-608)</a></span> has now transitioned into <span class='font-semibold'> digital television closed captions (CEA-708, DTVCC)</span>. This creates challenges for broadcasters, device makers, and streaming services who must <span class='font-semibold'> bridge legacy formats with modern workflows.</span>",
+                "Closed captions aren’t just about compliance—they are critical for accessibility, multilingual <a href='https://www.ebytelogic.com/services/multimedia-framework' target='_blank' class='text-blue-600 underline'>broadcasting</a>, and meeting regulatory requirements across industries. From <span class='font-semibold'> linear broadcast TV to OTT platforms</span>, captions ensure inclusivity and expand audience reach.",
+                "But standards have evolved. What began as <span class='font-semibold'> Line21 analog captions</span> <a href='https://download.tek.com/document/2PW-24267-0.pdf' target='_blank' class='text-blue-600 underline'>(CEA-608)</a> has now transitioned into <span class='font-semibold'> digital television closed captions (CEA-708, DTVCC)</span>. This creates challenges for broadcasters, device makers, and streaming services who must <span class='font-semibold'> bridge legacy formats with modern workflows.</span>",
                 "In this article, we’ll demystify the <a href='https://www.3playmedia.com/blog/difference-cea-608-cea-708-captions/' target='_blank' class='text-blue-600 underline'>CEA-608/708 standards</a>, explain how <span class='font-semibold'> Line21 ⇄ DTVCC conversion works</span>, and share practical engineering insights for integrating captions into video pipelines.",
             ],
             button: {
@@ -1969,7 +1969,7 @@ const blogsData = [
                     "• Services like AWS MediaConvert handle automatic 608⇄708 conversion.",
                     "<br>",
                     "<span class='font-semibold'>3. In Embedded Devices & STBs</span>",
-                    "• Set-top boxes must parse MPEG-TS packets, decode captions, and render on-screen.",
+                    "• Set-top boxes must parse MPEG-TS packets, <a href='https://www.ebytelogic.com/case-study/broadcast-grade-sdi-encoder-decoder-with-sub100ms-latency' target='_blank' class='text-blue-600 underline'>decode</a> captions, and render on-screen.",
                     "• Real-time conversion pipelines often rely on <span class='font-semibold'>FFmpeg or GStreamer plugins.</span>",
                     "👉 Reference: FFmpeg Subtitle/CC Support. ",
                 ],
@@ -2329,7 +2329,7 @@ const blogsData = [
                     `<span class='font-semibold'>• RTMP </span> for social media platforms (YouTube, Facebook Live).`,
                     `<span class='font-semibold'>• SRT </span> for contribution from remote commentators.`,
                     `<span class='font-semibold'>• HLS/DASH </span> for distribution to OTT viewers.`,
-                    `<span class='font-semibold'>• RTP </span> for internal monitoring and low-latency studio playout.`,
+                    `<span class='font-semibold'>• RTP </span> for internal monitoring and <a href='https://www.ebytelogic.com/services/multimedia-framework' target='_blank' class='text-blue-600 underline'>low-latency</a> studio playout.`,
                     `To support this, they deployed a modular GStreamer-based pipeline. The system dynamically switched between protocols based on destination requirements. On paper, the architecture was robust. In practice, it wasn’t.`,
                     `During live tests, we noticed:`,
                     `• Dropped frames whenever the system switched protocols mid-stream.`,
@@ -2378,7 +2378,8 @@ const blogsData = [
                     `<span class='font-semibold'>• Step 1: Capturing Logs</span>`,
                     `Using FFmpeg stats, we identified that drops consistently occurred at the moment of protocol reinitialization.`,
                     `<span class='font-semibold'>• Step 2: Analyzing Packet Traces</span>`,
-                    `Wireshark analysis revealed timestamp gaps during protocol switching, particularly when moving from SRT (which handles packet loss gracefully) to RTMP (which doesn’t).`,
+                    `Wireshark analysis revealed timestamp gaps during protocol switching, particularly when moving from <a href='https://www.ebytelogic.com/case-study/hdmi-multiview-player' target='_blank' class='text-blue-600 underline'>SRT</a>
+(which handles packet loss gracefully) to RTMP (which doesn’t).`,
                     `<span class='font-semibold'>• Step 3: Codec Behavior</span>`,
                     `Frame analysis showed that B-frames were especially prone to being discarded when switching mid-GOP (Group of Pictures). Without an immediate I-frame, decoders stalled.`,
                     `<span class='font-semibold'>• Step 4: Network Monitoring</span>`,
@@ -2580,7 +2581,7 @@ const blogsData = [
                 "In live and broadcast video workflows, smooth playback is everything. Yet even the most sophisticated pipelines are vulnerable to problems that viewers immediately notice: <span class='font-semibold'> dropped frames, inconsistent pacing, and lip-sync errors. </span>",
                 "A half-second drift between audio and video can make dialogue unwatchable. A jitter in <a href='https://its.ntia.gov/publications/download/11-475.pdf?utm_source=chatgpt.com' target='_blank' class='text-blue-600 underline'>frame pacing</a> can turn sports replays into stuttered messes. In broadcast-grade environments—where millions of viewers may be tuned in—there’s no room for compromise.",
                 "This is where <span class='font-semibold'> FFmpeg filters </span> shine. Beyond basic transcoding, FFmpeg provides a vast library of filters designed to correct timing, resample frames, and realign audio-video sync. When tuned properly, these filters can transform unstable, jitter-prone feeds into <span class='font-semibold'> seamlessly timed streams ready for broadcast delivery.</span>",
-                "In this post, we’ll explore how FFmpeg filters address broadcast-level challenges with <span class='font-semibold'> sync, frame pacing, and <a href='https://tech.ebu.ch/publications/presentations/display-seminar/lip-sync?utm_source=chatgpt.com' target='_blank' class='text-blue-600 underline'>lip-sync</a> </span>—and share a real-world case study where they saved a production pipeline.",
+                "In this post, we’ll explore how FFmpeg filters address broadcast-level challenges with <span class='font-semibold'> sync, frame pacing, and </span> <a href='https://tech.ebu.ch/publications/presentations/display-seminar/lip-sync?utm_source=chatgpt.com' target='_blank' class='text-blue-600 underline'>lip-sync</a> —and share a real-world case study where they saved a production pipeline.",
             ],
             button: {
                 label: "Explore FFmpeg Filters",
@@ -2598,7 +2599,8 @@ const blogsData = [
                 title: "The Broadcast Challenge: Sync and Timing",
                 content: [
                     `Broadcast environments introduce unique stressors that make timing issues unavoidable:`,
-                    `<span class='font-semibold'>• Multi-protocol distribution: </span> RTMP to social media, SRT for contribution, HLS/DASH for OTT playback. Each introduces latency and buffer behavior.`,
+                    `<span class='font-semibold'>• Multi-protocol distribution: </span> RTMP to social media, SRT for contribution, HLS/DASH for <a href='https://www.ebytelogic.com/case-study' target='_blank' class='text-blue-600 underline'>OTT</a>
+ playback. Each introduces latency and buffer behavior.`,
                     `<span class='font-semibold'>• Frame rate mismatches: </span> Source cameras may capture at 29.97fps, while downstream encoders expect 30fps or 25fps.`,
                     `<span class='font-semibold'>• Clock drift: </span> Different devices rely on different timing references, causing gradual desync.`,
                     `<span class='font-semibold'>• Packet jitter: </span> Especially in IP-based workflows, packet arrival isn’t always smooth.`,
@@ -2628,7 +2630,8 @@ const blogsData = [
                     `<span class='ms-4'>b. Useful for resyncing video with corrected audio. </span>`,
                     `<span class='ms-4'>c. Example: ffmpeg -i input.mp4 -vf "setpts=PTS-STARTPTS" -af "asetpts=PTS-STARTPTS" output.mp4 </span>`,
                     `<span class='font-semibold'> 4. aresync (Newer Builds) </span>`,
-                    `<span class='ms-4'>a. Automatically fixes lip-sync drift by tracking both clocks. </span>`,
+                    `<span class='ms-4'>a. Automatically fixes <a href='https://www.ebytelogic.com/case-study' target='_blank' class='text-blue-600 underline'>lip-sync</a>
+ drift by tracking both clocks. </span>`,
                     `<span class='font-semibold'> 5. filter_complex Graphs </span>`,
                     `<span class='ms-4'>a. Combine filters to achieve precise control: </span>`,
                     `<span class='ms-9'>i. Video pacing correction</span>`,
@@ -2836,7 +2839,7 @@ const blogsData = [
             title: "Measuring Glass-to-Glass Latency: Methods, Tools, and Pitfalls",
             highlight: "Methods, Tools, and Pitfalls",
             paragraphs: [
-                "When you click “go live,” how long does it take for a video frame captured by a camera lens to appear on a viewer’s display ? This interval is called <span class='font-semibold'> glass-to-glass latency—</span> from the glass of the camera lens to the glass of the screen.",
+                "When you click “go live,” how long does it take for a video frame captured by a camera lens to appear on a viewer’s display ? This interval is called <a href='https://www.ebytelogic.com/case-study/reducing-wearable-display-latency' target='_blank' class='text-blue-600 underline'>glass-to-glass latency</a> — from the glass of the camera lens to the glass of the screen.",
                 "For casual streaming, a few seconds of delay might not matter. But in professional environments—<span class='font-semibold'> sports broadcasting, remote surgery, live auctions, or mission-critical surveillance—</span> latency determines success or failure.",
                 "Yet measuring this latency is tricky. Unlike bitrate or resolution, latency isn’t a fixed property—it depends on the <span class='font-semibold'> entire pipeline: </span> camera capture, encoding, transport, decoding, rendering, and display. Even small missteps in measurement can produce misleading results.",
                 "This post explains how to measure <a href='https://docs.amd.com/r/en-US/pg252-vcu/Glass-to-Glass-Latency' target='_blank' class='text-blue-600 underline'>glass-to-glass latency</a> correctly, explores available tools and methods, highlights pitfalls to avoid, and provides guidance for engineers building <span class='font-semibold'> low-latency pipelines that truly perform.</span>",
@@ -2880,7 +2883,7 @@ const blogsData = [
                 title: "Breaking Down Glass-to-Glass Latency",
                 content: [
                     `Latency isn’t caused by a single factor; it’s the sum of multiple stages:`,
-                    `<span class='font-semibold'> 1. Capture latency: </span> Camera sensor readout + processing time.`,
+                    `<span class='font-semibold'> 1. Capture latency: </span> <a href='https://www.ebytelogic.com/case-study/sub-100ms-latency-in-uav-video-streaming' target='_blank' class='text-blue-600 underline'>Camera</a> sensor readout + processing time.`,
                     `<span class='font-semibold'> 2. Encoding latency: </span> Compression algorithms trade speed for efficiency.`,
                     `<span class='font-semibold'> 3. Network latency: </span> Transport layer delay (RTMP, SRT, WebRTC, etc.).`,
                     `<span class='font-semibold'> 4. Decoding latency: </span> Time to reconstruct compressed video.`,
@@ -3114,7 +3117,7 @@ const blogsData = [
             paragraphs: [
                 "Edge video encoders are critical for live streaming, surveillance, and industrial video applications. In controlled environments like studios or server rooms, encoders perform reliably. But once deployed in deserts, offshore rigs, mobile vehicles, or disaster zones, they face extreme conditions: <span class='font-semibold'> high temperatures, unstable power, and unreliable networks. </span>",
                 "These conditions challenge even high-end broadcast-grade encoders. Streams freeze,frames drop, audio drifts out of sync, and mission-critical video can fail entirely.Designing rugged edge encoders is not just about durability—it’s about <span class='font-semibold'> ensuring continuous, high-quality video under hostile conditions. </span>",
-                "In this blog, we explore how engineers solve these challenges with thermal, power, and network strategies, using real-world examples and technologies like <span class='font-semibold'> NVIDIA Jetson, Xilinx Zynq, LiveU cellular bonding, Peplink routers, and Haivision rugged encoders. </span>",
+                "In this blog, we explore how engineers solve these challenges with thermal, <a href='https://www.ebytelogic.com/case-study/hdmi-multiview-player' target='_blank' class='text-blue-600 underline'>power</a> , and network strategies, using real-world examples and technologies like <span class='font-semibold'> NVIDIA Jetson, Xilinx Zynq, LiveU cellular bonding, Peplink routers, and Haivision rugged encoders. </span>",
             ],
             button: {
                 label: "Explore Edge Encoders",
@@ -3134,7 +3137,7 @@ const blogsData = [
                     `Off-the-shelf encoders are designed for stable power, controlled temperatures, and reliable networks. In rugged environments, these assumptions fail:`,
                     `<span class='font-semibold'>• Extreme temperatures </span> can exceed 50°C in deserts or drop below -20°C in high-altitude locations. Consumer encoders throttle or shut down under such extremes.`,
                     `<span class='font-semibold'>• Power fluctuations </span> from generators, vehicles, or solar installations corrupt video or force reboots.`,
-                    `<span class='font-semibold'>• Unstable networks— </span>cellular, satellite, or mesh—introduce jitter, packet loss, and latency spikes.`,
+                    `<span class='font-semibold'>• Unstable networks— </span>cellular, satellite, or mesh—introduce jitter, packet loss, and <a href='https://www.ebytelogic.com/case-study/broadcast-grade-sdi-encoder-decoder-with-sub100ms-latency' target='_blank' class='text-blue-600 underline'>latency</a> spikes.`,
                     `For industries like defense, oil & gas, live sports, and disaster recovery, these failures aren’t minor—they can <span class='font-semibold'> jeopardize safety, operations, or broadcast continuity</span>. Ruggedized edge encoders are designed to function reliably in these conditions, delivering mission-critical video without interruption.`,
                 ],
             },
@@ -3366,7 +3369,7 @@ const blogsData = [
                 "Automated QA for Live Video: gst-validate, tracers, and soak tests",
             highlight: "gst-validate, tracers, and soak tests",
             paragraphs: [
-                "Live video workflows are complex systems, involving cameras, encoders, decoders, network protocols, and playback endpoints. A small misalignment—dropped frames, out-of-sync audio, or jitter—can cascade into noticeable failures in production. Traditionally, QA for live streams relied on manual inspection, post-event analysis, or simple test patterns.",
+                "Live video workflows are complex systems, involving cameras, encoders, decoders, network protocols, and playback endpoints. A small misalignment—dropped frames, out-of-sync audio, or jitter—can cascade into noticeable failures in production. Traditionally, <a href='https://www.ebytelogic.com/services/qa-validation' target='_blank' class='text-blue-600 underline'>QA</a> for live streams relied on manual inspection, post-event analysis, or simple test patterns.",
                 "As live media pipelines grow in scale and complexity, manual QA becomes insufficient. Automated QA systems are now essential for ensuring reliability, detecting regressions early, and validating end-to-end performance. Using tools like gst-validate, tracing frameworks, and soak tests, teams can systematically monitor video, catch issues before they reach viewers, and maintain consistent broadcast-grade quality.",
             ],
             button: {
@@ -3388,7 +3391,7 @@ const blogsData = [
                     `<span class='font-semibold'>• Scalability issues: </span> Watching and logging multiple streams manually is resource-intensive.`,
                     `<span class='font-semibold'>• Human error: </span> Minor sync drift or frame skips can go unnoticed.`,
                     `<span class='font-semibold'>• Delayed feedback: </span> Post-event analysis identifies problems too late to correct them in the same session.`,
-                    `Automated QA addresses these problems by <span class='font-semibold'> providing continuous, repeatable, and measurable verification </span> of video pipelines. This is especially critical in:`,
+                    `Automated QA addresses these problems by <span class='font-semibold'> providing continuous, repeatable, and measurable verification </span> of <a href='https://www.ebytelogic.com/services/multimedia-framework' target='_blank' class='text-blue-600 underline'>video pipelines</a>. This is especially critical in:`,
                     `OTT platforms streaming to thousands of concurrent users.`,
                     `Sports broadcasts where every frame counts for replay accuracy.`,
                     `Media contribution workflows using protocols like <span class='font-semibold'> NDI, SRT, RTP, and RIST.</span>`,
@@ -3684,7 +3687,7 @@ timestamp drift, previously caught only after live events, were automatically fl
                     `<span class='ms-5'> b. Ensures that authentication credentials and session information cannot be intercepted. </span>`,
                     `<span class='ms-5'> c. Recommended for endpoints managing stream start/stop commands or playlist delivery. </span>`,
                     `<span class='font-semibold'> 4. Key Management Best Practices </span>`,
-                    `<span class='ms-5'> a. <span class='font-semibold'> Centralized key distribution: </span> Tools like <span class='font-semibold'> HashiCorp Vault, <a href='https://docs.aws.amazon.com/kms/latest/developerguide/overview.html?utm_source=chatgpt.com' target='_blank' class='text-blue-600 underline'>AWS KMS</a>, or custom HSM solutions </span> can rotate and distribute keys securely. </span>`,
+                    `<span class='ms-5'> a. <span class='font-semibold'> Centralized key distribution: </span> Tools like <span class='font-semibold'> HashiCorp Vault, <a href='https://docs.aws.amazon.com/kms/latest/developerguide/overview.html?utm_source=chatgpt.com' target='_blank' class='text-blue-600 underline font-normal'>AWS KMS</a>, or custom HSM solutions </span> can rotate and distribute keys securely. </span>`,
                     `<span class='ms-5'> b. <span class='font-semibold'> Ephemeral keys: </span> Reduce exposure by using short-lived session keys. </span>`,
                     `<span class='ms-5'> c. <span class='font-semibold'> Access control: </span> Limit key access to authorized servers or encoders only. </span>`,
                     `<span class='ms-5'> d. Example: A live concert platform using <span class='font-semibold'> AWS KMS + SRT AES-256 </span> rotated keys every 15 minutes to prevent unauthorized access. </span>`,
@@ -3797,13 +3800,13 @@ timestamp drift, previously caught only after live events, were automatically fl
                 id: 2,
                 title: "Ignoring control channels",
                 icon: <BiLockAlt className="size-4 text-orange-600" />,
-                content: ["TLS or HTTPS is needed to secure commands and metadata."],
+                content: ["TLS or <a href='https://www.ebytelogic.com/services/iot-integration' target='_blank' class='text-blue-600 underline'>HTTPS</a> is needed to secure commands and metadata."],
             },
             {
                 id: 3,
                 title: "Sacrificing latency for encryption",
                 icon: <BiTimer className="size-4 text-green-600" />,
-                content: ["Optimize hardware-accelerated AES or SRTP pipelines."],
+                content: ["Optimize hardware-accelerated AES or <a href='https://www.ebytelogic.com/case-study' target='_blank' class='text-blue-600 underline'>SRTP pipelines</a>."],
             },
             {
                 id: 4,
@@ -3881,7 +3884,7 @@ timestamp drift, previously caught only after live events, were automatically fl
             highlight: "What Actually Matters",
             paragraphs: [
                 "Transcoding—converting video from one format, resolution, or bitrate to another—is a cornerstone of modern live streaming, OTT delivery, and industrial video pipelines. Traditionally, transcoding was done entirely in software on CPUs, consuming significant processing power and introducing latency.",
-                "With edge and embedded devices, <span class='font-semibold'>hardware-accelerated transcoding</span> using GPUs, NPUs, or dedicated media engines has become critical for achieving <span class='font-semibold'>high-quality, low-latency video</span> without excessive power draw. Platforms like <span class='font-semibold'>NVIDIA Jetson</span> (Nano, Xavier, Orin) and <span class='font-semibold'>NXP i.MX 9/8 series</span> offer integrated accelerators (NVENC/NVDEC, VPU/ISP) optimized for H.264, H.265, and AV1.",
+                "With edge and <a href='https://www.ebytelogic.com/services/embedded-software' target='_blank' class='text-blue-600 underline'>embedded devices</a>, <span class='font-semibold'>hardware-accelerated transcoding</span> using GPUs, NPUs, or dedicated media engines has become critical for achieving <span class='font-semibold'>high-quality, low-latency video</span> without excessive power draw. Platforms like <span class='font-semibold'>NVIDIA Jetson</span> (Nano, Xavier, Orin) and <span class='font-semibold'>NXP i.MX 9/8 series</span> offer integrated accelerators (NVENC/NVDEC, VPU/ISP) optimized for H.264, H.265, and AV1.",
                 "In this blog, we examine what actually matters when designing hardware-accelerated transcoding pipelines: choosing the right codec, optimizing hardware resources, managing latency, and validating performance. Real-world examples and deployments are included to guide engineers in <span class='font-semibold'>maximizing throughput without compromising quality or reliability.</span>",
             ],
             button: {
@@ -3899,7 +3902,7 @@ timestamp drift, previously caught only after live events, were automatically fl
                 id: 1,
                 title: "Why Hardware-Accelerated Transcoding Matters",
                 content: [
-                    `Software-only transcoding is CPU-bound, power-hungry, and often infeasible for real-time multi-stream pipelines on edge devices. Hardware acceleration offers:`,
+                    `Software-only transcoding is CPU-bound, power-hungry, and often infeasible for real-time multi-stream pipelines on edge devices. <a href='https://www.ebytelogic.com/case-study' target='_blank' class='text-blue-600 underline'>Hardware</a> acceleration offers:`,
                     `<span class='font-semibold'>• Low-latency encoding/decoding : </span> Critical for live sports, drone feeds, and
 industrial monitoring.`,
                     `<span class='font-semibold'>• Power efficiency: </span> GPU/ASIC offload reduces CPU utilization, extending battery
@@ -5415,9 +5418,9 @@ const BlogsInfo = () => {
                                         </h3>
                                         <div className="flex flex-wrap gap-3">
                                             {data?.conclusion?.references.map((ref, idx) => (
-                                               <span
+                                                <span
                                                     key={idx}
-                                                    className="bg-blue-50 text-primary px-3 py-1 text-sm font-medium rounded-full border border-blue-100" dangerouslySetInnerHTML={{ __html: ref }}/>
+                                                    className="bg-blue-50 text-primary px-3 py-1 text-sm font-medium rounded-full border border-blue-100" dangerouslySetInnerHTML={{ __html: ref }} />
                                             ))}
                                         </div>
                                     </div>
