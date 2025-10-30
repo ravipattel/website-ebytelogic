@@ -82,37 +82,42 @@ const ContactDetails = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log('Form submitted:', formData);
 
         if (validate()) {
             setIsSubmitting(true);
             setSubmitError(null);
 
             try {
-                // You can send formData to an API or perform other actions here
-                const { error } = await supabase.from('Contact_Table').insert(formData).single();
-                console.log(error);
+                const res = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData),
+                });
 
-                if (error) {
-                    setSubmitError(error.message);
-                } else {
-                    // Reset form on success
-                    setFormData({
-                        name: '',
-                        telephone: '',
-                        email: '',
-                        subject: '',
-                        message: '',
-                    });
-                    SuccessToast("Your query sent!! you will get an answer within few hours")
+                const data = await res.json();
+
+                if (!data.success) {
+                    throw new Error(data.error || 'Failed to send message');
                 }
-            } catch (err) {
-                setSubmitError('An unexpected error occurred');
+
+                // Reset form on success
+                setFormData({
+                    name: '',
+                    telephone: '',
+                    email: '',
+                    subject: '',
+                    message: '',
+                });
+
+                SuccessToast("✅ Your query has been sent! You’ll get a reply soon.");
+            } catch (err: any) {
+                setSubmitError(err.message || 'An unexpected error occurred');
             } finally {
                 setIsSubmitting(false);
             }
         }
     };
+
 
     return (
         <section>

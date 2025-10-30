@@ -24,6 +24,7 @@
     "react-photo-view": "^1.2.7",
     "react-toastify": "^11.0.5",
     "recharts": "^3.1.2",
+    "resend": "^6.3.0",
     "swiper": "^11.2.10",
     "typed.js": "^2.1.0"
   },
