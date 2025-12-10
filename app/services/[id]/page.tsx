@@ -1,10 +1,11 @@
-import ServiceDetail, { serviceMetaData } from '@/src/views/services/[id]'
+import { serviceMetaData } from '@/content/serviceMetaData';
+import ServiceDetail from '@/src/views/services/[id]'
 
 export async function generateMetadata({ params }) {
-    const { id } = params;
+    const { id } = await params;
 
-    let metaTitle = "Default Title | eByteLogic";
-    let metaDescription = "Default description for unknown service ID.";
+    let metaTitle = "Service Details | eByteLogic";
+    let metaDescription = "Explore our comprehensive service offerings and solutions.";
 
     if (id === "multimedia-framework") {
         metaTitle = serviceMetaData["multimedia-framework"].title;
@@ -29,11 +30,16 @@ export async function generateMetadata({ params }) {
     return {
         title: metaTitle,
         description: metaDescription,
+        openGraph: {
+            title: metaTitle,
+            description: metaDescription,
+            url: `/services/${id}`,
+        },
     };
 }
 
-const ServiceDetailsPage = ({ params }) => {
-    const { id } = params;
+const ServiceDetailsPage = async ({ params }) => {
+    const { id } = await params;
 
     return (
         <ServiceDetail serviceid={id} />

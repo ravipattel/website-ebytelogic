@@ -1,10 +1,12 @@
 import React from 'react'
-import IndustryDetail, { industryMetaData } from '@/src/views/industries/[id]'
-export async function generateMetadata({ params }) {
-  const { id } = params
+import IndustryDetail from '@/src/views/industries/[id]'
+import { industryMetaData } from '@/content/industryMetaData'
 
-  let metaTitle = "eByteLogic | Embedded Software, Multimedia & Linux BSP Experts"
-  let metaDescription = "Partner with eByteLogic for advanced embedded software solutions in multimedia streaming, AV sync, and Linux BSP bring-up. Trusted by product companies worldwide to deliver low-latency, optimized, and reliable engineering."
+export async function generateMetadata({ params }) {
+  const { id } = await params
+
+  let metaTitle = "eByteLogic | Industry Solutions & Expertise"
+  let metaDescription = "Explore eByteLogic's industry-specific solutions across embedded software, multimedia, and Linux BSP development for wearables, broadcasting, semiconductors, and more."
 
 if (id === 'smarter-power-efficient-wearables') {
   metaTitle = industryMetaData["smarter-power-efficient-wearables"].title;
@@ -29,6 +31,11 @@ if (id === 'smarter-power-efficient-wearables') {
   return {
     title: metaTitle,
     description: metaDescription,
+    openGraph: {
+      title: metaTitle,
+      description: metaDescription,
+      url: `/industries/${id}`,
+    },
   }
 }
 
