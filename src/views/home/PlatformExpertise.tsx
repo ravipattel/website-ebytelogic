@@ -12,17 +12,18 @@ import MediaTekPng from "@/src/assets/images/about/mediaTek.png";
 import NvidiaPng from "@/src/assets/images/about/nvidia.png";
 import NxpJpeg from "@/src/assets/images/about/nxp.jpeg";
 import QualcommPng from "@/src/assets/images/about/qualcomm.png";
-import RockchipPng from "@/src/assets/images/about/rockchip.jpg";
+import RockchipJpg from "@/src/assets/images/about/rockchip.jpg";
 import QtPng from "@/src/assets/images/about/qt.png";
 import GstreamerPng from "@/src/assets/images/about/gstreamer.png";
 import AndroidPng from "@/src/assets/images/about/android.png";
 import StmiPng from "@/src/assets/images/about/stmi.png";
 import TexasPng from "@/src/assets/images/about/texas.png";
 import YoctoPng from "@/src/assets/images/about/yocto.png";
-import EspressifPng from "@/src/assets/images/about/espressif.svg";
+import EspressifSvg from "@/src/assets/images/about/espressif.svg";
 import AmdSvg from "@/src/assets/images/about/amd.svg";
 import IntelSvg from "@/src/assets/images/about/intel.svg";
-import FfmpegSvg from "@/src/assets/images/about/ffmpeg.png";
+import FfmpegPng from "@/src/assets/images/about/ffmpeg.png";
+import ToradexSvg from "@/src/assets/images/about/toradex.svg";
 
 const PlatformExpertise = () => {
     return (
@@ -68,21 +69,22 @@ const PlatformExpertise = () => {
                                 { src: NvidiaPng, alt: 'NvidiaPng' },
                                 { src: NxpJpeg, alt: 'NxpJpeg' },
                                 { src: QualcommPng, alt: 'QualcommPng' },
-                                { src: RockchipPng, alt: 'RockchipPng' },
+                                { src: RockchipJpg, alt: 'RockchipJpg' },
                                 { src: QtPng, alt: 'QtPng' },
                                 { src: GstreamerPng, alt: 'GstreamerPng' },
                                 { src: AndroidPng, alt: 'AndroidPng' },
                                 { src: StmiPng, alt: 'StmiPng' },
                                 { src: TexasPng, alt: 'TexasPng' },
                                 { src: YoctoPng, alt: 'YoctoPng' },
-                                { src: EspressifPng, alt: 'EspressifPng' },
+                                { src: EspressifSvg, alt: 'EspressifSvg' },
                                 { src: AmdSvg, alt: 'AmdSvg' },
                                 { src: IntelSvg, alt: 'IntelSvg' },
-                                { src: FfmpegSvg, alt: 'FfmpegSvg' },
+                                { src: FfmpegPng, alt: 'FfmpegPng' },
+                                { src: ToradexSvg, alt: 'ToradexSvg' },
                             ].map((logo, index) => (
                                 <SwiperSlide key={index}>
                                     <div className="flex justify-center items-center h-16">
-                                        <Image src={logo.src} alt={logo.alt} className="h-10 object-contain" />
+                                        <Image src={logo.src} alt={logo.alt} className="h-10 object-contain"  width={100} height={50}/>
                                     </div>
                                 </SwiperSlide>
                             ))}

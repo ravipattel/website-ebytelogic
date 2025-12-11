@@ -32,7 +32,7 @@ import AvWhy from '@/src/assets/images/services/avWhy.png'
 const serviceData = [
     {
         bgImg: '/images/bg/serviceBg/embeddedAppBg.png',
-        id: "embedded-software",
+        id: "embedded-application-development",
         category: "Powering Smart Devices with Embedded Intelligence",
         pathText: "Embedded App Development",
         tagLine: "C/C++, Qt, Python | Low-Level to UI | Real-Time Performance",
@@ -122,66 +122,72 @@ const serviceData = [
         ]
     },
     {
-        id: "linux-bsp-android",
+        id: "embedded-software-development",
         bgImg: '/images/bg/serviceBg/linuxBsp.png',
         pathText: "Linux BSPs & Hardware Bring-Up",
         imageName: LinuxPng,
-        category: "Bring Hardware to Life with Linux.",
-        tagLine: "Custom BSPs | Fast Bring-Up | Production-Grade Integration",
-        overview: ["At eByteLogic, we help hardware teams rapidly bring embedded devices to life with reliable, production-ready Linux BSPs. From bootloader customization to driver and secure boot implementation, our BSP experts work across Yocto and Buildroot to ensure seamless hardware-software alignment.", "Whether you’re building an evaluation board, a custom SoM, or a full-fledged production board, we accelerate bring-up, streamline peripheral support, and fine-tune your platform for speed, security, and stability."],
+        category: "Power Your Product with Robust Embedded Software.",
+        tagLine: "BSP | Firmware | Drivers | Linux | Android",
+        overview: ["At eByteLogic, we design and develop high-performance embedded software that powers modern devices — from industrial controllers and IoT gateways to consumer electronics and AI-enabled systems. We specialize in system-level engineering that bridges silicon, hardware, and software to create reliable, optimized, production-ready embedded solutions.", "Whether you’re building an evaluation board, a custom SoM, or a full-fledged production board, we accelerate bring-up, streamline peripheral support, and fine-tune your platform for speed, security, and stability."],
         capabilities: [
             {
-                title: "Board Bring-Up & Peripheral Integration",
-                desc: "We handle the complete bring-up of new boards and peripherals, enabling early testing, validation, and productization.",
+                title: "Board Support Package (BSP) Development",
                 points: [
-                    "UART, I2C, SPI, USB, Ethernet, and GPIO driver integration",
-                    "Display, touchscreen, audio, camera sensor support",
-                    "Custom device tree configuration and validation",
+                    "BSP porting and customization for Linux and Android",
+                    "Yocto, Buildroot, and AOSP–based builds",
+                    "Board bring-up for custom and off-the-shelf SoMs",
+                    "Device tree creation and tuning",
+                    "Peripheral bring-up and validation",
                 ]
             },
             {
-                title: "Bootloader & Secure Boot Customization",
-                desc: "We customize U-Boot and implement secure boot mechanisms to protect your IP and ensure verified firmware.",
+                title: "Bootloader & Startup Optimization",
                 points: [
-                    "U-Boot porting and splash screen enablement",
-                    "Secure boot with verified boot chain",
-                    "Custom boot sequences and fast boot optimization"
+                    "U-Boot porting and customization",
+                    "Fast boot implementations",
+                    "Splash/logo integration",
+                    "Secure boot enablement",
+                    "Boot sequence optimization for product requirements",
                 ]
             },
             {
-                title: "Yocto & Buildroot Customization",
-                desc: "We tailor embedded Linux distributions for your board using the right build system for your needs.",
+                title: "Linux Kernel & Device Driver Development",
                 points: [
-                    "Yocto layer creation and meta-layer integration",
-                    "Buildroot migration, optimization, and firmware packaging",
-                    "Hybrid build system support and debugging"
+                    "Custom driver development (I²C, SPI, UART, CAN, GPIO, MIPI-CSI/DSI, display, sensors, audio, networking, etc.)",
+                    "Kernel configuration and feature enablement",
+                    "Patch integration, upgrade, and maintenance",
+                    "Real-time kernel (PREEMPT_RT) support",
+                    "Power management tuning",
                 ]
             },
             {
-                title: "Kernel & Driver Development",
-                desc: "We backport, port, or develop drivers from scratch to ensure every component is fully supported.",
+                title: "Android BSP & Framework Customization",
                 points: [
-                    "Forward/backward Linux driver porting",
-                    "Kernel configuration and patch management",
-                    "In-tree and out-of-tree module development",
+                    "Android HAL layer integration",
+                    "Framework modifications and feature development",
+                    "AOSP build optimization",
+                    "Hardware abstraction layer tuning",
+                    "Custom system services and UI optimizations",
+                    "Support for Android 10–14 depending on SoC platform",
                 ]
             },
             {
-                title: "OTA Firmware Update & Recovery Systems",
-                desc: "We implement robust over-the-air (OTA) mechanisms with safety and rollback capabilities.",
+                title: "Embedded Firmware & RTOS Development (Optional Add-On)",
                 points: [
-                    "Dual-partition firmware update logic",
-                    "Factory reset and fallback image support",
-                    "Custom update utilities and shell-based scripts",
+                    "Firmware development on ARM Cortex-M, RISC-V, MSP, PIC, and Renesas MCUs",
+                    "FreeRTOS, Zephyr, ThreadX and other RTOS-based systems",
+                    "Sensor integration, communication stacks, low-power optimization",
+                    "OTA firmware update implementations",
                 ]
             },
             {
-                title: "Display, Camera & Audio Interface Integration",
-                desc: "We enable and tune hardware peripherals (DSI, CSI, I2S, HDMI, etc.) for production-ready multimedia, vision, and control use cases.",
+                title: "Hardware–Software System Integration",
                 points: [
-                    "MIPI-DSI/CSI display and camera support on Linux",
-                    "Audio codec enablement and ALSA-level tuning",
-                    "HDMI & LVDS integration with u-boot and kernel drivers",
+                    "Schematic review for software considerations",
+                    "Low-level peripheral validation",
+                    "Memory map and clock configuration",
+                    "Hardware abstraction layer (HAL) integration",
+                    "Interfacing sensors, displays, cameras, radios, and custom boards",
                 ]
             }
         ],
@@ -303,7 +309,7 @@ const serviceData = [
     },
     {
         bgImg: '/images/bg/serviceBg/iotConnectivity.png',
-        id: "iot-integration",
+        id: "iot-integration-solutions",
         pathText: "IoT & Cloud Integration",
         imageName: IosJPg,
         category: "Seamless Data Connectivity for Smart Devices & Edge Systems",
@@ -393,7 +399,7 @@ const serviceData = [
     },
     {
         bgImg: '/images/bg/serviceBg/embeddedQa.png',
-        id: "qa-validation",
+        id: "embedded-software-testing",
         imageName: QaJPg,
         pathText: "Embedded QA & Test Automation",
         category: "Ensuring Quality, Reliability & Stability at Every Embedded Layer",

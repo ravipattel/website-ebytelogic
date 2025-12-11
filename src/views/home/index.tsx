@@ -20,6 +20,8 @@ const Home = () => {
       <HeroSection />
       <div className='overflow-hidden'>
         <Services />
+        <Testimonial />
+        <PlatformExpertise />
         <Technology />
         <Solutions />
         <Projects />
@@ -29,8 +31,6 @@ const Home = () => {
         <Development />
         <Global />
         <Cta />
-        <Testimonial />
-        <PlatformExpertise />
       </div>
     </div>
   )
