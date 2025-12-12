@@ -124,7 +124,7 @@ const serviceData = [
     {
         id: "embedded-software-development",
         bgImg: '/images/bg/serviceBg/linuxBsp.png',
-        pathText: "Linux BSPs & Hardware Bring-Up",
+        pathText: "Embedded Software Development",
         imageName: LinuxPng,
         category: "Power Your Product with Robust Embedded Software.",
         tagLine: "BSP | Firmware | Drivers | Linux | Android",

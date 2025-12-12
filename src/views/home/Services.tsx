@@ -20,7 +20,7 @@ import FrameworkIconPng from '@/src/assets/images/home/whatwedo/frameworkIcon.pn
 
 const services = [
   {
-    path: "/embedded-software",
+    path: "/embedded-application-development",
     icon: ApplicationIconPng,
     image: EmbeddedAppPng,
     title: "Embedded App Development",
@@ -28,10 +28,10 @@ const services = [
     showcase: "UI, device logic, multi-threading, storage management, and full lifecycle embedded software."
   },
   {
-    path: "/linux-bsp-android",
+    path: "/embedded-software-development",
     icon: FrameworkIconPng,
     image: LinuxBspPng,
-    title: "Linux BSP & Board Bring-Up",
+    title: "Embedded Software Development",
     description:
       "Quick and stable board-level software bring-up for custom hardware, SoMs, and chipsets.",
     showcase: "Bootloader config, driver porting, Yocto/Buildroot customization, secure boot, splash screen, and more."
@@ -46,7 +46,7 @@ const services = [
     showcase: "From AV sync and SDI integration to NDI/SRT delivery and closed captioning, we engineer end-to-end streaming workflows."
   },
   {
-    path: "/iot-integration",
+    path: "/iot-integration-solutions",
     icon: IotIconPng,
     image: IotJpg,
     title: "IoT & Cloud Integration",
@@ -55,7 +55,7 @@ const services = [
     showcase: "MQTT, OTA, REST APIs, AWS IoT/Azure integration, and remote configuration at scale."
   },
   {
-    path: "/qa-validation",
+    path: "/embedded-software-testing",
     icon: EmbeddedIconPng,
     image: EmbeddedJpg,
     title: "Embedded QA & Test Automation",
