@@ -34,7 +34,7 @@ const serviceData = [
         bgImg: '/images/bg/serviceBg/embeddedAppBg.png',
         id: "embedded-application-development",
         category: "Powering Smart Devices with Embedded Intelligence",
-        pathText: "Embedded App Development",
+        pathText: "Embedded Application Development",
         tagLine: "C/C++, Qt, Python | Low-Level to UI | Real-Time Performance",
         imageName: EmbeddedDevelopmentJPg,
         overview:
@@ -310,7 +310,7 @@ const serviceData = [
     {
         bgImg: '/images/bg/serviceBg/iotConnectivity.png',
         id: "iot-integration-solutions",
-        pathText: "IoT & Cloud Integration",
+        pathText: "IoT & Cloud Integration Solutions",
         imageName: IosJPg,
         category: "Seamless Data Connectivity for Smart Devices & Edge Systems",
         tagLine: "Connect. Stream. Control. Build Smarter Embedded Systems with Cloud-Aware Architecture.",
@@ -401,7 +401,7 @@ const serviceData = [
         bgImg: '/images/bg/serviceBg/embeddedQa.png',
         id: "embedded-software-testing",
         imageName: QaJPg,
-        pathText: "Embedded QA & Test Automation",
+        pathText: "Embedded Software Testing",
         category: "Ensuring Quality, Reliability & Stability at Every Embedded Layer",
         tagLine: "Tested for Production. Validated for Scale. Engineered for Zero Defects.",
         overview: ["Our QA and test automation services are purpose-built for embedded systems — where hardware, firmware, and software interact in real time. We help product teams uncover edge-case bugs, prevent regressions, and ensure their systems remain stable in production environments.", "Whether you’re validating BSP bring-up, AV streaming stability, or end-to-end device workflows, we create robust testing strategies that simulate real-world usage across edge devices, protocols, and networks. The result: rock-solid embedded products with confidence at scale."],
