@@ -13,18 +13,18 @@ export async function generateMetadata({ params }) {
     } else if (id === "linux-bsp-android") {
         metaTitle = serviceMetaData["linux-bsp-android"].title;
         metaDescription = serviceMetaData["linux-bsp-android"].description;
-    } else if (id === "embedded-software") {
-        metaTitle = serviceMetaData["embedded-software"].title;
-        metaDescription = serviceMetaData["embedded-software"].description;
+    } else if (id === "embedded-software-development") {
+        metaTitle = serviceMetaData["embedded-software-development"].title;
+        metaDescription = serviceMetaData["embedded-software-development"].description;
     } else if (id === "av-protocol") {
         metaTitle = serviceMetaData["av-protocol"].title;
         metaDescription = serviceMetaData["av-protocol"].description;
-    } else if (id === "qa-validation") {
-        metaTitle = serviceMetaData["qa-validation"].title;
-        metaDescription = serviceMetaData["qa-validation"].description;
-    } else if (id === "iot-integration") {
-        metaTitle = serviceMetaData["iot-integration"].title;
-        metaDescription = serviceMetaData["iot-integration"].description;
+    } else if (id === "embedded-software-testing") {
+        metaTitle = serviceMetaData["embedded-software-testing"].title;
+        metaDescription = serviceMetaData["embedded-software-testing"].description;
+    } else if (id === "iot-integration-solutions") {
+        metaTitle = serviceMetaData["iot-integration-solutions"].title;
+        metaDescription = serviceMetaData["iot-integration-solutions"].description;
     }
 
     return {

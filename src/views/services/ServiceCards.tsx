@@ -7,8 +7,8 @@ import Button from '@/src/components/Button';
 
 export const serviceDataCard = [
   {
-    id: "embedded-software",
-    category: "Embedded App Development",
+    id: "embedded-application-development",
+    category: "Embedded Application Development",
     description: "Cross-platform embedded apps in C/C++, Qt, and Python for control panels, GUIs, data acquisition, and real-time logic.",
     subServices: [
       "Qt/QML GUI for Embedded Linux",
@@ -17,8 +17,8 @@ export const serviceDataCard = [
     ],
   },
   {
-    id: "linux-bsp-android",
-    category: "Linux BSPs & Hardware Bring-Up",
+    id: "embedded-software-development",
+    category: "Embedded Software Development",
     description: "Customized BSPs, secure boot, and rapid peripheral enablement across Yocto, Buildroot, and Android platforms.",
     subServices: [
       "Quick Bring-Up for Custom Boards",
@@ -44,7 +44,7 @@ export const serviceDataCard = [
       "OTA Update Systems with Rollback",
       "MQTT, REST, WebSocket Protocols"
     ],
-    id: "iot-integration",   
+    id: "iot-integration-solutions",   
   },
   {
     category: "Embedded QA & Test Automation",
@@ -54,7 +54,7 @@ export const serviceDataCard = [
       "HIL Setup & Regression Testing",
       "CI/CD Integration for QA"
     ],
-    id: "qa-validation"
+    id: "embedded-software-testing"
   },
   {
     category: "AV Protocol & Codec Engineering",
