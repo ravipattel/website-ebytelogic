@@ -6,17 +6,16 @@ import ClientLayout from "@/src/components/ClientLayout";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.ebytelogic.com/"),
   title: {
-    default: "eByteLogic | Embedded Software, Multimedia & Linux BSP Experts",
-    template: "%s | eByteLogic | Embedded Software, Multimedia & Linux BSP Experts"
+    absolute: "eByteLogic | Embedded Software Development Company",
   },
-  description: "Partner with eByteLogic for advanced embedded software solutions in multimedia streaming, AV sync, and Linux BSP bring-up. Trusted by product companies worldwide to deliver low-latency, optimized, and reliable engineering.",
+  description: "eByteLogic is the expert in embedded software development, specialising in BSP development and low-latency streaming. Book your embedded software consulting​ Today.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: "eByteLogic",
     url: "https://www.ebytelogic.com/",
-    title: "eByteLogic | Embedded Software, Multimedia & Linux BSP Experts",
-    description: "Partner with eByteLogic for advanced embedded software solutions in multimedia streaming, AV sync, and Linux BSP bring-up. Trusted by product companies worldwide to deliver low-latency, optimized, and reliable engineering.",
+    title: "eByteLogic | Embedded Software Development Company",
+    description: "eByteLogic is the expert in embedded software development, specialising in BSP development and low-latency streaming. Book your embedded software consulting​ Today",
     images: [
       {
         url: "https://www.ebytelogic.com/ogimage/ebyteogimage.png",
@@ -28,8 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "eByteLogic | Embedded Software, Multimedia & Linux BSP Experts",
-    description: "Partner with eByteLogic for advanced embedded software solutions in multimedia streaming, AV sync, and Linux BSP bring-up. Trusted by product companies worldwide to deliver low-latency, optimized, and reliable engineering.",
+    title: "eByteLogic | Embedded Software Development Company",
+    description: "eByteLogic is the expert in embedded software development, specialising in BSP development and low-latency streaming. Book your embedded software consulting​ Today",
     images: ["https://www.ebytelogic.com/ogimage/ebyteogimage.png"]
   }
 };

@@ -7,21 +7,21 @@ export type ServiceMeta = {
 export const serviceMetaData = {
   "multimedia-framework": {
     id: "multimedia-framework",
-    title: "Multimedia & Streaming Framework Development | eByteLogic",
+    title: "Embedded Multimedia Framework Development Services",
     description:
-      "From GStreamer and FFmpeg customization to NDI, RTP, SRT, and AV sync optimization — eByteLogic delivers low-latency, high-quality streaming solutions for media product teams."
+      "Need custom multimedia solutions? We offer Multimedia framework development services and tuning, specializing in AV sync and low-latency pipelines."
   },
   "embedded-software-development": {
     id: "embedded-software-development",
-    title: "Linux BSP Development & Hardware Bring-Up Services | eByteLogic",
+    title: "Expert Embedded Software Development Services | eByteLogic",
     description:
-      "Accelerate your product launch with eByteLogic’s expertise in Linux BSP customization, U-Boot, Yocto/Buildroot, and peripheral bring-up. Optimized boot time and seamless hardware integration."
+      "Full-cycle embedded software development services for complex hardware. We deliver robust embedded systems software, design, and embedded software solutions."
   },
   "embedded-application-development": {
     id: "embedded-application-development",
-    title: "Embedded Application Development Services | eByteLogic",
+    title: "Embedded Application Development | eByteLogic",
     description:
-      "Build reliable, performance-driven embedded apps in C/C++/Qt/Python. eByteLogic engineers deliver custom interfaces, middleware, and device-level solutions tailored to your hardware."
+      "Expert embedded application development for performance and UX. Get full-cycle embedded apps development services Connect with our experts today."
   },
   "av-protocol": {
     id: "av-protocol",
@@ -37,9 +37,9 @@ export const serviceMetaData = {
   },
   "iot-integration-solutions": {
     id: "iot-integration-solutions",
-    title: "IoT & Cloud Integration for Embedded Devices | eByteLogic",
+    title: "IoT Integration Solutions & System Integration",
     description:
-      "Seamlessly connect embedded systems to the cloud. eByteLogic delivers secure IoT integrations, device management, data pipelines, and real-time monitoring solutions."
+      "Secure IoT integration solutions for devices and cloud. We specialize in IoT system integration, IoT cloud integration (AWS/Azure), and device/sensor connectivity."
   }
 }
 

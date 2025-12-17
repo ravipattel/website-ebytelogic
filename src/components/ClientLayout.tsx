@@ -9,28 +9,75 @@ import Clarity from "./Clarity";
 import Analytics from "./Analytics";
 import Tawk from "./tawk";
 import CustomCursor from "./CustomCursor";
+import JsonLd from "./JsonLd";
+
+const localBusinessSchema={
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "eByte Logic",
+  "image": "https://www.ebytelogic.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.18ba9d93.png&w=640&q=75",
+  "url": "https://www.ebytelogic.com/",
+  "telephone": "+91 90332 23700",
+  "description": "eByteLogic - Embedded systems, IoT integration, multimedia frameworks and AV-over-IP engineering services.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "1114, Ganesh Glory, Jagatpur Rd, S.G. Highway, Gota",
+    "addressLocality": "Ahmedabad",
+    "postalCode": "382481",
+    "addressCountry": "IN"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/ebytelogic"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "10:00",
+      "closes": "19:00"
+    }
+  ]
+};
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
-  const hideNavbarRoutes = ["/login"];
+  const hideRoutes = ["/login"];
 
-  const shouldHideNavbar = hideNavbarRoutes.some((route) =>
+  const shouldHide = hideRoutes.some((route) =>
     pathname?.startsWith(route)
   );
 
   return (
     <Loader>
-      {!shouldHideNavbar && <Header />}
+      {!shouldHide && (
+        <>
+          <Header />
+          <JsonLd json={localBusinessSchema} />
+          <CustomCursor />
+        </>
+      )}
+
       <main className="relative min-h-screen">
-        <CustomCursor />
+        
         {children}
       </main>
-      {!shouldHideNavbar && <Footer />}
-      <TopButton />
-      <Clarity />
-      <Analytics />
-      <Tawk />
+
+      {!shouldHide && (
+        <>
+          <Footer />
+          <TopButton />
+          <Clarity />
+          <Analytics />
+          <Tawk />
+        </>
+      )}
     </Loader>
   );
 }

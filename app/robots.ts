@@ -3,10 +3,10 @@ export default function robots(): MetadataRoute.Robots {
   const base = "https://www.ebytelogic.com";
   return {
     rules: [
-      { userAgent: "*", allow: "/" }
+      { userAgent: "*", disallow: "/cgi-bin/" }
       // optionally block admin paths
     ],
-    sitemap: [`${base}/sitemap.xml`],
+    sitemap: [`https://www.ebytelogic.com/sitemap.xml`],
     host: base
   };
 }

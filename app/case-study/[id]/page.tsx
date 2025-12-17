@@ -1,12 +1,13 @@
 import CaseStudyDetails from '@/src/views/case-study/[id]'
 import React from 'react'
 import { caseStudyMetaData } from '@/content/casestudyMetaData'
+import JsonLd from '@/src/components/JsonLd';
 
 export async function generateMetadata({ params }) {
   const { id } = await params;
 
-  let metaTitle ="eByteLogic | Case Studies & Success Stories";
-  let metaDescription ="Explore real-world implementations and technical achievements from eByteLogic's embedded software and multimedia solutions.";
+  let metaTitle = "eByteLogic | Case Studies ";
+  let metaDescription = "Explore real-world implementations and technical achievements from eByteLogic's embedded software and multimedia solutions.";
 
   if (id === "reducing-wearable-display-latency") {
     metaTitle = caseStudyMetaData["reducing-wearable-display-latency"].title;
@@ -53,7 +54,7 @@ export async function generateMetadata({ params }) {
   } else if (id === "multi-os-bsp-porting-and-boot-time-optimization") {
     metaTitle = caseStudyMetaData["multi-os-bsp-porting-and-boot-time-optimization"].title;
     metaDescription = caseStudyMetaData["multi-os-bsp-porting-and-boot-time-optimization"].description;
-  } else if ( id === "unified-yocto-build-environment-for-multi-SoM-product-lines") {
+  } else if (id === "unified-yocto-build-environment-for-multi-SoM-product-lines") {
     metaTitle = caseStudyMetaData["unified-yocto-build-environment-for-multi-SoM-product-lines"].title;
     metaDescription = caseStudyMetaData["unified-yocto-build-environment-for-multi-SoM-product-lines"].description;
   } else if (id === "low-cost-android-ott-tv-box-development") {
@@ -69,13 +70,48 @@ export async function generateMetadata({ params }) {
       description: metaDescription,
       url: `/case-study/${id}`,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: metaTitle,
+      description: metaDescription,
+    },
   };
 }
 
 
-const CaseStudyDetailPage = () => {
+const CaseStudyDetailPage = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params;
+  const metaTitle = caseStudyMetaData[id]?.title || "eByteLogic Case Studies";
+
+  const breadCrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.ebytelogic.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Case Studies",
+        "item": "https://www.ebytelogic.com/case-study"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": metaTitle,
+        "item": `https://www.ebytelogic.com/case-study/${id}`
+      }
+    ]
+  };
+
+
   return (
     <>
+      <JsonLd json={breadCrumbSchema} />
       <CaseStudyDetails />
     </>
   )

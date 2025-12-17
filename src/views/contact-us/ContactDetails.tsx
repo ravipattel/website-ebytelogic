@@ -10,7 +10,7 @@ import Subscribe from '../about/Subscribe'
 import Link from 'next/link'
 
 import { createClient } from "@supabase/supabase-js"
-import { SuccessToast } from '@/utils /toast'
+import { SuccessToast } from '@/utils/toast'
 import { ToastContainer } from 'react-toastify'
 
 // Use NEXT_PUBLIC_ prefix for client-side environment variables
