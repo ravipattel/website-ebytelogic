@@ -4,7 +4,19 @@ import JsonLd from '@/src/components/JsonLd';
 
 export const metadata = {
   title: "Contact eByteLogic | Embedded Systems & Video Engineering Experts",
-  description: "Get in touch with eByteLogic's team of embedded software and multimedia engineering experts for custom solutions and consulting services."
+  description: "Get in touch with eByteLogic's team of embedded software and multimedia engineering experts for custom solutions and consulting services.",
+  alternates: { canonical: "/contact-us" },
+  openGraph: {
+    title: "Contact eByteLogic | Embedded Systems & Video Engineering Experts",
+    description: "Get in touch with eByteLogic's team of embedded software and multimedia engineering experts for custom solutions and consulting services.",
+    url: "https://www.ebytelogic.com/contact-us",
+    images: [{ url: "https://www.ebytelogic.com/ogimage/ebyteogimage.png" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact eByteLogic | Embedded Systems & Video Engineering Experts",
+    description: "Get in touch with eByteLogic's team of embedded software and multimedia engineering experts for custom solutions and consulting services.",
+  },
 };
 
 const breadCrumbSchema={

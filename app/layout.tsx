@@ -8,14 +8,14 @@ export const metadata: Metadata = {
   title: {
     absolute: "eByteLogic | Embedded Software Development Company",
   },
-  description: "eByteLogic is the expert in embedded software development, specialising in BSP development and low-latency streaming. Book your embedded software consulting​ Today.",
+  description: "eByteLogic is the expert in embedded software development, specialising in BSP development and low-latency streaming. Book your embedded software consulting​ today.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: "eByteLogic",
     url: "https://www.ebytelogic.com/",
     title: "eByteLogic | Embedded Software Development Company",
-    description: "eByteLogic is the expert in embedded software development, specialising in BSP development and low-latency streaming. Book your embedded software consulting​ Today",
+    description: "eByteLogic is the expert in embedded software development, specialising in BSP development and low-latency streaming. Book your embedded software consulting​ today.",
     images: [
       {
         url: "https://www.ebytelogic.com/ogimage/ebyteogimage.png",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "eByteLogic | Embedded Software Development Company",
-    description: "eByteLogic is the expert in embedded software development, specialising in BSP development and low-latency streaming. Book your embedded software consulting​ Today",
+    description: "eByteLogic is the expert in embedded software development, specialising in BSP development and low-latency streaming. Book your embedded software consulting​ today.",
     images: ["https://www.ebytelogic.com/ogimage/ebyteogimage.png"]
   }
 };

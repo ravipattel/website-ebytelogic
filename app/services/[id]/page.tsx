@@ -28,13 +28,16 @@ export async function generateMetadata({ params }) {
         metaDescription = serviceMetaData["iot-integration-solutions"].description;
     }
 
+    const url = `/services/${id}`;
     return {
         title: metaTitle,
         description: metaDescription,
+        alternates: { canonical: url },
         openGraph: {
             title: metaTitle,
             description: metaDescription,
-            url: `/services/${id}`,
+            url: url,
+            images: [{ url: "https://www.ebytelogic.com/ogimage/ebyteogimage.png" }],
         },
         twitter: {
             card: "summary_large_image",

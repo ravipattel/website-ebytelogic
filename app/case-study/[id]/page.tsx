@@ -62,13 +62,15 @@ export async function generateMetadata({ params }) {
     metaDescription = caseStudyMetaData["low-cost-android-ott-tv-box-development"].description;
   }
 
+  const url = `/case-study/${id}`;
   return {
     title: metaTitle,
     description: metaDescription,
+    alternates: { canonical: url },
     openGraph: {
       title: metaTitle,
       description: metaDescription,
-      url: `/case-study/${id}`,
+      url: url,
     },
     twitter: {
       card: "summary_large_image",

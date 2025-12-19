@@ -82,7 +82,8 @@ const breadCrumbList = {
 
 export const metadata = {
   title: "eByteLogic | Embedded Software Development Company",
-  description: "eByteLogic is the expert in embedded software development, specialising in BSP development and low-latency streaming. Book your embedded software consulting​ Today"
+  description: "eByteLogic is the expert in embedded software development, specialising in BSP development and low-latency streaming. Book your embedded software consulting​ today.",
+  alternates: { canonical: "/" },
 };
 
 const HomePage = () => {

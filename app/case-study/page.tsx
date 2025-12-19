@@ -5,6 +5,7 @@ import JsonLd from '@/src/components/JsonLd';
 export const metadata = {
   title: "eByteLogic | Case Studies",
   description: "Explore real-world implementations and technical achievements from eByteLogic's embedded software and multimedia solutions.",
+  alternates: { canonical: "/case-study" },
   openGraph: {
     title: "eByteLogic | Case Studies",
     description: "Explore real-world implementations and technical achievements from eByteLogic's embedded software and multimedia solutions.",

@@ -5,6 +5,7 @@ import JsonLd from '@/src/components/JsonLd';
 export const metadata = {
   title: "Industries | eByteLogic Embedded Systems Solutions",
   description: "Explore eByteLogic's industry-specific expertise in embedded software, multimedia, and Linux BSP development across wearables, broadcasting, semiconductors, and more.",
+  alternates: { canonical: "/industries" },
   openGraph: {
     title: "Industries | eByteLogic Embedded Systems Solutions",
     description: "Explore eByteLogic's industry-specific expertise in embedded software, multimedia, and Linux BSP development across wearables, broadcasting, semiconductors, and more.",

@@ -29,13 +29,16 @@ export async function generateMetadata({ params }) {
     metaDescription = industryMetaData["industrial-automation-iot-gateways"].description;
   }
 
+  const url = `/industries/${id}`;
   return {
     title: metaTitle,
     description: metaDescription,
+    alternates: { canonical: url },
     openGraph: {
       title: metaTitle,
       description: metaDescription,
-      url: `/industries/${id}`,
+      url: url,
+      images: [{ url: "https://www.ebytelogic.com/ogimage/ebyteogimage.png" }],
     },
     twitter: {
       card: "summary_large_image",
