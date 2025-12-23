@@ -1,12 +1,17 @@
 import type { MetadataRoute } from "next";
+
 export default function robots(): MetadataRoute.Robots {
   const base = "https://www.ebytelogic.com";
+
   return {
     rules: [
-      { userAgent: "*", disallow: "/cgi-bin/" }
-      // optionally block admin paths
+      {
+        userAgent: "*",
+        disallow: ["/login", "/admin/*", "/cgi-bin/"],
+        allow: ["/services/", "/industries/", "/blogs/", "/faqs/", "/case-study/"],
+      },
     ],
-    sitemap: [`https://www.ebytelogic.com/sitemap.xml`],
-    host: base
+    sitemap: `${base}/sitemap.xml`,
+    host: base,
   };
 }
