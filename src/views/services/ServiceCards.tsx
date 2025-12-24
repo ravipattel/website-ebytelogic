@@ -17,8 +17,8 @@ export const serviceDataCard = [
     ],
   },
   {
-    id: "embedded-software-development",
-    category: "Embedded Software Development",
+    id: "embedded-bsp-development",
+    category: "Embedded BSP Development",
     description: "Customized BSPs, secure boot, and rapid peripheral enablement across Yocto, Buildroot, and Android platforms.",
     subServices: [
       "Quick Bring-Up for Custom Boards",
@@ -37,16 +37,6 @@ export const serviceDataCard = [
     id: "multimedia-framework"
   },
   {
-    category: "IoT & Cloud Integration",
-    description: "Seamless integration of devices with cloud platforms using secure protocols, OTA mechanisms, and telemetry sync.",
-    subServices: [
-      "Device-to-Cloud (AWS, Azure, GCP)",
-      "OTA Update Systems with Rollback",
-      "MQTT, REST, WebSocket Protocols"
-    ],
-    id: "iot-integration-solutions",   
-  },
-  {
     category: "Embedded QA & Test Automation",
     description: "Test infrastructure, real-device validation, and automation frameworks tailored for embedded product pipelines.",
     subServices: [
@@ -56,16 +46,6 @@ export const serviceDataCard = [
     ],
     id: "embedded-software-testing"
   },
-  {
-    category: "AV Protocol & Codec Engineering",
-    description: "End-to-end handling of streaming protocols, sync, and encoding/decoding pipelines in embedded environments.",
-    subServices: [
-      "SDI/HDMI AV Sync Engineering",
-      "NDI, RTP, SRT, HLS, RTMP Integration",
-      "Codec-Level Optimization for ARM"
-    ],
-    id: "av-protocol"
-  }
 
 ];
 
@@ -74,7 +54,7 @@ const ServiceCards = () => {
 
   return (
     <section id='services' className="bg-[#f5f7fa] py-16 sm:py-20">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10">
         {serviceDataCard.map((item, index) => (
           <div
             key={index}

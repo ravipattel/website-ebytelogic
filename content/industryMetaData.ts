@@ -11,20 +11,20 @@ export const industryMetaData = {
     description:
       "eByteLogic helps media product teams achieve low-latency streaming, AV sync, GStreamer/FFmpeg customization, and protocol handling (NDI, SRT, RTP, HLS)."
   },
-  "semiconductor-platforms": {
-    id: "semiconductor-platforms",
+  "edge-ai-vision-systems": {
+    id: "edge-ai-vision-systems",
     title: "Linux BSP & Semiconductor Engineering Services | eByteLogic",
     description:
       "From U-Boot and Yocto/Buildroot customization to rapid peripheral bring-up, eByteLogic accelerates BSP development for semiconductor and hardware companies."
   },
-  "fire-alarm-panels-control-systems": {
-    id: "fire-alarm-panels-control-systems",
+  "networking-and-telecom-gateways": {
+    id: "networking-and-telecom-gateways",
     title: "Embedded Software for Fire Safety Panels | eByteLogic",
     description:
       "Build safer, smarter fire safety systems. eByteLogic delivers embedded software, Linux BSPs, and connectivity solutions for intelligent fire panels and alarms."
   },
-  'aerospace-remote-sensing-systems': {
-    id: "aerospace-remote-sensing-systems",
+  'industrial-automation-iiot': {
+    id: "industrial-automation-iiot",
     title: "Aerospace & Remote Sensing Embedded Solutions | eByteLogic",
     description:
       "eByteLogic develops high-performance embedded software for aerospace, drones, and remote sensing — from real-time signal processing to device connectivity."
@@ -35,8 +35,8 @@ export const industryMetaData = {
     description:
       "Enable real-time monitoring and cloud-connected automation with eByteLogic. We deliver embedded IoT software, BSPs, and device integration for Industry 4.0."
   },
-  "smarter-power-efficient-wearables": {
-    id: "smarter-power-efficient-wearables",
+  "smart-displays-and-hmis": {
+    id: "smart-displays-and-hmis",
     title: "Wearable Device Embedded Software Development | eByteLogic",
     description:
       "From health data processing to connectivity and power optimization, eByteLogic engineers wearable software that is secure, efficient, and hardware-ready."

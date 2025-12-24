@@ -47,11 +47,9 @@ const menuItems: MenuItem[] = [
     path: "/services",
     subItems: [
       { icon: SoftwareIconPng, label: "Embedded App Development", path: "/services/embedded-application-development" },
-      { icon: LinuxIconPng, label: "Embedded Software Development", path: "/services/embedded-software-development" },
+      { icon: LinuxIconPng, label: "Embedded BSP Development", path: "/services/embedded-bsp-development" },
       { icon: FrameworkIconPng, label: "Multimedia & Streaming Frameworks", path: "/services/multimedia-framework" },
-      { icon: AndroidIconPng, label: "IoT & Cloud Integration", path: "/services/iot-integration-solutions" },
       { icon: QaIconPng, label: "Embedded QA & Test Automation", path: "/services/embedded-software-testing" },
-      { icon: SdkIconPng, label: "AV Protocol & Codec Engineering", path: "/services/av-protocol" },
     ],
   },
   {

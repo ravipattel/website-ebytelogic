@@ -1,3 +1,4 @@
+import NotFound from '@/app/not-found';
 import { blogsMetaData } from '@/content/blogsMetaData';
 import BlogDetails from '@/src/views/blogs/[id]'
 import React from 'react'
@@ -88,7 +89,15 @@ export async function generateMetadata({ params }) {
 }
 
 
-const BlogDetailsPage = () => {
+const BlogDetailsPage = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params
+
+    const blogMeta = blogsMetaData[id];
+
+  if (!blogMeta) {
+    return <NotFound />;
+  }
+
   return (
     <>
       <BlogDetails/>

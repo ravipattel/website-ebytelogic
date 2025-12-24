@@ -57,11 +57,9 @@ const Footer = () => {
                                     <h3 className="font-medium text-primaryText text-xl mb-3">What We Do</h3>
                                     <ul className="space-y-2 text-sm text-gray-600">
                                         <li onClick={() => router.push(`/services/embedded-application-development`)} className='flex items-center gap-1 text-primaryText text-sm sm:text-[15px] cursor-pointer transition-all duration-300 hover:text-primary'><MdKeyboardArrowRight />Embedded Application Development</li>
-                                        <li onClick={() => router.push(`/services/embedded-software-development`)} className='flex items-center gap-1 text-primaryText text-sm sm:text-[15px] cursor-pointer transition-all duration-300 hover:text-primary'><MdKeyboardArrowRight />Embedded Software Development</li>
+                                        <li onClick={() => router.push(`/services/embedded-bsp-development`)} className='flex items-center gap-1 text-primaryText text-sm sm:text-[15px] cursor-pointer transition-all duration-300 hover:text-primary'><MdKeyboardArrowRight />Embedded BSP Development</li>
                                         <li onClick={() => router.push(`/services/multimedia-framework`)} className='flex items-center gap-1 text-primaryText text-sm sm:text-[15px] cursor-pointer transition-all duration-300 hover:text-primary'><MdKeyboardArrowRight />Multimedia & Streaming Frameworks</li>
-                                        <li onClick={() => router.push(`/services/iot-integration-solutions`)} className='flex items-center gap-1 text-primaryText text-sm sm:text-[15px] cursor-pointer transition-all duration-300 hover:text-primary'><MdKeyboardArrowRight />IoT & Cloud Integration Solutions</li>
                                         <li onClick={() => router.push(`/services/embedded-software-testing`)} className='flex items-center gap-1 text-primaryText text-sm sm:text-[15px] cursor-pointer transition-all duration-300 hover:text-primary'><MdKeyboardArrowRight />Embedded Software Testing</li>
-                                        <li onClick={() => router.push(`/services/av-protocol`)} className='flex items-center gap-1 text-primaryText text-sm sm:text-[15px] cursor-pointer transition-all duration-300 hover:text-primary'><MdKeyboardArrowRight />AV Protocol & Codec Engineering</li>
                                     </ul>
                                 </div>
                             </div>

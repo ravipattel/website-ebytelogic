@@ -12,11 +12,11 @@ const Cta = () => {
         <section className="relative bg-[url('/images/ctaHome.png')] bg-cover bg-fixed bg-center py-20 px-6">
             <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
             <div className="relative z-10 space-y-4 max-w-4xl mx-auto text-center text-white">
-                <h2 className="text-2xl sm:text-[34px] font-medium text-white text-center leading-tight">
-                    Want to know how we can build for your industry ?
+                <h2 className="text-xl sm:text-[33px] font-medium text-white text-center leading-tight">
+                Looking for an Embedded Partner Who Can Handle Real-World Complexity? 
                 </h2>
-                <p className="text-sm sm:text-base text-white text-center">
-                    Discover our proven solutions tailored for businesses like yours.
+                <p className="text-xs sm:text-base text-white text-center">
+                Whether you’re bringing up new hardware, optimizing performance, or solving hard real-time challenges, our engineers work as an extension of your team — focused on delivery, reliability, and results. 
                 </p>
 
                 <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">

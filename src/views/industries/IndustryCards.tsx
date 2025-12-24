@@ -19,15 +19,15 @@ import HeroIotPng from '@/src/assets/images/industry/heroIot.png'
 
 const industries = [
     {
-        id: 'smarter-power-efficient-wearables',
-        title: "Wearables & Consumer Electronics",
+        id: 'smart-displays-and-hmis',
+        title: "Smart Displays & HMIs",
         description:
-            "From BLE-enabled smartwatches to fitness trackers, we deliver reliable embedded firmware, mobile app integration, and power-optimized system software for consumer devices.",
+            "End-to-end software for industrial, automotive, and consumer smart displays, combining fast boot, smooth UI performance, and long-term system stability.",
         services: [
-            "Firmware QA",
-            "BLE Protocols",
-            "Mobile Companion Apps",
-            "OTA Support"
+            "Display & Touch BSP",
+            "Qt / QML UI Development",
+            "Android UI Customization",
+            "UI Performance Tuning"
         ],
         subtitle: "Smarter, Power-Efficient Devices with Seamless Connectivity",
         subDescription:
@@ -43,12 +43,12 @@ const industries = [
     },
     {
         id: 'media-broadcasting-multimedia',
-        title: "Media Broadcasting & Multimedia",
+        title: "Media, Broadcast & Professional AV",
         description:
-            "High-performance pipelines for real-time streaming, multiviewers, AV sync, and custom SDI/NDI/HDMI interfaces. Built on GStreamer, FFmpeg, and multimedia hardware SDKs.",
+            "High-performance multimedia pipelines for live streaming, broadcast playback, AV sync, and Pro-AV systems, built on proven open-source frameworks and hardware SDKs.",
         services: [
             "Streaming Pipelines",
-            "SDI/HDMI Playback",
+            "SDI / HDMI / NDI ",
             "Multimedia QA",
             "AV Sync Solutions"
         ],
@@ -65,16 +65,15 @@ const industries = [
         success: '✔ Deployed in drone camera systems, video switchers, and broadcast encoders.'
     },
     {
-        id: 'semiconductor-platforms',
-        title: "Semiconductor Platforms (BSP Services)",
+        id: 'edge-ai-vision-systems',
+        title: "Edge AI & Vision Systems",
         description:
-            "Deep expertise in BSPs, kernel bring-up, and driver customization for NXP, TI, Rockchip, and more. We help silicon vendors and OEMs get to production faster.",
+            "Real-time embedded vision platforms for AI-powered cameras, inspection systems, robotics, and edge analytics, optimized for low latency and hardware acceleration.",
         services: [
-            "Linux BSP",
-            "Android Customization",
-            "Secure Boot",
-            "Yocto",
-            "U-Boot"
+            "Camera & Sensor Bring-Up",
+            "Low-Latency Video Pipelines",
+            "Hardware Acceleration",
+            "Performance Optimization",
         ],
         subtitle: "Platform Enablement on NXP, TI, Rockchip & Custom Boards",
         subDescription:
@@ -89,15 +88,15 @@ const industries = [
         success: '✔ Trusted by ODMs for production firmware & board bring-up.'
     },
     {
-        id: 'fire-alarm-panels-control-systems',
-        title: "Fire Alarm Panels & Control Systems",
+        id: 'networking-and-telecom-gateways',
+        title: "Networking & Telecom Gateways",
         description:
-            "Customized Android firmware and embedded apps for industrial control panels with touchscreen UIs and secure alarm handling logic.",
+            "Always-on embedded platforms for networking and telecom gateways, designed for uptime, secure remote management, and sustained field operation.",
         services: [
-            "AOSP Customization",
-            "GPIO/UART Integration",
-            "Real-Time OTA",
-            "Fast Boot"
+            "Gateway BSP Development",
+            "Networking & Protocol Integration",
+            "Secure OTA & Lifecycle Management",
+            "Stress & Throughput Testing"
         ],
         subtitle: "Secure, Customized Android OS for Touch-Control Panels",
         subDescription:
@@ -113,14 +112,14 @@ const industries = [
     },
     {
         id: 'industrial-automation-iot-gateways',
-        title: "Industrial Automation & IoT Gateways",
+        title: "Automotive Infotainment & Telematics",
         description:
-            "Complete software stacks for smart edge devices, including industrial gateways, connected sensors, and protocol bridges.",
+            "Embedded software for in-vehicle infotainment, telematics units, and smart automotive displays, optimized for fast boot, multimedia performance, and long-term stability.",
         services: [
-            "Embedded Development",
-            "Linux Drivers",
-            "Remote Update Frameworks",
-            "Device Management"
+            "Android & Linux BSP",
+            "HMI & UI Development",
+            "Audio / Video Pipelines",
+            "Platform Validation"
         ],
         subtitle: "Smart Edge Solutions for Connected Infrastructure",
         subDescription:
@@ -135,15 +134,15 @@ const industries = [
         success: '✔ Delivered for energy monitoring, protocol bridging, and gateway systems.'
     },
     {
-        id: 'aerospace-remote-sensing-systems',
-        title: "Aerospace & Remote Sensing Systems",
+        id: 'industrial-automation-iiot',
+        title: "Industrial Automation & IIoT",
         description:
-            "Precision-focused development for data acquisition, image processing, and control software in airborne and satellite environments.",
+            "We build robust embedded platforms for industrial controllers, gateways, and IIoT devices that demand continuous operation, field reliability, and long product lifecycles. ",
         services: [
-            "Custom BSP",
-            "Secure Boot",
-            "Real-Time Data Handling",
-            "Low-Latency Comms"
+            "Linux BSP & Board Bring-Up",
+            "Industrial Protocols (CAN, Modbus, UART)",
+            "OTA & Remote Updates",
+            "Stability & Soak Testing"
         ],
         subtitle: "Mission-Critical Software for Airborne & Satellite Systems",
         subDescription:
@@ -161,8 +160,6 @@ const industries = [
 
 const IndustryCards = () => {
     const [openId, setOpenId] = useState<string | null>(null)
-    const closeModal = () => setOpenId(null)
-    const currentIndustry = industries.find(item => item.id === openId)
     const [isVisible, setIsVisible] = useState(false)
 
     const router = useRouter()
@@ -224,19 +221,18 @@ const IndustryCards = () => {
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="space-y-4">
                         <h3 className='text-2xl sm:text-[34px] font-medium leading-tight text-center capitalize mb-2'>Industries We<span className='text-primary'> Serve</span></h3>
-                        <p className="text-sm sm:text-[15px] text-[#5d6471] mb-4 text-center max-w-lg mx-auto">
-                            Deep Expertise Across Embedded Domains – From wearables to aerospace, we
-                            deliver robust, optimized software solutions.
+                        <p className="text-sm sm:text-[15px] text-[#5d6471] mb-4 text-center max-w-2xl mx-auto">
+                        Deep expertise across embedded domains — we help product companies engineer reliable, high-performance software for devices operating in real-world conditions. 
                         </p>
                     </div>
                     <div className="grid md:grid-cols-2 gap-8 mt-6">
                         {industries.map((item , index) => (
-                            <div key={item.id} className="bg-white border border-primary/30 shadow rounded-xl p-6">
+                            <div key={item.id} className="bg-white border border-primary/30 shadow rounded-xl p-6 flex flex-col justify-between items-baseline">
                                 <h3 className="text-xl font-semibold mb-2">
                                     {index + 1}. {item.title}
                                 </h3>
                                 <p className="text-gray-700 mb-3 text-sm">{item.description}</p>
-                                <p className="font-medium text-primary text-sm flex items-center gap-2"><MdOutlineMiscellaneousServices /> Services: </p>
+                                <p className="font-medium text-primary text-sm flex items-center gap-2 mb-2"><MdOutlineMiscellaneousServices /> Services: </p>
                                 <ul className="list-disc list-inside text-sm text-gray-700 mb-3">
                                     {item.services.map((s, idx) => (
                                         <li key={idx}>{s}</li>

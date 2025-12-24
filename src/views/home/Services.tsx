@@ -23,18 +23,18 @@ const services = [
     path: "/embedded-application-development",
     icon: ApplicationIconPng,
     image: EmbeddedAppPng,
-    title: "Embedded App Development",
-    description: "Embedded apps in C/C++/Qt/Python tailored for performance, stability, and hardware interaction.",
-    showcase: "UI, device logic, multi-threading, storage management, and full lifecycle embedded software."
+    title: "Embedded Application Development ",
+    description: "Embedded applications in C, C++, Qt, and Python designed for performance, stability, and tight hardware integration.",
+    showcase: "UI logic, device control, IPC, multithreading, real-time data handling, and full lifecycle embedded software."
   },
   {
-    path: "/embedded-software-development",
+    path: "/embedded-bsp-development",
     icon: FrameworkIconPng,
     image: LinuxBspPng,
-    title: "Embedded Software Development",
+    title: "Embedded BSP Development ",
     description:
-      "Quick and stable board-level software bring-up for custom hardware, SoMs, and chipsets.",
-    showcase: "Bootloader config, driver porting, Yocto/Buildroot customization, secure boot, splash screen, and more."
+      "Board-level software bring-up for custom hardware, SoMs, and production devices. ",
+    showcase: "Bootloader customization, Linux kernel & drivers, Yocto/Buildroot, secure boot, splash screens, and platform migration."
   },
   {
     path: "/multimedia-framework",
@@ -42,33 +42,16 @@ const services = [
     image: MediaSolutionsJpg,
     title: "Multimedia & Streaming Frameworks",
     description:
-      "Custom GStreamer, FFMPEG, and protocol-level streaming pipelines for real-time, low-latency video systems.",
-    showcase: "From AV sync and SDI integration to NDI/SRT delivery and closed captioning, we engineer end-to-end streaming workflows."
-  },
-  {
-    path: "/iot-integration-solutions",
-    icon: IotIconPng,
-    image: IotJpg,
-    title: "IoT & Cloud Integration",
-    description:
-      "Secure, real-time connectivity between your embedded system and cloud backends.",
-    showcase: "MQTT, OTA, REST APIs, AWS IoT/Azure integration, and remote configuration at scale."
+      "Custom multimedia pipelines engineered for low latency, sync accuracy, and reliability.",
+    showcase: "GStreamer & FFmpeg customization, SDI/HDMI integration, NDI/SRT streaming, closed captioning, and codec optimization."
   },
   {
     path: "/embedded-software-testing",
     icon: EmbeddedIconPng,
     image: EmbeddedJpg,
     title: "Embedded QA & Test Automation",
-    description: "Validation pipelines that simulate real-world embedded conditions and system behaviors.",
-    showcase: "HIL testing, black-box/white-box testing, interface simulators, CI/CD-based embedded QA."
-  },
-  {
-    path: "/av-protocol",
-    icon: EngineerIconPng,
-    image: EngineeringJpg,
-    title: "AV Protocol & Codec Engineering",
-    description: "Deep expertise in audio/video protocol stacks and custom codec pipeline integration.",
-    showcase: "RTP, RTMP, RIST, HLS, and adaptive bitrate logic, with encoder tuning and protocol troubleshooting."
+    description: "Embedded-focused QA frameworks built to validate performance, stability, and reliability at scale.",
+    showcase: "Test strategy, automation frameworks, BSP validation, multimedia test pipelines, CI integration, and stress testing."
   },
 ];
 
@@ -81,13 +64,13 @@ const Services = () => {
           What We Do
         </h2>
         <p className='text-sm sm:text-[15px] text-[#5d6471] max-w-3xl mx-auto mb-4'>
-          {`Smart engineering for complex systems. From low-level bring-up to high-performance media and cloud-connected applications — we deliver production-ready software built to scale.`}
+          {`Smart engineering for complex systems — from low-level bring-up to high-performance media and embedded applications.`}
         </p>
-        <div className="flex flex-wrap justify-center gap-5 pt-4">
+        <div className="grid sm:grid-cols-2 xl:grid-cols-4 justify-center gap-5 pt-4">
           {services.map((service, index) => (
             <div
               key={index}
-              className="relative flex flex-col justify-between group overflow-hidden max-w-[360px] bg-white border-[0.5px] border-[#3078fb66] hover:border-[#0c1e35] rounded-lg p-5 sm:p-7 text-left transition shadow-sm"
+              className={`relative flex flex-col justify-between group overflow-hidden max-w-[360px] bg-white border-[0.5px] border-[#3078fb66] hover:border-[#0c1e35] rounded-lg p-5 sm:p-7 text-left transition shadow-sm ${index % 2 === 0 ? 'md:ms-auto' : ''}`}
             >
               <div className="relative w-full h-32 rounded-md overflow-hidden mb-4 z-50">
                 <Image

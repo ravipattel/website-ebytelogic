@@ -142,7 +142,7 @@ const blogsData = [
                 id: 1,
                 title: "What “±10 ms” actually means",
                 content: [
-                    "<a href='https://www.ebytelogic.com/services/av-protocol' target='_blank' class='text-blue-600 underline'>Lip-sync</a> error is the <span class='font-semibold'>relative</span> timing between audio and video at the output. If the video path is 70 ms and audio path is 80 ms, you’re at <span class='font-semibold'> audio late by 10 ms.</span>",
+                    "<a href='https://www.ebytelogic.com/services/multimedia-framework' target='_blank' class='text-blue-600 underline'>Lip-sync</a> error is the <span class='font-semibold'>relative</span> timing between audio and video at the output. If the video path is 70 ms and audio path is 80 ms, you’re at <span class='font-semibold'> audio late by 10 ms.</span>",
                     "The ±10 ms target is not a law; it’s a <span class='font-semibold'> design guardrail</span> that sits well within human perception thresholds and typical broadcaster QoS tolerances.",
                     "In complex chains (e.g., SRT contribution → cloud transcode → HLS distribution), you want to hold ±10 ms at each hand-off to avoid drift accumulation.",
                     "ITU and EBU documents formalize acceptable ranges; product teams adopt a tighter band to avoid edge-case complaints. <a href='https://tech.ebu.ch/docs/techreview/trev_2009-Q1_HD-Audio-Delays.pdf?utm_source=chatgpt.com' target='_blank' class='text-blue-600 underline'>ITU Tech EBU</a>",
@@ -734,7 +734,7 @@ const blogsData = [
                 title: "Market Growth and Industry Outlook",
                 content: [
                     "<span class='font-bold'>•</span> The <span class='font-semibold'>global embedded systems market</span> is projected to grow from <span class='font-semibold'>$116 billion in 2024</span> to <span class='font-semibold'>over $160 billion by 2030</span>, driven by industries such as <span class='font-semibold'>automotive, aerospace, industrial IoT, healthcare, and MediaTech</span>.",
-                    "<span class='font-bold'>•</span> Increasing adoption of <span class='font-semibold'>edge AI chips, 5G-enabled <a href='https://www.ebytelogic.com/services/iot-integration' target='_blank' class='text-blue-600 underline'>IoT devices</a>, and streaming frameworks</span> is fueling R&D investments.",
+                    "<span class='font-bold'>•</span> Increasing adoption of <span class='font-semibold'>edge AI chips, 5G-enabled <a href='https://www.ebytelogic.com/services/embedded-software-testing' target='_blank' class='text-blue-600 underline'>IoT devices</a>, and streaming frameworks</span> is fueling R&D investments.",
                     "<span class='font-bold'>•</span> In sectors like <span class='font-semibold'>media broadcasting</span>, embedded systems are not just enablers—they are the <span class='font-semibold'>core platforms</span> that make ultra-low latency video delivery possible.",
                 ],
                 chartData: {
@@ -3800,7 +3800,7 @@ timestamp drift, previously caught only after live events, were automatically fl
                 id: 2,
                 title: "Ignoring control channels",
                 icon: <BiLockAlt className="size-4 text-orange-600" />,
-                content: ["TLS or <a href='https://www.ebytelogic.com/services/iot-integration' target='_blank' class='text-blue-600 underline'>HTTPS</a> is needed to secure commands and metadata."],
+                content: ["TLS or <a href='https://www.ebytelogic.com/services/embedded-bsp-development' target='_blank' class='text-blue-600 underline'>HTTPS</a> is needed to secure commands and metadata."],
             },
             {
                 id: 3,
@@ -4122,6 +4122,7 @@ type QASection = {
 // used for doughnut
 export const DoughnutChart = ({ data, className }: any) => {
     console.log(data);
+
     return (
         <section id="doughnut" className="my-8 md:my-16">
             <div className={`${className}`}>

@@ -1,7 +1,6 @@
 import Image from 'next/image';
 
 import React from 'react'
-import { FaCalendarAlt, } from 'react-icons/fa';
 
 import WearablesPng from '@/src/assets/images/home/industry/wearables.png';
 import StreamingPng from '@/src/assets/images/home/industry/streaming.png';
@@ -13,39 +12,39 @@ import IotJpeg from '@/src/assets/images/home/industry/iot.jpeg';
 const globalCards = [
     {
         image: WearablesPng,
-        title: 'Wearables & Smart Devices',
-        description: 'Seamless connectivity and real-time UX for smart, battery-efficient wearables.',
-        tags: ['BLE firmware', 'mobile app integration', 'OTA support'],
+        title: 'Smart Displays & HMIs',
+        description: 'Robust UI and application layers for smart panels, industrial displays, and touch-enabled devices.',
+        tags: [' Qt / QML', 'Android UI', 'Touch & Display Drivers', 'Performance Tuning'],
     },
     {
         image: StreamingPng,
-        title: 'Media Broadcasting & Streaming',
-        description: 'Low-latency GStreamer/FFmpeg pipelines for AV sync and embedded video delivery',
-        tags: ['SDI', 'HDMI', 'NDI', 'SRT', 'macOS & Linux support'],
+        title: 'Media, Broadcast & Professional AV',
+        description: 'Low-latency, broadcast-grade multimedia pipelines engineered for precision, sync, and compliance.',
+        tags: ['GStreamer / FFmpeg', 'SDI / HDMI', 'NDI / SRT', 'AV Sync ±10ms'],
     },
     {
         image: SemiconductorsPng,
-        title: 'Semiconductor & BSP Services',
-        description: 'Accelerated SoC development with Linux BSP, Android HAL, and driver integration.',
-        tags: ['Rockchip', 'i.MX', 'U-Boot', 'Android Porting'],
+        title: 'Edge AI & Vision Systems',
+        description: 'Embedded platforms optimized for real-time video capture, processing, and low-latency delivery at the edge.',
+        tags: ['MIPI-CSI', 'Hardware Acceleration', 'Low-Latency Pipelines', 'Jetson / i.MX'],
     },
     {
         image: FirelinePng,
-        title: 'Fire Safety & Industrial Panels',
-        description: 'Mission-critical HMI systems with QT/C++ for industrial and safety applications.',
-        tags: ['Serial/CAN protocols', 'alarm systems', 'touchscreen UX'],
+        title: 'Networking & Telecom Gateways',
+        description: 'High-availability embedded software for wired and wireless gateways handling continuous data flow.',
+        tags: ['Embedded Linux', 'Protocol Handling', 'OTA Updates', 'System Reliability'],
     },
     {
         image: AerospacePng,
-        title: 'Aerospace, Drones & Remote Imaging',
-        description: 'Embedded video processing from camera capture to real-time network streaming.',
-        tags: ['V4L2', 'FFmpeg', 'remote sensing', 'data sync'],
+        title: 'Automotive Infotainment & Telematics',
+        description: 'Performance-critical embedded software for in-vehicle displays, infotainment units, and connected automotive platforms.',
+        tags: ['Android BSP', 'Audio / Video Pipelines', 'Qt HMI', 'Boot Optimization'],
     },
     {
         image: IotJpeg,
-        title: 'IoT & Edge Devices',
-        description: 'Connected systems built for control, analytics, and remote updates.',
-        tags: ['MQTT/HTTP', 'UI dashboards', 'OTA', 'secure protocols'],
+        title: 'Industrial Automation & IIoT ',
+        description: 'Reliable embedded software for industrial controllers, gateways, and edge devices operating under real-world constraints. ',
+        tags: ['Linux BSP', 'CAN / Modbus', 'Gateway Software', 'Field Upgrades'],
     }
 ];
 
@@ -57,13 +56,13 @@ const Global = () => {
                 <h2 className="text-2xl sm:text-[34px] font-medium text-primaryText text-center leading-tight">
                     Featured Industry Solutions
                 </h2>
-                <p className='text-sm sm:text-[15px] text-[#5d6471] max-w-md mx-auto text-center mb-4'>
-                    Discover how we solve complex challenges across multimedia, embedded, and IoT-driven industries.
+                <p className='text-sm sm:text-[15px] text-[#5d6471] max-w-lg mx-auto text-center mb-4'>
+                Discover how we solve complex engineering challenges across embedded, multimedia, and connected device ecosystems. 
                 </p>
-                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pt-4'>
+                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-4'>
                     {globalCards.map((card, index) => (
-                        <div key={index} className={`bg-white border border-gray-200 shadow-[rgba(0,0,0,0.1)_0px_5px_25px] justify-between flex flex-col  ${index % 2 === 1 ? 'flex-col-reverse' : ''}`}>
-                            <div className='max-w-[435px] max-h-72'>
+                        <div key={index} className={`bg-white border border-gray-200 shadow-xl justify-between flex flex-col  ${index % 2 === 1 ? 'flex-col-reverse' : ''}`}>
+                            <div className='md:max-w-[435px] max-h-72'>
                                 <Image width={435} height={196} src={card.image} alt={card.title} className="w-full h-full object-cover" />
                             </div>
                             <div className="space-y-3 text-primaryText p-7">

@@ -9,21 +9,21 @@ export async function generateMetadata({ params }) {
   let metaTitle = "eByteLogic | Industry Solutions & Expertise"
   let metaDescription = "Explore eByteLogic's industry-specific solutions across embedded software, multimedia, and Linux BSP development for wearables, broadcasting, semiconductors, and more."
 
-  if (id === 'smarter-power-efficient-wearables') {
-    metaTitle = industryMetaData["smarter-power-efficient-wearables"].title;
-    metaDescription = industryMetaData["smarter-power-efficient-wearables"].description;
+  if (id === 'smart-displays-and-hmis') {
+    metaTitle = industryMetaData["smart-displays-and-hmis"].title;
+    metaDescription = industryMetaData["smart-displays-and-hmis"].description;
   } else if (id === 'media-broadcasting-multimedia') {
     metaTitle = industryMetaData["media-broadcasting-multimedia"].title;
     metaDescription = industryMetaData["media-broadcasting-multimedia"].description;
-  } else if (id === 'semiconductor-platforms') {
-    metaTitle = industryMetaData["semiconductor-platforms"].title;
-    metaDescription = industryMetaData["semiconductor-platforms"].description;
-  } else if (id === 'fire-alarm-panels-control-systems') {
-    metaTitle = industryMetaData["fire-alarm-panels-control-systems"].title;
-    metaDescription = industryMetaData["fire-alarm-panels-control-systems"].description;
-  } else if (id === 'aerospace-remote-sensing-systems') {
-    metaTitle = industryMetaData["aerospace-remote-sensing-systems"].title;
-    metaDescription = industryMetaData["aerospace-remote-sensing-systems"].description;
+  } else if (id === 'edge-ai-vision-systems') {
+    metaTitle = industryMetaData["edge-ai-vision-systems"].title;
+    metaDescription = industryMetaData["edge-ai-vision-systems"].description;
+  } else if (id === 'networking-and-telecom-gateways') {
+    metaTitle = industryMetaData["networking-and-telecom-gateways"].title;
+    metaDescription = industryMetaData["networking-and-telecom-gateways"].description;
+  } else if (id === 'industrial-automation-iiot') {
+    metaTitle = industryMetaData["industrial-automation-iiot"].title;
+    metaDescription = industryMetaData["industrial-automation-iiot"].description;
   } else if (id === 'industrial-automation-iot-gateways') {
     metaTitle = industryMetaData["industrial-automation-iot-gateways"].title;
     metaDescription = industryMetaData["industrial-automation-iot-gateways"].description;

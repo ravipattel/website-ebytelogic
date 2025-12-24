@@ -28,6 +28,7 @@ import QaUseCase from '@/src/assets/images/services/qaUsecase.png'
 import QaWhy from '@/src/assets/images/services/qaWhy.png'
 import AvUseCase from '@/src/assets/images/services/avUseCase.png'
 import AvWhy from '@/src/assets/images/services/avWhy.png'
+import NotFound from '@/app/not-found';
 
 const serviceData = [
     {
@@ -122,9 +123,9 @@ const serviceData = [
         ]
     },
     {
-        id: "embedded-software-development",
+        id: "embedded-bsp-development",
         bgImg: '/images/bg/serviceBg/linuxBsp.png',
-        pathText: "Embedded Software Development",
+        pathText: "Embedded BSP Development",
         imageName: LinuxPng,
         category: "Power Your Product with Robust Embedded Software.",
         tagLine: "BSP | Firmware | Drivers | Linux | Android",
@@ -308,96 +309,6 @@ const serviceData = [
         ]
     },
     {
-        bgImg: '/images/bg/serviceBg/iotConnectivity.png',
-        id: "iot-integration-solutions",
-        pathText: "IoT & Cloud Integration Solutions",
-        imageName: IosJPg,
-        category: "Seamless Data Connectivity for Smart Devices & Edge Systems",
-        tagLine: "Connect. Stream. Control. Build Smarter Embedded Systems with Cloud-Aware Architecture.",
-        overview: ["Modern embedded products no longer operate in isolation — they communicate, stream data, receive updates, and trigger actions through the cloud. At eByteLogic, we in IoT and cloud integration for embedded systems, enabling secure, low-latency communication between devices, edge platforms, and cloud backends.", "We design and implement firmware-to-cloud data pipelines, event handling, OTA mechanisms, and protocol stacks that work reliably across real-world environments.", "Whether it’s a remote sensing device, fire safety panel, or connected multimedia node, we bring full-stack IoT expertise to your product."],
-        capabilities: [
-            {
-                title: "Embedded-to-Cloud Communication",
-                desc: "Secure and reliable communication protocols for data push/pull between devices and cloud services.",
-                points: [
-                    "MQTT, CoAP, HTTP/HTTPS integration",
-                    "TLS security for encrypted transmission",
-                    "RESTful APIs and WebSocket-based bi-directional data flows",
-                ]
-            },
-            {
-                title: "Device Provisioning & Identity Management",
-                desc: "Manage unique device identities, credentials, and secure onboarding at scale.",
-                points: [
-                    "Secure element integration for hardware-backed keys",
-                    "Cloud-side certificate provisioning and validation",
-                    "Token-based device authorization (JWT/OAuth)",
-                ]
-            },
-            {
-                title: "OTA (Over-The-Air) Updates & Remote Configuration",
-                desc: "Deploy firmware and configuration updates across distributed devices with rollback safety.",
-                points: [
-                    "Full + delta firmware update delivery mechanisms",
-                    "Factory reset and version rollback support",
-                    "Integration with AWS IoT, Azure IoT Hub, or custom update servers",
-                ]
-            },
-            {
-                title: "Edge-to-Cloud Data Pipeline Engineering",
-                desc: "Design efficient data pipelines from edge devices to analytics dashboards or cloud functions.",
-                points: [
-                    "Buffering, retry mechanisms, and data integrity checks",
-                    "Local caching and conditional sync",
-                    "Cloud-to-device message processing and command execution",
-                ]
-            },
-            {
-                title: "IoT Cloud Platform Integration",
-                desc: "Embed your system into major IoT ecosystems or custom cloud stacks.",
-                points: [
-                    "AWS IoT Core, Azure IoT Hub, GCP IoT Core integrations",
-                    "Dashboard enablement, alert triggers, and device state monitoring",
-                    "Custom microservices and backend APIs for device management",
-                ]
-            },
-            {
-                title: "Edge Analytics & Device Intelligence",
-                desc: "We enable on-device processing, alerting, and decision-making through embedded ML,rule engines, and stream processing.",
-                points: [
-                    "Edge ML models deployed via TensorFlow Lite or ONNX",
-                    "Rule-based engines for threshold-based actions",
-                    "Local stream aggregation before cloud sync",
-                ]
-            }
-        ],
-        useCaseImg: IotUseCase,
-        whyImg: IotWhy,
-        useCases: [
-            "MQTT-based data publishing from edge to cloud",
-            "Remote monitoring and OTA updates for field devices",
-            "AWS IoT, Azure IoT Hub, and Google Cloud integrations",
-            "Lightweight protocol implementation (CoAP, LWM2M, HTTP REST)",
-            "Secure data flow pipelines (TLS, authentication, token-based)",
-            "Edge computing and device rule engine implementation",
-        ],
-        whyChooseUs: [
-            "Experts in IoT protocols, security, and device-cloud sync",
-            "Deep Linux experience ensures stable edge-side integrations",
-            "Full-stack solutions: device firmware + cloud dashboard",
-            "Rapid POCs and MVPs for connected product startups",
-            "Extensive testing for real-world deployment readiness",
-            "Experience across wearable, fire safety, industrial, and broadcast IoT",
-        ],
-        cta: [
-            {
-                ctaTitle: "<span class='text-primary'>Connect</span> Your Devices, <span class='text-primary'>Unlock Their</span> Potential",
-                Ctadescription: "We help you turn embedded systems into connected solutions — enabling data flow, remote control, and intelligence across the cloud-edge continuum.",
-                ctaButtonText: "Start My IoT Integration",
-            }
-        ]
-    },
-    {
         bgImg: '/images/bg/serviceBg/embeddedQa.png',
         id: "embedded-software-testing",
         imageName: QaJPg,
@@ -487,98 +398,6 @@ const serviceData = [
             }
         ]
     },
-    {
-        bgImg: '/images/bg/serviceBg/avProtocol.png',
-        id: "av-protocol",
-        pathText: "AV Protocol & Codec Engineering",
-        category: "Mastering Protocols, Sync, and Codecs for Seamless Streaming",
-        tagLine: "NDI | RTP | SRT | H.264/H.265 | AAC | Lip-Sync | Closed Captions",
-        imageName: SdkWebp,
-        bannerImage: "/images/middleware-sdkBanner.webp",
-        overviewImage: "/images/aboutBanner.png",
-        overview: ["We engineer high-performance audio-video pipelines by fine-tuning every layer of the AV stack — from protocols and codecs to timestamp handling and sync alignment. Our expertise ensures real-time transport, ultra-low latency, and flawless lip-sync across professional broadcasting systems and embedded platforms.", "With deep knowledge of open standards and proprietary formats, we help teams build reliable media delivery solutions — whether it’s a live production encoder, a smart camera, or a software-defined AV device."],
-        capabilities: [
-            {
-                title: "Audio-Video Protocol Implementation",
-                desc: "Custom integration, optimization, and troubleshooting of AV protocols.",
-                points: [
-                    "Protocols: RTP, RTSP, SRT, HLS, RTMP, RIST, NDI",
-                    "Timestamp management and jitter handling",
-                    "Protocol bridging and format translation",
-                ]
-            },
-            {
-                title: "Codec Integration & Tuning",
-                desc: "Seamless handling of audio/video compression for embedded systems.",
-                points: [
-                    "Video codecs: H.264, H.265, MJPEG",
-                    "Audio codecs: AAC, Opus, PCM, MP3",
-                    "Hardware-accelerated encoding/decoding setup",
-                ]
-            },
-            {
-                title: "Lip-Sync & AV Sync Optimization",
-                desc: "Precise sync between audio and video for real-time systems.",
-                points: [
-                    "Handling PTS/DTS and sync buffers",
-                    "Clock skew and drift compensation",
-                    "Sync validation and tuning for GStreamer/FFMPEG",
-                ]
-            },
-            {
-                title: "Closed Captioning & Subtitles Handling",
-                desc: "Standards-compliant captioning pipelines for regulated markets.",
-                points: [
-                    "LINE21 analog captions (CEA-608)",
-                    "DTVCC (CEA-708) digital closed captions",
-                    "Conversion: LINE21 ↔ DTVCC",
-                ]
-            },
-            {
-                title: "Embedded Media Pipeline Debugging",
-                desc: "Systematic troubleshooting and fine-tuning of AV pipelines.",
-                points: [
-                    "Buffer management and data flow analysis",
-                    "Latency tracing and reduction strategies",
-                    "Codec negotiation and error resilience",
-                ]
-            },
-            {
-                title: "Captioning & Subtitle Pipeline Integration",
-                desc: "We implement analog and digital captioning support across multiple formats for live and offline use cases.",
-                points: [
-                    "LINE21 analog closed captioning (CEA-608)",
-                    "DTVCC digital captions (CEA-708) support",
-                    "Conversion between LINE21 <--> DTVCC for regulatory compliance",
-                ]
-            }
-        ],
-        useCaseImg: AvUseCase,
-        whyImg: AvWhy,
-        useCases: [
-            "Custom implementation of AV streaming protocols (NDI, RTP, SRT, RTMP, HLS)",
-            "Codec integration and tuning (H.264/H.265, VP9, AV1, MJPEG)",
-            "Hardware codec offloading for performance and power gains",
-            "Legacy protocol support and transcoding bridges",
-            "Video/audio muxing/demuxing for embedded pipelines",
-            "End-to-end AV sync optimization across capture, encode, transmit",
-        ],
-        whyChooseUs: [
-            "Experts in both legacy and modern AV streaming protocols",
-            "Direct work with encoder/decoder IP and GPU/VPU units",
-            "Proven in 60fps, low-latency, multi-channel applications",
-            "Ability to trace, debug, and patch AV pipeline issues at protocol level",
-            "Successful integration across security, drone, and broadcast products",
-            "Deep understanding of buffer management, timestamping, and sync logic",
-        ],
-        cta: [
-            {
-                ctaTitle: "Make <span class='text-primary'>AV Protocols</span> Your Competitive Advantage",
-                Ctadescription: "Whether you're integrating NDI, optimizing for AV1, or achieving perfect lip-sync — our protocol engineers help you unlock low-latency, high-fidelity media flows.",
-                ctaButtonText: "Optimize My AV Pipeline",
-            }
-        ]
-    }
 ];
 
 const ServiceDetailsInfo = ({ meta }) => {
@@ -600,7 +419,7 @@ const ServiceDetailsInfo = ({ meta }) => {
         }
     }, [id]);
 
-    if (!service) return <div className="p-8 text-gray-600">Loading or not found...</div>;
+    if (!service) return <NotFound />;
 
     return (
         <div>

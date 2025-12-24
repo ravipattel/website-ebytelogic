@@ -78,7 +78,7 @@ const HeroSection = () => {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 gap-5 h-full flex items-center relative z-20">
         <div className="w-full lg:w-3/5 space-y-6">
           <p className="text-base md:text-lg text-primary font-medium">
-            Linux BSPs. Low-Latency Streaming. Protocol-Driven Embedded Innovation.
+          Linux BSPs. Low-Latency Streaming. Protocol-Driven Embedded Innovation.
           </p>
           <h1 className="text-2xl md:text-5xl xl:text-[45px] font-semibold leading-tight text-primaryText">
             <span
@@ -87,8 +87,8 @@ const HeroSection = () => {
               onMouseLeave={handleMouseLeave}
             />
           </h1>
-          <p className="text-sm md:text-lg text-[#5d6471]">
-            From BSPs and board bring-up to real-time video streaming and multimedia stacks, we help hardware teams ship scalable, production-grade systems.
+          <p className="text-sm md:text-base text-[#5d6471]">
+          From Linux BSPs and board bring-up to real-time multimedia streaming and embedded applications, we help hardware teams ship <span className="font-semibold">stable, scalable, production-ready systems</span> across complex platforms and industries. 
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
             <a href="#services"><Button variant="default" className="w-full h-12">Explore Services</Button></a>

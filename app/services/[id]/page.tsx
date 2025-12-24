@@ -14,18 +14,12 @@ export async function generateMetadata({ params }) {
     } else if (id === "embedded-application-development") {
         metaTitle = serviceMetaData["embedded-application-development"].title;
         metaDescription = serviceMetaData["embedded-application-development"].description;
-    } else if (id === "embedded-software-development") {
-        metaTitle = serviceMetaData["embedded-software-development"].title;
-        metaDescription = serviceMetaData["embedded-software-development"].description;
-    } else if (id === "av-protocol") {
-        metaTitle = serviceMetaData["av-protocol"].title;
-        metaDescription = serviceMetaData["av-protocol"].description;
+    } else if (id === "embedded-bsp-development") {
+        metaTitle = serviceMetaData["embedded-bsp-development"].title;
+        metaDescription = serviceMetaData["embedded-bsp-development"].description;
     } else if (id === "embedded-software-testing") {
         metaTitle = serviceMetaData["embedded-software-testing"].title;
         metaDescription = serviceMetaData["embedded-software-testing"].description;
-    } else if (id === "iot-integration-solutions") {
-        metaTitle = serviceMetaData["iot-integration-solutions"].title;
-        metaDescription = serviceMetaData["iot-integration-solutions"].description;
     }
 
     const url = `/services/${id}`;
