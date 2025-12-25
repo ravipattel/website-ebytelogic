@@ -9,9 +9,9 @@ import Button from '@/src/components/Button'
 const Cta = () => {
     const router = useRouter();
     return (
-        <section className="relative bg-[url('/images/ctaHome.png')] bg-cover bg-fixed bg-center py-20 px-6">
+        <section className="relative bg-[url('/images/ctaHome.png')] bg-cover bg-fixed bg-center py-20 px-2 sm:px-6">
             <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-            <div className="relative z-10 space-y-4 max-w-4xl mx-auto text-center text-white">
+            <div className="relative z-10 space-y-6 max-w-4xl mx-auto text-center text-white">
                 <h2 className="text-xl sm:text-[33px] font-medium text-white text-center leading-tight">
                 Looking for an Embedded Partner Who Can Handle Real-World Complexity? 
                 </h2>
@@ -19,13 +19,13 @@ const Cta = () => {
                 Whether you’re bringing up new hardware, optimizing performance, or solving hard real-time challenges, our engineers work as an extension of your team — focused on delivery, reliability, and results. 
                 </p>
 
-                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <Button onClick={() => router.push('/contact-us')}
+                <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+                    <Button onClick={() => router.push('/contact-us')} className='text-sm sm:text-base md:h-12'
                     >
                         Let’s Connect
                     </Button>
                     <Button onClick={() => router.push('/case-study')}
-                        className="!bg-transparent !h-fit !py-0 !border-0 inline-flex items-center text-white hover:text-primary-300 font-medium transition-all duration-300 gap-2"
+                        className="!bg-transparent text-sm sm:text-base md:h-12 !py-0 !border-0 inline-flex items-center text-white hover:text-primary-300 font-medium transition-all duration-300 gap-2"
                     >
                         View Our Case Studies <FaArrowRightLong />
                     </Button>

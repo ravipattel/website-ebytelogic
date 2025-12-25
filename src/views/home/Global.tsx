@@ -51,14 +51,11 @@ const globalCards = [
 
 const Global = () => {
     return (
-        <section className='bg-[#f5f8fb] py-16 sm:py-28'>
+        <section className='bg-[#f5f8fb] pt-0 pb-16 sm:py-16 sm:py-28'>
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 space-y-4">
-                <h2 className="text-2xl sm:text-[34px] font-medium text-primaryText text-center leading-tight">
-                    Featured Industry Solutions
+                <h2 className="text-2xl sm:text-[34px] font-medium text-primaryText text-center leading-tight mb-8">
+                Tailored Embedded Software Solutions for Your Industry 
                 </h2>
-                <p className='text-sm sm:text-[15px] text-[#5d6471] max-w-lg mx-auto text-center mb-4'>
-                Discover how we solve complex engineering challenges across embedded, multimedia, and connected device ecosystems. 
-                </p>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-4'>
                     {globalCards.map((card, index) => (
                         <div key={index} className={`bg-white border border-gray-200 shadow-xl justify-between flex flex-col  ${index % 2 === 1 ? 'flex-col-reverse' : ''}`}>

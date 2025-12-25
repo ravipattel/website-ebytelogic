@@ -191,7 +191,7 @@ const Global = () => {
             <div
               key={index}
               onClick={() => router.push(`/blogs/${card.id}`)}
-              className="cursor-pointer bg-white border border-gray-200 shadow-[rgba(0,0,0,0.1)_0px_5px_25px] flex flex-col"
+              className="cursor-pointer max-w-[436px] mx-auto w-full bg-white border border-gray-200 shadow-[rgba(0,0,0,0.1)_0px_5px_25px] flex flex-col"
             >
               <Image
                 src={card.image}

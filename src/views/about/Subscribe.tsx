@@ -21,13 +21,13 @@ const Subscribe = ({ className }: subscribeProps) => {
                     <Image src={SubscribePng} alt='SubscribePng' height={350} className='mx-auto rounded-lg' />
                 </div>
                 <div className="lg:col-span-3 space-y-3">
-                    <h2 className="text-xl sm:text-[34px] font-medium text-primary leading-tight">
+                    <h2 className="text-2xl sm:text-[34px] font-medium text-primary leading-tight">
                         Ready to Scale Your Embedded Software ?
                     </h2>
                     <p className="text-sm sm:text-[15px] text-[#5d6471] mb-4">
                         Partner with a team trusted by global OEMs, startups, and innovation leaders.
                     </p>
-                    <div className="flex justify-center lg:justify-start">
+                    <div className="flex justify-start">
                         <Button onClick={() => router.push('/contact-us')}>Book a Free Consultation</Button>
                     </div>
                 </div>

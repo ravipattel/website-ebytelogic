@@ -128,7 +128,7 @@ const serviceData = [
         pathText: "Embedded BSP Development",
         imageName: LinuxPng,
         category: "Power Your Product with Robust Embedded Software.",
-        tagLine: "BSP | Firmware | Drivers | Linux | Android",
+        tagLine: "Firmware | Linux BSP | Android BSP ",
         overview: ["At eByteLogic, we design and develop high-performance embedded software that powers modern devices — from industrial controllers and IoT gateways to consumer electronics and AI-enabled systems. We specialize in system-level engineering that bridges silicon, hardware, and software to create reliable, optimized, production-ready embedded solutions.", "Whether you’re building an evaluation board, a custom SoM, or a full-fledged production board, we accelerate bring-up, streamline peripheral support, and fine-tune your platform for speed, security, and stability."],
         capabilities: [
             {
@@ -224,7 +224,7 @@ const serviceData = [
         imageName: FrameworkWebp,
         pathText: "Multimedia & Streaming Frameworks",
         category: "Build Better Streaming Experiences.",
-        tagLine: "Custom Media Pipelines | Real-Time Processing | Protocol Expertise",
+        tagLine: "Media Acquisition | Media Processing | Media Transmission",
         overview: ["At eByteLogic, we specialize in engineering multimedia frameworks and low-latency streaming solutions for the most demanding use cases—from live broadcast systems and AV-over-IP pipelines to drone video transmission and surveillance devices. Our expertise spans GStreamer, FFmpeg, and custom encoder pipelines, enabling pixel-perfect performance, seamless AV sync, and integration with industry-standard protocols like NDI, SRT, and RTP.", "Whether you're developing a high-performance camera system, a next-gen encoder, or a media-rich IoT device, our framework-level expertise ensures you achieve quality,reliability, and real-time responsiveness."],
         capabilities: [
             {
@@ -313,87 +313,87 @@ const serviceData = [
         id: "embedded-software-testing",
         imageName: QaJPg,
         pathText: "Embedded Software Testing",
-        category: "Ensuring Quality, Reliability & Stability at Every Embedded Layer",
-        tagLine: "Tested for Production. Validated for Scale. Engineered for Zero Defects.",
-        overview: ["Our QA and test automation services are purpose-built for embedded systems — where hardware, firmware, and software interact in real time. We help product teams uncover edge-case bugs, prevent regressions, and ensure their systems remain stable in production environments.", "Whether you’re validating BSP bring-up, AV streaming stability, or end-to-end device workflows, we create robust testing strategies that simulate real-world usage across edge devices, protocols, and networks. The result: rock-solid embedded products with confidence at scale."],
+        category: "Ensuring Quality, Reliability & Stability Across Device-Centric Systems",
+        tagLine: "Embedded Platforms | Mobile Companion Apps | Web Control Interfaces",
+        overview: ["Our QA and test automation services are designed for embedded-led products — where hardware and firmware form the foundation, and mobile or web applications act as control, monitoring, or visualization layers.","We help product teams validate complete device ecosystems, uncover integration gaps, and prevent failures that only surface when embedded software, applications, protocols, and networks interact.","Whether you’re validating BSP bring-up, device firmware, mobile companion apps, or web-based device dashboards, we simulate real-world usage across devices, users, and networks — delivering production-ready systems with confidence at scale."],
         capabilities: [
             {
                 title: "Embedded QA Strategy & Test Planning",
-                desc: "Tailored test strategy for embedded lifecycle — from board bring-up to production deployment.",
+                desc: "Structured QA strategies focused on embedded platforms and connected applications.",
                 points: [
-                    "Test strategy aligned with hardware-software integration",
-                    "Static code analysis and peer review planning",
-                    "QA checklist design across system, integration, and regression phases",
+                    "Test planning aligned with hardware, firmware, and app integration",
+                    "Risk-based QA for device-centric workflows",
+                    "Test coverage across system, integration, and regression phases",
                 ]
             },
             {
                 title: "Test Automation Framework Development",
-                desc: "Automation built for embedded devices — headless, hardware-controlled, and network-aware.",
+                desc: "Automation frameworks built around embedded devices as the source of truth.",
                 points: [
-                    "Python, PyTest, Robot Framework integration",
-                    "CLI-based test harness for embedded Linux targets",
+                    "Python, PyTest, and Robot Framework–based automation",
+                    "CLI-driven harnesses for embedded Linux targets",
                     "Hardware-in-loop (HIL) and peripheral-driven automation",
                 ]
             },
             {
                 title: "Multimedia & Streaming Test Automation",
-                desc: "Validate audio-video quality, protocol flows, and streaming stability.",
+                desc: "Validation for media pipelines originating from embedded devices.",
                 points: [
-                    "Automated GStreamer/FFmpeg pipeline testing",
-                    "AV sync validation under variable network conditions",
-                    "Codec, framerate, latency, and buffer underflow test cases",
+                    "Automated GStreamer / FFmpeg pipeline testing",
+                    "AV sync validation under real network conditions",
+                    "Codec, framerate, latency, and buffer stress scenarios",
                 ]
             },
             {
                 title: "BSP-Level & Driver Validation",
-                desc: "Ensure reliability of low-level firmware and peripheral interfaces.",
+                desc: "Low-level verification of board support packages and hardware interfaces.",
                 points: [
-                    "Peripheral bring-up verification (UART, SPI, I2C, GPIO, etc.)",
-                    "U-Boot and Linux boot sequence test coverage",
-                    "Driver porting and version compatibility testing",
+                    "Peripheral bring-up verification (UART, SPI, I²C, GPIO, etc.)",
+                    "U-Boot and Linux boot sequence validation",
+                    "Kernel configuration, device tree validation, and peripheral stability testing",
                 ]
             },
             {
-                title: "Continuous Integration & Test Reporting",
-                desc: "Seamless QA integration into your dev lifecycle for faster releases.",
+                title: "Embedded System Integration & Regression Validation",
+                desc: "Continuous validation of integrated embedded systems under change.",
                 points: [
-                    "GitLab CI, Jenkins, and custom CI pipelines for embedded QA",
-                    "Test dashboards and pass/fail metrics",
-                    "Alerts for regressions, broken builds, or hardware-level failures",
+                    "Regression testing across firmware updates and feature additions",
+                    "Validation of device behavior across power cycles and runtime states",
+                    "Detection of integration breakages across firmware, apps, and interfaces",
                 ]
             },
             {
                 title: "Performance, Power & Stress Testing",
-                desc: "We design and execute high-load test cases to validate embedded systems under real-world constraints and continuous operation.",
+                desc: "Reliability validation for devices operating under real-world constraints.",
                 points: [
-                    "CPU/GPU/memory stress tests for embedded devices",
+                    "CPU, memory, and workload stress testing",
                     "Power consumption and thermal profiling",
-                    "Long-duration soak and reliability testing",
+                    "Long-duration soak testing for embedded deployments",
                 ]
             }
         ],
         useCaseImg: QaUseCase,
         whyImg: QaWhy,
         useCases: [
-            "Automated testing of embedded GUIs and hardware I/Os",
-            "End-to-end system testing for firmware, apps, and drivers",
-            "Stress testing and power profiling for industrial devices",
-            "Regression testing setup for CI/CD pipelines",
+            "Automated testing of embedded GUIs, hardware I/Os, and device workflows",
+            "End-to-end validation across firmware, drivers, mobile apps, and web dashboards",
+            "Stress testing and power profiling for industrial and edge devices",
+            "Regression validation for device firmware and system updates",
             "Custom test harnesses for board validation and factory QA",
-            "Test strategy consulting for product companies",
+            "QA strategy consulting for embedded product teams",
         ],
         whyChooseUs: [
-            "Complete embedded test automation stack: Squish, PyTest, CI tools",
-            "Hardware-in-loop (HIL) test setups for real-time validation",
-            "Coverage reports, performance metrics, and bug tracking built-in",
-            "Deep integration with dev and QA teams for faster iteration",
-            "Domain-specific testing: AV pipelines, sensor data, protocol stacks",
-            "Strong focus on reliability, edge-case handling, and fault injection",
+            "Embedded-first QA with deep understanding of hardware and firmware behavior",
+            "Hardware-in-loop (HIL) testing for real-time device validation",
+            "System-level stability metrics and failure analysis built-in",
+            "Tight collaboration with embedded and application engineering teams",
+            "Domain expertise in AV pipelines, sensor data, and protocol stacks",
+            "Strong focus on field reliability, edge cases, and integration failures",
         ],
         cta: [
             {
-                ctaTitle: "Embedded Testing You Can <span class='text-primary'>Trust</span>",
-                Ctadescription: "From automated GUI tests to hardware-level validation, we help you deliver rock-solid embedded products with fewer bugs, faster cycles, and real-world resilience.",
+                ctaTitle: "Device-Centric Testing You Can <span class='text-primary'>Trust</span>",
+                Ctadescription: "From embedded platforms to the mobile and web applications that depend on them, we help you deliver reliable systems that perform as expected — in production, not just in the lab.",
                 ctaButtonText: "Explore Test Automation with Us",
             }
         ]

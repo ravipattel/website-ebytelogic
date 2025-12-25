@@ -58,13 +58,13 @@ const services = [
 const Services = () => {
   const router = useRouter();
   return (
-    <section id="services" className="py-16 sm:pb-28 sm:pt-0 bg-gradient-to-r from-gray-50 to-blue-50">
+    <section id="services" className="py-16 sm:pt-28 bg-gradient-to-r from-gray-50 to-blue-50">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 text-center space-y-4">
         <h2 className="text-2xl sm:text-[34px] font-medium text-primaryText leading-tight">
-          What We Do
+        Full-Cycle Embedded Software Development Services 
         </h2>
-        <p className='text-sm sm:text-[15px] text-[#5d6471] max-w-3xl mx-auto mb-4'>
-          {`Smart engineering for complex systems — from low-level bring-up to high-performance media and embedded applications.`}
+        <p className='text-sm sm:text-[15px] text-[#5d6471] max-w-4xl mx-auto mb-8'>
+          {`Need a rock-solid foundation? As an embedded software development company, we specialize in quick, stable bring-up for custom hardware. Our embedded systems consulting covers Yocto/Buildroot customization, bootloader config, and secure boot implementation. `}
         </p>
         <div className="grid sm:grid-cols-2 xl:grid-cols-4 justify-center gap-5 pt-4">
           {services.map((service, index) => (

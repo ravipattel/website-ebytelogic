@@ -6,13 +6,11 @@ import React, { useEffect, useRef, useState } from "react";
 import Typed from "typed.js";
 
 import Button from "@/src/components/Button";
-import WorkflowSlider from "@/src/components/WorkflowSlider";
+import Image from "next/image";
+import Slider2 from '@/src/assets/images/home/homeSlider/slider2.png';
 
 const dynamicData = [
-  `We Power the <span class="text-primary">Software</span> Behind Smart Devices and High-Performance <span class="text-primary">Media Systems</span>`,
-  `<span class="text-primary">Optimized BSPs</span>. Accelerated Media Pipelines. <span class="text-primary">Delivered with Precision.</span>`,
-  `From <span class="text-primary">Hardware Validation</span> to HDMI and NDI Streaming — We Handle the <span class="text-primary">Complex</span>.`,
-  `Trusted by Product Teams to Enable <span class="text-primary">Fast Boot</span>, Clean AV Sync, and Rock-Solid <span class="text-primary">Firmware</span>.`
+  `Your Trusted Embedded Software Development Company for <span class="text-primary">Next-Gen Devices</span>`,
 ];
 
 const HeroSection = () => {
@@ -20,7 +18,6 @@ const HeroSection = () => {
   const typedEl = useRef(null);
   const [isClient, setIsClient] = useState(false);
   const typedInstance = useRef<Typed>(null);
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   const handleMouseEnter = () => {
     if (typedInstance.current && typedInstance.current.stop) {
@@ -41,46 +38,31 @@ const HeroSection = () => {
   useEffect(() => {
     if (!isClient || !typedEl.current) return;
 
-    // Destroy previous instance
     if (typedInstance.current) {
       typedInstance.current.destroy();
     }
 
-    // Create new instance
     typedInstance.current = new Typed(typedEl.current, {
-      strings: [dynamicData[currentSlide]],
-      typeSpeed: 40, // slower = smoother typing
+      strings: [dynamicData[0]],
+      typeSpeed: 40,
       backSpeed: 25,
       backDelay: 2000,
       loop: false,
       showCursor: true,
       cursorChar: "|",
       contentType: 'html',
-      onComplete: () => {
-        // Wait before going to next slide
-        setTimeout(() => {
-          setCurrentSlide((prev) => (prev + 1) % dynamicData.length);
-        }, 2500); // delay before switching
-      }
     });
 
     return () => {
       typedInstance.current?.destroy();
     };
-  }, [currentSlide, isClient]);
-
+  }, [isClient]);
 
   return (
-    <div className="bg-gradient-to-r from-gray-50 to-blue-50 h-[80vh] md:h-[calc(100vh-128px)] relative">
-      {/* <div className="absolute top-0 z-10 h-full">
-        <Image src={why} alt="why" className="opacity-15 h-full object-cover" />
-      </div> */}
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 gap-5 h-full flex items-center relative z-20">
-        <div className="w-full lg:w-3/5 space-y-6">
-          <p className="text-base md:text-lg text-primary font-medium">
-          Linux BSPs. Low-Latency Streaming. Protocol-Driven Embedded Innovation.
-          </p>
-          <h1 className="text-2xl md:text-5xl xl:text-[45px] font-semibold leading-tight text-primaryText">
+    <div className="bg-gradient-to-r from-gray-50 to-blue-50 py-16 min-[1035px]:h-[calc(100vh-128px)] relative">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 gap-7 h-full flex flex-col min-[1035px]:flex-row items-center relative z-20">
+        <div className="min-[1035px]:w-3/5 space-y-6">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-[45px] font-semibold leading-tight text-primaryText">
             <span
               ref={typedEl}
               onMouseEnter={handleMouseEnter}
@@ -88,21 +70,26 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-sm md:text-base text-[#5d6471]">
-          From Linux BSPs and board bring-up to real-time multimedia streaming and embedded applications, we help hardware teams ship <span className="font-semibold">stable, scalable, production-ready systems</span> across complex platforms and industries. 
+            {` We bridge the gap between silicon and software. From Linux/Android BSPs and board bring-up to ultra-low-latency multimedia frameworks, we deliver stability you can launch with. `}
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
-            <a href="#services"><Button variant="default" className="w-full h-12">Explore Services</Button></a>
-            <Button onClick={() => router.push('/case-study')}
+            <Button onClick={() => router.push('/contact-us')} variant="default" className="text-sm sm:text-base md:h-12">Schedule a Technical Consultation</Button>
+           <a href="#services">
+            <Button
               variant="default"
-              className="h-12 !bg-white !text-primary hover:!bg-primary hover:!text-white"
+              className="text-sm sm:text-base md:h-12 !bg-white !text-primary hover:!bg-primary hover:!text-white"
             >
-              View Case Studies
-            </Button>
+              View Our Work
+            </Button></a>
           </div>
         </div>
 
-        <div className="hidden lg:flex lg:w-2/5 items-center justify-center relative">
-          <WorkflowSlider currentSlide={currentSlide} />
+        <div className="w-full min-[1035px]:w-2/5 items-center justify-center relative">
+          <Image
+            src={Slider2}
+            alt="slider-image"
+            className="w-full object-contain transition-transform duration-500 hover:scale-105"
+          />
         </div>
       </div>
     </div>

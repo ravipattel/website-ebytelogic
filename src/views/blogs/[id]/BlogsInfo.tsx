@@ -4268,7 +4268,7 @@ const BlogsInfo = () => {
                     id="introduction"
                     className="py-8 md:py-16 px-5 md:px-10 bg-white"
                 >
-                    <div className="max-w-7xl mx-auto grid xl:grid-cols-2 gap-12 items-center">
+                    <div className="max-w-7xl mx-auto grid 2xl:grid-cols-2 gap-12 items-center">
                         <div>
                             <h2 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold mb-4">
                                 {data?.introData?.title.split(data?.introData?.highlight)[0]}
@@ -4302,7 +4302,7 @@ const BlogsInfo = () => {
                                     alt={data.introData.image.alt || "Image"}
                                     width={300}
                                     height={300}
-                                    className="w-full max-w-lg xl:ms-auto rounded-lg shadow-md"
+                                    className="w-full max-w-lg 2xl:ms-auto rounded-lg shadow-md"
                                 />
                             )}
                         </div>
@@ -5421,7 +5421,7 @@ const BlogsInfo = () => {
                                             {data?.conclusion?.references.map((ref, idx) => (
                                                 <span
                                                     key={idx}
-                                                    className="bg-blue-50 text-primary px-3 py-1 text-sm font-medium rounded-full border border-blue-100" dangerouslySetInnerHTML={{ __html: ref }} />
+                                                    className="bg-blue-50 text-primary px-3 py-1 text-xs sm:text-sm font-medium rounded-full border border-blue-100" dangerouslySetInnerHTML={{ __html: ref }} />
                                             ))}
                                         </div>
                                     </div>

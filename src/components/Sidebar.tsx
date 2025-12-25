@@ -318,7 +318,7 @@ const Sidebar = () => {
       <nav
         className={`
           fixed ${scrollTop
-            ? "top-16 md:top-[67px]"
+            ? "top-[47px] md:top-[67px]"
             : "min-[606px]:top-30 sm:top-30 md:top-32"
           }  left-0 h-full w-72 bg-white z-50 p-6 border-r border-gray-200 
           transform transition-transform duration-300 ease-in-out 

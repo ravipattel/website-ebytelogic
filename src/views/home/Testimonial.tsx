@@ -29,7 +29,7 @@ const Testimonial = () => {
                 <h2 className="text-2xl sm:text-[34px] font-medium text-primaryText leading-tight text-center">
                     Trusted by Global Innovators
                 </h2>
-                <p className='text-sm sm:text-[15px] text-[#5d6471] max-w-lg mx-auto mb-4'>
+                <p className='text-sm md:text-base text-[#5d6471] max-w-lg mx-auto mb-4'>
                     We’ve had the privilege of working with forward-thinking companies across media,
                     semiconductors, IoT, aerospace, and more
                 </p>

@@ -107,7 +107,7 @@ const AccordionItem = ({ index, openIndex, setOpenIndex, question, answer }: any
     <div className="border-b border-[#E7EBF0] pb-4">
       <button
         onClick={toggle}
-        className={`cursor-pointer w-full flex items-center gap-3 text-base transition-colors ${isOpen ? 'text-primary' : 'text-gray-800'
+        className={`cursor-pointer w-full flex items-center gap-3 text-[15px] sm:text-base text-left transition-colors ${isOpen ? 'text-primary' : 'text-gray-800'
           }`}
       >
         {isOpen ? <FaChevronUp className="text-primary" /> : <FaChevronRight />}

@@ -12,9 +12,9 @@ const Home = () => {
     <div>
       <HeroSection />
       <div className='overflow-hidden'>
-        <Services />
         <Testimonial />
         <PlatformExpertise />
+        <Services />
         <Global />
         <Cta />
       </div>

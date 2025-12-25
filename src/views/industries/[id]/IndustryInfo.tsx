@@ -20,6 +20,7 @@ import AerospaceJpg from '@/src/assets/images/industry/industryAerospace.png'
 const industryData = [
     {
         id: 'smart-displays-and-hmis',
+        breadCrumb: 'Smart Displays & HMIs',
         image: wearablesPng,
         backgroundImage: '/images/bg/industry/wearablesBg.png',
         hero: {
@@ -90,6 +91,7 @@ const industryData = [
     },
     {
         id: 'edge-ai-vision-systems',
+        breadCrumb: 'Edge AI & Vision Systems',
         image: MotherBoardPng,
         backgroundImage: '/images/bg/industry/semiconductorBg.png',
         hero: {
@@ -158,10 +160,9 @@ const industryData = [
             actions: ["Schedule a Discovery Call", "See Our Case Studies"],
         },
     },
-
-
     {
         id: 'networking-and-telecom-gateways',
+        breadCrumb: 'Networking & Telecom Gateways',
         image: FirelinePng,
         backgroundImage: '/images/bg/industry/firelineBg.png',
         hero: {
@@ -230,10 +231,9 @@ const industryData = [
             actions: ["Schedule a Discovery Call", "See Our Case Studies"],
         },
     },
-
-
     {
         id: 'media-broadcasting-multimedia',
+        breadCrumb: 'Media & Broadcasting Multimedia',
         image: MediaPng,
         backgroundImage: '/images/bg/industry/multimediaBg.png',
         hero: {
@@ -304,6 +304,7 @@ const industryData = [
     },
     {
         id: 'industrial-automation-iot-gateways',
+        breadCrumb: 'Industrial Automation & IoT Gateways',
         image: IotPng,
         backgroundImage: '/images/bg/industry/iotBg.png',
         hero: {
@@ -373,6 +374,7 @@ const industryData = [
     },
     {
         id: 'industrial-automation-iiot',
+        breadCrumb: 'Industrial Automation & IIoT',
         image: AerospaceJpg,
         backgroundImage: '/images/bg/industry/aerospaceBg.png',
         hero: {
@@ -480,7 +482,7 @@ const IndustryInfo = ({ meta }) => {
                 <section className='relative bg-no-repeat bg-cover py-28 lg:py-64' style={{ backgroundImage: `url(${data?.backgroundImage})` }} >
                     <div className='absolute bg-[#0e191eb3] top-0 size-full z-0'></div>
                     <div className='max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10 space-y-4'>
-                        <p className='text-sm md:text-lg text-white flex flex-wrap items-center gap-4 justify-center'><Link href={'/'}>Home</Link> <RiArrowRightSLine className='text-primary text-2xl' /> <Link href={'/industries'}>Industry</Link><RiArrowRightSLine className='text-primary text-2xl' />{data?.id}</p>
+                        <p className='text-sm md:text-lg text-white flex flex-wrap items-center gap-4 justify-center'><Link href={'/'}>Home</Link> <RiArrowRightSLine className='text-primary text-2xl' /> <Link href={'/industries'}>Industry</Link><RiArrowRightSLine className='text-primary text-2xl' />{data?.breadCrumb}</p>
                         <h2 className='text-2xl md:text-5xl xl:text-[50px] font-normal text-white leading-tight text-center pb-4'>{data?.hero?.headline}</h2>
                         <p className='text-sm md:text-lg text-white text-center flex items-center gap-4 justify-center' dangerouslySetInnerHTML={{ __html: data?.hero?.subtext || '' }} />
                         {/* <a
@@ -638,7 +640,7 @@ const IndustryInfo = ({ meta }) => {
                         <h1 className="text-2xl sm:text-[30px] font-semibold leading-tight capitalize mb-4 text-white">
                             {data?.cta?.headline}
                         </h1>
-                        <p className="text-white max-w-3xl mx-auto text-center leading-relaxed tracking-wide mb-8" dangerouslySetInnerHTML={{ __html: data?.cta?.ctaSubtext || ''}} />
+                        <p className="text-white text-sm md:text-base max-w-3xl mx-auto text-center leading-relaxed tracking-wide mb-8" dangerouslySetInnerHTML={{ __html: data?.cta?.ctaSubtext || ''}} />
                         <div className="flex flex-wrap justify-center gap-4">
                             {data?.cta?.actions?.map((action, index) => (
                                 <Button
