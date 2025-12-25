@@ -32,9 +32,8 @@ const PlatformExpertise = () => {
                 <h2 className="text-2xl sm:text-[34px] font-medium text-primaryText leading-tight text-center">
                     Our Platform Expertise
                 </h2>
-                <p className='text-sm sm:text-[15px] text-[#5d6471] max-w-3xl mx-auto mb-4'>
-                    We specialize in building, optimizing, and maintaining solutions across industry- leading embedded platforms and chipsets.
-                    From board bring-up to BSP, middleware tuning, and multimedia stack integration, our team works seamlessly across a wide range of SoC environments.
+                <p className='text-sm sm:text-[15px] text-[#5d6471] max-w-4xl mx-auto mb-4'>
+                    We specialize in building, optimizing, and validating software across <span className='font-semibold'>embedded platforms and device ecosystems</span>. From board bring-up and BSP customization to multimedia pipelines and protocol-driven systems, our teams work hands-on across diverse SoC environments used in <span className='font-semibold'>industrial, automotive, media, and connected devices.</span>
                 </p>
                 <div className='py-3 mt-8'>
                     <div className="max-w-[1400px] mx-auto px-4 sm:px-6 relative">
