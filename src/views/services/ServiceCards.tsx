@@ -37,7 +37,7 @@ export const serviceDataCard = [
     id: "multimedia-framework"
   },
   {
-    category: "Embedded QA & Test Automation",
+    category: "Quality Assurance & Test Automation",
     description: "Test infrastructure, real-device validation, and automation frameworks tailored for embedded product pipelines.",
     subServices: [
       "Test Automation for Embedded Targets",

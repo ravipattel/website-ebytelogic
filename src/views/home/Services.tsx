@@ -49,9 +49,9 @@ const services = [
     path: "/embedded-software-testing",
     icon: EmbeddedIconPng,
     image: EmbeddedJpg,
-    title: "Embedded QA & Test Automation",
-    description: "Embedded-focused QA frameworks built to validate performance, stability, and reliability at scale.",
-    showcase: "Test strategy, automation frameworks, BSP validation, multimedia test pipelines, CI integration, and stress testing."
+    title: "Quality Assurance & Test Automation",
+    description: "Embedded-first QA and automation for products where devices, firmware, mobile apps, and web systems must work together reliably.",
+    showcase: "Embedded QA · Device-Driven Web & Mobile Testing · Automation · System Validation"
   },
 ];
 

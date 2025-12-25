@@ -49,7 +49,7 @@ const menuItems: MenuItem[] = [
       { icon: SoftwareIconPng, label: "Embedded App Development", path: "/services/embedded-application-development" },
       { icon: LinuxIconPng, label: "Embedded BSP Development", path: "/services/embedded-bsp-development" },
       { icon: FrameworkIconPng, label: "Multimedia & Streaming Frameworks", path: "/services/multimedia-framework" },
-      { icon: QaIconPng, label: "Embedded QA & Test Automation", path: "/services/embedded-software-testing" },
+      { icon: QaIconPng, label: "Quality Assurance & Test Automation", path: "/services/embedded-software-testing" },
     ],
   },
   {
