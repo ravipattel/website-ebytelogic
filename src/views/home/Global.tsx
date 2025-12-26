@@ -5,7 +5,7 @@ import React from 'react'
 import WearablesPng from '@/src/assets/images/home/industry/wearables.png';
 import StreamingPng from '@/src/assets/images/home/industry/streaming.png';
 import SemiconductorsPng from '@/src/assets/images/home/industry/semiconductors.png';
-import FirelinePng from '@/src/assets/images/home/industry/fireline.png';
+import TelecomPng from '@/src/assets/images/home/industry/telecom.png';
 import AerospacePng from '@/src/assets/images/home/industry/aerospace.png';
 import IotJpeg from '@/src/assets/images/home/industry/iot.jpeg';
 
@@ -29,7 +29,7 @@ const globalCards = [
         tags: ['MIPI-CSI', 'Hardware Acceleration', 'Low-Latency Pipelines', 'Jetson / i.MX'],
     },
     {
-        image: FirelinePng,
+        image: TelecomPng,
         title: 'Networking & Telecom Gateways',
         description: 'High-availability embedded software for wired and wireless gateways handling continuous data flow.',
         tags: ['Embedded Linux', 'Protocol Handling', 'OTA Updates', 'System Reliability'],

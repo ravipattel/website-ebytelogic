@@ -13,7 +13,7 @@ import EbytelogicPng from '@/src/assets/images/industry/ebytelogic.png'
 import wearablesPng from '@/src/assets/images/industry/industryWearables.png'
 import MediaPng from '@/src/assets/images/industry/industryMedia.png'
 import MotherBoardPng from '@/src/assets/images/industry/industrySemiconductor.png'
-import FirelinePng from '@/src/assets/images/industry/industryFireAlarm.png';
+import TelecomPng from '@/src/assets/images/home/industry/telecom.png';
 import IotPng from '@/src/assets/images/industry/industryIot.png'
 import AerospaceJpg from '@/src/assets/images/industry/industryAerospace.png'
 
@@ -163,7 +163,7 @@ const industryData = [
     {
         id: 'networking-and-telecom-gateways',
         breadCrumb: 'Networking & Telecom Gateways',
-        image: FirelinePng,
+        image: TelecomPng,
         backgroundImage: '/images/bg/industry/firelineBg.png',
         hero: {
             headline: "Reliable Networking & Telecom Gateway Software Built for Always-On Operation",
