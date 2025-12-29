@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   },
   description: "eByteLogic is the expert in embedded software development, specialising in BSP development and low-latency streaming. Book your embedded software consulting​ today.",
   alternates: { canonical: "/" },
+  verification: {
+    google: "bEU5jbh_BtCk4SSym_nSoKGiT3TA_UnzLg4O62xwvF8",
+  },
   openGraph: {
     type: "website",
     siteName: "eByteLogic",
@@ -42,6 +45,7 @@ export default function RootLayout({
     //  <html lang="en" className={poppins.variable}>
     <html lang="en">
       <head>
+        <meta name="google-site-verification" content="bEU5jbh_BtCk4SSym_nSoKGiT3TA_UnzLg4O62xwvF8" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
