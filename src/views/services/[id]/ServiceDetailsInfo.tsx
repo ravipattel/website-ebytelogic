@@ -310,9 +310,9 @@ const serviceData = [
     },
     {
         bgImg: '/images/bg/serviceBg/embeddedQa.png',
-        id: "embedded-software-testing",
+        id: "multi-platform-qa-test-automation",
         imageName: QaJPg,
-        pathText: "Embedded Software Testing",
+        pathText: "Multi-platform QA & Test Automation",
         category: "Ensuring Quality, Reliability & Stability Across Device-Centric Systems",
         tagLine: "Embedded Platforms | Mobile Companion Apps | Web Control Interfaces",
         overview: ["Our QA and test automation services are designed for embedded-led products — where hardware and firmware form the foundation, and mobile or web applications act as control, monitoring, or visualization layers.","We help product teams validate complete device ecosystems, uncover integration gaps, and prevent failures that only surface when embedded software, applications, protocols, and networks interact.","Whether you’re validating BSP bring-up, device firmware, mobile companion apps, or web-based device dashboards, we simulate real-world usage across devices, users, and networks — delivering production-ready systems with confidence at scale."],

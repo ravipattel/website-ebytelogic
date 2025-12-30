@@ -59,7 +59,7 @@ const Footer = () => {
                                         <li onClick={() => router.push(`/services/embedded-application-development`)} className='flex items-center gap-1 text-primaryText text-sm sm:text-[15px] cursor-pointer transition-all duration-300 hover:text-primary'><MdKeyboardArrowRight />Embedded Application Development</li>
                                         <li onClick={() => router.push(`/services/embedded-bsp-development`)} className='flex items-center gap-1 text-primaryText text-sm sm:text-[15px] cursor-pointer transition-all duration-300 hover:text-primary'><MdKeyboardArrowRight />Embedded BSP Development</li>
                                         <li onClick={() => router.push(`/services/multimedia-framework`)} className='flex items-center gap-1 text-primaryText text-sm sm:text-[15px] cursor-pointer transition-all duration-300 hover:text-primary'><MdKeyboardArrowRight />Multimedia & Streaming Frameworks</li>
-                                        <li onClick={() => router.push(`/services/embedded-software-testing`)} className='flex items-center gap-1 text-primaryText text-sm sm:text-[15px] cursor-pointer transition-all duration-300 hover:text-primary'><MdKeyboardArrowRight />Embedded Software Testing</li>
+                                        <li onClick={() => router.push(`/services/multi-platform-qa-test-automation`)} className='flex items-center gap-1 text-primaryText text-sm sm:text-[15px] cursor-pointer transition-all duration-300 hover:text-primary'><MdKeyboardArrowRight />Multi-platform QA & Test Automation</li>
                                     </ul>
                                 </div>
                             </div>

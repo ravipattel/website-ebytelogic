@@ -734,7 +734,7 @@ const blogsData = [
                 title: "Market Growth and Industry Outlook",
                 content: [
                     "<span class='font-bold'>•</span> The <span class='font-semibold'>global embedded systems market</span> is projected to grow from <span class='font-semibold'>$116 billion in 2024</span> to <span class='font-semibold'>over $160 billion by 2030</span>, driven by industries such as <span class='font-semibold'>automotive, aerospace, industrial IoT, healthcare, and MediaTech</span>.",
-                    "<span class='font-bold'>•</span> Increasing adoption of <span class='font-semibold'>edge AI chips, 5G-enabled <a href='https://www.ebytelogic.com/services/embedded-software-testing' target='_blank' class='text-blue-600 underline'>IoT devices</a>, and streaming frameworks</span> is fueling R&D investments.",
+                    "<span class='font-bold'>•</span> Increasing adoption of <span class='font-semibold'>edge AI chips, 5G-enabled <a href='https://www.ebytelogic.com/services/multi-platform-qa-test-automation' target='_blank' class='text-blue-600 underline'>IoT devices</a>, and streaming frameworks</span> is fueling R&D investments.",
                     "<span class='font-bold'>•</span> In sectors like <span class='font-semibold'>media broadcasting</span>, embedded systems are not just enablers—they are the <span class='font-semibold'>core platforms</span> that make ultra-low latency video delivery possible.",
                 ],
                 chartData: {

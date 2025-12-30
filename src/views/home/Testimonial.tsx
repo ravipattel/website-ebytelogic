@@ -27,7 +27,7 @@ const Testimonial = () => {
         <section className="py-16 sm:py-28">
             <div className="max-w-[1400px] mx-auto px-4 sm:px-6 text-center space-y-3">
                 <h2 className="text-2xl sm:text-[34px] font-medium text-primaryText leading-tight text-center">
-                    Trusted by Global Innovators
+                Our Embedded Software Consulting Trusted by Global Innovators
                 </h2>
                 <p className='text-sm md:text-base text-[#5d6471] max-w-4xl mx-auto mb-4'>
                     We work with product companies building <span className='font-semibold'>industrial, automotive, media, and device-centric platforms</span>, supporting complex systems across <span className='font-semibold'>Industrial Automation & IIoT, Automotive Infotainment, Professional AV, Edge AI, Smart Displays, and Networking Gateways.</span>

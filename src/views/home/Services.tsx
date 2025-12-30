@@ -7,15 +7,11 @@ import { GoArrowRight } from "react-icons/go";
 
 import MediaSolutionsJpg from '@/src/assets/images/home/whatwedo/multimediaStreaming.png'
 import EmbeddedJpg from '@/src/assets/images/home/whatwedo/embeddedQA.png'
-import EngineeringJpg from '@/src/assets/images/home/whatwedo/engineer.jpg'
-import IotJpg from '@/src/assets/images/home/whatwedo/iot.png'
 import LinuxBspPng from '@/src/assets/images/home/whatwedo/linuxBsp.png'
 import EmbeddedAppPng from '@/src/assets/images/home/whatwedo/embeddedApp.png'
 import ApplicationIconPng from '@/src/assets/images/home/whatwedo/appIcon.png'
 import MediaIconPng from '@/src/assets/images/home/whatwedo/mediaIcon.png'
 import EmbeddedIconPng from '@/src/assets/images/home/whatwedo/embeddeIcon.png'
-import EngineerIconPng from '@/src/assets/images/home/whatwedo/engineerIcon.png'
-import IotIconPng from '@/src/assets/images/home/whatwedo/iotIcon.png'
 import FrameworkIconPng from '@/src/assets/images/home/whatwedo/frameworkIcon.png'
 
 const services = [
@@ -46,25 +42,25 @@ const services = [
     showcase: "GStreamer & FFmpeg customization, SDI/HDMI integration, NDI/SRT streaming, closed captioning, and codec optimization."
   },
   {
-    path: "/embedded-software-testing",
+    path: "/multi-platform-qa-test-automation",
     icon: EmbeddedIconPng,
     image: EmbeddedJpg,
-    title: "Quality Assurance & Test Automation",
-    description: "Embedded-first QA and automation for products where devices, firmware, mobile apps, and web systems must work together reliably.",
-    showcase: "Embedded QA · Device-Driven Web & Mobile Testing · Automation · System Validation"
+    title: "Multi-platform QA & Test Automation",
+    description: "Embedded-focused QA frameworks built to validate performance, stability, and reliability at scale.",
+    showcase: "Test strategy, automation frameworks, BSP validation, multimedia test pipelines, CI integration, and stress testing."
   },
 ];
 
 const Services = () => {
   const router = useRouter();
   return (
-    <section id="services" className="py-16 sm:pt-28 bg-gradient-to-r from-gray-50 to-blue-50">
+    <section id="services" className="py-16 bg-gradient-to-r from-gray-50 to-blue-50">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 text-center space-y-4">
         <h2 className="text-2xl sm:text-[34px] font-medium text-primaryText leading-tight">
         Full-Cycle Embedded Software Development Services 
         </h2>
         <p className='text-sm sm:text-[15px] text-[#5d6471] max-w-4xl mx-auto mb-8'>
-          {`Need a rock-solid foundation? As an embedded software development company, we specialize in quick, stable bring-up for custom hardware. Our embedded systems consulting covers Yocto/Buildroot customization, bootloader config, and secure boot implementation. `}
+          {`Smart engineering for complex systems from low-level bring-up to high-performance media and embedded applications with our embedded software design services​.`}
         </p>
         <div className="grid sm:grid-cols-2 xl:grid-cols-4 justify-center gap-5 pt-4">
           {services.map((service, index) => (

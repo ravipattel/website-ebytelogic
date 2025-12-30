@@ -70,17 +70,19 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-sm md:text-base text-[#5d6471]">
-            {` We bridge the gap between silicon and software. From Linux/Android BSPs and board bring-up to ultra-low-latency multimedia frameworks, we deliver stability you can launch with. `}
+            {` From Linux BSPs and board bring-up to real-time multimedia streaming and embedded applications, our embedded software services​ help hardware teams ship stable, scalable, production-ready systems across complex platforms and industries. `}
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
-            <Button onClick={() => router.push('/contact-us')} variant="default" className="text-sm sm:text-base md:h-12">Schedule a Technical Consultation</Button>
            <a href="#services">
+            <Button variant="default" className="text-sm sm:text-base md:h-12">Explore Services</Button>
+            </a>
             <Button
+            onClick={() => router.push('/case-study')}
               variant="default"
               className="text-sm sm:text-base md:h-12 !bg-white !text-primary hover:!bg-primary hover:!text-white"
             >
-              View Our Work
-            </Button></a>
+              View Case Studies
+            </Button>
           </div>
         </div>
 

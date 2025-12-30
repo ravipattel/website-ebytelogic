@@ -23,9 +23,9 @@ export const serviceMetaData = {
     description:
       "Expert embedded application development for performance and UX. Get full-cycle embedded apps development services Connect with our experts today."
   },
-  "embedded-software-testing": {
-    id: "embedded-software-testing",
-    title: "Embedded QA & Test Automation Services | eByteLogic",
+  "multi-platform-qa-test-automation": {
+    id: "multi-platform-qa-test-automation",
+    title: "Multi-platform QA & Test Automation Services | eByteLogic",
     description:
       "Automate testing for embedded devices with eByteLogic. From regression and protocol validation to CI/CD pipelines — we ensure quality, reliability, and faster release cycles."
   },

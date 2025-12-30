@@ -6,6 +6,8 @@ import Global from './Global'
 import Testimonial from './Testimonial'
 import Cta from './Cta'
 import PlatformExpertise from './PlatformExpertise'
+import WhyeByteLogic from './WhyeBytelogic'
+import FaqHome from './FaqHome'
 
 const Home = () => {
   return (
@@ -16,7 +18,9 @@ const Home = () => {
         <PlatformExpertise />
         <Services />
         <Global />
+        <WhyeByteLogic/>
         <Cta />
+        <FaqHome/>
       </div>
     </div>
   )

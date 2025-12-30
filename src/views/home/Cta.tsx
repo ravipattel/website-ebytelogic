@@ -13,10 +13,10 @@ const Cta = () => {
             <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
             <div className="relative z-10 space-y-6 max-w-4xl mx-auto text-center text-white">
                 <h2 className="text-xl sm:text-[33px] font-medium text-white text-center leading-tight">
-                Looking for an Embedded Partner Who Can Handle Real-World Complexity? 
+                Looking for an Embedded Software Development Company Who Can Handle Real-World Complexity?
                 </h2>
                 <p className="text-xs sm:text-base text-white text-center">
-                Whether you’re bringing up new hardware, optimizing performance, or solving hard real-time challenges, our engineers work as an extension of your team — focused on delivery, reliability, and results. 
+                {`Whether you’re bringing up new hardware, optimizing performance, or solving hard real-time challenges, our engineers work as an extension of your team, focused on delivery, reliability, and results.`} 
                 </p>
 
                 <div className="mt-8 flex flex-wrap items-center justify-center gap-4">

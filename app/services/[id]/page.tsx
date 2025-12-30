@@ -17,9 +17,9 @@ export async function generateMetadata({ params }) {
     } else if (id === "embedded-bsp-development") {
         metaTitle = serviceMetaData["embedded-bsp-development"].title;
         metaDescription = serviceMetaData["embedded-bsp-development"].description;
-    } else if (id === "embedded-software-testing") {
-        metaTitle = serviceMetaData["embedded-software-testing"].title;
-        metaDescription = serviceMetaData["embedded-software-testing"].description;
+    } else if (id === "multi-platform-qa-test-automation") {
+        metaTitle = serviceMetaData["multi-platform-qa-test-automation"].title;
+        metaDescription = serviceMetaData["multi-platform-qa-test-automation"].description;
     }
 
     const url = `/services/${id}`;
