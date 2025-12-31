@@ -42,7 +42,7 @@ export default function RootLayout({
     //  <html lang="en" className={poppins.variable}>
     <html lang="en">
       <head>
-        <meta name="google-site-verification" content="TnVe3mynEbdl13noE4mUO4dXR-oVDFVHs99fz_ZcIss" />
+        <meta name="google-site-verification" content="Ajv6aUCVm571Kz78PgyQ5Q9L7aWkuK2AGbKHmN8xhME" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
