@@ -70,7 +70,7 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-sm md:text-base text-[#5d6471]">
-            {` From Linux BSPs and board bring-up to real-time multimedia streaming and embedded applications, our embedded software services​ help hardware teams ship stable, scalable, production-ready systems across complex platforms and industries. `}
+            {` From Linux/Android BSP and board bring-up to real-time multimedia streaming and embedded applications, our embedded software services​ help hardware teams ship stable, scalable, production-ready systems across complex platforms and industries. `}
           </p>
           <div className="flex flex-wrap gap-4 pt-4">
            <a href="#services">
