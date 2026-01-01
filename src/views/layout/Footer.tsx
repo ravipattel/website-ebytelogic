@@ -13,7 +13,9 @@ import LogoPng from '@/src/assets/images/logo.png';
 import Link from 'next/link';
 
 const Footer = () => {
+    const currentYear = new Date().getFullYear(); 
     const router = useRouter();
+    
     return (
         <div>
             <div className='bg-[#fdfcfc] py-16 sm:py-28'>
@@ -81,7 +83,9 @@ const Footer = () => {
             </div>
             <div className='bg-[#F5F8FB] py-6'>
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-                    <p className='text-sm sm:text-[15px] text-center'>Copyright © 2025 <span className='text-primary'>eByteLogic</span> All Rights Reserved</p>
+                    <p className='text-sm sm:text-[15px] text-center'>
+                        Copyright © {currentYear} <span className='text-primary'>eByteLogic</span> All Rights Reserved
+                    </p>
                 </div>
             </div>
         </div>
