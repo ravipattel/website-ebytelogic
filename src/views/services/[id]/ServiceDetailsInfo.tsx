@@ -4,122 +4,184 @@ import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 
 import { useEffect, useState } from 'react';
+import { BiTerminal } from 'react-icons/bi';
+import { PiDiscDuotone } from 'react-icons/pi';
 import { GoArrowRight } from 'react-icons/go';
-import { RiArrowRightSLine } from 'react-icons/ri';
+import { HiOutlineRefresh } from 'react-icons/hi';
+import { GrMultimedia, GrValidate } from "react-icons/gr";
+import { CgPullClear } from 'react-icons/cg';
+import { IoSettings, IoTimeOutline } from 'react-icons/io5';
+import { SiFramework } from "react-icons/si";
+import { MdAttachMoney, MdOutlineTipsAndUpdates } from 'react-icons/md';
+import { RiArrowRightSLine, RiUserCommunityLine } from 'react-icons/ri';
+import { FaCloud, FaLayerGroup, FaMicrochip, FaShieldAlt, FaSyncAlt } from 'react-icons/fa';
+import { HiMiniShieldCheck, HiMiniUserGroup, HiOutlineDevicePhoneMobile } from "react-icons/hi2";
 
+import NotFound from '@/app/not-found';
 import Button from '@/src/components/Button';
+import FAQAccordion from '@/src/components/Faq';
 
 import OverviewJPg from '@/src/assets/images/services/overview.jpg'
 import EmbeddedDevelopmentJPg from '@/src/assets/images/services/embedded-development.png'
 import QaJPg from '@/src/assets/images/services/qa.png'
-import IosJPg from '@/src/assets/images/services/iot.png'
-import SdkWebp from '@/src/assets/images/services/avProtocol.png'
 import FrameworkWebp from '@/src/assets/images/services/multimedia.png'
 import LinuxPng from '@/src/assets/images/services/linux.png'
-import whyEmbedded from '@/src/assets/images/services/whyEmbedded.png'
 import useCaseEmbedded from '@/src/assets/images/services/useCaseEmbedded.png'
 import LinuxUsecase from '@/src/assets/images/services/linuxUsecase.png'
 import LinuxWhy from '@/src/assets/images/services/linuxWhy.png'
-import StreamingUsecase from '@/src/assets/images/services/streamingUsecase.png'
 import StreamingWhy from '@/src/assets/images/services/streamingWhy.png'
-import IotUseCase from '@/src/assets/images/services/iotUseacase.png'
-import IotWhy from '@/src/assets/images/services/iotWhy.png'
-import QaUseCase from '@/src/assets/images/services/qaUsecase.png'
-import QaWhy from '@/src/assets/images/services/qaWhy.png'
-import AvUseCase from '@/src/assets/images/services/avUseCase.png'
-import AvWhy from '@/src/assets/images/services/avWhy.png'
-import NotFound from '@/app/not-found';
+import FaqHomePng from '@/src/assets/images/home/faqHome.png'
 
 const serviceData = [
     {
         bgImg: '/images/bg/serviceBg/embeddedAppBg.png',
         id: "embedded-application-development",
-        category: "Powering Smart Devices with Embedded Intelligence",
+        category: "Embedded Application Development Services",
         pathText: "Embedded Application Development",
         tagLine: "C/C++, Qt, Python | Low-Level to UI | Real-Time Performance",
         imageName: EmbeddedDevelopmentJPg,
         overview:
-            ["We specialize in building embedded applications that run efficiently on Linux-based and RTOS-driven platforms. From control logic and device communication to sophisticated HMI interfaces, our development approach focuses on performance, modularity, and maintainability.", "With deep experience in C/C++, Qt, and Python, our team delivers production-ready apps tailored to the device's hardware and use case — whether it’s a touchscreen panel, industrial controller, wearable device, or medical equipment."],
-        capabilities: [
+            ["Develop high-performance, secure, and intuitive embedded software applications that bring your hardware to life. At eByteLogic, we bridge the gap between complex hardware logic and the end-user experience, delivering stable applications tailored for the most demanding environments."],
+        btnPrimaryText: "Get in Touch",
+        btnSecondaryText: "View Case Studies",
+        capabilitySections: [
             {
-                title: "C/C++ Embedded System Applications",
-                desc: "Development of core system applications tightly integrated with the OS and hardware.",
-                points: [
-                    "Sensor and peripheral data acquisition",
-                    "Communication protocol handling (UART, CAN, I2C, SPI)",
-                    "Custom state machines and logic control",
+                title: "Full-Stack Embedded Apps Development Services",
+                description:
+                    "The application layer is the brain of your device. As an embedded iot app development company, we support your team in designing, building, and running innovative products from the ground up.",
+                capabilities: [
+                    {
+                        title: "Custom HMI & UI Development",
+                        desc:
+                            "We create seamless user interfaces using Qt, C++, and Python that ensure a high-quality user experience even on resource-constrained hardware.",
+                        points: [
+                            "<span class='font-semibold'>Performance First:</span> Optimized graphics and multi-threaded logic.",
+                            "<span class='font-semibold'>Hardware Interaction:</span> Deep integration with sensors, actuators, and communication ports.",
+                        ],
+                    },
+                    {
+                        title: "Industrial Automation Solutions",
+                        desc:
+                            "Specializing in the application of embedded system in industrial automation, we build rugged software for control panels, monitoring systems, and automated manufacturing lines.",
+                        points: [
+                            "Real-time processing and low-latency response.",
+                            "Protocol integration (CAN, Modbus, Serial) for mission-critical reliability.",
+                        ],
+                    },
                 ],
             },
+        ],
+        layeredCardTitle: "Our Layered Approach to <span class='text-primary'>Embedded Software</span> Applications",
+        layeredCardDescription: "Building a robust application requires a clear understanding of the layers beneath it. We ensure your application is perfectly tuned to the underlying system:",
+        layeredCard: [
             {
-                title: "Qt-based HMI & UI Development",
-                desc: "Cross-platform, modern interfaces for devices with displays or touchscreens.",
-                points: [
-                    "QtWidgets and QML-based GUI design",
-                    "Multilingual and theming support",
-                    "Performance tuning for resource-constrained UIs",
-                ],
+                id: 1,
+                title: "Logic & Processing",
+                description:
+                    "We develop the core application logic tailored to your hardware and OS, ensuring optimal performance.",
+                icon: <HiOutlineRefresh />,
+                theme: {
+                    bg: "bg-orange-50",
+                    text: "text-orange-600",
+                    hoverBg: "group-hover:bg-orange-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-orange-200/60",
+                    lineColor: "#f54a00"
+                },
             },
             {
-                title: "Python Applications for Embedded Linux",
-                desc: "Agile development of scripting or automation components in embedded systems.",
-                points: [
-                    "System control scripts and monitoring apps",
-                    "Integration with APIs, MQTT, and DBus",
-                    "Lightweight GUIs using PyQt or Tkinter",
-                ],
+                id: 2,
+                title: "Connectivity & Cloud",
+                description:
+                    "Secure embedded system application development services that include MQTT, REST APIs, and device-to-cloud synchronization.",
+                icon: <FaCloud />,
+                theme: {
+                    bg: "bg-purple-50",
+                    text: "text-purple-600",
+                    hoverBg: "group-hover:bg-purple-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-purple-200/60",
+                    lineColor: "#4f39f6"
+                },
             },
             {
-                title: "Embedded IPC & Middleware Integration",
-                desc: "Reliable inter-process communication and software stack connectivity.",
-                points: [
-                    "DBus, gRPC, sockets, and shared memory IPC",
-                    "Middleware SDK integration",
-                    "Multithreaded and event-driven design",
-                ],
+                id: 3,
+                title: "Framework Integration:",
+                description:
+                    "Whether you are using Embedded Linux (Yocto/Buildroot), Android, or RTOS, we adapt the software layers to your specific speed and power requirements.",
+                icon: <SiFramework />,
+                theme: {
+                    bg: "bg-green-50",
+                    text: "text-green-600",
+                    hoverBg: "group-hover:bg-green-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-green-200/60",
+                    lineColor: "#00a63e"
+                },
+            },
+        ],
+        criticaltitle: "Our Design Philosophy for <span class='text-primary'>Robust</span> Systems",
+        criticalRoles: [
+            {
+                title: "Secure by Design",
+                desc:
+                    "Cybersecurity is integrated into every stage of embedded application development. We perform risk assessments and implement secure communication protocols to protect your data and IP.",
+                icon: HiOutlineDevicePhoneMobile,
             },
             {
-                title: "Real-Time App Optimization & Debugging",
-                desc: "Ensuring apps meet timing, memory, and stability constraints in production.",
-                points: [
-                    "Profiling and memory usage optimization",
-                    "Handling concurrency and priority tuning",
-                    "Performance benchmarking and fault handling",
-                ],
+                title: "Hardware Compatibility",
+                desc:
+                    "We don't believe in generic software. We adapt every line of code to your hardware choices: real-time capabilities, power usage profiles, and physical memory limitations.",
+                icon: MdOutlineTipsAndUpdates,
             },
             {
-                title: "Real-Time Data Handling Applications",
-                desc: "We develop performance-critical apps that acquire, process, and respond to real-time data inputs, often from sensors, AV sources, or user commands.",
-                points: [
-                    "Multithreaded C/C++ applications for real-time processing",
-                    "Data acquisition, filtering, and feedback control systems",
-                    "Event-driven frameworks using libevent/libev/libuv",
-                ],
+                title: "Long-Term Maintenance",
+                desc:
+                    "Launching is just the beginning. We support your product lifecycle with regular updates, security patches, and feature enhancements to ensure your device stays competitive.",
+                icon: HiMiniUserGroup,
             },
         ],
         useCaseImg: useCaseEmbedded,
-        whyImg: whyEmbedded,
+        useCaseTitle: "Why Choose eByteLogic for Embedded Application Development?",
+        useCaseDesc: "Choosing the right embedded iot app development company means finding a partner that understands hardware reality. Our expertise ensures:",
         useCases: [
-            "Human-Machine Interface (HMI) development using Qt/C++",
-            "Control and diagnostic applications for industrial and wearable devices",
-            "Sensor data acquisition, processing, and real-time response",
-            "Custom protocol implementation (MODBUS, CAN, TCP/IP)",
-            "Embedded Python apps for automation and scripting",
-            "Embedded GUIs and dashboard utilities for constrained devices",
-        ],
-        whyChooseUs: [
-            "Cross-platform embedded app development across Linux, RTOS, and Android",
-            "Proficiency in Qt, LVGL, GTK, and custom UI frameworks",
-            "Lightweight, modular codebase that runs on low-resources systems",
-            "Experts in real-time event handling, threading, and memory safety",
-            "Agile collaboration with in-house and external hardware teams",
-            "End-to-end delivery: from architecture to deployment",
+            {
+                title: "Hardware Abstraction",
+                desc:
+                    "Applications that are portable and scalable.",
+            },
+            {
+                title: "Reliability",
+                desc:
+                    "Systems designed for 24/7 operation without memory leaks or crashes.",
+            },
+            {
+                title: "Industrial Precision",
+                desc:
+                    "Specialized knowledge in the application of embedded system in industrial automation.",
+            },
         ],
         cta: [
             {
-                ctaTitle: "Embedded <span class='text-primary'>Apps</span> , Engineered to Perform",
-                Ctadescription: "We craft high-performance embedded applications that interact directly with hardware, sensors, and users — tuned for reliability, real-time response, and usability.",
-                ctaButtonText: "Discuss Your App Requirements",
+                ctaTitle: "Transform Your <span class='text-primary'>Device Vision</span> Into <span class='text-primary'>Reality</span>.",
+                Ctadescription: "Don’t settle for generic software on specialized hardware. Partner with embedded software consultants who prioritize performance, security, and engineering clarity. Whether you are building the next generation of industrial panels or an innovative IoT device, our team is ready to accelerate your roadmap.",
+                ctaButtonText: "Contact",
             }
+        ],
+        faqTitle: '<span class="text-primary">FAQ:</span> Embedded Application Development',
+        faqs: [
+            {
+                q: "What is the difference between firmware and embedded application development?",
+                a: "Firmware interacts directly with hardware components, while embedded application development focuses on high-level logic, user interfaces, and connectivity features that the end-user or system operator interacts with."
+            },
+            {
+                q: "Do you provide embedded apps development services for both Linux and Android?",
+                a: "Yes. We have extensive experience building applications for Embedded Linux (using Qt/C++), Android (HAL and App layer), and specialized RTOS environments."
+            },
+            {
+                q: "How do you handle IoT connectivity?",
+                a: "As an embedded iot app development company, we build secure, real-time connectivity into your apps using MQTT, WebSockets, or custom protocols to ensure stable data flow between your device and the cloud."
+            },
         ]
     },
     {
@@ -127,94 +189,157 @@ const serviceData = [
         bgImg: '/images/bg/serviceBg/linuxBsp.png',
         pathText: "Embedded BSP Development",
         imageName: LinuxPng,
-        category: "Power Your Product with Robust Embedded Software.",
+        category: "Tailored BSP Development for Embedded Systems",
         tagLine: "Firmware | Linux BSP | Android BSP ",
-        overview: ["At eByteLogic, we design and develop high-performance embedded software that powers modern devices — from industrial controllers and IoT gateways to consumer electronics and AI-enabled systems. We specialize in system-level engineering that bridges silicon, hardware, and software to create reliable, optimized, production-ready embedded solutions.", "Whether you’re building an evaluation board, a custom SoM, or a full-fledged production board, we accelerate bring-up, streamline peripheral support, and fine-tune your platform for speed, security, and stability."],
-        capabilities: [
+        overview: ["Whether you need a ready-to-deploy foundation or a tailored BSP development approach for a specialized use case, eByteLogic provides the engineering expertise to bridge your hardware and software. We help hardware teams accelerate development, reduce integration risks, and ship production-grade products."],
+        btnPrimaryText: "Get in Touch",
+        btnSecondaryText: "View Case Studies",
+        expertiseChip: "Expertise",
+        expertiseTitle: "Our Embedded <span class='text-primary'>BSP Software</span> Expertise",
+        embeddedExpertise: [
             {
-                title: "Board Support Package (BSP) Development",
-                points: [
-                    "BSP porting and customization for Linux and Android",
-                    "Yocto, Buildroot, and AOSP–based builds",
-                    "Board bring-up for custom and off-the-shelf SoMs",
-                    "Device tree creation and tuning",
-                    "Peripheral bring-up and validation",
-                ]
+                title: "Drivers",
+                description:
+                    "Custom device drivers optimized for performance, stability, and hardware abstraction.",
+                icon: CgPullClear,
             },
             {
-                title: "Bootloader & Startup Optimization",
-                points: [
-                    "U-Boot porting and customization",
-                    "Fast boot implementations",
-                    "Splash/logo integration",
-                    "Secure boot enablement",
-                    "Boot sequence optimization for product requirements",
-                ]
+                title: "Firmware",
+                description:
+                    "Low-level firmware development for microcontrollers, SoCs, and real-time systems.",
+                icon: IoSettings,
             },
             {
-                title: "Linux Kernel & Device Driver Development",
-                points: [
-                    "Custom driver development (I²C, SPI, UART, CAN, GPIO, MIPI-CSI/DSI, display, sensors, audio, networking, etc.)",
-                    "Kernel configuration and feature enablement",
-                    "Patch integration, upgrade, and maintenance",
-                    "Real-time kernel (PREEMPT_RT) support",
-                    "Power management tuning",
-                ]
+                title: "Linux / Android",
+                description:
+                    "BSP customization, kernel bring-up, HAL integration, and Android platform support.",
+                icon: BiTerminal,
             },
-            {
-                title: "Android BSP & Framework Customization",
-                points: [
-                    "Android HAL layer integration",
-                    "Framework modifications and feature development",
-                    "AOSP build optimization",
-                    "Hardware abstraction layer tuning",
-                    "Custom system services and UI optimizations",
-                    "Support for Android 10–14 depending on SoC platform",
-                ]
-            },
-            {
-                title: "Embedded Firmware & RTOS Development (Optional Add-On)",
-                points: [
-                    "Firmware development on ARM Cortex-M, RISC-V, MSP, PIC, and Renesas MCUs",
-                    "FreeRTOS, Zephyr, ThreadX and other RTOS-based systems",
-                    "Sensor integration, communication stacks, low-power optimization",
-                    "OTA firmware update implementations",
-                ]
-            },
-            {
-                title: "Hardware–Software System Integration",
-                points: [
-                    "Schematic review for software considerations",
-                    "Low-level peripheral validation",
-                    "Memory map and clock configuration",
-                    "Hardware abstraction layer (HAL) integration",
-                    "Interfacing sensors, displays, cameras, radios, and custom boards",
-                ]
-            }
         ],
+        capabilitySections: [
+            {
+                title: "Comprehensive BSP Development Services",
+                description:
+                    "Building a successful hardware product requires more than just writing code; it demands a rock-solid foundation. We have experienced BSP developers that can support product teams across the full lifecycle of their hardware.",
+                capabilities: [
+                    {
+                        title: "Custom BSP Development",
+                        desc:
+                            "We provide full-cycle BSP development tailored to your hardware and specific project requirements.",
+                        points: [
+                            "<span class='font-semibold'>System Integration:</span> Middleware integration, custom driver support, and performance optimization.",
+                            "<span class='font-semibold'>Lifecycle Management:</span> Long-term maintenance and security updates for specialized embedded systems.",
+                            "<span class='font-semibold'>Hardware Validation:</span> Ensuring your software stack fully leverages your custom carrier boards.",
+                        ],
+                    },
+                    {
+                        title: "Standard & Customized Reference BSPs",
+                        desc:
+                            "Need to move fast? We offer ready-to-use reference BSPs for Linux, Android, and RTOS. We can adapt these standard packages to your specific hardware, allowing for quick deployment and immediate integration into your product roadmap.",
+                    },
+                ],
+            },
+            {
+                title: "Specific BSP Development for Your Operating System",
+                description:
+                    "Every project has unique demands. We provide specialized bsp development for embedded systems across the most reliable environments:",
+                capabilities: [
+                    {
+                        title: "Linux BSP",
+                        desc:
+                            "With deep-domain expertise, we customize Linux-based embedded systems to meet unique device requirements using Yocto and Buildroot.",
+                    },
+                    {
+                        title: "Android BSP",
+                        desc:
+                            "Our engineers develop production-grade Android BSPs for hardware platforms including NXP, Rockchip, and TI.",
+                    },
+                    {
+                        title: "MCU & RTOS BSP",
+                        desc:
+                            "We configure and fine-tune Board Support Packages for microcontrollers, ensuring real-time performance and reliability.",
+                    },
+                ],
+            },
+        ],
+        criticalRoles: [
+            {
+                title: "Device Drivers",
+                desc:
+                    "These essential components create the interface between the OS and the hardware, enabling access to the CPU, memory, and peripherals.",
+                icon: FaMicrochip,
+            },
+            {
+                title: "Partitioning & Updates",
+                desc:
+                    "Advanced partitioning with robust over-the-air (OTA) update features to keep your system secure and up-to-date.",
+                icon: FaSyncAlt,
+            },
+            {
+                title: "Cybersecurity",
+                desc:
+                    "Integrating mechanisms like Secure Boot and TrustZone (TEE) is crucial for safeguarding the system against unauthorized access.",
+                icon: FaShieldAlt,
+            },
+            {
+                title: "Additional Components",
+                desc:
+                    "Our work includes Bootloader development, Kernel customization, Hardware Abstraction Layers (HAL), and peripheral libraries.",
+                icon: FaLayerGroup,
+            },
+        ],
+        criticaltitle: "Critical <span class='text-primary'>Low-Level</span> Features",
+        criticaldesc: "A professional BSP development project focuses on the core components that impact system stability and security:",
         useCaseImg: LinuxUsecase,
+        useCaseTitle: 'Why <span class="text-primary">Tailored BSP</span> Development <span class="text-primary">Matters</span>',
+        useCaseDesc: "A well-designed BSP is the critical link between your hardware and software. Choosing eByteLogic as your BSP developer provides several key advantages:",
         whyImg: LinuxWhy,
         useCases: [
-            "BSP customization for new boards or SoC-based modules",
-            "Rapid bring-up of peripheral interfaces (USB, UART, SPI, I2C, Ethernet, HDMI, CSI/DSI)",
-            "Bootloader (U-Boot) customization with secure boot and splash",
-            "Yocto or Buildroot migration and SDK optimization",
-            "Linux driver porting for legacy or new silicon",
-            "OTA firmware update integration with fallback mechanisms",
-        ],
-        whyChooseUs: [
-            "100+ successful BSP bring-up projects across ARM-based platforms",
-            "Fast turnaround for hardware enablement and validation",
-            "Strong experience in Buildroot, Yocto, U-Boot, and secure boot",
-            "Deep understanding of low-level device tree, clocks, regulators",
-            "Silicon vendor SDK customization (Rockchip, NXP, Qualcomm, NVIDIA, etc.)",
-            "Focused on reducing boot time and system start latency",
+            {
+                title: "Hardware Abstraction",
+                desc:
+                    "Seamlessly hide hardware complexity from your application layer.",
+            },
+            {
+                title: "Efficiency",
+                desc:
+                    "Every driver and kernel configuration is tuned for your specific power and performance targets.",
+            },
+            {
+                title: "Reliability",
+                desc:
+                    "Production-tested code ensures 24/7 stability in regulated and industrial environments.",
+            },
+            {
+                title: "Security",
+                desc:
+                    "Hardened foundations built to protect your intellectual property and user data.",
+            }
         ],
         cta: [
             {
-                ctaTitle: "From <span class='text-primary'>Bare Board to Booting</span> in Days",
-                Ctadescription: "We help product teams bring up Linux on custom hardware fast — from U-Boot to kernel to rootfs — with BSPs that are reliable, maintainable, and production-ready.",
-                ctaButtonText: "Schedule Your Board Bring-Up Call",
+                ctaTitle: "Stop <span class='text-primary'>Struggling</span> with <span class='text-primary'>Low-Level</span> Stability.",
+                Ctadescription: "Don't let BSP development bottlenecks delay your product launch. Partner with an engineering team that understands the reality of custom hardware. Whether you are facing boot-time issues, driver instability, or security risks, our BSP developers are ready to help you build a foundation you can launch with.",
+                ctaButtonText: "Contact",
+            }
+        ],
+        faqTitle: "<span class='text-primary'>FAQ:</span> Board Support Package Development",
+        faqs: [
+            {
+                q: "What is a Board Support Package (BSP)?",
+                a: "A BSP is a layer of software that contains the hardware-specific drivers and routines that allow an operating system to function on a specific hardware design."
+            },
+            {
+                q: "Why is BSP development for embedded systems critical?",
+                a: "Reference designs are rarely production-ready. Tailored BSP development ensures that your software stack is perfectly aligned with your custom hardware, optimizing for security, boot speed, and long-term stability."
+            },
+            {
+                q: "Does your BSP development include device driver development?",
+                a: "Absolutely. As a full-service BSP developer, we write and port drivers for peripherals, sensors, and communication interfaces to ensure the OS has full access to your board's capabilities."
+            },
+            {
+                q: "Can you create a custom BSP for my specific hardware?",
+                a: "Yes. We specialize in taking custom carrier boards and SoMs (System on Modules) and developing a fully functional, production-grade BSP from scratch."
             }
         ]
     },
@@ -223,89 +348,97 @@ const serviceData = [
         id: "multimedia-framework",
         imageName: FrameworkWebp,
         pathText: "Multimedia & Streaming Frameworks",
-        category: "Build Better Streaming Experiences.",
+        category: "Embedded Multimedia Framework Development",
         tagLine: "Media Acquisition | Media Processing | Media Transmission",
-        overview: ["At eByteLogic, we specialize in engineering multimedia frameworks and low-latency streaming solutions for the most demanding use cases—from live broadcast systems and AV-over-IP pipelines to drone video transmission and surveillance devices. Our expertise spans GStreamer, FFmpeg, and custom encoder pipelines, enabling pixel-perfect performance, seamless AV sync, and integration with industry-standard protocols like NDI, SRT, and RTP.", "Whether you're developing a high-performance camera system, a next-gen encoder, or a media-rich IoT device, our framework-level expertise ensures you achieve quality,reliability, and real-time responsiveness."],
-        capabilities: [
+        overview: ["Stability and latency are everything in video streaming. eByteLogic provides expert multimedia framework development services designed to handle complex audio-video pipelines on resource-constrained hardware. From broadcast-grade streaming appliances to remote imaging drones, we build the architectures that power real-time media."],
+        btnPrimaryText: "Request a Multimedia Consultation",
+        btnSecondaryText: "View Case Studies",
+        capabilitySections: [
             {
-                title: "GStreamer & FFmpeg Customization",
-                desc: "From modular pipelines to advanced plugin development, we tailor open-source frameworks to meet your real-world media delivery needs.",
-                points: [
-                    "Plugin development for custom source/sink elements",
-                    "Performance tuning for low-latency encoding/decoding",
-                    "Integration with hardware accelerators (VAAPI, V4L2, NVDEC, etc.)",
-                ]
+                title: "Custom Multimedia Solutions for Real-Time Performance",
+                description:
+                    `Standard, "out-of-the-box" frameworks rarely meet the demands of professional hardware. We provide custom multimedia solutions tailored to your specific SoC (System on Chip) and use case, ensuring your device delivers broadcast-quality performance.`,
+                capabilities: [
+                    {
+                        title: "Framework Customization & Tuning",
+                        desc:
+                            `We specialize in deep-level customization of industry-standard tools to maximize hardware acceleration.`,
+                        points: [
+                            "<span class='font-semibold'>GStreamer & FFmpeg Mastery:</span> Custom plugin development, pipeline optimization, and buffer management.",
+                            "<span class='font-semibold'>Hardware Acceleration: </span> Seamless integration with VPU/GPU for H.264, H.265 (HEVC), and AV1 encoding/decoding.",
+                            "<span class='font-semibold'>Clock & AV Sync:</span> Achieving deterministic ±10ms AV synchronization for professional-grade audio and video alignment.",
+                        ],
+                    },
+                    {
+                        title: "Protocol-Driven Streaming Pipelines",
+                        desc:
+                            "Our multimedia frameworks are engineered to handle modern streaming protocols with ultra-low latency:",
+                        points: [
+                            "<span class='font-semibold'>Professional Protocols: </span> Expert implementation of NDI, SRT, RIST, and SDI.",
+                            "<span class='font-semibold'>Network Delivery: </span> Robust handling of RTP, RTMP, HLS, and WebRTC for diverse network conditions.",
+                            "<span class='font-semibold'>Low-Latency Architecture:</span> Optimizing end-to-end pipelines for sub-100ms latency in mission-critical applications.",
+                        ],
+                    },
+                ],
             },
-            {
-                title: "Protocol-Level Handling (NDI, RTP, SRT, RTSP, HLS, RTMP)",
-                desc: "We enable smooth, resilient streaming across local and global networks with deep protocol know-how.",
-                points: [
-                    "Building robust sender/receiver pipelines",
-                    "Optimizing for jitter, buffering, and packet loss",
-                    "Secure, firewall-friendly media transport design"
-                ]
-            },
-            {
-                title: "AV Synchronization & Tuning",
-                desc: "Precision matters—our team ensures audio/video frames stay perfectly in sync across the pipeline.",
-                points: [
-                    "±10ms A/V sync tuning for live systems",
-                    "Timestamp correction and buffer management",
-                    "End-to-end sync validation with test utilities"
-                ]
-            },
-            {
-                title: "Closed Captioning & Compliance (LINE21, CEA608/708)",
-                desc: "Broadcast-ready text encoding and decoding—delivered in fully compliant formats.",
-                points: [
-                    "Analog LINE21 decoding and embedding",
-                    "DTVCC (CEA608/CEA708) insertion",
-                    "LINE21 <--> DTVCC conversion modules"
-                ]
-            },
-            {
-                title: "Open Broadcast & Encoder SDK Customization",
-                desc: "We help you optimize open-source broadcast software for specific chipsets and use cases.",
-                points: [
-                    "OBS (Open Broadcaster Software) pipeline customization",
-                    "Integration with hardware encoder SDKs (Xilinx, Ambarella, Rockchip, etc.)",
-                    "Encoding format tuning for quality vs. Bandwidth"
-                ]
-            },
-            {
-                title: "Hardware-Accelerated Video Processing",
-                desc: "We optimize your multimedia pipelines using GPU, VPU, and hardware codecs (e.g., Rockchip, NVIDIA Jetson, NXP i.MX) to enable smooth, power-efficient performance on embedded platforms.",
-                points: [
-                    "Integration with hardware decoders/encoders (V4L2, NVDEC/NVENC)",
-                    "Zero-copy buffer management to reduce CPU load",
-                    "Custom pipeline tuning for RK3588, i.MX8, Jetson, and more"
-                ]
-            }
         ],
-        useCaseImg: StreamingUsecase,
+        criticaltitle: "Our <span class='text-primary'>Approach</span> to <span class='text-primary'>Multimedia Framework</span> Development Services",
+        criticaldesc: "Building a successful media product requires a multi-layered engineering approach:",
+        criticalRoles: [
+            {
+                title: "Requirement Analysis",
+                desc:
+                    "We analyze your hardware capabilities (NXP, Rockchip, NVIDIA Jetson) to determine the best framework architecture.",
+                icon: FaMicrochip,
+            },
+            {
+                title: "Pipeline Design",
+                desc:
+                    "Designing embedded multimedia framework development strategies that prioritize low CPU overhead and high throughput.",
+                icon: FaSyncAlt,
+            },
+            {
+                title: "Integration & Testing",
+                desc:
+                    "Rigorous validation of AV sync, jitter, and frame-drop rates under heavy system load.",
+                icon: FaShieldAlt,
+            },
+            {
+                title: "Optimization",
+                desc:
+                    "Fine-tuning bitrates, adaptive bitrate (ABR) logic, and thermal performance for long-duration operation.",
+                icon: FaLayerGroup,
+            },
+        ],
         whyImg: StreamingWhy,
-        useCases: [
-            "Real-time live streaming with ultra-low latency (AV sync-sensitive applications)",
-            "Broadcast & OTT pipeline customization (GStreamer, FFMPEG, OBS)",
-            "SDI/NDI/SRT/HLS/RTMP-based video routing solutions",
-            "Closed captioning workflows for live and recorded video (CEA-608/708, LINE21)",
-            "Surveillance and drone video encoding with bandwidth optimization",
-            "HDMI and USB camera-based input/output for vision systems",
-        ],
+        whyTitle: "Why Choose <span class='text-primary'>eByteLogic</span> for Your <span class='text-primary'>Multimedia Engineering</span>?",
+        whyDesc: 'Choosing a specialized partner for custom multimedia solutions ensures your product stands out in a crowded market:',
         whyChooseUs: [
-            "Deep expertise in protocol-level streaming (RTP, SRT, RTSP, WebRTC)",
-            "Hardware-accelerated media pipelines tuned for RK3588, Jetson, i.MX8",
-            "Custom AV sync tuning down to ±10ms lip-sync accuracy",
-            "Proven track record in broadcast and surveillance deployments",
-            "Flexible integration with OBS, Open Broadcast Encoder, and custom sinks",
-            "Specialized in high-performance, low-footprint embedded pipelines",
+            "<span class='text-black'>Broadcast-Grade Quality</span>: We bring professional-level timing and accuracy to embedded devices.",
+            "<span class='text-black'>Silicon-Aware Development</span>: We know how to squeeze every bit of performance out of your hardware’s multimedia accelerators.",
+            "<span class='text-black'>Open Source Expertise</span>: We leverage and contribute to the best open-source projects to keep your development costs efficient and your tech stack modern.",
         ],
         cta: [
             {
-                ctaTitle: "Build <span class='text-primary'>Streaming Pipelines</span> That Just Work",
-                Ctadescription: "Whether you're building the next live media device or customizing a complex broadcast encoder, our multimedia engineering helps you deliver seamless video experiences — with accuracy, performance, and reliability.",
-                ctaButtonText: "Talk to a MediaTech Expert",
+                ctaTitle: "From <span class='text-primary'>Silicon</span> to <span class='text-primary'>Stream :</span> Build Better Video.",
+                Ctadescription: "Don’t let latency or sync issues hold your product back. Partner with the embedded software consultants who understand the math and the mechanics of real-time media. Whether you are building an industrial vision system or a global streaming appliance, eByteLogic is ready to deliver.",
+                ctaButtonText: "Contact",
             }
+        ],
+        faqTitle: "<span class='text-primary'>FAQ:</span>  Multimedia Frameworks & Engineering",
+        faqs: [
+            {
+                q: "What is the benefit of custom multimedia framework development services?",
+                a: "General frameworks often carry unnecessary overhead. Custom multimedia solutions allow us to strip away what you don't need and optimize the critical paths for your specific hardware, resulting in lower latency and better power efficiency."
+            },
+            {
+                q: "Do you support GStreamer and FFmpeg on all platforms?",
+                a: "Yes. We have extensive experience implementing embedded multimedia framework development on Linux, Android, and macOS, specifically tailored for platforms like NXP i.MX, Rockchip, and NVIDIA."
+            },
+            {
+                q: "Can you help with sub-100ms latency requirements?",
+                a: "Absolutely. We specialize in low-latency tuning, using protocols like SRT and NDI alongside custom buffer management to achieve real-time performance for drones, medical imaging, and live broadcasting."
+            },
         ]
     },
     {
@@ -313,89 +446,154 @@ const serviceData = [
         id: "multi-platform-qa-test-automation",
         imageName: QaJPg,
         pathText: "Multi-platform QA & Test Automation",
-        category: "Ensuring Quality, Reliability & Stability Across Device-Centric Systems",
+        category: "Embedded QA & Automation Testing Services",
         tagLine: "Embedded Platforms | Mobile Companion Apps | Web Control Interfaces",
-        overview: ["Our QA and test automation services are designed for embedded-led products — where hardware and firmware form the foundation, and mobile or web applications act as control, monitoring, or visualization layers.","We help product teams validate complete device ecosystems, uncover integration gaps, and prevent failures that only surface when embedded software, applications, protocols, and networks interact.","Whether you’re validating BSP bring-up, device firmware, mobile companion apps, or web-based device dashboards, we simulate real-world usage across devices, users, and networks — delivering production-ready systems with confidence at scale."],
-        capabilities: [
+        overview: ["Software failure isn't just a bug, it’s a product recall. eByteLogic provides specialized embedded software testing designed to validate performance, stability, and reliability at scale. From low-level kernel validation to high-level application stress tests, we ensure your hardware is production-ready."],
+        btnPrimaryText: "Request a Test Strategy",
+        btnSecondaryText: "View Our Process",
+        capabilitySections: [
             {
-                title: "Embedded QA Strategy & Test Planning",
-                desc: "Structured QA strategies focused on embedded platforms and connected applications.",
-                points: [
-                    "Test planning aligned with hardware, firmware, and app integration",
-                    "Risk-based QA for device-centric workflows",
-                    "Test coverage across system, integration, and regression phases",
-                ]
+                title: "Comprehensive Automation QA Testing Services",
+                description:
+                    "Generic testing firms often struggle with the timing and hardware constraints of embedded devices. At eByteLogic, every embedded qa tester on our team understands the relationship between code and circuitry.",
+                capabilities: [
+                    {
+                        title: "Automated Embedded Testing",
+                        desc:
+                            "We build custom validation pipelines that simulate real-world conditions. Our qa automation testing services include:",
+                        points: [
+                            "<span class='font-semibold'>Hardware-in-the-Loop (HIL) Testing:</span> Validating software performance on actual target hardware.",
+                            "<span class='font-semibold'>Regression Automation:</span>  Continuous testing of new builds to ensure feature updates don't break existing functionality.",
+                            "<span class='font-semibold'>Interface Simulation: </span> Simulating sensor data and peripheral inputs to test system response in a controlled environment.",
+                        ],
+                    },
+                    {
+                        title: "System-Level & Stress Testing",
+                        desc:
+                            "Hardware must endure long hours of operation. We specialize in the testing of embedded software under extreme conditions:",
+                        points: [
+                            "<span class='font-semibold'>Long-Haul Stability:</span> 24/7 stress tests to detect memory leaks and thermal issues.",
+                            "<span class='font-semibold'>Edge Case Validation:</span>  Testing how your system handles power loss, signal interference, and unexpected inputs.",
+                            "<span class='font-semibold'>Compliance & Security: </span> Ensuring your embedded system testing covers secure boot validation and data encryption standards.",
+                        ],
+                    },
+                ],
             },
-            {
-                title: "Test Automation Framework Development",
-                desc: "Automation frameworks built around embedded devices as the source of truth.",
-                points: [
-                    "Python, PyTest, and Robot Framework–based automation",
-                    "CLI-driven harnesses for embedded Linux targets",
-                    "Hardware-in-loop (HIL) and peripheral-driven automation",
-                ]
-            },
-            {
-                title: "Multimedia & Streaming Test Automation",
-                desc: "Validation for media pipelines originating from embedded devices.",
-                points: [
-                    "Automated GStreamer / FFmpeg pipeline testing",
-                    "AV sync validation under real network conditions",
-                    "Codec, framerate, latency, and buffer stress scenarios",
-                ]
-            },
-            {
-                title: "BSP-Level & Driver Validation",
-                desc: "Low-level verification of board support packages and hardware interfaces.",
-                points: [
-                    "Peripheral bring-up verification (UART, SPI, I²C, GPIO, etc.)",
-                    "U-Boot and Linux boot sequence validation",
-                    "Kernel configuration, device tree validation, and peripheral stability testing",
-                ]
-            },
-            {
-                title: "Embedded System Integration & Regression Validation",
-                desc: "Continuous validation of integrated embedded systems under change.",
-                points: [
-                    "Regression testing across firmware updates and feature additions",
-                    "Validation of device behavior across power cycles and runtime states",
-                    "Detection of integration breakages across firmware, apps, and interfaces",
-                ]
-            },
-            {
-                title: "Performance, Power & Stress Testing",
-                desc: "Reliability validation for devices operating under real-world constraints.",
-                points: [
-                    "CPU, memory, and workload stress testing",
-                    "Power consumption and thermal profiling",
-                    "Long-duration soak testing for embedded deployments",
-                ]
-            }
         ],
-        useCaseImg: QaUseCase,
-        whyImg: QaWhy,
-        useCases: [
-            "Automated testing of embedded GUIs, hardware I/Os, and device workflows",
-            "End-to-end validation across firmware, drivers, mobile apps, and web dashboards",
-            "Stress testing and power profiling for industrial and edge devices",
-            "Regression validation for device firmware and system updates",
-            "Custom test harnesses for board validation and factory QA",
-            "QA strategy consulting for embedded product teams",
+
+        criticaltitle: "Our Layered <span class='text-primary'>Approach</span> to <span class='text-primary'>Embedded QA</span>",
+        criticaldesc: "We believe that embedded qa should be integrated into every stage of the development lifecycle, not just at the end.",
+        criticalRoles: [
+            {
+                title: "Unit & Integration Testing",
+                desc:
+                    "Testing individual drivers and software modules for logic errors.",
+                icon: RiUserCommunityLine,
+            },
+            {
+                title: "BSP & Kernel Validation",
+                desc:
+                    "Ensuring the Board Support Package is stable and optimized for the SoC.",
+                icon: GrValidate,
+            },
+            {
+                title: "Multimedia & Streaming QA",
+                desc:
+                    "Specialized testing for AV sync, frame drops, and latency in video pipelines.",
+                icon: GrMultimedia,
+            },
+            {
+                title: "CI/CD for Embedded",
+                desc:
+                    "Integrating automated test suites into your DevOps pipeline for rapid, reliable releases.",
+                icon: PiDiscDuotone,
+            },
         ],
-        whyChooseUs: [
-            "Embedded-first QA with deep understanding of hardware and firmware behavior",
-            "Hardware-in-loop (HIL) testing for real-time device validation",
-            "System-level stability metrics and failure analysis built-in",
-            "Tight collaboration with embedded and application engineering teams",
-            "Domain expertise in AV pipelines, sensor data, and protocol stacks",
-            "Strong focus on field reliability, edge cases, and integration failures",
+        layeredCardTitle: "The Benefits of Specialized <span class='text-primary'>Embedded Software</span> Testing",
+        layeredCardDescription: "Choosing an expert embedded qa tester over a general software firm provides several critical advantages:",
+        layeredCard: [
+            {
+                id: 1,
+                title: "Hardware Awareness",
+                description:
+                    "We understand interrupts, timing accuracy, and memory constraints.",
+                icon: <HiOutlineRefresh />,
+                theme: {
+                    bg: "bg-orange-50",
+                    text: "text-orange-600",
+                    hoverBg: "group-hover:bg-orange-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-orange-200/60",
+                    lineColor: "#f54a00"
+                },
+            },
+            {
+                id: 2,
+                title: "Deterministic Results",
+                description:
+                    "Our frameworks are designed to handle the non-deterministic nature of real-world hardware signals.",
+                icon: <HiMiniShieldCheck />,
+                theme: {
+                    bg: "bg-purple-50",
+                    text: "text-purple-600",
+                    hoverBg: "group-hover:bg-purple-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-purple-200/60",
+                    lineColor: "#4f39f6"
+                },
+            },
+            {
+                id: 3,
+                title: "Reduced Time-to-Market",
+                description:
+                    "Automated suites catch bugs early in the bring-up phase, preventing late-stage launch delays.",
+                icon: <IoTimeOutline />,
+                theme: {
+                    bg: "bg-green-50",
+                    text: "text-green-600",
+                    hoverBg: "group-hover:bg-green-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-green-200/60",
+                    lineColor: "#00a63e"
+                },
+            },
+            {
+                id: 4,
+                title: "Cost Efficiency",
+                description:
+                    "Automated embedded testing reduces the need for manual bench testing and expensive physical troubleshooting.",
+                icon: <MdAttachMoney />,
+                theme: {
+                    bg: "bg-green-50",
+                    text: "text-green-600",
+                    hoverBg: "group-hover:bg-green-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-green-200/60",
+                    lineColor: "#00a63e"
+                },
+            },
         ],
         cta: [
             {
-                ctaTitle: "Device-Centric Testing You Can <span class='text-primary'>Trust</span>",
-                Ctadescription: "From embedded platforms to the mobile and web applications that depend on them, we help you deliver reliable systems that perform as expected — in production, not just in the lab.",
-                ctaButtonText: "Explore Test Automation with Us",
+                ctaTitle: "<span class='text-primary'>Stability</span> You Can Launch With.",
+                Ctadescription: "Don’t risk your brand's reputation on unvalidated software. Partner with an embedded software testing team that brings engineering clarity to the QA process. Whether you need a one-time system audit or a long-term automation partner, our experts are ready to ensure your product is flawless from day one.",
+                ctaButtonText: "Contact",
             }
+        ],
+        faqTitle: "<span class='text-primary'>FAQ:</span>  Embedded QA & System Testing",
+        faqs: [
+            {
+                q: "How does embedded testing differ from web or mobile testing?",
+                a: "Embedded system testing requires specialized knowledge of hardware communication protocols (I2C, SPI, CAN) and real-time operating systems. Unlike web apps, embedded software must be tested for power consumption, thermal limits, and physical hardware interaction."
+            },
+            {
+                q: "Can you integrate your QA services into our existing CI/CD pipeline?",
+                a: "Yes. We specialize in building automated qa automation testing services that plug directly into Jenkins, GitLab, or GitHub Actions, allowing for automated hardware-in-the-loop testing with every code commit."
+            },
+            {
+                q: "What tools do you use for automation qa testing services?",
+                a: "We utilize a mix of industry-standard tools (Python, Pytest, Jenkins) and custom-built hardware simulators to provide comprehensive coverage across the entire software stack."
+            },
         ]
     },
 ];
@@ -461,6 +659,16 @@ const ServiceDetailsInfo = ({ meta }) => {
                                 </p>
                             )}
                         </div>
+                        <div className="flex flex-wrap gap-4 pt-4">
+                            <Button variant="default" className="text-sm sm:text-base md:h-12" onClick={() => router.push('/contact-us')}>{service.btnPrimaryText}</Button>
+                            <Button
+                                onClick={() => router.push('/case-study')}
+                                variant="default"
+                                className="text-sm sm:text-base md:h-12 !bg-white !text-primary hover:!bg-primary hover:!text-white"
+                            >
+                                {service.btnSecondaryText}
+                            </Button>
+                        </div>
                     </div>
 
                     {/* Image Block */}
@@ -478,98 +686,281 @@ const ServiceDetailsInfo = ({ meta }) => {
                 </div>
             </section>
 
+            {/* expertise */}
+            {service?.embeddedExpertise && (
+                <section className="py-16 px-4">
+                    <div className='max-w-[1400px] mx-auto px-4 sm:px-6'>
+
+                        {/* Header */}
+                        <div className="mb-12">
+                            <span className="text-[#3078FB] font-semibold tracking-wide uppercase">
+                                {service?.expertiseChip}
+                            </span>
+                            <h2 className="text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize" dangerouslySetInnerHTML={{ __html: service?.expertiseTitle || '' }} />
+                        </div>
+
+                        {/* Cards */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                            {service?.embeddedExpertise?.map((item, index) => {
+                                const Icon = item.icon;
+
+                                return (
+                                    <div
+                                        key={index}
+                                        className="group relative bg-white rounded-2xl p-8 border border-blue-100 overflow-hidden
+                           shadow-sm hover:shadow-xl transition-all duration-300"
+                                    >
+                                        {/* Gradient Glow */}
+                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r 
+                                from-[#3078FB]/10 to-[#3078FB]/0 opacity-0 
+                                group-hover:opacity-100 transition" />
+
+                                        {/* Icon Badge */}
+                                        <div className="relative z-10 w-14 h-14 flex items-center justify-center 
+                                rounded-xl bg-[#3077fb54] text-white mb-6 group-hover:bg-primary
+                                shadow-lg group-hover:scale-110 transition">
+                                            <Icon className="text-2xl" />
+                                        </div>
+
+                                        {/* Content */}
+                                        <div className="relative z-10">
+                                            <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                                                {item.title}
+                                            </h3>
+                                        </div>
+
+                                        {/* Bottom Accent */}
+                                        <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#3078FB] 
+                                group-hover:w-full transition-all duration-300 rounded-b-2xl" />
+                                    </div>
+                                );
+                            })}
+                        </div>
+
+                    </div>
+                </section>
+            )}
 
             {/* Capabilities */}
             <section className="bg-[#f9fbfd] py-16 sm:py-28">
-                <div className='max-w-[1400px] mx-auto px-4 sm:px-6 space-y-4'>
-                    <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize text-center'>Our Capabilities</h3>
-                    <div className="grid md:grid-cols-2 gap-10 pt-12">
-                        {service.capabilities.map((cap, i) => (
-                            <div
-                                key={i}
-                                className="relative bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group overflow-hidden"
-                            >
-                                <div className="absolute top-0 left-0 h-full w-1.5 bg-gradient-to-b from-[#5d647150] to-[#7fb8ff50] group-hover:bg-gradient-to-b group-hover:from-primary group-hover:to-[#7fb8ff] transition-all duration-300" />
-                                <div className="hidden sm:flex absolute top-4 right-4 text-white bg-primary size-6 lg:size-8 items-center justify-center rounded-full text-xs lg:text-sm font-medium shadow-md">
-                                    {i + 1}
+                {service?.capabilitySections?.map((cap, i) => (
+                    <div key={i} className={`max-w-[1400px] mx-auto px-4 sm:px-6 space-y-4 ${i % 2 !== 0 ? 'mt-20' : 'mt-0'}`}>
+                        <h3 className="text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize text-center">
+                            {cap.title}
+                        </h3>
+                        <p className="text-sm sm:text-[15px] text-[#5d6471] md:max-w-3xl text-center mx-auto">
+                            {cap.description}
+                        </p>
+                        <div className="grid md:grid-cols-2 gap-10 pt-12">
+                            {cap.capabilities.map((item, idx) => (
+                                <div
+                                    key={idx}
+                                    className="relative bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group overflow-hidden"
+                                >
+                                    <div className="absolute top-0 left-0 h-full w-1.5 bg-gradient-to-b from-[#5d647150] to-[#7fb8ff50] group-hover:from-primary group-hover:to-[#7fb8ff]" />
+
+                                    <div className="p-6 md:p-8">
+                                        <h4 className="text-lg md:text-xl font-semibold text-primary mb-2">
+                                            {item.title}
+                                        </h4>
+
+                                        <p className="text-sm text-[#5d6471] mb-3">
+                                            {item.desc}
+                                        </p>
+
+                                        {item.points && (
+                                            <ul className="list-disc pl-5 text-sm text-[#5d6471] space-y-2.5">
+                                                {item.points.map((pt, pIdx) => (
+                                                    <li
+                                                        key={pIdx}
+                                                        dangerouslySetInnerHTML={{ __html: pt }}
+                                                    />
+                                                ))}
+                                            </ul>
+                                        )}
+                                    </div>
                                 </div>
-                                <div className="p-6 md:p-8">
-                                    <h4 className="text-lg md:text-xl font-semibold text-primary mb-3">{cap.title}</h4>
-                                    <p className='text-sm sm:text-[15px] text-[#5d6471] mb-3'>{cap.desc}</p>
-                                    <ul className="list-disc pl-5 text-sm sm:text-[15px] text-[#5d6471] space-y-1">
-                                        {cap.points.map((pt, idx) => (
-                                            <li key={idx}>{pt}</li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
-                </div>
+                ))}
             </section>
+
+            {/* layred cards */}
+            {
+                service?.layeredCard && (
+                    <section className="py-16 sm:py-28">
+                        <div className={`max-w-[1400px] mx-auto px-4 sm:px-6 space-y-4`}>
+                            <h2 className="text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize text-center" dangerouslySetInnerHTML={{ __html: service?.layeredCardTitle || '' }} />
+                            <p className="text-sm sm:text-[15px] text-[#5d6471] md:max-w-3xl text-center mx-auto pb-6">
+                                {service?.layeredCardDescription}
+                            </p>
+                            <div className={`grid gap-6 sm:grid-cols-2 ${service?.layeredCard?.length === 1 ? 'lg:grid-cols-1' : service?.layeredCard?.length === 2 ? 'lg:grid-cols-2' : service?.layeredCard?.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'}`}>
+                                {service?.layeredCard?.map((item, index) => (
+                                    <div
+                                        key={index}
+                                        className={`group relative overflow-hidden rounded-xl border border-gray-100 bg-white p-6 text-center transition-all duration-300
+        hover:-translate-y-1 hover:shadow-xl ${item.theme.glow}`}
+                                    >
+                                        <span
+                                            className="
+    absolute bottom-0 left-1/2 h-[3px] w-1/2
+    -translate-x-1/2 scale-x-0
+    transition-transform duration-300 ease-out
+    group-hover:scale-x-100
+    origin-center
+  "
+                                            style={{ backgroundColor: item.theme.lineColor }}
+                                        />
+
+                                        <div
+                                            className={`pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300
+          group-hover:opacity-100 bg-gradient-to-br from-transparent to-gray-50`}
+                                        />
+
+                                        <div
+                                            className={`relative mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-lg text-2xl transition-all duration-300
+          ${item.theme.bg} ${item.theme.text}
+          ${item.theme.hoverBg} ${item.theme.hoverText}`}
+                                        >
+                                            {item.icon}
+                                        </div>
+
+                                        <h3 className="relative mb-2 text-base font-semibold text-gray-900">
+                                            {item.title}
+                                        </h3>
+                                        <p className="relative text-sm leading-relaxed text-gray-600">
+                                            {item.description}
+                                        </p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+                )
+            }
+
+
+            {/* Critical Low-Level Features */}
+            {
+                service?.criticalRoles && (
+                    <section className="py-20 bg-gray-50">
+                        <div className="max-w-7xl mx-auto px-4">
+
+                            {/* Heading */}
+                            <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+                                <h2 className="text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize text-center" dangerouslySetInnerHTML={{ __html: service?.criticaltitle }} />
+                                <p className="text-sm sm:text-[15px] text-[#5d6471] md:max-w-3xl text-center mx-auto">
+                                    {
+                                        service?.criticaldesc
+                                    }
+                                </p>
+                            </div>
+
+                            {/* Cards */}
+                            <div className={`grid grid-cols-1 sm:grid-cols-2 gap-6 ${service?.criticalRoles?.length === 1 ? 'lg:grid-cols-1' : service?.criticalRoles?.length === 2 ? 'lg:grid-cols-2' : service?.criticalRoles?.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'}`}>
+                                {service?.criticalRoles?.map((item, index) => {
+                                    const Icon = item?.icon;
+                                    return (
+                                        <div
+                                            key={index}
+                                            className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300"
+                                        >
+                                            {/* Icon */}
+                                            <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition">
+                                                <Icon size={24} />
+                                            </div>
+
+                                            {/* Content */}
+                                            <h3 className="mt-5 text-lg font-semibold text-gray-900">
+                                                {item.title}
+                                            </h3>
+                                            <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+                                                {item?.desc}
+                                            </p>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+
+                        </div>
+                    </section>
+                )
+            }
 
             {/* Use Cases */}
-            <section className="bg-white py-16 sm:py-28">
-                <div className='max-w-[1400px] mx-auto px-4 sm:px-6 space-y-4'>
-                    <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize pb-4'>Use <span className='text-primary'>Cases</span> We <span className='text-primary'>Serve</span></h3>
-                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-7 items-center'>
-                        <div className="relative border-l border-[#3078fb]/40 pl-6 space-y-6">
-                            {service.useCases.map((usecase, i) => (
-                                <div key={i} className="relative group">
-                                    <div className="absolute -left-[13px] top-5 w-5 h-5 bg-white border-2 border-primary rounded-full group-hover:scale-110 transition" />
-                                    <div className="bg-[#f9fbfd] p-5 rounded-md shadow-sm hover:shadow-md transition border-b border-primary/30">
-                                        <p className="text-sm sm:text-[15px] text-[#5d6471] font-medium leading-relaxed">
-                                            {usecase}
-                                        </p>
-                                    </div>
+            {
+                service?.useCases && (
+                    <section className="bg-white py-16 sm:py-28">
+                        <div className='max-w-[1400px] mx-auto px-4 sm:px-6 space-y-4'>
+                            <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize' dangerouslySetInnerHTML={{ __html: service.useCaseTitle || '' }} />
+                            <p className="text-sm sm:text-[15px] text-[#5d6471] md:max-w-3xl">
+                                {service.useCaseDesc}
+                            </p>
+                            <div className='grid grid-cols-1 lg:grid-cols-2 gap-7 items-center'>
+                                <div className="relative border-l border-[#3078fb]/40 pl-6 space-y-6">
+                                    {service.useCases.map((usecase, i) => (
+                                        <div key={i} className="relative group">
+                                            <div className="absolute -left-[13px] top-5 w-5 h-5 bg-white border-2 border-primary rounded-full group-hover:scale-110 transition" />
+                                            <div className="bg-[#f9fbfd] p-5 rounded-md shadow-sm hover:shadow-md transition border-b border-primary/30">
+                                                <h6 className="text-sm sm:text-[15px] font-medium leading-relaxed">{i + 1}. {usecase.title}</h6>
+                                                <p className="text-sm text-[#5d6471] font-medium leading-relaxed">
+                                                    {usecase.desc}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
+                                <div className=''>
+                                    {service?.useCaseImg && (
+                                        <Image
+                                            src={service.useCaseImg}
+                                            alt="Usecase"
+                                            height={400}
+                                            width={400}
+                                            className={`object-cover w-full rounded-lg ${service?.useCases?.length >= 3 ? 'h-[350px]' : 'h-[510px]'}`}
+                                            priority
+                                        />
+                                    )}
+                                </div>
+                            </div>
                         </div>
-                        <div className=''>
-                            {service?.useCaseImg && (
-                                <Image
-                                    src={service.useCaseImg}
-                                    alt="Usecase"
-                                    height={400}
-                                    width={400}
-                                    className="object-cover h-[510px] w-full rounded-lg"
-                                    priority
-                                />
-                            )}
-                        </div>
-                    </div>
-                </div>
-            </section>
+                    </section>
+                )
+            }
 
             {/* Why eByteLogic */}
-            <section className="bg-[#f9fbfd] py-16 sm:py-28">
-                <div className="max-w-[1400px] mx-auto px-4 sm:px-6 space-y-4">
-                    <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight text-center'>Why <span className='text-primary'>eByteLogic?</span></h3>
-                    <div className='grid grid-cols-1 md:grid-cols-2 py-8 gap-3 items-center'>
-                        <div className='space-y-6 w-fit'>
-                            {service.whyChooseUs.map((reason, i) => (
-                                <div key={i} className="flex justify-start flex-wrap min-[477px]:flex-nowrap gap-4 items-center">
-                                    <div className="min-w-[50px] text-[#d1e2fc] text-4xl font-black select-none pointer-events-none leading-none">
-                                        0{i + 1}
-                                    </div>
-                                    <div className='w-fit'>
-                                        <p className="text-sm sm:text-[15px] text-[#5d6471] font-medium">
-                                            {reason}
-                                        </p>
-                                    </div>
+            {
+                service?.whyChooseUs && (
+                    <section className="bg-[#f9fbfd] py-16 sm:py-28">
+                        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 space-y-4">
+                            <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight text-center' dangerouslySetInnerHTML={{ __html: service.whyTitle || '' }} />
+                            <p className="text-sm text-[#5d6471] md:max-w-3xl text-center mx-auto">{service.whyDesc}</p>
+                            <div className='grid grid-cols-1 md:grid-cols-2 py-8 gap-3 items-center'>
+                                <div className='space-y-8 w-fit'>
+                                    {service.whyChooseUs.map((reason, i) => (
+                                        <div key={i} className="flex justify-start flex-wrap min-[477px]:flex-nowrap gap-4 items-center">
+                                            <div className="min-w-[50px] text-[#d1e2fc] text-4xl font-black select-none pointer-events-none leading-none">
+                                                0{i + 1}
+                                            </div>
+                                            <div className='w-fit'>
+                                                <p className="text-sm sm:text-[15px] text-[#5d6471] font-medium" dangerouslySetInnerHTML={{ __html: reason }} />
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
-                            ))}
+                                {service?.whyImg && (
+                                    <Image
+                                        src={service?.whyImg}
+                                        alt="Usecase"
+                                        width={500} className={`rounded-2xl mt-4 object-cover md:mt-0 mx-auto ${service?.whyChooseUs?.length >= 3 ? 'h-[250px]' : 'h-[350px]'}    `}
+                                    />
+                                )}
+                            </div>
                         </div>
-                        {service?.whyImg && (
-                            <Image
-                                src={service?.whyImg}
-                                alt="Usecase"
-                                width={500} className='rounded-2xl mt-4 h-[350px] object-cover md:mt-0 mx-auto'
-                            />
-                        )}
-                    </div>
-                </div>
-            </section>
+                    </section>
+                )
+            }
 
             {/* CTA */}
             <section className="bg-white py-16 sm:py-28 bg-[url('/images/image.png')] bg-cover bg-bottom">
@@ -582,7 +973,7 @@ const ServiceDetailsInfo = ({ meta }) => {
                                     {item.Ctadescription}
                                 </p>
                                 <Button onClick={() => router.push('/contact-us')}
-                                    variant="default" className='w-full sm:w-fit mx-auto text-center flex items-center justify-center gap-1'
+                                    variant="default" className='w-fit mx-auto text-center flex items-center justify-center gap-1'
                                 >
                                     {item.ctaButtonText}
                                     <GoArrowRight className="text-xl" />
@@ -592,6 +983,29 @@ const ServiceDetailsInfo = ({ meta }) => {
                     ) : (
                         <p>No CTA data available.</p>
                     )}
+                </div>
+            </section>
+
+            {/* faq */}
+            <section className="bg-[#f5f8fb] pb-16 pt-16 md:pt-24">
+                <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
+                    <h2 className="text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize mb-2" dangerouslySetInnerHTML={{ __html: service?.faqTitle || '' }} />
+                    <div className="grid xl:grid-cols-3 items-center gap-12">
+                        <div className="xl:col-span-2 xl:max-w-[800px]">
+                            <FAQAccordion
+                                faqs={service?.faqs}
+                                title="Frequently Asked Questions"
+                            />
+                        </div>
+
+                        <Image
+                            src={FaqHomePng}
+                            alt="faq"
+                            className="mx-auto size-80 sm:size-auto"
+                            width={500}
+                            height={500}
+                        />
+                    </div>
                 </div>
             </section>
         </div>

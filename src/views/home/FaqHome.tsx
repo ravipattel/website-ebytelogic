@@ -4,8 +4,9 @@ import Image from "next/image";
 import { useState } from "react";
 
 import FaqHomePng from '@/src/assets/images/home/faqHome.png'
+import FAQAccordion from "@/src/components/Faq";
 
-export default function UniqueFAQAccordion() {
+export default function FaqHome() {
   const [open, setOpen] = useState<number | null>(null);
 
   const faqs = [
@@ -33,68 +34,25 @@ export default function UniqueFAQAccordion() {
 
   return (
     <section className="bg-[#f5f8fb] pb-16 pt-16 md:pt-24">
-      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 space-y-6">
-        <h2 className="text-3xl font-medium text-gray-900">
-          Frequently Asked Questions
-        </h2>
-
-        <div className="grid xl:grid-cols-3 items-start gap-12">
-          <div className="space-y-3 xl:col-span-2 xl:max-w-[800px]">
-            {faqs.map((item, index) => {
-              const isOpen = open === index;
-
-              return (
-                <div key={index} className="relative overflow-hidden">
-                  <div
-                    className={`absolute inset-0 z-0 origin-left bg-gradient-to-r from-blue-100 to-blue-50 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${isOpen ? "scale-x-100" : "scale-x-0"
-                      }`}
-                  />
-
-                  <button
-                    onClick={() => setOpen(isOpen ? null : index)}
-                    className="relative w-full text-left px-4 lg:px-6 py-4 flex items-center justify-between cursor-pointer"
-                  >
-                    <h3
-                      className={`text-base sm:text-lg xl:text-[19px] font-medium transition-colors duration-300 max-w-[90%]  ${isOpen ? "text-blue-700" : "text-gray-900"
-                        }`}
-                    >
-                      {index + 1}. {item.q}
-                    </h3>
-
-                    <span
-                      className={`text-2xl font-light transition-transform duration-300 ${isOpen
-                          ? "rotate-45 text-blue-600"
-                          : "text-gray-400"
-                        }`}
-                    >
-                      +
-                    </span>
-                  </button>
-
-                  <div
-                    className={`relative px-4 lg:px-6 overflow-hidden transition-all duration-500 ease-in-out will-change-[max-height,opacity,transform] ${isOpen
-                        ? "max-h-[900px] opacity-100 translate-y-0 pb-4"
-                        : "max-h-0 opacity-0 -translate-y-2 pb-0"
-                      }`}
-                  >
-                    <p className="text-gray-600 text-sm leading-relaxed">
-                      {item.a}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          <Image
-            src={FaqHomePng}
-            alt="faq"
-            className="mx-auto xl:mx-0 lg:sticky lg:top-28 size-80 sm:size-auto"
-            width={500}
-            height={500}
+    <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
+      <h2 className="text-2xl sm:text-[34px] font-medium text-primaryText leading-tight mb-8">Frequently Asked <span className="text-primary">Questions</span></h2>
+      <div className="grid xl:grid-cols-3 items-start gap-12">
+        <div className="xl:col-span-2 xl:max-w-[800px]">
+          <FAQAccordion
+            faqs={faqs}
+            title="Frequently Asked Questions"
           />
         </div>
+
+        <Image
+          src={FaqHomePng}
+          alt="faq"
+          className="mx-auto xl:mx-0 lg:sticky lg:top-28 size-80 sm:size-auto"
+          width={500}
+          height={500}
+        />
       </div>
-    </section>
+    </div>
+  </section>
   );
 }

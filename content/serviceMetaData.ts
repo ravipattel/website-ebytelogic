@@ -7,15 +7,15 @@ export type ServiceMeta = {
 export const serviceMetaData = {
   "multimedia-framework": {
     id: "multimedia-framework",
-    title: "Embedded Multimedia Framework Development Services",
+    title: "Embedded Multimedia Framework Development | Custom AV Solutions",
     description:
-      "Need custom multimedia solutions? We offer Multimedia framework development services and tuning, specializing in AV sync and low-latency pipelines."
+      "Expert multimedia framework development services for real-time video. We provide custom multimedia solutions using GStreamer & FFmpeg for embedded systems."
   },
   "embedded-bsp-development": {
     id: "embedded-bsp-development",
-    title: "Expert Embedded Software Development Services | eByteLogic",
+    title: "BSP Development for Embedded Systems | Expert BSP Developer",
     description:
-      "Full-cycle embedded software development services for complex hardware. We deliver robust embedded systems software, design, and embedded software solutions."
+      " Get tailored BSP development for embedded systems. As a leading BSP developer, we provide custom Linux, Android, and MCU solutions to accelerate your hardware launch."
   },
   "embedded-application-development": {
     id: "embedded-application-development",
@@ -25,9 +25,9 @@ export const serviceMetaData = {
   },
   "multi-platform-qa-test-automation": {
     id: "multi-platform-qa-test-automation",
-    title: "Multi-platform QA & Test Automation Services | eByteLogic",
+    title: "Embedded QA & Automation Testing Services | eByteLogic",
     description:
-      "Automate testing for embedded devices with eByteLogic. From regression and protocol validation to CI/CD pipelines — we ensure quality, reliability, and faster release cycles."
+      "Professional embedded software testing and QA automation. We provide specialized embedded system testing to ensure performance, security, and hardware reliability."
   },
 }
 

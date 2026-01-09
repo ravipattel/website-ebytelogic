@@ -46,7 +46,7 @@ const menuItems: MenuItem[] = [
     label: "Services",
     path: "/services",
     subItems: [
-      { icon: SoftwareIconPng, label: "Embedded App Development", path: "/services/embedded-application-development" },
+      { icon: SoftwareIconPng, label: "Embedded Application Development", path: "/services/embedded-application-development" },
       { icon: LinuxIconPng, label: "Embedded BSP Development", path: "/services/embedded-bsp-development" },
       { icon: FrameworkIconPng, label: "Multimedia & Streaming Frameworks", path: "/services/multimedia-framework" },
       { icon: QaIconPng, label: "Multi-platform QA & Test Automation", path: "/services/multi-platform-qa-test-automation" },
