@@ -12,7 +12,7 @@ const WhyChooseEByteLogic = () => {
     return (
         <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
             <div className="max-w-[1400px] mx-auto text-center space-y-4">
-                <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize'>  🚀 Why Choose <span className="text-[#3078fb]">eByteLogic</span>?</h3>
+                <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight'>  🚀 Why Choose <span className="text-[#3078fb]">eByteLogic</span>?</h3>
                 <div className='space-y-1'>
                     <p className='text-sm sm:text-[15px] text-[#5d6471]'>Trusted by Innovators. Proven Across Industries.</p>
                     <p className='text-sm sm:text-[15px] text-[#5d6471]'>We Speak Embedded – From Concept to Commercialization.</p>

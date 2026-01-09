@@ -893,7 +893,7 @@ const ServiceDetailsInfo = ({ meta }) => {
                 service?.useCases && (
                     <section className="bg-white py-16 sm:py-28">
                         <div className='max-w-[1400px] mx-auto px-4 sm:px-6 space-y-4'>
-                            <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize' dangerouslySetInnerHTML={{ __html: service.useCaseTitle || '' }} />
+                            <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight' dangerouslySetInnerHTML={{ __html: service.useCaseTitle || '' }} />
                             <p className="text-sm sm:text-[15px] text-[#5d6471] md:max-w-3xl">
                                 {service.useCaseDesc}
                             </p>
