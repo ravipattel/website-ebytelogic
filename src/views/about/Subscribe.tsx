@@ -28,7 +28,8 @@ const Subscribe = ({ className }: subscribeProps) => {
                         Partner with a team trusted by global OEMs, startups, and innovation leaders.
                     </p>
                     <div className="flex justify-start">
-                        <Button onClick={() => router.push('/contact-us')}>Book a Free Consultation</Button>
+                        {/* <Button onClick={() => router.push('/contact-us')}>Book a Free Consultation</Button> */}
+                        <Button onClick={() => window.open('https://outlook.office.com/book/MeetingwithRaviPatel@ebytelogic.com/?ismsaljsauthenabled=true', '_blank')}>Book a Free Consultation</Button>
                     </div>
                 </div>
             </div>
