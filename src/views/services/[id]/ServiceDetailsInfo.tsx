@@ -446,142 +446,164 @@ const serviceData = [
         id: "multi-platform-qa-test-automation",
         imageName: QaJPg,
         pathText: "Multi-platform QA & Test Automation",
-        category: "Embedded QA & Automation Testing Services",
+        category: "QA & Automation Testing Services",
         tagLine: "Embedded Platforms | Mobile Companion Apps | Web Control Interfaces",
-        overview: ["Software failure isn't just a bug, it’s a product recall. eByteLogic provides specialized embedded software testing designed to validate performance, stability, and reliability at scale. From low-level kernel validation to high-level application stress tests, we ensure your hardware is production-ready."],
+        overview: ["Today’s products operate as interconnected ecosystems where hardware and software must be perfectly synchronized. At eByteLogic, we provide specialized qa automation testing services for embedded systems, web platforms, and mobile applications as distinct yet integrated pillars.","From low-level firmware stability to cloud-driven web dashboards and user-facing mobile apps, we validate each layer with equal rigor. Our approach ensures your entire product is secure, stable, and production-ready by testing how it actually performs in the field, rather than in isolation."],
         btnPrimaryText: "Request a Test Strategy",
         btnSecondaryText: "View Our Process",
         capabilitySections: [
             {
                 title: "Comprehensive Automation QA Testing Services",
                 description:
-                    "Generic testing firms often struggle with the timing and hardware constraints of embedded devices. At eByteLogic, every embedded qa tester on our team understands the relationship between code and circuitry.",
+                    "Our frameworks provide balanced coverage across all three platforms to ensure total system reliability.",
                 capabilities: [
                     {
-                        title: "Automated Embedded Testing",
+                        title: "Embedded Systems QA",
                         desc:
-                            "We build custom validation pipelines that simulate real-world conditions. Our qa automation testing services include:",
+                            "Validation of hardware-dependent software and system behavior.",
                         points: [
-                            "<span class='font-semibold'>Hardware-in-the-Loop (HIL) Testing:</span> Validating software performance on actual target hardware.",
-                            "<span class='font-semibold'>Regression Automation:</span>  Continuous testing of new builds to ensure feature updates don't break existing functionality.",
-                            "<span class='font-semibold'>Interface Simulation: </span> Simulating sensor data and peripheral inputs to test system response in a controlled environment.",
+                            "<span class='font-semibold'>Embedded Software Testing: </span> BSP, bootloader, and firmware validation.",
+                            "<span class='font-semibold'>Interface Testing:</span>  Expert embedded system testing for I²C, SPI, UART, CAN, and GPIO.",
+                            "<span class='font-semibold'>Reliability: </span> Power, thermal, and long-running stability validation.",
                         ],
                     },
                     {
-                        title: "System-Level & Stress Testing",
+                        title: "Web Application QA",
                         desc:
-                            "Hardware must endure long hours of operation. We specialize in the testing of embedded software under extreme conditions:",
+                            "Testing the web platforms that configure, control, or monitor your devices.",
                         points: [
-                            "<span class='font-semibold'>Long-Haul Stability:</span> 24/7 stress tests to detect memory leaks and thermal issues.",
-                            "<span class='font-semibold'>Edge Case Validation:</span>  Testing how your system handles power loss, signal interference, and unexpected inputs.",
-                            "<span class='font-semibold'>Compliance & Security: </span> Ensuring your embedded system testing covers secure boot validation and data encryption standards.",
+                            "<span class='font-semibold'>Dashboard Testing: </span>  Functional and regression testing of web interfaces.",
+                            "<span class='font-semibold'>Integration:</span>  API and backend validation for real-time device communication.",
+                            "<span class='font-semibold'>Robustness: </span> Failure handling under device disconnects and partial data states.",
+                        ],
+                    },
+                    {
+                        title: "Mobile Application QA",
+                        desc:
+                            "Ensuring reliable mobile experiences connected to your hardware.",
+                        points: [
+                            "<span class='font-semibold'>Cross-Platform: </span>  Android and iOS application testing for companion apps.",
+                            "<span class='font-semibold'>Connectivity:</span> Device-to-app communication validation and recovery testing.",
+                            "<span class='font-semibold'>UX Stability: </span> Upgrade and error-handling scenarios for embedded software applications.",
+                        ],
+                    },
+                    {
+                        title: "Test Automation Framework Development",
+                        desc:
+                            "Unified qa automation testing services across the entire stack.",
+                        points: [
+                            "<span class='font-semibold'>Custom Frameworks: </span> Python-based automation (PyTest) and custom test harnesses.",
+                            "<span class='font-semibold'>HIL Testing:</span> Hardware-in-the-loop and simulation-assisted testing for testing of embedded software.",
+                            "<span class='font-semibold'>Automation at Scale: </span> Reusable test suites that bridge hardware, UI, and APIs.",
+                        ],
+                    },
+                ],
+            },
+            {
+                title: "The Benefits of Multi-Platform QA Testing",
+                description:
+                    `Generic QA approaches test platforms in isolation. eByteLogic provides a "System-First" strategy that validates the entire ecosystem to uncover failures that only appear at the boundaries where hardware and software meet.`,
+                capabilities: [
+                    {
+                        title: "Benefits for Embedded Systems",
+                        desc:
+                            "Choosing a specialized embedded qa tester ensures that your core hardware logic is indestructible.",
+                        points: [
+                            "<span class='font-semibold'>Hardware-Aware Validation: </span> We validate how firmware handles physical realities—like power fluctuations, thermal limits, and signal interference—that standard software testers miss.",
+                            "<span class='font-semibold'>Deterministic Reliability:</span> Our embedded software testing ensures that timing-critical tasks remain accurate, preventing system crashes or data corruption during long-haul operations.",
+                            "<span class='font-semibold'>Reduced Recall Risk: </span> By using embedded system testing to catch low-level bugs during the bring-up phase, we save you from high-cost hardware revisions and product recalls.",
+                        ],
+                    },
+                    {
+                        title: "Benefits for Web Platforms",
+                        desc:
+                            "Testing the dashboard alongside the hardware ensures your control center is always in sync with your fleet.",
+                        points: [
+                            "<span class='font-semibold'>Data Integrity & Sync: </span> We ensure that the real-time data from your sensors is reflected accurately on your web dashboard without latency or formatting errors.",
+                            "<span class='font-semibold'>Scalability Testing: </span>  We validate that your web backend can handle concurrent data streams from thousands of devices without performance degradation.",
+                            "<span class='font-semibold'>Failure Recovery: </span> Our testing of embedded software includes simulating device disconnects to ensure the web platform handles partial data states gracefully.",
+                        ],
+                    },
+                    {
+                        title: "Benefits for Mobile Applications",
+                        desc:
+                            "Mobile-to-hardware connectivity is the most common point of failure for end-users. We eliminate that risk.",
+                        points: [
+                            "<span class='font-semibold'>Seamless Connectivity: </span> We rigorously test BLE, Wi-Fi, and NFC handshakes between the mobile app and your embedded hardware to ensure a frustration-free user experience.",
+                            "<span class='font-semibold'>Network Resilience:</span> We simulate real-world mobile conditions (signal loss, 4G to 5G switching) to ensure your app recovers and re-syncs with the hardware instantly.",
+                            `<span class='font-semibold'>Fail-Safe Updates: </span> Our qa automation testing services include validating mobile-triggered Over-the-Air (OTA) updates to ensure they never "brick" a device in the field.`,
                         ],
                     },
                 ],
             },
         ],
-
-        criticaltitle: "Our Layered <span class='text-primary'>Approach</span> to <span class='text-primary'>Embedded QA</span>",
-        criticaldesc: "We believe that embedded qa should be integrated into every stage of the development lifecycle, not just at the end.",
+        criticaltitle: "Our Layered <span class='text-primary'>Approach</span> to <span class='text-primary'>QA</span>",
+        criticaldesc: "We integrate embedded qa across the product lifecycle—not as a final checkpoint.",
         criticalRoles: [
             {
-                title: "Unit & Integration Testing",
+                title: "Unit & Component Validation",
                 desc:
-                    "Testing individual drivers and software modules for logic errors.",
+                    "Testing individual modules, APIs, and app components.",
                 icon: RiUserCommunityLine,
             },
             {
-                title: "BSP & Kernel Validation",
+                title: "Platform-Level Validation",
                 desc:
-                    "Ensuring the Board Support Package is stable and optimized for the SoC.",
+                    "Ensuring embedded, web, and mobile systems are independently stable.",
                 icon: GrValidate,
             },
             {
-                title: "Multimedia & Streaming QA",
+                title: "System-Level Integration Testing",
                 desc:
-                    "Specialized testing for AV sync, frame drops, and latency in video pipelines.",
+                    "Validating real-world workflows across devices, apps, and networks.",
                 icon: GrMultimedia,
             },
             {
-                title: "CI/CD for Embedded",
+                title: "Release & Update Validation",
                 desc:
-                    "Integrating automated test suites into your DevOps pipeline for rapid, reliable releases.",
+                    "Testing OTA updates and app releases together to prevent field regressions.",
                 icon: PiDiscDuotone,
             },
         ],
-        layeredCardTitle: "The Benefits of Specialized <span class='text-primary'>Embedded Software</span> Testing",
-        layeredCardDescription: "Choosing an expert embedded qa tester over a general software firm provides several critical advantages:",
-        layeredCard: [
+        useCaseImg: LinuxUsecase,
+        useCaseTitle: 'Why Choose <span class="text-primary">eByteLogic</span> for Multi-Platform <span class="text-primary">QA</span>',
+        useCaseDesc: "Choosing a specialized qa tester who understands the full ecosystem provides clear advantages:",
+        whyImg: LinuxWhy,
+        useCases: [
             {
-                id: 1,
-                title: "Hardware Awareness",
-                description:
-                    "We understand interrupts, timing accuracy, and memory constraints.",
-                icon: <HiOutlineRefresh />,
-                theme: {
-                    bg: "bg-orange-50",
-                    text: "text-orange-600",
-                    hoverBg: "group-hover:bg-orange-600",
-                    hoverText: "group-hover:text-white",
-                    glow: "group-hover:shadow-orange-200/60",
-                    lineColor: "#f54a00"
-                },
+                title: "Balanced Expertise",
+                desc:
+                    "We bring deep experience across embedded systems, web platforms, and mobile apps, not just one layer.",
             },
             {
-                id: 2,
-                title: "Deterministic Results",
-                description:
-                    "Our frameworks are designed to handle the non-deterministic nature of real-world hardware signals.",
-                icon: <HiMiniShieldCheck />,
-                theme: {
-                    bg: "bg-purple-50",
-                    text: "text-purple-600",
-                    hoverBg: "group-hover:bg-purple-600",
-                    hoverText: "group-hover:text-white",
-                    glow: "group-hover:shadow-purple-200/60",
-                    lineColor: "#4f39f6"
-                },
+                title: "System-First Testing",
+                desc:
+                    "Our embedded software testing focuses on how platforms interact, not just isolated test cases.",
             },
             {
-                id: 3,
-                title: "Reduced Time-to-Market",
-                description:
-                    "Automated suites catch bugs early in the bring-up phase, preventing late-stage launch delays.",
-                icon: <IoTimeOutline />,
-                theme: {
-                    bg: "bg-green-50",
-                    text: "text-green-600",
-                    hoverBg: "group-hover:bg-green-600",
-                    hoverText: "group-hover:text-white",
-                    glow: "group-hover:shadow-green-200/60",
-                    lineColor: "#00a63e"
-                },
+                title: "Real-World Modeling",
+                desc:
+                    "We test for network loss, power cycles, and user behavior rather than ideal lab conditions.",
             },
             {
-                id: 4,
-                title: "Cost Efficiency",
-                description:
-                    "Automated embedded testing reduces the need for manual bench testing and expensive physical troubleshooting.",
-                icon: <MdAttachMoney />,
-                theme: {
-                    bg: "bg-green-50",
-                    text: "text-green-600",
-                    hoverBg: "group-hover:bg-green-600",
-                    hoverText: "group-hover:text-white",
-                    glow: "group-hover:shadow-green-200/60",
-                    lineColor: "#00a63e"
-                },
-            },
+                title: "Reduced Release Risk",
+                desc:
+                    "Early detection of cross-platform failures shortens cycles and prevents post-launch fixes.",
+            }
         ],
         cta: [
             {
                 ctaTitle: "<span class='text-primary'>Stability</span> You Can Launch With.",
-                Ctadescription: "Don’t risk your brand's reputation on unvalidated software. Partner with an embedded software testing team that brings engineering clarity to the QA process. Whether you need a one-time system audit or a long-term automation partner, our experts are ready to ensure your product is flawless from day one.",
+                Ctadescription: "Don’t risk your brand's reputation on unvalidated software. Partner with an embedded software testing team that brings engineering clarity to the QA process, from the chip to the cloud. Whether you need a one-time system audit or a long-term automation partner, our experts are ready to ensure your product is flawless from day one.",
                 ctaButtonText: "Contact",
             }
         ],
         faqTitle: "<span class='text-primary'>FAQ:</span>  Embedded QA & System Testing",
         faqs: [
+            {
+                q: "How does your testing cover both apps and hardware?",
+                a: "Most embedded testing is siloed, but we provide integrated qa automation testing services. We test the firmware, the hardware communication (I2C, SPI, CAN), and the mobile/web applications simultaneously to ensure the entire system works as a single, stable unit."
+            },
             {
                 q: "How does embedded testing differ from web or mobile testing?",
                 a: "Embedded system testing requires specialized knowledge of hardware communication protocols (I2C, SPI, CAN) and real-time operating systems. Unlike web apps, embedded software must be tested for power consumption, thermal limits, and physical hardware interaction."
@@ -918,7 +940,7 @@ const ServiceDetailsInfo = ({ meta }) => {
                                             alt="Usecase"
                                             height={400}
                                             width={400}
-                                            className={`object-cover w-full rounded-lg ${service?.useCases?.length >= 3 ? 'h-[350px]' : 'h-[510px]'}`}
+                                            className={`object-cover w-full rounded-lg ${service?.useCases?.length <= 3 ? 'h-[350px]' : 'h-[510px]'}`}
                                             priority
                                         />
                                     )}

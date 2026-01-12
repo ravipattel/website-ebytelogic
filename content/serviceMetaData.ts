@@ -25,9 +25,9 @@ export const serviceMetaData = {
   },
   "multi-platform-qa-test-automation": {
     id: "multi-platform-qa-test-automation",
-    title: "Embedded QA & Automation Testing Services | eByteLogic",
+    title: "QA & Automation Testing Services | eByteLogic",
     description:
-      "Professional embedded software testing and QA automation. We provide specialized embedded system testing to ensure performance, security, and hardware reliability."
+      "Professional qa automation testing services for web, mobile, and hardware. We provide specialized embedded software testing to ensure performance and reliability."
   },
 }
 
