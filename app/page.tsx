@@ -1,6 +1,7 @@
 import React from 'react'
 import Home from '@/src/views/home'
 import JsonLd from '@/src/components/JsonLd';
+import { faqsData } from '@/content/homeFaqData';
 
 const org = {
   "@context": "https://schema.org",
@@ -80,6 +81,13 @@ const breadCrumbList = {
   ]
 }
 
+const fetchFaqsData = () => {
+  return faqsData.map((faq) => ({
+    q: faq.q,
+    a: faq.a,
+  }));
+};
+
 export const metadata = {
   title: "eByteLogic | Embedded Software Development Company",
   description: "eByteLogic is the expert in embedded software development, specialising in BSP development and low-latency streaming. Book your embedded software consulting​ today.",
@@ -87,6 +95,21 @@ export const metadata = {
 };
 
 const HomePage = () => {
+  const faqItems = fetchFaqsData();
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+  
   return (
     <>
       <JsonLd json={org} />
@@ -94,6 +117,7 @@ const HomePage = () => {
       <JsonLd json={onlineBusiness2} />
       <JsonLd json={product} />
       <JsonLd json={breadCrumbList} />
+      <JsonLd json={faqSchema} />
       <Home />
     </>
   )

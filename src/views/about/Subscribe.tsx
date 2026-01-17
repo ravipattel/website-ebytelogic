@@ -1,6 +1,5 @@
 'use client'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation';
 
 import React from 'react'
 
@@ -13,7 +12,6 @@ interface subscribeProps {
 }
 
 const Subscribe = ({ className }: subscribeProps) => {
-    const router = useRouter();
     return (
         <section className={`max-w-[1400px] mx-auto pb-8 md:pb-16 px-4 sm:px-6 relative lg:px-8 ${className}`}>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 items-center p-8 shadow-xl bg-white z-20 rounded-2xl border-t-2 border-primary">
@@ -28,7 +26,6 @@ const Subscribe = ({ className }: subscribeProps) => {
                         Partner with a team trusted by global OEMs, startups, and innovation leaders.
                     </p>
                     <div className="flex justify-start">
-                        {/* <Button onClick={() => router.push('/contact-us')}>Book a Free Consultation</Button> */}
                         <Button onClick={() => window.open('https://outlook.office.com/book/MeetingwithRaviPatel@ebytelogic.com/?ismsaljsauthenabled=true', '_blank')}>Book a Free Consultation</Button>
                     </div>
                 </div>

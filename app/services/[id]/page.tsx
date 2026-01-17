@@ -1,3 +1,4 @@
+import { serviceData } from '@/content/serviceData';
 import { serviceMetaData } from '@/content/serviceMetaData';
 import JsonLd from '@/src/components/JsonLd';
 import ServiceDetail from '@/src/views/services/[id]'
@@ -41,10 +42,30 @@ export async function generateMetadata({ params }) {
     };
 }
 
+const fetchFaqsData = (id: string) => {
+  return serviceData.find((service) => service.id === id)?.faqs.map((faq) => ({
+    q: faq.q,
+    a: faq.a,
+  }));
+};
+
 const ServiceDetailsPage = async ({ params }) => {
     const { id } = await params;
     const metaTitle = serviceMetaData[id]?.title || "eByteLogic Services";
+    const faqItems = fetchFaqsData(id);
 
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqItems?.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.a,
+        },
+      })),
+    };
     const breadCrumbList = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -74,6 +95,8 @@ const ServiceDetailsPage = async ({ params }) => {
         <>
             <JsonLd json={breadCrumbList} />
             <ServiceDetail serviceid={id} />
+            <JsonLd json={faqSchema} />
+    
         </>
     );
 };
