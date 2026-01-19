@@ -31,12 +31,14 @@ const onlineBusiness1 = {
   "@context": "https://schema.org",
   "@type": "OnlineBusiness",
   "name": "eByteLogic",
+  "image": ["https://www.ebytelogic.com/logo.png"],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "913, Silver Trade Center, near VIP Circle, Mota Varachha,",
     "addressLocality": "Surat",
     "addressRegion": "Gujarat",
-    "postalCode": "394101"
+    "postalCode": "394101",
+    "addressCountry": "IN"
   },
   "telePhone": "+91 90332 23700"
 }
@@ -45,12 +47,14 @@ const onlineBusiness2 = {
   "@context": "https://schema.org",
   "@type": "OnlineBusiness",
   "name": "eByteLogic",
+  "image": ["https://www.ebytelogic.com/logo.png"],
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "1114, Ganesh Glory, Jagatpur Rd, S.G. Highway, Gota,",
     "addressLocality": "Ahmedabad",
     "addressRegion": "Gujarat",
-    "postalCode": "382481"
+    "postalCode": "382481",
+    "addressCountry": "IN"
   },
   "telePhone": "+91 90332 23700"
 }

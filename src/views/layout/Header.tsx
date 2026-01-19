@@ -5,21 +5,17 @@ import { useRouter, usePathname } from "next/navigation";
 
 import { useState } from "react";
 import {
-  FaTwitter,
-  FaPhoneSquareAlt, FaRegClock, FaSearch,
+  FaPhoneSquareAlt, FaRegClock,
   FaLinkedinIn,
-  FaYoutube,
   FaGoogle
 } from "react-icons/fa";
-import { IoMdMail, IoMdMenu, IoMdClose, IoLogoGithub } from "react-icons/io";
+import { IoMdMail, IoMdMenu, IoMdClose } from "react-icons/io";
 
 import Button from "@/src/components/Button";
 
 import LogoPng from '@/src/assets/images/logo.png';
-import AndroidIconPng from '@/src/assets/images/icons/androidIcon.png';
 import FrameworkIconPng from '@/src/assets/images/icons/frameworkIcon.png';
 import LinuxIconPng from '@/src/assets/images/icons/linuxIcon.png';
-import SdkIconPng from '@/src/assets/images/icons/sdk.png';
 import SoftwareIconPng from '@/src/assets/images/icons/softwareIcon.png';
 import QaIconPng from '@/src/assets/images/icons/qaIcon.png';
 

@@ -1,3 +1,4 @@
+import { embeddedLinuxFaqs, embeddedTestingFaqs, generalFaqs, iotMobileIntegrationFaqs, multimediaFaqs } from '@/content/pageFaqData';
 import JsonLd from '@/src/components/JsonLd';
 import Faqs from '@/src/views/faqs'
 import React from 'react'
@@ -38,10 +39,38 @@ const breadCrumbList = {
   ]
 }
 
+const faqsData = [
+  ...generalFaqs,
+  ...multimediaFaqs,
+  ...embeddedLinuxFaqs,
+  ...embeddedTestingFaqs,
+  ...iotMobileIntegrationFaqs,
+];
+
+const fetchFaqsData = () => {
+  return faqsData.map((faq) => ({
+    question: faq.question,
+    answer: faq.answer,
+  }));
+};
+
 const FaqsPage = () => {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: fetchFaqsData().map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
   return (
     <div>
       <JsonLd json={breadCrumbList} />
+      <JsonLd json={faqSchema} />
       <Faqs />
     </div>
   )

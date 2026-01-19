@@ -5,8 +5,9 @@ import { PiDiscDuotone } from 'react-icons/pi';
 import { GrMultimedia, GrValidate } from "react-icons/gr";
 import { CgPullClear } from 'react-icons/cg';
 import { IoSettings } from 'react-icons/io5';
-import { MdOutlineTipsAndUpdates } from 'react-icons/md';
-import { RiUserCommunityLine } from 'react-icons/ri';
+import { GiCyberEye, GiProfit } from "react-icons/gi";
+import { MdOutlineAccessTime, MdOutlineTipsAndUpdates, MdSupportAgent } from 'react-icons/md';
+import { RiSoundModuleLine, RiUserCommunityLine } from 'react-icons/ri';
 import { FaCloud, FaLayerGroup, FaMicrochip, FaShieldAlt, FaSyncAlt } from 'react-icons/fa';
 import { HiMiniUserGroup, HiOutlineDevicePhoneMobile } from "react-icons/hi2";
 
@@ -18,6 +19,7 @@ import useCaseEmbedded from '@/src/assets/images/services/useCaseEmbedded.png'
 import LinuxUsecase from '@/src/assets/images/services/linuxUsecase.png'
 import LinuxWhy from '@/src/assets/images/services/linuxWhy.png'
 import StreamingWhy from '@/src/assets/images/services/streamingWhy.png'
+import LinuxBspPng from '@/src/assets/images/services/linuxBsp.png'
 
 export const serviceData = [
     {
@@ -232,6 +234,7 @@ export const serviceData = [
                     "Every project has unique demands. We provide specialized bsp development for embedded systems across the most reliable environments:",
                 capabilities: [
                     {
+                        id: "linux-bsp-development",
                         title: "Linux BSP",
                         desc:
                             "With deep-domain expertise, we customize Linux-based embedded systems to meet unique device requirements using Yocto and Buildroot.",
@@ -328,6 +331,257 @@ export const serviceData = [
                 q: "Can you create a custom BSP for my specific hardware?",
                 a: "Yes. We specialize in taking custom carrier boards and SoMs (System on Modules) and developing a fully functional, production-grade BSP from scratch."
             }
+        ],
+        subservice: [
+            {
+                bgImg: '/images/bg/serviceBg/linuxBspbg.png',
+                id: "linux-bsp-development",
+                category: "Linux BSP Development Services",
+                pathText: "Linux BSP Development",
+                tagLine: "U-Boot, Kernel, Drivers | Silicon to System | Secure & Real-Time Linux",
+                imageName: LinuxBspPng,
+                overview:
+                    ["A Board Support Package is the foundation of your product’s reliability. At eByteLogic, we provide professional linux BSP development services that bridge the gap between your custom hardware and the application layer. We specialize in creating stable, secure, and high-performance linux board support packages tailored to your specific SoC and peripheral requirements."],
+                btnPrimaryText: "Consult with a Linux Expert",
+                btnSecondaryText: "View Case Studies",
+                capabilitySections: [
+                    {
+                        title: "Our Linux BSP Development Process",
+                        description:
+                            "We follow a structured, 5-stage embedded linux BSP development process to move your project from a schematic to a shipping product.",
+                        capabilities: [
+                            {
+                                title: "Requirement & Hardware Audit",
+                                desc:
+                                    "We analyze your schematics, SoC datasheets, and peripheral requirements to define the optimal build strategy.",
+                            },
+                            {
+                                title: "Board Bring-Up & Validation",
+                                desc:
+                                    "We perform initial bootloader configuration (U-Boot) and hardware validation to ensure all silicon blocks are responsive.",
+                            },
+                            {
+                                title: "Kernel & Driver Engineering",
+                                desc:
+                                    "Our team handles the heavy lifting of BSP development in linux, writing or porting drivers for I2C, SPI, CAN, and high-speed PCIe interfaces.",
+                            },
+                            {
+                                title: "System Hardening & Optimization",
+                                desc:
+                                    "We implement Secure Boot, optimize boot times to seconds, and harden the OS against unauthorized access.",
+                            },
+                            {
+                                title: "Deployment & Long-Term Support",
+                                desc:
+                                    "We provide manufacturing-ready images and ongoing CVE monitoring to protect your device throughout its lifecycle.",
+                            },
+                        ],
+                    },
+                    {
+                        title: "Supported Linux Distributions",
+                        description:
+                            "We bring deep linux board support package expertise to the industry’s most trusted distributions and build systems:",
+                        capabilities: [
+                            {
+                                title: "Yocto Linux & OpenEmbedded",
+                                desc:
+                                    "Creating highly specialized, reproducible meta-layers for enterprise-grade products.",
+                            },
+                            {
+                                title: "Buildroot",
+                                desc:
+                                    "Developing lightweight, ultra-fast-booting images for resource-constrained hardware.",
+                            },
+                            {
+                                title: "Debian-based or Ubuntu BSPs",
+                                desc:
+                                    "Tailoring popular distributions for industrial applications requiring extensive package support.",
+                            },
+                            {
+                                title: "OpenWRT",
+                                desc:
+                                    "Specialized development for networking equipment, routers, and IoT gateways.",
+                            },
+                            {
+                                title: "Red Hat Linux",
+                                desc:
+                                    "Enterprise-level Linux solutions for mission-critical and server-class embedded applications.",
+                            },
+                            {
+                                title: "Real-time Linux (PREEMPT_RT)",
+                                desc:
+                                    "Implementing hard and soft real-time patches for deterministic, low-latency industrial control systems.",
+                            },
+                        ],
+                    },
+                ],
+                layeredCardTitle: "Benefits of <span class='text-primary'>Linux BSP</span> Development",
+                layeredCardDescription: `Investing in specialized linux BSP development ensures your hardware isn't just "functional," but production-ready.`,
+                layeredCard: [
+                    {
+                        id: 1,
+                        title: "Hardware Abstraction",
+                        description:
+                            "Decouple high-level applications from complex hardware logic for easier updates.",
+                        icon: HiOutlineRefresh,
+                        theme: {
+                            bg: "bg-orange-50",
+                            text: "text-orange-600",    
+                            hoverBg: "group-hover:bg-orange-600",
+                            hoverText: "group-hover:text-white",
+                            glow: "group-hover:shadow-orange-200/60",
+                            lineColor: "#f54a00"
+                        },
+                    },
+                    {
+                        id: 2,
+                        title: "Optimized Performance",
+                        description:
+                            "Every kernel and driver is tuned for your hardware's specific power and speed profiles.",
+                        icon: FaCloud,
+                        theme: {
+                            bg: "bg-purple-50",
+                            text: "text-purple-600",
+                            hoverBg: "group-hover:bg-purple-600",
+                            hoverText: "group-hover:text-white",
+                            glow: "group-hover:shadow-purple-200/60",
+                            lineColor: "#4f39f6"
+                        },
+                    },
+                    {
+                        id: 3,
+                        title: "Accelerated Time-to-Market",
+                        description:
+                            "Professional board bring-up catches hardware bugs early, preventing launch delays.",
+                        icon: MdOutlineAccessTime,
+                        theme: {
+                            bg: "bg-green-50",
+                            text: "text-green-600",
+                            hoverBg: "group-hover:bg-green-600",
+                            hoverText: "group-hover:text-white",
+                            glow: "group-hover:shadow-green-200/60",
+                            lineColor: "#00a63e"
+                        },
+                    },
+                    {
+                        id: 4,
+                        title: "Future-Proofing",
+                        description:
+                            "Aligning with mainline kernels ensures your product can be maintained for years to come.",
+                        icon: GiProfit,
+                        theme: {
+                            bg: "bg-blue-50",
+                            text: "text-blue-600",
+                            hoverBg: "group-hover:bg-blue-600",
+                            hoverText: "group-hover:text-white",
+                            glow: "group-hover:shadow-blue-200/60",
+                            lineColor: "#587ad3"
+                        },
+                    },
+                ],
+                criticaltitle: "Comprehensive <span class='text-primary'>Linux BSP Development </span> Services",
+                criticalRoles: [
+                    {
+                        title: "BSP Customization",
+                        desc:
+                            "Tailoring Linux distributions specifically for your hardware footprint and use case, removing bloat to maximize resource efficiency.",
+                        icon: HiOutlineDevicePhoneMobile,
+                    },
+                    {
+                        title: "Driver Development",
+                        desc:
+                            "Writing, porting, and optimizing device drivers for custom sensors, cameras, and specialized communication modules.",
+                        icon: RiSoundModuleLine,
+                    },
+                    {
+                        title: "Board Bring-Up",
+                        desc:
+                            "The critical phase: Bootloader configuration, kernel tuning, and rigorous hardware validation to stabilize your prototypes.",
+                        icon: HiMiniUserGroup,
+                    },
+                    {
+                        title: "Security Hardening",
+                        desc:
+                            "Protecting your IP and user data through encrypted file systems, secure boot, and compliance with the EU Cybersecurity Resilience Act.",
+                        icon: GiCyberEye,
+                    },
+                    {
+                        title: "Long-Term Support & Maintenance",
+                        desc:
+                            "Continuous maintenance, updates, and long-term security maintenance including CVE monitoring and backporting security fixes.",
+                        icon: MdSupportAgent,
+                    },
+                ],
+                useCaseImg: useCaseEmbedded,
+                useCaseTitle: "Why Choose eByteLogic for Linux BSP Development?",
+                useCaseDesc: "Generic firmware developers often miss the nuances of high-performance hardware. Our linux board support package expertise provides a unique combination of technical depth and industry experience:",
+                useCases: [
+                    {
+                        title: "Proven Expertise",
+                        desc:
+                            "We bring years of specialized experience in Linux kernel and embedded linux BSP development, solving the low-level challenges that block production.",
+                    },
+                    {
+                        title: "Cross-Industry Knowledge",
+                        desc:
+                            "Our team has delivered stable solutions across diverse sectors, including Automotive, Medical, Industrial, IoT, Rolling Stock, and Consumer Electronics.",
+                    },
+                    {
+                        title: "End-to-End Support",
+                        desc:
+                            "We act as your engineering partner throughout the entire lifecycle—from initial board bring-up and hardware validation to production-ready deployments and long-term security maintenance.",
+                    },
+                    {
+                        title: "Upstream Contributions",
+                        desc:
+                            "We don’t just use open source; we actively participate in the community. We help get your hardware recognized in the mainline kernel, reducing your future maintenance debt and ensuring community-backed longevity.",
+                    },
+                    {
+                        title: "Silicon-Aware Engineering",
+                        desc:
+                            "Deep experience with leading architectures including NXP i.MX, Rockchip, TI, and NVIDIA Jetson.",
+                    },
+                ],
+                cta: [
+                    {
+                        ctaTitle: "Build a <span class='text-primary'>Foundation</span> You Can Launch With.",
+                        Ctadescription: "Don’t let a generic linux BSP compromise your hardware’s potential. Partner with an engineering team that understands the reality of custom hardware.",
+                        ctaButtonText: "Contact Details",
+                    }
+                ],
+                faqTitle: '<span class="text-primary">FAQs</span>',
+                faqs: [
+                    {
+                        q: "Which distribution is best for my project?",
+                        a: "It depends on your hardware. Yocto is best for complex, customized products, while Buildroot is ideal for simple, fast-booting devices. Our experts help you choose during the audit phase."
+                    },
+                    {
+                        q: "Do you support Real-time Linux?",
+                        a: "Yes. We specialize in Real-time Linux patches for applications that require deterministic timing, such as robotics or motor control."
+                    },
+                    {
+                        q: "What is the difference between a reference BSP and a tailored BSP?",
+                        a: "A reference BSP is a generic starting point from a chip manufacturer. Tailored BSP development involves stripping away bloat, adding custom drivers, and hardening the security to make the system ready for a real-world product."
+                    },
+        
+                    {
+                        q: "What is included in your linux BSP development services?",
+                        a: "Our services cover everything from bootloader (U-Boot) customization and kernel configuration to device driver development, file system creation, and secure update (OTA) integration."
+                    },
+                    {
+                        q: "Which silicon platforms do you support for BSP development in linux?",
+                        a: "We have extensive linux BSP expertise on architectures including ARM (Cortex-A/M), x86, and RISC-V, with specific focus on NXP, Rockchip, and TI chipsets."
+                    },
+                    {
+                        q: "Can you help with boot-time optimization?",
+                        a: "Yes. As part of our embedded linux BSP development, we can optimize your system to boot in seconds by stripping unnecessary kernel modules and optimizing the initialization sequence."
+                    },
+                    {
+                        q: "Can you work with our existing team via Slack or Jira?",
+                        a: "Absolutely. We believe communication is the key to successful BSP development in linux. We typically provide dedicated Slack channels and project supervisors to ensure seamless integration with your internal engineers."
+                    },
+                ]
+            },
         ]
     },
     {
@@ -602,6 +856,255 @@ export const serviceData = [
             {
                 q: "What tools do you use for automation qa testing services?",
                 a: "We utilize a mix of industry-standard tools (Python, Pytest, Jenkins) and custom-built hardware simulators to provide comprehensive coverage across the entire software stack."
+            },
+        ]
+    },
+    {
+        bgImg: '/images/bg/serviceBg/linuxBspbg.png',
+        id: "linux-bsp-development",
+        category: "Linux BSP Development Services",
+        pathText: "Linux BSP Development",
+        tagLine: "U-Boot, Kernel, Drivers | Silicon to System | Secure & Real-Time Linux",
+        imageName: LinuxBspPng,
+        overview:
+            ["A Board Support Package is the foundation of your product’s reliability. At eByteLogic, we provide professional linux BSP development services that bridge the gap between your custom hardware and the application layer. We specialize in creating stable, secure, and high-performance linux board support packages tailored to your specific SoC and peripheral requirements."],
+        btnPrimaryText: "Consult with a Linux Expert",
+        btnSecondaryText: "View Case Studies",
+        capabilitySections: [
+            {
+                title: "Our Linux BSP Development Process",
+                description:
+                    "We follow a structured, 5-stage embedded linux BSP development process to move your project from a schematic to a shipping product.",
+                capabilities: [
+                    {
+                        title: "Requirement & Hardware Audit",
+                        desc:
+                            "We analyze your schematics, SoC datasheets, and peripheral requirements to define the optimal build strategy.",
+                    },
+                    {
+                        title: "Board Bring-Up & Validation",
+                        desc:
+                            "We perform initial bootloader configuration (U-Boot) and hardware validation to ensure all silicon blocks are responsive.",
+                    },
+                    {
+                        title: "Kernel & Driver Engineering",
+                        desc:
+                            "Our team handles the heavy lifting of BSP development in linux, writing or porting drivers for I2C, SPI, CAN, and high-speed PCIe interfaces.",
+                    },
+                    {
+                        title: "System Hardening & Optimization",
+                        desc:
+                            "We implement Secure Boot, optimize boot times to seconds, and harden the OS against unauthorized access.",
+                    },
+                    {
+                        title: "Deployment & Long-Term Support",
+                        desc:
+                            "We provide manufacturing-ready images and ongoing CVE monitoring to protect your device throughout its lifecycle.",
+                    },
+                ],
+            },
+            {
+                title: "Supported Linux Distributions",
+                description:
+                    "We bring deep linux board support package expertise to the industry’s most trusted distributions and build systems:",
+                capabilities: [
+                    {
+                        title: "Yocto Linux & OpenEmbedded",
+                        desc:
+                            "Creating highly specialized, reproducible meta-layers for enterprise-grade products.",
+                    },
+                    {
+                        title: "Buildroot",
+                        desc:
+                            "Developing lightweight, ultra-fast-booting images for resource-constrained hardware.",
+                    },
+                    {
+                        title: "Debian-based or Ubuntu BSPs",
+                        desc:
+                            "Tailoring popular distributions for industrial applications requiring extensive package support.",
+                    },
+                    {
+                        title: "OpenWRT",
+                        desc:
+                            "Specialized development for networking equipment, routers, and IoT gateways.",
+                    },
+                    {
+                        title: "Red Hat Linux",
+                        desc:
+                            "Enterprise-level Linux solutions for mission-critical and server-class embedded applications.",
+                    },
+                    {
+                        title: "Real-time Linux (PREEMPT_RT)",
+                        desc:
+                            "Implementing hard and soft real-time patches for deterministic, low-latency industrial control systems.",
+                    },
+                ],
+            },
+        ],
+        layeredCardTitle: "Benefits of <span class='text-primary'>Linux BSP</span> Development",
+        layeredCardDescription: `Investing in specialized linux BSP development ensures your hardware isn't just "functional," but production-ready.`,
+        layeredCard: [
+            {
+                id: 1,
+                title: "Hardware Abstraction",
+                description:
+                    "Decouple high-level applications from complex hardware logic for easier updates.",
+                icon: HiOutlineRefresh,
+                theme: {
+                    bg: "bg-orange-50",
+                    text: "text-orange-600",    
+                    hoverBg: "group-hover:bg-orange-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-orange-200/60",
+                    lineColor: "#f54a00"
+                },
+            },
+            {
+                id: 2,
+                title: "Optimized Performance",
+                description:
+                    "Every kernel and driver is tuned for your hardware's specific power and speed profiles.",
+                icon: FaCloud,
+                theme: {
+                    bg: "bg-purple-50",
+                    text: "text-purple-600",
+                    hoverBg: "group-hover:bg-purple-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-purple-200/60",
+                    lineColor: "#4f39f6"
+                },
+            },
+            {
+                id: 3,
+                title: "Accelerated Time-to-Market",
+                description:
+                    "Professional board bring-up catches hardware bugs early, preventing launch delays.",
+                icon: MdOutlineAccessTime,
+                theme: {
+                    bg: "bg-green-50",
+                    text: "text-green-600",
+                    hoverBg: "group-hover:bg-green-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-green-200/60",
+                    lineColor: "#00a63e"
+                },
+            },
+            {
+                id: 4,
+                title: "Future-Proofing",
+                description:
+                    "Aligning with mainline kernels ensures your product can be maintained for years to come.",
+                icon: GiProfit,
+                theme: {
+                    bg: "bg-blue-50",
+                    text: "text-blue-600",
+                    hoverBg: "group-hover:bg-blue-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-blue-200/60",
+                    lineColor: "#587ad3"
+                },
+            },
+        ],
+        criticaltitle: "Comprehensive <span class='text-primary'>Linux BSP Development </span> Services",
+        criticalRoles: [
+            {
+                title: "BSP Customization",
+                desc:
+                    "Tailoring Linux distributions specifically for your hardware footprint and use case, removing bloat to maximize resource efficiency.",
+                icon: HiOutlineDevicePhoneMobile,
+            },
+            {
+                title: "Driver Development",
+                desc:
+                    "Writing, porting, and optimizing device drivers for custom sensors, cameras, and specialized communication modules.",
+                icon: RiSoundModuleLine,
+            },
+            {
+                title: "Board Bring-Up",
+                desc:
+                    "The critical phase: Bootloader configuration, kernel tuning, and rigorous hardware validation to stabilize your prototypes.",
+                icon: HiMiniUserGroup,
+            },
+            {
+                title: "Security Hardening",
+                desc:
+                    "Protecting your IP and user data through encrypted file systems, secure boot, and compliance with the EU Cybersecurity Resilience Act.",
+                icon: GiCyberEye,
+            },
+            {
+                title: "Long-Term Support & Maintenance",
+                desc:
+                    "Continuous maintenance, updates, and long-term security maintenance including CVE monitoring and backporting security fixes.",
+                icon: MdSupportAgent,
+            },
+        ],
+        useCaseImg: useCaseEmbedded,
+        useCaseTitle: "Why Choose eByteLogic for Linux BSP Development?",
+        useCaseDesc: "Generic firmware developers often miss the nuances of high-performance hardware. Our linux board support package expertise provides a unique combination of technical depth and industry experience:",
+        useCases: [
+            {
+                title: "Proven Expertise",
+                desc:
+                    "We bring years of specialized experience in Linux kernel and embedded linux BSP development, solving the low-level challenges that block production.",
+            },
+            {
+                title: "Cross-Industry Knowledge",
+                desc:
+                    "Our team has delivered stable solutions across diverse sectors, including Automotive, Medical, Industrial, IoT, Rolling Stock, and Consumer Electronics.",
+            },
+            {
+                title: "End-to-End Support",
+                desc:
+                    "We act as your engineering partner throughout the entire lifecycle—from initial board bring-up and hardware validation to production-ready deployments and long-term security maintenance.",
+            },
+            {
+                title: "Upstream Contributions",
+                desc:
+                    "We don’t just use open source; we actively participate in the community. We help get your hardware recognized in the mainline kernel, reducing your future maintenance debt and ensuring community-backed longevity.",
+            },
+            {
+                title: "Silicon-Aware Engineering",
+                desc:
+                    "Deep experience with leading architectures including NXP i.MX, Rockchip, TI, and NVIDIA Jetson.",
+            },
+        ],
+        cta: [
+            {
+                ctaTitle: "Build a <span class='text-primary'>Foundation</span> You Can Launch With.",
+                Ctadescription: "Don’t let a generic linux BSP compromise your hardware’s potential. Partner with an engineering team that understands the reality of custom hardware.",
+                ctaButtonText: "Contact Details",
+            }
+        ],
+        faqTitle: '<span class="text-primary">FAQs</span>',
+        faqs: [
+            {
+                q: "Which distribution is best for my project?",
+                a: "It depends on your hardware. Yocto is best for complex, customized products, while Buildroot is ideal for simple, fast-booting devices. Our experts help you choose during the audit phase."
+            },
+            {
+                q: "Do you support Real-time Linux?",
+                a: "Yes. We specialize in Real-time Linux patches for applications that require deterministic timing, such as robotics or motor control."
+            },
+            {
+                q: "What is the difference between a reference BSP and a tailored BSP?",
+                a: "A reference BSP is a generic starting point from a chip manufacturer. Tailored BSP development involves stripping away bloat, adding custom drivers, and hardening the security to make the system ready for a real-world product."
+            },
+
+            {
+                q: "What is included in your linux BSP development services?",
+                a: "Our services cover everything from bootloader (U-Boot) customization and kernel configuration to device driver development, file system creation, and secure update (OTA) integration."
+            },
+            {
+                q: "Which silicon platforms do you support for BSP development in linux?",
+                a: "We have extensive linux BSP expertise on architectures including ARM (Cortex-A/M), x86, and RISC-V, with specific focus on NXP, Rockchip, and TI chipsets."
+            },
+            {
+                q: "Can you help with boot-time optimization?",
+                a: "Yes. As part of our embedded linux BSP development, we can optimize your system to boot in seconds by stripping unnecessary kernel modules and optimizing the initialization sequence."
+            },
+            {
+                q: "Can you work with our existing team via Slack or Jira?",
+                a: "Absolutely. We believe communication is the key to successful BSP development in linux. We typically provide dedicated Slack channels and project supervisors to ensure seamless integration with your internal engineers."
             },
         ]
     },

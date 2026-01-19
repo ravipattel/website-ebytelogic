@@ -1,11 +1,11 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams, useRouter, useSearchParams } from 'next/navigation';
 
 import { useEffect, useState } from 'react';
 import { GoArrowRight } from 'react-icons/go';
-import { RiArrowRightSLine} from 'react-icons/ri';
+import { RiArrowRightSLine } from 'react-icons/ri';
 
 import { serviceData } from '@/content/serviceData';
 
@@ -16,24 +16,36 @@ import FAQAccordion from '@/src/components/Faq';
 import OverviewJPg from '@/src/assets/images/services/overview.jpg'
 import FaqHomePng from '@/src/assets/images/home/faqHome.png'
 
-const ServiceDetailsInfo = ({ meta }) => {
+const ServiceDetailsInfo = ({ meta, subServiceId }) => {
     const router = useRouter();
     const { id } = useParams() as { id: string };
+    const searchParams = useSearchParams();
+
     const [service, setService] = useState<typeof serviceData[0] | null>(null);
+    const [parentService, setParentService] = useState<any>(null);
+
     const [metaId, setMetaId] = useState<string | null>(null);
 
     useEffect(() => {
-        const foundService = serviceData.find(item => item.id === id);
-        if (foundService) setService(foundService);
-    }, [id]);
+        const mainService = serviceData.find(item => item.id === meta);
 
-
-    useEffect(() => {
-        const found = serviceData.find(item => item.id === id);
-        if (found) {
-            setMetaId(found.id);
+        if (!mainService) {
+            setService(null);
+            return;
         }
-    }, [id]);
+
+        setParentService(mainService);
+
+        if (subServiceId && mainService.subservice?.length) {
+            const foundSubService = mainService.subservice.find(
+                (sub) => sub.id === subServiceId
+            );
+            setService(foundSubService || mainService);
+        } else {
+            setService(mainService);
+        }
+    }, [meta, subServiceId]);
+
 
     if (!service) return <NotFound />;
 
@@ -43,7 +55,18 @@ const ServiceDetailsInfo = ({ meta }) => {
                 <section className='relative bg-no-repeat bg-cover bg-right py-28 lg:py-52 ' style={{ backgroundImage: `url('${service.bgImg}')` }}>
                     <div className='absolute bg-[#0e191eb3] top-0 size-full z-0'></div>
                     <div className='max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10 space-y-4'>
-                        <p className='text-sm md:text-lg text-white flex flex-wrap items-center gap-4 justify-center'><Link href={'/'}>Home</Link>  <RiArrowRightSLine className='text-primary text-2xl' /> <Link href={'/services'}>Services</Link>  <RiArrowRightSLine className='text-primary text-2xl' /> {service.pathText}</p>
+                        <p className='text-sm md:text-lg text-white flex flex-wrap items-center gap-4 justify-center'><Link href={'/'}>Home</Link>  <RiArrowRightSLine className='text-primary text-2xl' /> <Link href={'/services'}>Services</Link>  <RiArrowRightSLine className='text-primary text-2xl' />  {subServiceId ? (
+                            <>
+                                <Link href={`/services/${parentService?.id}`}>
+                                    {parentService?.pathText}
+                                </Link>
+                                <RiArrowRightSLine />
+                                <span>{service.pathText}</span>
+                            </>
+                        ) : (
+                            <span>{service.pathText}</span>
+                        )}
+                        </p>
                         <h1 className='text-2xl md:text-5xl xl:text-[50px] font-normal text-white leading-tight text-center pb-4'>{service.category}</h1>
                         <p className='text-sm md:text-lg text-white flex items-center gap-4 justify-center text-center'>{service.tagLine}</p>
                     </div>
@@ -119,38 +142,38 @@ const ServiceDetailsInfo = ({ meta }) => {
 
                         {/* Cards */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                            {service?.embeddedExpertise?.map((item, index) => {
+                            {service?.embeddedExpertise?.map((item: any, index: number) => {
                                 const Icon = item.icon;
-
                                 return (
-                                    <div
-                                        key={index}
-                                        className="group relative bg-white rounded-2xl p-8 border border-blue-100 overflow-hidden
+                                    <Link key={index} href={`/services/${parentService.id}/${item.id}`}>
+                                        <div
+                                            className="group relative bg-white rounded-2xl p-8 border border-blue-100 overflow-hidden
                            shadow-sm hover:shadow-xl transition-all duration-300"
-                                    >
-                                        {/* Gradient Glow */}
-                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r 
+                                        >
+                                            {/* Gradient Glow */}
+                                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r 
                                 from-[#3078FB]/10 to-[#3078FB]/0 opacity-0 
                                 group-hover:opacity-100 transition" />
 
-                                        {/* Icon Badge */}
-                                        <div className="relative z-10 w-14 h-14 flex items-center justify-center 
+                                            {/* Icon Badge */}
+                                            <div className="relative z-10 w-14 h-14 flex items-center justify-center 
                                 rounded-xl bg-[#3077fb54] text-white mb-6 group-hover:bg-primary
                                 shadow-lg group-hover:scale-110 transition">
-                                            <Icon className="text-2xl" />
-                                        </div>
+                                                <Icon className="text-2xl" />
+                                            </div>
 
-                                        {/* Content */}
-                                        <div className="relative z-10">
-                                            <h3 className="text-xl font-semibold mb-2 text-gray-900">
-                                                {item.title}
-                                            </h3>
-                                        </div>
+                                            {/* Content */}
+                                            <div className="relative z-10">
+                                                <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                                                    {item.title}
+                                                </h3>
+                                            </div>
 
-                                        {/* Bottom Accent */}
-                                        <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#3078FB] 
+                                            {/* Bottom Accent */}
+                                            <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#3078FB] 
                                 group-hover:w-full transition-all duration-300 rounded-b-2xl" />
-                                    </div>
+                                        </div>
+                                    </Link>
                                 );
                             })}
                         </div>
@@ -170,35 +193,69 @@ const ServiceDetailsInfo = ({ meta }) => {
                             {cap.description}
                         </p>
                         <div className="grid md:grid-cols-2 gap-10 pt-12">
-                            {cap.capabilities.map((item, idx) => (
-                                <div
-                                    key={idx}
-                                    className="relative bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group overflow-hidden"
-                                >
-                                    <div className="absolute top-0 left-0 h-full w-1.5 bg-gradient-to-b from-[#5d647150] to-[#7fb8ff50] group-hover:from-primary group-hover:to-[#7fb8ff]" />
+                            {cap.capabilities.map((item, idx) => {
+                                return (
+                                    item.id ? (
+                                        <Link key={idx} href={`/services/${parentService.id}/${item?.id}`}>
+                                            <div
+                                                key={idx}
+                                                className="relative bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group overflow-hidden"
+                                            >
+                                                <div className="absolute top-0 left-0 h-full w-1.5 bg-gradient-to-b from-[#5d647150] to-[#7fb8ff50] group-hover:from-primary group-hover:to-[#7fb8ff]" />
 
-                                    <div className="p-6 md:p-8">
-                                        <h4 className="text-lg md:text-xl font-semibold text-primary mb-2">
-                                            {item.title}
-                                        </h4>
+                                                <div className="p-6 md:p-8">
+                                                    <h4 className="text-lg md:text-xl font-semibold text-primary mb-2">
+                                                        {item.title}
+                                                    </h4>
 
-                                        <p className="text-sm text-[#5d6471] mb-3">
-                                            {item.desc}
-                                        </p>
+                                                    <p className="text-sm text-[#5d6471] mb-3">
+                                                        {item.desc}
+                                                    </p>
 
-                                        {item.points && (
-                                            <ul className="list-disc pl-5 text-sm text-[#5d6471] space-y-2.5">
-                                                {item.points.map((pt, pIdx) => (
-                                                    <li
-                                                        key={pIdx}
-                                                        dangerouslySetInnerHTML={{ __html: pt }}
-                                                    />
-                                                ))}
-                                            </ul>
-                                        )}
-                                    </div>
-                                </div>
-                            ))}
+                                                    {item.points && (
+                                                        <ul className="list-disc pl-5 text-sm text-[#5d6471] space-y-2.5">
+                                                            {item.points.map((pt, pIdx) => (
+                                                                <li
+                                                                    key={pIdx}
+                                                                    dangerouslySetInnerHTML={{ __html: pt }}
+                                                                />
+                                                            ))}
+                                                        </ul>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    ) : (
+                                        <div
+                                            key={idx}
+                                            className="relative bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group overflow-hidden"
+                                        >
+                                            <div className="absolute top-0 left-0 h-full w-1.5 bg-gradient-to-b from-[#5d647150] to-[#7fb8ff50] group-hover:from-primary group-hover:to-[#7fb8ff]" />
+
+                                            <div className="p-6 md:p-8">
+                                                <h4 className="text-lg md:text-xl font-semibold text-primary mb-2">
+                                                    {item.title}
+                                                </h4>
+
+                                                <p className="text-sm text-[#5d6471] mb-3">
+                                                    {item.desc}
+                                                </p>
+
+                                                {item.points && (
+                                                    <ul className="list-disc pl-5 text-sm text-[#5d6471] space-y-2.5">
+                                                        {item.points.map((pt, pIdx) => (
+                                                            <li
+                                                                key={pIdx}
+                                                                dangerouslySetInnerHTML={{ __html: pt }}
+                                                            />
+                                                        ))}
+                                                    </ul>
+                                                )}
+                                            </div>
+                                        </div>
+                                    )
+                                )
+                            })}
                         </div>
                     </div>
                 ))}
@@ -266,7 +323,7 @@ origin-center
             {
                 service?.criticalRoles && (
                     <section className="py-20 bg-gray-50">
-                        <div className="max-w-7xl mx-auto px-4">
+                        <div className="max-w-[1400px] mx-auto px-4">
 
                             {/* Heading */}
                             <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
@@ -279,7 +336,7 @@ origin-center
                             </div>
 
                             {/* Cards */}
-                            <div className={`grid grid-cols-1 sm:grid-cols-2 gap-6 ${service?.criticalRoles?.length === 1 ? 'lg:grid-cols-1' : service?.criticalRoles?.length === 2 ? 'lg:grid-cols-2' : service?.criticalRoles?.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'}`}>
+                            <div className={`grid grid-cols-1 sm:grid-cols-2 gap-6 ${service?.criticalRoles?.length === 1 ? 'lg:grid-cols-1' : service?.criticalRoles?.length === 2 ? 'lg:grid-cols-2' : service?.criticalRoles?.length === 3 ? 'lg:grid-cols-3' : service?.criticalRoles?.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'}`}>
                                 {service?.criticalRoles?.map((item, index) => {
                                     const Icon = item?.icon;
                                     return (
@@ -318,7 +375,7 @@ origin-center
                             <p className="text-sm sm:text-[15px] text-[#5d6471] md:max-w-3xl">
                                 {service.useCaseDesc}
                             </p>
-                            <div className='grid grid-cols-1 lg:grid-cols-2 gap-7 items-center'>
+                            <div className='grid grid-cols-1 xl:grid-cols-2 gap-7 items-center'>
                                 <div className="relative border-l border-[#3078fb]/40 pl-6 space-y-6">
                                     {service.useCases.map((usecase, i) => (
                                         <div key={i} className="relative group">
@@ -339,7 +396,7 @@ origin-center
                                             alt="Usecase"
                                             height={400}
                                             width={400}
-                                            className={`object-cover w-full rounded-lg ${service?.useCases?.length <= 3 ? 'h-[350px]' : 'h-[510px]'}`}
+                                            className={`object-cover w-full rounded-lg ${service?.useCases?.length <= 3 ? 'h-[350px]' : service?.useCases?.length === 5 ? 'h-[689px]' : 'h-[510px]'}`}
                                             priority
                                         />
                                     )}

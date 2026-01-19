@@ -3,8 +3,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
 import React from 'react'
-import { FaGoogle, FaLinkedinIn, FaTwitter, FaYoutube } from 'react-icons/fa'
-import { IoLogoGithub } from 'react-icons/io';
+import { FaGoogle, FaLinkedinIn } from 'react-icons/fa'
 import { MdKeyboardArrowRight } from 'react-icons/md'
 
 import Button from '@/src/components/Button';

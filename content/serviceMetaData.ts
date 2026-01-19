@@ -29,6 +29,12 @@ export const serviceMetaData = {
     description:
       "Professional qa automation testing services for web, mobile, and hardware. We provide specialized embedded software testing to ensure performance and reliability."
   },
+  "linux-bsp-development": {
+    id: "linux-bsp-development",
+    title: "Linux BSP Development | eByte Logic",
+    description:
+      "Do you need professional linux BSP development services. From board bring-up and driver development to long-term CVE monitoring and security hardening."
+  },
 }
 
 // Helper functions

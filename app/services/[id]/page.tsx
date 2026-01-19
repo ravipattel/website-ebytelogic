@@ -21,6 +21,9 @@ export async function generateMetadata({ params }) {
     } else if (id === "multi-platform-qa-test-automation") {
         metaTitle = serviceMetaData["multi-platform-qa-test-automation"].title;
         metaDescription = serviceMetaData["multi-platform-qa-test-automation"].description;
+    } else if (id === "linux-bsp-development") {
+        metaTitle = serviceMetaData["linux-bsp-development"].title;
+        metaDescription = serviceMetaData["linux-bsp-development"].description;
     }
 
     const url = `/services/${id}`;
