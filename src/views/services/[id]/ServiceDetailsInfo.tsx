@@ -194,7 +194,7 @@ const ServiceDetailsInfo = ({ meta, subServiceId }) => {
                             {cap.capabilities.map((item, idx) => {
                                 return (
                                     item.id ? (
-                                        <Link key={idx} href={`/services/${parentService.id}/${item?.id}`}>
+                                        <Link key={idx} href={`/services/${item?.id}`}>
                                             <div
                                                 key={idx}
                                                 className="relative bg-white rounded-xl shadow-md border border-gray-200 hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group overflow-hidden"
