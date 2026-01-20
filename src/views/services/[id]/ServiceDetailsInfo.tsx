@@ -145,8 +145,7 @@ const ServiceDetailsInfo = ({ meta, subServiceId }) => {
                             {service?.embeddedExpertise?.map((item: any, index: number) => {
                                 const Icon = item.icon;
                                 return (
-                                    <Link key={index} href={`/services/${parentService.id}/${item.id}`}>
-                                        <div
+                                        <div key={index}
                                             className="group relative bg-white rounded-2xl p-8 border border-blue-100 overflow-hidden
                            shadow-sm hover:shadow-xl transition-all duration-300"
                                         >
@@ -173,7 +172,6 @@ const ServiceDetailsInfo = ({ meta, subServiceId }) => {
                                             <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#3078FB] 
                                 group-hover:w-full transition-all duration-300 rounded-b-2xl" />
                                         </div>
-                                    </Link>
                                 );
                             })}
                         </div>
