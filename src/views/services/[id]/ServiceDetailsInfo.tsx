@@ -19,12 +19,24 @@ import FaqHomePng from '@/src/assets/images/home/faqHome.png'
 const ServiceDetailsInfo = ({ meta, subServiceId }) => {
     const router = useRouter();
     const { id } = useParams() as { id: string };
+
     const searchParams = useSearchParams();
 
     const [service, setService] = useState<typeof serviceData[0] | null>(null);
     const [parentService, setParentService] = useState<any>(null);
 
     const [metaId, setMetaId] = useState<string | null>(null);
+    const allServices = serviceData;
+
+    // current page service (Linux BSP, Android BSP, Embedded BSP)
+    const currentService =
+        allServices.find(service => service.id === id) || null;
+
+    // find parent service if current service is a subservice
+    const parentServices =
+        allServices.find(service =>
+            service.subservice?.some(sub => sub.id === currentService?.id)
+        ) || null;
 
     useEffect(() => {
         const mainService = serviceData.find(item => item.id === meta);
@@ -40,7 +52,14 @@ const ServiceDetailsInfo = ({ meta, subServiceId }) => {
             const foundSubService = mainService.subservice.find(
                 (sub) => sub.id === subServiceId
             );
-            setService(foundSubService || mainService);
+            if (foundSubService) {
+                setService({
+                    ...mainService,
+                    ...foundSubService,
+                });
+            } else {
+                setService(mainService);
+            }
         } else {
             setService(mainService);
         }
@@ -55,18 +74,24 @@ const ServiceDetailsInfo = ({ meta, subServiceId }) => {
                 <section className='relative bg-no-repeat bg-cover bg-right py-28 lg:py-52 ' style={{ backgroundImage: `url('${service.bgImg}')` }}>
                     <div className='absolute bg-[#0e191eb3] top-0 size-full z-0'></div>
                     <div className='max-w-[1400px] mx-auto px-4 sm:px-6 relative z-10 space-y-4'>
-                        <p className='text-sm md:text-lg text-white flex flex-wrap items-center gap-4 justify-center'><Link href={'/'}>Home</Link>  <RiArrowRightSLine className='text-primary text-2xl' /> <Link href={'/services'}>Services</Link>  <RiArrowRightSLine className='text-primary text-2xl' />  {subServiceId ? (
-                            <>
-                                <Link href={`/services/${parentService?.id}`}>
-                                    {parentService?.pathText}
-                                </Link>
-                                <RiArrowRightSLine />
-                                <span>{service.pathText}</span>
-                            </>
-                        ) : (
-                            <span>{service.pathText}</span>
-                        )}
-                        </p>
+                        <p className="text-sm md:text-lg text-white flex flex-wrap items-center gap-2 justify-center">
+                            <Link href="/">Home</Link>
+                            <RiArrowRightSLine className="text-primary text-2xl" />
+
+                            <Link href="/services">Services</Link>
+
+                            {parentServices && (
+                                <>
+                                    <RiArrowRightSLine className="text-primary text-2xl" />
+                                    <Link href={`/services/${parentServices.id}`}>
+                                        {parentServices.pathText}
+                                    </Link>
+                                </>
+                            )}
+
+                            <RiArrowRightSLine className="text-primary text-2xl" />
+                            {service && <span className="font-medium">{service.pathText}</span>}</p>
+
                         <h1 className='text-2xl md:text-5xl xl:text-[50px] font-normal text-white leading-tight text-center pb-4'>{service.category}</h1>
                         <p className='text-sm md:text-lg text-white flex items-center gap-4 justify-center text-center'>{service.tagLine}</p>
                     </div>
@@ -145,33 +170,33 @@ const ServiceDetailsInfo = ({ meta, subServiceId }) => {
                             {service?.embeddedExpertise?.map((item: any, index: number) => {
                                 const Icon = item.icon;
                                 return (
-                                        <div key={index}
-                                            className="group relative bg-white rounded-2xl p-8 border border-blue-100 overflow-hidden
+                                    <div key={index}
+                                        className="group relative bg-white rounded-2xl p-8 border border-blue-100 overflow-hidden
                            shadow-sm hover:shadow-xl transition-all duration-300"
-                                        >
-                                            {/* Gradient Glow */}
-                                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r 
+                                    >
+                                        {/* Gradient Glow */}
+                                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r 
                                 from-[#3078FB]/10 to-[#3078FB]/0 opacity-0 
                                 group-hover:opacity-100 transition" />
 
-                                            {/* Icon Badge */}
-                                            <div className="relative z-10 w-14 h-14 flex items-center justify-center 
+                                        {/* Icon Badge */}
+                                        <div className="relative z-10 w-14 h-14 flex items-center justify-center 
                                 rounded-xl bg-[#3077fb54] text-white mb-6 group-hover:bg-primary
                                 shadow-lg group-hover:scale-110 transition">
-                                                <Icon className="text-2xl" />
-                                            </div>
-
-                                            {/* Content */}
-                                            <div className="relative z-10">
-                                                <h3 className="text-xl font-semibold mb-2 text-gray-900">
-                                                    {item.title}
-                                                </h3>
-                                            </div>
-
-                                            {/* Bottom Accent */}
-                                            <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#3078FB] 
-                                group-hover:w-full transition-all duration-300 rounded-b-2xl" />
+                                            <Icon className="text-2xl" />
                                         </div>
+
+                                        {/* Content */}
+                                        <div className="relative z-10">
+                                            <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                                                {item.title}
+                                            </h3>
+                                        </div>
+
+                                        {/* Bottom Accent */}
+                                        <div className="absolute bottom-0 left-0 h-1 w-0 bg-[#3078FB] 
+                                group-hover:w-full transition-all duration-300 rounded-b-2xl" />
+                                    </div>
                                 );
                             })}
                         </div>
@@ -466,8 +491,8 @@ origin-center
             <section className="bg-[#f5f8fb] pb-16 pt-16 md:pt-24">
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
                     <h2 className="text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize mb-2" dangerouslySetInnerHTML={{ __html: service?.faqTitle || '' }} />
-                    <div className="grid xl:grid-cols-3 items-center gap-12">
-                        <div className="xl:col-span-2 xl:max-w-[800px]">
+                    <div className={`grid items-center gap-12 ${service?.faqs.length <= 4 ? 'xl:grid-cols-3' : 'xl:grid-cols-5'}`}>
+                        <div className={`xl:max-w-[800px] ${service?.faqs.length <= 4 ? 'col-span-2' : 'col-span-3'}`}>
                             <FAQAccordion
                                 faqs={service?.faqs}
                                 title="Frequently Asked Questions"
@@ -477,7 +502,7 @@ origin-center
                         <Image
                             src={FaqHomePng}
                             alt="faq"
-                            className="mx-auto size-80 sm:size-auto"
+                            className={`mx-auto size-80 sm:size-auto ${service?.faqs.length <= 4 ? 'col-span-1' : 'col-span-2'}`}
                             width={500}
                             height={500}
                         />

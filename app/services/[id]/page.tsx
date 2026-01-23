@@ -25,6 +25,10 @@ export async function generateMetadata({ params }) {
         metaTitle = serviceMetaData["linux-bsp-development"].title;
         metaDescription = serviceMetaData["linux-bsp-development"].description;
     }
+    else if (id === "android-bsp-development") {
+        metaTitle = serviceMetaData["android-bsp-development"].title;
+        metaDescription = serviceMetaData["android-bsp-development"].description;
+    }
 
     const url = `/services/${id}`;
     return {

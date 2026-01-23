@@ -1,25 +1,27 @@
+import { GoCpu } from 'react-icons/go';
 import { BiTerminal } from 'react-icons/bi';
-import { HiOutlineRefresh } from 'react-icons/hi';
 import { SiFramework } from 'react-icons/si';
-import { PiDiscDuotone } from 'react-icons/pi';
-import { GrMultimedia, GrValidate } from "react-icons/gr";
 import { CgPullClear } from 'react-icons/cg';
 import { IoSettings } from 'react-icons/io5';
+import { PiDiscDuotone } from 'react-icons/pi';
+import { HiOutlineRefresh } from 'react-icons/hi';
 import { GiCyberEye, GiProfit } from "react-icons/gi";
-import { MdOutlineAccessTime, MdOutlineTipsAndUpdates, MdSupportAgent } from 'react-icons/md';
+import { GrCycle, GrMultimedia, GrValidate } from "react-icons/gr";
 import { RiSoundModuleLine, RiUserCommunityLine } from 'react-icons/ri';
-import { FaCloud, FaLayerGroup, FaMicrochip, FaShieldAlt, FaSyncAlt } from 'react-icons/fa';
 import { HiMiniUserGroup, HiOutlineDevicePhoneMobile } from "react-icons/hi2";
+import { MdOutlineAccessTime, MdOutlineTipsAndUpdates, MdSupportAgent } from 'react-icons/md';
+import { FaCloud, FaLayerGroup, FaMicrochip, FaRegUser, FaShieldAlt, FaSyncAlt } from 'react-icons/fa';
 
-import EmbeddedDevelopmentJPg from '@/src/assets/images/services/embedded-development.png'
 import QaJPg from '@/src/assets/images/services/qa.png'
-import FrameworkWebp from '@/src/assets/images/services/multimedia.png'
 import LinuxPng from '@/src/assets/images/services/linux.png'
-import useCaseEmbedded from '@/src/assets/images/services/useCaseEmbedded.png'
-import LinuxUsecase from '@/src/assets/images/services/linuxUsecase.png'
 import LinuxWhy from '@/src/assets/images/services/linuxWhy.png'
-import StreamingWhy from '@/src/assets/images/services/streamingWhy.png'
 import LinuxBspPng from '@/src/assets/images/services/linuxBsp.png'
+import AndroidBspPng from '@/src/assets/images/services/androidBsp.png'
+import FrameworkWebp from '@/src/assets/images/services/multimedia.png'
+import StreamingWhy from '@/src/assets/images/services/streamingWhy.png'
+import LinuxUsecase from '@/src/assets/images/services/linuxUsecase.png'
+import useCaseEmbedded from '@/src/assets/images/services/useCaseEmbedded.png'
+import EmbeddedDevelopmentJPg from '@/src/assets/images/services/embedded-development.png'
 
 export const serviceData = [
     {
@@ -175,6 +177,7 @@ export const serviceData = [
     },
     {
         id: "embedded-bsp-development",
+        parentId: "embedded-bsp-development",
         bgImg: '/images/bg/serviceBg/linuxBsp.png',
         pathText: "Embedded BSP Development",
         imageName: LinuxPng,
@@ -240,6 +243,7 @@ export const serviceData = [
                             "With deep-domain expertise, we customize Linux-based embedded systems to meet unique device requirements using Yocto and Buildroot.",
                     },
                     {
+                        id: "android-bsp-development",
                         title: "Android BSP",
                         desc:
                             "Our engineers develop production-grade Android BSPs for hardware platforms including NXP, Rockchip, and TI.",
@@ -334,253 +338,12 @@ export const serviceData = [
         ],
         subservice: [
             {
-                bgImg: '/images/bg/serviceBg/linuxBspbg.png',
                 id: "linux-bsp-development",
-                category: "Linux BSP Development Services",
                 pathText: "Linux BSP Development",
-                tagLine: "U-Boot, Kernel, Drivers | Silicon to System | Secure & Real-Time Linux",
-                imageName: LinuxBspPng,
-                overview:
-                    ["A Board Support Package is the foundation of your product’s reliability. At eByteLogic, we provide professional linux BSP development services that bridge the gap between your custom hardware and the application layer. We specialize in creating stable, secure, and high-performance linux board support packages tailored to your specific SoC and peripheral requirements."],
-                btnPrimaryText: "Consult with a Linux Expert",
-                btnSecondaryText: "View Case Studies",
-                capabilitySections: [
-                    {
-                        title: "Our Linux BSP Development Process",
-                        description:
-                            "We follow a structured, 5-stage embedded linux BSP development process to move your project from a schematic to a shipping product.",
-                        capabilities: [
-                            {
-                                title: "Requirement & Hardware Audit",
-                                desc:
-                                    "We analyze your schematics, SoC datasheets, and peripheral requirements to define the optimal build strategy.",
-                            },
-                            {
-                                title: "Board Bring-Up & Validation",
-                                desc:
-                                    "We perform initial bootloader configuration (U-Boot) and hardware validation to ensure all silicon blocks are responsive.",
-                            },
-                            {
-                                title: "Kernel & Driver Engineering",
-                                desc:
-                                    "Our team handles the heavy lifting of BSP development in linux, writing or porting drivers for I2C, SPI, CAN, and high-speed PCIe interfaces.",
-                            },
-                            {
-                                title: "System Hardening & Optimization",
-                                desc:
-                                    "We implement Secure Boot, optimize boot times to seconds, and harden the OS against unauthorized access.",
-                            },
-                            {
-                                title: "Deployment & Long-Term Support",
-                                desc:
-                                    "We provide manufacturing-ready images and ongoing CVE monitoring to protect your device throughout its lifecycle.",
-                            },
-                        ],
-                    },
-                    {
-                        title: "Supported Linux Distributions",
-                        description:
-                            "We bring deep linux board support package expertise to the industry’s most trusted distributions and build systems:",
-                        capabilities: [
-                            {
-                                title: "Yocto Linux & OpenEmbedded",
-                                desc:
-                                    "Creating highly specialized, reproducible meta-layers for enterprise-grade products.",
-                            },
-                            {
-                                title: "Buildroot",
-                                desc:
-                                    "Developing lightweight, ultra-fast-booting images for resource-constrained hardware.",
-                            },
-                            {
-                                title: "Debian-based or Ubuntu BSPs",
-                                desc:
-                                    "Tailoring popular distributions for industrial applications requiring extensive package support.",
-                            },
-                            {
-                                title: "OpenWRT",
-                                desc:
-                                    "Specialized development for networking equipment, routers, and IoT gateways.",
-                            },
-                            {
-                                title: "Red Hat Linux",
-                                desc:
-                                    "Enterprise-level Linux solutions for mission-critical and server-class embedded applications.",
-                            },
-                            {
-                                title: "Real-time Linux (PREEMPT_RT)",
-                                desc:
-                                    "Implementing hard and soft real-time patches for deterministic, low-latency industrial control systems.",
-                            },
-                        ],
-                    },
-                ],
-                layeredCardTitle: "Benefits of <span class='text-primary'>Linux BSP</span> Development",
-                layeredCardDescription: `Investing in specialized linux BSP development ensures your hardware isn't just "functional," but production-ready.`,
-                layeredCard: [
-                    {
-                        id: 1,
-                        title: "Hardware Abstraction",
-                        description:
-                            "Decouple high-level applications from complex hardware logic for easier updates.",
-                        icon: HiOutlineRefresh,
-                        theme: {
-                            bg: "bg-orange-50",
-                            text: "text-orange-600",    
-                            hoverBg: "group-hover:bg-orange-600",
-                            hoverText: "group-hover:text-white",
-                            glow: "group-hover:shadow-orange-200/60",
-                            lineColor: "#f54a00"
-                        },
-                    },
-                    {
-                        id: 2,
-                        title: "Optimized Performance",
-                        description:
-                            "Every kernel and driver is tuned for your hardware's specific power and speed profiles.",
-                        icon: FaCloud,
-                        theme: {
-                            bg: "bg-purple-50",
-                            text: "text-purple-600",
-                            hoverBg: "group-hover:bg-purple-600",
-                            hoverText: "group-hover:text-white",
-                            glow: "group-hover:shadow-purple-200/60",
-                            lineColor: "#4f39f6"
-                        },
-                    },
-                    {
-                        id: 3,
-                        title: "Accelerated Time-to-Market",
-                        description:
-                            "Professional board bring-up catches hardware bugs early, preventing launch delays.",
-                        icon: MdOutlineAccessTime,
-                        theme: {
-                            bg: "bg-green-50",
-                            text: "text-green-600",
-                            hoverBg: "group-hover:bg-green-600",
-                            hoverText: "group-hover:text-white",
-                            glow: "group-hover:shadow-green-200/60",
-                            lineColor: "#00a63e"
-                        },
-                    },
-                    {
-                        id: 4,
-                        title: "Future-Proofing",
-                        description:
-                            "Aligning with mainline kernels ensures your product can be maintained for years to come.",
-                        icon: GiProfit,
-                        theme: {
-                            bg: "bg-blue-50",
-                            text: "text-blue-600",
-                            hoverBg: "group-hover:bg-blue-600",
-                            hoverText: "group-hover:text-white",
-                            glow: "group-hover:shadow-blue-200/60",
-                            lineColor: "#587ad3"
-                        },
-                    },
-                ],
-                criticaltitle: "Comprehensive <span class='text-primary'>Linux BSP Development </span> Services",
-                criticalRoles: [
-                    {
-                        title: "BSP Customization",
-                        desc:
-                            "Tailoring Linux distributions specifically for your hardware footprint and use case, removing bloat to maximize resource efficiency.",
-                        icon: HiOutlineDevicePhoneMobile,
-                    },
-                    {
-                        title: "Driver Development",
-                        desc:
-                            "Writing, porting, and optimizing device drivers for custom sensors, cameras, and specialized communication modules.",
-                        icon: RiSoundModuleLine,
-                    },
-                    {
-                        title: "Board Bring-Up",
-                        desc:
-                            "The critical phase: Bootloader configuration, kernel tuning, and rigorous hardware validation to stabilize your prototypes.",
-                        icon: HiMiniUserGroup,
-                    },
-                    {
-                        title: "Security Hardening",
-                        desc:
-                            "Protecting your IP and user data through encrypted file systems, secure boot, and compliance with the EU Cybersecurity Resilience Act.",
-                        icon: GiCyberEye,
-                    },
-                    {
-                        title: "Long-Term Support & Maintenance",
-                        desc:
-                            "Continuous maintenance, updates, and long-term security maintenance including CVE monitoring and backporting security fixes.",
-                        icon: MdSupportAgent,
-                    },
-                ],
-                useCaseImg: useCaseEmbedded,
-                useCaseTitle: "Why Choose eByteLogic for Linux BSP Development?",
-                useCaseDesc: "Generic firmware developers often miss the nuances of high-performance hardware. Our linux board support package expertise provides a unique combination of technical depth and industry experience:",
-                useCases: [
-                    {
-                        title: "Proven Expertise",
-                        desc:
-                            "We bring years of specialized experience in Linux kernel and embedded linux BSP development, solving the low-level challenges that block production.",
-                    },
-                    {
-                        title: "Cross-Industry Knowledge",
-                        desc:
-                            "Our team has delivered stable solutions across diverse sectors, including Automotive, Medical, Industrial, IoT, Rolling Stock, and Consumer Electronics.",
-                    },
-                    {
-                        title: "End-to-End Support",
-                        desc:
-                            "We act as your engineering partner throughout the entire lifecycle—from initial board bring-up and hardware validation to production-ready deployments and long-term security maintenance.",
-                    },
-                    {
-                        title: "Upstream Contributions",
-                        desc:
-                            "We don’t just use open source; we actively participate in the community. We help get your hardware recognized in the mainline kernel, reducing your future maintenance debt and ensuring community-backed longevity.",
-                    },
-                    {
-                        title: "Silicon-Aware Engineering",
-                        desc:
-                            "Deep experience with leading architectures including NXP i.MX, Rockchip, TI, and NVIDIA Jetson.",
-                    },
-                ],
-                cta: [
-                    {
-                        ctaTitle: "Build a <span class='text-primary'>Foundation</span> You Can Launch With.",
-                        Ctadescription: "Don’t let a generic linux BSP compromise your hardware’s potential. Partner with an engineering team that understands the reality of custom hardware.",
-                        ctaButtonText: "Contact Details",
-                    }
-                ],
-                faqTitle: '<span class="text-primary">FAQs</span>',
-                faqs: [
-                    {
-                        q: "Which distribution is best for my project?",
-                        a: "It depends on your hardware. Yocto is best for complex, customized products, while Buildroot is ideal for simple, fast-booting devices. Our experts help you choose during the audit phase."
-                    },
-                    {
-                        q: "Do you support Real-time Linux?",
-                        a: "Yes. We specialize in Real-time Linux patches for applications that require deterministic timing, such as robotics or motor control."
-                    },
-                    {
-                        q: "What is the difference between a reference BSP and a tailored BSP?",
-                        a: "A reference BSP is a generic starting point from a chip manufacturer. Tailored BSP development involves stripping away bloat, adding custom drivers, and hardening the security to make the system ready for a real-world product."
-                    },
-        
-                    {
-                        q: "What is included in your linux BSP development services?",
-                        a: "Our services cover everything from bootloader (U-Boot) customization and kernel configuration to device driver development, file system creation, and secure update (OTA) integration."
-                    },
-                    {
-                        q: "Which silicon platforms do you support for BSP development in linux?",
-                        a: "We have extensive linux BSP expertise on architectures including ARM (Cortex-A/M), x86, and RISC-V, with specific focus on NXP, Rockchip, and TI chipsets."
-                    },
-                    {
-                        q: "Can you help with boot-time optimization?",
-                        a: "Yes. As part of our embedded linux BSP development, we can optimize your system to boot in seconds by stripping unnecessary kernel modules and optimizing the initialization sequence."
-                    },
-                    {
-                        q: "Can you work with our existing team via Slack or Jira?",
-                        a: "Absolutely. We believe communication is the key to successful BSP development in linux. We typically provide dedicated Slack channels and project supervisors to ensure seamless integration with your internal engineers."
-                    },
-                ]
+            },
+            {
+                id: "android-bsp-development",
+                pathText: "Android BSP Development",
             },
         ]
     },
@@ -1105,6 +868,279 @@ export const serviceData = [
             {
                 q: "Can you work with our existing team via Slack or Jira?",
                 a: "Absolutely. We believe communication is the key to successful BSP development in linux. We typically provide dedicated Slack channels and project supervisors to ensure seamless integration with your internal engineers."
+            },
+        ]
+    },
+    {
+        bgImg: '/images/bg/serviceBg/androidBsp.png',
+        id: "android-bsp-development",
+        category: "Android BSP Development Services",
+        pathText: "Android BSP Development",
+        tagLine: "Kernel, HAL, Framework | End-to-End Android BSP",
+        imageName: AndroidBspPng,
+        overview:
+            ["We provide professional android BSP development services that bridge the gap between your custom hardware and the Android framework. We specialize in creating high-performance, secure, and fully-integrated android BSP solutions tailored for industrial, medical, and automotive applications."],
+        btnPrimaryText: "Consult with an Android Expert",
+        btnSecondaryText: "View Case Studies",
+        capabilitySections: [
+            {
+                title: "Our Technical Expertise in Android BSP",
+                description:
+                    "Building a high-performance Android BSP requires deep-level knowledge across the entire software stack. We provide the technical depth necessary to ensure your hardware is fully leveraged by the Android environment.",
+                capabilities: [
+                    {
+                        title: "Low-Level Development & Bring-Up",
+                        desc:
+                            "Specialized expertise in Android kernel programming and the critical initial board bring-up. We handle the complex task of adapting the Linux kernel for the Android environment, including custom driver development for specialized embedded hardware.",
+                    },
+                    {
+                        title: "Android System Subsystems & Frameworks",
+                        desc:
+                            "Deep-domain knowledge of the internal architecture that drives the Android experience. We optimize and configure essential subsystems including:",
+                        points: [
+                            "<span class='font-semibold'>Media & Graphics:</span> Audio HAL, Camera HAL, Gralloc, and HWComposer.",
+                            "<span class='font-semibold'>Core Logic:</span> Zygote, System Server, Activity Manager, and Radio Interface Layer (RIL).",
+                        ],
+                    },
+                    {
+                        title: "Hardware Abstraction Layer (HAL)",
+                        desc:
+                            "As an expert android bsp developer, we provide custom HAL development and modification. We ensure a seamless bridge between the Android framework and your hardware, enabling efficient communication for sensors, displays, and custom peripherals.",
+                    },
+                    {
+                        title: "Middleware & System Services",
+                        desc:
+                            "We enhance system performance and security by integrating Java Native Interface (JNI), custom system services, and native frameworks. Our team meticulously configures SELinux policies to ensure strict access control across the system.",
+                    },
+                    {
+                        title: "UI Framework & Customization",
+                        desc:
+                            "Beyond the backend, we offer extensive customization of the Android UI. From framework-level modifications and custom launcher development to overall UX optimization, we tailor the interface to meet your specific industry requirements.",
+                    },
+                    {
+                        title: "Security & Compliance Hardening",
+                        desc:
+                            "Protecting your device throughout its lifecycle. We manage the implementation of Android security patches, fix CVE vulnerabilities, and integrate Trusted Execution Environments (TEE) and hardware-backed encryption for maximum reliability.",
+                    },
+                    {
+                        title: "Certification & Testing (xTS)",
+                        desc:
+                            "We guide you through the complexities of the Google ecosystem. Our team provides GMS certification support and ensures your build passes the rigorous xTS suites, including CTS, GTS, VTS, CTSVerifier, and GTSVerifier.",
+                    },
+                    {
+                        title: "OTA Updates & Build Management",
+                        desc:
+                            "Ensuring your devices stay current in the field. We implement secure, end-to-end Over-the-Air (OTA) update mechanisms and integrate CI/CD automation to streamline your firmware deployment and version control.",
+                    },
+                ],
+            },
+            {
+                title: "Our Android BSP Development Process",
+                description:
+                    "We follow a specialized 5-stage android BSP development lifecycle to ensure your hardware is fully leveraged by the AOSP stack.",
+                capabilities: [
+                    {
+                        title: "Architecture & Hardware Audit",
+                        desc:
+                            "We evaluate your SoC (NXP, Rockchip, Qualcomm) and peripherals to define the custom HAL and kernel requirements.",
+                    },
+                    {
+                        title: "Board Bring-Up & Kernel Porting",
+                        desc:
+                            "We perform initial bootloader configuration and adapt the Linux kernel with specific drivers for your board's silicon.",
+                    },
+                    {
+                        title: "HAL Layer Engineering",
+                        desc:
+                            "This is where we excel. We develop and integrate the Hardware Abstraction Layer (HAL) to bridge the kernel and the Android Framework.",
+                    },
+                    {
+                        title: "Framework Customization",
+                        desc:
+                            "We customize the Android System UI, boot animations, and system-level applications to match your brand and use case.",
+                    },
+                    {
+                        title: "Validation & CTS/VTS Testing",
+                        desc:
+                            "Rigorous testing using Google’s Compatibility Test Suite (CTS) and Vendor Test Suite (VTS) to ensure framework-level stability.",
+                    },
+                ],
+            },
+        ],
+        layeredCardTitle: "Benefits of <span class='text-primary'>Custom Android BSP</span> Development",
+        layeredCardDescription: `Standard evaluation packages from silicon vendors aren't built for your custom PCB. A professional android board support package ensures:`,
+        layeredCard: [
+            {
+                id: 1,
+                title: "Framework Stability",
+                description:
+                    "Seamless communication between the Android Runtime (ART) and your hardware.",
+                icon: SiFramework,
+                theme: {
+                    bg: "bg-orange-50",
+                    text: "text-orange-600",    
+                    hoverBg: "group-hover:bg-orange-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-orange-200/60",
+                    lineColor: "#f54a00"
+                },
+            },
+            {
+                id: 2,
+                title: "Modern User Experience",
+                description:
+                    "Optimized graphics, touch, and multimedia performance tailored to your display and VPU.",
+                icon: FaRegUser,
+                theme: {
+                    bg: "bg-purple-50",
+                    text: "text-purple-600",
+                    hoverBg: "group-hover:bg-purple-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-purple-200/60",
+                    lineColor: "#4f39f6"
+                },
+            },
+            {
+                id: 3,
+                title: "Production-Ready Security",
+                description:
+                    "Secure boot and hardware-backed key storage that meet enterprise standards.",
+                icon: MdOutlineAccessTime,
+                theme: {
+                    bg: "bg-green-50",
+                    text: "text-green-600",
+                    hoverBg: "group-hover:bg-green-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-green-200/60",
+                    lineColor: "#00a63e"
+                },
+            },
+            {
+                id: 4,
+                title: "Extended Lifecycle",
+                description:
+                    "Clean, modular AOSP builds that are easier to maintain and upgrade.",
+                icon: GrCycle,
+                theme: {
+                    bg: "bg-blue-50",
+                    text: "text-blue-600",
+                    hoverBg: "group-hover:bg-blue-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-blue-200/60",
+                    lineColor: "#587ad3"
+                },
+            },
+        ],
+        criticaltitle: "Comprehensive <span class='text-primary'>Android BSP Development</span> Services",
+        criticalRoles: [
+            {
+                title: "BSP Customization",
+                desc:
+                    "Tailoring the Android Open Source Project (AOSP) for your hardware, removing unnecessary mobile services to create a lean, purpose-built system.",
+                icon: HiOutlineDevicePhoneMobile,
+            },
+            {
+                title: "HAL Development & Integration",
+                desc:
+                    "Writing and porting Hardware Abstraction Layers for custom sensors, cameras, displays, and specialized peripherals to ensure they are recognized by the Android OS.",
+                icon: RiSoundModuleLine,
+            },
+            {
+                title: "Driver Development",
+                desc:
+                    "Our android BSP expertise includes developing kernel-level drivers for audio (TinyAlsa), video (V4L2), and industrial communication protocols.",
+                icon: HiMiniUserGroup,
+            },
+            {
+                title: "Board Bring-Up",
+                desc:
+                    "Initializing the processor, memory, and buses. We handle the critical first boot, bootloader (U-Boot/Fastboot) tuning, and hardware validation.",
+                icon: GoCpu,
+            },
+            {
+                title: "Security Hardening",
+                desc:
+                    "Applying security patches, implementing Secure Boot, and configuring SELinux policies to harden your android BSP against unauthorized access.",
+                icon: MdSupportAgent,
+            },
+            {
+                title: "Long-Term Support & Maintenance",
+                desc:
+                    "Continuous maintenance, including CVE monitoring, security backporting, and AOSP version migration to keep your product current in the field.",
+                icon: GiProfit,
+            },
+        ],
+        useCaseImg: useCaseEmbedded,
+        useCaseTitle: "Why Choose eByteLogic for Android BSP Expertise?",
+        useCaseDesc: "Our android board support package expertise provides a unique combination of silicon-level knowledge and framework-level precision:",
+        useCases: [
+            {
+                title: "Proven Expertise",
+                desc:
+                    `We bring years of experience in AOSP internals and kernel adaptation, solving the complex "bridging" issues that cause system crashes.`,
+            },
+            {
+                title: "Cross-Industry Knowledge",
+                desc:
+                    "We have delivered stable android BSP solutions for Automotive Infotainment, Medical Devices, Smart Kiosks, and Handheld Industrial Terminals.",
+            },
+            {
+                title: "End-to-End Support",
+                desc:
+                    "From initial board bring-up through Google certification preparation (GMS/EDLA) to long-term security maintenance.",
+            },
+            {
+                title: "Upstream Contributions",
+                desc:
+                    "We align your build with AOSP best practices, ensuring your code remains maintainable as Android evolves.",
+            },
+            {
+                title: "Silicon-Aware Engineering",
+                desc:
+                    "Deep experience with leading architectures, including NXP i.MX, Rockchip, Qualcomm, and MediaTek.",
+            },
+        ],
+        cta: [
+            {
+                ctaTitle: "Build a Foundation <span class='text-primary'>Your Apps</span> Can Depend On.",
+                Ctadescription: "Don’t let a generic vendor BSP limit your product's potential. Partner with an engineering team that understands the reality of custom Android hardware.",
+                ctaButtonText: "Contact Details",
+            }
+        ],
+        faqTitle: '<span class="text-primary">FAQs</span>',
+        faqs: [
+            {
+                q: "How is an Android BSP different from a Linux BSP?",
+                a: "While both use a Linux kernel, an android BSP includes the Hardware Abstraction Layer (HAL) and the Android Framework layers. It is significantly more complex and resource-intensive to build and maintain."
+            },
+            {
+                q: "Can you help with boot-time optimization?",
+                a: "Yes. Android is notorious for slow boot times. Our android BSP expertise includes optimizing the init sequence and stripping the Zygote process to get your device to a functional state in seconds."
+            },
+            {
+                q: "Do you support custom displays and touchscreens?",
+                a: "Absolutely. We specialize in configuring MIPI-DSI, LVDS, and HDMI displays, including custom timing and touch controller integration within the HAL."
+            },
+
+            {
+                q: "Do you support the integration of non-standard Android peripherals?",
+                a: "Yes. Standard Android is designed for phones, but industrial hardware often uses specialized sensors, unique displays, or proprietary communication ports. Our android BSP expertise includes writing custom HALs and kernel drivers for medical sensors, industrial thermal cameras, and specialized CAN-bus or RS-485 interfaces that aren't natively supported by AOSP."
+            },
+            {
+                q: "Can you help us achieve GMS (Google Mobile Services) certification?",
+                a: "Absolutely. We guide hardware teams through the entire certification path. This includes pre-testing with CTS (Compatibility Test Suite) and VTS (Vendor Test Suite) to ensure your android BSP meets Google's strict stability and performance requirements. We help you address any non-compliance issues before you submit for final approval."
+            },
+            {
+                q: "How do you handle Android version upgrades for legacy hardware?",
+                a: "Migrating an existing product to a newer version of Android is one of our core strengths. We analyze your current kernel and HAL versions, assess the hardware capabilities of your SoC, and manage the porting process to ensure that your custom drivers and framework modifications remain stable on the newer AOSP branch."
+            },
+            {
+                q: "What is your approach to Android security and data protection?",
+                a: "We implement multi-layered security. This includes configuring SELinux in Enforcing mode, implementing Secure Boot, and leveraging the Trusted Execution Environment (TEE) for hardware-backed key storage. We also provide ongoing security maintenance, backporting critical patches to protect your devices from the latest CVE threats."
+            },
+            {
+                q: "Do you optimize Android for low-power or battery-operated devices?",
+                a: "Yes. We specialize in power-management tuning at the kernel level. By optimizing the DVFS (Dynamic Voltage and Frequency Scaling) tables and fine-tuning the Android sleep/wake states, we can significantly extend the battery life of handheld industrial terminals or portable medical equipment."
             },
         ]
     },

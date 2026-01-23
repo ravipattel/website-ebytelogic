@@ -35,6 +35,12 @@ export const serviceMetaData = {
     description:
       "Do you need professional linux BSP development services. From board bring-up and driver development to long-term CVE monitoring and security hardening."
   },
+  "android-bsp-development": {
+    id: "android-bsp-development",
+    title: "Android BSP Development Services | eBye Logic",
+    description:
+      "Do you require android BSP development service? We provide expert android board support package expertise, specializing in AOSP porting, HAL development, and kernel adaptation."
+  },
 }
 
 // Helper functions
