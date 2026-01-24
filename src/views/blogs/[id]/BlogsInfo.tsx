@@ -1532,7 +1532,7 @@ const blogsData = [
             ],
             button: {
                 label: "Explore Linux BSP Techniques",
-                link: "/case-study/multi-os-bsp-porting-and-boot-time-optimization",
+                link: "https://www.ebytelogic.com/services/linux-bsp-development",
             },
             image: {
                 src: LinuxBspPng,
