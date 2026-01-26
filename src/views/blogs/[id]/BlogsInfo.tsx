@@ -1532,7 +1532,7 @@ const blogsData = [
             ],
             button: {
                 label: "Explore Linux BSP Techniques",
-                link: "https://www.ebytelogic.com/services/linux-bsp-development",
+                scrollIdBtn: "techniques",
             },
             image: {
                 src: LinuxBspPng,
@@ -1571,6 +1571,7 @@ const blogsData = [
         ],
         twiceQa: {
             qaTitle: "What are the 6 Linux BSP Techniques That Work for <3s Boot",
+            scrollId: "techniques",
             qaDescription: `Achieving a near-instant boot requires a <span class='text-primary'>"shave-everything"</span> approach across the entire software stack. Here is how to optimize your Linux BSP for high-performance, sub-3-second results.`,
             qa: [
                 {
@@ -4144,6 +4145,7 @@ type QASection = {
     qaTitle: string;
     qaDescription?: string;
     qa: QAItem[];
+    scrollId?: string;
 };
 
 // used for doughnut
@@ -4275,6 +4277,21 @@ const BlogsInfo = () => {
         },
     };
 
+    const handleIntroButtonClick = () => {
+        const scrollId = data?.introData?.button?.scrollIdBtn;
+        if (scrollId) {
+            const target = document.getElementById(scrollId);
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+                return;
+            }
+        }else{
+
+            router.push(data?.introData?.button?.link || "/");
+        }
+
+    };
+
     return (
         <div className="max-w-[1400px] mx-auto sm:px-6 py-16">
             {/* breadCrumbs */}
@@ -4314,9 +4331,7 @@ const BlogsInfo = () => {
                                 />
                             ))}
                             <Button
-                                onClick={() =>
-                                    router.push(data?.introData?.button?.link || "/")
-                                }
+                                onClick={handleIntroButtonClick}
                                 className="sm:h-12 w-full sm:w-fit !bg-white !text-primary hover:!bg-primary hover:!text-white"
                             >
                                 {data?.introData?.button?.label}
@@ -4877,7 +4892,10 @@ const BlogsInfo = () => {
                 )}
                 {data?.twiceQa && data?.twiceQa?.qa?.length > 0 && (
                     <div className="pt-12">
-                        <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-serif font-semibold text-gray-800 text-center tracking-wide">
+                        <h1
+                            id={data?.twiceQa?.scrollId}
+                            className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-serif font-semibold text-gray-800 text-center tracking-wide scroll-mt-24"
+                        >
                             {data.twiceQa.qaTitle}
                         </h1>
                         {data?.twiceQa?.qaDescription && (
@@ -5468,4 +5486,4 @@ const BlogsInfo = () => {
 
 export default BlogsInfo;
 
-// export const runtime = "edge";
+export const runtime = "edge";
