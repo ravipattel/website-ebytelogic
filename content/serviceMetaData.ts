@@ -37,7 +37,7 @@ export const serviceMetaData = {
   },
   "android-bsp-development": {
     id: "android-bsp-development",
-    title: "Android BSP Development Services | eBye Logic",
+    title: "Android BSP Development Services | eByteLogic",
     description:
       "Do you require android BSP development service? We provide expert android board support package expertise, specializing in AOSP porting, HAL development, and kernel adaptation."
   },
