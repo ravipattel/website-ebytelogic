@@ -50,4 +50,5 @@ const BlogPage = async() => {
 }
 
 export default BlogPage
+
 export const runtime = 'edge';
