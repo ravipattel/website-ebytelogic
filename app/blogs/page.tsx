@@ -1,5 +1,7 @@
 import React from 'react'
 import Blog from '@/src/views/blogs'
+import JsonLd from '@/src/components/JsonLd';
+import { getBlogs } from '@/src/store/getBlogs';
 
 export const metadata = {
   title: "eByteLogic Blog | Embedded Systems, Video Engineering & Low-Latency Streaming Experts",
@@ -14,14 +16,35 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "eByteLogic Blog | Embedded Systems, Video Engineering & Low-Latency Streaming Experts",
-    description: "Insights and engineering deep-dives on embedded systems, Linux BSPs, video streaming, AV sync, protocol design, and low-latency multimedia systems.",
+    description: "eByteLogic Blog | Embedded Systems, Video Engineering & Low-Latency Streaming ExpertseByteLogic Blog | Embedded Systems, Video Engineering & Low-Latency Streaming Experts.",
    }
 };
 
-const BlogPage = () => {
+const breadCrumbList = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.ebytelogic.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blogs",
+      "item": "https://www.ebytelogic.com/blogs"
+    }
+  ]
+}
+
+const BlogPage = async() => {
+  const blogs = await getBlogs();
   return (
     <div>
-      <Blog />
+      <JsonLd json={breadCrumbList} />
+      <Blog blogs={blogs}/>
     </div>
   )
 }

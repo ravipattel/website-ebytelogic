@@ -49,7 +49,7 @@ const localBusinessSchema={
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
-  const hideRoutes = ["/login"];
+  const hideRoutes = ["/login","/admin"];
 
   const shouldHide = hideRoutes.some((route) =>
     pathname?.startsWith(route)

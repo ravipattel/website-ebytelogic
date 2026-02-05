@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 import React, { useEffect, useState } from "react";
 import { FaAngleRight } from "react-icons/fa";
@@ -8,278 +8,294 @@ import { FaAngleRight } from "react-icons/fa";
 const tocData = {
   //case studies
   "reducing-wearable-display-latency": [
-    { id: "challenge", label: "1. The Challenge" },
+    { id: "challenge", label: "The Challenge" },
     {
       id: "tech-highlights",
-      label: "2. Technical Highlights",
+      label: "Technical Highlights",
     },
     {
       id: "step-process",
-      label: "3. Optimization Process",
+      label: "Optimization Process",
     },
     {
       id: "results",
-      label: "4. Impact & Results",
+      label: "Impact & Results",
     },
     {
       id: "cta",
-      label: "5. Call to Action",
+      label: "Call to Action",
     },
   ],
   "bypassing-proprietary-audio-pipeline": [
-    { id: "challenge", label: "1. The Challenge" },
-    { id: "tech-highlights", label: "2. Technical Highlights" },
-    { id: "results", label: "3. Impact & Results" },
-    { id: "cta", label: "4. Call to Action" },
+    { id: "challenge", label: "The Challenge" },
+    { id: "tech-highlights", label: "Technical Highlights" },
+    { id: "results", label: "Impact & Results" },
+    { id: "cta", label: "Call to Action" },
   ],
   "broadcast-grade-sdi-encoder-decoder-with-sub100ms-latency": [
-    { id: "challenge", label: "1. The Challenge" },
-    { id: "tech-highlights", label: "2. Technical Highlights" },
-    { id: "results", label: "3. Impact & Results" },
-    { id: "cta", label: "4. Call to Action" },
+    { id: "challenge", label: "The Challenge" },
+    { id: "tech-highlights", label: "Technical Highlights" },
+    { id: "results", label: "Impact & Results" },
+    { id: "cta", label: "Call to Action" },
   ],
   "u-boot-logo-for-IMX8MQ": [
-    { id: "challenge", label: "1. The Challenge" },
-    { id: "step-process", label: "2. Our Solution" },
-    { id: "tech-highlights", label: "3. Technical Highlights" },
-    { id: "results", label: "4. Impact & Results" },
-    { id: "cta", label: "5. Call to Action" },
+    { id: "challenge", label: "The Challenge" },
+    { id: "step-process", label: "Our Solution" },
+    { id: "tech-highlights", label: "Technical Highlights" },
+    { id: "results", label: "Impact & Results" },
+    { id: "cta", label: "Call to Action" },
   ],
   "multi-platform-driver-development-uBoot-customization": [
-    { id: "challenge", label: "1. The Challenge" },
-    { id: "tech-highlights", label: "2. Technical Highlights" },
-    { id: "results", label: "3. Impact & Results" },
-    { id: "cta", label: "4. Call to Action" },
+    { id: "challenge", label: "The Challenge" },
+    { id: "tech-highlights", label: "Technical Highlights" },
+    { id: "results", label: "Impact & Results" },
+    { id: "cta", label: "Call to Action" },
   ],
   "ndi-protocol-integration-inremote-recorder-player": [
-    { id: "challenge", label: "1. The Challenge" },
-    { id: "step-process", label: "2. Our Integrated NDI Solution" },
-    { id: "tech-highlights", label: "3. Technical Highlights" },
-    { id: "results", label: "4. Impact & Results" },
-    { id: "cta", label: "5. Call to Action" },
+    { id: "challenge", label: "The Challenge" },
+    { id: "step-process", label: "Our Integrated NDI Solution" },
+    { id: "tech-highlights", label: "Technical Highlights" },
+    { id: "results", label: "Impact & Results" },
+    { id: "cta", label: "Call to Action" },
   ],
   "rapid-lcd-touchscreen-bring-up-for-telematics-display": [
-    { id: "challenge", label: "1. The Challenge" },
-    { id: "tech-highlights", label: "2. Technical Highlights" },
-    { id: "results", label: "3. Impact & Results" },
-    { id: "flowchartPlusContent", label: "4. Bring-Up Workflow" },
-    { id: "cta", label: "5. Call to Action" },
+    { id: "challenge", label: "The Challenge" },
+    { id: "tech-highlights", label: "Technical Highlights" },
+    { id: "results", label: "Impact & Results" },
+    { id: "flowchartPlusContent", label: "Bring-Up Workflow" },
+    { id: "cta", label: "Call to Action" },
   ],
   "secure-mcu-firmware-upgrade-via-canopen": [
-    { id: "challenge", label: "1. The Challenge" },
-    { id: "tech-highlights", label: "2. Technical Highlights" },
-    { id: "results", label: "3. Impact & Results" },
-    { id: "flowchartPlusContent", label: "4. Firmware Update Flow" },
-    { id: "cta", label: "5. Call to Action" },
+    { id: "challenge", label: "The Challenge" },
+    { id: "tech-highlights", label: "Technical Highlights" },
+    { id: "results", label: "Impact & Results" },
+    { id: "flowchartPlusContent", label: "Firmware Update Flow" },
+    { id: "cta", label: "Call to Action" },
   ],
   "hdmi-multiview-player": [
-    { id: "challenge", label: "1. The Challenge" },
-    { id: "tech-highlights", label: "2. Technical Highlights" },
-    { id: "results", label: "3. Impact & Results" },
-    { id: "flowchartPlusContent", label: "4. System Architecture" },
-    { id: "compatibility", label: "5. Protocol Compatibility" },
-    { id: "cta", label: "6. Call to Action" },
+    { id: "challenge", label: "The Challenge" },
+    { id: "tech-highlights", label: "Technical Highlights" },
+    { id: "results", label: "Impact & Results" },
+    { id: "flowchartPlusContent", label: "System Architecture" },
+    { id: "compatibility", label: "Protocol Compatibility" },
+    { id: "cta", label: "Call to Action" },
   ],
   "sub-100ms-latency-in-uav-video-streaming": [
-    { id: "challenge", label: "1. The Challenge" },
-    { id: "tech-highlights", label: "2. Technical Highlights" },
-    { id: "results", label: "3. Impact & Results" },
-    { id: "flowchartPlusContent", label: "4. Video Streaming Pipeline" },
-    { id: "cta", label: "5. Call to Action" },
+    { id: "challenge", label: "The Challenge" },
+    { id: "tech-highlights", label: "Technical Highlights" },
+    { id: "results", label: "Impact & Results" },
+    { id: "flowchartPlusContent", label: "Video Streaming Pipeline" },
+    { id: "cta", label: "Call to Action" },
   ],
   "can-to-modbus-bridge": [
-    { id: "challenge", label: "1. The Challenge" },
-    { id: "tech-highlights", label: "2. Technical Highlights" },
-    { id: "compatibility", label: "3. Configuration Table" },
-    { id: "results", label: "4. Impact & Results" },
-    { id: "flowchartPlusContent", label: "5. Protocol Bridging Solution" },
-    { id: "cta", label: "6. Call to Action" },
+    { id: "challenge", label: "The Challenge" },
+    { id: "tech-highlights", label: "Technical Highlights" },
+    { id: "compatibility", label: "Configuration Table" },
+    { id: "results", label: "Impact & Results" },
+    { id: "flowchartPlusContent", label: "Protocol Bridging Solution" },
+    { id: "cta", label: "Call to Action" },
   ],
   "yocto-migration-for-safety-panel": [
-    { id: "challenge", label: "1. The Challenge" },
-    { id: "tech-highlights", label: "2. Technical Highlights" },
-    { id: "results", label: "3. Impact & Results" },
-    { id: "flowchartPlusContent", label: "4. Migration Process" },
-    { id: "cta", label: "5. Call to Action" },
+    { id: "challenge", label: "The Challenge" },
+    { id: "tech-highlights", label: "Technical Highlights" },
+    { id: "results", label: "Impact & Results" },
+    { id: "flowchartPlusContent", label: "Migration Process" },
+    { id: "cta", label: "Call to Action" },
   ],
   "yocto-buildroot-migration": [
-    { id: "challenge", label: "1. The Challenge" },
-    { id: "tech-highlights", label: "2. Technical Highlights" },
-    { id: "onlyFlowchart", label: "3. Migration Solution" },
-    { id: "results", label: "4. Impact & Results" },
-    { id: "cta", label: "5. Call to Action" },
+    { id: "challenge", label: "The Challenge" },
+    { id: "tech-highlights", label: "Technical Highlights" },
+    { id: "onlyFlowchart", label: "Migration Solution" },
+    { id: "results", label: "Impact & Results" },
+    { id: "cta", label: "Call to Action" },
   ],
   "multi-master-i2c-problem-resolution": [
-    { id: "challenge", label: "1. The Challenge" },
-    { id: "tech-highlights", label: "2. Technical Highlights" },
-    { id: "flowchartPlusContent", label: "3. Recovery Solution" },
-    { id: "results", label: "4. Impact & Results" },
-    { id: "cta", label: "5. Call to Action" },
+    { id: "challenge", label: "The Challenge" },
+    { id: "tech-highlights", label: "Technical Highlights" },
+    { id: "flowchartPlusContent", label: "Recovery Solution" },
+    { id: "results", label: "Impact & Results" },
+    { id: "cta", label: "Call to Action" },
   ],
   "multi-os-bsp-porting-and-boot-time-optimization": [
-    { id: "challenge", label: "1. The Challenge" },
-    { id: "tech-highlights", label: "2. Technical Highlights" },
-    { id: "flowchartPlusContent", label: "3. Optimization Approach" },
-    { id: "results", label: "4. Impact & Results" },
-    { id: "cta", label: "5. Call to Action" },
+    { id: "challenge", label: "The Challenge" },
+    { id: "tech-highlights", label: "Technical Highlights" },
+    { id: "flowchartPlusContent", label: "Optimization Approach" },
+    { id: "results", label: "Impact & Results" },
+    { id: "cta", label: "Call to Action" },
   ],
   "unified-yocto-build-environment-for-multi-SoM-product-lines": [
-    { id: "challenge", label: "1. The Challenge" },
-    { id: "tech-highlights", label: "2. Technical Highlights" },
-    { id: "flowchartPlusContent", label: "3. Optimization Approach" },
-    { id: "results", label: "4. Impact & Results" },
-    { id: "cta", label: "5. Call to Action" },
+    { id: "challenge", label: "The Challenge" },
+    { id: "tech-highlights", label: "Technical Highlights" },
+    { id: "flowchartPlusContent", label: "Optimization Approach" },
+    { id: "results", label: "Impact & Results" },
+    { id: "cta", label: "Call to Action" },
   ],
   "low-cost-android-ott-tv-box-development": [
-    { id: "challenge", label: "1. The Challenge" },
-    { id: "tech-highlights", label: "2. Key Technical Highlights" },
-    { id: "flowchartSecondary", label: "3. Optimization Approach" },
-    { id: "results", label: "4. Impact & Results" },
-    { id: "cta", label: "5. Call to Action" },
+    { id: "challenge", label: "The Challenge" },
+    { id: "tech-highlights", label: "Key Technical Highlights" },
+    { id: "flowchartSecondary", label: "Optimization Approach" },
+    { id: "results", label: "Impact & Results" },
+    { id: "cta", label: "Call to Action" },
   ],
 
-  //blogs
-  "av-lip-sync-in-2025": [
-    { id: "introduction", label: "1. Introduction" },
-    { id: "qa", label: "2. Lip-Sync Sync Deep Dive" },
-    { id: "conclusion", label: "3. Conclusion" },
-  ],
-  "SRT-vs-RIST-vs-RTMP": [
-    { id: "introduction", label: "1. Introduction" },
-    { id: "qa", label: "2. Protocol Wars Deep Dive" },
-    { id: "conclusion", label: "3. Conclusion" },
-  ],
-  "the-future-of-embedded-systems": [
-    { id: "introduction", label: "1. Introduction" },
-    { id: "qa", label: "2. Market Growth" },
-    { id: "trends", label: "3. 7 Key Trends" },
-    { id: "challenges", label: "4. Challenges" },
-    { id: "case-study", label: "5. Case Studies" },
-    { id: "impact", label: "6. Impact" },
-    { id: "conclusion", label: "7. Conclusion" },
-  ],
-  "ndi-in-hybrid-ip-sdi-workflows": [
-    { id: "introduction", label: "1. Introduction" },
-    { id: "qa", label: "2. Understanding the Hybrid Broadcast Landscape" },
-    { id: "trends", label: "3. Key Benefits of NDI in Hybrid Workflows" },
-    {
-      id: "challenges",
-      label: "4. Common Challenges Product Teams Face with NDI",
-    },
-    { id: "scenarios", label: "5. NDI Integration Scenarios & Best Practices" },
-    { id: "conclusion", label: "6. Conclusion & Call-to-Action" },
-  ],
-  "buildroot-vs-yocto-for-video-devices": [
-    { id: "introduction", label: "1. Introduction" },
-    {
-      id: "qa",
-      label: "2. The Embedded Video Device Challenge & Buildroot at a Glance",
-    },
-    { id: "scenarios", label: "3. Pragmatic Scenarios: Which to Choose?" },
-    {
-      id: "case-study",
-      label: "4. Case Study Snapshot: eByteLogic Experience",
-    },
-    { id: "recommendations", label: "5. Key Recommendations" },
-    { id: "conclusion", label: "6. Conclusion" },
-  ],
-  "linux-bsp-techniques-that-work": [
-    { id: "introduction", label: "1. Introduction" },
-    { id: "qa", label: "2. Optimizing Boot Time" },
-    { id: "trends", label: "3. Future Directions & Industry Trends" },
-    { id: "case-study", label: "4. Real-World Case Study: OTT Streaming Box" },
-    { id: "conclusion", label: "5. Conclusion" },
-  ],
-  "cea-608-708-and-line21-dtvcc-conversion": [
-    { id: "introduction", label: "1. Introduction" },
-    { id: "qa", label: "2. Deep Dive" },
-    { id: "trends", label: "3. Future Trends in Closed Captioning" },
-    {
-      id: "case-study",
-      label: "4. Real-World Case Study: Broadcast Caption Conversion",
-    },
-    { id: "conclusion", label: "5. Conclusion" },
-  ],
-  "ptp-and-smpte-st-2110-for-non-broadcasters": [
-    { id: "introduction", label: "1. Introduction" },
-    { id: "qa", label: "2. Let's have a Deep Dive" },
-    { id: "conclusion", label: "3. Conclusion" },
-  ],
-  "fixing-frame-drops-during-protocol-switching": [
-    { id: "introduction", label: "1. Introduction" },
-    { id: "qa", label: "2. Let's have a Deep Dive" },
-    { id: "trends", label: "3. Lessons Learned" },
-    { id: "conclusion", label: "4. Conclusion" },
-  ],
-  "ffmpeg-filters-frame-pacing-lip-sync": [
-    { id: "introduction", label: "1. Introduction" },
-    {
-      id: "qa",
-      label: "2. Challenge, Role, Real-World Postmortem, Analysis, Fix",
-    },
-    { id: "trends", label: "3. Lessons Learned" },
-    { id: "conclusion", label: "4. Conclusion" },
-  ],
-  "measuring-glass-to-glass-latency": [
-    { id: "introduction", label: "1. Introduction" },
-    {
-      id: "qa",
-      label:
-        "2. Why it Matters, Break Down, Measure, Tools, Pitfalls & Case-Study",
-    },
-    { id: "trends", label: "3. Pitfalls and Misconceptions" },
-    { id: "recommendations", label: "4. Recommendations" },
-    { id: "scenarios", label: "5. Future Outlook" },
-    { id: "conclusion", label: "6. Conclusion" },
-  ],
-  "edge-encoders-for-rugged-environments": [
-    { id: "introduction", label: "1. Introduction" },
-    {
-      id: "qa",
-      label: "2. Deep Dive",
-    },
-    { id: "trends", label: "3. Pitfalls and Misconceptions" },
-    { id: "conclusion", label: "4. Conclusion" },
-  ],
-  "automated-qa-for-live-video": [
-    { id: "introduction", label: "1. Introduction" },
-    {
-      id: "qa",
-      label: "2. Deep Dive",
-    },
-    { id: "trends", label: "3. Common Pitfalls to Avoid" },
-    { id: "scenarios", label: "4. Real-World Postmortem" },
-    { id: "conclusion", label: "5. Conclusion" },
-  ],
-  "secure-streaming": [
-    { id: "introduction", label: "1. Introduction" },
-    {
-      id: "qa",
-      label: "2. Deep Dive",
-    },
-    { id: "trends", label: "3. Common Pitfalls to Avoid" },
-    { id: "scenarios", label: "4. Real-World Postmortem" },
-    { id: "conclusion", label: "5. Conclusion" },
-  ],
-    "hardware-accelerated-transcoding-on-jetson-i.MX": [
-    { id: "introduction", label: "1. Introduction" },
-    {
-      id: "qa",
-      label: "2. Deep Dive",
-    },
-    { id: "trends", label: "3. Common Pitfalls to Avoid" },
-    { id: "scenarios", label: "4. Real-World Postmortem" },
-    { id: "conclusion", label: "5. Conclusion" },
-  ],
+  // //blogs
+  // "slug": [
+  //   { id: "introduction", label: "1. Introduction" },
+  //   { id: "qa", label: "2. Lip-Sync Sync Deep Dive" },
+  //   { id: "conclusion", label: "3. Conclusion" },
+  // ],
+  // "SRT-vs-RIST-vs-RTMP": [
+  //   { id: "introduction", label: "1. Introduction" },
+  //   { id: "qa", label: "2. Protocol Wars Deep Dive" },
+  //   { id: "conclusion", label: "3. Conclusion" },
+  // ],
+  // "the-future-of-embedded-systems": [
+  //   { id: "introduction", label: "1. Introduction" },
+  //   { id: "qa", label: "2. Market Growth" },
+  //   { id: "trends", label: "3. 7 Key Trends" },
+  //   { id: "challenges", label: "4. Challenges" },
+  //   { id: "case-study", label: "5. Case Studies" },
+  //   { id: "impact", label: "6. Impact" },
+  //   { id: "conclusion", label: "7. Conclusion" },
+  // ],
+  // "ndi-in-hybrid-ip-sdi-workflows": [
+  //   { id: "introduction", label: "1. Introduction" },
+  //   { id: "qa", label: "2. Understanding the Hybrid Broadcast Landscape" },
+  //   { id: "trends", label: "3. Key Benefits of NDI in Hybrid Workflows" },
+  //   {
+  //     id: "challenges",
+  //     label: "4. Common Challenges Product Teams Face with NDI",
+  //   },
+  //   { id: "scenarios", label: "5. NDI Integration Scenarios & Best Practices" },
+  //   { id: "conclusion", label: "6. Conclusion & Call-to-Action" },
+  // ],
+  // "buildroot-vs-yocto-for-video-devices": [
+  //   { id: "introduction", label: "1. Introduction" },
+  //   {
+  //     id: "qa",
+  //     label: "2. The Embedded Video Device Challenge & Buildroot at a Glance",
+  //   },
+  //   { id: "scenarios", label: "3. Pragmatic Scenarios: Which to Choose?" },
+  //   {
+  //     id: "case-study",
+  //     label: "4. Case Study Snapshot: eByteLogic Experience",
+  //   },
+  //   { id: "recommendations", label: "5. Key Recommendations" },
+  //   { id: "conclusion", label: "6. Conclusion" },
+  // ],
+  // "linux-bsp-techniques-that-work": [
+  //   { id: "introduction", label: "1. Introduction" },
+  //   { id: "qa", label: "2. Optimizing Boot Time" },
+  //   { id: "trends", label: "3. Future Directions & Industry Trends" },
+  //   { id: "case-study", label: "4. Real-World Case Study: OTT Streaming Box" },
+  //   { id: "conclusion", label: "5. Conclusion" },
+  // ],
+  // "cea-608-708-and-line21-dtvcc-conversion": [
+  //   { id: "introduction", label: "1. Introduction" },
+  //   { id: "qa", label: "2. Deep Dive" },
+  //   { id: "trends", label: "3. Future Trends in Closed Captioning" },
+  //   {
+  //     id: "case-study",
+  //     label: "4. Real-World Case Study: Broadcast Caption Conversion",
+  //   },
+  //   { id: "conclusion", label: "5. Conclusion" },
+  // ],
+  // "ptp-and-smpte-st-2110-for-non-broadcasters": [
+  //   { id: "introduction", label: "1. Introduction" },
+  //   { id: "qa", label: "2. Let's have a Deep Dive" },
+  //   { id: "conclusion", label: "3. Conclusion" },
+  // ],
+  // "fixing-frame-drops-during-protocol-switching": [
+  //   { id: "introduction", label: "1. Introduction" },
+  //   { id: "qa", label: "2. Let's have a Deep Dive" },
+  //   { id: "trends", label: "3. Lessons Learned" },
+  //   { id: "conclusion", label: "4. Conclusion" },
+  // ],
+  // "ffmpeg-filters-frame-pacing-lip-sync": [
+  //   { id: "introduction", label: "1. Introduction" },
+  //   {
+  //     id: "qa",
+  //     label: "2. Challenge, Role, Real-World Postmortem, Analysis, Fix",
+  //   },
+  //   { id: "trends", label: "3. Lessons Learned" },
+  //   { id: "conclusion", label: "4. Conclusion" },
+  // ],
+  // "measuring-glass-to-glass-latency": [
+  //   { id: "introduction", label: "1. Introduction" },
+  //   {
+  //     id: "qa",
+  //     label:
+  //       "2. Why it Matters, Break Down, Measure, Tools, Pitfalls & Case-Study",
+  //   },
+  //   { id: "trends", label: "3. Pitfalls and Misconceptions" },
+  //   { id: "recommendations", label: "4. Recommendations" },
+  //   { id: "scenarios", label: "5. Future Outlook" },
+  //   { id: "conclusion", label: "6. Conclusion" },
+  // ],
+  // "edge-encoders-for-rugged-environments": [
+  //   { id: "introduction", label: "1. Introduction" },
+  //   {
+  //     id: "qa",
+  //     label: "2. Deep Dive",
+  //   },
+  //   { id: "trends", label: "3. Pitfalls and Misconceptions" },
+  //   { id: "conclusion", label: "4. Conclusion" },
+  // ],
+  // "automated-qa-for-live-video": [
+  //   { id: "introduction", label: "1. Introduction" },
+  //   {
+  //     id: "qa",
+  //     label: "2. Deep Dive",
+  //   },
+  //   { id: "trends", label: "3. Common Pitfalls to Avoid" },
+  //   { id: "scenarios", label: "4. Real-World Postmortem" },
+  //   { id: "conclusion", label: "5. Conclusion" },
+  // ],
+  // "secure-streaming": [
+  //   { id: "introduction", label: "1. Introduction" },
+  //   {
+  //     id: "qa",
+  //     label: "2. Deep Dive",
+  //   },
+  //   { id: "trends", label: "3. Common Pitfalls to Avoid" },
+  //   { id: "scenarios", label: "4. Real-World Postmortem" },
+  //   { id: "conclusion", label: "5. Conclusion" },
+  // ],
+  //   "hardware-accelerated-transcoding-on-jetson-i.MX": [
+  //   { id: "introduction", label: "1. Introduction" },
+  //   {
+  //     id: "qa",
+  //     label: "2. Deep Dive",
+  //   },
+  //   { id: "trends", label: "3. Common Pitfalls to Avoid" },
+  //   { id: "scenarios", label: "4. Real-World Postmortem" },
+  //   { id: "conclusion", label: "5. Conclusion" },
+  // ],
+  //     "ai-development": [
+  //   { id: "introduction", label: "1. Introduction" },
+  //   {
+  //     id: "qa",
+  //     label: "2. Deep Dive",
+  //   },
+  //   { id: "trends", label: "3. Common Pitfalls to Avoid" },
+  //   { id: "scenarios", label: "4. Real-World Postmortem" },
+  //   { id: "conclusion", label: "5. Conclusion" },
+  // ],
 };
 
-const Sidebar = () => {
+interface SidebarProps {
+  items?: { id: string; label: string }[];
+}
+
+const Sidebar = ({ items: dynamicItems }: SidebarProps) => {
   const pathname = usePathname();
   const section = pathname?.split("/")[2];
-  const items = tocData[section] || [];
+ const items =
+    pathname?.includes("/blogs")
+      ? dynamicItems || []
+      : tocData[section] || [];
   const [isOpen, setIsOpen] = useState(false);
   const [scrollTop, setScrollTop] = useState(false);
-  const router = useRouter();
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
@@ -344,13 +360,13 @@ const Sidebar = () => {
         {/* <div className="hidden lg:block w-12 h-0.5 bg-brand-teal mb-8" /> */}
 
         <ul className="space-y-3 text-sm pt-5">
-          {items.map((item) => (
-            <li key={item.id}>
+          {items.map((item,index) => (
+            <li key={index}>
               <a
                 href={`#${item.id}`}
-                className="block py-2 px-3 rounded-lg text-brand-charcoal hover:bg-gray-100 hover:text-brand-navy transition-colors"
+                className="block py-2 px-3 rounded-lg text-brand-charcoal hover:bg-gray-100 hover:text-brand-navy transition-colors max-w-3xs break-words"
               >
-                {item.label}
+                {index+1}.  {item.label}
               </a>
               {item.children && (
                 <ul className="ml-4 mt-2 space-y-2">

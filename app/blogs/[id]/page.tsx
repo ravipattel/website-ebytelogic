@@ -1,106 +1,109 @@
 import NotFound from '@/app/not-found';
-import { blogsMetaData } from '@/content/blogsMetaData';
+import JsonLd from '@/src/components/JsonLd';
+import { getBlogs, getBlogSuggestionsBySlug } from '@/src/store/getBlogs';
 import BlogDetails from '@/src/views/blogs/[id]'
 import React from 'react'
 
-export async function generateMetadata({ params }) {
-  const { id } = await params;
-
-  let metaTitle = "eByteLogic Blog | Embedded Systems, Video Engineering & Low-Latency Streaming Experts";
-  let metaDescription ="Insights and engineering deep-dives on embedded systems, Linux BSPs, video streaming, AV sync, protocol design, and low-latency multimedia systems.";
-
-  if (id === "av-lip-sync-in-2025") {
-    metaTitle = blogsMetaData["av-lip-sync-in-2025"].title;
-    metaDescription = blogsMetaData["av-lip-sync-in-2025"].description;
-
-  } else if (id === "SRT-vs-RIST-vs-RTMP") {
-    metaTitle = blogsMetaData["SRT-vs-RIST-vs-RTMP"].title;
-    metaDescription = blogsMetaData["SRT-vs-RIST-vs-RTMP"].description;
-
-  } else if (id === "the-future-of-embedded-systems") {
-    metaTitle = blogsMetaData["the-future-of-embedded-systems"].title;
-    metaDescription = blogsMetaData["the-future-of-embedded-systems"].description;
-
-  } else if (id === "ndi-in-hybrid-ip-sdi-workflows") {
-    metaTitle = blogsMetaData["ndi-in-hybrid-ip-sdi-workflows"].title;
-    metaDescription = blogsMetaData["ndi-in-hybrid-ip-sdi-workflows"].description;
-
-  } else if (id === "buildroot-vs-yocto-for-video-devices") {
-    metaTitle = blogsMetaData["buildroot-vs-yocto-for-video-devices"].title;
-    metaDescription = blogsMetaData["buildroot-vs-yocto-for-video-devices"].description;
-
-  } else if (id === "linux-bsp-techniques-that-work") {
-    metaTitle = blogsMetaData["linux-bsp-techniques-that-work"].title;
-    metaDescription =
-      blogsMetaData["linux-bsp-techniques-that-work"].description;
-
-  } else if (id === "cea-608-708-and-line21-dtvcc-conversion") {
-    metaTitle = blogsMetaData["cea-608-708-and-line21-dtvcc-conversion"].title;
-    metaDescription = blogsMetaData["cea-608-708-and-line21-dtvcc-conversion"].description;
-
-  } else if (id === "ptp-and-smpte-st-2110-for-non-broadcasters") {
-    metaTitle = blogsMetaData["ptp-and-smpte-st-2110-for-non-broadcasters"].title;
-    metaDescription = blogsMetaData["ptp-and-smpte-st-2110-for-non-broadcasters"].description;
-
-  } else if (id === "fixing-frame-drops-during-protocol-switching") {
-    metaTitle = blogsMetaData["fixing-frame-drops-during-protocol-switching"].title;
-    metaDescription = blogsMetaData["fixing-frame-drops-during-protocol-switching"].description;
-
-  } else if (id === "ffmpeg-filters-frame-pacing-lip-sync") {
-    metaTitle = blogsMetaData["ffmpeg-filters-frame-pacing-lip-sync"].title;
-    metaDescription = blogsMetaData["ffmpeg-filters-frame-pacing-lip-sync"].description;
-
-  } else if (id === "measuring-glass-to-glass-latency") {
-    metaTitle = blogsMetaData["measuring-glass-to-glass-latency"].title;
-    metaDescription = blogsMetaData["measuring-glass-to-glass-latency"].description;
-
-  } else if (id === "edge-encoders-for-rugged-environments") {
-    metaTitle = blogsMetaData["edge-encoders-for-rugged-environments"].title;
-    metaDescription = blogsMetaData["edge-encoders-for-rugged-environments"].description;
-
-  } else if (id === "automated-qa-for-live-video") {
-    metaTitle = blogsMetaData["automated-qa-for-live-video"].title;
-    metaDescription = blogsMetaData["automated-qa-for-live-video"].description;
-
-  } else if (id === "secure-streaming") {
-    metaTitle = blogsMetaData["secure-streaming"].title;
-    metaDescription = blogsMetaData["secure-streaming"].description;
-
-  } else if (id === "hardware-accelerated-transcoding-on-jetson-i.MX") {
-    metaTitle = blogsMetaData["hardware-accelerated-transcoding-on-jetson-i.MX"].title;
-    metaDescription = blogsMetaData["hardware-accelerated-transcoding-on-jetson-i.MX"].description;
-  }
-
-  return {
-    title: metaTitle,
-    description: metaDescription,
-    alternates: { canonical: `/blogs/${id}` },
-    openGraph: {
-      title: metaTitle,
-      description: metaDescription,
-      url: `/blogs/${id}`,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: metaTitle,
-      description: metaDescription,
-    },
-  };
+async function getBlogBySlug(slug: string) {
+  const blogs = await getBlogs();
+  return blogs.find((b: any) => b.slug === slug) || null;
 }
 
+export async function generateMetadata({ params }) {
+  const { id } = await params;
+  const blogsData = await getBlogBySlug(id);
+
+  if (!blogsData) {
+    return {
+      title: 'Post Not Found',
+      description: 'The requested blog post does not exist.',
+      robots: { index: false, follow: false },
+    };
+  }
+
+  const url = `/blogs/${id}`;
+  return {
+    title: blogsData.title,
+    description: blogsData.excerpt,
+    alternates: { canonical: url },
+    openGraph: {
+      title: blogsData.title,
+      description: blogsData.excerpt,
+      url: url,
+      images: [{ url: blogsData.cover_image }]
+    },
+    twitter: {
+      title: blogsData.title,
+      description: blogsData.excerpt,
+      images: [blogsData.cover_image],
+    }
+  };
+
+}
 
 const BlogDetailsPage = async ({ params }: { params: Promise<{ id: string }> }) => {
-  const { id } = await params
 
-    const blogMeta = blogsMetaData[id];
+  const { id } = await params;
+  const blogsData = await getBlogBySlug(id);
+  const suggestionBlogs = await getBlogSuggestionsBySlug(id);
 
-  if (!blogMeta) {
-    return <NotFound />;
+  if(!blogsData){
+    return <NotFound/>
   }
+
+  const breadCrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.ebytelogic.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blogs",
+        "item": "https://www.ebytelogic.com/blogs"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": blogsData?.title,
+        "item": `https://www.ebytelogic.com/blogs/${id}`
+      }
+    ]
+  };
+
+  const blogPostingSchema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": `https://www.ebytelogic.com/blogs/${id}`,
+    "headline": blogsData?.title,
+    "description": blogsData?.excerpt,
+    "image": blogsData?.cover_image,
+    "author": {
+      "@type": "Organization",
+      "name": "eByteLogic"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "eByteLogic",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.ebytelogic.com/logo.png"
+      }
+    },
+    "datePublished": new Date().toISOString(),
+    "dateModified": new Date().toISOString()
+  };
 
   return (
     <>
-      <BlogDetails/>
+      <JsonLd json={breadCrumbSchema} />
+      <JsonLd json={blogPostingSchema} />
+      <BlogDetails blogsData={blogsData} suggestionBlogs={suggestionBlogs} />
     </>
   )
 }

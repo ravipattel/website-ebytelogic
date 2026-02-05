@@ -6,7 +6,18 @@ const nextConfig = {
   experimental: {
     runtime: 'edge',
   },
+     images: {
+       remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "yrfhnyzvhawfczflmcfr.supabase.co",
+        port: "",
+        pathname: "/storage/v1/object/public/**",
+      },
+    ],
+  },
 }
+
 
 if (process.env.NODE_ENV === 'development') {
   (async () => {
