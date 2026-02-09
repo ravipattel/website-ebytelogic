@@ -19,7 +19,7 @@ const BlogsInfo = ({ blogsData, suggestionBlogs }) => {
       </p>
 
       <section className="bg-white rounded-xl shadow-sm p-6 md:p-10 mb-16">
-        <div className="grid md:grid-cols-2 gap-10 2xl:items-center">
+        <div className="grid xl:grid-cols-2 gap-10 2xl:items-center">
 
           {/* LEFT CONTENT */}
           <div>
@@ -45,7 +45,7 @@ const BlogsInfo = ({ blogsData, suggestionBlogs }) => {
               height="512"
               src={blogsData.cover_image}
               alt={blogsData.title}
-              className="w-full h-full md:w-[300px] md:h-[300px] 2xl:w-[512px] 2xl:h-[512px] ms-auto rounded-lg shadow-md"
+              className="w-full h-full md:w-[300px] md:h-[300px] 2xl:w-[512px] 2xl:h-[512px] xl:ms-auto rounded-lg shadow-md"
               priority
             />
           </div>
