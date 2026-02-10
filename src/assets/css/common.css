@@ -249,7 +249,19 @@
     color: #111827;
     margin: 2.25rem 0 1rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid #e5e7eb;
+    position: relative;
+  }
+
+  .article-content h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 20%;
+    max-width: 140px;
+    height: 4px;
+    background-color: #99baf8;
+    border-radius: 10px;
   }
 
   .article-content h3 {
@@ -261,11 +273,32 @@
   }
 
   .article-content h4 {
+    position: relative;
     font-size: 20px;
-    line-height: 1.875rem;
+    padding-left: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
     font-weight: 600;
     color: #111827;
-    margin: 2rem 0 0.75rem;
+  }
+  
+  .article-content h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #3078fb;
+  }
+
+  .article-content h5 {
+    font-size: 20px;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #111827;
   }
 
   .article-content p {
@@ -395,5 +428,142 @@
 
     .article-content h3 {
       font-size: 1.25rem;
+    }
+  }
+
+  .article-content .conclusion {
+    background: linear-gradient(135deg, #f8fafc, #eef4ff);
+    border-left: 4px solid #3078fb;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-radius: 12px;
+  }
+  
+  .article-content .conclusion h2 {
+    margin-top: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #111827;
+  }
+  
+  .article-content .conclusion p {
+    color: #374151;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+  
+  .article-content .conclusion strong {
+    color: #111827;
+  }
+  
+  .article-content .conclusion .contact {
+    background-color: #3078fb;
+    color: #ffffff !important;
+    padding: 12px 22px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1.25rem;
+    font-weight: 600;
+  }
+  
+  .article-content .conclusion .contact:hover {
+    background-color: #1e66f5;
+  }
+  
+  .article-content .faq {
+    margin-top: 3rem;
+    padding: 2.5rem;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #f9fbff, #ffffff);
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.06);
+    margin-bottom: 20px;
+  }
+  
+  /* FAQ Title */
+  .article-content .faq > h2:first-child {
+    font-size: 2.1rem;
+    font-weight: 800;
+    margin-bottom: 2.5rem;
+    color: #0f172a;
+    position: relative;
+  }
+  
+  .article-content .faq > h2:first-child::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #3078fb, #60a5fa);
+  }
+  
+  /* Each Question */
+  .article-content .faq h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  
+  /* Question Icon */
+  .article-content .faq h3::before {
+    content: "❓";
+    position: absolute;
+    left: 0;
+    top: 32px;
+    font-size: 1rem;
+  }
+  .article-content .faq h3:first-of-type::before {
+    top: 0px;
+  }
+
+  /* Answer */
+  .article-content .faq p {
+    color: #374151;
+    line-height: 1.75;
+    font-size: 1rem;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Highlighted terms */
+  .article-content .faq strong {
+    color: #0f172a;
+    font-weight: 600;
+  }
+  
+  /* Subtle separator between FAQs */
+  .article-content  .faq h3:not(:first-of-type) {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 2rem;
+  }
+  
+  /* Optional emphasis blocks (like stats or callouts) */
+  .article-content .faq em {
+    color: #2563eb;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .article-content .faq {
+      padding: 1.75rem;
+    }
+  
+    .article-content .faq > h2:first-child {
+      font-size: 1.75rem;
+    }
+  
+    .article-content .faq h3 {
+      font-size: 1.1rem;
+    }
+  
+    .article-content .faq p {
+      font-size: 0.95rem;
     }
   }
