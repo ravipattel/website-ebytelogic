@@ -20,12 +20,11 @@ import YoctoBuildRootPng from "@/src/assets/images/caseStudy/yoctoBuildroot.png"
 import ModBusPng from "@/src/assets/images/caseStudy/modBus.png";
 import HdmiPng from "@/src/assets/images/caseStudy/hdmi.png";
 import DisplayLatencyPng from "@/src/assets/images/caseStudy/displayLatency.png";
-import BootLogoPng from "@/src/assets/images/caseStudy/bootLogo.png";
 import I2CPng from "@/src/assets/images/caseStudy/busLockUp.png";
 import UnifiedPng from "@/src/assets/images/caseStudy/unified.png";
 import OttPng from "@/src/assets/images/caseStudy/ott.png";
 
-const caseStudyCard = [
+export const caseStudyCard = [
   {
     id: "reducing-wearable-display-latency",
     title: "Smart Glass Latency Optimization",

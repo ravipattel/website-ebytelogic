@@ -293,7 +293,7 @@ const ServiceDetailsInfo = ({ meta, subServiceId }) => {
                             <p className="text-sm sm:text-[15px] text-[#5d6471] md:max-w-3xl text-center mx-auto pb-6">
                                 {service?.layeredCardDescription}
                             </p>
-                            <div className={`grid gap-6 sm:grid-cols-2 ${service?.layeredCard?.length === 1 ? 'lg:grid-cols-1' : service?.layeredCard?.length === 2 ? 'lg:grid-cols-2' : service?.layeredCard?.length === 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'}`}>
+                            <div className={`grid gap-6 sm:grid-cols-2 ${service?.layeredCard?.length === 1 ? 'lg:grid-cols-1' : service?.layeredCard?.length === 2 ? 'lg:grid-cols-2' : service?.layeredCard?.length === 3 || service?.layeredCard?.length === 6 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'}`}>
                                 {service?.layeredCard?.map((item, index) => {
                                     const Icon = item?.icon;
                                     return (
@@ -353,7 +353,7 @@ origin-center
                                 <h2 className="text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize text-center" dangerouslySetInnerHTML={{ __html: service?.criticaltitle }} />
                                 <p className="text-sm sm:text-[15px] text-[#5d6471] md:max-w-3xl text-center mx-auto">
                                     {
-                                        service?.criticaldesc
+                                        service?.criticaldesc 
                                     }
                                 </p>
                             </div>
@@ -395,31 +395,31 @@ origin-center
                     <section className="bg-white py-16 sm:py-28">
                         <div className='max-w-[1400px] mx-auto px-4 sm:px-6 space-y-4'>
                             <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight' dangerouslySetInnerHTML={{ __html: service.useCaseTitle || '' }} />
-                            <p className="text-sm sm:text-[15px] text-[#5d6471] md:max-w-3xl">
+                            <p className={`text-sm sm:text-[15px] text-[#5d6471] md:max-w-3xl ${service?.useCases?.length === 6 && 'md:max-w-full'}`}>
                                 {service.useCaseDesc}
                             </p>
-                            <div className='grid grid-cols-1 xl:grid-cols-2 gap-7 items-center'>
-                                <div className="relative border-l border-[#3078fb]/40 pl-6 space-y-6">
+                            <div className={`grid grid-cols-1 xl:grid-cols-2 gap-7 items-center`}>
+                                <div className={`relative border-l border-[#3078fb]/40 pl-6 space-y-6 ${service?.useCases?.length === 6 && 'col-span-2'}`}>
                                     {service.useCases.map((usecase, i) => (
                                         <div key={i} className="relative group">
                                             <div className="absolute -left-[13px] top-5 w-5 h-5 bg-white border-2 border-primary rounded-full group-hover:scale-110 transition" />
                                             <div className="bg-[#f9fbfd] p-5 rounded-md shadow-sm hover:shadow-md transition border-b border-primary/30">
                                                 <h6 className="text-sm sm:text-[15px] font-medium leading-relaxed">{i + 1}. {usecase.title}</h6>
-                                                <p className="text-sm text-[#5d6471] font-medium leading-relaxed">
+                                                <p className={`text-sm text-[#5d6471] font-medium leading-relaxed ${service?.useCases?.length === 6 && 'mt-4'}`}>
                                                     {usecase.desc}
                                                 </p>
                                             </div>
                                         </div>
                                     ))}
                                 </div>
-                                <div className=''>
+                                <div className={`${service?.useCases?.length === 6 && 'hidden'}`}>
                                     {service?.useCaseImg && (
                                         <Image
                                             src={service.useCaseImg}
                                             alt="Usecase"
                                             height={400}
                                             width={400}
-                                            className={`object-cover w-full rounded-lg ${service?.useCases?.length <= 3 ? 'h-[350px]' : service?.useCases?.length === 5 ? 'h-[689px]' : 'h-[510px]'}`}
+                                            className={`object-cover w-full rounded-lg ${service?.useCases?.length <= 3 ? 'h-[350px]' : service?.useCases?.length === 5 ? 'h-[689px]' : service?.useCases?.length === 6 ? 'h-[689px]' : 'h-[510px]'}`}
                                             priority
                                         />
                                     )}

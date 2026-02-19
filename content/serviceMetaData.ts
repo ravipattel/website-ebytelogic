@@ -41,6 +41,12 @@ export const serviceMetaData = {
     description:
       "Do you require android BSP development service? We provide expert android board support package expertise, specializing in AOSP porting, HAL development, and kernel adaptation."
   },
+  "rtos-bsp-development": {
+    id: "rtos-bsp-development",
+    title: "RTOS in Embedded System Services | eByteLogic",
+    description:
+      "Professional MCU and RTOS in embedded system development. We specialize in embedded systems and RTOS board bring-up, kernel porting, and embedded RTOS optimization."
+  },
 }
 
 // Helper functions

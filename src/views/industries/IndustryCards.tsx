@@ -17,7 +17,7 @@ import AerospaceJpg from '@/src/assets/images/industry/industryAerospace.png'
 import HeroIotPng from '@/src/assets/images/industry/heroIot.png'
 
 
-const industries = [
+export const industries = [
     {
         id: 'smart-displays-and-hmis',
         title: "Smart Displays & HMIs",

@@ -9,11 +9,13 @@ import { GiCyberEye, GiProfit } from "react-icons/gi";
 import { GrCycle, GrMultimedia, GrValidate } from "react-icons/gr";
 import { RiSoundModuleLine, RiUserCommunityLine } from 'react-icons/ri';
 import { HiMiniUserGroup, HiOutlineDevicePhoneMobile } from "react-icons/hi2";
-import { MdOutlineAccessTime, MdOutlineTipsAndUpdates, MdSupportAgent } from 'react-icons/md';
+import { MdOutlineAccessTime, MdOutlineTipsAndUpdates, MdSecurity, MdSupportAgent } from 'react-icons/md';
 import { FaCloud, FaLayerGroup, FaMicrochip, FaRegUser, FaShieldAlt, FaSyncAlt } from 'react-icons/fa';
+import { VscDebug } from "react-icons/vsc";
 
 import QaJPg from '@/src/assets/images/services/qa.png'
 import LinuxPng from '@/src/assets/images/services/linux.png'
+import RtosBspPng from '@/src/assets/images/services/rtos.png'
 import LinuxWhy from '@/src/assets/images/services/linuxWhy.png'
 import LinuxBspPng from '@/src/assets/images/services/linuxBsp.png'
 import AndroidBspPng from '@/src/assets/images/services/androidBsp.png'
@@ -249,6 +251,7 @@ export const serviceData = [
                             "Our engineers develop production-grade Android BSPs for hardware platforms including NXP, Rockchip, and TI.",
                     },
                     {
+                        id: "rtos-bsp-development",
                         title: "MCU & RTOS BSP",
                         desc:
                             "We configure and fine-tune Board Support Packages for microcontrollers, ensuring real-time performance and reliability.",
@@ -344,6 +347,10 @@ export const serviceData = [
             {
                 id: "android-bsp-development",
                 pathText: "Android BSP Development",
+            },
+            {
+                id: "rtos-bsp-development",
+                pathText: "RTOS BSP Development",
             },
         ]
     },
@@ -1141,6 +1148,267 @@ export const serviceData = [
             {
                 q: "Do you optimize Android for low-power or battery-operated devices?",
                 a: "Yes. We specialize in power-management tuning at the kernel level. By optimizing the DVFS (Dynamic Voltage and Frequency Scaling) tables and fine-tuning the Android sleep/wake states, we can significantly extend the battery life of handheld industrial terminals or portable medical equipment."
+            },
+        ]
+    },
+    {
+        bgImg: '/images/bg/serviceBg/linuxBspbg.png',
+        id: "rtos-bsp-development",
+        category: "MCU & RTOS BSP Development Services",
+        pathText: "MCU & RTOS BSP Development Services",
+        tagLine: "FreeRTOS, Zephyr, Azure RTOS | Board Bring-Up to Deployment | Secure & Ultra-Low Latency",
+        imageName: RtosBspPng,
+        overview:
+            ["In low-power and resource-constrained environments, the efficiency of your hardware depends entirely on the stability of your real-time operating system. At eByteLogic, we specialize in high-performance embedded systems and RTOS engineering, providing custom Board Support Packages for MCUs that require deterministic behavior and ultra-low latency. Whether you are using FreeRTOS, Zephyr, or Azure RTOS, we bridge the gap between your silicon and your application."],
+        btnPrimaryText: "Consult with an RTOS Expert",
+        btnSecondaryText: "View Technical Portfolio",
+        capabilitySections: [
+            {
+                title: "What is the Importance of a Specialized RTOS BSP",
+                description:
+                    "Standard firmware libraries often fail to meet the rigorous demands of industrial or medical applications. A custom-engineered embedded RTOS foundation provides:",
+                capabilities: [
+                    {
+                        title: "Deterministic Execution",
+                        desc:
+                            "Guaranteed response times for mission-critical tasks.",
+                    },
+                    {
+                        title: "Power Optimization",
+                        desc:
+                            "Deep-sleep and power-management tuning at the kernel level.",
+                    },
+                    {
+                        title: "Resource Efficiency",
+                        desc:
+                            "Minimal memory footprint for systems with limited RAM/Flash.",
+                    },
+                    {
+                        title: "Hardware Portability",
+                        desc:
+                            "A clean abstraction layer that makes it easy to switch MCUs in the future.",
+                    },
+                ],
+            },
+            {
+                title: "Comprehensive MCU & RTOS BSP Services",
+                capabilities: [
+                    {
+                        title: "Custom RTOS Porting",
+                        desc:
+                            "We handle the complex task of porting the embedded RTOS kernel to your custom hardware architecture, ensuring the kernel clock and interrupt vectors are perfectly configured.",
+                    },
+                    {
+                        title: "Peripheral Driver Development",
+                        desc:
+                            "Our team develops optimized, non-blocking drivers for all on-chip and off-chip peripherals, ensuring seamless hardware interaction within the RTOS in embedded system.",
+                    },
+                    {
+                        title: "Power Management Tuning",
+                        desc:
+                            "Maximizing battery life by implementing advanced power-saving modes and tickless idle configurations within the RTOS kernel.",
+                    },
+                    {
+                        title: "Bootloader & OTA Solutions",
+                        desc:
+                            "Implementing secure, small-footprint bootloaders that support safe Over-the-Air (OTA) updates for your MCU-based devices.",
+                    },
+                    {
+                        title: "Security Hardening",
+                        desc:
+                            "Implementing MPU (Memory Protection Unit) configurations, secure boot, and encrypted firmware storage to protect your embedded systems and RTOS from threats.",
+                    },
+                ],
+            },
+        ],
+        layeredCardTitle: "Technical Expertise in <span class='text-primary'>Embedded RTOS</span>",
+        layeredCardDescription: `Building a reliable RTOS in embedded system requires mastery of low-level constraints and real-time logic.`,
+        layeredCard: [
+            {
+                id: 1,
+                title: "Low-Level Development",
+                description:
+                    "Expertise in bare-metal programming, assembly optimization, and board bring-up for ARM Cortex-M, RISC-V, and ESP32 architectures.",
+                icon: HiOutlineRefresh,
+                theme: {
+                    bg: "bg-orange-50",
+                    text: "text-orange-600",    
+                    hoverBg: "group-hover:bg-orange-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-orange-200/60",
+                    lineColor: "#f54a00"
+                },
+            },
+            {
+                id: 2,
+                title: "RTOS Subsystems & Scheduling",
+                description:
+                    "In-depth knowledge of task prioritization, semaphores, mutexes, and message queues to prevent priority inversion and race conditions.",
+                icon: FaCloud,
+                theme: {
+                    bg: "bg-purple-50",
+                    text: "text-purple-600",
+                    hoverBg: "group-hover:bg-purple-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-purple-200/60",
+                    lineColor: "#4f39f6"
+                },
+            },
+            {
+                id: 3,
+                title: "Connectivity Stacks",
+                description:
+                    "Expert integration of TCP/IP, MQTT, CoAP, and BLE stacks for connected IoT devices.",
+                icon: MdOutlineAccessTime,
+                theme: {
+                    bg: "bg-green-50",
+                    text: "text-green-600",
+                    hoverBg: "group-hover:bg-green-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-green-200/60",
+                    lineColor: "#00a63e"
+                },
+            },
+            {
+                id: 4,
+                title: "Middleware & Libraries",
+                description:
+                    "Integration of tinyUSB, FatFS, and graphical libraries (LVGL) tailored for MCU environments.",
+                icon: GiProfit,
+                theme: {
+                    bg: "bg-blue-50",
+                    text: "text-blue-600",
+                    hoverBg: "group-hover:bg-blue-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-blue-200/60",
+                    lineColor: "#587ad3"
+                },
+            },
+            {
+                id: 5,
+                title: "Security & TEE",
+                description:
+                    "Implementing ARM TrustZone and Hardware Security Modules (HSM) to ensure a secure boot sequence.",
+                icon: MdSecurity,
+                theme: {
+                    bg: "bg-green-50",
+                    text: "text-green-600",
+                    hoverBg: "group-hover:bg-green-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-green-200/60",
+                    lineColor: "#587ad3"
+                },
+            },
+            {
+                id: 6,
+                title: "Debugging & Profiling",
+                description:
+                    "Using high-end tools (J-Link, Tracealyzer) to monitor CPU load and identify bottlenecks in real-time.",
+                icon: VscDebug,
+                theme: {
+                    bg: "bg-red-50",
+                    text: "text-red-600",
+                    hoverBg: "group-hover:bg-red-600",
+                    hoverText: "group-hover:text-white",
+                    glow: "group-hover:shadow-red-200/60",
+                    lineColor: "#587ad3"
+                },
+            },
+        ],
+        criticaltitle: "Our Engineering Process for <span class='text-primary'>RTOS in Embedded System</span>",
+        criticaldesc: "We follow a structured lifecycle to ensure your MCU-based product is stable from the first clock cycle.",
+        criticalRoles: [
+            {
+                title: "MCU Selection & Hardware Audit",
+                desc:
+                    "We evaluate your microcontroller (STM32, NXP, Renesas, TI) to align its capabilities with your embedded RTOS requirements.",
+                icon: HiOutlineDevicePhoneMobile,
+            },
+            {
+                title: "Kernel Porting & Integration",
+                desc:
+                    "We port the selected RTOS to your custom board, ensuring the scheduler and memory management are optimized for your hardware.",
+                icon: RiSoundModuleLine,
+            },
+            {
+                title: "Low-Level Driver Development",
+                desc:
+                    "Writing high-performance drivers for I2C, SPI, UART, ADC, and PWM that are thread-safe and interrupt-driven.",
+                icon: HiMiniUserGroup,
+            },
+            {
+                title: "Middleware Integration",
+                desc:
+                    "Adding essential stacks for connectivity (BLE, Wi-Fi, Ethernet), file systems, and hardware-backed security.",
+                icon: GiCyberEye,
+            },
+            {
+                title: "Validation & Timing Analysis",
+                desc:
+                    "Rigorous testing of interrupt latencies and task context-switching to ensure 100% deterministic reliability.",
+                icon: MdSupportAgent,
+            },
+        ],
+        useCaseImg: useCaseEmbedded,
+        useCaseTitle: "Why Choose eByteLogic for MCU & RTOS BSP Development?",
+        useCaseDesc: "Choosing a partner for embedded systems and RTOS development requires more than just coding skills; it requires a deep understanding of silicon architecture and real-time constraints. eByteLogic provides the engineering rigor necessary to turn complex MCU designs into stable, market-ready products.",
+        useCases: [
+            {
+                title: "Expertise in Deterministic Performance",
+                desc:
+                    "We understand that in an embedded RTOS, timing is everything. Our engineers perform deep timing analysis and interrupt latency profiling to ensure your system is 100% deterministic. We guarantee that your mission-critical tasks will execute with microsecond precision, every single time.",
+            },
+            {
+                title: "Silicon-Level Optimization",
+                desc:
+                    `We don’t just use "off-the-shelf" libraries. We specialize in bare-metal programming and assembly-level optimization to squeeze every bit of performance out of your MCU. This results in a smaller memory footprint and faster execution, allowing you to potentially use lower-cost hardware without sacrificing quality.`,
+            },
+            {
+                title: "Advanced Power Management",
+                desc:
+                    "For battery-operated devices, every microamp counts. Our embedded systems and RTOS expertise includes implementing tickless idle modes, sophisticated sleep states, and peripheral power-scaling. We have a proven track record of doubling the battery life of IoT devices through kernel-level power tuning.",
+            },
+            {
+                title: "Security-First Architecture",
+                desc:
+                   `Security on an MCU is a unique challenge. We implement a "layered" defense strategy, utilizing Hardware Security Modules (HSM), Memory Protection Units (MPU), and Secure Boot protocols. We ensure your firmware is encrypted and your device identity is protected from the moment it leaves the factory.`,
+            },
+            {
+                title: "Vendor-Agnostic Flexibility",
+                desc:
+                    "We are not tied to a single chip manufacturer. Our team has extensive experience across the entire MCU niche, including ARM Cortex-M (STM32, NXP, Nordic), RISC-V, ESP32, and Renesas. This independence allows us to provide honest, objective advice on the best hardware and embedded RTOS for your specific use case.",
+            },
+            {
+                title: "Seamless Middleware Integration",
+                desc:
+                    `From complex BLE mesh networks to industrial Ethernet protocols (EtherCAT, Profinet), we handle the "heavy lifting" of middleware integration. We ensure that these stacks are properly integrated into your RTOS in embedded system without causing priority inversion or system hangs.`,
+            },
+        ],
+        cta: [
+            {
+                ctaTitle: "Precision Engineering for Your Next <span class='text-primary'>MCU Project.</span>",
+                Ctadescription: "Don't settle for generic libraries that bloat your code and drain your battery. Partner with a team that understands the nuance of embedded systems and RTOS at the silicon level.",
+                ctaButtonText: "Contact Details",
+            }
+        ],
+        faqTitle: '<span class="text-primary">FAQs</span> for RTOS in Embedded System Development',
+        faqs: [
+            {
+                q: "Which RTOS should I choose for my project?",
+                a: "The choice depends on your hardware and certification needs. We have deep experience in embedded systems and RTOS selection, working with FreeRTOS for general use, Zephyr for modern IoT, and Azure RTOS (ThreadX) for mission-critical industrial designs."
+            },
+            {
+                q: "Can you help with migration from bare-metal to an RTOS?",
+                a: "Yes. As your code grows in complexity, a bare-metal loop often becomes unmanageable. We can help you transition to an embedded RTOS, allowing for better task management, easier maintenance, and improved scalability."
+            },
+            {
+                q: "Do you support custom MCU boards with non-standard peripherals?",
+                a: "Absolutely. Our RTOS in embedded system expertise includes writing custom drivers for unique sensors, proprietary communication buses, and specialized displays that are not supported by standard vendor libraries."
+            },
+
+            {
+                q: `How do you ensure the system is "Real-Time"?`,
+                a: "We perform extensive timing analysis to measure interrupt response times and context-switch overhead, ensuring that high-priority tasks always meet their deadlines without jitter."
             },
         ]
     },

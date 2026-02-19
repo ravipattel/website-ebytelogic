@@ -27,6 +27,7 @@ export const serviceDataCard = [
     ],
   },
   {
+    id: "multimedia-framework",
     category: "Multimedia & Streaming Frameworks",
     description: "Real-time video pipelines using GStreamer, FFmpeg & protocol engineering for low-latency, high-fidelity streaming.",
     subServices: [
@@ -34,9 +35,9 @@ export const serviceDataCard = [
       "Protocol Handling (SRT, RTP, RTMP, NDI)",
       "Codec Tuning for ARM & Embedded"
     ],
-    id: "multimedia-framework"
   },
   {
+    id: "multi-platform-qa-test-automation",
     category: "Multi-platform QA & Test Automation",
     description: "Test infrastructure, real-device validation, and automation frameworks tailored for embedded product pipelines.",
     subServices: [
@@ -44,7 +45,6 @@ export const serviceDataCard = [
       "HIL Setup & Regression Testing",
       "CI/CD Integration for QA"
     ],
-    id: "multi-platform-qa-test-automation"
   },
 
 ];

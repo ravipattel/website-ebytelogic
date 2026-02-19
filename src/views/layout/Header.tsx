@@ -175,7 +175,7 @@ const Header = () => {
               </ul>
             </nav>
             <div className="hidden md:flex items-center gap-4">
-              <Button onClick={() => router.push('/contact-us')} variant="default" className="text-sm">Get In Thouch</Button>
+              <Button onClick={() => router.push('/contact-us')} variant="default" className="text-sm">Get In Touch</Button>
             </div>
             <div className="md:hidden">
               <button onClick={() => setMenuOpen(true)} className="text-2xl text-gray-800">
@@ -233,7 +233,7 @@ const Header = () => {
           ))}
         </ul>
         <div className="mt-6 flex gap-4 items-center">
-          <Button onClick={() => router.push('/contact-us')} variant="default">Get In Thouch</Button>
+          <Button onClick={() => router.push('/contact-us')} variant="default">Get In Touch</Button>
         </div>
       </div>
     </>
