@@ -47,7 +47,7 @@ const ServiceTab = () => {
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-14">
-          <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight'>Here's What <span className="text-[#3078fb]">eByteLogic</span> Can Do For You</h3>
+          <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight'>{`Here's What`} <span className="text-[#3078fb]">eByteLogic</span> Can Do For You</h3>
           <p className="text-gray-500 mt-4">
             Explore our scalable and powerful services
           </p>
