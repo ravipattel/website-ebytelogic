@@ -54,7 +54,7 @@ const ServiceTab = () => {
         </div>
 
         {/* Top Buttons */}
-        <div className="flex justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           {[
             { key: "services", label: "Services" },
             { key: "caseStudies", label: "Case Studies" },
