@@ -15,6 +15,7 @@ import FAQAccordion from '@/src/components/Faq';
 
 import OverviewJPg from '@/src/assets/images/services/overview.jpg'
 import FaqHomePng from '@/src/assets/images/home/faqHome.png'
+import ServiceTab from './ServiceTab';
 
 const ServiceDetailsInfo = ({ meta, subServiceId }) => {
     const router = useRouter();
@@ -341,7 +342,6 @@ origin-center
                 )
             }
 
-
             {/* Critical Low-Level Features */}
             {
                 service?.criticalRoles && (
@@ -433,7 +433,7 @@ origin-center
             {/* Why eByteLogic */}
             {
                 service?.whyChooseUs && (
-                    <section className="bg-[#f9fbfd] py-16 sm:py-28">
+                    <section className="bg-[#f9fbfd] py-16 sm:py-28 mb-20">
                         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 space-y-4">
                             <h3 className='text-2xl sm:text-[34px] font-medium text-primaryText leading-tight text-center' dangerouslySetInnerHTML={{ __html: service.whyTitle || '' }} />
                             <p className="text-sm text-[#5d6471] md:max-w-3xl text-center mx-auto">{service.whyDesc}</p>
@@ -462,6 +462,8 @@ origin-center
                     </section>
                 )
             }
+
+            <ServiceTab />
 
             {/* CTA */}
             <section className="bg-white py-16 sm:py-28 bg-[url('/images/image.png')] bg-cover bg-bottom">

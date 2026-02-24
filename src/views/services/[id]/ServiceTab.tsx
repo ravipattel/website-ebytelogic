@@ -4,9 +4,9 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { BiCheck } from "react-icons/bi";
 
-import { serviceDataCard } from "./ServiceCards";
-import { caseStudyCard } from "../case-study/CaseStudyCard";
-import { industries } from "../industries/IndustryCards";
+import { serviceDataCard } from "../ServiceCards";
+import { caseStudyCard } from "../../case-study/CaseStudyCard";
+import { industries } from "../../industries/IndustryCards";
 
 export const extractSlugData = (data, titleKey) => {
   return data.map((item) => ({
@@ -43,7 +43,7 @@ const ServiceTab = () => {
   const currentTab = tabDataMap[activeTab];
 
   return (
-    <section className="w-full py-20 bg-gradient-to-br from-white to-gray-50">
+    <section className="w-full pb-24 bg-gradient-to-br from-white to-gray-50">
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="text-center mb-14">
@@ -75,7 +75,7 @@ const ServiceTab = () => {
         </div>
 
         {/* Content Card */}
-        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-gray-200">
+        <div className="bg-white shadow-sm rounded-3xl p-8 md:p-12 border border-gray-200">
           <div className="grid gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {currentTab.data.map((item, index) => (
               <Link
