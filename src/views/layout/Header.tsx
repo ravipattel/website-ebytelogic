@@ -36,6 +36,7 @@ const menuItems: MenuItem[] = [
       { label: "About Us", path: "/about" },
       { label: "Blogs", path: "/blogs" },
       { label: "FAQs", path: "/faqs" },
+      { label: "Exhibition", path: "/exhibition" },
     ],
   },
   {

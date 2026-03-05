@@ -8,6 +8,8 @@ import {
   FiChevronRight,
   FiBookOpen,
 } from "react-icons/fi";
+import { BiLogOut } from "react-icons/bi";
+import { logoutUser } from "@/src/store/authStore";
 
 export default function AdminSidebar() {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -27,19 +29,23 @@ export default function AdminSidebar() {
     );
   }, []);
 
+  const handleLogout = async () => {
+    await logoutUser();
+    router.push("/login");
+  };
+
   return (
     <>
       {/* Mobile Overlay */}
       <div
-        className={`fixed inset-0 bg-black/40 z-40 lg:hidden transition-opacity ${
-          mobileOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 bg-black/40 z-40 lg:hidden transition-opacity ${mobileOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
         onClick={() => setMobileOpen(false)}
       />
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-16 left-0 h-[calc(100vh-4rem)] bg-slate-900 text-white transition-all z-50
+        className={`fixed top-16 left-0 h-[calc(100vh-4rem)] flex flex-col justify-between bg-slate-900 text-white transition-all z-50
         ${isCollapsed ? "w-20" : "w-64"} 
         ${mobileOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
       `}
@@ -60,12 +66,12 @@ export default function AdminSidebar() {
               <button
                 key={item.path}
                 onClick={() => router.push(item.path)}
-                className={`flex items-center gap-3 w-full px-4 py-3 rounded-lg mb-1
-                  ${
-                    active
-                      ? "bg-blue-600 shadow text-white"
-                      : "text-gray-300 hover:bg-slate-700"
+                className={`flex items-center w-full px-4 py-3 rounded-lg mb-1
+                  ${active
+                    ? "bg-blue-600 shadow text-white"
+                    : "text-gray-300 hover:bg-slate-700"
                   }
+                  ${!isCollapsed ? 'gap-3' : 'justify-center'}
                 `}
               >
                 <Icon size={20} />
@@ -74,8 +80,13 @@ export default function AdminSidebar() {
             );
           })}
         </nav>
+        <button onClick={handleLogout}
+          className={`flex items-center ${!isCollapsed ? 'gap-3' : 'justify-center'} mb-10 cursor-pointer w-full px-4 py-3 rounded-lg`}
+        >
+          <BiLogOut />
+          {!isCollapsed && <span className="text-sm">LogOut</span>}
+        </button>
       </aside>
-
       {/* Content Margin */}
       <div className={`${isCollapsed ? "ml-20" : "ml-64"} hidden lg:block`} />
     </>

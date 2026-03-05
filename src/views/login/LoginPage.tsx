@@ -44,76 +44,80 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg shadow-2xl w-full max-w-md overflow-hidden">
-        {/* Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-6 text-center">
-          <div className="flex justify-center mb-3">
-            <MdOutlineSecurity className="text-5xl" />
+    <div className="min-h-screen flex items-center justify-center bg-white relative overflow-hidden">
+
+      <div className="absolute w-96 h-96 bg-[#3078fb] opacity-20 rounded-full blur-3xl -top-20 -left-20"></div>
+      <div className="absolute w-96 h-96 bg-[#3078fb] opacity-20 rounded-full blur-3xl bottom-0 right-0"></div>
+
+      <div className="relative w-full max-w-md backdrop-blur-xl bg-white/70 border border-white/40 shadow-2xl rounded-2xl p-8">
+
+        <div className="flex flex-col items-center mb-8">
+          <div className="bg-[#3078fb] text-white p-4 rounded-xl shadow-lg mb-4">
+            <MdOutlineSecurity className="text-3xl" />
           </div>
-          <h1 className="text-2xl font-bold">eBytelogic</h1>
-          <p className="text-sm mt-1 opacity-90">Content Management System</p>
+
+          <h1 className="text-2xl font-bold text-gray-800">
+            eBytelogic CMS
+          </h1>
+
+          <p className="text-sm text-gray-500 mt-1">
+            Secure Admin Access
+          </p>
         </div>
 
-        {/* Login Form */}
-        <div className="p-8">
-          <div className="mb-6">
-            <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
-              Email
-            </label>
-            <input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onKeyPress={handleKeyPress}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-              placeholder="Enter your email"
-              disabled={loading}
-            />
-          </div>
+        <div className="mb-5">
+          <label htmlFor="email" className="text-sm text-gray-600 mb-2 block">
+            Email
+          </label>
 
-          <div className="mb-6">
-            <label htmlFor="password" className="block text-gray-700 font-medium mb-2">
-              Password
-            </label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              onKeyPress={handleKeyPress}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-              placeholder="Enter your password"
-              disabled={loading}
-            />
-          </div>
-
-          {error && (
-            <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 rounded-lg text-sm">
-              {error}
-            </div>
-          )}
-
-          <button
-            onClick={handleLogin}
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            onKeyPress={handleKeyPress}
             disabled={loading}
-            className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {loading ? "Logging in..." : "Login"}
-          </button>
+            placeholder="Enter your email"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#3078fb] focus:outline-none transition"
+          />
         </div>
 
-        {/* Footer */}
-        <div className="bg-gray-50 p-4 text-center border-t border-gray-200">
-          <p className="text-xs text-gray-600 flex items-center justify-center gap-1">
-            <MdOutlineSecurity className="text-sm" />
-            Authorized personnel only
-          </p>
-          <p className="text-xs text-gray-500 mt-1">
-            Session expires after 24 hours
-          </p>
+        <div className="mb-6">
+          <label htmlFor="password" className="text-sm text-gray-600 mb-2 block">
+            Password
+          </label>
+
+          <input
+            id="password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            onKeyPress={handleKeyPress}
+            disabled={loading}
+            placeholder="Enter your password"
+            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#3078fb] focus:outline-none transition"
+          />
         </div>
+
+        {error && (
+          <div className="mb-4 p-3 bg-red-50 border border-red-200 text-red-600 rounded-lg text-sm">
+            {error}
+          </div>
+        )}
+
+        <button
+          onClick={handleLogin}
+          disabled={loading}
+          className="w-full bg-[#3078fb] text-white py-3 rounded-lg font-semibold hover:scale-[1.02] hover:bg-[#1f63d6] transition-all duration-200 disabled:opacity-50"
+        >
+          {loading ? "Logging in..." : "Login"}
+        </button>
+
+        <div className="mt-6 text-center text-xs text-gray-400 flex items-center justify-center gap-1">
+          <MdOutlineSecurity />
+          Authorized personnel only
+        </div>
+
       </div>
     </div>
   );
