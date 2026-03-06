@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getBlogs } from "@/src/store/getBlogs";
 import { getAllCaseStudies } from "@/content/casestudyMetaData";
-import { getAllIndustries } from "@/content/industryMetaData";
+import { getAllIndustries } from "@/content/industryData";
 import { getAllServices } from "@/content/serviceMetaData";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

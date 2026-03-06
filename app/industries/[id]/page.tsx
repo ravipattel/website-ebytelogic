@@ -1,6 +1,6 @@
 import React from 'react'
 import IndustryDetail from '@/src/views/industries/[id]'
-import { industryMetaData } from '@/content/industryMetaData'
+import { industryData, industryMetaData } from '@/content/industryData'
 import JsonLd from '@/src/components/JsonLd'
 
 export async function generateMetadata({ params }) {
@@ -48,10 +48,10 @@ export async function generateMetadata({ params }) {
   }
 }
 
-
 const IndustryDetailPage = async({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
   const metaTitle = industryMetaData[id]?.title || "eByteLogic Industries";
+  const data= industryData.find(item => item.id === id);
   
   const breadCrumbSchema = {
     "@context": "https://schema.org",
@@ -78,9 +78,23 @@ const IndustryDetailPage = async({ params }: { params: Promise<{ id: string }> }
     ]
   };
 
+  const faqPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": data?.faqsData?.map((item:any) => ({
+    "@type": "Question",
+    "name": item.q,
+    "acceptedAnswer": {
+    "@type": "Answer",
+    "text": item.a,
+    },
+    })),
+    };
+
   return (
     <>
       <JsonLd json={breadCrumbSchema} />
+      <JsonLd json={faqPageSchema} />
       <IndustryDetail industryId={id} />
     </>
   )
