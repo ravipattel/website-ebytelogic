@@ -396,7 +396,9 @@ const IndustryInfo = ({ meta, introVariant }: { meta: any, introVariant?: 'compa
                     )
                 }
                 {/* Solutions */}
-                <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+               {
+                data?.solutions && (
+                    <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
                     <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
                         <h2 className="text-2xl md:text-3xl font-semibold text-center text-gray-800 mb-16">
                             Our Solutions
@@ -434,6 +436,8 @@ const IndustryInfo = ({ meta, introVariant }: { meta: any, introVariant?: 'compa
                         </div>
                     </div>
                 </section>
+                )
+               }
                 {/* Why Choose Us */}
                 <section className="relative py-16 bg-gradient-to-br from-white to-gray-50 px-6 overflow-hidden">
                     <div className="max-w-[1400px] mx-auto text-center">

@@ -190,45 +190,6 @@ export const industryData = [
                 }
             ]
         },
-        solutions:
-            [
-                {
-                    solutionTitle: 'Display & Touch BSP Bring-Up',
-                    solutionDescription: 'Stable hardware foundations for HMI platforms.',
-                    solutionItems: [
-                        "LCD, HDMI, MIPI-DSI display integration",
-                        "Touch controller driver development and tuning",
-                        "Device tree and kernel configuration"
-                    ]
-                },
-                {
-                    solutionTitle: 'Qt & Embedded UI Development',
-                    solutionDescription: 'Responsive interfaces designed for embedded systems.',
-                    solutionItems: [
-                        "Qt Widgets and QML-based UI development",
-                        "Performance optimization for embedded GPUs",
-                        "Multi-language and theming support"
-                    ]
-                },
-                {
-                    solutionTitle: 'Android UI & Framework Customization',
-                    solutionDescription: 'Tailored Android stacks for display-driven devices.',
-                    solutionItems: [
-                        "Android HAL and framework customization",
-                        "Boot animation, launcher, and system UI tuning",
-                        "UI responsiveness and stability optimization"
-                    ]
-                },
-                {
-                    solutionTitle: 'Performance & Production Validation',
-                    solutionDescription: 'Ensuring smooth operation in real-world conditions.',
-                    solutionItems: [
-                        "UI performance profiling and optimization",
-                        "Memory, CPU, and GPU tuning",
-                        "Long-duration stability and stress testing"
-                    ]
-                }
-            ],
         whyUsHeadline: 'Why Engineering Teams Choose eByteLogic',
         whyUsSubtext: `We bridge the gap between <span class="font-semibold">"design-heavy"</span> UI agencies and <span class="font-semibold">"hardware-only"</span> shops. When you partner with us, you get:`,
         whyUs: [
@@ -374,45 +335,6 @@ export const industryData = [
                 }
             ],
         },
-        solutions:
-            [
-                {
-                    solutionTitle: 'Camera & Sensor Bring-Up',
-                    solutionDescription: 'Stable and optimized interfaces for vision hardware.',
-                    solutionItems: [
-                        "MIPI-CSI camera integration",
-                        "Sensor driver development and tuning",
-                        "Device tree and kernel-level configuration"
-                    ]
-                },
-                {
-                    solutionTitle: 'Low-Latency Video Pipelines',
-                    solutionDescription: 'Optimized multimedia paths for real-time processing.',
-                    solutionItems: [
-                        "GStreamer and FFmpeg pipeline development",
-                        "Hardware-accelerated encoding/decoding",
-                        "End-to-end latency optimization"
-                    ]
-                },
-                {
-                    solutionTitle: 'Hardware Acceleration & Platform Optimization',
-                    solutionDescription: 'Efficient use of edge compute resources.',
-                    solutionItems: [
-                        "GPU, VPU, and ISP integration",
-                        "Zero-copy buffer handling",
-                        "Platform tuning for Jetson, i.MX, Rockchip, and similar SoCs"
-                    ]
-                },
-                {
-                    solutionTitle: 'System Validation & Deployment Readiness',
-                    solutionDescription: 'Built for real-world edge deployment.',
-                    solutionItems: [
-                        "Performance and stress testing",
-                        "Power and thermal profiling",
-                        "Long-duration stability validation"
-                    ]
-                }
-            ],
             useCases: {
                 title: "Use Cases & Applications",
                 description:
@@ -694,45 +616,6 @@ export const industryData = [
                 }
             ]
         },
-        solutions:
-            [
-                {
-                    solutionTitle: 'Multimedia Framework Customization',
-                    solutionDescription: 'Tailored media pipelines built for real-time performance.',
-                    solutionItems: [
-                        "GStreamer and FFmpeg pipeline development",
-                        "Custom plugin and element integration",
-                        "Performance tuning for low-latency encoding and decoding"
-                    ]
-                },
-                {
-                    solutionTitle: 'Streaming Protocol Engineering',
-                    solutionDescription: 'Reliable media transport across local and global networks.',
-                    solutionItems: [
-                        "NDI, RTP, RTSP, SRT, HLS, RTMP integration",
-                        "Jitter, buffering, and packet-loss optimization",
-                        "Secure and firewall-friendly streaming architectures"
-                    ]
-                },
-                {
-                    solutionTitle: 'A/V Synchronization & Compliance',
-                    solutionDescription: 'Precision tuning for broadcast-grade output.',
-                    solutionItems: [
-                        "±10ms audio-video sync optimization",
-                        "Timestamp correction and buffer management",
-                        "LINE21 and CEA608/708 closed captioning support"
-                    ]
-                },
-                {
-                    solutionTitle: 'Hardware-Accelerated Media Processing',
-                    solutionDescription: 'Optimized pipelines leveraging embedded hardware acceleration.',
-                    solutionItems: [
-                        "V4L2, VAAPI, NVDEC/NVENC integration",
-                        "Zero-copy buffer handling to reduce CPU load",
-                        "Platform optimization for i.MX, Rockchip, Jetson, and more"
-                    ]
-                }
-            ],
         whyUsHeadline: 'Why Engineering Teams Choose eByteLogic',
         whyUsSubtext: 'We bridge the gap between <span class=`font-semibold`>"standard Linux"</span> and <span class=`font-semibold`>"broadcast-grade"</span> performance.',
         whyUs: [
