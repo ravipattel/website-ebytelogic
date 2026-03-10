@@ -16,6 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { path: "/industries", priority: 0.8, changefreq: "weekly", lastmod: new Date() },
     { path: "/case-study", priority: 0.8, changefreq: "weekly", lastmod: new Date() },
     { path: "/contact-us", priority: 0.8, changefreq: "weekly", lastmod: new Date() },
+    { path: "/exhibition", priority: 0.8, changefreq: "weekly", lastmod: new Date() },
   ];
 
   const blogs = (await getBlogs()) ?? [];
