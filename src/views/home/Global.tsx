@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image from 'next/image';
 
 import React from 'react'
@@ -15,36 +16,42 @@ const globalCards = [
         title: 'Smart Displays & HMIs',
         description: 'Robust UI and application layers for smart panels, industrial displays, and touch-enabled devices.',
         tags: [' Qt / QML', 'Android UI', 'Touch & Display Drivers', 'Performance Tuning'],
+        link: '/industries/smart-displays-and-hmis'
     },
     {
         image: StreamingPng,
         title: 'Media, Broadcast & Professional AV',
         description: 'Low-latency, broadcast-grade multimedia pipelines engineered for precision, sync, and compliance.',
         tags: ['GStreamer / FFmpeg', 'SDI / HDMI', 'NDI / SRT', 'AV Sync ±10ms'],
+        link: '/industries/media-broadcasting-multimedia'
     },
     {
         image: SemiconductorsPng,
         title: 'Edge AI & Vision Systems',
         description: 'Embedded platforms optimized for real-time video capture, processing, and low-latency delivery at the edge.',
         tags: ['MIPI-CSI', 'Hardware Acceleration', 'Low-Latency Pipelines', 'Jetson / i.MX'],
+        link: '/industries/edge-ai-vision-systems'
     },
     {
         image: TelecomPng,
         title: 'Networking & Telecom Gateways',
         description: 'High-availability embedded software for wired and wireless gateways handling continuous data flow.',
         tags: ['Embedded Linux', 'Protocol Handling', 'OTA Updates', 'System Reliability'],
+        link: '/industries/networking-and-telecom-gateways'
     },
     {
         image: AerospacePng,
         title: 'Automotive Infotainment & Telematics',
         description: 'Performance-critical embedded software for in-vehicle displays, infotainment units, and connected automotive platforms.',
         tags: ['Android BSP', 'Audio / Video Pipelines', 'Qt HMI', 'Boot Optimization'],
+        link: '/industries/industrial-automation-iot-gateways'
     },
     {
         image: IotJpeg,
         title: 'Industrial Automation & IIoT ',
         description: 'Reliable embedded software for industrial controllers, gateways, and edge devices operating under real-world constraints. ',
         tags: ['Linux BSP', 'CAN / Modbus', 'Gateway Software', 'Field Upgrades'],
+        link: '/industries/industrial-automation-iiot'
     }
 ];
 
@@ -61,7 +68,8 @@ const Global = () => {
         </p>
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-4'>
                     {globalCards.map((card, index) => (
-                        <div key={index} className={`bg-white border border-gray-200 shadow-xl justify-between flex flex-col  ${index % 2 === 1 ? 'flex-col-reverse' : ''}`}>
+                        <Link href={card.link || '/'} key={index}>
+                        <div className={`bg-white border border-gray-200 shadow-xl justify-between flex flex-col  ${index % 2 === 1 ? 'flex-col-reverse' : ''}`}>
                             <div className='md:max-w-[435px] max-h-72'>
                                 <Image width={435} height={196} src={card.image} alt={card.title} className="w-full h-full object-cover" />
                             </div>
@@ -83,6 +91,7 @@ const Global = () => {
                                 </div>
                             </div>
                         </div>
+                        </Link>
                     ))}
                 </div>
             </div>
