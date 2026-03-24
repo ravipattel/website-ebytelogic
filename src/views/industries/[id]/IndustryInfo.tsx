@@ -220,7 +220,6 @@ const IndustryInfo = ({ meta, introVariant }: { meta: any, introVariant?: 'compa
                                 );
                             })}
                         </ul>
-                        <p className="text-sm md:text-base text-gray-600 leading-relaxed text-center mt-8" dangerouslySetInnerHTML={{ __html: data?.coreText || '' }} />
                     </div>
                 </section>
                 {/* capabilities */}
@@ -395,49 +394,6 @@ const IndustryInfo = ({ meta, introVariant }: { meta: any, introVariant?: 'compa
                         </section>
                     )
                 }
-                {/* Solutions */}
-               {
-                data?.solutions && (
-                    <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
-                    <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
-                        <h2 className="text-2xl md:text-3xl font-semibold text-center text-gray-800 mb-16">
-                            Our Solutions
-                        </h2>
-                        <div className="grid md:grid-cols-2 gap-8">
-                            {data?.solutions?.map((solution, index) => (
-                                <div
-                                    key={index}
-                                    className="relative bg-white/60 backdrop-blur-md border border-gray-200 rounded-xl p-8 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
-                                >
-                                    <div className="absolute top-0 left-0">
-                                        <div className="bg-gradient-to-b from-[#3078FB] to-[#174AA0] text-white text-xs font-bold px-3 py-1 rounded-tr-md rounded-bl-md shadow-sm">
-                                            {`Solution ${index + 1}`}
-                                        </div>
-                                    </div>
-                                    <h3 className="text-xl font-semibold text-gray-900 mb-5 pt-4">
-                                        {solution?.solutionTitle}
-                                    </h3>
-                                    <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-5">{solution?.solutionDescription}</p>
-                                    <ul className="space-y-3">
-                                        {solution?.solutionItems?.map((point, i) => (
-                                            <li
-                                                key={i}
-                                                className="flex items-center gap-3 text-gray-700 text-sm md:text-base"
-                                            >
-                                                <div>
-                                                    <div className="w-2.5 h-2.5 bg-gradient-to-r from-[#3078FB] to-[#174AA0] rounded-full"></div>
-                                                </div>
-                                                <span>{point}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-                )
-               }
                 {/* Why Choose Us */}
                 <section className="relative py-16 bg-gradient-to-br from-white to-gray-50 px-6 overflow-hidden">
                     <div className="max-w-[1400px] mx-auto text-center">

@@ -64,8 +64,8 @@ export const serviceData = [
                 ],
             },
         ],
-        layeredCardTitle: "Our Layered Approach to <span class='text-primary'>Embedded Software</span> Applications",
-        layeredCardDescription: "Building a robust application requires a clear understanding of the layers beneath it. We ensure your application is perfectly tuned to the underlying system:",
+        layeredCardTitle: "Our Layered Approach to <span class='text-primary'>Embedded Application</span> Development",
+        layeredCardDescription: "Building a robust application requires a clear understanding of the layers beneath it. We ensure your embedded application development is perfectly tuned to the underlying system:",
         layeredCard: [
             {
                 id: 1,
@@ -113,7 +113,7 @@ export const serviceData = [
                 },
             },
         ],
-        criticaltitle: "Our Design Philosophy for <span class='text-primary'>Robust</span> Systems",
+        criticaltitle: "Our Design Philosophy for <span class='text-primary'>Robust Embedded Application </span> Development",
         criticalRoles: [
             {
                 title: "Secure by Design",
@@ -165,15 +165,23 @@ export const serviceData = [
         faqs: [
             {
                 q: "What is the difference between firmware and embedded application development?",
-                a: "Firmware interacts directly with hardware components, while embedded application development focuses on high-level logic, user interfaces, and connectivity features that the end-user or system operator interacts with."
+                a: "Firmware interacts directly with hardware components, while embedded application development focuses on high-level logic, user interfaces, and connectivity features that the end-user or system operator interacts with. While firmware manages low-level drivers and boot sequences, the application layer handles complex data processing and the visual presentation layer. This separation ensures that your hardware remains stable while allowing the software to evolve with new user features and modern UI enhancements."
             },
             {
-                q: "Do you provide embedded apps development services for both Linux and Android?",
-                a: "Yes. We have extensive experience building applications for Embedded Linux (using Qt/C++), Android (HAL and App layer), and specialized RTOS environments."
+                q: "Do you provide embedded apps development services for both Linux and Android? ",
+                a: `Yes. We have extensive experience building applications for Embedded Linux (using Qt/C++), Android (HAL and App layer), and specialized RTOS environments. We optimize the Android framework for dedicated hardware, removing consumer bloat to create a streamlined, industrial-grade "Android Automotive" or "Android IoT" experience. For Linux, we leverage Yocto and Buildroot to create hyper-efficient embedded application development environments that maximize every megabyte of available RAM.`
             },
             {
                 q: "How do you handle IoT connectivity?",
-                a: "As an embedded iot app development company, we build secure, real-time connectivity into your apps using MQTT, WebSockets, or custom protocols to ensure stable data flow between your device and the cloud."
+                a: `As an embedded iot app development company, we build secure, real-time connectivity into your apps using MQTT, WebSockets, or custom protocols to ensure stable data flow between your device and the cloud. We implement robust "offline-first" logic, ensuring that your application continues to function and buffer data locally during network outages. Furthermore, our embedded application development includes end-to-end encryption and certificate-based authentication to protect your telemetry data from the edge to the data center.`
+            },
+            {
+                q: "Can you optimize an existing embedded application that is running slowly?",
+                a: `Yes. We perform a "Full-Stack Audit" to identify bottlenecks. Our embedded application development process involves profiling the CPU/GPU usage, optimizing memory management, and implementing zero-copy data paths to ensure your UI remains fluid and responsive even under heavy system loads.`
+            },
+            {
+                q: "How do you handle software updates for deployed embedded applications?",
+                a: `We integrate robust Over-the-Air (OTA) update mechanisms into our embedded application development workflow. By using dual-partition (A/B) systems and encrypted update packages, we ensure that your applications can be updated remotely without the risk of "bricking" the device or compromising security.`
             },
         ]
     },
@@ -361,7 +369,7 @@ export const serviceData = [
         pathText: "Multimedia & Streaming Frameworks",
         category: "Embedded Multimedia Framework Development",
         tagLine: "Media Acquisition | Media Processing | Media Transmission",
-        overview: ["Stability and latency are everything in video streaming. eByteLogic provides expert multimedia framework development services designed to handle complex audio-video pipelines on resource-constrained hardware. From broadcast-grade streaming appliances to remote imaging drones, we build the architectures that power real-time media."],
+        overview: ["Stability and latency are everything in video streaming. eByteLogic provides expert custom multimedia solutions and framework development services designed to handle complex audio-video pipelines on resource-constrained hardware. From broadcast-grade streaming appliances to remote imaging drones, we build the architectures that power real-time media."],
         btnPrimaryText: "Request a Multimedia Consultation",
         btnSecondaryText: "View Case Studies",
         capabilitySections: [
@@ -393,7 +401,7 @@ export const serviceData = [
                 ],
             },
         ],
-        criticaltitle: "Our <span class='text-primary'>Approach</span> to <span class='text-primary'>Multimedia Framework</span> Development Services",
+        criticaltitle: "Our <span class='text-primary'>Approach</span> to Creating <span class='text-primary'> Custom Multimedia</span> Solutions",
         criticaldesc: "Building a successful media product requires a multi-layered engineering approach:",
         criticalRoles: [
             {
@@ -422,7 +430,7 @@ export const serviceData = [
             },
         ],
         whyImg: StreamingWhy,
-        whyTitle: "Why Choose <span class='text-primary'>eByteLogic</span> for Your <span class='text-primary'>Multimedia Engineering</span>?",
+        whyTitle: "Why Choose <span class='text-primary'>eByteLogic</span> for Your <span class='text-primary'>Custom Multimedia</span> Solutions ?",
         whyDesc: 'Choosing a specialized partner for custom multimedia solutions ensures your product stands out in a crowded market:',
         whyChooseUs: [
             "<span class='text-black'>Broadcast-Grade Quality</span>: We bring professional-level timing and accuracy to embedded devices.",
@@ -440,15 +448,23 @@ export const serviceData = [
         faqs: [
             {
                 q: "What is the benefit of custom multimedia framework development services?",
-                a: "General frameworks often carry unnecessary overhead. Custom multimedia solutions allow us to strip away what you don't need and optimize the critical paths for your specific hardware, resulting in lower latency and better power efficiency."
+                a: "General frameworks often carry unnecessary overhead. Custom multimedia solutions allow us to strip away what you don't need and optimize the critical paths for your specific hardware, resulting in lower latency and better power efficiency. By tailoring the architecture to your specific SoC, we can ensure that every cycle of the VPU and GPU is used effectively, significantly reducing the thermal footprint of high-resolution video processing."
             },
             {
                 q: "Do you support GStreamer and FFmpeg on all platforms?",
-                a: "Yes. We have extensive experience implementing embedded multimedia framework development on Linux, Android, and macOS, specifically tailored for platforms like NXP i.MX, Rockchip, and NVIDIA."
+                a: `Yes. We have extensive experience implementing embedded multimedia framework development on Linux, Android, and macOS, specifically tailored for platforms like NXP i.MX, Rockchip, and NVIDIA. We don't just "install" these tools; we write custom plugins and hardware-accelerated decoders that bridge the gap between open-source libraries and your silicon's proprietary drivers.`
             },
             {
                 q: "Can you help with sub-100ms latency requirements?",
-                a: "Absolutely. We specialize in low-latency tuning, using protocols like SRT and NDI alongside custom buffer management to achieve real-time performance for drones, medical imaging, and live broadcasting."
+                a: `Absolutely. We specialize in low-latency tuning, using protocols like SRT and NDI alongside custom buffer management to achieve real-time performance for drones, medical imaging, and live broadcasting. Our custom multimedia solutions focus on minimizing the "glass-to-glass" delay by optimizing every stage of the pipeline, from sensor capture and encoding to network transmission and final display rendering.`
+            },
+            {
+                q: "How do you handle multi-camera synchronization for 360-degree or 3D vision?",
+                a: `Achieving perfect frame-level synchronization requires deep expertise in hardware-level timestamps and specialized buffer handling. We develop custom multimedia solutions that utilize hardware triggers and shared memory architectures to ensure multiple video streams are perfectly aligned before they reach the stitching or AI-inference engine. This prevents visual "tearing" and ensures that time-critical metadata remains accurately mapped to the corresponding video frame.`
+            },
+            {
+                q: "Do you offer support for proprietary and legacy codecs?",
+                a: `Yes. While modern standards like H.265 (HEVC) and AV1 are our specialty, our custom multimedia solutions often involve integrating or maintaining legacy codecs for specialized industrial or broadcast equipment. We can assist in porting these codecs to run on modern ARM-based SoCs or help you transition your infrastructure to more efficient, royalty-free formats without losing compatibility with your existing hardware ecosystem.`
             },
         ]
     },
@@ -891,7 +907,7 @@ export const serviceData = [
         btnSecondaryText: "View Case Studies",
         capabilitySections: [
             {
-                title: "Our Technical Expertise in Android BSP",
+                title: "Our Technical Expertise in Android BSP Development",
                 description:
                     "Building a high-performance Android BSP requires deep-level knowledge across the entire software stack. We provide the technical depth necessary to ensure your hardware is fully leveraged by the Android environment.",
                 capabilities: [
@@ -1078,7 +1094,7 @@ export const serviceData = [
             },
         ],
         useCaseImg: useCaseEmbedded,
-        useCaseTitle: "Why Choose eByteLogic for Android BSP Expertise?",
+        useCaseTitle: "Why Choose eByteLogic for Android BSP Development?",
         useCaseDesc: "Our android board support package expertise provides a unique combination of silicon-level knowledge and framework-level precision:",
         useCases: [
             {
@@ -1114,40 +1130,40 @@ export const serviceData = [
                 ctaButtonText: "Contact Details",
             }
         ],
-        faqTitle: '<span class="text-primary">FAQs</span>',
+        faqTitle: '<span class="text-primary">FAQs :</span> Android BSP Development',
         faqs: [
             {
                 q: "How is an Android BSP different from a Linux BSP?",
-                a: "While both use a Linux kernel, an android BSP includes the Hardware Abstraction Layer (HAL) and the Android Framework layers. It is significantly more complex and resource-intensive to build and maintain."
+                a: "While both use a Linux kernel, an Android BSP Development project includes the Hardware Abstraction Layer (HAL) and the Android Framework layers. It is significantly more complex and resource-intensive to build and maintain than a standard distribution. Our approach to Android BSP Development ensures that the underlying Linux kernel is perfectly synced with the Android Open Source Project (AOSP) specific requirements for your hardware."
             },
             {
                 q: "Can you help with boot-time optimization?",
-                a: "Yes. Android is notorious for slow boot times. Our android BSP expertise includes optimizing the init sequence and stripping the Zygote process to get your device to a functional state in seconds."
+                a: `Yes. Android is notorious for slow boot times, but our Android BSP Development expertise includes optimizing the init sequence and stripping the Zygote process to get your device to a functional state in seconds. We focus on "Early Suspension" and kernel-level tuning to ensure that mission-critical features, like a rear-view camera or medical monitor, are visible long before the full UI finishes loading.`
             },
             {
                 q: "Do you support custom displays and touchscreens?",
-                a: "Absolutely. We specialize in configuring MIPI-DSI, LVDS, and HDMI displays, including custom timing and touch controller integration within the HAL."
+                a: "Absolutely. We specialize in configuring MIPI-DSI, LVDS, and HDMI displays, including custom timing and touch controller integration within the HAL as part of our Android BSP Development services. We handle the complex task of display sharing and multi-window management, ensuring your custom hardware can drive high-resolution panels with 60 FPS fluidity."
             },
 
             {
                 q: "Do you support the integration of non-standard Android peripherals?",
-                a: "Yes. Standard Android is designed for phones, but industrial hardware often uses specialized sensors, unique displays, or proprietary communication ports. Our android BSP expertise includes writing custom HALs and kernel drivers for medical sensors, industrial thermal cameras, and specialized CAN-bus or RS-485 interfaces that aren't natively supported by AOSP."
+                a: "Yes. Standard Android is designed for phones, but industrial hardware often uses specialized sensors, unique displays, or proprietary communication ports. Our Android BSP Development expertise includes writing custom HALs and kernel drivers for medical sensors, industrial thermal cameras, and specialized CAN-bus or RS-485 interfaces that aren't natively supported by AOSP."
             },
             {
                 q: "Can you help us achieve GMS (Google Mobile Services) certification?",
-                a: "Absolutely. We guide hardware teams through the entire certification path. This includes pre-testing with CTS (Compatibility Test Suite) and VTS (Vendor Test Suite) to ensure your android BSP meets Google's strict stability and performance requirements. We help you address any non-compliance issues before you submit for final approval."
+                a: "Absolutely. We guide hardware teams through the entire certification path as a core part of our Android BSP Development workflow. This includes pre-testing with CTS (Compatibility Test Suite) and VTS (Vendor Test Suite) to ensure your Android BSP Development meets Google's strict stability and performance requirements. We help you address any non-compliance issues before you submit for final approval."
             },
             {
                 q: "How do you handle Android version upgrades for legacy hardware?",
-                a: "Migrating an existing product to a newer version of Android is one of our core strengths. We analyze your current kernel and HAL versions, assess the hardware capabilities of your SoC, and manage the porting process to ensure that your custom drivers and framework modifications remain stable on the newer AOSP branch."
+                a: "Migrating an existing product to a newer version of Android is one of our core strengths. As part of our Android BSP Development lifecycle management, we analyze your current kernel and HAL versions, assess the hardware capabilities of your SoC, and manage the porting process to ensure that your custom drivers and framework modifications remain stable on the newer AOSP branch."
             },
             {
                 q: "What is your approach to Android security and data protection?",
-                a: "We implement multi-layered security. This includes configuring SELinux in Enforcing mode, implementing Secure Boot, and leveraging the Trusted Execution Environment (TEE) for hardware-backed key storage. We also provide ongoing security maintenance, backporting critical patches to protect your devices from the latest CVE threats."
+                a: "We implement multi-layered security within every Android BSP Development project. This includes configuring SELinux in Enforcing mode, implementing Secure Boot, and leveraging the Trusted Execution Environment (TEE) for hardware-backed key storage. We also provide ongoing security maintenance, backporting critical patches to protect your devices from the latest CVE threats."
             },
             {
                 q: "Do you optimize Android for low-power or battery-operated devices?",
-                a: "Yes. We specialize in power-management tuning at the kernel level. By optimizing the DVFS (Dynamic Voltage and Frequency Scaling) tables and fine-tuning the Android sleep/wake states, we can significantly extend the battery life of handheld industrial terminals or portable medical equipment."
+                a: "Yes. We specialize in power-management tuning at the kernel level during Android BSP Development. By optimizing the DVFS (Dynamic Voltage and Frequency Scaling) tables and fine-tuning the Android sleep/wake states, we can significantly extend the battery life of handheld industrial terminals or portable medical equipment without sacrificing the user experience."
             },
         ]
     },

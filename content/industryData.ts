@@ -19,21 +19,21 @@ export const industryMetaData = {
     },
     "networking-and-telecom-gateways": {
         id: "networking-and-telecom-gateways",
-        title: "Embedded Software for Fire Safety Panels | eByteLogic",
+        title: "Reliable Networking & Telecom Gateway Software | eByteLogic",
         description:
-            "Build safer, smarter fire safety systems. eByteLogic delivers embedded software, Linux BSPs, and connectivity solutions for intelligent fire panels and alarms."
+            "Build high-uptime networking infrastructure. eByteLogic specializes in hardened Linux gateways, DPDK/XDP acceleration, and secure 5G/SD-WAN software stacks."
     },
     'industrial-automation-iiot': {
         id: "industrial-automation-iiot",
-        title: "Aerospace & Remote Sensing Embedded Solutions | eByteLogic",
+        title: "Reliable Industrial Automation Software | High-Availability Control",
         description:
-            "eByteLogic develops high-performance embedded software for aerospace, drones, and remote sensing — from real-time signal processing to device connectivity."
+            "Engineering the digital backbone of the smart factory. eByteLogic specializes in real-time control loops, PLC-to-silicon migration, and hardened IIoT software."
     },
     "industrial-automation-iot-gateways": {
         id: "industrial-automation-iot-gateways",
-        title: "Industrial IoT & Automation Software Experts | eByteLogic",
+        title: "Automotive Infotainment & HMI Software | eByteLogic",
         description:
-            "Enable real-time monitoring and cloud-connected automation with eByteLogic. We deliver embedded IoT software, BSPs, and device integration for Industry 4.0."
+            "Engineering high-performance automotive cockpits. eByteLogic specializes in low-latency HMI, ISO 26262 compliance, and secure IVI stacks for NXP and NVIDIA."
     },
     "smart-displays-and-hmis": {
         id: "smart-displays-and-hmis",
@@ -424,68 +424,174 @@ export const industryData = [
         hero: {
             headline: "Reliable Networking & Telecom Gateway Software Built for Always-On Operation",
             subtext: "From Linux BSPs to protocol handling and OTA updates, we engineer robust, secure, and high-availability software for networking and telecom gateways deployed in the field.",
-            cta: "Book a Strategy Call",
         },
-        intro: `Networking and telecom gateways operate as <span class="font-semibold">critical infrastructure</span> — expected to run continuously, handle fluctuating network conditions, and recover gracefully from failures. <br/><br/>Product teams must integrate diverse hardware, support multiple connectivity standards, and ensure remote manageability — all while maintaining <span class="font-semibold">uptime, security, and performance</span>.<br/>eByteLogic helps gateway OEMs deliver <span class="font-semibold">production-ready platforms</span> that are stable, maintainable, and scalable from pilot deployments to large field rollouts.`,
-        subCoreText: "Gateway and telecom product teams commonly face:",
-        coreText: `These issues lead to <span class="font-semibold">service interruptions, costly field support, and customer dissatisfaction.</span>`,
+        intro: `In decentralized infrastructure, the gateway is the critical point of intelligence. Whether managing industrial sensor data or high-bandwidth telecom traffic, downtime is a systemic failure. We engineer networking software that treats "Always-On" operation as a baseline, specializing in hardened, secure stacks for NXP Layerscape, TI Sitara, and NVIDIA BlueField platforms.`,
+        introVariant: 'compact',
+        introBtnText: 'Book a Technical Networking Review',
+        coreChallengesTitle: 'Challenges in the Networking & Telecom Industry',
+        subCoreText: `Maintaining 99.999% uptime in remote or industrial environments introduces complex software hurdles that generic Linux distributions cannot solve:`,
         coreChallenges: [
-            "Complex BSP bring-up across SoCs and carrier boards",
-            "Unstable networking stacks and protocol edge cases",
-            "Risky firmware updates on deployed devices",
-            "Performance degradation under sustained load",
+            {
+                title: "Systemic Downtime & Corruption",
+                description: `Unexpected power loss or "bricked" updates can take down critical infrastructure. Ensuring a gateway can recover autonomously is essential for remote deployments.`
+            },
+            {
+                title: "Packet Processing Bottlenecks",
+                description: `Standard Linux kernel networking often struggles with high-throughput or low-latency requirements. This leads to dropped packets and increased jitter.`
+            },
+            {
+                title: "Security Vulnerabilities",
+                description: `As edge gateways bridge local OT (Operational Technology) networks to the public cloud, they become primary targets for cyberattacks and unauthorized access.`
+            },
+            {
+                title: "Protocol Fragmentation",
+                description: `Integrating legacy industrial protocols (Modbus, Profibus) with modern cloud standards (MQTT, 5G, SD-WAN) requires complex, multi-layered middleware.`
+            },
         ],
-        solutions:
-            [
+        capabilities: {
+            title: 'Core Networking & Telecom Capabilities',
+            capabilitiesData: [
                 {
-                    solutionTitle: 'Gateway BSP & Platform Bring-Up',
-                    solutionDescription: 'Stable foundations for networking and telecom devices.',
-                    solutionItems: [
-                        "Linux BSP development using Yocto or Buildroot",
-                        "Board bring-up for custom gateway hardware and SoMs",
-                        "Bootloader customization and startup optimization"
+                    "title": "High-Performance Data Planes",
+                    "intro": "We bypass traditional kernel bottlenecks to ensure your gateway handles traffic at wire speed.",
+                    "points": [
+                        "<span class='font-semibold'>Kernel Bypass (DPDK/XDP):</span>  Implementing Data Plane Development Kit (DPDK) or eXpress Data Path (XDP) for high-speed, user-space packet processing.",
+                        "<span class='font-semibold'>Hardware Offloading: </span> Utilizing dedicated engines in NXP and TI silicon for IPsec/TLS encryption and routing acceleration."
                     ]
                 },
                 {
-                    solutionTitle: 'Networking & Protocol Integration',
-                    solutionDescription: 'Reliable data handling across wired and wireless interfaces.',
-                    solutionItems: [
-                        "Ethernet, Wi-Fi, cellular modem integration",
-                        "UART, USB, SPI-based communication interfaces",
-                        "Protocol handling and data routing logic"
+                    "title": "Hardened Linux & High Availability",
+                    "intro": "We build the underlying OS to withstand the harshest digital and physical environments.",
+                    "points": [
+                        "<span class='font-semibold'>Minimal Yocto BSPs:</span> Custom-built, stripped-down Linux distributions that reduce the attack surface and maximize memory efficiency.",
+                        "<span class='font-semibold'>Dual-Partition (A/B) Updates:</span> Robust OTA mechanisms with automated rollback to ensure the device remains reachable even after a failed update."
                     ]
                 },
                 {
-                    solutionTitle: 'OTA, Security & Lifecycle Management',
-                    solutionDescription: 'Designed for long-term field deployment.',
-                    solutionItems: [
-                        "Secure OTA firmware update mechanisms",
-                        "Version control, rollback, and recovery strategies",
-                        "Secure boot and system hardening support"
+                    "title": `Secure Connectivity Stacks`,
+                    "intro": "We secure the data from the hardware level to the cloud.",
+                    "points": [
+                        `<span class='font-semibold'>Zero-Trust Architecture :</span> Implementation of Secure Boot (HAB/HSM), encrypted filesystems, and hardened VPN tunnels (WireGuard/IPsec).`,
+                        "<span class='font-semibold'>SD-WAN & Routing:</span>  Building intelligent software-defined networking that supports dynamic path selection and traffic shaping."
                     ]
                 },
                 {
-                    solutionTitle: 'Performance, Stability & Stress Validation',
-                    solutionDescription: 'Built to run continuously under real-world conditions.',
-                    solutionItems: [
-                        "Network throughput and stress testing",
-                        "CPU, memory, and resource usage profiling",
-                        "Long-duration soak testing for reliability"
+                    "title": "Advanced Protocol Integration",
+                    "intro": "We bridge the gap between diverse communication standards.",
+                    "points": [
+                        "<span class='font-semibold'>5G & Cellular Orchestration: </span> Deep integration of 5G/LTE-M modules, including eSIM management and seamless multi-carrier failover.",
+                        "<span class='font-semibold'>Industrial-to-Cloud Bridging:  </span> Real-time conversion of legacy serial or fieldbus data into secure, high-value metadata for IoT platforms."
                     ]
                 }
             ],
-        whyUsSubtext: `We design gateway software with the assumption that <span class="font-semibold">downtime is unacceptable.</span>`,
+        },
+        integrations: {
+            title: "Technical Integrations",
+            description:
+                "We engineer the underlying software stack to support high-intensity networking workloads.",
+            items: [
+                {
+                    title: "Time-Sensitive Networking (TSN)",
+                    description:
+                        "Implementing IEEE 800.1 standards to ensure deterministic, low-latency communication over standard Ethernet for industrial automation."
+                },
+                {
+                    title: "Containerized Edge Logic",
+                    description:
+                        "Deploying lightweight microservices (K3s/Docker) with strict resource isolation to ensure that edge applications don't interfere with core routing tasks."
+                },
+                {
+                    title: "Virtualized Network Functions (VNF)",
+                    description:
+                        "Architecting systems that allow multiple networking functions, like firewalls and load balancers, to run on a single hardware platform via hardware-assisted virtualization."
+                },
+                {
+                    title: "Intelligent Failover Management",
+                    description:
+                        `Developing sophisticated link-monitoring logic that switches between Fiber, 5G, and Satellite (Starlink) connections based on latency and cost.`
+                }
+            ],
+        },
+        useCases: {
+            title: "Use Cases & Applications",
+            description:
+                "Our networking solutions are built for infrastructure that simply cannot go offline.",
+            items: [
+                {
+                    title: "Industrial IoT Gateways",
+                    description:
+                        "Securely bridging factory floor sensors to global ERP systems with 24/7 reliability."
+                },
+                {
+                    title: "Telematics & Fleet Management",
+                    description:
+                        "Robust 5G connectivity for vehicle-to-everything (V2X) communication in harsh transit environments."
+                },
+                {
+                    title: "Energy & Utility Grids",
+                    description:
+                        `Hardened communication nodes for smart grid monitoring and remote substation management.`
+                },
+                {
+                    title: "Private 5G Networks",
+                    description:
+                        `Software stacks for localized, high-security cellular infrastructure in manufacturing and mining.`
+                },
+                {
+                    title: "Public Safety & Emergency Ops",
+                    description:
+                        "Portable, ruggedized gateways that provide instant, reliable mesh networking in the field."
+                }
+            ]
+        },
+        whyUsHeadline: 'Why Engineering Teams Choose eByteLogic',
+        whyUsSubtext: `We turn "Standard Connectivity" into "Carrier-Grade Infrastructure."`,
         whyUs: [
-            "Strong experience with networking and telecom-grade embedded platforms",
-            "Deep BSP, driver, and system-level debugging expertise",
-            "Engineering focus on uptime, recoverability, and maintainability",
+            {
+                title: 'Production-Hardened Inference',
+                description: `We don't just configure routers, we build C++ based middleware and optimized kernel drivers designed for years of uninterrupted service.`,
+            },
+            {
+                title: 'Deep Silicon Alignment',
+                description: `We maximize the specific networking accelerators found in NXP Layerscape and TI Sitara SoCs and deliver performance that generic software cannot match.`,
+            },
+            {
+                title: 'Security-First Development',
+                description: `From the first line of code, we implement Secure Boot and hardened memory management to protect your infrastructure from the bottom up`,
+            },
+            {
+                title: 'Reduced Operational Risk',
+                description: `Our field-proven OTA and recovery frameworks ensure that managing 10,000 devices is as safe as managing one.`,
+            }
         ],
         caseStudy: "We helped a networking device manufacturer stabilize their Linux gateway platform, integrate cellular modems, and implement secure OTA updates — enabling reliable remote deployment and lifecycle management.",
         cta: {
-            headline: "Build Gateways That Stay Online and Scale Confidently",
-            ctaSubtext: `Whether you’re developing a new telecom gateway or stabilizing an existing networking platform, our team partners with you to deliver <span class="font-semibold">secure, reliable, and production-ready gateway software</span>.`,
-            actions: ["Schedule a Discovery Call", "See Our Case Studies"],
+            headline: "Secure Your Network Foundation for Constant Uptime",
+            ctaSubtext: `In this industry, the software is what determines the resilience of the hardware. We help you build the stable, secure, and high-performance gateway your project requires.`,
+            actions: ["Book a Free Consultation"],
         },
+        faqsData: [
+            {
+                q: "Do you support Kernel Bypass techniques like DPDK?",
+                a: "Yes. We specialize in implementing DPDK and XDP to move packet processing into user-space, significantly reducing latency and CPU overhead for high-throughput telecom applications.",
+            },
+            {
+                q: `How do you ensure a gateway doesn't "brick" during a remote update?`,
+                a: `We implement a robust A/B partition system. The new update is written to an inactive partition; the system only switches if the update passes a self-test. If it fails, it automatically rolls back to the known-good version.`,
+            },
+            {
+                q: `Can you help with 5G module integration?`,
+                a: `Absolutely. We provide full-stack support for 5G modules, including driver optimization, AT command handling, and integration with modern Linux Connection Managers like NetworkManager or ModemManager.`,
+            },
+            {
+                q: "How do you secure data transmission over public networks?",
+                a: `We utilize hardware-accelerated encryption (like CAAM on NXP) to run high-speed WireGuard or IPsec tunnels and ensure data is encrypted at the hardware level with minimal performance impact.`,
+            },
+            {
+                q: "Is it possible to run edge applications on the same gateway as the router?",
+                a: `Yes. We use virtualization and containerization (like LXC or Docker) to isolate your edge logic from the core networking tasks, ensuring the router remains stable even if an edge app crashes.`,
+            },
+        ]
     },
     {
         id: 'media-broadcasting-multimedia',
@@ -674,66 +780,173 @@ export const industryData = [
             headline: "Automotive Infotainment Software Built for Performance, Safety, and Scale",
             subtext: `From Linux and Android BSPs to in-vehicle multimedia pipelines, we engineer robust infotainment and telematics software designed for long lifecycles, fast boot times, and reliable in-car experiences.`,
         },
-        intro: `Modern vehicles are becoming <span class='font-semibold'>software-defined platforms</span>. Infotainment, telematics, digital clusters, and connected services must work seamlessly across displays, sensors, and networks — all while meeting strict automotive reliability expectations. <br/><br/>Automotive product teams face challenges integrating new SoCs, managing complex software stacks, and delivering <span class='font-semibold'>responsive, stable user experiences</span> under tight timelines.<br/>eByteLogic helps automotive teams deliver <span class='font-semibold'>production-ready infotainment and telematics platforms</span> that scale from prototype to vehicle deployment.`,
-        subCoreText: "Automotive infotainment and telematics teams often struggle with:",
-        coreText: `These issues directly affect <span class='font-semibold'>driver experience, validation timelines, and OEM acceptance.</span>`,
+        intro: `The modern vehicle cockpit is no longer just a dashboard. It is a sophisticated multi-display environment requiring the perfect balance of consumer-grade fluidity and automotive-grade reliability. We engineer In-Vehicle Infotainment (IVI) and Human-Machine Interface (HMI) software that delivers high-fidelity graphics while maintaining the strict safety standards required for the road.`,
+        introVariant: 'compact',
+        introBtnText: 'Book a Technical Automotive Review',
+        coreChallengesTitle: 'Challenges in the Automotive Infotainment Industry',
+        subCoreText: `Developing software for the vehicle interior requires overcoming hardware constraints and safety requirements that traditional mobile or web apps never face:`,
         coreChallenges: [
-            "Slow boot times and unstable startup sequences",
-            "Complex Android and Linux BSP customization",
-            "Audio/video latency, sync, and performance issues",
-            "Multi-display and touch interface integration challenges",
+            {
+                title: "Boot-Time Criticality",
+                description: `Drivers expect the rear-view camera and instrument cluster to be active within seconds. Balancing a feature-rich Linux or Android Automotive OS with "Instant-On" requirements is a major engineering hurdle.`
+            },
+            {
+                title: "Safety-Critical Isolation",
+                description: `Infotainment features (like Spotify or Navigation) must never interfere with safety-critical data (like tell-tales or ADAS alerts). Managing this resource contention is vital for ISO 26262 compliance.`
+            },
+            {
+                title: "Thermal & Power Efficiency",
+                description: `High-resolution 3D maps and multi-zone media can push automotive SoCs to their thermal limits. Efficient software architecture is required to prevent throttling in extreme cabin temperatures.`
+            },
+            {
+                title: "Long-Term Lifecycle Support",
+                description: `Vehicles remain on the road for a decade or more. The software stack must be maintainable, updatable, and secure against evolving cyber threats for the entire life of the vehicle.`
+            },
         ],
-        solutions:
-            [
+        capabilities: {
+            title: 'Core Automotive & Infotainment Capabilities',
+            capabilitiesData: [
                 {
-                    solutionTitle: 'Automotive BSP & Platform Bring-Up',
-                    solutionDescription: 'Stable board-level software for in-vehicle platforms.',
-                    solutionItems: [
-                        "Linux and Android BSP development",
-                        "U-Boot customization and fast boot optimization",
-                        "Device driver integration for displays, cameras, audio, and connectivity"
+                    "title": "High-Performance HMI Development",
+                    "intro": "We build visually stunning interfaces that remain responsive under heavy system load.",
+                    "points": [
+                        "<span class='font-semibold'>Framework Expertise: </span> Advanced implementation of Qt/QML, Unreal Engine, and Flutter optimized for automotive silicon.",
+                        "<span class='font-semibold'>Hardware-Accelerated Graphics:</span> Utilizing OpenGL ES and Vulkan to offload UI rendering from the CPU to the GPU for 60 FPS performance."
                     ]
                 },
                 {
-                    solutionTitle: 'Android Automotive & Framework Customization',
-                    solutionDescription: 'Tailored Android stacks for automotive use cases.',
-                    solutionItems: [
-                        "Android HAL and framework customization",
-                        "Boot animation, launcher, and system service tuning",
-                        "Performance and stability enhancements for long-running systems"
+                    "title": "Functional Safety & Hypervisors",
+                    "intro": "We ensure that entertainment and safety can coexist on the same hardware.",
+                    "points": [
+                        "<span class='font-semibold'>Hardware Virtualization :</span> Implementing COQOS, QNX, or ACRN hypervisors to isolate the safety-critical cluster from the non-safety IVI system.",
+                        "<span class='font-semibold'>ASIL Compliance:</span> Engineering software components according to Automotive Safety Integrity Levels (ASIL) to ensure functional safety."
                     ]
                 },
                 {
-                    solutionTitle: 'Infotainment UI & Multimedia Integration',
-                    solutionDescription: 'Responsive and reliable in-car user experiences.',
-                    solutionItems: [
-                        "Qt and Android-based HMI development",
-                        "Audio/video pipeline integration and tuning",
-                        "Display, touch, and multi-screen support"
+                    "title": `Hardened Automotive Linux & Android`,
+                    "intro": "We customize the underlying OS for the specific needs of the vehicle.",
+                    "points": [
+                        `<span class='font-semibold'>Android Automotive OS (AAOS): </span> Expert integration of the GAS (Google Automotive Services) stack and custom HAL (Hardware Abstraction Layer) development.`,
+                        "<span class='font-semibold'>Automotive Grade Linux (AGL): </span>   Building specialized Yocto layers for a streamlined, secure, and fast-booting vehicle OS."
                     ]
                 },
                 {
-                    solutionTitle: 'Validation & Production Readiness',
-                    solutionDescription: 'Automotive-grade validation before vehicle integration.',
-                    solutionItems: [
-                        "End-to-end system testing",
-                        "Stress, performance, and long-duration validation",
-                        "Platform stabilization before SOP milestones"
+                    "title": "Connectivity & V2X Integration",
+                    "intro": "We bridge the vehicle to the outside world securely.",
+                    "points": [
+                        "<span class='font-semibold'>Vehicle Networking: </span> Deep expertise in CAN, LIN, and Automotive Ethernet (SOME/IP) for seamless data exchange between ECUs.",
+                        "<span class='font-semibold'>Telematics & OTA: </span>  Building robust Over-the-Air update systems that ensure safe firmware and map updates without service center visits."
                     ]
                 }
             ],
-        whyUsSubtext: `We engineer infotainment software with the mindset that <span class="font-semibold">every system must perform reliably on every drive</span>.`,
-        whyUs: [
-            "Hands-on experience with automotive infotainment and telematics platforms",
-            "Deep expertise across Qualcomm, NXP, TI, and other automotive SoCs",
-            "Strong understanding of boot-time, multimedia, and stability requirements",
-        ],
-        caseStudy: "We helped an automotive display and telematics module provider bring up Linux and Android software, optimize boot time, and stabilize audio/video pipelines, enabling faster platform validation and OEM readiness. ",
-        cta: {
-            headline: "Build Automotive Platforms Ready for the Road",
-            ctaSubtext: `Whether you’re developing a new infotainment platform or stabilizing an existing telematics system, we partner with your team to deliver <span class="font-semibold">reliable, production-ready automotive software.</span>`,
-            actions: ["Schedule a Discovery Call", "See Our Case Studies"],
         },
+        integrations: {
+            title: "Technical Integrations",
+            description:
+                "We engineer the underlying software stack to support the next generation of digital cockpits.",
+            items: [
+                {
+                    title: "Instant-On Boot Optimization",
+                    description:
+                        "Implementing Falcon Mode in U-Boot and kernel stripping to ensure the instrument cluster is functional in under 2 seconds."
+                },
+                {
+                    title: "Multi-Display Orchestration",
+                    description:
+                        "Managing data across multiple screens—Cluster, Center Stack, and Rear-Seat Entertainment—ensuring seamless content handovers and synchronization."
+                },
+                {
+                    title: "Digital Signal Processing (DSP)",
+                    description:
+                        "Tuning audio paths for multi-zone sound, active noise cancellation, and high-fidelity voice recognition interfaces."
+                },
+                {
+                    title: "Surround View & ADAS Visualization",
+                    description:
+                        `Integrating 360-degree camera feeds and sensor data into the HMI with zero-copy pipelines for real-time driver awareness.`
+                }
+            ],
+        },
+        useCases: {
+            title: "Use Cases & Applications",
+            description:
+                "Our automotive solutions power everything from luxury EVs to commercial transport.",
+            items: [
+                {
+                    title: "Digital Instrument Clusters",
+                    description:
+                        "High-definition, ASIL-compliant displays for speed, range, and critical alerts."
+                },
+                {
+                    title: "Integrated Cockpits",
+                    description:
+                        "Unified software controlling both the IVI and the vehicle's climate and comfort systems."
+                },
+                {
+                    title: "Head-Up Displays (HUD)",
+                    description:
+                        `Low-latency projection of navigation and safety data directly into the driver’s line of sight.`
+                },
+                {
+                    title: "Rear-Seat Entertainment",
+                    description:
+                        `Multi-zone media streaming with independent audio zones and gaming integration.`
+                },
+                {
+                    title: "Commercial Fleet HMI",
+                    description:
+                        "Ruggedized, high-uptime interfaces for logistics, mining, and emergency vehicles."
+                }
+            ]
+        },
+        whyUsHeadline: 'Why Engineering Teams Choose eByteLogic',
+        whyUsSubtext: `We bridge the gap between "Consumer Experience" and "Automotive Reliability."`,
+        whyUs: [
+            {
+                title: 'Production-Hardened Stacks',
+                description: `We don't just build UI; we architect the underlying drivers and middle-ware designed for 24/7 reliability in harsh environments.`,
+            },
+            {
+                title: 'Silicon-Specific Tuning',
+                description: `We maximize the VPU and GPU capabilities of NXP i.MX8/i.MX9 and NVIDIA Orin/Thor to deliver premium performance on target hardware.`,
+            },
+            {
+                title: 'Security-First Architecture',
+                description: `From Secure Boot to encrypted V2X communication, we build security into every layer of the automotive software stack.`,
+            },
+            {
+                title: 'Standards-Compliant Delivery',
+                description: `Our development processes align with ASPICE and ISO 26262, ensuring your software is ready for global market certification.`,
+            }
+        ],
+        caseStudy: "We helped an automotive display and telematics module provider bring up Linux and Android software, optimize boot time, and stabilize audio/video pipelines, enabling faster platform validation and OEM readiness.",
+        cta: {
+            headline: "Powering the Heart of the Software-Defined Vehicle",
+            ctaSubtext: `The digital cockpit is the new interface of the automotive brand. We help you build the high-performance, safe, and scalable software that defines the driving experience.`,
+            actions: ["Consult with an Automotive Software Expert"],
+        },
+        faqsData: [
+            {
+                q: "Which automotive SoCs do you specialize in?",
+                a: "We work extensively with the NXP i.MX8 and i.MX9 series, TI Jacinto, and NVIDIA DRIVE (Orin/Thor) platforms, optimizing the BSPs for maximum HMI performance.",
+            },
+            {
+                q: `How do you handle the "Instant-On" requirements for instrument clusters?`,
+                a: `We use a combination of U-Boot Falcon Mode, kernel-stripping, and early-splash implementation in the bootloader to ensure the safety-critical display is active while the rest of the OS loads in the background.`,
+            },
+            {
+                q: `Do you support Android Automotive OS (AAOS)?`,
+                a: `Yes. We specialize in custom AAOS implementations, including Car API integration, custom HAL development, and optimizing the system for specific hardware constraints.`,
+            },
+            {
+                q: "Can you isolate safety-critical tell-tales from the entertainment system?",
+                a: `Absolutely. We typically implement a hypervisor (like QNX or ACRN) to run the instrument cluster and the IVI system as isolated virtual machines, ensuring that a crash in the media player cannot affect the speedometer.`,
+            },
+            {
+                q: "Do you help with OTA (Over-the-Air) update implementations?",
+                a: `Yes. We build secure, dual-partition (A/B) OTA systems that support delta updates, ensuring that the vehicle remains safe and functional throughout the update process.`,
+            },
+        ]
     },
     {
         id: 'industrial-automation-iiot',
@@ -743,67 +956,173 @@ export const industryData = [
         hero: {
             headline: "Reliable Industrial Automation Software Built for the Real World",
             subtext: "From Linux BSPs to industrial communication stacks, we engineer robust, long-lifecycle software for controllers, gateways, and IIoT devices operating in mission-critical environments.",
-            cta: "Book a Strategy Call",
         },
-        intro: `Industrial automation and IIoT systems must operate <span class="font-semibold">continuously, predictably, and safely</span> — often in harsh environments with limited maintenance windows.<br/><br/> Product teams face increasing pressure to integrate new hardware, support modern connectivity, and meet aggressive deployment timelines <span class="font-semibold">without compromising reliability</span>.<br/> eByteLogic helps industrial OEMs and solution providers deliver <span class="font-semibold">stable, field-ready systems</span> that scale from pilot to production.`,
-        subCoreText: "Industrial and IIoT product teams commonly encounter:",
-        coreText: `These challenges lead to <span class="font-semibold">downtime, delayed deployments, and costly field fixes.</span>`,
+        intro: `In the modern factory, software is the invisible force that determines throughput, safety, and energy efficiency. We engineer the low-level firmware and high-level middleware that turn raw industrial hardware into intelligent, self-optimizing systems. From real-time motor control to site-wide monitoring, our software is built for the real world, where 24/7 reliability isn't a goal, but a requirement.`,
+        introVariant: 'compact',
+        introBtnText: 'Book a Technical Automation Review',
+        coreChallengesTitle: 'Challenges in the Industrial Automation Industry',
+        subCoreText: `Bridging the gap between the shop floor and the data center requires solving technical friction points that can stall digital transformation:`,
         coreChallenges: [
-            "Unstable BSPs and driver issues during board bring-up",
-            "Complex peripheral integration (CAN, Ethernet, GPIO, sensors)",
-            "Firmware upgrade risks in deployed systems",
-            "Performance and reliability issues under continuous operation",
+            {
+                title: "IT/OT Convergence Gaps",
+                description: `Legacy industrial protocols (Modbus, Profinet) often struggle to communicate with modern IT architectures. Without a secure, low-latency bridge, critical production data remains trapped in "data silos."`
+            },
+            {
+                title: "Predicting Machine Failure",
+                description: `Unexpected machine failure is the leading cause of lost revenue. Transforming reactive maintenance into proactive, AI-driven foresight requires deep integration between sensors and the software stack.`
+            },
+            {
+                title: "Real-Time Determinism",
+                description: `In high-speed assembly, a delay of just a few milliseconds can lead to synchronization errors or mechanical damage. Maintaining "Hard Real-Time" performance while running complex logic is a constant challenge.`
+            },
+            {
+                title: "Scalability & Legacy Integration",
+                description: `Scaling a successful pilot to an entire enterprise often fails due to hardware fragmentation. Manufacturers need a way to deploy standardized software across a mix of new and legacy machines.`
+            },
         ],
-        solutions:
-            [
+        capabilities: {
+            title: 'Core Industrial Automation Capabilities',
+            capabilitiesData: [
                 {
-                    solutionTitle: 'Linux BSP & Board Bring-Up',
-                    solutionDescription: 'We accelerate hardware readiness with stable, production-grade BSPs.',
-                    solutionItems: [
-                        "Yocto & Buildroot customization",
-                        "Board bring-up for custom hardware and SoMs",
-                        "Device tree configuration and peripheral validation"
+                    "title": "Software-Defined Automation",
+                    "intro": "We decouple control logic from proprietary hardware, giving you the flexibility to run PLC-like functions on standard industrial PCs (IPCs).",
+                    "points": [
+                        "<span class='font-semibold'>Virtual PLC (vPLC) Implementation:</span> Running real-time control workloads in isolated containers or virtual machines for easier scaling.",
+                        "<span class='font-semibold'>PLC-to-Silicon Migration:</span> Porting legacy logic to high-performance SoCs from NXP (i.MX) and TI (Sitara) to reduce costs and increase processing power."
                     ]
                 },
                 {
-                    solutionTitle: 'Industrial Protocol & Interface Integration',
-                    solutionDescription: 'Reliable communication between devices, controllers, and gateways.',
-                    solutionItems: [
-                        "CAN, Modbus, UART, SPI, I2C integration",
-                        "Industrial Ethernet configuration",
-                        "Sensor and actuator interfacing"
+                    "title": "Hardened IIoT & Connectivity",
+                    "intro": "We ensure your factory remains connected and secure from the edge to the cloud.",
+                    "points": [
+                        "<span class='font-semibold'>Unified Namespace (UNS) Architecture:</span> Creating a single source of truth for all industrial data using MQTT, Sparkplug B, and OPC UA.",
+                        "<span class='font-semibold'>Time-Sensitive Networking (TSN): </span> Implementing deterministic Ethernet communication to ensure critical control packets always arrive on time."
                     ]
                 },
                 {
-                    solutionTitle: 'Firmware Stability & OTA Enablement',
-                    solutionDescription: 'Designed for long-running systems deployed in the field.',
-                    solutionItems: [
-                        "Robust firmware architecture",
-                        "Secure OTA update mechanisms",
-                        "Safe rollback and version management"
+                    "title": `Real-Time Control & RTOS`,
+                    "intro": "We provide the foundation for predictable, millisecond-level execution.",
+                    "points": [
+                        `<span class='font-semibold'>RTOS Expertise:</span> Professional implementation of FreeRTOS, Zephyr, and Xenomai for applications requiring guaranteed response times.`,
+                        "<span class='font-semibold'>Low-Latency Motor Control:</span> Highly optimized C/C++ code for BLDC and stepper motor synchronization in robotics and CNC applications."
                     ]
                 },
                 {
-                    solutionTitle: 'System Validation & Production Readiness',
-                    solutionDescription: 'We help ensure your system is ready before it reaches the field.',
-                    solutionItems: [
-                        "Hardware–software integration testing",
-                        "Long-duration soak and stress testing",
-                        "Performance, power, and reliability validation"
+                    "title": "Predictive Maintenance & Edge AI",
+                    "intro": "We move intelligence to the machine to catch failures before they happen.",
+                    "points": [
+                        "<span class='font-semibold'>Anomaly Detection:</span> Using <a href='https://www.ebytelogic.com/industries/edge-ai-vision-systems'>Edge AI</a> to monitor vibration, temperature, and current draw in real-time.",
+                        `<span class='font-semibold'>Digital Twin Synchronization: </span>  Building the software "bridge" that feeds real-time sensor data into 3D digital twins for virtual commissioning and simulation.`
                     ]
                 }
             ],
-        whyUsSubtext: 'We understand that in industrial systems, failure is not an option.',
+        },
+        integrations: {
+            title: "Technical Integrations",
+            description:
+                "We engineer the underlying software stack to support the Smart Factory.",
+            items: [
+                {
+                    title: "Zero-Copy Memory Paths",
+                    description:
+                        "Implementing DMA (Direct Memory Access) and shared memory buffers to move high-speed sensor data to control logic without taxing the CPU."
+                },
+                {
+                    title: "Hardened Containerization",
+                    description:
+                        "Using Docker or LXC to deploy modular automation services while maintaining the strict resource isolation required for industrial stability."
+                },
+                {
+                    title: "Secure Boot & Integrity Monitoring",
+                    description:
+                        "Utilizing hardware-level security (TrustZone/HSM) to ensure that only verified firmware runs on your industrial controllers."
+                },
+                {
+                    title: "Remote Management & OTA",
+                    description:
+                        `Building robust Over-the-Air update systems that allow for secure, site-wide logic updates without a manual technician visit.`
+                }
+            ],
+        },
+        useCases: {
+            title: "Use Cases & Applications",
+            description:
+                `Our solutions drive productivity in environments where "good enough" isn't an option.`,
+            items: [
+                {
+                    title: "Robotic Cell Control",
+                    description:
+                        "Synchronizing multi-axis robotic arms with vision systems for precise pick-and-place operations."
+                },
+                {
+                    title: "Smart Energy Management",
+                    description:
+                        "Real-time monitoring and optimization of power consumption across entire production lines."
+                },
+                {
+                    title: "Automated Quality Inspection",
+                    description:
+                        `Integrating high-speed cameras and AI-vision software to detect defects at wire-speed.`
+                },
+                {
+                    title: "AMR & AGV Navigation",
+                    description:
+                        `Low-latency SLAM and obstacle avoidance software for autonomous mobile robots in warehouses.`
+                },
+                {
+                    title: "Process Plant Monitoring",
+                    description:
+                        "High-availability SCADA and HMI systems for chemical, food, and beverage processing."
+                }
+            ]
+        },
+        whyUsHeadline: 'Why Engineering Teams Choose eByteLogic',
+        whyUsSubtext: `We bridge the gap between "Industrial Reliability" and "Modern Software Agility."`,
         whyUs: [
-            "Proven experience in industrial controllers, gateways, and field devices",
-            "Strong BSP and driver-level expertise across TI, NXP, and other industrial SoCs",
-            "Engineering approach focused on uptime, predictability, and maintainability",
+            {
+                title: 'Production-Hardened Reliability',
+                description: `We build software with "Design for Reliability" (DfR) principles, ensuring your control loops run 24/7 without memory leaks or crashes.`,
+            },
+            {
+                title: 'Silicon-Agnostic Expertise',
+                description: `Whether you are using i.MX9, Sitara AM6x, or NVIDIA Jetson, we optimize our code to extract every ounce of performance from the VPU/NPU.`,
+            },
+            {
+                title: 'Clean Yocto/OpenEmbedded Integration',
+                description: `We deliver structured, version-controlled Yocto layers that integrate seamlessly into your existing development workflow.`,
+            },
+            {
+                title: 'End-to-End Governance',
+                description: `Our approach emphasizes data security and firmware integrity, ensuring your automated systems are compliant with modern cybersecurity standards.`,
+            }
         ],
         caseStudy: "We helped an industrial OEM complete Yocto customization and CAN-based firmware upgrade implementation for a fire-safety control system, enabling stable field deployment and simplified future updates.",
         cta: {
-            headline: "Build Industrial Systems You Can Deploy with Confidence.",
-            ctaSubtext: `Whether you’re bringing up new industrial hardware or stabilizing an existing platform, our team works as an extension of your engineering group to deliver <span class="font-semibold">reliable, production-ready automation software</span>.`,
-            actions: ["Schedule a Discovery Call", "See Our Case Studies"],
+            headline: "Engineer a Faster, Smarter Factory Floor",
+            ctaSubtext: `The future of automation is software-driven. We provide the technical expertise to turn your industrial hardware into a resilient, high-performance production engine. [Consult with an Industrial Software Expert]`,
+            actions: ["Book a Free Consultation"],
         },
+        faqsData: [
+            {
+                q: "Can you help us migrate from traditional PLCs to an IPC-based system?",
+                a: "Yes. We specialize in Software-Defined Automation, porting PLC logic to Virtual PLCs (vPLCs) or custom C++ control applications running on Industrial PCs for greater flexibility.",
+            },
+            {
+                q: "How do you handle real-time requirements on Linux?",
+                a: `We use the PREEMPT_RT patch or a dedicated RTOS (like FreeRTOS or Zephyr) on a separate core of the SoC. This ensures your time-critical tasks are never interrupted by background OS processes.`,
+            },
+            {
+                q: `Do you support OPC UA and MQTT for IIoT?`,
+                a: `Absolutely. We implement OPC UA for machine-to-machine communication and MQTT/Sparkplug B for lightweight, scalable communication with the cloud or a Unified Namespace.`,
+            },
+            {
+                q: "Can you add AI-based predictive maintenance to existing machines?",
+                a: `Yes. We can integrate "Edge AI" modules that tap into existing sensor data or add new sensors to monitor vibration and thermals, providing early warning alerts directly on your HMI.`,
+            },
+            {
+                q: "How do you secure industrial gateways from cyberattacks?",
+                a: `We implement a "Defense in Depth" strategy, including Secure Boot, encrypted filesystems, network segmentation, and regular security patching of the underlying Yocto Linux distribution.`,
+            },
+        ]
     }
 ];

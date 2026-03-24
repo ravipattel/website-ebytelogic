@@ -349,7 +349,7 @@ origin-center
                         <div className="max-w-[1400px] mx-auto px-4">
 
                             {/* Heading */}
-                            <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
+                            <div className="text-center max-w-6xl mx-auto mb-14 space-y-4">
                                 <h2 className="text-2xl sm:text-[34px] font-medium text-primaryText leading-tight capitalize text-center" dangerouslySetInnerHTML={{ __html: service?.criticaltitle }} />
                                 <p className="text-sm sm:text-[15px] text-[#5d6471] md:max-w-3xl text-center mx-auto">
                                     {
