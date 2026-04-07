@@ -4,13 +4,22 @@ import React from 'react';
 import { RiCpuLine, RiFlashlightLine, RiVideoLine, RiShieldFlashLine, RiArrowRightUpLine } from "react-icons/ri";
 import EmbeddedPng from '@/src/assets/images/exhibition/embedded.png'
 
-const ExhibitionIntro = () => {
-    const checkmarks = [
-        { icon: <RiCpuLine />, text: "Stabilize Linux BSPs" },
-        { icon: <RiFlashlightLine />, text: "Cut boot times to seconds" },
-        { icon: <RiVideoLine />, text: "Fix video lag and latency" },
-        { icon: <RiShieldFlashLine />, text: "Harden platforms for the real world" },
-    ];
+const ExhibitionIntro = ({ data }: { data?: any }) => {
+    const checkmarks = (data?.highlights ?? []).map((item, idx) => {
+        const icons = [<RiCpuLine key="i1" />, <RiFlashlightLine key="i2" />, <RiVideoLine key="i3" />, <RiShieldFlashLine key="i4" />];
+        return { icon: icons[idx] ?? <RiCpuLine />, text: item.text };
+    });
+
+    const badge = data?.badge ?? "Embedded World 2026";
+    const titleHtml =
+        data?.titleHtml ??
+        `Launching New Hardware? Turn Your <span class="text-[#3078fb]">"Trade Show Demo"</span> into a Production-Ready Product.`;
+    const descriptionHtml =
+        data?.descriptionHtml ??
+        `If you’re showcasing hardware at Nuremberg, the real challenge starts once the booth is packed up.<span class="font-semibold text-[#1a1e26]"> A demo just needs to work once; a product needs to work forever.</span> We help engineering teams stabilize Linux BSPs, cut boot times to seconds, fix video lag, and harden platforms for the real world.`;
+    const primaryCtaLabel = data?.primaryCtaLabel ?? `Book a 20-Minute Tech Talk`;
+    const secondaryCtaLabel = data?.secondaryCtaLabel ?? `Get a Free BSP Health Check`;
+    const imageSrc = data?.imageUrl ?? EmbeddedPng;
 
     return (
         <section className="bg-white py-16 sm:py-24 overflow-hidden">
@@ -19,17 +28,15 @@ const ExhibitionIntro = () => {
                     <div className="xl:col-span-7 space-y-6">
                         <div className="space-y-4">
                             <div className="inline-block bg-[#3078fb]/10 text-[#3078fb] px-3 py-1 rounded text-xs font-bold uppercase tracking-widest">
-                                Embedded World 2026
+                                {badge}
                             </div>
 
                             <h2 className="text-2xl sm:text-[34px] font-medium text-[#1a1e26] leading-tight">
-                               {` Launching New Hardware? Turn Your`} <span className="text-[#3078fb]">{`"Trade Show Demo"`}</span> {`into a Production-Ready Product.`}
+                               <span dangerouslySetInnerHTML={{ __html: titleHtml }} />
                             </h2>
 
                             <p className="text-sm sm:text-[15px] text-[#5d6471] leading-relaxed max-w-2xl">
-                               {` If you’re showcasing hardware at Nuremberg, the real challenge starts once the booth is packed up.`}
-                                <span className="font-semibold text-[#1a1e26]"> A demo just needs to work once; a product needs to work forever.</span>
-                                {" "}{`We help engineering teams stabilize Linux BSPs, cut boot times to seconds, fix video lag, and harden platforms for the real world.`}
+                               <span dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
 
                             </p>
                         </div>
@@ -47,11 +54,11 @@ const ExhibitionIntro = () => {
 
                         <div className="flex flex-col sm:flex-row gap-4 pt-4">
                             <Button className="flex items-center justify-center gap-2 px-7 py-3.5">
-                             {`Book a 20-Minute Tech Talk`}
+                             {primaryCtaLabel}
                                 <RiArrowRightUpLine size={18} />
                             </Button>
                             <Button className="flex items-center justify-center gap-2 !bg-white !border-[#3078fb] !text-[#3078fb] px-7 py-3.5 hover:!bg-[#3078fb] hover:!text-white">
-                                Get a Free BSP Health Check
+                                {secondaryCtaLabel}
                             </Button>
                         </div>
                     </div>
@@ -61,8 +68,9 @@ const ExhibitionIntro = () => {
                             <div className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 w-full h-full border-2 border-[#3078fb] rounded-xl z-0"></div>
                             <div className="relative z-10 w-full h-full rounded-xl overflow-hidden shadow-2xl bg-gray-100 group">
                                 <Image
-                                    src={EmbeddedPng}
+                                    src={imageSrc}
                                     alt="Embedded Tech"
+                                    fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#3078fb]/40 to-transparent opacity-60"></div>

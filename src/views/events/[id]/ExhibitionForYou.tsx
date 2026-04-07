@@ -8,34 +8,37 @@ import {
   RiFocus3Line,
 } from "react-icons/ri";
 
-const IsThisForYouVisible = () => {
-  const criteria = [
+const IsThisForYouVisible = ({ data }: { data?: any }) => {
+  const iconByIndex = [<RiCpuLine key="c1" />, <RiSettings4Line key="c2" />, <RiRobotLine key="c3" />, <RiVideoLine key="c4" />, <RiTimerLine key="c5" />];
+  const criteria = (data?.criteria ?? [
     {
-      icon: <RiCpuLine />,
       text: "A Chip Maker or partner launching new silicon.",
       tag: "SILICON_PARTNER"
     },
     {
-      icon: <RiSettings4Line />,
       text: "An Industrial OEM building smart factory tools.",
       tag: "INDUSTRIAL_SYSTEMS"
     },
     {
-      icon: <RiRobotLine />,
       text: "An AI Hardware team moving to the edge.",
       tag: "AI_DEPLOYMENT"
     },
     {
-      icon: <RiVideoLine />,
       text: "A Multimedia developer building cameras or screens.",
       tag: "MEDIA_PIPELINE"
     },
     {
-      icon: <RiTimerLine />,
       text: "Planning to ship a product in the next 3–6 months.",
       tag: "PRODUCTION_TRACK"
     }
-  ];
+  ]).map((item, idx) => ({
+    icon: iconByIndex[idx] ?? <RiCpuLine />,
+    text: item.text,
+    tag: item.tag,
+  }));
+
+  const title = data?.title ?? "Is This for You?";
+  const leadIn = data?.leadIn ?? "This conversation is for you if you are:";
 
   return (
     <section className="bg-white py-16 sm:py-24">
@@ -43,11 +46,11 @@ const IsThisForYouVisible = () => {
         
         <div className="mb-16 space-y-4">
             <h2 className="text-2xl sm:text-[34px] font-medium text-[#1a1e26] leading-tight">
-                Is This for You?
+                {title}
             </h2>
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
-                <p className="text-sm sm:text-[15px] text-[#5d6471] whitespace-nowrap">
-                    This conversation is for you if you are:
+                <p className="text-sm sm:text-[15px] text-[#5d6471]">
+                    {leadIn}
                 </p>
                 <div className="h-[1px] flex-grow bg-slate-200 relative overflow-hidden">
                     <div className="absolute inset-0 w-1/3 bg-[#3078fb] animate-shimmer"></div>
@@ -78,9 +81,7 @@ const IsThisForYouVisible = () => {
                   {item.icon}
                 </div>
 
-                <p className="text-sm sm:text-[15px] text-[#1a1e26] font-medium leading-relaxed pl-2">
-                  {item.text}
-                </p>
+                <p className="text-sm sm:text-[15px] text-[#1a1e26] leading-relaxed pl-2" dangerouslySetInnerHTML={{ __html: item.text }} />
               </div>
 
               <div className="mt-8 flex items-center justify-between">

@@ -8,17 +8,17 @@ import ExhibitionOffer from './ExhibitionOffer'
 import ExecutionModeCTA from './ExhibitionCta'
 import IsThisForYouVisible from './ExhibitionForYou'
 
-const Exhibition = () => {
+const Exhibition = ({ data }: { data?: any }) => {
   return (
     <>
-        <ExhibitionBanner />
-        <ExhibitionIntro />
-        <ExhibitionDemoVsProduction />
-        <ExhibitionVideo/>
-        <WhyChooseeByteLogic/>
-        <ExhibitionOffer/>
-        <IsThisForYouVisible/>
-        <ExecutionModeCTA/>
+        <ExhibitionBanner data={data?.banner} />
+        <ExhibitionIntro data={data?.intro} />
+        <ExhibitionDemoVsProduction data={data?.demoVsProduction} />
+        <ExhibitionVideo data={data?.video} />
+        <WhyChooseeByteLogic data={data?.whyChoose} />
+        <ExhibitionOffer data={data?.offer} />
+        <IsThisForYouVisible data={data?.forYou} />
+        <ExecutionModeCTA data={data?.cta} />
     </>
   )
 }

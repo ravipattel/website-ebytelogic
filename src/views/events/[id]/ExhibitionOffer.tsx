@@ -9,24 +9,33 @@ import {
   RiShieldFlashLine
 } from "react-icons/ri";
 
-const ExhibitionOffer = () => {
-  const options = [
+const ExhibitionOffer = ({ data }: { data?: any }) => {
+  const iconByIndex = [<RiNodeTree key="o1" />, <RiTimerFlashLine key="o2" />, <RiPulseLine key="o3" />];
+  const options = (data?.options ?? [
     {
-      icon: <RiNodeTree />,
       title: "20-Min Architecture Check",
       desc: "Is your software structure ready for the real world?"
     },
     {
-      icon: <RiTimerFlashLine />,
       title: "Boot-Time Audit",
       desc: "Can we make your device start faster?"
     },
     {
-      icon: <RiPulseLine />,
       title: "Media Performance Check",
       desc: "Is your video pipeline optimized for low latency?"
     }
-  ];
+  ]).map((item, idx) => ({
+    icon: iconByIndex[idx] ?? <RiNodeTree />,
+    title: item.title,
+    desc: item.desc,
+  }));
+
+  const badge = data?.badge ?? "Exhibition Exclusive";
+  const title = data?.title ?? "Embedded World 2026 Special Offer";
+  const descriptionHtml =
+    data?.descriptionHtml ??
+    `If you are showing off hardware in Nuremberg, take advantage of our Free Technical Review. <span class="text-[#3078fb] font-semibold">Choose one:</span>`;
+  const ctaLabel = data?.ctaLabel ?? "Schedule My Technical Review";
 
   return (
     <section className="bg-white py-16">
@@ -40,13 +49,13 @@ const ExhibitionOffer = () => {
                 <div className="text-center space-y-4 mb-16">
                     <div className="inline-flex items-center gap-2 bg-[#3078fb] text-white px-4 py-1.5 rounded-md text-[10px] font-semibold uppercase tracking-widest">
                         <RiShieldFlashLine />
-                        Exhibition Exclusive
+                        {badge}
                     </div>
                     <h2 className="text-2xl sm:text-[34px] font-medium text-[#1a1e26] leading-tight">
-                        Embedded World 2026 Special Offer
+                        {title}
                     </h2>
                     <p className="text-sm sm:text-[15px] text-[#5d6471] max-w-2xl mx-auto leading-relaxed">
-                        If you are showing off hardware in Nuremberg, take advantage of our Free Technical Review. <span className="text-[#3078fb] font-semibold">Choose one:</span>
+                        <span dangerouslySetInnerHTML={{ __html: descriptionHtml }} />
                     </p>
                 </div>
 
@@ -66,7 +75,7 @@ const ExhibitionOffer = () => {
                                         {item.title}
                                     </h3>
                                     <p className="text-[13px] text-[#5d6471] leading-relaxed">
-                                        {item.desc}
+                                        <span dangerouslySetInnerHTML={{ __html: item.desc }} />
                                     </p>
                                 </div>
                             </div>
@@ -77,7 +86,7 @@ const ExhibitionOffer = () => {
                 <div className="flex flex-col items-center gap-10">
                     <Button className="group relative flex items-center gap-3">
                         <RiCalendarCheckLine className="text-xl" />
-                        Schedule My Technical Review
+                        {ctaLabel}
                         <RiArrowRightLine className="hidden sm:flex transition-transform group-hover:translate-x-1" />
                     </Button>
                 </div>

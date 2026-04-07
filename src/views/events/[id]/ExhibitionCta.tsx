@@ -8,7 +8,18 @@ import {
 import CtaPng from '@/src/assets/images/exhibition/cta.png'
 import Image from 'next/image';
 
-const ExecutionModeCTA = () => {
+const ExecutionModeCTA = ({ data }: { data?: any }) => {
+  const kicker = data?.kicker ?? "Project_Handover";
+  const titleHtml =
+    data?.titleHtml ??
+    `The Demo is Only <span class="text-[#3078fb]">the Beginning.</span>`;
+  const description =
+    data?.description ??
+    "After the show, your team moves from Showcase Mode to Execution Mode. If you need to clean up your code, speed up your boot time, or secure your system, let’s talk.";
+  const chips = data?.chips ?? ["Boot Speed", "System Security"];
+  const buttonLabel = data?.buttonLabel ?? "Book Your 20-Minute Technical Exchange";
+  const imageSrc = data?.imageUrl ?? CtaPng;
+
   return (
     <section className="bg-white py-16 sm:pb-28 overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
@@ -27,35 +38,33 @@ const ExecutionModeCTA = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                     <span className="flex h-2 w-2 rounded-full bg-[#3078fb] animate-pulse"></span>
-                    <span className="text-[#3078fb] text-[11px] font-bold uppercase tracking-[0.3em]">Project_Handover</span>
+                    <span className="text-[#3078fb] text-[11px] font-bold uppercase tracking-[0.3em]">{kicker}</span>
                 </div>
                 <h2 className="text-2xl sm:text-[34px] font-medium text-[#1a1e26] leading-tight max-w-2xl">
-                    The Demo is Only <span className="text-[#3078fb]">the Beginning.</span>
+                    <span dangerouslySetInnerHTML={{ __html: titleHtml }} />
                 </h2>
-                <p className="text-sm sm:text-[15px] text-[#5d6471] leading-relaxed max-w-2xl">
-                    After the show, your team moves from Showcase Mode to Execution Mode. If you need to clean up your code, speed up your boot time, or secure your system, let’s talk.
-                </p>
+                <p className="text-sm sm:text-[15px] text-[#5d6471] leading-relaxed max-w-2xl" dangerouslySetInnerHTML={{ __html: description }} />
               </div>
 
               <div className="flex flex-wrap gap-4 pt-4">
                 <div className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-lg text-[13px] font-medium text-[#1a1e26]">
-                    <RiTimerFlashLine className="text-[#3078fb]" /> Boot Speed
+                    <RiTimerFlashLine className="text-[#3078fb]" /> {chips[0] ?? "Boot Speed"}
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-lg text-[13px] font-medium text-[#1a1e26]">
-                    <RiShieldCheckLine className="text-[#3078fb]" /> System Security
+                    <RiShieldCheckLine className="text-[#3078fb]" /> {chips[1] ?? "System Security"}
                 </div>
               </div>
 
               <div className="pt-6">
                 <Button className="group relative flex items-center justify-center gap-3">
-                    Book Your 20-Minute Technical Exchange
+                    {buttonLabel}
                     <RiArrowRightUpLine className="hidden sm:flex text-xl transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </Button>
               </div>
             </div>
 
-            <div className="lg:col-span-4 hidden lg:flex justify-center">
-               <Image src={CtaPng} alt='CtaPng' className='rounded-2xl'/>
+            <div className="lg:col-span-4 hidden lg:flex min-h-[250px] justify-center">
+               <Image src={imageSrc} alt='CtaPng' width={600} height={600} className='rounded-2xl'/>
             </div>
           </div>
         </div>

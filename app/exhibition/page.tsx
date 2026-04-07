@@ -1,5 +1,5 @@
 import JsonLd from '@/src/components/JsonLd';
-import Exhibition from '@/src/views/exhibition'
+import Exhibition from '@/src/views/events/[id]'
 import React from 'react'
 
 export const metadata = {
