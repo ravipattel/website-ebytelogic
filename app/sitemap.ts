@@ -1,3 +1,7 @@
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+export const runtime = "edge";
+
 import type { MetadataRoute } from "next";
 import { getBlogs } from "@/src/store/getBlogs";
 import { getAllCaseStudies } from "@/content/casestudyMetaData";

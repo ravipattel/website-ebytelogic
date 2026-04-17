@@ -13,6 +13,7 @@ import EbytelogicPng from '@/src/assets/images/industry/ebytelogic.png'
 import EbytelogicVerticalPng from '@/src/assets/images/industry/ebytelogicVertical.png'
 import IndustryFaq from './IndustryFaq';
 import { industryData } from '@/content/industryData';
+import IndustryUsecase from '@/public/images/industryUsecase.png'
 
 const UseCaseCard = ({ item }: { item: any }) => (
     <div className="group relative w-[340px] rounded-2xl border border-[#3078FB]/15 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
@@ -361,8 +362,11 @@ const IndustryInfo = ({ meta, introVariant }: { meta: any, introVariant?: 'compa
                                         <div className="relative flex justify-center">
                                             <div className="absolute size-[320px] xl:size-[420px] bg-[#3078FB]/10 blur-[120px] rounded-full"></div>
                                             <div className="relative">
-                                                <img
-                                                    src="https://images.unsplash.com/photo-1581092921461-eab62e97a780"
+                                                <Image
+                                                    src={IndustryUsecase}
+                                                    width={340}
+                                                    height={340}
+                                                    alt='industry image'
                                                     className="size-[220px] xl:size-[340px] object-cover rounded-2xl shadow-xl"
                                                 />
                                                 <div className="absolute -inset-4 border border-[#3078FB]/20 rounded-3xl"></div>
