@@ -224,3 +224,15 @@ export const eventData: { upcoming: any; past: any } = {
     },
   ],
 };
+
+
+// Helper functions
+export function getEventBySlug(slug: string) {
+  return [...eventData.upcoming, ...eventData.past].find(
+    (e) => e.slug === slug
+  );
+}
+
+export async function getAllEvents(): Promise<any[]> {
+  return [...eventData.upcoming, ...eventData.past];
+}
